@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UIShowViewController: UIViewController {
+class UIShowViewController: UIBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

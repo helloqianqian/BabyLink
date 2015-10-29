@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UICenterViewController: UIViewController {
+class UICenterViewController: UIBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

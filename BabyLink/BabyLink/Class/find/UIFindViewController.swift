@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UIFindViewController: UIViewController {
+class UIFindViewController: UIBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

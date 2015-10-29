@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UIForgetPWViewController: UIViewController {
+class UIForgetPWViewController: UIBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

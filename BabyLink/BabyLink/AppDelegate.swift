@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        self.exchangeRootViewController(false)
         return true
     }
 
@@ -41,6 +42,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    
+    
+    func exchangeRootViewController(login:Bool){
+        if login {
+            let tabBar = UIBaseTabBarController.init(nibName: "UIBaseTabBarController", bundle: NSBundle.mainBundle())
+            let nav = UIBaseNavViewController.init(rootViewController: tabBar)
+            self.window?.rootViewController = nav
+        } else {
+            let enterVC = UIEnterViewController.init(nibName: "UIEnterViewController", bundle: NSBundle.mainBundle())
+            let nav = UIBaseNavViewController.init(rootViewController: enterVC)
+            self.window?.rootViewController = nav
+        }
+    }
 }
 

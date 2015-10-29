@@ -8,11 +8,11 @@
 
 import UIKit
 
-class UIRegistViewController: UIViewController {
+class UIRegistViewController: UIBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationItem.title = "注册"
         // Do any additional setup after loading the view.
     }
 
@@ -21,6 +21,10 @@ class UIRegistViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func registConfirm(sender: UIButton) {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.exchangeRootViewController(true)
+    }
 
     /*
     // MARK: - Navigation
