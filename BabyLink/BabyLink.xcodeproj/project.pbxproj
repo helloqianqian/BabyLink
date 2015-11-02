@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C07BB4F1BE5CF41003E799B /* UIAgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C07BB4D1BE5CF41003E799B /* UIAgreementViewController.swift */; };
+		4C07BB501BE5CF41003E799B /* UIAgreementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C07BB4E1BE5CF41003E799B /* UIAgreementViewController.xib */; };
+		4C07BB531BE5F433003E799B /* UIFullInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C07BB511BE5F433003E799B /* UIFullInfoViewController.swift */; };
+		4C07BB541BE5F433003E799B /* UIFullInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C07BB521BE5F433003E799B /* UIFullInfoViewController.xib */; };
+		4C07BB571BE5F445003E799B /* UIFirstInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C07BB551BE5F445003E799B /* UIFirstInfoViewController.swift */; };
+		4C07BB581BE5F445003E799B /* UIFirstInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C07BB561BE5F445003E799B /* UIFirstInfoViewController.xib */; };
+		4C07BB5B1BE5F456003E799B /* UISecondInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C07BB591BE5F456003E799B /* UISecondInfoViewController.swift */; };
+		4C07BB5C1BE5F456003E799B /* UISecondInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C07BB5A1BE5F456003E799B /* UISecondInfoViewController.xib */; };
+		4C07BB5F1BE60769003E799B /* UICenterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C07BB5D1BE60769003E799B /* UICenterTableViewCell.swift */; };
+		4C07BB601BE60769003E799B /* UICenterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C07BB5E1BE60769003E799B /* UICenterTableViewCell.xib */; };
 		4CF6EF5E1BDCA47600CC5BA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6EF5D1BDCA47600CC5BA7 /* AppDelegate.swift */; };
 		4CF6EF601BDCA47600CC5BA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6EF5F1BDCA47600CC5BA7 /* ViewController.swift */; };
 		4CF6EF631BDCA47600CC5BA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CF6EF611BDCA47600CC5BA7 /* Main.storyboard */; };
@@ -39,6 +49,7 @@
 		4CF6EFD01BDF6FE700CC5BA7 /* UIForgetPWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6EFCE1BDF6FE700CC5BA7 /* UIForgetPWViewController.swift */; };
 		4CF6EFD11BDF6FE700CC5BA7 /* UIForgetPWViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CF6EFCF1BDF6FE700CC5BA7 /* UIForgetPWViewController.xib */; };
 		4CF6EFD31BDF70C400CC5BA7 /* NSUserInfoObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6EFD21BDF70C400CC5BA7 /* NSUserInfoObject.swift */; };
+		4CF6EFD61BE260F400CC5BA7 /* UIBaseTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6EFD51BE260F400CC5BA7 /* UIBaseTabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +70,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C07BB4D1BE5CF41003E799B /* UIAgreementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAgreementViewController.swift; sourceTree = "<group>"; };
+		4C07BB4E1BE5CF41003E799B /* UIAgreementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIAgreementViewController.xib; sourceTree = "<group>"; };
+		4C07BB511BE5F433003E799B /* UIFullInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFullInfoViewController.swift; sourceTree = "<group>"; };
+		4C07BB521BE5F433003E799B /* UIFullInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIFullInfoViewController.xib; sourceTree = "<group>"; };
+		4C07BB551BE5F445003E799B /* UIFirstInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFirstInfoViewController.swift; sourceTree = "<group>"; };
+		4C07BB561BE5F445003E799B /* UIFirstInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIFirstInfoViewController.xib; sourceTree = "<group>"; };
+		4C07BB591BE5F456003E799B /* UISecondInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISecondInfoViewController.swift; sourceTree = "<group>"; };
+		4C07BB5A1BE5F456003E799B /* UISecondInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UISecondInfoViewController.xib; sourceTree = "<group>"; };
+		4C07BB5D1BE60769003E799B /* UICenterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICenterTableViewCell.swift; sourceTree = "<group>"; };
+		4C07BB5E1BE60769003E799B /* UICenterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UICenterTableViewCell.xib; sourceTree = "<group>"; };
 		4CF6EF5A1BDCA47600CC5BA7 /* BabyLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabyLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CF6EF5D1BDCA47600CC5BA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CF6EF5F1BDCA47600CC5BA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +120,7 @@
 		4CF6EFCE1BDF6FE700CC5BA7 /* UIForgetPWViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIForgetPWViewController.swift; sourceTree = "<group>"; };
 		4CF6EFCF1BDF6FE700CC5BA7 /* UIForgetPWViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIForgetPWViewController.xib; sourceTree = "<group>"; };
 		4CF6EFD21BDF70C400CC5BA7 /* NSUserInfoObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSUserInfoObject.swift; sourceTree = "<group>"; };
+		4CF6EFD51BE260F400CC5BA7 /* UIBaseTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBaseTabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +255,14 @@
 				4CF6EFC71BDF6F7700CC5BA7 /* UIRegistViewController.xib */,
 				4CF6EFCE1BDF6FE700CC5BA7 /* UIForgetPWViewController.swift */,
 				4CF6EFCF1BDF6FE700CC5BA7 /* UIForgetPWViewController.xib */,
+				4C07BB4D1BE5CF41003E799B /* UIAgreementViewController.swift */,
+				4C07BB4E1BE5CF41003E799B /* UIAgreementViewController.xib */,
+				4C07BB511BE5F433003E799B /* UIFullInfoViewController.swift */,
+				4C07BB521BE5F433003E799B /* UIFullInfoViewController.xib */,
+				4C07BB551BE5F445003E799B /* UIFirstInfoViewController.swift */,
+				4C07BB561BE5F445003E799B /* UIFirstInfoViewController.xib */,
+				4C07BB591BE5F456003E799B /* UISecondInfoViewController.swift */,
+				4C07BB5A1BE5F456003E799B /* UISecondInfoViewController.xib */,
 			);
 			path = login;
 			sourceTree = "<group>";
@@ -324,6 +354,8 @@
 		4CF6EF9A1BDE58D300CC5BA7 /* centerViews */ = {
 			isa = PBXGroup;
 			children = (
+				4C07BB5D1BE60769003E799B /* UICenterTableViewCell.swift */,
+				4C07BB5E1BE60769003E799B /* UICenterTableViewCell.xib */,
 			);
 			path = centerViews;
 			sourceTree = "<group>";
@@ -376,6 +408,7 @@
 		4CF6EFD41BE06AC200CC5BA7 /* baseViews */ = {
 			isa = PBXGroup;
 			children = (
+				4CF6EFD51BE260F400CC5BA7 /* UIBaseTabBar.swift */,
 			);
 			path = baseViews;
 			sourceTree = "<group>";
@@ -486,16 +519,21 @@
 			files = (
 				4CF6EF681BDCA47600CC5BA7 /* LaunchScreen.storyboard in Resources */,
 				4CF6EFB91BDF6ED000CC5BA7 /* UIShowViewController.xib in Resources */,
+				4C07BB5C1BE5F456003E799B /* UISecondInfoViewController.xib in Resources */,
 				4CF6EFAD1BDF50E900CC5BA7 /* UIBridgeViewController.xib in Resources */,
+				4C07BB581BE5F445003E799B /* UIFirstInfoViewController.xib in Resources */,
+				4C07BB501BE5CF41003E799B /* UIAgreementViewController.xib in Resources */,
 				4CF6EFB51BDF68AD00CC5BA7 /* UILocalViewController.xib in Resources */,
 				4CF6EFC51BDF6F6600CC5BA7 /* UILoginViewController.xib in Resources */,
 				4CF6EFC11BDF6EF900CC5BA7 /* UICenterViewController.xib in Resources */,
 				4CF6EFA31BDE5A2600CC5BA7 /* UIBaseNavViewController.xib in Resources */,
 				4CF6EFCD1BDF6F9700CC5BA7 /* UIEnterViewController.xib in Resources */,
 				4CF6EF651BDCA47600CC5BA7 /* Assets.xcassets in Resources */,
+				4C07BB601BE60769003E799B /* UICenterTableViewCell.xib in Resources */,
 				4CF6EFD11BDF6FE700CC5BA7 /* UIForgetPWViewController.xib in Resources */,
 				4CF6EF631BDCA47600CC5BA7 /* Main.storyboard in Resources */,
 				4CF6EFC91BDF6F7700CC5BA7 /* UIRegistViewController.xib in Resources */,
+				4C07BB541BE5F433003E799B /* UIFullInfoViewController.xib in Resources */,
 				4CF6EFBD1BDF6EE300CC5BA7 /* UIFindViewController.xib in Resources */,
 				4CF6EFB11BDF512B00CC5BA7 /* UIBaseViewController.xib in Resources */,
 				4CF6EFA71BDE5A4700CC5BA7 /* UIBaseTabBarController.xib in Resources */,
@@ -524,16 +562,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CF6EFA61BDE5A4700CC5BA7 /* UIBaseTabBarController.swift in Sources */,
+				4C07BB531BE5F433003E799B /* UIFullInfoViewController.swift in Sources */,
 				4CF6EFB01BDF512B00CC5BA7 /* UIBaseViewController.swift in Sources */,
+				4C07BB571BE5F445003E799B /* UIFirstInfoViewController.swift in Sources */,
+				4CF6EFD61BE260F400CC5BA7 /* UIBaseTabBar.swift in Sources */,
 				4CF6EFC81BDF6F7700CC5BA7 /* UIRegistViewController.swift in Sources */,
 				4CF6EFB41BDF68AD00CC5BA7 /* UILocalViewController.swift in Sources */,
 				4CF6EFB81BDF6ED000CC5BA7 /* UIShowViewController.swift in Sources */,
 				4CF6EFA21BDE5A2600CC5BA7 /* UIBaseNavViewController.swift in Sources */,
+				4C07BB5F1BE60769003E799B /* UICenterTableViewCell.swift in Sources */,
 				4CF6EFC41BDF6F6600CC5BA7 /* UILoginViewController.swift in Sources */,
 				4CF6EFC01BDF6EF900CC5BA7 /* UICenterViewController.swift in Sources */,
 				4CF6EFD01BDF6FE700CC5BA7 /* UIForgetPWViewController.swift in Sources */,
+				4C07BB5B1BE5F456003E799B /* UISecondInfoViewController.swift in Sources */,
 				4CF6EFD31BDF70C400CC5BA7 /* NSUserInfoObject.swift in Sources */,
 				4CF6EFAC1BDF50E900CC5BA7 /* UIBridgeViewController.m in Sources */,
+				4C07BB4F1BE5CF41003E799B /* UIAgreementViewController.swift in Sources */,
 				4CF6EFCC1BDF6F9700CC5BA7 /* UIEnterViewController.swift in Sources */,
 				4CF6EFBC1BDF6EE300CC5BA7 /* UIFindViewController.swift in Sources */,
 				4CF6EF601BDCA47600CC5BA7 /* ViewController.swift in Sources */,
@@ -681,7 +725,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = BabyLink/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shiliuke.BabyLink;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -698,7 +742,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = BabyLink/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shiliuke.BabyLink;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -34,6 +34,10 @@ class UIEnterViewController: UIBaseViewController {
         self.navigationController?.pushViewController(loginVC, animated: true)
     }
     
+    @IBAction func agreement(sender: AnyObject) {
+        let agreementVC = UIAgreementViewController.init(nibName:"UIAgreementViewController", bundle:NSBundle.mainBundle());
+        self.navigationController?.pushViewController(agreementVC, animated: true);
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

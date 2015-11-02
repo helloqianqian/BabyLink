@@ -1,19 +1,20 @@
 //
-//  UIRegistViewController.swift
+//  UIFirstInfoViewController.swift
 //  BabyLink
 //
-//  Created by 黄倩 on 15/10/27.
+//  Created by 黄倩 on 15/11/1.
 //  Copyright © 2015年 黄倩. All rights reserved.
 //
 
 import UIKit
 
-class UIRegistViewController: UIBaseViewController {
+class UIFirstInfoViewController: UIBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "注册"
+
         // Do any additional setup after loading the view.
+        self.navigationItem.title = "完善资料"
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,17 +22,10 @@ class UIRegistViewController: UIBaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func registConfirm(sender: UIButton) {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        appDelegate.exchangeRootViewController(true)
+    @IBAction func getVerticalNum(sender: AnyObject) {
     }
 
-    @IBAction func agreementEnter(sender: AnyObject) {
-        let agreementVC = UIAgreementViewController.init(nibName:"UIAgreementViewController", bundle:NSBundle.mainBundle());
-        self.navigationController?.pushViewController(agreementVC, animated: true);
-    }
-    @IBAction func getVerticalNum(sender: AnyObject) {
-    
+    @IBAction func nextStep(sender: AnyObject) {
     }
     /*
     // MARK: - Navigation

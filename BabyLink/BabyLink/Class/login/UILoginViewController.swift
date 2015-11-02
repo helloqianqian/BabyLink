@@ -10,6 +10,8 @@ import UIKit
 
 class UILoginViewController: UIBaseViewController {
 
+    @IBOutlet weak var UIPhoneNumTextField: UITextField!
+    @IBOutlet weak var UIPWTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -23,15 +25,25 @@ class UILoginViewController: UIBaseViewController {
     }
     
     func registEnter(sender:AnyObject){
-        let registVC = UIRegistViewController.init(nibName:"UIRegistViewController", bundle:NSBundle.mainBundle())
-        self.navigationController?.pushViewController(registVC, animated: true)
+        let registVC = UIRegistViewController.init(nibName:"UIRegistViewController", bundle:NSBundle.mainBundle());
+        self.navigationController?.pushViewController(registVC, animated: true);
     }
     @IBAction func loginConfirm(sender: UIButton) {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.exchangeRootViewController(true)
     }
     
+    @IBAction func forgetPWEnter(sender: AnyObject) {
+        let forgetPWVC = UIForgetPWViewController.init(nibName:"UIForgetPWViewController", bundle:NSBundle.mainBundle());
+        self.navigationController?.pushViewController(forgetPWVC, animated: true);
+    }
     
+    @IBAction func loginFromSinaEnter(sender: AnyObject) {
+    }
+    @IBAction func loginFromQQEnter(sender: AnyObject) {
+    }
+    @IBAction func loginFromWeiXinEnter(sender: AnyObject) {
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

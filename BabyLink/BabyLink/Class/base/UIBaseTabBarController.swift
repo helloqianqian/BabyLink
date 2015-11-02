@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UIBaseTabBarController: UITabBarController {
+class UIBaseTabBarController: UITabBarController, UIBaseTabBarDelegate {
 
     var localView:UILocalViewController!;
     var showView:UIShowViewController!;
@@ -28,9 +28,6 @@ class UIBaseTabBarController: UITabBarController {
         let showNav = UIBaseNavViewController(rootViewController: showView)
         self.addChildViewController(showNav)
         
-        let blankVC = UIViewController.init()
-        self.addChildViewController(blankVC)
-        
         findView = UIFindViewController(nibName:"UIFindViewController", bundle: NSBundle.mainBundle())
         findView.title = "发现"
         let findNav = UIBaseNavViewController(rootViewController: findView)
@@ -40,13 +37,14 @@ class UIBaseTabBarController: UITabBarController {
         centerView.title = "我"
         let centerNav = UIBaseNavViewController(rootViewController: centerView)
         self.addChildViewController(centerNav)
+                
+        let tabbarReplace = UIBaseTabBar.init(frame: CGRectZero)
+        tabbarReplace.baseTabBarDelegate = self;
+        tabbarReplace.translucent = false;
+        tabbarReplace.tintColor = UIColor.purpleColor();
+        tabbarReplace.barTintColor = UIColor.blackColor();
+        self.setValue(tabbarReplace, forKey: "tabBar")
         
-        let createBtn = UIButton.init(type: UIButtonType.Custom)
-        createBtn.setTitle("创建", forState: UIControlState.Normal)
-        createBtn.backgroundColor = UIColor.redColor()
-        createBtn.frame = CGRectMake((MainScreenWidth-45)/2, 0, 50, 45)
-        createBtn.addTarget(self, action: "createActivity:", forControlEvents: UIControlEvents.TouchUpInside)
-        self.tabBar.addSubview(createBtn)
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -54,16 +52,18 @@ class UIBaseTabBarController: UITabBarController {
     }
     
     
-    func createActivity(sender:UIButton) {
-        NSLog("1234567890")
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func tabBardidClickPlusButton(tabBar: UITabBar) {
+        
+    }
 
+    
+    
     /*
     // MARK: - Navigation
 

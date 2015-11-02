@@ -14,8 +14,15 @@ class UIForgetPWViewController: UIBaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.navigationItem.title = "重置密码";
     }
 
+    @IBAction func getVerticalNum(sender: AnyObject) {
+        
+    }
+    @IBAction func resetPWConfirm(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
