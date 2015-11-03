@@ -14,6 +14,11 @@ class UIBaseViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+//        let backButton = UIBarButtonItem(image: UIImage(named: "nav_left_btn"), style: UIBarButtonItemStyle.Plain, target: Common.rootViewController, action: Selector("showLeft"))
+//        self.navigationItem.leftBarButtonItem = backButton
+        
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action: "")
     }
 
     override func didReceiveMemoryWarning() {

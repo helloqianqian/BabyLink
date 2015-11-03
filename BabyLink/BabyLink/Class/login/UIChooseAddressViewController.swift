@@ -1,25 +1,19 @@
 //
-//  UIShowViewController.swift
+//  UIChooseAddressViewController.swift
 //  BabyLink
 //
-//  Created by 黄倩 on 15/10/27.
+//  Created by 黄倩 on 15/11/2.
 //  Copyright © 2015年 黄倩. All rights reserved.
 //
 
 import UIKit
 
-class UIShowViewController: UIBaseViewController {
+class UIChooseAddressViewController: UIBaseViewController {
 
-    var titleView:UIShowNavigationView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        titleView = NSBundle.mainBundle().loadNibNamed("UIShowNavigationView", owner: nil, options: nil).first as! UIShowNavigationView;
-        titleView.selectedIndex = 0;
-        titleView.frame = CGRectMake(0, 0, MainScreenWidth, 44)
-        self.navigationItem.titleView = titleView;
     }
 
     override func didReceiveMemoryWarning() {

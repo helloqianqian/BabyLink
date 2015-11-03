@@ -28,6 +28,11 @@ class UIEnterViewController: UIBaseViewController {
         self.navigationController?.navigationBarHidden = true
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBarHidden = false
+    }
+    
     @IBAction func enter(sender: AnyObject) {
         let loginVC = UILoginViewController.init(nibName:"UILoginViewController", bundle:NSBundle.mainBundle())
         

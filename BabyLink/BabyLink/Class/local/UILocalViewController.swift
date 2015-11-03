@@ -14,6 +14,11 @@ class UILocalViewController: UIBaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        let titleView = NSBundle.mainBundle().loadNibNamed("UILocalNavigationView", owner: nil, options: nil).first as! UILocalNavigationView;
+        titleView.selectedItem = 0;
+        titleView.frame = CGRectMake(0, 0, MainScreenWidth, 44)
+        self.navigationItem.titleView = titleView;
     }
 
     override func didReceiveMemoryWarning() {

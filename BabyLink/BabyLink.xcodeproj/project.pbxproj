@@ -17,6 +17,12 @@
 		4C07BB5C1BE5F456003E799B /* UISecondInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C07BB5A1BE5F456003E799B /* UISecondInfoViewController.xib */; };
 		4C07BB5F1BE60769003E799B /* UICenterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C07BB5D1BE60769003E799B /* UICenterTableViewCell.swift */; };
 		4C07BB601BE60769003E799B /* UICenterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C07BB5E1BE60769003E799B /* UICenterTableViewCell.xib */; };
+		4CA59AC61BE79B3300C614FC /* UIChooseAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA59AC41BE79B3300C614FC /* UIChooseAddressViewController.swift */; };
+		4CA59AC71BE79B3300C614FC /* UIChooseAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA59AC51BE79B3300C614FC /* UIChooseAddressViewController.xib */; };
+		4CA59ACA1BE7B07600C614FC /* UILocalNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA59AC91BE7B07600C614FC /* UILocalNavigationView.swift */; };
+		4CA59ACC1BE7B08400C614FC /* UILocalNavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA59ACB1BE7B08400C614FC /* UILocalNavigationView.xib */; };
+		4CA59ACE1BE85B5C00C614FC /* UIShowNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA59ACD1BE85B5C00C614FC /* UIShowNavigationView.swift */; };
+		4CA59AD01BE85B6800C614FC /* UIShowNavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA59ACF1BE85B6800C614FC /* UIShowNavigationView.xib */; };
 		4CF6EF5E1BDCA47600CC5BA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6EF5D1BDCA47600CC5BA7 /* AppDelegate.swift */; };
 		4CF6EF601BDCA47600CC5BA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6EF5F1BDCA47600CC5BA7 /* ViewController.swift */; };
 		4CF6EF631BDCA47600CC5BA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CF6EF611BDCA47600CC5BA7 /* Main.storyboard */; };
@@ -80,6 +86,12 @@
 		4C07BB5A1BE5F456003E799B /* UISecondInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UISecondInfoViewController.xib; sourceTree = "<group>"; };
 		4C07BB5D1BE60769003E799B /* UICenterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICenterTableViewCell.swift; sourceTree = "<group>"; };
 		4C07BB5E1BE60769003E799B /* UICenterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UICenterTableViewCell.xib; sourceTree = "<group>"; };
+		4CA59AC41BE79B3300C614FC /* UIChooseAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIChooseAddressViewController.swift; sourceTree = "<group>"; };
+		4CA59AC51BE79B3300C614FC /* UIChooseAddressViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIChooseAddressViewController.xib; sourceTree = "<group>"; };
+		4CA59AC91BE7B07600C614FC /* UILocalNavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILocalNavigationView.swift; sourceTree = "<group>"; };
+		4CA59ACB1BE7B08400C614FC /* UILocalNavigationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UILocalNavigationView.xib; sourceTree = "<group>"; };
+		4CA59ACD1BE85B5C00C614FC /* UIShowNavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIShowNavigationView.swift; sourceTree = "<group>"; };
+		4CA59ACF1BE85B6800C614FC /* UIShowNavigationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIShowNavigationView.xib; sourceTree = "<group>"; };
 		4CF6EF5A1BDCA47600CC5BA7 /* BabyLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabyLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CF6EF5D1BDCA47600CC5BA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CF6EF5F1BDCA47600CC5BA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +160,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4CA59AC81BE7A95C00C614FC /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		4CF6EF511BDCA47600CC5BA7 = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +190,7 @@
 		4CF6EF5C1BDCA47600CC5BA7 /* BabyLink */ = {
 			isa = PBXGroup;
 			children = (
+				4CA59AC81BE7A95C00C614FC /* Category */,
 				4CF6EF8B1BDE58D300CC5BA7 /* Class */,
 				4CF6EF911BDE58D300CC5BA7 /* globalParams */,
 				4CF6EF921BDE58D300CC5BA7 /* Library */,
@@ -263,6 +283,8 @@
 				4C07BB561BE5F445003E799B /* UIFirstInfoViewController.xib */,
 				4C07BB591BE5F456003E799B /* UISecondInfoViewController.swift */,
 				4C07BB5A1BE5F456003E799B /* UISecondInfoViewController.xib */,
+				4CA59AC41BE79B3300C614FC /* UIChooseAddressViewController.swift */,
+				4CA59AC51BE79B3300C614FC /* UIChooseAddressViewController.xib */,
 			);
 			path = login;
 			sourceTree = "<group>";
@@ -370,6 +392,8 @@
 		4CF6EF9C1BDE58D300CC5BA7 /* localViews */ = {
 			isa = PBXGroup;
 			children = (
+				4CA59AC91BE7B07600C614FC /* UILocalNavigationView.swift */,
+				4CA59ACB1BE7B08400C614FC /* UILocalNavigationView.xib */,
 			);
 			path = localViews;
 			sourceTree = "<group>";
@@ -384,6 +408,8 @@
 		4CF6EF9E1BDE58D300CC5BA7 /* showViews */ = {
 			isa = PBXGroup;
 			children = (
+				4CA59ACD1BE85B5C00C614FC /* UIShowNavigationView.swift */,
+				4CA59ACF1BE85B6800C614FC /* UIShowNavigationView.xib */,
 			);
 			path = showViews;
 			sourceTree = "<group>";
@@ -529,6 +555,8 @@
 				4CF6EFA31BDE5A2600CC5BA7 /* UIBaseNavViewController.xib in Resources */,
 				4CF6EFCD1BDF6F9700CC5BA7 /* UIEnterViewController.xib in Resources */,
 				4CF6EF651BDCA47600CC5BA7 /* Assets.xcassets in Resources */,
+				4CA59AD01BE85B6800C614FC /* UIShowNavigationView.xib in Resources */,
+				4CA59ACC1BE7B08400C614FC /* UILocalNavigationView.xib in Resources */,
 				4C07BB601BE60769003E799B /* UICenterTableViewCell.xib in Resources */,
 				4CF6EFD11BDF6FE700CC5BA7 /* UIForgetPWViewController.xib in Resources */,
 				4CF6EF631BDCA47600CC5BA7 /* Main.storyboard in Resources */,
@@ -536,6 +564,7 @@
 				4C07BB541BE5F433003E799B /* UIFullInfoViewController.xib in Resources */,
 				4CF6EFBD1BDF6EE300CC5BA7 /* UIFindViewController.xib in Resources */,
 				4CF6EFB11BDF512B00CC5BA7 /* UIBaseViewController.xib in Resources */,
+				4CA59AC71BE79B3300C614FC /* UIChooseAddressViewController.xib in Resources */,
 				4CF6EFA71BDE5A4700CC5BA7 /* UIBaseTabBarController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -575,12 +604,15 @@
 				4CF6EFC01BDF6EF900CC5BA7 /* UICenterViewController.swift in Sources */,
 				4CF6EFD01BDF6FE700CC5BA7 /* UIForgetPWViewController.swift in Sources */,
 				4C07BB5B1BE5F456003E799B /* UISecondInfoViewController.swift in Sources */,
+				4CA59AC61BE79B3300C614FC /* UIChooseAddressViewController.swift in Sources */,
+				4CA59ACE1BE85B5C00C614FC /* UIShowNavigationView.swift in Sources */,
 				4CF6EFD31BDF70C400CC5BA7 /* NSUserInfoObject.swift in Sources */,
 				4CF6EFAC1BDF50E900CC5BA7 /* UIBridgeViewController.m in Sources */,
 				4C07BB4F1BE5CF41003E799B /* UIAgreementViewController.swift in Sources */,
 				4CF6EFCC1BDF6F9700CC5BA7 /* UIEnterViewController.swift in Sources */,
 				4CF6EFBC1BDF6EE300CC5BA7 /* UIFindViewController.swift in Sources */,
 				4CF6EF601BDCA47600CC5BA7 /* ViewController.swift in Sources */,
+				4CA59ACA1BE7B07600C614FC /* UILocalNavigationView.swift in Sources */,
 				4CF6EF5E1BDCA47600CC5BA7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

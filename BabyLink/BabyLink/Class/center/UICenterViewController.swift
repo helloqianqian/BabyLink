@@ -47,7 +47,6 @@ class UICenterViewController: UIBaseViewController ,UITableViewDelegate,UITableV
         blurView2.frame = leftPayment.frame;
         self.view.addSubview(blurView2);
         self.view.bringSubviewToFront(leftPayment);
-        
     }
 
     // MARK: - UITableViewDelegate

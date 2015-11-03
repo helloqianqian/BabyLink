@@ -51,12 +51,16 @@
                         <action selector="getVerticalNum:" destination="-1" eventType="touchUpInside" id="EVE-Sx-xRg"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="请选择您所在的小区" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WGB-Bd-z02">
+                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="请选择您所在的小区" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WGB-Bd-z02">
                     <rect key="frame" x="61" y="240" width="222" height="36"/>
                     <animations/>
+                    <gestureRecognizers/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="9nd-nR-ase" appends="YES" id="kWj-fz-mnI"/>
+                    </connections>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P5w-UU-RuL">
                     <rect key="frame" x="23" y="302" width="274" height="30"/>
@@ -68,18 +72,32 @@
                         <action selector="nextStep:" destination="-1" eventType="touchUpInside" id="Ndb-55-0i7"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="请选择您所在的城市" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20l-Ye-fwh">
+                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="请选择您所在的城市" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20l-Ye-fwh">
                     <rect key="frame" x="60" y="180" width="237" height="42"/>
                     <animations/>
+                    <gestureRecognizers/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="EhJ-Fa-JaP" appends="YES" id="fCS-m2-gcE"/>
+                    </connections>
                 </label>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="237" y="267"/>
+            <point key="canvasLocation" x="190" y="232"/>
         </view>
+        <tapGestureRecognizer id="EhJ-Fa-JaP">
+            <connections>
+                <action selector="chooseCityTap:" destination="-1" id="PoP-aT-0Wi"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="9nd-nR-ase">
+            <connections>
+                <action selector="chooseAddressTap:" destination="-1" id="Xgf-O9-q0j"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
 </document>

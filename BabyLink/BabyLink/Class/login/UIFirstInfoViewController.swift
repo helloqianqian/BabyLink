@@ -27,6 +27,11 @@ class UIFirstInfoViewController: UIBaseViewController {
 
     @IBAction func nextStep(sender: AnyObject) {
     }
+    @IBAction func chooseCityTap(sender: UITapGestureRecognizer) {
+    }
+    @IBAction func chooseAddressTap(sender: UITapGestureRecognizer) {
+    }
+    
     /*
     // MARK: - Navigation
 

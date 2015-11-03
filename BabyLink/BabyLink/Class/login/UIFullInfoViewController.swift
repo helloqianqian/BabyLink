@@ -12,6 +12,15 @@ class UIFullInfoViewController: UIBaseViewController {
 
     @IBOutlet weak var femaleBtn: UIButton!
     @IBOutlet weak var maleBtn: UIButton!
+    
+    @IBOutlet weak var cityLabel: UILabel!
+    
+    @IBOutlet weak var addressLabel: UILabel!
+    
+    @IBOutlet weak var birthdayLabel: UILabel!
+    
+    @IBOutlet weak var relateLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,6 +38,22 @@ class UIFullInfoViewController: UIBaseViewController {
 
     @IBAction func commitTheInfo(sender: AnyObject) {
     }
+    
+    @IBAction func chooseCityTap(sender: UITapGestureRecognizer) {
+        NSLog("11111")
+    }
+    @IBAction func chooseAddressTap(sender: UITapGestureRecognizer) {
+        NSLog("2222")
+    }
+    
+    @IBAction func chooseBabyBirthday(sender: UITapGestureRecognizer) {
+        NSLog("33333")
+    }
+    @IBAction func chooseTheRelationShip(sender: UITapGestureRecognizer) {
+        NSLog("44444")
+    }
+    
+    
     /*
     // MARK: - Navigation
 

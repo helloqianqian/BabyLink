@@ -29,6 +29,10 @@ class UISecondInfoViewController: UIBaseViewController {
     @IBAction func commitTheInfo(sender: AnyObject) {
     }
 
+    @IBAction func chooseBirthdayTap(sender: UITapGestureRecognizer) {
+    }
+    @IBAction func chooseRelationShipTap(sender: UITapGestureRecognizer) {
+    }
     /*
     // MARK: - Navigation
 

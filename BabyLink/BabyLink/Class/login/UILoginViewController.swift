@@ -21,7 +21,6 @@ class UILoginViewController: UIBaseViewController {
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBarHidden = false
     }
     
     func registEnter(sender:AnyObject){

@@ -22,8 +22,10 @@ class UIRegistViewController: UIBaseViewController {
     }
     
     @IBAction func registConfirm(sender: UIButton) {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        appDelegate.exchangeRootViewController(true)
+//        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+//        appDelegate.exchangeRootViewController(true)
+        let infoVC = UIFullInfoViewController.init(nibName:"UIFullInfoViewController",bundle:NSBundle.mainBundle());
+        self.navigationController?.pushViewController(infoVC, animated: true);
     }
 
     @IBAction func agreementEnter(sender: AnyObject) {

@@ -7,8 +7,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UIFullInfoViewController" customModule="BabyLink" customModuleProvider="target">
             <connections>
+                <outlet property="addressLabel" destination="pLh-pw-9zw" id="RHW-sT-Jsc"/>
+                <outlet property="birthdayLabel" destination="rVf-gb-NhE" id="23f-uB-hfh"/>
+                <outlet property="cityLabel" destination="v9k-qr-YXD" id="hjn-Rm-SGJ"/>
                 <outlet property="femaleBtn" destination="Pa3-9J-i5o" id="LAj-l2-mvk"/>
                 <outlet property="maleBtn" destination="DQu-QS-h1Z" id="enM-Cm-rNg"/>
+                <outlet property="relateLabel" destination="IvV-Xd-9eS" id="hSp-S1-nPg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,24 +21,21 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="请选择您所在的城市" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9k-qr-YXD">
-                    <rect key="frame" x="37" y="74" width="209" height="31"/>
-                    <animations/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="textColor" red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lr9-1m-p86">
                     <rect key="frame" x="254" y="80" width="20" height="20"/>
                     <animations/>
                     <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="请选择您所在的小区" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLh-pw-9zw">
+                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="请选择您所在的小区" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLh-pw-9zw">
                     <rect key="frame" x="37" y="125" width="209" height="21"/>
                     <animations/>
+                    <gestureRecognizers/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="Gyi-0T-ICT" appends="YES" id="UXf-bB-zGW"/>
+                    </connections>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6dZ-Nc-AwX">
                     <rect key="frame" x="254" y="125" width="20" height="20"/>
@@ -79,19 +80,27 @@
                     <color key="textColor" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="请选择宝宝出生日期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVf-gb-NhE">
+                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="请选择宝宝出生日期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVf-gb-NhE">
                     <rect key="frame" x="37" y="299" width="209" height="21"/>
                     <animations/>
+                    <gestureRecognizers/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="2j8-Au-Hqg" appends="YES" id="VeT-lW-O5q"/>
+                    </connections>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="请选择您与宝宝的关系" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IvV-Xd-9eS">
+                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="请选择您与宝宝的关系" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IvV-Xd-9eS">
                     <rect key="frame" x="37" y="341" width="202" height="21"/>
                     <animations/>
+                    <gestureRecognizers/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="vFH-IT-Vu1" appends="YES" id="gNv-9V-Teh"/>
+                    </connections>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZBb-PO-ghd">
                     <rect key="frame" x="28" y="404" width="276" height="30"/>
@@ -105,11 +114,42 @@
                         <action selector="commitTheInfo:" destination="-1" eventType="touchUpInside" id="RUO-04-199"/>
                     </connections>
                 </button>
+                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="请选择您所在的城市" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9k-qr-YXD">
+                    <rect key="frame" x="37" y="74" width="209" height="31"/>
+                    <animations/>
+                    <gestureRecognizers/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="jKb-uf-POp" appends="YES" id="aI1-aU-yi3"/>
+                    </connections>
+                </label>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="234" y="347"/>
+            <point key="canvasLocation" x="-59" y="-54"/>
         </view>
+        <tapGestureRecognizer id="jKb-uf-POp">
+            <connections>
+                <action selector="chooseCityTap:" destination="-1" id="aOV-f5-I0Q"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="Gyi-0T-ICT">
+            <connections>
+                <action selector="chooseAddressTap:" destination="-1" id="A8B-Lq-LXI"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="2j8-Au-Hqg">
+            <connections>
+                <action selector="chooseBabyBirthday:" destination="-1" id="dND-TC-4Tj"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="vFH-IT-Vu1">
+            <connections>
+                <action selector="chooseTheRelationShip:" destination="-1" id="oWZ-uC-F6q"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
 </document>
