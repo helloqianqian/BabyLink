@@ -10,6 +10,11 @@ import UIKit
 
 class UIActivityInfoFifthTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var friendCircle: UIButton!
+    @IBOutlet weak var friendBtn: UIButton!
+    @IBOutlet weak var sinaBtn: UIButton!
+    @IBOutlet weak var qqFriendBtn: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
