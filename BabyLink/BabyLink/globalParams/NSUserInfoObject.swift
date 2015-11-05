@@ -8,17 +8,8 @@
 
 import UIKit
 
-let MainScreenHeight : CGFloat = UIScreen.mainScreen().bounds.size.height;
-let MainScreenWidth : CGFloat = UIScreen.mainScreen().bounds.size.width;
-
-
- let homeListColor0 = UIColor(red: 247/255.0, green: 151/255.0, blue: 30/255.0, alpha: 1.0)
- let homeListColor1 = UIColor(red: 236/255.0, green: 164/255.0, blue: 2/255.0, alpha: 1.0)
- let homeListColor2 = UIColor(red: 245/255.0, green: 223/255.0, blue: 60/255.0, alpha: 1.0)
- let homeListColor3 = UIColor(red: 195/255.0, green: 209/255.0, blue: 64/255.0, alpha: 1.0)
- let homeListColor4 = UIColor(red: 100/255.0, green: 176/255.0, blue: 68/255.0, alpha: 1.0)
- let homeListColor5 = UIColor(red: 52/255.0, green: 182/255.0, blue: 122/255.0, alpha: 1.0)
- let homeListColor6 = UIColor(red: 77/255.0, green: 191/255.0, blue: 217/255.0, alpha: 1.0)
+ let MainScreenHeight : CGFloat = UIScreen.mainScreen().bounds.size.height;
+ let MainScreenWidth : CGFloat = UIScreen.mainScreen().bounds.size.width;
 
  let backgroudColor = UIColor(red: 213/255.0, green: 229/255.0, blue: 207/255.0, alpha: 1.0)
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UILocalViewController: UIBaseViewController ,UIActivityViewDelegate{
+class UILocalViewController: UIBaseViewController ,UILocalNavigationViewDelegate,UIActivityViewDelegate,UIExchangeViewDelegate{
 
     var activityView:UIActivityView!;
     var topicView:UITopicView!;
@@ -22,6 +22,7 @@ class UILocalViewController: UIBaseViewController ,UIActivityViewDelegate{
         
         let titleView = NSBundle.mainBundle().loadNibNamed("UILocalNavigationView", owner: nil, options: nil).first as! UILocalNavigationView;
         titleView.selectedItem = 0;
+        titleView.delegate = self;
         titleView.frame = CGRectMake(0, 0, MainScreenWidth, 44)
         self.navigationItem.titleView = titleView;
         
@@ -41,13 +42,14 @@ class UILocalViewController: UIBaseViewController ,UIActivityViewDelegate{
 
         exchangeView = NSBundle.mainBundle().loadNibNamed("UIExchangeView", owner: nil, options: nil).first as! UIExchangeView;
         viewFrame.origin.x = 2*MainScreenWidth;
+        exchangeView.delegate = self;
         exchangeView.frame = viewFrame;
         scrollview.addSubview(exchangeView);
     }
 
     
     
-    //MARK - UIActivityViewDelegate
+    //MARK: - UIActivityViewDelegate
     func joinInTheActivity(index:Int) {
         let joinVC:UIJoinViewController = UIJoinViewController.init(nibName:"UIJoinViewController",bundle:NSBundle.mainBundle())
         joinVC.hidesBottomBarWhenPushed = true;
@@ -60,11 +62,32 @@ class UILocalViewController: UIBaseViewController ,UIActivityViewDelegate{
         self.navigationController?.pushViewController(infoVC, animated: true);
     }
     
+    //MARK: - UIExchangeViewDelegate
+    func checkTheInfoOfExchange(index: Int) {
+        
+    }
+    //MARK: - UILocalNavigationViewDelegate
+    func didSelectedItem(index: Int) {
+        switch index {
+        case 0:
+            scrollview.setContentOffset(CGPointMake(0, 0), animated: false)
+            break;
+        case 1:
+            scrollview.setContentOffset(CGPointMake(MainScreenWidth, 0), animated: false)
+            break;
+        case 2:
+            scrollview.setContentOffset(CGPointMake(2*MainScreenWidth, 0), animated: false)
+            break;
+        default:
+            break;
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
 
     /*

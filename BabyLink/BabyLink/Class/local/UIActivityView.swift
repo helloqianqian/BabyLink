@@ -28,7 +28,7 @@ class UIActivityView: UIView ,UITableViewDataSource, UITableViewDelegate{
     
     
     
-    //MARK - UITableViewDataSource
+    //MARK: - UITableViewDataSource
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10;
     }
@@ -38,10 +38,16 @@ class UIActivityView: UIView ,UITableViewDataSource, UITableViewDelegate{
         cell.signInBtn.addTarget(self, action: "joinTheActivity:", forControlEvents: UIControlEvents.TouchUpInside);
         return cell;
     }
-    //MARK - UITableViewDelegate
+    //MARK: - UITableViewDelegate
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 338;
+        if iphone6Plus {
+            return 360;
+        } else if iphone6 {
+            return 338;
+        } else {
+            return 310;
+        }
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
