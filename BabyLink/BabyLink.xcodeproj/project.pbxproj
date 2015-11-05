@@ -47,6 +47,8 @@
 		4CA2A87D1BEAE93B0094A6FC /* UIActivityInfoForthTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA2A87B1BEAE93B0094A6FC /* UIActivityInfoForthTableViewCell.xib */; };
 		4CA2A8801BEAE9520094A6FC /* UIActivityInfoFifthTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA2A87E1BEAE9520094A6FC /* UIActivityInfoFifthTableViewCell.swift */; };
 		4CA2A8811BEAE9520094A6FC /* UIActivityInfoFifthTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA2A87F1BEAE9520094A6FC /* UIActivityInfoFifthTableViewCell.xib */; };
+		4CA2A8871BEB258F0094A6FC /* UIActivityInfoFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA2A8861BEB258F0094A6FC /* UIActivityInfoFooterView.swift */; };
+		4CA2A8891BEB25EA0094A6FC /* UIActivityInfoFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA2A8881BEB25EA0094A6FC /* UIActivityInfoFooterView.xib */; };
 		4CA59AC61BE79B3300C614FC /* UIChooseAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA59AC41BE79B3300C614FC /* UIChooseAddressViewController.swift */; };
 		4CA59AC71BE79B3300C614FC /* UIChooseAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA59AC51BE79B3300C614FC /* UIChooseAddressViewController.xib */; };
 		4CA59ACA1BE7B07600C614FC /* UILocalNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA59AC91BE7B07600C614FC /* UILocalNavigationView.swift */; };
@@ -150,6 +152,8 @@
 		4CA2A87B1BEAE93B0094A6FC /* UIActivityInfoForthTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIActivityInfoForthTableViewCell.xib; sourceTree = "<group>"; };
 		4CA2A87E1BEAE9520094A6FC /* UIActivityInfoFifthTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIActivityInfoFifthTableViewCell.swift; sourceTree = "<group>"; };
 		4CA2A87F1BEAE9520094A6FC /* UIActivityInfoFifthTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIActivityInfoFifthTableViewCell.xib; sourceTree = "<group>"; };
+		4CA2A8861BEB258F0094A6FC /* UIActivityInfoFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIActivityInfoFooterView.swift; sourceTree = "<group>"; };
+		4CA2A8881BEB25EA0094A6FC /* UIActivityInfoFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIActivityInfoFooterView.xib; sourceTree = "<group>"; };
 		4CA59AC41BE79B3300C614FC /* UIChooseAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIChooseAddressViewController.swift; sourceTree = "<group>"; };
 		4CA59AC51BE79B3300C614FC /* UIChooseAddressViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIChooseAddressViewController.xib; sourceTree = "<group>"; };
 		4CA59AC91BE7B07600C614FC /* UILocalNavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILocalNavigationView.swift; sourceTree = "<group>"; };
@@ -509,6 +513,8 @@
 				4CA2A87B1BEAE93B0094A6FC /* UIActivityInfoForthTableViewCell.xib */,
 				4CA2A87E1BEAE9520094A6FC /* UIActivityInfoFifthTableViewCell.swift */,
 				4CA2A87F1BEAE9520094A6FC /* UIActivityInfoFifthTableViewCell.xib */,
+				4CA2A8861BEB258F0094A6FC /* UIActivityInfoFooterView.swift */,
+				4CA2A8881BEB25EA0094A6FC /* UIActivityInfoFooterView.xib */,
 			);
 			path = localViews;
 			sourceTree = "<group>";
@@ -687,6 +693,7 @@
 				4CA59ACC1BE7B08400C614FC /* UILocalNavigationView.xib in Resources */,
 				4C07BB601BE60769003E799B /* UICenterTableViewCell.xib in Resources */,
 				4CF6EFD11BDF6FE700CC5BA7 /* UIForgetPWViewController.xib in Resources */,
+				4CA2A8891BEB25EA0094A6FC /* UIActivityInfoFooterView.xib in Resources */,
 				4CF6EF631BDCA47600CC5BA7 /* Main.storyboard in Resources */,
 				4CF6EFC91BDF6F7700CC5BA7 /* UIRegistViewController.xib in Resources */,
 				4C07BB541BE5F433003E799B /* UIFullInfoViewController.xib in Resources */,
@@ -753,6 +760,7 @@
 				4CF6EFAC1BDF50E900CC5BA7 /* UIBridgeViewController.m in Sources */,
 				4C07BB4F1BE5CF41003E799B /* UIAgreementViewController.swift in Sources */,
 				4CA2A84D1BEA40C20094A6FC /* UIButton+CustomStyle.m in Sources */,
+				4CA2A8871BEB258F0094A6FC /* UIActivityInfoFooterView.swift in Sources */,
 				4CF6EFCC1BDF6F9700CC5BA7 /* UIEnterViewController.swift in Sources */,
 				4CF6EFBC1BDF6EE300CC5BA7 /* UIFindViewController.swift in Sources */,
 				4CF6EF601BDCA47600CC5BA7 /* ViewController.swift in Sources */,
