@@ -21,7 +21,7 @@ class UIBaseNavViewController: UINavigationController {
         
         self.navigationBar.tintColor = UIColor.whiteColor()
         //设置标题颜色
-        let titleAtt = [NSForegroundColorAttributeName:UIColor.whiteColor(),NSFontAttributeName:UIFont.boldSystemFontOfSize(17)]
+        let titleAtt = [NSForegroundColorAttributeName:UIColor.whiteColor(),NSFontAttributeName:UIFont.systemFontOfSize(17)]
         self.navigationBar.titleTextAttributes = titleAtt
     }
 

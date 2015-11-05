@@ -14,7 +14,7 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpF-JQ-klq">
                     <rect key="frame" x="31.5" y="18" width="67" height="26"/>
                     <animations/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" title="活动">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -29,7 +29,7 @@
                         <constraint firstAttribute="width" constant="67" id="0G0-HC-iAa"/>
                         <constraint firstAttribute="height" constant="26" id="4NM-5P-cU6"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" title="话题"/>
                     <connections>
                         <action selector="TopicTabFunction:" destination="iN0-l3-epB" eventType="touchUpInside" id="7GX-oY-yNt"/>
@@ -38,7 +38,7 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lpk-qw-04C">
                     <rect key="frame" x="221.5" y="18" width="67" height="26"/>
                     <animations/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" title="置换"/>
                     <connections>
                         <action selector="exchangeTabFunction:" destination="iN0-l3-epB" eventType="touchUpInside" id="4OP-Db-s6f"/>

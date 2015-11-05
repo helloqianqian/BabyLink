@@ -19,7 +19,7 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnR-Ei-Wg1">
                     <rect key="frame" x="2" y="0.0" width="155.5" height="44"/>
                     <animations/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" title="Link"/>
                     <connections>
                         <action selector="linkTabFunction:" destination="iN0-l3-epB" eventType="touchUpInside" id="fNi-sv-p8Y"/>
@@ -28,7 +28,7 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFt-Lg-vTH">
                     <rect key="frame" x="162.5" y="0.0" width="155.5" height="44"/>
                     <animations/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" title="广场"/>
                     <connections>
                         <action selector="squareTabFunction:" destination="iN0-l3-epB" eventType="touchUpInside" id="1oT-lC-tcS"/>

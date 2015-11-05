@@ -17,6 +17,38 @@
 		4C07BB5C1BE5F456003E799B /* UISecondInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C07BB5A1BE5F456003E799B /* UISecondInfoViewController.xib */; };
 		4C07BB5F1BE60769003E799B /* UICenterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C07BB5D1BE60769003E799B /* UICenterTableViewCell.swift */; };
 		4C07BB601BE60769003E799B /* UICenterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C07BB5E1BE60769003E799B /* UICenterTableViewCell.xib */; };
+		4CA2A8361BE9C4BF0094A6FC /* UIActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA2A8341BE9C4BF0094A6FC /* UIActivityTableViewCell.swift */; };
+		4CA2A8371BE9C4BF0094A6FC /* UIActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA2A8351BE9C4BF0094A6FC /* UIActivityTableViewCell.xib */; };
+		4CA2A83A1BE9C4D70094A6FC /* UITopicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA2A8381BE9C4D70094A6FC /* UITopicTableViewCell.swift */; };
+		4CA2A83B1BE9C4D70094A6FC /* UITopicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA2A8391BE9C4D70094A6FC /* UITopicTableViewCell.xib */; };
+		4CA2A83E1BE9C57B0094A6FC /* UIExchangeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA2A83C1BE9C57B0094A6FC /* UIExchangeTableViewCell.swift */; };
+		4CA2A83F1BE9C57B0094A6FC /* UIExchangeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA2A83D1BE9C57B0094A6FC /* UIExchangeTableViewCell.xib */; };
+		4CA2A84D1BEA40C20094A6FC /* UIButton+CustomStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA2A84C1BEA40C20094A6FC /* UIButton+CustomStyle.m */; };
+		4CA2A8541BEA456D0094A6FC /* UIImage+SingleColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA2A8531BEA456D0094A6FC /* UIImage+SingleColor.m */; };
+		4CA2A8581BEA49880094A6FC /* UIActivityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA2A8561BEA49880094A6FC /* UIActivityCollectionViewCell.swift */; };
+		4CA2A8591BEA49880094A6FC /* UIActivityCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA2A8571BEA49880094A6FC /* UIActivityCollectionViewCell.xib */; };
+		4CA2A85B1BEA4B680094A6FC /* UIActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA2A85A1BEA4B680094A6FC /* UIActivityView.swift */; };
+		4CA2A85D1BEA4B750094A6FC /* UIActivityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA2A85C1BEA4B750094A6FC /* UIActivityView.xib */; };
+		4CA2A85F1BEA4B970094A6FC /* UITopicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA2A85E1BEA4B970094A6FC /* UITopicView.swift */; };
+		4CA2A8611BEA4BA90094A6FC /* UITopicView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA2A8601BEA4BA90094A6FC /* UITopicView.xib */; };
+		4CA2A8631BEA4BC00094A6FC /* UIExchangeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA2A8621BEA4BC00094A6FC /* UIExchangeView.xib */; };
+		4CA2A8651BEA4BCD0094A6FC /* UIExchangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA2A8641BEA4BCD0094A6FC /* UIExchangeView.swift */; };
+		4CA2A8681BEA58E70094A6FC /* UIJoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA2A8661BEA58E70094A6FC /* UIJoinViewController.swift */; };
+		4CA2A8691BEA58E70094A6FC /* UIJoinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA2A8671BEA58E70094A6FC /* UIJoinViewController.xib */; };
+		4CA2A86C1BEA58F90094A6FC /* UIActivityInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA2A86A1BEA58F90094A6FC /* UIActivityInfoViewController.swift */; };
+		4CA2A86D1BEA58F90094A6FC /* UIActivityInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA2A86B1BEA58F90094A6FC /* UIActivityInfoViewController.xib */; };
+		4CA2A8701BEAE8D50094A6FC /* UIActivityInfoFirstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA2A86E1BEAE8D50094A6FC /* UIActivityInfoFirstTableViewCell.swift */; };
+		4CA2A8711BEAE8D50094A6FC /* UIActivityInfoFirstTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA2A86F1BEAE8D50094A6FC /* UIActivityInfoFirstTableViewCell.xib */; };
+		4CA2A8741BEAE8E80094A6FC /* UIActivityInfoSecondTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA2A8721BEAE8E80094A6FC /* UIActivityInfoSecondTableViewCell.swift */; };
+		4CA2A8751BEAE8E80094A6FC /* UIActivityInfoSecondTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA2A8731BEAE8E80094A6FC /* UIActivityInfoSecondTableViewCell.xib */; };
+		4CA2A8781BEAE9150094A6FC /* UIActivityInfoThirdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA2A8761BEAE9150094A6FC /* UIActivityInfoThirdTableViewCell.swift */; };
+		4CA2A8791BEAE9150094A6FC /* UIActivityInfoThirdTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA2A8771BEAE9150094A6FC /* UIActivityInfoThirdTableViewCell.xib */; };
+		4CA2A87C1BEAE93B0094A6FC /* UIActivityInfoForthTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA2A87A1BEAE93B0094A6FC /* UIActivityInfoForthTableViewCell.swift */; };
+		4CA2A87D1BEAE93B0094A6FC /* UIActivityInfoForthTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA2A87B1BEAE93B0094A6FC /* UIActivityInfoForthTableViewCell.xib */; };
+		4CA2A8801BEAE9520094A6FC /* UIActivityInfoFifthTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA2A87E1BEAE9520094A6FC /* UIActivityInfoFifthTableViewCell.swift */; };
+		4CA2A8811BEAE9520094A6FC /* UIActivityInfoFifthTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA2A87F1BEAE9520094A6FC /* UIActivityInfoFifthTableViewCell.xib */; };
+		4CA2A8841BEAE9660094A6FC /* UIActivityInfoSixthTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA2A8821BEAE9660094A6FC /* UIActivityInfoSixthTableViewCell.swift */; };
+		4CA2A8851BEAE9660094A6FC /* UIActivityInfoSixthTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA2A8831BEAE9660094A6FC /* UIActivityInfoSixthTableViewCell.xib */; };
 		4CA59AC61BE79B3300C614FC /* UIChooseAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA59AC41BE79B3300C614FC /* UIChooseAddressViewController.swift */; };
 		4CA59AC71BE79B3300C614FC /* UIChooseAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA59AC51BE79B3300C614FC /* UIChooseAddressViewController.xib */; };
 		4CA59ACA1BE7B07600C614FC /* UILocalNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA59AC91BE7B07600C614FC /* UILocalNavigationView.swift */; };
@@ -86,6 +118,42 @@
 		4C07BB5A1BE5F456003E799B /* UISecondInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UISecondInfoViewController.xib; sourceTree = "<group>"; };
 		4C07BB5D1BE60769003E799B /* UICenterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICenterTableViewCell.swift; sourceTree = "<group>"; };
 		4C07BB5E1BE60769003E799B /* UICenterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UICenterTableViewCell.xib; sourceTree = "<group>"; };
+		4CA2A8341BE9C4BF0094A6FC /* UIActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIActivityTableViewCell.swift; sourceTree = "<group>"; };
+		4CA2A8351BE9C4BF0094A6FC /* UIActivityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIActivityTableViewCell.xib; sourceTree = "<group>"; };
+		4CA2A8381BE9C4D70094A6FC /* UITopicTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITopicTableViewCell.swift; sourceTree = "<group>"; };
+		4CA2A8391BE9C4D70094A6FC /* UITopicTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UITopicTableViewCell.xib; sourceTree = "<group>"; };
+		4CA2A83C1BE9C57B0094A6FC /* UIExchangeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExchangeTableViewCell.swift; sourceTree = "<group>"; };
+		4CA2A83D1BE9C57B0094A6FC /* UIExchangeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIExchangeTableViewCell.xib; sourceTree = "<group>"; };
+		4CA2A84B1BEA40C20094A6FC /* UIButton+CustomStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CustomStyle.h"; sourceTree = "<group>"; };
+		4CA2A84C1BEA40C20094A6FC /* UIButton+CustomStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CustomStyle.m"; sourceTree = "<group>"; };
+		4CA2A8501BEA43ED0094A6FC /* PublicHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicHeader.h; sourceTree = "<group>"; };
+		4CA2A8521BEA456D0094A6FC /* UIImage+SingleColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SingleColor.h"; sourceTree = "<group>"; };
+		4CA2A8531BEA456D0094A6FC /* UIImage+SingleColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SingleColor.m"; sourceTree = "<group>"; };
+		4CA2A8551BEA46AF0094A6FC /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		4CA2A8561BEA49880094A6FC /* UIActivityCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIActivityCollectionViewCell.swift; sourceTree = "<group>"; };
+		4CA2A8571BEA49880094A6FC /* UIActivityCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIActivityCollectionViewCell.xib; sourceTree = "<group>"; };
+		4CA2A85A1BEA4B680094A6FC /* UIActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIActivityView.swift; sourceTree = "<group>"; };
+		4CA2A85C1BEA4B750094A6FC /* UIActivityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIActivityView.xib; sourceTree = "<group>"; };
+		4CA2A85E1BEA4B970094A6FC /* UITopicView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITopicView.swift; sourceTree = "<group>"; };
+		4CA2A8601BEA4BA90094A6FC /* UITopicView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UITopicView.xib; sourceTree = "<group>"; };
+		4CA2A8621BEA4BC00094A6FC /* UIExchangeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIExchangeView.xib; sourceTree = "<group>"; };
+		4CA2A8641BEA4BCD0094A6FC /* UIExchangeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExchangeView.swift; sourceTree = "<group>"; };
+		4CA2A8661BEA58E70094A6FC /* UIJoinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIJoinViewController.swift; sourceTree = "<group>"; };
+		4CA2A8671BEA58E70094A6FC /* UIJoinViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIJoinViewController.xib; sourceTree = "<group>"; };
+		4CA2A86A1BEA58F90094A6FC /* UIActivityInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIActivityInfoViewController.swift; sourceTree = "<group>"; };
+		4CA2A86B1BEA58F90094A6FC /* UIActivityInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIActivityInfoViewController.xib; sourceTree = "<group>"; };
+		4CA2A86E1BEAE8D50094A6FC /* UIActivityInfoFirstTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIActivityInfoFirstTableViewCell.swift; sourceTree = "<group>"; };
+		4CA2A86F1BEAE8D50094A6FC /* UIActivityInfoFirstTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIActivityInfoFirstTableViewCell.xib; sourceTree = "<group>"; };
+		4CA2A8721BEAE8E80094A6FC /* UIActivityInfoSecondTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIActivityInfoSecondTableViewCell.swift; sourceTree = "<group>"; };
+		4CA2A8731BEAE8E80094A6FC /* UIActivityInfoSecondTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIActivityInfoSecondTableViewCell.xib; sourceTree = "<group>"; };
+		4CA2A8761BEAE9150094A6FC /* UIActivityInfoThirdTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIActivityInfoThirdTableViewCell.swift; sourceTree = "<group>"; };
+		4CA2A8771BEAE9150094A6FC /* UIActivityInfoThirdTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIActivityInfoThirdTableViewCell.xib; sourceTree = "<group>"; };
+		4CA2A87A1BEAE93B0094A6FC /* UIActivityInfoForthTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIActivityInfoForthTableViewCell.swift; sourceTree = "<group>"; };
+		4CA2A87B1BEAE93B0094A6FC /* UIActivityInfoForthTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIActivityInfoForthTableViewCell.xib; sourceTree = "<group>"; };
+		4CA2A87E1BEAE9520094A6FC /* UIActivityInfoFifthTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIActivityInfoFifthTableViewCell.swift; sourceTree = "<group>"; };
+		4CA2A87F1BEAE9520094A6FC /* UIActivityInfoFifthTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIActivityInfoFifthTableViewCell.xib; sourceTree = "<group>"; };
+		4CA2A8821BEAE9660094A6FC /* UIActivityInfoSixthTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIActivityInfoSixthTableViewCell.swift; sourceTree = "<group>"; };
+		4CA2A8831BEAE9660094A6FC /* UIActivityInfoSixthTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIActivityInfoSixthTableViewCell.xib; sourceTree = "<group>"; };
 		4CA59AC41BE79B3300C614FC /* UIChooseAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIChooseAddressViewController.swift; sourceTree = "<group>"; };
 		4CA59AC51BE79B3300C614FC /* UIChooseAddressViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIChooseAddressViewController.xib; sourceTree = "<group>"; };
 		4CA59AC91BE7B07600C614FC /* UILocalNavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILocalNavigationView.swift; sourceTree = "<group>"; };
@@ -109,7 +177,7 @@
 		4CF6EFA11BDE5A2600CC5BA7 /* UIBaseNavViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIBaseNavViewController.xib; sourceTree = "<group>"; };
 		4CF6EFA41BDE5A4700CC5BA7 /* UIBaseTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBaseTabBarController.swift; sourceTree = "<group>"; };
 		4CF6EFA51BDE5A4700CC5BA7 /* UIBaseTabBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIBaseTabBarController.xib; sourceTree = "<group>"; };
-		4CF6EFA81BDF50E800CC5BA7 /* BabyLink-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BabyLink-Bridging-Header.h"; sourceTree = "<group>"; };
+		4CF6EFA81BDF50E800CC5BA7 /* BabyLink-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "BabyLink-Bridging-Header.h"; path = "../Class/base/BabyLink-Bridging-Header.h"; sourceTree = "<group>"; };
 		4CF6EFA91BDF50E900CC5BA7 /* UIBridgeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBridgeViewController.h; sourceTree = "<group>"; };
 		4CF6EFAA1BDF50E900CC5BA7 /* UIBridgeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBridgeViewController.m; sourceTree = "<group>"; };
 		4CF6EFAB1BDF50E900CC5BA7 /* UIBridgeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIBridgeViewController.xib; sourceTree = "<group>"; };
@@ -160,9 +228,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4CA2A84E1BEA43B50094A6FC /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				4CF6EFA81BDF50E800CC5BA7 /* BabyLink-Bridging-Header.h */,
+				4CA2A8501BEA43ED0094A6FC /* PublicHeader.h */,
+				4CA2A8551BEA46AF0094A6FC /* PrefixHeader.pch */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		4CA2A84F1BEA43BA0094A6FC /* App */ = {
+			isa = PBXGroup;
+			children = (
+				4CF6EF5D1BDCA47600CC5BA7 /* AppDelegate.swift */,
+				4CF6EF5F1BDCA47600CC5BA7 /* ViewController.swift */,
+				4CF6EF611BDCA47600CC5BA7 /* Main.storyboard */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
 		4CA59AC81BE7A95C00C614FC /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				4CA2A84B1BEA40C20094A6FC /* UIButton+CustomStyle.h */,
+				4CA2A84C1BEA40C20094A6FC /* UIButton+CustomStyle.m */,
+				4CA2A8521BEA456D0094A6FC /* UIImage+SingleColor.h */,
+				4CA2A8531BEA456D0094A6FC /* UIImage+SingleColor.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -190,15 +282,14 @@
 		4CF6EF5C1BDCA47600CC5BA7 /* BabyLink */ = {
 			isa = PBXGroup;
 			children = (
+				4CA2A84F1BEA43BA0094A6FC /* App */,
+				4CA2A84E1BEA43B50094A6FC /* Header */,
 				4CA59AC81BE7A95C00C614FC /* Category */,
 				4CF6EF8B1BDE58D300CC5BA7 /* Class */,
 				4CF6EF911BDE58D300CC5BA7 /* globalParams */,
 				4CF6EF921BDE58D300CC5BA7 /* Library */,
 				4CF6EF931BDE58D300CC5BA7 /* Model */,
 				4CF6EF991BDE58D300CC5BA7 /* Views */,
-				4CF6EF5D1BDCA47600CC5BA7 /* AppDelegate.swift */,
-				4CF6EF5F1BDCA47600CC5BA7 /* ViewController.swift */,
-				4CF6EF611BDCA47600CC5BA7 /* Main.storyboard */,
 				4CF6EF641BDCA47600CC5BA7 /* Assets.xcassets */,
 				4CF6EF661BDCA47600CC5BA7 /* LaunchScreen.storyboard */,
 				4CF6EF691BDCA47600CC5BA7 /* Info.plist */,
@@ -260,6 +351,16 @@
 			children = (
 				4CF6EFB21BDF68AD00CC5BA7 /* UILocalViewController.swift */,
 				4CF6EFB31BDF68AD00CC5BA7 /* UILocalViewController.xib */,
+				4CA2A85A1BEA4B680094A6FC /* UIActivityView.swift */,
+				4CA2A85C1BEA4B750094A6FC /* UIActivityView.xib */,
+				4CA2A85E1BEA4B970094A6FC /* UITopicView.swift */,
+				4CA2A8601BEA4BA90094A6FC /* UITopicView.xib */,
+				4CA2A8641BEA4BCD0094A6FC /* UIExchangeView.swift */,
+				4CA2A8621BEA4BC00094A6FC /* UIExchangeView.xib */,
+				4CA2A8661BEA58E70094A6FC /* UIJoinViewController.swift */,
+				4CA2A8671BEA58E70094A6FC /* UIJoinViewController.xib */,
+				4CA2A86A1BEA58F90094A6FC /* UIActivityInfoViewController.swift */,
+				4CA2A86B1BEA58F90094A6FC /* UIActivityInfoViewController.xib */,
 			);
 			path = local;
 			sourceTree = "<group>";
@@ -394,6 +495,26 @@
 			children = (
 				4CA59AC91BE7B07600C614FC /* UILocalNavigationView.swift */,
 				4CA59ACB1BE7B08400C614FC /* UILocalNavigationView.xib */,
+				4CA2A8341BE9C4BF0094A6FC /* UIActivityTableViewCell.swift */,
+				4CA2A8351BE9C4BF0094A6FC /* UIActivityTableViewCell.xib */,
+				4CA2A8381BE9C4D70094A6FC /* UITopicTableViewCell.swift */,
+				4CA2A8391BE9C4D70094A6FC /* UITopicTableViewCell.xib */,
+				4CA2A83C1BE9C57B0094A6FC /* UIExchangeTableViewCell.swift */,
+				4CA2A83D1BE9C57B0094A6FC /* UIExchangeTableViewCell.xib */,
+				4CA2A8561BEA49880094A6FC /* UIActivityCollectionViewCell.swift */,
+				4CA2A8571BEA49880094A6FC /* UIActivityCollectionViewCell.xib */,
+				4CA2A86E1BEAE8D50094A6FC /* UIActivityInfoFirstTableViewCell.swift */,
+				4CA2A86F1BEAE8D50094A6FC /* UIActivityInfoFirstTableViewCell.xib */,
+				4CA2A8721BEAE8E80094A6FC /* UIActivityInfoSecondTableViewCell.swift */,
+				4CA2A8731BEAE8E80094A6FC /* UIActivityInfoSecondTableViewCell.xib */,
+				4CA2A8761BEAE9150094A6FC /* UIActivityInfoThirdTableViewCell.swift */,
+				4CA2A8771BEAE9150094A6FC /* UIActivityInfoThirdTableViewCell.xib */,
+				4CA2A87A1BEAE93B0094A6FC /* UIActivityInfoForthTableViewCell.swift */,
+				4CA2A87B1BEAE93B0094A6FC /* UIActivityInfoForthTableViewCell.xib */,
+				4CA2A87E1BEAE9520094A6FC /* UIActivityInfoFifthTableViewCell.swift */,
+				4CA2A87F1BEAE9520094A6FC /* UIActivityInfoFifthTableViewCell.xib */,
+				4CA2A8821BEAE9660094A6FC /* UIActivityInfoSixthTableViewCell.swift */,
+				4CA2A8831BEAE9660094A6FC /* UIActivityInfoSixthTableViewCell.xib */,
 			);
 			path = localViews;
 			sourceTree = "<group>";
@@ -417,7 +538,6 @@
 		4CF6EF9F1BDE58F300CC5BA7 /* base */ = {
 			isa = PBXGroup;
 			children = (
-				4CF6EFA81BDF50E800CC5BA7 /* BabyLink-Bridging-Header.h */,
 				4CF6EFA01BDE5A2600CC5BA7 /* UIBaseNavViewController.swift */,
 				4CF6EFA11BDE5A2600CC5BA7 /* UIBaseNavViewController.xib */,
 				4CF6EFA41BDE5A4700CC5BA7 /* UIBaseTabBarController.swift */,
@@ -544,16 +664,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CF6EF681BDCA47600CC5BA7 /* LaunchScreen.storyboard in Resources */,
+				4CA2A85D1BEA4B750094A6FC /* UIActivityView.xib in Resources */,
+				4CA2A8611BEA4BA90094A6FC /* UITopicView.xib in Resources */,
 				4CF6EFB91BDF6ED000CC5BA7 /* UIShowViewController.xib in Resources */,
+				4CA2A8711BEAE8D50094A6FC /* UIActivityInfoFirstTableViewCell.xib in Resources */,
+				4CA2A8691BEA58E70094A6FC /* UIJoinViewController.xib in Resources */,
 				4C07BB5C1BE5F456003E799B /* UISecondInfoViewController.xib in Resources */,
 				4CF6EFAD1BDF50E900CC5BA7 /* UIBridgeViewController.xib in Resources */,
 				4C07BB581BE5F445003E799B /* UIFirstInfoViewController.xib in Resources */,
 				4C07BB501BE5CF41003E799B /* UIAgreementViewController.xib in Resources */,
 				4CF6EFB51BDF68AD00CC5BA7 /* UILocalViewController.xib in Resources */,
 				4CF6EFC51BDF6F6600CC5BA7 /* UILoginViewController.xib in Resources */,
+				4CA2A83F1BE9C57B0094A6FC /* UIExchangeTableViewCell.xib in Resources */,
 				4CF6EFC11BDF6EF900CC5BA7 /* UICenterViewController.xib in Resources */,
+				4CA2A8751BEAE8E80094A6FC /* UIActivityInfoSecondTableViewCell.xib in Resources */,
 				4CF6EFA31BDE5A2600CC5BA7 /* UIBaseNavViewController.xib in Resources */,
+				4CA2A86D1BEA58F90094A6FC /* UIActivityInfoViewController.xib in Resources */,
+				4CA2A83B1BE9C4D70094A6FC /* UITopicTableViewCell.xib in Resources */,
+				4CA2A87D1BEAE93B0094A6FC /* UIActivityInfoForthTableViewCell.xib in Resources */,
+				4CA2A8791BEAE9150094A6FC /* UIActivityInfoThirdTableViewCell.xib in Resources */,
+				4CA2A8591BEA49880094A6FC /* UIActivityCollectionViewCell.xib in Resources */,
+				4CA2A8851BEAE9660094A6FC /* UIActivityInfoSixthTableViewCell.xib in Resources */,
+				4CA2A8371BE9C4BF0094A6FC /* UIActivityTableViewCell.xib in Resources */,
+				4CA2A8811BEAE9520094A6FC /* UIActivityInfoFifthTableViewCell.xib in Resources */,
 				4CF6EFCD1BDF6F9700CC5BA7 /* UIEnterViewController.xib in Resources */,
+				4CA2A8631BEA4BC00094A6FC /* UIExchangeView.xib in Resources */,
 				4CF6EF651BDCA47600CC5BA7 /* Assets.xcassets in Resources */,
 				4CA59AD01BE85B6800C614FC /* UIShowNavigationView.xib in Resources */,
 				4CA59ACC1BE7B08400C614FC /* UILocalNavigationView.xib in Resources */,
@@ -590,25 +725,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CA2A8361BE9C4BF0094A6FC /* UIActivityTableViewCell.swift in Sources */,
+				4CA2A8651BEA4BCD0094A6FC /* UIExchangeView.swift in Sources */,
 				4CF6EFA61BDE5A4700CC5BA7 /* UIBaseTabBarController.swift in Sources */,
+				4CA2A8701BEAE8D50094A6FC /* UIActivityInfoFirstTableViewCell.swift in Sources */,
+				4CA2A86C1BEA58F90094A6FC /* UIActivityInfoViewController.swift in Sources */,
 				4C07BB531BE5F433003E799B /* UIFullInfoViewController.swift in Sources */,
+				4CA2A83A1BE9C4D70094A6FC /* UITopicTableViewCell.swift in Sources */,
+				4CA2A85F1BEA4B970094A6FC /* UITopicView.swift in Sources */,
+				4CA2A8681BEA58E70094A6FC /* UIJoinViewController.swift in Sources */,
+				4CA2A8841BEAE9660094A6FC /* UIActivityInfoSixthTableViewCell.swift in Sources */,
+				4CA2A8541BEA456D0094A6FC /* UIImage+SingleColor.m in Sources */,
 				4CF6EFB01BDF512B00CC5BA7 /* UIBaseViewController.swift in Sources */,
 				4C07BB571BE5F445003E799B /* UIFirstInfoViewController.swift in Sources */,
+				4CA2A8801BEAE9520094A6FC /* UIActivityInfoFifthTableViewCell.swift in Sources */,
+				4CA2A87C1BEAE93B0094A6FC /* UIActivityInfoForthTableViewCell.swift in Sources */,
 				4CF6EFD61BE260F400CC5BA7 /* UIBaseTabBar.swift in Sources */,
 				4CF6EFC81BDF6F7700CC5BA7 /* UIRegistViewController.swift in Sources */,
 				4CF6EFB41BDF68AD00CC5BA7 /* UILocalViewController.swift in Sources */,
 				4CF6EFB81BDF6ED000CC5BA7 /* UIShowViewController.swift in Sources */,
+				4CA2A8781BEAE9150094A6FC /* UIActivityInfoThirdTableViewCell.swift in Sources */,
+				4CA2A85B1BEA4B680094A6FC /* UIActivityView.swift in Sources */,
 				4CF6EFA21BDE5A2600CC5BA7 /* UIBaseNavViewController.swift in Sources */,
 				4C07BB5F1BE60769003E799B /* UICenterTableViewCell.swift in Sources */,
 				4CF6EFC41BDF6F6600CC5BA7 /* UILoginViewController.swift in Sources */,
+				4CA2A8741BEAE8E80094A6FC /* UIActivityInfoSecondTableViewCell.swift in Sources */,
 				4CF6EFC01BDF6EF900CC5BA7 /* UICenterViewController.swift in Sources */,
 				4CF6EFD01BDF6FE700CC5BA7 /* UIForgetPWViewController.swift in Sources */,
 				4C07BB5B1BE5F456003E799B /* UISecondInfoViewController.swift in Sources */,
 				4CA59AC61BE79B3300C614FC /* UIChooseAddressViewController.swift in Sources */,
 				4CA59ACE1BE85B5C00C614FC /* UIShowNavigationView.swift in Sources */,
+				4CA2A8581BEA49880094A6FC /* UIActivityCollectionViewCell.swift in Sources */,
+				4CA2A83E1BE9C57B0094A6FC /* UIExchangeTableViewCell.swift in Sources */,
 				4CF6EFD31BDF70C400CC5BA7 /* NSUserInfoObject.swift in Sources */,
 				4CF6EFAC1BDF50E900CC5BA7 /* UIBridgeViewController.m in Sources */,
 				4C07BB4F1BE5CF41003E799B /* UIAgreementViewController.swift in Sources */,
+				4CA2A84D1BEA40C20094A6FC /* UIButton+CustomStyle.m in Sources */,
 				4CF6EFCC1BDF6F9700CC5BA7 /* UIEnterViewController.swift in Sources */,
 				4CF6EFBC1BDF6EE300CC5BA7 /* UIFindViewController.swift in Sources */,
 				4CF6EF601BDCA47600CC5BA7 /* ViewController.swift in Sources */,
@@ -756,6 +908,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PREFIX_HEADER = BabyLink/Header/PrefixHeader.pch;
 				INFOPLIST_FILE = BabyLink/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -773,6 +926,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PREFIX_HEADER = BabyLink/Header/PrefixHeader.pch;
 				INFOPLIST_FILE = BabyLink/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
