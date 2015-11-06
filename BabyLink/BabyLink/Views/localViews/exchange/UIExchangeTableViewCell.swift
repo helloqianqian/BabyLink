@@ -20,6 +20,8 @@ class UIExchangeTableViewCell: UITableViewCell {
     @IBOutlet weak var haveLabel: UILabel!
     @IBOutlet weak var changeLabel: UILabel!
     @IBOutlet weak var checkBtn: UIButton!
+    @IBOutlet weak var likeBtn: UIButton!
+    @IBOutlet weak var numLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

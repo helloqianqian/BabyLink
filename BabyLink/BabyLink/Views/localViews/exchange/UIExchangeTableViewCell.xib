@@ -108,6 +108,26 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="查看详情"/>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Pr-g2-WfK">
+                                <rect key="frame" x="318" y="225" width="44" height="20"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="Uur-G2-eQW"/>
+                                    <constraint firstAttribute="width" constant="44" id="l2V-r8-zKh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NfG-rv-AYX">
+                                <rect key="frame" x="292" y="225" width="20" height="20"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.058823529409999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="csK-vU-uaZ"/>
+                                    <constraint firstAttribute="height" constant="20" id="sgv-4p-cNa"/>
+                                </constraints>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -118,16 +138,20 @@
                             <constraint firstItem="vNK-e7-9Bt" firstAttribute="leading" secondItem="g7M-ZB-3T1" secondAttribute="trailing" constant="15" id="ARz-9A-9ov"/>
                             <constraint firstItem="g7M-ZB-3T1" firstAttribute="leading" secondItem="kdu-e2-6BZ" secondAttribute="trailing" constant="8" id="Aya-JM-4HR"/>
                             <constraint firstItem="Z6Q-0o-uCr" firstAttribute="leading" secondItem="8P1-1d-wX8" secondAttribute="leading" constant="5" id="DPc-AK-Qy1"/>
+                            <constraint firstAttribute="bottom" secondItem="NfG-rv-AYX" secondAttribute="bottom" constant="6" id="DRG-g2-64n"/>
+                            <constraint firstAttribute="trailing" secondItem="0Pr-g2-WfK" secondAttribute="trailing" constant="7" id="FfS-eB-iDg"/>
                             <constraint firstAttribute="trailing" secondItem="hjV-fW-HL0" secondAttribute="trailing" constant="16" id="Hrh-IS-ABj"/>
                             <constraint firstItem="M6u-xZ-DnA" firstAttribute="leading" secondItem="8P1-1d-wX8" secondAttribute="leading" constant="5" id="NCg-cw-tbr"/>
                             <constraint firstItem="vNK-e7-9Bt" firstAttribute="leading" secondItem="34F-xt-kyk" secondAttribute="trailing" constant="15" id="OQr-Fq-yxi"/>
                             <constraint firstItem="Z6Q-0o-uCr" firstAttribute="top" secondItem="M6u-xZ-DnA" secondAttribute="bottom" constant="5" id="Ojo-oT-GJK"/>
+                            <constraint firstAttribute="bottom" secondItem="0Pr-g2-WfK" secondAttribute="bottom" constant="6" id="VDT-yM-OHV"/>
                             <constraint firstItem="GhO-ok-Slk" firstAttribute="centerY" secondItem="M6u-xZ-DnA" secondAttribute="centerY" id="Vnq-vY-TlG"/>
                             <constraint firstItem="34F-xt-kyk" firstAttribute="centerY" secondItem="bNA-HB-IQB" secondAttribute="centerY" id="X22-70-LVB"/>
                             <constraint firstItem="bNA-HB-IQB" firstAttribute="top" secondItem="kdu-e2-6BZ" secondAttribute="bottom" constant="10" id="XVo-CL-M6a"/>
                             <constraint firstItem="kdu-e2-6BZ" firstAttribute="leading" secondItem="8P1-1d-wX8" secondAttribute="leading" constant="14" id="aZz-MP-M9P"/>
                             <constraint firstItem="bNA-HB-IQB" firstAttribute="leading" secondItem="8P1-1d-wX8" secondAttribute="leading" constant="14" id="eaq-fO-qCe"/>
                             <constraint firstAttribute="trailing" secondItem="vNK-e7-9Bt" secondAttribute="trailing" constant="7" id="fYv-KV-Ich"/>
+                            <constraint firstItem="0Pr-g2-WfK" firstAttribute="leading" secondItem="NfG-rv-AYX" secondAttribute="trailing" constant="6" id="icx-3w-R9o"/>
                             <constraint firstItem="hjV-fW-HL0" firstAttribute="width" secondItem="GhO-ok-Slk" secondAttribute="width" id="jIp-EN-7M7"/>
                             <constraint firstAttribute="trailing" secondItem="Z6Q-0o-uCr" secondAttribute="trailing" constant="5" id="mS7-st-wAr"/>
                             <constraint firstItem="M6u-xZ-DnA" firstAttribute="top" secondItem="8P1-1d-wX8" secondAttribute="top" constant="10" id="obI-KP-qLS"/>
@@ -157,10 +181,12 @@
                 <outlet property="haveIcon" destination="kdu-e2-6BZ" id="0uq-aE-GGB"/>
                 <outlet property="haveLabel" destination="g7M-ZB-3T1" id="73u-0g-8yX"/>
                 <outlet property="headIcon" destination="M6u-xZ-DnA" id="QOU-0C-7rK"/>
+                <outlet property="likeBtn" destination="NfG-rv-AYX" id="YeD-IP-1si"/>
                 <outlet property="nameLabel" destination="GhO-ok-Slk" id="DOd-ne-2LR"/>
+                <outlet property="numLabel" destination="0Pr-g2-WfK" id="ucG-sr-3cU"/>
                 <outlet property="villageLabel" destination="hjV-fW-HL0" id="GgH-fL-DtL"/>
             </connections>
-            <point key="canvasLocation" x="219.5" y="67.5"/>
+            <point key="canvasLocation" x="139.5" y="54"/>
         </tableViewCell>
     </objects>
 </document>

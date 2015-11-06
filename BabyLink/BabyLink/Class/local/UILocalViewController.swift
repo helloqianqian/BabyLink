@@ -14,37 +14,32 @@ class UILocalViewController: UIBaseViewController ,UILocalNavigationViewDelegate
     var topicView:UITopicView!;
     var exchangeView:UIExchangeView!;
     
-    @IBOutlet weak var scrollview: UIScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
         let titleView = NSBundle.mainBundle().loadNibNamed("UILocalNavigationView", owner: nil, options: nil).first as! UILocalNavigationView;
-        titleView.selectedItem = 0;
         titleView.delegate = self;
         titleView.frame = CGRectMake(0, 0, MainScreenWidth, 44)
         self.navigationItem.titleView = titleView;
         
-        var viewFrame = scrollview.frame;
+        let viewFrame = self.view.frame;
         
-        scrollview.contentSize = CGSizeMake(3 * viewFrame.width, viewFrame.height);
-
         activityView = NSBundle.mainBundle().loadNibNamed("UIActivityView", owner: nil, options: nil).first as! UIActivityView;
         activityView.frame = viewFrame;
         activityView.delegate = self;
-        scrollview.addSubview(activityView);
+        self.view.addSubview(activityView);
 
         topicView = NSBundle.mainBundle().loadNibNamed("UITopicView", owner: nil, options: nil).first as! UITopicView;
-        viewFrame.origin.x = MainScreenWidth;
         topicView.frame = viewFrame;
-        scrollview.addSubview(topicView);
+        self.view.addSubview(topicView);
 
         exchangeView = NSBundle.mainBundle().loadNibNamed("UIExchangeView", owner: nil, options: nil).first as! UIExchangeView;
-        viewFrame.origin.x = 2*MainScreenWidth;
         exchangeView.delegate = self;
         exchangeView.frame = viewFrame;
-        scrollview.addSubview(exchangeView);
+        self.view.addSubview(exchangeView);
+        
+        titleView.selectedItem = 0;
     }
 
     
@@ -64,19 +59,21 @@ class UILocalViewController: UIBaseViewController ,UILocalNavigationViewDelegate
     
     //MARK: - UIExchangeViewDelegate
     func checkTheInfoOfExchange(index: Int) {
-        
+        let infoVC:UIExchangeInfoViewController = UIExchangeInfoViewController.init(nibName:"UIExchangeInfoViewController", bundle:NSBundle.mainBundle());
+        infoVC.hidesBottomBarWhenPushed = true;
+        self.navigationController?.pushViewController(infoVC, animated: true);
     }
     //MARK: - UILocalNavigationViewDelegate
     func didSelectedItem(index: Int) {
         switch index {
         case 0:
-            scrollview.setContentOffset(CGPointMake(0, 0), animated: false)
+            self.view.bringSubviewToFront(activityView)
             break;
         case 1:
-            scrollview.setContentOffset(CGPointMake(MainScreenWidth, 0), animated: false)
+            self.view.bringSubviewToFront(topicView)
             break;
         case 2:
-            scrollview.setContentOffset(CGPointMake(2*MainScreenWidth, 0), animated: false)
+            self.view.bringSubviewToFront(exchangeView)
             break;
         default:
             break;

@@ -9,6 +9,7 @@
 import UIKit
 
 class UITopicView: UIView {
+    @IBOutlet weak var listTableView: UITableView!
 
     /*
     // Only override drawRect: if you perform custom drawing.

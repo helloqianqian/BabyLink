@@ -95,6 +95,8 @@
 		4CFCB8A81BEBAAC500D84B29 /* UIExchangeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CFCB8A61BEBAAC500D84B29 /* UIExchangeTableViewCell.xib */; };
 		4CFCB8AB1BEBAAD200D84B29 /* UITopicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFCB8A91BEBAAD200D84B29 /* UITopicTableViewCell.swift */; };
 		4CFCB8AC1BEBAAD200D84B29 /* UITopicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CFCB8AA1BEBAAD200D84B29 /* UITopicTableViewCell.xib */; };
+		4CFCB8AF1BEC377A00D84B29 /* UIExchangeInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFCB8AD1BEC377A00D84B29 /* UIExchangeInfoViewController.swift */; };
+		4CFCB8B01BEC377A00D84B29 /* UIExchangeInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CFCB8AE1BEC377A00D84B29 /* UIExchangeInfoViewController.xib */; };
 		F4DB6320A6C08C3F498DD1FC /* libPods-BabyLink.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5804E37A8D09AF5064E64A8C /* libPods-BabyLink.a */; };
 /* End PBXBuildFile section */
 
@@ -222,6 +224,8 @@
 		4CFCB8A61BEBAAC500D84B29 /* UIExchangeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIExchangeTableViewCell.xib; sourceTree = "<group>"; };
 		4CFCB8A91BEBAAD200D84B29 /* UITopicTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITopicTableViewCell.swift; sourceTree = "<group>"; };
 		4CFCB8AA1BEBAAD200D84B29 /* UITopicTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UITopicTableViewCell.xib; sourceTree = "<group>"; };
+		4CFCB8AD1BEC377A00D84B29 /* UIExchangeInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExchangeInfoViewController.swift; sourceTree = "<group>"; };
+		4CFCB8AE1BEC377A00D84B29 /* UIExchangeInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIExchangeInfoViewController.xib; sourceTree = "<group>"; };
 		4DC90B3192A6B7AAD9E78476 /* Pods-BabyLink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabyLink.release.xcconfig"; path = "Pods/Target Support Files/Pods-BabyLink/Pods-BabyLink.release.xcconfig"; sourceTree = "<group>"; };
 		5804E37A8D09AF5064E64A8C /* libPods-BabyLink.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BabyLink.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D177840B383B817FE1BF1911 /* Pods-BabyLink.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabyLink.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BabyLink/Pods-BabyLink.debug.xcconfig"; sourceTree = "<group>"; };
@@ -397,6 +401,8 @@
 				4CA2A8671BEA58E70094A6FC /* UIJoinViewController.xib */,
 				4CA2A86A1BEA58F90094A6FC /* UIActivityInfoViewController.swift */,
 				4CA2A86B1BEA58F90094A6FC /* UIActivityInfoViewController.xib */,
+				4CFCB8AD1BEC377A00D84B29 /* UIExchangeInfoViewController.swift */,
+				4CFCB8AE1BEC377A00D84B29 /* UIExchangeInfoViewController.xib */,
 			);
 			path = local;
 			sourceTree = "<group>";
@@ -781,6 +787,7 @@
 				4CA2A8631BEA4BC00094A6FC /* UIExchangeView.xib in Resources */,
 				4CFCB8911BEBA79900D84B29 /* UIActivityTableViewCell.xib in Resources */,
 				4CF6EF651BDCA47600CC5BA7 /* Assets.xcassets in Resources */,
+				4CFCB8B01BEC377A00D84B29 /* UIExchangeInfoViewController.xib in Resources */,
 				4CA59AD01BE85B6800C614FC /* UIShowNavigationView.xib in Resources */,
 				4CFCB8871BEBA79900D84B29 /* UIActivityInfoFirstTableViewCell.xib in Resources */,
 				4C07BB601BE60769003E799B /* UICenterTableViewCell.xib in Resources */,
@@ -911,6 +918,7 @@
 				4CF6EFBC1BDF6EE300CC5BA7 /* UIFindViewController.swift in Sources */,
 				4CF6EF601BDCA47600CC5BA7 /* ViewController.swift in Sources */,
 				4CFCB8611BEBA66000D84B29 /* TAAbstractDotView.m in Sources */,
+				4CFCB8AF1BEC377A00D84B29 /* UIExchangeInfoViewController.swift in Sources */,
 				4CF6EF5E1BDCA47600CC5BA7 /* AppDelegate.swift in Sources */,
 				4CFCB8861BEBA79900D84B29 /* UIActivityInfoFirstTableViewCell.swift in Sources */,
 			);
