@@ -19,16 +19,6 @@
 		4C07BB601BE60769003E799B /* UICenterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C07BB5E1BE60769003E799B /* UICenterTableViewCell.xib */; };
 		4CA2A84D1BEA40C20094A6FC /* UIButton+CustomStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA2A84C1BEA40C20094A6FC /* UIButton+CustomStyle.m */; };
 		4CA2A8541BEA456D0094A6FC /* UIImage+SingleColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA2A8531BEA456D0094A6FC /* UIImage+SingleColor.m */; };
-		4CA2A85B1BEA4B680094A6FC /* UIActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA2A85A1BEA4B680094A6FC /* UIActivityView.swift */; };
-		4CA2A85D1BEA4B750094A6FC /* UIActivityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA2A85C1BEA4B750094A6FC /* UIActivityView.xib */; };
-		4CA2A85F1BEA4B970094A6FC /* UITopicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA2A85E1BEA4B970094A6FC /* UITopicView.swift */; };
-		4CA2A8611BEA4BA90094A6FC /* UITopicView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA2A8601BEA4BA90094A6FC /* UITopicView.xib */; };
-		4CA2A8631BEA4BC00094A6FC /* UIExchangeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA2A8621BEA4BC00094A6FC /* UIExchangeView.xib */; };
-		4CA2A8651BEA4BCD0094A6FC /* UIExchangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA2A8641BEA4BCD0094A6FC /* UIExchangeView.swift */; };
-		4CA2A8681BEA58E70094A6FC /* UIJoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA2A8661BEA58E70094A6FC /* UIJoinViewController.swift */; };
-		4CA2A8691BEA58E70094A6FC /* UIJoinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA2A8671BEA58E70094A6FC /* UIJoinViewController.xib */; };
-		4CA2A86C1BEA58F90094A6FC /* UIActivityInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA2A86A1BEA58F90094A6FC /* UIActivityInfoViewController.swift */; };
-		4CA2A86D1BEA58F90094A6FC /* UIActivityInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA2A86B1BEA58F90094A6FC /* UIActivityInfoViewController.xib */; };
 		4CA59AC61BE79B3300C614FC /* UIChooseAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA59AC41BE79B3300C614FC /* UIChooseAddressViewController.swift */; };
 		4CA59AC71BE79B3300C614FC /* UIChooseAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA59AC51BE79B3300C614FC /* UIChooseAddressViewController.xib */; };
 		4CA59ACE1BE85B5C00C614FC /* UIShowNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA59ACD1BE85B5C00C614FC /* UIShowNavigationView.swift */; };
@@ -95,8 +85,24 @@
 		4CFCB8A81BEBAAC500D84B29 /* UIExchangeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CFCB8A61BEBAAC500D84B29 /* UIExchangeTableViewCell.xib */; };
 		4CFCB8AB1BEBAAD200D84B29 /* UITopicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFCB8A91BEBAAD200D84B29 /* UITopicTableViewCell.swift */; };
 		4CFCB8AC1BEBAAD200D84B29 /* UITopicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CFCB8AA1BEBAAD200D84B29 /* UITopicTableViewCell.xib */; };
-		4CFCB8AF1BEC377A00D84B29 /* UIExchangeInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFCB8AD1BEC377A00D84B29 /* UIExchangeInfoViewController.swift */; };
-		4CFCB8B01BEC377A00D84B29 /* UIExchangeInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CFCB8AE1BEC377A00D84B29 /* UIExchangeInfoViewController.xib */; };
+		4CFCB8D11BEF1ABF00D84B29 /* UIActivityInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFCB8C31BEF1ABF00D84B29 /* UIActivityInfoViewController.swift */; };
+		4CFCB8D21BEF1ABF00D84B29 /* UIActivityInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CFCB8C41BEF1ABF00D84B29 /* UIActivityInfoViewController.xib */; };
+		4CFCB8D31BEF1ABF00D84B29 /* UIActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFCB8C51BEF1ABF00D84B29 /* UIActivityView.swift */; };
+		4CFCB8D41BEF1ABF00D84B29 /* UIActivityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CFCB8C61BEF1ABF00D84B29 /* UIActivityView.xib */; };
+		4CFCB8D51BEF1ABF00D84B29 /* UIJoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFCB8C71BEF1ABF00D84B29 /* UIJoinViewController.swift */; };
+		4CFCB8D61BEF1ABF00D84B29 /* UIJoinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CFCB8C81BEF1ABF00D84B29 /* UIJoinViewController.xib */; };
+		4CFCB8D71BEF1ABF00D84B29 /* UIExchangeInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFCB8CA1BEF1ABF00D84B29 /* UIExchangeInfoViewController.swift */; };
+		4CFCB8D81BEF1ABF00D84B29 /* UIExchangeInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CFCB8CB1BEF1ABF00D84B29 /* UIExchangeInfoViewController.xib */; };
+		4CFCB8D91BEF1ABF00D84B29 /* UIExchangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFCB8CC1BEF1ABF00D84B29 /* UIExchangeView.swift */; };
+		4CFCB8DA1BEF1ABF00D84B29 /* UIExchangeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CFCB8CD1BEF1ABF00D84B29 /* UIExchangeView.xib */; };
+		4CFCB8DB1BEF1ABF00D84B29 /* UITopicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFCB8CF1BEF1ABF00D84B29 /* UITopicView.swift */; };
+		4CFCB8DC1BEF1ABF00D84B29 /* UITopicView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CFCB8D01BEF1ABF00D84B29 /* UITopicView.xib */; };
+		4CFCB8DF1BEF2F7400D84B29 /* TopicImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFCB8DD1BEF2F7400D84B29 /* TopicImageCollectionViewCell.swift */; };
+		4CFCB8E01BEF2F7400D84B29 /* TopicImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CFCB8DE1BEF2F7400D84B29 /* TopicImageCollectionViewCell.xib */; };
+		4CFCB8E31BEF39B600D84B29 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFCB8E11BEF39B600D84B29 /* CommentTableViewCell.swift */; };
+		4CFCB8E41BEF39B600D84B29 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CFCB8E21BEF39B600D84B29 /* CommentTableViewCell.xib */; };
+		4CFCB8E71BEF39C900D84B29 /* UILikeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFCB8E51BEF39C900D84B29 /* UILikeTableViewCell.swift */; };
+		4CFCB8E81BEF39C900D84B29 /* UILikeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CFCB8E61BEF39C900D84B29 /* UILikeTableViewCell.xib */; };
 		F4DB6320A6C08C3F498DD1FC /* libPods-BabyLink.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5804E37A8D09AF5064E64A8C /* libPods-BabyLink.a */; };
 /* End PBXBuildFile section */
 
@@ -134,16 +140,6 @@
 		4CA2A8521BEA456D0094A6FC /* UIImage+SingleColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SingleColor.h"; sourceTree = "<group>"; };
 		4CA2A8531BEA456D0094A6FC /* UIImage+SingleColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SingleColor.m"; sourceTree = "<group>"; };
 		4CA2A8551BEA46AF0094A6FC /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		4CA2A85A1BEA4B680094A6FC /* UIActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIActivityView.swift; sourceTree = "<group>"; };
-		4CA2A85C1BEA4B750094A6FC /* UIActivityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIActivityView.xib; sourceTree = "<group>"; };
-		4CA2A85E1BEA4B970094A6FC /* UITopicView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITopicView.swift; sourceTree = "<group>"; };
-		4CA2A8601BEA4BA90094A6FC /* UITopicView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UITopicView.xib; sourceTree = "<group>"; };
-		4CA2A8621BEA4BC00094A6FC /* UIExchangeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIExchangeView.xib; sourceTree = "<group>"; };
-		4CA2A8641BEA4BCD0094A6FC /* UIExchangeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExchangeView.swift; sourceTree = "<group>"; };
-		4CA2A8661BEA58E70094A6FC /* UIJoinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIJoinViewController.swift; sourceTree = "<group>"; };
-		4CA2A8671BEA58E70094A6FC /* UIJoinViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIJoinViewController.xib; sourceTree = "<group>"; };
-		4CA2A86A1BEA58F90094A6FC /* UIActivityInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIActivityInfoViewController.swift; sourceTree = "<group>"; };
-		4CA2A86B1BEA58F90094A6FC /* UIActivityInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIActivityInfoViewController.xib; sourceTree = "<group>"; };
 		4CA59AC41BE79B3300C614FC /* UIChooseAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIChooseAddressViewController.swift; sourceTree = "<group>"; };
 		4CA59AC51BE79B3300C614FC /* UIChooseAddressViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIChooseAddressViewController.xib; sourceTree = "<group>"; };
 		4CA59ACD1BE85B5C00C614FC /* UIShowNavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIShowNavigationView.swift; sourceTree = "<group>"; };
@@ -224,8 +220,24 @@
 		4CFCB8A61BEBAAC500D84B29 /* UIExchangeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIExchangeTableViewCell.xib; sourceTree = "<group>"; };
 		4CFCB8A91BEBAAD200D84B29 /* UITopicTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITopicTableViewCell.swift; sourceTree = "<group>"; };
 		4CFCB8AA1BEBAAD200D84B29 /* UITopicTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UITopicTableViewCell.xib; sourceTree = "<group>"; };
-		4CFCB8AD1BEC377A00D84B29 /* UIExchangeInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExchangeInfoViewController.swift; sourceTree = "<group>"; };
-		4CFCB8AE1BEC377A00D84B29 /* UIExchangeInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIExchangeInfoViewController.xib; sourceTree = "<group>"; };
+		4CFCB8C31BEF1ABF00D84B29 /* UIActivityInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIActivityInfoViewController.swift; sourceTree = "<group>"; };
+		4CFCB8C41BEF1ABF00D84B29 /* UIActivityInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIActivityInfoViewController.xib; sourceTree = "<group>"; };
+		4CFCB8C51BEF1ABF00D84B29 /* UIActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIActivityView.swift; sourceTree = "<group>"; };
+		4CFCB8C61BEF1ABF00D84B29 /* UIActivityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIActivityView.xib; sourceTree = "<group>"; };
+		4CFCB8C71BEF1ABF00D84B29 /* UIJoinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIJoinViewController.swift; sourceTree = "<group>"; };
+		4CFCB8C81BEF1ABF00D84B29 /* UIJoinViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIJoinViewController.xib; sourceTree = "<group>"; };
+		4CFCB8CA1BEF1ABF00D84B29 /* UIExchangeInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExchangeInfoViewController.swift; sourceTree = "<group>"; };
+		4CFCB8CB1BEF1ABF00D84B29 /* UIExchangeInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIExchangeInfoViewController.xib; sourceTree = "<group>"; };
+		4CFCB8CC1BEF1ABF00D84B29 /* UIExchangeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExchangeView.swift; sourceTree = "<group>"; };
+		4CFCB8CD1BEF1ABF00D84B29 /* UIExchangeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIExchangeView.xib; sourceTree = "<group>"; };
+		4CFCB8CF1BEF1ABF00D84B29 /* UITopicView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITopicView.swift; sourceTree = "<group>"; };
+		4CFCB8D01BEF1ABF00D84B29 /* UITopicView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UITopicView.xib; sourceTree = "<group>"; };
+		4CFCB8DD1BEF2F7400D84B29 /* TopicImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		4CFCB8DE1BEF2F7400D84B29 /* TopicImageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		4CFCB8E11BEF39B600D84B29 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		4CFCB8E21BEF39B600D84B29 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
+		4CFCB8E51BEF39C900D84B29 /* UILikeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILikeTableViewCell.swift; sourceTree = "<group>"; };
+		4CFCB8E61BEF39C900D84B29 /* UILikeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UILikeTableViewCell.xib; sourceTree = "<group>"; };
 		4DC90B3192A6B7AAD9E78476 /* Pods-BabyLink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabyLink.release.xcconfig"; path = "Pods/Target Support Files/Pods-BabyLink/Pods-BabyLink.release.xcconfig"; sourceTree = "<group>"; };
 		5804E37A8D09AF5064E64A8C /* libPods-BabyLink.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BabyLink.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D177840B383B817FE1BF1911 /* Pods-BabyLink.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabyLink.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BabyLink/Pods-BabyLink.debug.xcconfig"; sourceTree = "<group>"; };
@@ -389,20 +401,11 @@
 		4CF6EF8E1BDE58D300CC5BA7 /* local */ = {
 			isa = PBXGroup;
 			children = (
+				4CFCB8C21BEF1ABF00D84B29 /* activityVC */,
+				4CFCB8C91BEF1ABF00D84B29 /* exchangeVC */,
+				4CFCB8CE1BEF1ABF00D84B29 /* topicVC */,
 				4CF6EFB21BDF68AD00CC5BA7 /* UILocalViewController.swift */,
 				4CF6EFB31BDF68AD00CC5BA7 /* UILocalViewController.xib */,
-				4CA2A85A1BEA4B680094A6FC /* UIActivityView.swift */,
-				4CA2A85C1BEA4B750094A6FC /* UIActivityView.xib */,
-				4CA2A85E1BEA4B970094A6FC /* UITopicView.swift */,
-				4CA2A8601BEA4BA90094A6FC /* UITopicView.xib */,
-				4CA2A8641BEA4BCD0094A6FC /* UIExchangeView.swift */,
-				4CA2A8621BEA4BC00094A6FC /* UIExchangeView.xib */,
-				4CA2A8661BEA58E70094A6FC /* UIJoinViewController.swift */,
-				4CA2A8671BEA58E70094A6FC /* UIJoinViewController.xib */,
-				4CA2A86A1BEA58F90094A6FC /* UIActivityInfoViewController.swift */,
-				4CA2A86B1BEA58F90094A6FC /* UIActivityInfoViewController.xib */,
-				4CFCB8AD1BEC377A00D84B29 /* UIExchangeInfoViewController.swift */,
-				4CFCB8AE1BEC377A00D84B29 /* UIExchangeInfoViewController.xib */,
 			);
 			path = local;
 			sourceTree = "<group>";
@@ -641,8 +644,47 @@
 			children = (
 				4CFCB8A91BEBAAD200D84B29 /* UITopicTableViewCell.swift */,
 				4CFCB8AA1BEBAAD200D84B29 /* UITopicTableViewCell.xib */,
+				4CFCB8DD1BEF2F7400D84B29 /* TopicImageCollectionViewCell.swift */,
+				4CFCB8DE1BEF2F7400D84B29 /* TopicImageCollectionViewCell.xib */,
+				4CFCB8E11BEF39B600D84B29 /* CommentTableViewCell.swift */,
+				4CFCB8E21BEF39B600D84B29 /* CommentTableViewCell.xib */,
+				4CFCB8E51BEF39C900D84B29 /* UILikeTableViewCell.swift */,
+				4CFCB8E61BEF39C900D84B29 /* UILikeTableViewCell.xib */,
 			);
 			path = topic;
+			sourceTree = "<group>";
+		};
+		4CFCB8C21BEF1ABF00D84B29 /* activityVC */ = {
+			isa = PBXGroup;
+			children = (
+				4CFCB8C31BEF1ABF00D84B29 /* UIActivityInfoViewController.swift */,
+				4CFCB8C41BEF1ABF00D84B29 /* UIActivityInfoViewController.xib */,
+				4CFCB8C51BEF1ABF00D84B29 /* UIActivityView.swift */,
+				4CFCB8C61BEF1ABF00D84B29 /* UIActivityView.xib */,
+				4CFCB8C71BEF1ABF00D84B29 /* UIJoinViewController.swift */,
+				4CFCB8C81BEF1ABF00D84B29 /* UIJoinViewController.xib */,
+			);
+			path = activityVC;
+			sourceTree = "<group>";
+		};
+		4CFCB8C91BEF1ABF00D84B29 /* exchangeVC */ = {
+			isa = PBXGroup;
+			children = (
+				4CFCB8CA1BEF1ABF00D84B29 /* UIExchangeInfoViewController.swift */,
+				4CFCB8CB1BEF1ABF00D84B29 /* UIExchangeInfoViewController.xib */,
+				4CFCB8CC1BEF1ABF00D84B29 /* UIExchangeView.swift */,
+				4CFCB8CD1BEF1ABF00D84B29 /* UIExchangeView.xib */,
+			);
+			path = exchangeVC;
+			sourceTree = "<group>";
+		};
+		4CFCB8CE1BEF1ABF00D84B29 /* topicVC */ = {
+			isa = PBXGroup;
+			children = (
+				4CFCB8CF1BEF1ABF00D84B29 /* UITopicView.swift */,
+				4CFCB8D01BEF1ABF00D84B29 /* UITopicView.xib */,
+			);
+			path = topicVC;
 			sourceTree = "<group>";
 		};
 		4EB90DE5F6EF5413B7F3491A /* Pods */ = {
@@ -761,12 +803,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CFCB8D81BEF1ABF00D84B29 /* UIExchangeInfoViewController.xib in Resources */,
+				4CFCB8E81BEF39C900D84B29 /* UILikeTableViewCell.xib in Resources */,
 				4CF6EF681BDCA47600CC5BA7 /* LaunchScreen.storyboard in Resources */,
-				4CA2A85D1BEA4B750094A6FC /* UIActivityView.xib in Resources */,
-				4CA2A8611BEA4BA90094A6FC /* UITopicView.xib in Resources */,
 				4CFCB8811BEBA79900D84B29 /* FindListHeadView.xib in Resources */,
 				4CF6EFB91BDF6ED000CC5BA7 /* UIShowViewController.xib in Resources */,
-				4CA2A8691BEA58E70094A6FC /* UIJoinViewController.xib in Resources */,
 				4CFCB8851BEBA79900D84B29 /* UIActivityInfoFifthTableViewCell.xib in Resources */,
 				4C07BB5C1BE5F456003E799B /* UISecondInfoViewController.xib in Resources */,
 				4CFCB8A81BEBAAC500D84B29 /* UIExchangeTableViewCell.xib in Resources */,
@@ -774,29 +815,33 @@
 				4C07BB581BE5F445003E799B /* UIFirstInfoViewController.xib in Resources */,
 				4C07BB501BE5CF41003E799B /* UIAgreementViewController.xib in Resources */,
 				4CFCB8AC1BEBAAD200D84B29 /* UITopicTableViewCell.xib in Resources */,
+				4CFCB8D61BEF1ABF00D84B29 /* UIJoinViewController.xib in Resources */,
 				4CF6EFB51BDF68AD00CC5BA7 /* UILocalViewController.xib in Resources */,
 				4CF6EFC51BDF6F6600CC5BA7 /* UILoginViewController.xib in Resources */,
 				4CF6EFC11BDF6EF900CC5BA7 /* UICenterViewController.xib in Resources */,
+				4CFCB8D41BEF1ABF00D84B29 /* UIActivityView.xib in Resources */,
 				4CFCB88D1BEBA79900D84B29 /* UIActivityInfoSecondTableViewCell.xib in Resources */,
 				4CFCB8891BEBA79900D84B29 /* UIActivityInfoFooterView.xib in Resources */,
 				4CF6EFA31BDE5A2600CC5BA7 /* UIBaseNavViewController.xib in Resources */,
-				4CA2A86D1BEA58F90094A6FC /* UIActivityInfoViewController.xib in Resources */,
 				4CFCB88F1BEBA79900D84B29 /* UIActivityInfoThirdTableViewCell.xib in Resources */,
 				4CF6EFCD1BDF6F9700CC5BA7 /* UIEnterViewController.xib in Resources */,
 				4CFCB88B1BEBA79900D84B29 /* UIActivityInfoForthTableViewCell.xib in Resources */,
-				4CA2A8631BEA4BC00094A6FC /* UIExchangeView.xib in Resources */,
 				4CFCB8911BEBA79900D84B29 /* UIActivityTableViewCell.xib in Resources */,
 				4CF6EF651BDCA47600CC5BA7 /* Assets.xcassets in Resources */,
-				4CFCB8B01BEC377A00D84B29 /* UIExchangeInfoViewController.xib in Resources */,
+				4CFCB8DC1BEF1ABF00D84B29 /* UITopicView.xib in Resources */,
+				4CFCB8E41BEF39B600D84B29 /* CommentTableViewCell.xib in Resources */,
 				4CA59AD01BE85B6800C614FC /* UIShowNavigationView.xib in Resources */,
 				4CFCB8871BEBA79900D84B29 /* UIActivityInfoFirstTableViewCell.xib in Resources */,
 				4C07BB601BE60769003E799B /* UICenterTableViewCell.xib in Resources */,
+				4CFCB8D21BEF1ABF00D84B29 /* UIActivityInfoViewController.xib in Resources */,
 				4CF6EFD11BDF6FE700CC5BA7 /* UIForgetPWViewController.xib in Resources */,
+				4CFCB8DA1BEF1ABF00D84B29 /* UIExchangeView.xib in Resources */,
 				4CF6EF631BDCA47600CC5BA7 /* Main.storyboard in Resources */,
 				4CF6EFC91BDF6F7700CC5BA7 /* UIRegistViewController.xib in Resources */,
 				4CFCB8A41BEBAABA00D84B29 /* UILocalNavigationView.xib in Resources */,
 				4C07BB541BE5F433003E799B /* UIFullInfoViewController.xib in Resources */,
 				4CF6EFBD1BDF6EE300CC5BA7 /* UIFindViewController.xib in Resources */,
+				4CFCB8E01BEF2F7400D84B29 /* TopicImageCollectionViewCell.xib in Resources */,
 				4CF6EFB11BDF512B00CC5BA7 /* UIBaseViewController.xib in Resources */,
 				4CFCB8831BEBA79900D84B29 /* UIActivityCollectionViewCell.xib in Resources */,
 				4CA59AC71BE79B3300C614FC /* UIChooseAddressViewController.xib in Resources */,
@@ -874,36 +919,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CFCB8A31BEBAABA00D84B29 /* UILocalNavigationView.swift in Sources */,
-				4CA2A8651BEA4BCD0094A6FC /* UIExchangeView.swift in Sources */,
 				4CF6EFA61BDE5A4700CC5BA7 /* UIBaseTabBarController.swift in Sources */,
-				4CA2A86C1BEA58F90094A6FC /* UIActivityInfoViewController.swift in Sources */,
 				4C07BB531BE5F433003E799B /* UIFullInfoViewController.swift in Sources */,
-				4CA2A85F1BEA4B970094A6FC /* UITopicView.swift in Sources */,
 				4CFCB8A71BEBAAC500D84B29 /* UIExchangeTableViewCell.swift in Sources */,
-				4CA2A8681BEA58E70094A6FC /* UIJoinViewController.swift in Sources */,
 				4CFCB88A1BEBA79900D84B29 /* UIActivityInfoForthTableViewCell.swift in Sources */,
 				4CA2A8541BEA456D0094A6FC /* UIImage+SingleColor.m in Sources */,
 				4CFCB8821BEBA79900D84B29 /* UIActivityCollectionViewCell.swift in Sources */,
+				4CFCB8D51BEF1ABF00D84B29 /* UIJoinViewController.swift in Sources */,
 				4CF6EFB01BDF512B00CC5BA7 /* UIBaseViewController.swift in Sources */,
 				4CFCB8641BEBA66000D84B29 /* TAPageControl.m in Sources */,
 				4CFCB8AB1BEBAAD200D84B29 /* UITopicTableViewCell.swift in Sources */,
 				4C07BB571BE5F445003E799B /* UIFirstInfoViewController.swift in Sources */,
 				4CFCB8881BEBA79900D84B29 /* UIActivityInfoFooterView.swift in Sources */,
+				4CFCB8D71BEF1ABF00D84B29 /* UIExchangeInfoViewController.swift in Sources */,
 				4CFCB8901BEBA79900D84B29 /* UIActivityTableViewCell.swift in Sources */,
 				4CF6EFD61BE260F400CC5BA7 /* UIBaseTabBar.swift in Sources */,
 				4CF6EFC81BDF6F7700CC5BA7 /* UIRegistViewController.swift in Sources */,
 				4CF6EFB41BDF68AD00CC5BA7 /* UILocalViewController.swift in Sources */,
 				4CFCB8841BEBA79900D84B29 /* UIActivityInfoFifthTableViewCell.swift in Sources */,
 				4CFCB8801BEBA79900D84B29 /* FindListHeadView.swift in Sources */,
+				4CFCB8DB1BEF1ABF00D84B29 /* UITopicView.swift in Sources */,
 				4CF6EFB81BDF6ED000CC5BA7 /* UIShowViewController.swift in Sources */,
 				4CFCB8631BEBA66000D84B29 /* TADotView.m in Sources */,
-				4CA2A85B1BEA4B680094A6FC /* UIActivityView.swift in Sources */,
 				4CF6EFA21BDE5A2600CC5BA7 /* UIBaseNavViewController.swift in Sources */,
 				4CFCB88C1BEBA79900D84B29 /* UIActivityInfoSecondTableViewCell.swift in Sources */,
 				4C07BB5F1BE60769003E799B /* UICenterTableViewCell.swift in Sources */,
 				4CF6EFC41BDF6F6600CC5BA7 /* UILoginViewController.swift in Sources */,
+				4CFCB8E31BEF39B600D84B29 /* CommentTableViewCell.swift in Sources */,
 				4CF6EFC01BDF6EF900CC5BA7 /* UICenterViewController.swift in Sources */,
+				4CFCB8D31BEF1ABF00D84B29 /* UIActivityView.swift in Sources */,
+				4CFCB8DF1BEF2F7400D84B29 /* TopicImageCollectionViewCell.swift in Sources */,
 				4CF6EFD01BDF6FE700CC5BA7 /* UIForgetPWViewController.swift in Sources */,
+				4CFCB8D91BEF1ABF00D84B29 /* UIExchangeView.swift in Sources */,
 				4C07BB5B1BE5F456003E799B /* UISecondInfoViewController.swift in Sources */,
 				4CA59AC61BE79B3300C614FC /* UIChooseAddressViewController.swift in Sources */,
 				4CA59ACE1BE85B5C00C614FC /* UIShowNavigationView.swift in Sources */,
@@ -911,14 +958,15 @@
 				4CFCB89C1BEBA90B00D84B29 /* ADModel.m in Sources */,
 				4CF6EFD31BDF70C400CC5BA7 /* NSUserInfoObject.swift in Sources */,
 				4CF6EFAC1BDF50E900CC5BA7 /* UIBridgeViewController.m in Sources */,
+				4CFCB8E71BEF39C900D84B29 /* UILikeTableViewCell.swift in Sources */,
 				4C07BB4F1BE5CF41003E799B /* UIAgreementViewController.swift in Sources */,
+				4CFCB8D11BEF1ABF00D84B29 /* UIActivityInfoViewController.swift in Sources */,
 				4CA2A84D1BEA40C20094A6FC /* UIButton+CustomStyle.m in Sources */,
 				4CF6EFCC1BDF6F9700CC5BA7 /* UIEnterViewController.swift in Sources */,
 				4CFCB88E1BEBA79900D84B29 /* UIActivityInfoThirdTableViewCell.swift in Sources */,
 				4CF6EFBC1BDF6EE300CC5BA7 /* UIFindViewController.swift in Sources */,
 				4CF6EF601BDCA47600CC5BA7 /* ViewController.swift in Sources */,
 				4CFCB8611BEBA66000D84B29 /* TAAbstractDotView.m in Sources */,
-				4CFCB8AF1BEC377A00D84B29 /* UIExchangeInfoViewController.swift in Sources */,
 				4CF6EF5E1BDCA47600CC5BA7 /* AppDelegate.swift in Sources */,
 				4CFCB8861BEBA79900D84B29 /* UIActivityInfoFirstTableViewCell.swift in Sources */,
 			);
