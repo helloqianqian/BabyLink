@@ -37,12 +37,18 @@ class UITopicTableViewCell: UITableViewCell ,UITableViewDelegate,UITableViewData
         
         collectionView.delegate = self;
         collectionView.dataSource = self;
-        
-        
+        collectionView.registerNib(UINib(nibName: "TopicImageCollectionViewCell", bundle: NSBundle.mainBundle()), forCellWithReuseIdentifier: "TopicImageCollectionViewCellIdentifier")
         
     }
 
     //MARK: - UITableViewDelegate
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.row == 0{
+            return 25;
+        } else {
+            return 20;
+        }
+    }
     //MARK: - UITableViewDataSource
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3;
@@ -50,14 +56,28 @@ class UITopicTableViewCell: UITableViewCell ,UITableViewDelegate,UITableViewData
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCellWithIdentifier("UILikeTableViewCellIdentifier", forIndexPath: indexPath)
+            let cell = tableView.dequeueReusableCellWithIdentifier("UILikeTableViewCellIdentifier", forIndexPath: indexPath) as! UILikeTableViewCell;
             return cell;
         } else {
-            let cell = tableView.dequeueReusableCellWithIdentifier("CommentTableViewCellIdentifier", forIndexPath: indexPath)
+            let cell = tableView.dequeueReusableCellWithIdentifier("CommentTableViewCellIdentifier", forIndexPath: indexPath) as! CommentTableViewCell;
+            cell.contentLabel.text = "小明：194778438488838"
             return cell;
         }
     }
     
+    
+    //MARK: - UICollectionViewDataSource
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    {
+        return 4;
+    }
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("TopicImageCollectionViewCellIdentifier", forIndexPath: indexPath) as! TopicImageCollectionViewCell;
+        cell.contentImage.backgroundColor = UIColor.redColor();
+        return cell;
+    }
+    
+        
     
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

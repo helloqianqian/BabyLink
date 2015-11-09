@@ -34,6 +34,20 @@
     UIImage *image=[UIImage imageWithColor:RedBtnColor size:self.frame.size];
     [self setBackgroundImage:image forState:UIControlStateNormal];
 }
-
-
+/**
+ *  <#Description#>
+ */
+- (void)makeBackGroundColor_White{
+    self.clipsToBounds = YES;
+    self.layer.cornerRadius = 4;
+    
+    self.layer.borderWidth = 0.5;
+    self.layer.borderColor = RGBCOLOR(0xF4F4F5).CGColor;
+    
+    [self setTitleColor:RGBCOLOR(0xBE3D6F) forState:UIControlStateNormal];
+    
+    UIImage *image = [UIImage imageWithColor:[UIColor whiteColor] size:self.frame.size];
+    [self setBackgroundImage:image forState:UIControlStateNormal];
+    
+}
 @end

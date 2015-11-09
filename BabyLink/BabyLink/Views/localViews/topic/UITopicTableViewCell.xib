@@ -90,12 +90,13 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TEV-jT-U0h">
                                 <rect key="frame" x="58" y="332" width="10" height="10"/>
                                 <animations/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.058823529409999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="10" id="drg-Yq-P5G"/>
                                     <constraint firstAttribute="height" constant="10" id="m5P-Q8-V39"/>
                                 </constraints>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="soV-OR-wBd">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="soV-OR-wBd">
                                 <rect key="frame" x="58" y="342" width="291" height="60"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
@@ -158,7 +159,7 @@
                 <outlet property="nameLabel" destination="NTf-Eg-iFS" id="Z6L-KY-6Vv"/>
                 <outlet property="timeLabel" destination="ZE7-NO-dZ9" id="CAO-m5-DvX"/>
             </connections>
-            <point key="canvasLocation" x="59.5" y="239.75"/>
+            <point key="canvasLocation" x="-126.5" y="234.75"/>
         </tableViewCell>
     </objects>
 </document>

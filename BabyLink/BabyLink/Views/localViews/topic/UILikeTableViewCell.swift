@@ -10,6 +10,8 @@ import UIKit
 
 class UILikeTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var likeLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

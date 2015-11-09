@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="164" id="KGk-i7-Jjw" customClass="UIFindInfoForthTableViewCell" customModule="BabyLink" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="406" height="164"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="406" height="163.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1kt-M4-dSt">
+                        <rect key="frame" x="10" y="5" width="386" height="153.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="预定须知" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fq-Sf-LfY">
+                                <rect key="frame" x="15" y="10" width="84" height="20"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="BXY-Dd-MtS"/>
+                                    <constraint firstAttribute="width" constant="84" id="FPo-Qy-8Qc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.39607843139999999" green="0.39607843139999999" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1M0-Fa-psu">
+                                <rect key="frame" x="0.0" y="40" width="386" height="0.5"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.92941176469999998" green="0.93333333330000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.5" id="2L0-3B-O5e"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="阿斯顿拉亏空的快点快点看打快点看看的的卡里的减肥开始看见的历史老师了算了算了算了算了算了老师算了算了算了算了算了算了算了算了算了商量商量事" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfA-LO-pfo">
+                                <rect key="frame" x="15" y="50.5" width="356" height="63"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.0" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="gfA-LO-pfo" secondAttribute="bottom" constant="40" id="2ga-zw-j6t"/>
+                            <constraint firstItem="7fq-Sf-LfY" firstAttribute="top" secondItem="1kt-M4-dSt" secondAttribute="top" constant="10" id="3Sx-m6-GmL"/>
+                            <constraint firstItem="7fq-Sf-LfY" firstAttribute="leading" secondItem="1kt-M4-dSt" secondAttribute="leading" constant="15" id="73D-s3-xMR"/>
+                            <constraint firstAttribute="trailing" secondItem="gfA-LO-pfo" secondAttribute="trailing" constant="15" id="74F-wS-Dpp"/>
+                            <constraint firstAttribute="trailing" secondItem="1M0-Fa-psu" secondAttribute="trailing" id="9rQ-FS-jCJ"/>
+                            <constraint firstItem="1M0-Fa-psu" firstAttribute="top" secondItem="7fq-Sf-LfY" secondAttribute="bottom" constant="10" id="Iez-HV-M7J"/>
+                            <constraint firstItem="gfA-LO-pfo" firstAttribute="top" secondItem="1M0-Fa-psu" secondAttribute="bottom" constant="10" id="V5H-J3-er2"/>
+                            <constraint firstItem="gfA-LO-pfo" firstAttribute="leading" secondItem="1kt-M4-dSt" secondAttribute="leading" constant="15" id="wHW-bc-BNH"/>
+                            <constraint firstItem="1M0-Fa-psu" firstAttribute="leading" secondItem="1kt-M4-dSt" secondAttribute="leading" id="zEH-0B-Gng"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <animations/>
+                <color key="backgroundColor" red="0.92941176469999998" green="0.93333333330000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstItem="1kt-M4-dSt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="2ar-fJ-pkA"/>
+                    <constraint firstAttribute="bottom" secondItem="1kt-M4-dSt" secondAttribute="bottom" constant="5" id="3Uq-wc-bDL"/>
+                    <constraint firstItem="1kt-M4-dSt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="9Co-55-DHf"/>
+                    <constraint firstAttribute="trailing" secondItem="1kt-M4-dSt" secondAttribute="trailing" constant="10" id="ZKE-tx-TXn"/>
+                </constraints>
+            </tableViewCellContentView>
+            <animations/>
+            <connections>
+                <outlet property="backView" destination="1kt-M4-dSt" id="aF0-gK-wut"/>
+                <outlet property="contentLabel" destination="gfA-LO-pfo" id="1ke-fU-iZr"/>
+            </connections>
+            <point key="canvasLocation" x="410" y="230"/>
+        </tableViewCell>
+    </objects>
+</document>
