@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C006B121BF1F85A00FFBFF6 /* UIConvertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C006B101BF1F85A00FFBFF6 /* UIConvertViewController.swift */; };
+		4C006B131BF1F85A00FFBFF6 /* UIConvertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C006B111BF1F85A00FFBFF6 /* UIConvertViewController.xib */; };
+		4C006B161BF1F87000FFBFF6 /* UIConverInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C006B141BF1F87000FFBFF6 /* UIConverInfoViewController.swift */; };
+		4C006B171BF1F87000FFBFF6 /* UIConverInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C006B151BF1F87000FFBFF6 /* UIConverInfoViewController.xib */; };
+		4C006B1E1BF1FB9200FFBFF6 /* UIConverCodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C006B1C1BF1FB9200FFBFF6 /* UIConverCodeTableViewCell.swift */; };
+		4C006B1F1BF1FB9200FFBFF6 /* UIConverCodeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C006B1D1BF1FB9200FFBFF6 /* UIConverCodeTableViewCell.xib */; };
+		4C006B211BF22A5200FFBFF6 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C006B201BF22A5200FFBFF6 /* Common.swift */; };
+		4C006B241BF232E800FFBFF6 /* UIFinalPayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C006B221BF232E800FFBFF6 /* UIFinalPayViewController.swift */; };
+		4C006B251BF232E800FFBFF6 /* UIFinalPayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C006B231BF232E800FFBFF6 /* UIFinalPayViewController.xib */; };
+		4C006B281BF2342A00FFBFF6 /* UIFinalPayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C006B261BF2342A00FFBFF6 /* UIFinalPayTableViewCell.swift */; };
+		4C006B291BF2342A00FFBFF6 /* UIFinalPayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C006B271BF2342A00FFBFF6 /* UIFinalPayTableViewCell.xib */; };
+		4C006B301BF23F2900FFBFF6 /* UIMyOrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C006B2E1BF23F2900FFBFF6 /* UIMyOrderListViewController.swift */; };
+		4C006B311BF23F2900FFBFF6 /* UIMyOrderListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C006B2F1BF23F2900FFBFF6 /* UIMyOrderListViewController.xib */; };
+		4C006B341BF23F6300FFBFF6 /* UIMyOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C006B321BF23F6300FFBFF6 /* UIMyOrderTableViewCell.swift */; };
+		4C006B351BF23F6300FFBFF6 /* UIMyOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C006B331BF23F6300FFBFF6 /* UIMyOrderTableViewCell.xib */; };
 		4C0244E21BEF4DA2004BE881 /* UILinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0244DE1BEF4DA2004BE881 /* UILinkView.swift */; };
 		4C0244E31BEF4DA2004BE881 /* UILinkView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C0244DF1BEF4DA2004BE881 /* UILinkView.xib */; };
 		4C0244E41BEF4DA2004BE881 /* UISquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0244E01BEF4DA2004BE881 /* UISquareView.swift */; };
@@ -29,6 +44,14 @@
 		4C0245061BF03104004BE881 /* UIFindInfoFifithTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C0245041BF03104004BE881 /* UIFindInfoFifithTableViewCell.xib */; };
 		4C0245081BF0395D004BE881 /* UIFindInfoFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0245071BF0395D004BE881 /* UIFindInfoFooterView.swift */; };
 		4C02450A1BF0396D004BE881 /* UIFindInfoFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C0245091BF0396D004BE881 /* UIFindInfoFooterView.xib */; };
+		4C0245481BF0D883004BE881 /* UIFriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0245461BF0D883004BE881 /* UIFriendsTableViewCell.swift */; };
+		4C0245491BF0D883004BE881 /* UIFriendsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C0245471BF0D883004BE881 /* UIFriendsTableViewCell.xib */; };
+		4C02454C1BF0DAED004BE881 /* UIFriendsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C02454A1BF0DAED004BE881 /* UIFriendsListViewController.swift */; };
+		4C02454D1BF0DAED004BE881 /* UIFriendsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C02454B1BF0DAED004BE881 /* UIFriendsListViewController.xib */; };
+		4C0245501BF0DDE6004BE881 /* UIPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C02454E1BF0DDE6004BE881 /* UIPaymentViewController.swift */; };
+		4C0245511BF0DDE6004BE881 /* UIPaymentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C02454F1BF0DDE6004BE881 /* UIPaymentViewController.xib */; };
+		4C0245541BF0E688004BE881 /* UIOrderInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0245521BF0E688004BE881 /* UIOrderInfoViewController.swift */; };
+		4C0245551BF0E688004BE881 /* UIOrderInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C0245531BF0E688004BE881 /* UIOrderInfoViewController.xib */; };
 		4C07BB4F1BE5CF41003E799B /* UIAgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C07BB4D1BE5CF41003E799B /* UIAgreementViewController.swift */; };
 		4C07BB501BE5CF41003E799B /* UIAgreementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C07BB4E1BE5CF41003E799B /* UIAgreementViewController.xib */; };
 		4C07BB531BE5F433003E799B /* UIFullInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C07BB511BE5F433003E799B /* UIFullInfoViewController.swift */; };
@@ -146,6 +169,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C006B101BF1F85A00FFBFF6 /* UIConvertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIConvertViewController.swift; sourceTree = "<group>"; };
+		4C006B111BF1F85A00FFBFF6 /* UIConvertViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIConvertViewController.xib; sourceTree = "<group>"; };
+		4C006B141BF1F87000FFBFF6 /* UIConverInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIConverInfoViewController.swift; sourceTree = "<group>"; };
+		4C006B151BF1F87000FFBFF6 /* UIConverInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIConverInfoViewController.xib; sourceTree = "<group>"; };
+		4C006B1C1BF1FB9200FFBFF6 /* UIConverCodeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIConverCodeTableViewCell.swift; sourceTree = "<group>"; };
+		4C006B1D1BF1FB9200FFBFF6 /* UIConverCodeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIConverCodeTableViewCell.xib; sourceTree = "<group>"; };
+		4C006B201BF22A5200FFBFF6 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		4C006B221BF232E800FFBFF6 /* UIFinalPayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFinalPayViewController.swift; sourceTree = "<group>"; };
+		4C006B231BF232E800FFBFF6 /* UIFinalPayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIFinalPayViewController.xib; sourceTree = "<group>"; };
+		4C006B261BF2342A00FFBFF6 /* UIFinalPayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFinalPayTableViewCell.swift; sourceTree = "<group>"; };
+		4C006B271BF2342A00FFBFF6 /* UIFinalPayTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIFinalPayTableViewCell.xib; sourceTree = "<group>"; };
+		4C006B2E1BF23F2900FFBFF6 /* UIMyOrderListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIMyOrderListViewController.swift; sourceTree = "<group>"; };
+		4C006B2F1BF23F2900FFBFF6 /* UIMyOrderListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIMyOrderListViewController.xib; sourceTree = "<group>"; };
+		4C006B321BF23F6300FFBFF6 /* UIMyOrderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIMyOrderTableViewCell.swift; sourceTree = "<group>"; };
+		4C006B331BF23F6300FFBFF6 /* UIMyOrderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIMyOrderTableViewCell.xib; sourceTree = "<group>"; };
 		4C0244DE1BEF4DA2004BE881 /* UILinkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILinkView.swift; sourceTree = "<group>"; };
 		4C0244DF1BEF4DA2004BE881 /* UILinkView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UILinkView.xib; sourceTree = "<group>"; };
 		4C0244E01BEF4DA2004BE881 /* UISquareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISquareView.swift; sourceTree = "<group>"; };
@@ -168,6 +206,14 @@
 		4C0245041BF03104004BE881 /* UIFindInfoFifithTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIFindInfoFifithTableViewCell.xib; sourceTree = "<group>"; };
 		4C0245071BF0395D004BE881 /* UIFindInfoFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFindInfoFooterView.swift; sourceTree = "<group>"; };
 		4C0245091BF0396D004BE881 /* UIFindInfoFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIFindInfoFooterView.xib; sourceTree = "<group>"; };
+		4C0245461BF0D883004BE881 /* UIFriendsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFriendsTableViewCell.swift; sourceTree = "<group>"; };
+		4C0245471BF0D883004BE881 /* UIFriendsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIFriendsTableViewCell.xib; sourceTree = "<group>"; };
+		4C02454A1BF0DAED004BE881 /* UIFriendsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFriendsListViewController.swift; sourceTree = "<group>"; };
+		4C02454B1BF0DAED004BE881 /* UIFriendsListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIFriendsListViewController.xib; sourceTree = "<group>"; };
+		4C02454E1BF0DDE6004BE881 /* UIPaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPaymentViewController.swift; sourceTree = "<group>"; };
+		4C02454F1BF0DDE6004BE881 /* UIPaymentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIPaymentViewController.xib; sourceTree = "<group>"; };
+		4C0245521BF0E688004BE881 /* UIOrderInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIOrderInfoViewController.swift; sourceTree = "<group>"; };
+		4C0245531BF0E688004BE881 /* UIOrderInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIOrderInfoViewController.xib; sourceTree = "<group>"; };
 		4C07BB4D1BE5CF41003E799B /* UIAgreementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAgreementViewController.swift; sourceTree = "<group>"; };
 		4C07BB4E1BE5CF41003E799B /* UIAgreementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIAgreementViewController.xib; sourceTree = "<group>"; };
 		4C07BB511BE5F433003E799B /* UIFullInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFullInfoViewController.swift; sourceTree = "<group>"; };
@@ -322,6 +368,76 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4C006B0C1BF1F76500FFBFF6 /* convertCode */ = {
+			isa = PBXGroup;
+			children = (
+				4C006B101BF1F85A00FFBFF6 /* UIConvertViewController.swift */,
+				4C006B111BF1F85A00FFBFF6 /* UIConvertViewController.xib */,
+				4C006B141BF1F87000FFBFF6 /* UIConverInfoViewController.swift */,
+				4C006B151BF1F87000FFBFF6 /* UIConverInfoViewController.xib */,
+			);
+			path = convertCode;
+			sourceTree = "<group>";
+		};
+		4C006B0D1BF1F76500FFBFF6 /* finalPay */ = {
+			isa = PBXGroup;
+			children = (
+				4C006B221BF232E800FFBFF6 /* UIFinalPayViewController.swift */,
+				4C006B231BF232E800FFBFF6 /* UIFinalPayViewController.xib */,
+			);
+			path = finalPay;
+			sourceTree = "<group>";
+		};
+		4C006B0E1BF1F76500FFBFF6 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		4C006B0F1BF1F76500FFBFF6 /* myOrder */ = {
+			isa = PBXGroup;
+			children = (
+				4C006B2E1BF23F2900FFBFF6 /* UIMyOrderListViewController.swift */,
+				4C006B2F1BF23F2900FFBFF6 /* UIMyOrderListViewController.xib */,
+			);
+			path = myOrder;
+			sourceTree = "<group>";
+		};
+		4C006B181BF1FB0000FFBFF6 /* convertCodeViews */ = {
+			isa = PBXGroup;
+			children = (
+				4C006B1C1BF1FB9200FFBFF6 /* UIConverCodeTableViewCell.swift */,
+				4C006B1D1BF1FB9200FFBFF6 /* UIConverCodeTableViewCell.xib */,
+			);
+			path = convertCodeViews;
+			sourceTree = "<group>";
+		};
+		4C006B191BF1FB0000FFBFF6 /* finalPayViews */ = {
+			isa = PBXGroup;
+			children = (
+				4C006B261BF2342A00FFBFF6 /* UIFinalPayTableViewCell.swift */,
+				4C006B271BF2342A00FFBFF6 /* UIFinalPayTableViewCell.xib */,
+			);
+			path = finalPayViews;
+			sourceTree = "<group>";
+		};
+		4C006B1A1BF1FB0000FFBFF6 /* MineViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MineViews;
+			sourceTree = "<group>";
+		};
+		4C006B1B1BF1FB0000FFBFF6 /* myOrderViews */ = {
+			isa = PBXGroup;
+			children = (
+				4C006B321BF23F6300FFBFF6 /* UIMyOrderTableViewCell.swift */,
+				4C006B331BF23F6300FFBFF6 /* UIMyOrderTableViewCell.xib */,
+			);
+			path = myOrderViews;
+			sourceTree = "<group>";
+		};
 		4C0244F21BEF781A004BE881 /* FindInfo */ = {
 			isa = PBXGroup;
 			children = (
@@ -347,6 +463,7 @@
 				4CF6EFA81BDF50E800CC5BA7 /* BabyLink-Bridging-Header.h */,
 				4CA2A8501BEA43ED0094A6FC /* PublicHeader.h */,
 				4CA2A8551BEA46AF0094A6FC /* PrefixHeader.pch */,
+				4C006B201BF22A5200FFBFF6 /* Common.swift */,
 			);
 			path = Header;
 			sourceTree = "<group>";
@@ -446,6 +563,10 @@
 		4CF6EF8C1BDE58D300CC5BA7 /* center */ = {
 			isa = PBXGroup;
 			children = (
+				4C006B0C1BF1F76500FFBFF6 /* convertCode */,
+				4C006B0D1BF1F76500FFBFF6 /* finalPay */,
+				4C006B0E1BF1F76500FFBFF6 /* Mine */,
+				4C006B0F1BF1F76500FFBFF6 /* myOrder */,
 				4CF6EFBE1BDF6EF900CC5BA7 /* UICenterViewController.swift */,
 				4CF6EFBF1BDF6EF900CC5BA7 /* UICenterViewController.xib */,
 			);
@@ -459,6 +580,12 @@
 				4CF6EFBB1BDF6EE300CC5BA7 /* UIFindViewController.xib */,
 				4C0244EE1BEF73D9004BE881 /* UIFindInfoViewController.swift */,
 				4C0244EF1BEF73D9004BE881 /* UIFindInfoViewController.xib */,
+				4C02454A1BF0DAED004BE881 /* UIFriendsListViewController.swift */,
+				4C02454B1BF0DAED004BE881 /* UIFriendsListViewController.xib */,
+				4C02454E1BF0DDE6004BE881 /* UIPaymentViewController.swift */,
+				4C02454F1BF0DDE6004BE881 /* UIPaymentViewController.xib */,
+				4C0245521BF0E688004BE881 /* UIOrderInfoViewController.swift */,
+				4C0245531BF0E688004BE881 /* UIOrderInfoViewController.xib */,
 			);
 			path = find;
 			sourceTree = "<group>";
@@ -594,6 +721,10 @@
 		4CF6EF9A1BDE58D300CC5BA7 /* centerViews */ = {
 			isa = PBXGroup;
 			children = (
+				4C006B181BF1FB0000FFBFF6 /* convertCodeViews */,
+				4C006B191BF1FB0000FFBFF6 /* finalPayViews */,
+				4C006B1A1BF1FB0000FFBFF6 /* MineViews */,
+				4C006B1B1BF1FB0000FFBFF6 /* myOrderViews */,
 				4C07BB5D1BE60769003E799B /* UICenterTableViewCell.swift */,
 				4C07BB5E1BE60769003E799B /* UICenterTableViewCell.xib */,
 			);
@@ -606,6 +737,8 @@
 				4C0244F21BEF781A004BE881 /* FindInfo */,
 				4C0244EA1BEF6933004BE881 /* UIFindTableViewCell.swift */,
 				4C0244EB1BEF6933004BE881 /* UIFindTableViewCell.xib */,
+				4C0245461BF0D883004BE881 /* UIFriendsTableViewCell.swift */,
+				4C0245471BF0D883004BE881 /* UIFriendsTableViewCell.xib */,
 			);
 			path = findViews;
 			sourceTree = "<group>";
@@ -888,12 +1021,15 @@
 				4C0244F11BEF73D9004BE881 /* UIFindInfoViewController.xib in Resources */,
 				4C07BB5C1BE5F456003E799B /* UISecondInfoViewController.xib in Resources */,
 				4CFCB8A81BEBAAC500D84B29 /* UIExchangeTableViewCell.xib in Resources */,
+				4C006B311BF23F2900FFBFF6 /* UIMyOrderListViewController.xib in Resources */,
+				4C0245551BF0E688004BE881 /* UIOrderInfoViewController.xib in Resources */,
 				4CF6EFAD1BDF50E900CC5BA7 /* UIBridgeViewController.xib in Resources */,
 				4C0245021BF02F02004BE881 /* UIFindInfoForthTableViewCell.xib in Resources */,
 				4C07BB581BE5F445003E799B /* UIFirstInfoViewController.xib in Resources */,
 				4C07BB501BE5CF41003E799B /* UIAgreementViewController.xib in Resources */,
 				4C0244E51BEF4DA2004BE881 /* UISquareView.xib in Resources */,
 				4CFCB8AC1BEBAAD200D84B29 /* UITopicTableViewCell.xib in Resources */,
+				4C006B351BF23F6300FFBFF6 /* UIMyOrderTableViewCell.xib in Resources */,
 				4CFCB8D61BEF1ABF00D84B29 /* UIJoinViewController.xib in Resources */,
 				4CF6EFB51BDF68AD00CC5BA7 /* UILocalViewController.xib in Resources */,
 				4CF6EFC51BDF6F6600CC5BA7 /* UILoginViewController.xib in Resources */,
@@ -903,14 +1039,18 @@
 				4CFCB8891BEBA79900D84B29 /* UIActivityInfoFooterView.xib in Resources */,
 				4CF6EFA31BDE5A2600CC5BA7 /* UIBaseNavViewController.xib in Resources */,
 				4CFCB88F1BEBA79900D84B29 /* UIActivityInfoThirdTableViewCell.xib in Resources */,
+				4C0245491BF0D883004BE881 /* UIFriendsTableViewCell.xib in Resources */,
 				4CF6EFCD1BDF6F9700CC5BA7 /* UIEnterViewController.xib in Resources */,
+				4C006B291BF2342A00FFBFF6 /* UIFinalPayTableViewCell.xib in Resources */,
 				4CFCB88B1BEBA79900D84B29 /* UIActivityInfoForthTableViewCell.xib in Resources */,
 				4CFCB8911BEBA79900D84B29 /* UIActivityTableViewCell.xib in Resources */,
 				4CF6EF651BDCA47600CC5BA7 /* Assets.xcassets in Resources */,
 				4CFCB8DC1BEF1ABF00D84B29 /* UITopicView.xib in Resources */,
 				4CFCB8E41BEF39B600D84B29 /* CommentTableViewCell.xib in Resources */,
+				4C006B251BF232E800FFBFF6 /* UIFinalPayViewController.xib in Resources */,
 				4CA59AD01BE85B6800C614FC /* UIShowNavigationView.xib in Resources */,
 				4CFCB8871BEBA79900D84B29 /* UIActivityInfoFirstTableViewCell.xib in Resources */,
+				4C006B1F1BF1FB9200FFBFF6 /* UIConverCodeTableViewCell.xib in Resources */,
 				4C0244F61BEF787D004BE881 /* UIFindInfoFirstTableViewCell.xib in Resources */,
 				4C07BB601BE60769003E799B /* UICenterTableViewCell.xib in Resources */,
 				4C02450A1BF0396D004BE881 /* UIFindInfoFooterView.xib in Resources */,
@@ -927,8 +1067,12 @@
 				4C0244E31BEF4DA2004BE881 /* UILinkView.xib in Resources */,
 				4C0244FA1BEF7F5B004BE881 /* UIFindInfoSecondTableViewCell.xib in Resources */,
 				4CFCB8E01BEF2F7400D84B29 /* TopicImageCollectionViewCell.xib in Resources */,
+				4C006B131BF1F85A00FFBFF6 /* UIConvertViewController.xib in Resources */,
 				4CF6EFB11BDF512B00CC5BA7 /* UIBaseViewController.xib in Resources */,
+				4C02454D1BF0DAED004BE881 /* UIFriendsListViewController.xib in Resources */,
+				4C0245511BF0DDE6004BE881 /* UIPaymentViewController.xib in Resources */,
 				4CFCB8831BEBA79900D84B29 /* UIActivityCollectionViewCell.xib in Resources */,
+				4C006B171BF1F87000FFBFF6 /* UIConverInfoViewController.xib in Resources */,
 				4CA59AC71BE79B3300C614FC /* UIChooseAddressViewController.xib in Resources */,
 				4CF6EFA71BDE5A4700CC5BA7 /* UIBaseTabBarController.xib in Resources */,
 			);
@@ -1003,6 +1147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C02454C1BF0DAED004BE881 /* UIFriendsListViewController.swift in Sources */,
 				4CFCB8A31BEBAABA00D84B29 /* UILocalNavigationView.swift in Sources */,
 				4CF6EFA61BDE5A4700CC5BA7 /* UIBaseTabBarController.swift in Sources */,
 				4C0244E81BEF515A004BE881 /* UIShowTableViewCell.swift in Sources */,
@@ -1015,12 +1160,15 @@
 				4CFCB8821BEBA79900D84B29 /* UIActivityCollectionViewCell.swift in Sources */,
 				4CFCB8D51BEF1ABF00D84B29 /* UIJoinViewController.swift in Sources */,
 				4CF6EFB01BDF512B00CC5BA7 /* UIBaseViewController.swift in Sources */,
+				4C006B1E1BF1FB9200FFBFF6 /* UIConverCodeTableViewCell.swift in Sources */,
 				4CFCB8641BEBA66000D84B29 /* TAPageControl.m in Sources */,
 				4CFCB8AB1BEBAAD200D84B29 /* UITopicTableViewCell.swift in Sources */,
 				4C07BB571BE5F445003E799B /* UIFirstInfoViewController.swift in Sources */,
 				4CFCB8881BEBA79900D84B29 /* UIActivityInfoFooterView.swift in Sources */,
 				4CFCB8D71BEF1ABF00D84B29 /* UIExchangeInfoViewController.swift in Sources */,
+				4C006B161BF1F87000FFBFF6 /* UIConverInfoViewController.swift in Sources */,
 				4CFCB8901BEBA79900D84B29 /* UIActivityTableViewCell.swift in Sources */,
+				4C006B241BF232E800FFBFF6 /* UIFinalPayViewController.swift in Sources */,
 				4C0245011BF02F02004BE881 /* UIFindInfoForthTableViewCell.swift in Sources */,
 				4CF6EFD61BE260F400CC5BA7 /* UIBaseTabBar.swift in Sources */,
 				4C0244F01BEF73D9004BE881 /* UIFindInfoViewController.swift in Sources */,
@@ -1030,6 +1178,7 @@
 				4CFCB8801BEBA79900D84B29 /* FindListHeadView.swift in Sources */,
 				4CFCB8DB1BEF1ABF00D84B29 /* UITopicView.swift in Sources */,
 				4C0245081BF0395D004BE881 /* UIFindInfoFooterView.swift in Sources */,
+				4C0245481BF0D883004BE881 /* UIFriendsTableViewCell.swift in Sources */,
 				4CF6EFB81BDF6ED000CC5BA7 /* UIShowViewController.swift in Sources */,
 				4CFCB8631BEBA66000D84B29 /* TADotView.m in Sources */,
 				4CF6EFA21BDE5A2600CC5BA7 /* UIBaseNavViewController.swift in Sources */,
@@ -1037,8 +1186,10 @@
 				4C07BB5F1BE60769003E799B /* UICenterTableViewCell.swift in Sources */,
 				4CF6EFC41BDF6F6600CC5BA7 /* UILoginViewController.swift in Sources */,
 				4CFCB8E31BEF39B600D84B29 /* CommentTableViewCell.swift in Sources */,
+				4C006B301BF23F2900FFBFF6 /* UIMyOrderListViewController.swift in Sources */,
 				4C0244EC1BEF6933004BE881 /* UIFindTableViewCell.swift in Sources */,
 				4CF6EFC01BDF6EF900CC5BA7 /* UICenterViewController.swift in Sources */,
+				4C006B121BF1F85A00FFBFF6 /* UIConvertViewController.swift in Sources */,
 				4CFCB8D31BEF1ABF00D84B29 /* UIActivityView.swift in Sources */,
 				4C0244FD1BF02C8A004BE881 /* UIFindInfoThirdTableViewCell.swift in Sources */,
 				4CFCB8DF1BEF2F7400D84B29 /* TopicImageCollectionViewCell.swift in Sources */,
@@ -1046,8 +1197,10 @@
 				4CFCB8D91BEF1ABF00D84B29 /* UIExchangeView.swift in Sources */,
 				4C07BB5B1BE5F456003E799B /* UISecondInfoViewController.swift in Sources */,
 				4C0245051BF03104004BE881 /* UIFindInfoFifithTableViewCell.swift in Sources */,
+				4C006B211BF22A5200FFBFF6 /* Common.swift in Sources */,
 				4CA59AC61BE79B3300C614FC /* UIChooseAddressViewController.swift in Sources */,
 				4C0244F91BEF7F5B004BE881 /* UIFindInfoSecondTableViewCell.swift in Sources */,
+				4C0245541BF0E688004BE881 /* UIOrderInfoViewController.swift in Sources */,
 				4CA59ACE1BE85B5C00C614FC /* UIShowNavigationView.swift in Sources */,
 				4CFCB8621BEBA66000D84B29 /* TAAnimatedDotView.m in Sources */,
 				4CFCB89C1BEBA90B00D84B29 /* ADModel.m in Sources */,
@@ -1056,6 +1209,8 @@
 				4CFCB8E71BEF39C900D84B29 /* UILikeTableViewCell.swift in Sources */,
 				4C0244F51BEF787D004BE881 /* UIFindInfoFirstTableViewCell.swift in Sources */,
 				4C07BB4F1BE5CF41003E799B /* UIAgreementViewController.swift in Sources */,
+				4C006B341BF23F6300FFBFF6 /* UIMyOrderTableViewCell.swift in Sources */,
+				4C006B281BF2342A00FFBFF6 /* UIFinalPayTableViewCell.swift in Sources */,
 				4CFCB8D11BEF1ABF00D84B29 /* UIActivityInfoViewController.swift in Sources */,
 				4CA2A84D1BEA40C20094A6FC /* UIButton+CustomStyle.m in Sources */,
 				4CF6EFCC1BDF6F9700CC5BA7 /* UIEnterViewController.swift in Sources */,
@@ -1064,6 +1219,7 @@
 				4CF6EF601BDCA47600CC5BA7 /* ViewController.swift in Sources */,
 				4CFCB8611BEBA66000D84B29 /* TAAbstractDotView.m in Sources */,
 				4CF6EF5E1BDCA47600CC5BA7 /* AppDelegate.swift in Sources */,
+				4C0245501BF0DDE6004BE881 /* UIPaymentViewController.swift in Sources */,
 				4CFCB8861BEBA79900D84B29 /* UIActivityInfoFirstTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

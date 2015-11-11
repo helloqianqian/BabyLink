@@ -35,6 +35,7 @@ class UIFindInfoViewController: UIBaseViewController ,UITableViewDelegate,UITabl
             return cell;
         case 1:
             let cell = tableView.dequeueReusableCellWithIdentifier("UIFindInfoSecondTableViewCellIdentifier", forIndexPath: indexPath) as! UIFindInfoSecondTableViewCell;
+            cell.inviteBtn.addTarget(self, action: "inviteNeighbor:", forControlEvents: UIControlEvents.TouchUpInside);
             return cell;
         case 2:
             let cell = tableView.dequeueReusableCellWithIdentifier("UIFindInfoThirdTableViewCellIdentifier", forIndexPath: indexPath) as! UIFindInfoThirdTableViewCell;
@@ -76,6 +77,11 @@ class UIFindInfoViewController: UIBaseViewController ,UITableViewDelegate,UITabl
     
     func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footerView = NSBundle.mainBundle().loadNibNamed("UIFindInfoFooterView", owner: nil, options: nil).first as! UIFindInfoFooterView;
+        footerView.originPriceLabel.text = "现价\n￥2239.00";
+        footerView.originPriceBtn.addTarget(self, action: "originalPricePayFunction:", forControlEvents: UIControlEvents.TouchUpInside);
+        
+        footerView.prePayLabel.text = "我要预订\n￥22.00";
+        footerView.prePayBtn.addTarget(self, action: "prePricePayFunction:", forControlEvents: UIControlEvents.TouchUpInside);
         return footerView;
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -83,6 +89,21 @@ class UIFindInfoViewController: UIBaseViewController ,UITableViewDelegate,UITabl
             //商品详情
         }
     }
+    
+    func inviteNeighbor(sender:UIButton) {
+        let listVC:UIFriendsListViewController = UIFriendsListViewController(nibName:"UIFriendsListViewController", bundle: NSBundle.mainBundle());
+        self.navigationController?.pushViewController(listVC, animated: true);
+    }
+    
+    
+    func originalPricePayFunction(sender:UIButton){
+        
+    }
+    func prePricePayFunction(sender:UIButton){
+        let payVC = UIPaymentViewController(nibName:"UIPaymentViewController", bundle: NSBundle.mainBundle());
+        self.navigationController?.pushViewController(payVC, animated: true);
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

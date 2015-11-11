@@ -30,9 +30,9 @@ class UILocalNavigationView: UIView {
         exchangeTab.setTitleColor(UIColor.purpleColor(), forState: UIControlState.Selected);
         
     }
-//    deinit {
-//        self.removeObserver(self, forKeyPath: "selectedItem")
-//    }
+    deinit{
+        self.removeObserver(self, forKeyPath: "selectedItem", context: &mycontext);
+    }
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         if context == &mycontext {
             NSLog("\(change![NSKeyValueChangeNewKey])")

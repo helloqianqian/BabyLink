@@ -78,6 +78,12 @@
                 <constraint firstItem="yBG-fr-QsR" firstAttribute="trailing" secondItem="5w5-F2-qMs" secondAttribute="trailing" id="xeG-aa-RYP"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="originPriceBtn" destination="VxJ-dz-2Mv" id="9VW-2l-Ils"/>
+                <outlet property="originPriceLabel" destination="130-wM-zNX" id="QaE-BE-qfr"/>
+                <outlet property="prePayBtn" destination="5w5-F2-qMs" id="UU8-Z1-G92"/>
+                <outlet property="prePayLabel" destination="yBG-fr-QsR" id="nEr-4q-vZa"/>
+            </connections>
             <point key="canvasLocation" x="139" y="143"/>
         </view>
     </objects>

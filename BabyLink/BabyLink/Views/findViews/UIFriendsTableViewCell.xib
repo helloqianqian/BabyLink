@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="UIFriendsTableViewCell" customModule="BabyLink" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="paK-XD-56t">
+                        <rect key="frame" x="18" y="7" width="35" height="35"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="3TO-iv-kqn"/>
+                            <constraint firstAttribute="width" constant="35" id="YgM-xH-aqx"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SI6-VE-3aj">
+                        <rect key="frame" x="250" y="13" width="58" height="24"/>
+                        <animations/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.058823529409999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="58" id="MIr-10-srL"/>
+                            <constraint firstAttribute="height" constant="24" id="Q4w-ph-gHh"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <state key="normal" title="邀请"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="绿地小区" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VcR-yG-FYA">
+                        <rect key="frame" x="63" y="29" width="177" height="16"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="FG1-YV-MZ4"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.63137254899999995" green="0.63137254899999995" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暖暖" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82o-Jh-Mkr">
+                        <rect key="frame" x="63" y="6" width="177" height="20"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="ZS7-4N-LUv"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstItem="SI6-VE-3aj" firstAttribute="leading" secondItem="VcR-yG-FYA" secondAttribute="trailing" constant="10" id="7Kd-fN-DPI"/>
+                    <constraint firstItem="paK-XD-56t" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Cjc-So-3I9"/>
+                    <constraint firstItem="paK-XD-56t" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="ESf-on-z3h"/>
+                    <constraint firstItem="VcR-yG-FYA" firstAttribute="top" secondItem="82o-Jh-Mkr" secondAttribute="bottom" constant="3" id="Jt2-AS-ttQ"/>
+                    <constraint firstItem="SI6-VE-3aj" firstAttribute="leading" secondItem="82o-Jh-Mkr" secondAttribute="trailing" constant="10" id="PGs-ul-Zu9"/>
+                    <constraint firstItem="82o-Jh-Mkr" firstAttribute="leading" secondItem="paK-XD-56t" secondAttribute="trailing" constant="10" id="VD4-ZT-w0o"/>
+                    <constraint firstItem="82o-Jh-Mkr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="VIv-Hk-dOC"/>
+                    <constraint firstItem="SI6-VE-3aj" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Y1L-rd-taf"/>
+                    <constraint firstAttribute="trailing" secondItem="SI6-VE-3aj" secondAttribute="trailing" constant="12" id="lNp-ul-opJ"/>
+                    <constraint firstItem="VcR-yG-FYA" firstAttribute="leading" secondItem="paK-XD-56t" secondAttribute="trailing" constant="10" id="mVQ-cF-POA"/>
+                </constraints>
+            </tableViewCellContentView>
+            <animations/>
+            <connections>
+                <outlet property="addressLabel" destination="VcR-yG-FYA" id="bnI-ls-4e9"/>
+                <outlet property="headIcon" destination="paK-XD-56t" id="Ueo-qg-MPt"/>
+                <outlet property="inviteBtn" destination="SI6-VE-3aj" id="Y7j-FZ-QY3"/>
+                <outlet property="nameLabel" destination="82o-Jh-Mkr" id="znI-en-pon"/>
+            </connections>
+            <point key="canvasLocation" x="228" y="174"/>
+        </tableViewCell>
+    </objects>
+</document>

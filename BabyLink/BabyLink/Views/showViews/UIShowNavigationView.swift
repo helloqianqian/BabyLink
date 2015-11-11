@@ -33,6 +33,10 @@ class UIShowNavigationView: UIView {
         squareBtn.setTitleColor(UIColor.purpleColor(), forState: UIControlState.Selected)
     }
     
+    deinit{
+        self.removeObserver(self, forKeyPath: "selectedIndex", context: &mycontext);
+    }
+    
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         if context == &mycontext {
             NSLog("\(change![NSKeyValueChangeNewKey])")

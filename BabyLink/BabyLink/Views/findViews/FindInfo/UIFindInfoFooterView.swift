@@ -10,7 +10,11 @@ import UIKit
 
 class UIFindInfoFooterView: UIView {
 
+    @IBOutlet weak var originPriceBtn: UIButton!
+    @IBOutlet weak var prePayBtn: UIButton!
     
+    @IBOutlet weak var originPriceLabel: UILabel!
+    @IBOutlet weak var prePayLabel: UILabel!
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.

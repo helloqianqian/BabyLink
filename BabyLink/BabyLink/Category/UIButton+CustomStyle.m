@@ -42,11 +42,42 @@
     self.layer.cornerRadius = 4;
     
     self.layer.borderWidth = 0.5;
-    self.layer.borderColor = RGBCOLOR(0xF4F4F5).CGColor;
+    self.layer.borderColor = GrayBorderColor.CGColor;
     
-    [self setTitleColor:RGBCOLOR(0xBE3D6F) forState:UIControlStateNormal];
+    [self setTitleColor:PurpleBtnColor forState:UIControlStateNormal];
     
     UIImage *image = [UIImage imageWithColor:[UIColor whiteColor] size:self.frame.size];
+    [self setBackgroundImage:image forState:UIControlStateNormal];
+    
+}
+
+- (void)makeBackGroundColor_Gray{
+    self.clipsToBounds = YES;
+    self.layer.cornerRadius = 4;
+    
+    self.layer.borderWidth = 0.5;
+    self.layer.borderColor = GrayBorderColor.CGColor;
+    
+    UIImage *image = [UIImage imageWithColor:GrayBackColor size:self.frame.size];
+    [self setBackgroundImage:image forState:UIControlStateNormal];
+    
+}
+
+
+- (void)makeBackGroundColor_PurpleSelected{
+    self.clipsToBounds = YES;
+    self.layer.cornerRadius = 4;
+    
+    self.layer.borderWidth = 0.5;
+    self.layer.borderColor = GrayBorderColor.CGColor;
+    
+    
+    [self setTitleColor:PurpleBtnColor forState:UIControlStateNormal];
+    [self setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+    
+    UIImage *image = [UIImage imageWithColor:PurpleBtnColor size:self.frame.size];
+    [self setBackgroundImage:image forState:UIControlStateSelected];
+    image = [UIImage imageWithColor:[UIColor whiteColor] size:self.frame.size];
     [self setBackgroundImage:image forState:UIControlStateNormal];
     
 }

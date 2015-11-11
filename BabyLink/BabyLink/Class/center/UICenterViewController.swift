@@ -19,6 +19,8 @@ class UICenterViewController: UIBaseViewController ,UITableViewDelegate,UITableV
     
     @IBOutlet weak var listTableView: UITableView!
     
+    @IBOutlet weak var finalPayBtn: UIButton!
+    @IBOutlet weak var convertBtn: UIButton!
     let listTitles = ["我的主页","我的订单","账号设置","帮助中心","版本升级"];
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +29,17 @@ class UICenterViewController: UIBaseViewController ,UITableViewDelegate,UITableV
         self.navigationItem.title = "我"
         self.userCoupon.text = "兑换码\n2"
         self.leftPayment.text = "支付尾款\n2";
+        
+        let blur = UIVisualEffectView(effect: UIBlurEffect(style:UIBlurEffectStyle.Light))
+        blur.frame = finalPayBtn.bounds
+        blur.userInteractionEnabled = false
+        finalPayBtn.insertSubview(blur, atIndex: 0)
+        
+        let blur2 = UIVisualEffectView(effect: UIBlurEffect(style:UIBlurEffectStyle.Light))
+        blur2.frame = convertBtn.bounds
+        blur2.userInteractionEnabled = false
+        convertBtn.insertSubview(blur2, atIndex: 0)
+
         
         listTableView.registerNib(UINib(nibName: "UICenterTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "centerCellIndentifier")
     }
@@ -37,16 +50,7 @@ class UICenterViewController: UIBaseViewController ,UITableViewDelegate,UITableV
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        let blurEffect  = UIBlurEffect(style: UIBlurEffectStyle.Light)
-        let blurView = UIVisualEffectView(effect: blurEffect);
-        blurView.frame = userCoupon.frame;
-        self.view.addSubview(blurView);
-        self.view.bringSubviewToFront(userCoupon)
         
-        let blurView2 = UIVisualEffectView(effect: blurEffect);
-        blurView2.frame = leftPayment.frame;
-        self.view.addSubview(blurView2);
-        self.view.bringSubviewToFront(leftPayment);
     }
 
     // MARK: - UITableViewDelegate
@@ -72,6 +76,24 @@ class UICenterViewController: UIBaseViewController ,UITableViewDelegate,UITableV
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true);
+        switch indexPath.row {
+        case 0:
+            if indexPath.section == 0 {
+                
+            } else {
+                let myOrderVC = UIMyOrderListViewController(nibName:"UIMyOrderListViewController", bundle: NSBundle.mainBundle());
+                myOrderVC.hidesBottomBarWhenPushed = true;
+                self.navigationController?.pushViewController(myOrderVC, animated: true);
+            }
+            break;
+        case 1:
+            break;
+        case 2:
+            break;
+        case 3:
+            break;
+        default:break;
+        }
     }
     // MARK: - UITableViewDataSource
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -93,7 +115,17 @@ class UICenterViewController: UIBaseViewController ,UITableViewDelegate,UITableV
     }
 
     
+    @IBAction func convertEnter(sender: UIButton) {
+        let convertVC = UIConvertViewController(nibName:"UIConvertViewController",bundle: NSBundle.mainBundle());
+        convertVC.hidesBottomBarWhenPushed = true;
+        self.navigationController?.pushViewController(convertVC, animated: true);
+    }
     
+    @IBAction func payMoneyEnter(sender: UIButton) {
+        let finalVC = UIFinalPayViewController(nibName:"UIFinalPayViewController",bundle: NSBundle.mainBundle());
+        finalVC.hidesBottomBarWhenPushed = true;
+        self.navigationController?.pushViewController(finalVC, animated: true);
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
