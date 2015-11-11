@@ -25,4 +25,16 @@
  *  发现中分类
  */
 - (void)makeBackGroundColor_White;
+
+
+/**
+ *  退款
+ */
+- (void)makeBackGroundColor_Gray;
+
+
+/**
+ *  兑换券
+ */
+- (void)makeBackGroundColor_PurpleSelected;
 @end
