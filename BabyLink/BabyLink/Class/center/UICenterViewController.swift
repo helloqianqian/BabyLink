@@ -87,6 +87,9 @@ class UICenterViewController: UIBaseViewController ,UITableViewDelegate,UITableV
             }
             break;
         case 1:
+            let accountVC = UIAccountSetViewController(nibName:"UIAccountSetViewController", bundle: NSBundle.mainBundle());
+            accountVC.hidesBottomBarWhenPushed = true;
+            self.navigationController?.pushViewController(accountVC, animated: true);
             break;
         case 2:
             break;

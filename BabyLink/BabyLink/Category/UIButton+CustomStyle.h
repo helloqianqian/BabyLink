@@ -37,4 +37,9 @@
  *  兑换券
  */
 - (void)makeBackGroundColor_PurpleSelected;
+
+/**
+ *  发送验证码
+ */
+- (void)makeBackGroundColor_Green;
 @end

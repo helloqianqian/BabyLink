@@ -19,5 +19,7 @@
 #define GrayBorderColor RGBCOLOR(0xACACB4)
 
 #define GrayBackColor RGBCOLOR(0xEDEEEF)
+//
+#define GreenBtnColor RGBCOLOR(0xA7D8D3)
 
 #endif /* PublicHeader_h */

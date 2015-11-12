@@ -81,4 +81,13 @@
     [self setBackgroundImage:image forState:UIControlStateNormal];
     
 }
+
+- (void)makeBackGroundColor_Green{
+    self.clipsToBounds=YES;
+    self.layer.cornerRadius=4;
+    
+    [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    UIImage *image=[UIImage imageWithColor:GreenBtnColor size:self.frame.size];
+    [self setBackgroundImage:image forState:UIControlStateNormal];
+}
 @end
