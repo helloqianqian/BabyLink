@@ -18,10 +18,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ao-oZ-Zvu">
-                    <rect key="frame" x="10" y="20" width="300" height="45"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入昵称" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gxb-Oq-Wy7">
-                            <rect key="frame" x="15" y="0.0" width="270" height="45"/>
+                            <rect key="frame" x="28" y="0.0" width="264" height="45"/>
                             <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="hQs-vm-6qb"/>
@@ -34,9 +34,9 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="3iw-qc-TYu"/>
-                        <constraint firstItem="Gxb-Oq-Wy7" firstAttribute="leading" secondItem="5ao-oZ-Zvu" secondAttribute="leading" constant="15" id="Gxb-uV-xXg"/>
+                        <constraint firstItem="Gxb-Oq-Wy7" firstAttribute="leading" secondItem="5ao-oZ-Zvu" secondAttribute="leading" constant="28" id="Gxb-uV-xXg"/>
                         <constraint firstItem="Gxb-Oq-Wy7" firstAttribute="centerY" secondItem="5ao-oZ-Zvu" secondAttribute="centerY" id="Llg-HU-hel"/>
-                        <constraint firstAttribute="trailing" secondItem="Gxb-Oq-Wy7" secondAttribute="trailing" constant="15" id="Roh-EQ-8sU"/>
+                        <constraint firstAttribute="trailing" secondItem="Gxb-Oq-Wy7" secondAttribute="trailing" constant="28" id="Roh-EQ-8sU"/>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uiX-Gv-U7C">
@@ -56,10 +56,10 @@
             <animations/>
             <color key="backgroundColor" red="0.92941176469999998" green="0.93333333330000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="5ao-oZ-Zvu" secondAttribute="trailing" constant="10" id="HVa-8q-Mbt"/>
+                <constraint firstAttribute="trailing" secondItem="5ao-oZ-Zvu" secondAttribute="trailing" id="HVa-8q-Mbt"/>
                 <constraint firstAttribute="bottom" secondItem="uiX-Gv-U7C" secondAttribute="bottom" constant="30" id="Kef-I9-1eC"/>
-                <constraint firstItem="5ao-oZ-Zvu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="WdM-6F-Ydq"/>
-                <constraint firstItem="5ao-oZ-Zvu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="gfk-qy-2up"/>
+                <constraint firstItem="5ao-oZ-Zvu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="WdM-6F-Ydq"/>
+                <constraint firstItem="5ao-oZ-Zvu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gfk-qy-2up"/>
                 <constraint firstItem="uiX-Gv-U7C" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="jB9-Ls-zxH"/>
                 <constraint firstAttribute="trailing" secondItem="uiX-Gv-U7C" secondAttribute="trailing" constant="10" id="k3Y-66-J0n"/>
             </constraints>

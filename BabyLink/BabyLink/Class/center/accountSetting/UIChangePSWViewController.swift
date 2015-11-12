@@ -10,10 +10,15 @@ import UIKit
 
 class UIChangePSWViewController: UIBaseViewController {
 
+    @IBOutlet weak var oldPSWField: UITextField!
+    @IBOutlet weak var newPSWField: UITextField!
+    @IBOutlet weak var reNewPSWField: UITextField!
+    @IBOutlet weak var confirmBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        confirmBtn.makeBackGroundColor_Red();
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,6 +26,9 @@ class UIChangePSWViewController: UIBaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func changePSW(sender: UIButton) {
+        
+    }
 
     /*
     // MARK: - Navigation
