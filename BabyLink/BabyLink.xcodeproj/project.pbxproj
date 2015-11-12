@@ -78,6 +78,8 @@
 		4CD583C71BF4245200345666 /* UIHelpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CD583C51BF4245200345666 /* UIHelpViewController.xib */; };
 		4CD583CA1BF4248300345666 /* UINikenameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD583C81BF4248300345666 /* UINikenameViewController.swift */; };
 		4CD583CB1BF4248300345666 /* UINikenameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CD583C91BF4248300345666 /* UINikenameViewController.xib */; };
+		4CD583D21BF45ABD00345666 /* UIMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD583D01BF45ABD00345666 /* UIMineViewController.swift */; };
+		4CD583D31BF45ABD00345666 /* UIMineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CD583D11BF45ABD00345666 /* UIMineViewController.xib */; };
 		4CF6EF5E1BDCA47600CC5BA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6EF5D1BDCA47600CC5BA7 /* AppDelegate.swift */; };
 		4CF6EF601BDCA47600CC5BA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6EF5F1BDCA47600CC5BA7 /* ViewController.swift */; };
 		4CF6EF631BDCA47600CC5BA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CF6EF611BDCA47600CC5BA7 /* Main.storyboard */; };
@@ -254,6 +256,8 @@
 		4CD583C51BF4245200345666 /* UIHelpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIHelpViewController.xib; sourceTree = "<group>"; };
 		4CD583C81BF4248300345666 /* UINikenameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINikenameViewController.swift; sourceTree = "<group>"; };
 		4CD583C91BF4248300345666 /* UINikenameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UINikenameViewController.xib; sourceTree = "<group>"; };
+		4CD583D01BF45ABD00345666 /* UIMineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIMineViewController.swift; sourceTree = "<group>"; };
+		4CD583D11BF45ABD00345666 /* UIMineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIMineViewController.xib; sourceTree = "<group>"; };
 		4CF6EF5A1BDCA47600CC5BA7 /* BabyLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabyLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CF6EF5D1BDCA47600CC5BA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CF6EF5F1BDCA47600CC5BA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -411,6 +415,8 @@
 		4C006B0E1BF1F76500FFBFF6 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				4CD583D01BF45ABD00345666 /* UIMineViewController.swift */,
+				4CD583D11BF45ABD00345666 /* UIMineViewController.xib */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1083,6 +1089,7 @@
 				4CF6EFB51BDF68AD00CC5BA7 /* UILocalViewController.xib in Resources */,
 				4CF6EFC51BDF6F6600CC5BA7 /* UILoginViewController.xib in Resources */,
 				4CF6EFC11BDF6EF900CC5BA7 /* UICenterViewController.xib in Resources */,
+				4CD583D31BF45ABD00345666 /* UIMineViewController.xib in Resources */,
 				4CFCB8D41BEF1ABF00D84B29 /* UIActivityView.xib in Resources */,
 				4CFCB88D1BEBA79900D84B29 /* UIActivityInfoSecondTableViewCell.xib in Resources */,
 				4CFCB8891BEBA79900D84B29 /* UIActivityInfoFooterView.xib in Resources */,
@@ -1225,6 +1232,7 @@
 				4CF6EFD61BE260F400CC5BA7 /* UIBaseTabBar.swift in Sources */,
 				4C0244F01BEF73D9004BE881 /* UIFindInfoViewController.swift in Sources */,
 				4CF6EFC81BDF6F7700CC5BA7 /* UIRegistViewController.swift in Sources */,
+				4CD583D21BF45ABD00345666 /* UIMineViewController.swift in Sources */,
 				4CF6EFB41BDF68AD00CC5BA7 /* UILocalViewController.swift in Sources */,
 				4CFCB8841BEBA79900D84B29 /* UIActivityInfoFifthTableViewCell.swift in Sources */,
 				4CFCB8801BEBA79900D84B29 /* FindListHeadView.swift in Sources */,

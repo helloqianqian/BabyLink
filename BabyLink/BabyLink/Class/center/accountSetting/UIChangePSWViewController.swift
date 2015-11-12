@@ -18,6 +18,8 @@ class UIChangePSWViewController: UIBaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.title = "修改密码"
+        
         confirmBtn.makeBackGroundColor_Red();
     }
 

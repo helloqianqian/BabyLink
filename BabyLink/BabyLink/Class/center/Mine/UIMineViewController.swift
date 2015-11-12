@@ -1,5 +1,5 @@
 //
-//  UIChangePhoneViewController.swift
+//  UIMineViewController.swift
 //  BabyLink
 //
 //  Created by 黄倩 on 15/11/12.
@@ -8,26 +8,15 @@
 
 import UIKit
 
-class UIChangePhoneViewController: UIBaseViewController {
+class UIMineViewController: UIBaseViewController {
 
-    @IBOutlet weak var newPhoneNumField: UITextField!
-    @IBOutlet weak var vertifyCodeField: UITextField!
-    @IBOutlet weak var sendVertifyBtn: UIButton!
-    @IBOutlet weak var confirmBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.title = "更换手机号"
-        
-        confirmBtn.makeBackGroundColor_Red();
-        sendVertifyBtn.makeBackGroundColor_Green();
+        self.title = "我的主页"
     }
 
-    @IBAction func sendVertify(sender: UIButton) {
-    }
-    @IBAction func sendNewPhoneNum(sender: UIButton) {
-    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

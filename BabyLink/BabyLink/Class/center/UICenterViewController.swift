@@ -66,20 +66,22 @@ class UICenterViewController: UIBaseViewController ,UITableViewDelegate,UITableV
         return 2;
     }
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 45;
+        return 40;
     }
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return UIView();
-    }
-    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return UIView();
-    }
+//    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        return UIView();
+//    }
+//    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+//        return UIView();
+//    }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true);
         switch indexPath.row {
         case 0:
             if indexPath.section == 0 {
-                
+                let mineVC = UIMineViewController(nibName:"UIMineViewController", bundle: NSBundle.mainBundle());
+                mineVC.hidesBottomBarWhenPushed = true;
+                self.navigationController?.pushViewController(mineVC, animated: true);
             } else {
                 let myOrderVC = UIMyOrderListViewController(nibName:"UIMyOrderListViewController", bundle: NSBundle.mainBundle());
                 myOrderVC.hidesBottomBarWhenPushed = true;
@@ -92,6 +94,9 @@ class UICenterViewController: UIBaseViewController ,UITableViewDelegate,UITableV
             self.navigationController?.pushViewController(accountVC, animated: true);
             break;
         case 2:
+            let helpVC = UIHelpViewController(nibName:"UIHelpViewController", bundle: NSBundle.mainBundle());
+            helpVC.hidesBottomBarWhenPushed = true;
+            self.navigationController?.pushViewController(helpVC, animated: true);
             break;
         case 3:
             break;

@@ -14,6 +14,7 @@ class UIHelpViewController: UIBaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.title = "帮助中心"
     }
 
     override func didReceiveMemoryWarning() {

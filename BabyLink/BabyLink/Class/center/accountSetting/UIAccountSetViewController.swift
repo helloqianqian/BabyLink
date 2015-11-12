@@ -21,6 +21,8 @@ class UIAccountSetViewController: UIBaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.title = "账号设置"
+        
         bigHeadIconBtn.layer.cornerRadius = 30;
         bigHeadIconBtn.backgroundColor = UIColor.redColor();
         bigHeadIconBtn.layer.masksToBounds = true;

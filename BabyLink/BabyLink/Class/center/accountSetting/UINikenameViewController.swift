@@ -16,6 +16,8 @@ class UINikenameViewController: UIBaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.title = "修改昵称"
+        
         confirmBtn.makeBackGroundColor_Red();
     }
 
