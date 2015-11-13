@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyFriendsViewController" customModule="BabyLink" customModuleProvider="target">
+            <connections>
+                <outlet property="friendsBtn" destination="WsM-sy-UvA" id="xLI-vs-zh1"/>
+                <outlet property="listTableView" destination="GkL-kU-Rcc" id="CF7-KF-6YE"/>
+                <outlet property="neighborBtn" destination="Rlc-aa-f80" id="bwC-GC-GA7"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rlc-aa-f80">
+                    <rect key="frame" x="5" y="5" width="152" height="33"/>
+                    <animations/>
+                    <color key="backgroundColor" red="0.74509803919999995" green="0.23921568630000001" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="33" id="95R-zR-4rY"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="我的邻居"/>
+                    <connections>
+                        <action selector="neighborlist:" destination="-1" eventType="touchUpInside" id="V7Z-73-srm"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WsM-sy-UvA">
+                    <rect key="frame" x="160" y="5" width="152" height="33"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="33" id="qEf-gD-Ucg"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="我的好友">
+                        <color key="titleColor" red="0.74509803919999995" green="0.23921568630000001" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="friendslist:" destination="-1" eventType="touchUpInside" id="LQ8-p2-zoD"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GkL-kU-Rcc">
+                    <rect key="frame" x="0.0" y="43" width="320" height="437"/>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="GkL-kU-Rcc" secondAttribute="trailing" id="9Z3-bC-iqN"/>
+                <constraint firstAttribute="trailing" secondItem="WsM-sy-UvA" secondAttribute="trailing" constant="8" id="LBX-Hj-0UF"/>
+                <constraint firstItem="Rlc-aa-f80" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="5" id="LoU-p3-dvU"/>
+                <constraint firstItem="GkL-kU-Rcc" firstAttribute="top" secondItem="WsM-sy-UvA" secondAttribute="bottom" constant="5" id="Qe4-Nf-reu"/>
+                <constraint firstAttribute="bottom" secondItem="GkL-kU-Rcc" secondAttribute="bottom" id="Z88-dK-cA4"/>
+                <constraint firstItem="WsM-sy-UvA" firstAttribute="width" secondItem="Rlc-aa-f80" secondAttribute="width" id="bjU-m5-Zkp"/>
+                <constraint firstItem="GkL-kU-Rcc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dYV-rY-qYy"/>
+                <constraint firstItem="Rlc-aa-f80" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="5" id="erV-WN-s3h"/>
+                <constraint firstItem="WsM-sy-UvA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="5" id="xft-h8-yZl"/>
+                <constraint firstItem="WsM-sy-UvA" firstAttribute="leading" secondItem="Rlc-aa-f80" secondAttribute="trailing" constant="3" id="yEi-Nl-Pd1"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-26" y="279"/>
+        </view>
+    </objects>
+</document>
