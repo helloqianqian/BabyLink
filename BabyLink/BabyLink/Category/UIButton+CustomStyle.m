@@ -22,7 +22,17 @@
     UIImage *image=[UIImage imageWithColor:PurpleBtnColor size:self.frame.size];
     [self setBackgroundImage:image forState:UIControlStateNormal];
 }
-
+/**
+ *  <#Description#>
+ */
+- (void)makeBackGroundColor_DarkGray {
+    self.clipsToBounds=YES;
+    self.layer.cornerRadius=4;
+        
+    [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    UIImage *image=[UIImage imageWithColor:DarkGrayBtnColor size:self.frame.size];
+    [self setBackgroundImage:image forState:UIControlStateNormal];
+}
 /**
  *  登录，注册，完善信息，我要报名
  */

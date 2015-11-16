@@ -27,7 +27,7 @@ class FindListHeadView: UIView,TAPageControlDelegate,UIScrollViewDelegate {
     }
     */
     
-    var  delegate:didClickImgDelegate!;
+    weak var  delegate:didClickImgDelegate!;
     
     @IBOutlet  var aScrollView: UIScrollView!
     //    var roundImgView: UIImageView!
@@ -196,20 +196,10 @@ class FindListHeadView: UIView,TAPageControlDelegate,UIScrollViewDelegate {
         
     }
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-        
         self.reloadImage();
-        //
-        //        var   offset : CGPoint   = scrollView.contentOffset;
-        //            //算出是在第几页
-        //         var   pageNumber  = Int(offset.x/scrollView.bounds.size.width);
-        //        aPageView.currentPage = pageNumber;
-        //        self.currentImageIndex = pageNumber;
-        //        NSLog("现在移动到 %d",pageNumber);
     }
     func reloadImage()
     {
-        //        var  leftImageIndex:Int!;
-        //        var  rightImageIndex:Int!;
         let   offset : CGPoint   = aScrollView.contentOffset;
         
         if (offset.x == 0)
@@ -238,23 +228,8 @@ class FindListHeadView: UIView,TAPageControlDelegate,UIScrollViewDelegate {
         aPageView.currentPage = currentImageIndex;
         aScrollView.contentOffset = CGPointMake(scrollWidth, 0);
         
-        //        if(isTimeUp.boolValue==false)
-        //        {
-        //            moveTime.fire();
-        //        }
-        //        isTimeUp=false;
-        
     }
-    //    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-    //
-    //         startimer()
-    //
-    //    }
-    //    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
-    //        
-    //        self.removeTimer();
-    //
-    //    }
+    
     func TAControl(pageControl: TAPageControl!, didSelectPageAtIndex index: Int) {
         
         NSLog("现在点击的是 %d",index);

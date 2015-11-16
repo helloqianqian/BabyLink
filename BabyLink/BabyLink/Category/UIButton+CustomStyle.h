@@ -42,4 +42,9 @@
  *  发送验证码
  */
 - (void)makeBackGroundColor_Green;
+
+/**
+ *  我的主页中，不可点
+ */
+- (void)makeBackGroundColor_DarkGray;
 @end

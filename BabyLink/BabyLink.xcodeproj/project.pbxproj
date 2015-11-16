@@ -76,6 +76,12 @@
 		4CA34CAD1BF57D0C002DABA2 /* MyShowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA34CAB1BF57D0C002DABA2 /* MyShowViewController.xib */; };
 		4CA34CB01BF57D1D002DABA2 /* MyTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA34CAE1BF57D1D002DABA2 /* MyTopicViewController.swift */; };
 		4CA34CB11BF57D1D002DABA2 /* MyTopicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA34CAF1BF57D1D002DABA2 /* MyTopicViewController.xib */; };
+		4CA34CB41BF5E827002DABA2 /* UIMyActTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA34CB21BF5E827002DABA2 /* UIMyActTableViewCell.swift */; };
+		4CA34CB51BF5E827002DABA2 /* UIMyActTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA34CB31BF5E827002DABA2 /* UIMyActTableViewCell.xib */; };
+		4CA34CB81BF5F38B002DABA2 /* MyTopicInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA34CB61BF5F38B002DABA2 /* MyTopicInfoViewController.swift */; };
+		4CA34CB91BF5F38B002DABA2 /* MyTopicInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA34CB71BF5F38B002DABA2 /* MyTopicInfoViewController.xib */; };
+		4CA34CBC1BF5F4C4002DABA2 /* MyShowInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA34CBA1BF5F4C4002DABA2 /* MyShowInfoViewController.swift */; };
+		4CA34CBD1BF5F4C4002DABA2 /* MyShowInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA34CBB1BF5F4C4002DABA2 /* MyShowInfoViewController.xib */; };
 		4CA59AC61BE79B3300C614FC /* UIChooseAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA59AC41BE79B3300C614FC /* UIChooseAddressViewController.swift */; };
 		4CA59AC71BE79B3300C614FC /* UIChooseAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA59AC51BE79B3300C614FC /* UIChooseAddressViewController.xib */; };
 		4CA59ACE1BE85B5C00C614FC /* UIShowNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA59ACD1BE85B5C00C614FC /* UIShowNavigationView.swift */; };
@@ -264,6 +270,12 @@
 		4CA34CAB1BF57D0C002DABA2 /* MyShowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyShowViewController.xib; sourceTree = "<group>"; };
 		4CA34CAE1BF57D1D002DABA2 /* MyTopicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTopicViewController.swift; sourceTree = "<group>"; };
 		4CA34CAF1BF57D1D002DABA2 /* MyTopicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTopicViewController.xib; sourceTree = "<group>"; };
+		4CA34CB21BF5E827002DABA2 /* UIMyActTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIMyActTableViewCell.swift; sourceTree = "<group>"; };
+		4CA34CB31BF5E827002DABA2 /* UIMyActTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIMyActTableViewCell.xib; sourceTree = "<group>"; };
+		4CA34CB61BF5F38B002DABA2 /* MyTopicInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTopicInfoViewController.swift; sourceTree = "<group>"; };
+		4CA34CB71BF5F38B002DABA2 /* MyTopicInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTopicInfoViewController.xib; sourceTree = "<group>"; };
+		4CA34CBA1BF5F4C4002DABA2 /* MyShowInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyShowInfoViewController.swift; sourceTree = "<group>"; };
+		4CA34CBB1BF5F4C4002DABA2 /* MyShowInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyShowInfoViewController.xib; sourceTree = "<group>"; };
 		4CA59AC41BE79B3300C614FC /* UIChooseAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIChooseAddressViewController.swift; sourceTree = "<group>"; };
 		4CA59AC51BE79B3300C614FC /* UIChooseAddressViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIChooseAddressViewController.xib; sourceTree = "<group>"; };
 		4CA59ACD1BE85B5C00C614FC /* UIShowNavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIShowNavigationView.swift; sourceTree = "<group>"; };
@@ -476,6 +488,8 @@
 		4C006B1A1BF1FB0000FFBFF6 /* MineViews */ = {
 			isa = PBXGroup;
 			children = (
+				4CA34CB21BF5E827002DABA2 /* UIMyActTableViewCell.swift */,
+				4CA34CB31BF5E827002DABA2 /* UIMyActTableViewCell.xib */,
 			);
 			path = MineViews;
 			sourceTree = "<group>";
@@ -576,6 +590,8 @@
 			children = (
 				4CA34CAA1BF57D0C002DABA2 /* MyShowViewController.swift */,
 				4CA34CAB1BF57D0C002DABA2 /* MyShowViewController.xib */,
+				4CA34CBA1BF5F4C4002DABA2 /* MyShowInfoViewController.swift */,
+				4CA34CBB1BF5F4C4002DABA2 /* MyShowInfoViewController.xib */,
 			);
 			path = myShow;
 			sourceTree = "<group>";
@@ -585,6 +601,8 @@
 			children = (
 				4CA34CAE1BF57D1D002DABA2 /* MyTopicViewController.swift */,
 				4CA34CAF1BF57D1D002DABA2 /* MyTopicViewController.xib */,
+				4CA34CB61BF5F38B002DABA2 /* MyTopicInfoViewController.swift */,
+				4CA34CB71BF5F38B002DABA2 /* MyTopicInfoViewController.xib */,
 			);
 			path = myTopic;
 			sourceTree = "<group>";
@@ -1144,6 +1162,7 @@
 				4CFCB8851BEBA79900D84B29 /* UIActivityInfoFifthTableViewCell.xib in Resources */,
 				4C0244F11BEF73D9004BE881 /* UIFindInfoViewController.xib in Resources */,
 				4C07BB5C1BE5F456003E799B /* UISecondInfoViewController.xib in Resources */,
+				4CA34CBD1BF5F4C4002DABA2 /* MyShowInfoViewController.xib in Resources */,
 				4CFCB8A81BEBAAC500D84B29 /* UIExchangeTableViewCell.xib in Resources */,
 				4C006B311BF23F2900FFBFF6 /* UIMyOrderListViewController.xib in Resources */,
 				4C0245551BF0E688004BE881 /* UIOrderInfoViewController.xib in Resources */,
@@ -1154,6 +1173,7 @@
 				4C0244E51BEF4DA2004BE881 /* UISquareView.xib in Resources */,
 				4CFCB8AC1BEBAAD200D84B29 /* UITopicTableViewCell.xib in Resources */,
 				4C006B351BF23F6300FFBFF6 /* UIMyOrderTableViewCell.xib in Resources */,
+				4CA34CB51BF5E827002DABA2 /* UIMyActTableViewCell.xib in Resources */,
 				4CD583BE1BF423F700345666 /* UIChangePhoneViewController.xib in Resources */,
 				4CFCB8D61BEF1ABF00D84B29 /* UIJoinViewController.xib in Resources */,
 				4CD583C21BF4240900345666 /* UIChangePSWViewController.xib in Resources */,
@@ -1199,6 +1219,7 @@
 				4CD583CB1BF4248300345666 /* UINikenameViewController.xib in Resources */,
 				4CFCB8E01BEF2F7400D84B29 /* TopicImageCollectionViewCell.xib in Resources */,
 				4C006B131BF1F85A00FFBFF6 /* UIConvertViewController.xib in Resources */,
+				4CA34CB91BF5F38B002DABA2 /* MyTopicInfoViewController.xib in Resources */,
 				4CF6EFB11BDF512B00CC5BA7 /* UIBaseViewController.xib in Resources */,
 				4C02454D1BF0DAED004BE881 /* UIFriendsListViewController.xib in Resources */,
 				4C0245511BF0DDE6004BE881 /* UIPaymentViewController.xib in Resources */,
@@ -1282,6 +1303,7 @@
 			files = (
 				4CD583C11BF4240900345666 /* UIChangePSWViewController.swift in Sources */,
 				4C02454C1BF0DAED004BE881 /* UIFriendsListViewController.swift in Sources */,
+				4CA34CB41BF5E827002DABA2 /* UIMyActTableViewCell.swift in Sources */,
 				4CFCB8A31BEBAABA00D84B29 /* UILocalNavigationView.swift in Sources */,
 				4CF6EFA61BDE5A4700CC5BA7 /* UIBaseTabBarController.swift in Sources */,
 				4C0244E81BEF515A004BE881 /* UIShowTableViewCell.swift in Sources */,
@@ -1312,7 +1334,9 @@
 				4CFCB8841BEBA79900D84B29 /* UIActivityInfoFifthTableViewCell.swift in Sources */,
 				4CFCB8801BEBA79900D84B29 /* FindListHeadView.swift in Sources */,
 				4CFCB8DB1BEF1ABF00D84B29 /* UITopicView.swift in Sources */,
+				4CA34CB81BF5F38B002DABA2 /* MyTopicInfoViewController.swift in Sources */,
 				4C0245081BF0395D004BE881 /* UIFindInfoFooterView.swift in Sources */,
+				4CA34CBC1BF5F4C4002DABA2 /* MyShowInfoViewController.swift in Sources */,
 				4CA34CA41BF57CEC002DABA2 /* MyExchangeViewController.swift in Sources */,
 				4C0245481BF0D883004BE881 /* UIFriendsTableViewCell.swift in Sources */,
 				4CF6EFB81BDF6ED000CC5BA7 /* UIShowViewController.swift in Sources */,

@@ -21,6 +21,9 @@ class UICenterViewController: UIBaseViewController ,UITableViewDelegate,UITableV
     
     @IBOutlet weak var finalPayBtn: UIButton!
     @IBOutlet weak var convertBtn: UIButton!
+    
+    @IBOutlet weak var blurEffectionView2: UIVisualEffectView!
+    @IBOutlet weak var blurEffectView: UIVisualEffectView!
     let listTitles = ["我的主页","我的订单","账号设置","帮助中心","版本升级"];
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,17 +32,9 @@ class UICenterViewController: UIBaseViewController ,UITableViewDelegate,UITableV
         self.navigationItem.title = "我"
         self.userCoupon.text = "兑换码\n2"
         self.leftPayment.text = "支付尾款\n2";
-        
-        let blur = UIVisualEffectView(effect: UIBlurEffect(style:UIBlurEffectStyle.Light))
-        blur.frame = finalPayBtn.bounds
-        blur.userInteractionEnabled = false
-        finalPayBtn.insertSubview(blur, atIndex: 0)
-        
-        let blur2 = UIVisualEffectView(effect: UIBlurEffect(style:UIBlurEffectStyle.Light))
-        blur2.frame = convertBtn.bounds
-        blur2.userInteractionEnabled = false
-        convertBtn.insertSubview(blur2, atIndex: 0)
 
+        blurEffectView.effect = UIBlurEffect(style: UIBlurEffectStyle.Light)
+        blurEffectionView2.effect = UIBlurEffect(style: UIBlurEffectStyle.Light)
         
         listTableView.registerNib(UINib(nibName: "UICenterTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "centerCellIndentifier")
     }

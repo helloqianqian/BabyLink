@@ -17,10 +17,22 @@ protocol UIActivityViewDelegate:NSObjectProtocol {
 class UIActivityView: UIView ,UITableViewDataSource, UITableViewDelegate{
 
     @IBOutlet weak var listTableView: UITableView!
+    var headView:FindListHeadView!;
     
     weak var delegate:UIActivityViewDelegate!;
     
     override func awakeFromNib() {
+        headView = NSBundle.mainBundle().loadNibNamed("FindListHeadView", owner: nil, options: nil).first as! FindListHeadView;
+        headView.scrollWidth = MainScreenWidth;
+        if iphone6Plus {
+            headView.scrollHeight = 184;
+        } else if iphone6 {
+            headView.scrollHeight = 170;
+        } else {
+            headView.scrollHeight = 140;
+        }
+        
+        
         self.listTableView.delegate = self;
         self.listTableView.dataSource = self;
         self.listTableView.registerNib(UINib(nibName: "UIActivityTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "UIActivityTableViewCellIndentifier")
@@ -49,11 +61,23 @@ class UIActivityView: UIView ,UITableViewDataSource, UITableViewDelegate{
             return 310;
         }
     }
-    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if iphone6Plus {
+            return 184;
+        }
+        if iphone6 {
+            return 170;
+        }
+        return 140;
+    }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         delegate.checkTheInfoOfActivity(indexPath.row);
     }
-
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return headView;
+    }
+    
     
     //MARK - cell Function
     func joinTheActivity(sender:UIButton){

@@ -10,6 +10,7 @@ import UIKit
 
 class UIFindTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var backView: UIView!
     @IBOutlet weak var contentImage: UIImageView!
     @IBOutlet weak var earnestLabel: UILabel!
     
@@ -23,6 +24,9 @@ class UIFindTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        backView.layer.cornerRadius = 4;
+        backView.layer.masksToBounds = true;
+        
         self.earnestLabel.text = "定金\n￥29.00";        
     }
 

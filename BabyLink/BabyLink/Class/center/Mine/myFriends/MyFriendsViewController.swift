@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyFriendsViewController: UIBaseViewController {
+class MyFriendsViewController: UIBaseViewController ,UITableViewDelegate,UITableViewDataSource{
 
     @IBOutlet weak var neighborBtn: UIButton!
     @IBOutlet weak var friendsBtn: UIButton!
@@ -22,12 +22,38 @@ class MyFriendsViewController: UIBaseViewController {
         neighborBtn.makeBackGroundColor_PurpleSelected();
         friendsBtn.makeBackGroundColor_PurpleSelected();
         
+        listTableView.dataSource = self;
+        listTableView.delegate = self;
+        self.listTableView.registerNib(UINib(nibName: "UIFriendsTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "UIFriendsTableViewCellIdentifier");
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    //MARK: - UITableViewDataSource
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10;
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("UIFriendsTableViewCellIdentifier", forIndexPath: indexPath);
+        return cell
+    }
+    //MARK: - UITableViewDelegate
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+    }
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.5;
+    }
+    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.5;
+    }
+    
+    
     
     @IBAction func neighborlist(sender: UIButton) {
         if !sender.selected {

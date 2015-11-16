@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyActivityViewController: UIBaseViewController {
+class MyActivityViewController: UIBaseViewController ,UITableViewDelegate,UITableViewDataSource{
 
     @IBOutlet weak var myListBtn: UIButton!
     @IBOutlet weak var otherListBtn: UIButton!
@@ -22,7 +22,9 @@ class MyActivityViewController: UIBaseViewController {
         myListBtn.makeBackGroundColor_PurpleSelected();
         otherListBtn.makeBackGroundColor_PurpleSelected();
         
-        
+        listTableView.dataSource = self;
+        listTableView.delegate = self;
+        listTableView.registerNib(UINib(nibName: "UIMyActTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "UIMyActTableViewCellIdentifier")
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,14 +32,30 @@ class MyActivityViewController: UIBaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    //MARK: - UITableViewDataSource
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10;
+    }
+
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("UIMyActTableViewCellIdentifier", forIndexPath: indexPath);
+        return cell
+    }
+    //MARK: - UITableViewDelegate
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let infoVC:UIActivityInfoViewController = UIActivityInfoViewController.init(nibName:"UIActivityInfoViewController",bundle:NSBundle.mainBundle())
+        self.navigationController?.pushViewController(infoVC, animated: true);
+    }
+    
+    
+    
 
     @IBAction func otherlist(sender: UIButton) {
         if !sender.selected {
             sender.selected = true
             myListBtn.selected = false;
         }
-        
-        
     }
     @IBAction func mylist(sender: UIButton) {
         if !sender.selected {
