@@ -10,6 +10,8 @@ import UIKit
 
 class UIBaseViewController: UIViewController {
 
+    @IBOutlet var tapGesture: UITapGestureRecognizer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,7 +22,33 @@ class UIBaseViewController: UIViewController {
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action: "")
     }
+    
+    
+    func addGesture(){
+        self.view.addGestureRecognizer(tapGesture);
+    }
+    
+    func removeGesture(){
+        self.view.removeGestureRecognizer(tapGesture);
+    }
 
+    
+    @IBAction func endEditing(sender: UITapGestureRecognizer) {
+        for subView in self.view.subviews {
+            if subView.isKindOfClass(UITextField) {
+                subView.resignFirstResponder()
+            } else if subView.isKindOfClass(UIView){
+                for sub in subView.subviews {
+                    if sub.isKindOfClass(UITextField) {
+                        sub.resignFirstResponder()
+                    }
+                }
+            }
+        }
+        self.view.endEditing(true);
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

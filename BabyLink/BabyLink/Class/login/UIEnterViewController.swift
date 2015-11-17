@@ -10,6 +10,7 @@ import UIKit
 
 class UIEnterViewController: UIBaseViewController {
 
+    @IBOutlet weak var enterBtn: UIButton!
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
@@ -22,6 +23,9 @@ class UIEnterViewController: UIBaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        enterBtn.layer.cornerRadius = 15.0;
+        
+        
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)

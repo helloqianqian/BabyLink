@@ -10,15 +10,28 @@ import UIKit
 
 class UILoginViewController: UIBaseViewController {
 
+    @IBOutlet weak var backView: UIView!
     @IBOutlet weak var UIPhoneNumTextField: UITextField!
     @IBOutlet weak var UIPWTextField: UITextField!
+    @IBOutlet weak var loginBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.navigationItem.title = "登录"
         let rightBarItem = UIBarButtonItem(title: "注册", style: UIBarButtonItemStyle.Plain, target: self, action: "registEnter:")
         self.navigationItem.rightBarButtonItem = rightBarItem
+    
+        
+        self.setUI();
     }
+    
+    func setUI(){
+        backView.layer.cornerRadius = 5;
+        backView.layer.borderColor = SGrayBorderColor.CGColor;
+        backView.layer.borderWidth = 0.5;
+        loginBtn.makeBackGroundColor_Red()
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
     }
