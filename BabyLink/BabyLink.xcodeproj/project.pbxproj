@@ -96,6 +96,10 @@
 		4CD583CB1BF4248300345666 /* UINikenameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CD583C91BF4248300345666 /* UINikenameViewController.xib */; };
 		4CD583D21BF45ABD00345666 /* UIMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD583D01BF45ABD00345666 /* UIMineViewController.swift */; };
 		4CD583D31BF45ABD00345666 /* UIMineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CD583D11BF45ABD00345666 /* UIMineViewController.xib */; };
+		4CEDCF551BFB5C2000226BB9 /* NSHttpObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDCF541BFB5C2000226BB9 /* NSHttpObject.m */; };
+		4CEDCF581BFB5E1600226BB9 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDCF571BFB5E1600226BB9 /* Reachability.m */; };
+		4CEDCF5B1BFB655700226BB9 /* NSHttpHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDCF5A1BFB655700226BB9 /* NSHttpHelp.m */; };
+		4CEDCF5E1BFB665500226BB9 /* NSHttpModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDCF5D1BFB665500226BB9 /* NSHttpModel.m */; };
 		4CF6EF5E1BDCA47600CC5BA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6EF5D1BDCA47600CC5BA7 /* AppDelegate.swift */; };
 		4CF6EF601BDCA47600CC5BA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6EF5F1BDCA47600CC5BA7 /* ViewController.swift */; };
 		4CF6EF631BDCA47600CC5BA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CF6EF611BDCA47600CC5BA7 /* Main.storyboard */; };
@@ -290,6 +294,14 @@
 		4CD583C91BF4248300345666 /* UINikenameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UINikenameViewController.xib; sourceTree = "<group>"; };
 		4CD583D01BF45ABD00345666 /* UIMineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIMineViewController.swift; sourceTree = "<group>"; };
 		4CD583D11BF45ABD00345666 /* UIMineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIMineViewController.xib; sourceTree = "<group>"; };
+		4CEDCF531BFB5C2000226BB9 /* NSHttpObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSHttpObject.h; sourceTree = "<group>"; };
+		4CEDCF541BFB5C2000226BB9 /* NSHttpObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSHttpObject.m; sourceTree = "<group>"; };
+		4CEDCF561BFB5E1600226BB9 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		4CEDCF571BFB5E1600226BB9 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		4CEDCF591BFB655700226BB9 /* NSHttpHelp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSHttpHelp.h; sourceTree = "<group>"; };
+		4CEDCF5A1BFB655700226BB9 /* NSHttpHelp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSHttpHelp.m; sourceTree = "<group>"; };
+		4CEDCF5C1BFB665500226BB9 /* NSHttpModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSHttpModel.h; sourceTree = "<group>"; };
+		4CEDCF5D1BFB665500226BB9 /* NSHttpModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSHttpModel.m; sourceTree = "<group>"; };
 		4CF6EF5A1BDCA47600CC5BA7 /* BabyLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabyLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CF6EF5D1BDCA47600CC5BA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CF6EF5F1BDCA47600CC5BA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -627,6 +639,21 @@
 			path = help;
 			sourceTree = "<group>";
 		};
+		4CEDCF521BFB580800226BB9 /* httpRequest */ = {
+			isa = PBXGroup;
+			children = (
+				4CEDCF561BFB5E1600226BB9 /* Reachability.h */,
+				4CEDCF571BFB5E1600226BB9 /* Reachability.m */,
+				4CEDCF531BFB5C2000226BB9 /* NSHttpObject.h */,
+				4CEDCF541BFB5C2000226BB9 /* NSHttpObject.m */,
+				4CEDCF591BFB655700226BB9 /* NSHttpHelp.h */,
+				4CEDCF5A1BFB655700226BB9 /* NSHttpHelp.m */,
+				4CEDCF5C1BFB665500226BB9 /* NSHttpModel.h */,
+				4CEDCF5D1BFB665500226BB9 /* NSHttpModel.m */,
+			);
+			path = httpRequest;
+			sourceTree = "<group>";
+		};
 		4CF6EF511BDCA47600CC5BA7 = {
 			isa = PBXGroup;
 			children = (
@@ -791,6 +818,7 @@
 		4CF6EF921BDE58D300CC5BA7 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				4CEDCF521BFB580800226BB9 /* httpRequest */,
 				4CFCB8581BEBA66000D84B29 /* TAPageControl */,
 			);
 			path = Library;
@@ -1303,6 +1331,7 @@
 			files = (
 				4CD583C11BF4240900345666 /* UIChangePSWViewController.swift in Sources */,
 				4C02454C1BF0DAED004BE881 /* UIFriendsListViewController.swift in Sources */,
+				4CEDCF5E1BFB665500226BB9 /* NSHttpModel.m in Sources */,
 				4CA34CB41BF5E827002DABA2 /* UIMyActTableViewCell.swift in Sources */,
 				4CFCB8A31BEBAABA00D84B29 /* UILocalNavigationView.swift in Sources */,
 				4CF6EFA61BDE5A4700CC5BA7 /* UIBaseTabBarController.swift in Sources */,
@@ -1323,6 +1352,7 @@
 				4CFCB8881BEBA79900D84B29 /* UIActivityInfoFooterView.swift in Sources */,
 				4CFCB8D71BEF1ABF00D84B29 /* UIExchangeInfoViewController.swift in Sources */,
 				4C006B161BF1F87000FFBFF6 /* UIConverInfoViewController.swift in Sources */,
+				4CEDCF551BFB5C2000226BB9 /* NSHttpObject.m in Sources */,
 				4CFCB8901BEBA79900D84B29 /* UIActivityTableViewCell.swift in Sources */,
 				4C006B241BF232E800FFBFF6 /* UIFinalPayViewController.swift in Sources */,
 				4C0245011BF02F02004BE881 /* UIFindInfoForthTableViewCell.swift in Sources */,
@@ -1334,8 +1364,10 @@
 				4CFCB8841BEBA79900D84B29 /* UIActivityInfoFifthTableViewCell.swift in Sources */,
 				4CFCB8801BEBA79900D84B29 /* FindListHeadView.swift in Sources */,
 				4CFCB8DB1BEF1ABF00D84B29 /* UITopicView.swift in Sources */,
+				4CEDCF581BFB5E1600226BB9 /* Reachability.m in Sources */,
 				4CA34CB81BF5F38B002DABA2 /* MyTopicInfoViewController.swift in Sources */,
 				4C0245081BF0395D004BE881 /* UIFindInfoFooterView.swift in Sources */,
+				4CEDCF5B1BFB655700226BB9 /* NSHttpHelp.m in Sources */,
 				4CA34CBC1BF5F4C4002DABA2 /* MyShowInfoViewController.swift in Sources */,
 				4CA34CA41BF57CEC002DABA2 /* MyExchangeViewController.swift in Sources */,
 				4C0245481BF0D883004BE881 /* UIFriendsTableViewCell.swift in Sources */,
