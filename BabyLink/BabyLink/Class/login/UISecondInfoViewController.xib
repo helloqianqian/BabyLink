@@ -7,8 +7,16 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UISecondInfoViewController" customModule="BabyLink" customModuleProvider="target">
             <connections>
+                <outlet property="backView1" destination="RSQ-eC-Y3X" id="AVK-GK-sxl"/>
+                <outlet property="backView2" destination="pZf-vf-WXx" id="ilW-ec-NHQ"/>
+                <outlet property="birthdayBtn" destination="Xpr-kE-ZKy" id="v4x-Ya-4fj"/>
+                <outlet property="birthdayField" destination="Qkx-sL-Dpj" id="YKm-sO-H2C"/>
+                <outlet property="confirmBtn" destination="ZRI-BR-B9E" id="Q23-sb-1At"/>
                 <outlet property="femaleBtn" destination="UbW-I3-3pV" id="4L2-wX-zpz"/>
                 <outlet property="maleBtn" destination="S5F-at-0L5" id="h4d-js-fIA"/>
+                <outlet property="nicknameField" destination="YHm-fo-aiu" id="3bo-b4-I1p"/>
+                <outlet property="relationBtn" destination="IHv-kK-CJB" id="JME-C5-HgV"/>
+                <outlet property="relationField" destination="gcI-aX-Vnq" id="HA8-cL-3SP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,70 +25,154 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入宝宝名字和昵称" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YHm-fo-aiu">
-                    <rect key="frame" x="36" y="77" width="247" height="30"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RSQ-eC-Y3X">
+                    <rect key="frame" x="10" y="20" width="300" height="45"/>
+                    <subviews>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入宝宝名字和昵称" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YHm-fo-aiu">
+                            <rect key="frame" x="25" y="0.0" width="250" height="45"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="ZsI-KN-aax"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                        </textField>
+                    </subviews>
                     <animations/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S5F-at-0L5">
-                    <rect key="frame" x="63" y="120" width="20" height="19"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="YHm-fo-aiu" firstAttribute="leading" secondItem="RSQ-eC-Y3X" secondAttribute="leading" constant="25" id="B77-cX-WGH"/>
+                        <constraint firstAttribute="trailing" secondItem="YHm-fo-aiu" secondAttribute="trailing" constant="25" id="Ff1-Ws-HCL"/>
+                        <constraint firstItem="YHm-fo-aiu" firstAttribute="centerY" secondItem="RSQ-eC-Y3X" secondAttribute="centerY" id="gfX-Xb-1SW"/>
+                        <constraint firstAttribute="height" constant="45" id="tIv-2t-4Cy"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S5F-at-0L5">
+                    <rect key="frame" x="41" y="80" width="74" height="18"/>
                     <animations/>
                     <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" title="Button"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="74" id="16n-pL-jS9"/>
+                        <constraint firstAttribute="height" constant="18" id="t85-34-EV6"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="男宝宝"/>
                     <connections>
                         <action selector="chooseTheSex:" destination="-1" eventType="touchUpInside" id="0xy-5S-ShM"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="男宝宝" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTC-tG-Jbw">
-                    <rect key="frame" x="82" y="120" width="51" height="21"/>
-                    <animations/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="textColor" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UbW-I3-3pV">
-                    <rect key="frame" x="154" y="122.5" width="20" height="19.5"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UbW-I3-3pV">
+                    <rect key="frame" x="160" y="80" width="74" height="18"/>
                     <animations/>
                     <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" title="Button"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="3dZ-ls-ZsU"/>
+                        <constraint firstAttribute="width" constant="74" id="e7k-W9-zBk"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="女宝宝"/>
                     <connections>
                         <action selector="chooseTheSex:" destination="-1" eventType="touchUpInside" id="HHR-yJ-agx"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="女宝宝" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sag-th-XYh">
-                    <rect key="frame" x="173" y="120" width="51" height="21"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pZf-vf-WXx">
+                    <rect key="frame" x="10" y="113" width="300" height="90"/>
+                    <subviews>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请选择宝宝的生日" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qkx-sL-Dpj">
+                            <rect key="frame" x="25" y="0.0" width="250" height="44"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="NoV-Mt-v9E"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zahnjiao" translatesAutoresizingMaskIntoConstraints="NO" id="06C-nh-P8K">
+                            <rect key="frame" x="280" y="18" width="10" height="8"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="8" id="agr-k1-NIw"/>
+                                <constraint firstAttribute="width" constant="10" id="i83-mB-dQj"/>
+                            </constraints>
+                        </imageView>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请选择您与宝宝的关系" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gcI-aX-Vnq">
+                            <rect key="frame" x="25" y="46" width="250" height="44"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="qwQ-pj-Csu"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zahnjiao" translatesAutoresizingMaskIntoConstraints="NO" id="c5k-ya-qpu">
+                            <rect key="frame" x="280" y="64" width="10" height="8"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="8" id="Edb-NU-ras"/>
+                                <constraint firstAttribute="width" constant="10" id="qxa-7L-BtZ"/>
+                            </constraints>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xpr-kE-ZKy">
+                            <rect key="frame" x="0.0" y="0.0" width="300" height="44"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="XwM-p8-tFu"/>
+                            </constraints>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IHv-kK-CJB">
+                            <rect key="frame" x="0.0" y="46" width="300" height="44"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="ezz-o4-Zsv"/>
+                            </constraints>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ljV-vZ-N0D">
+                            <rect key="frame" x="0.0" y="45" width="300" height="0.5"/>
+                            <animations/>
+                            <color key="backgroundColor" red="0.67450980392156867" green="0.67450980392156867" blue="0.70588235294117641" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="0.5" id="9Ft-pd-cFj"/>
+                            </constraints>
+                        </view>
+                    </subviews>
                     <animations/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="textColor" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="请选择宝宝出生日期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reG-R8-8da">
-                    <rect key="frame" x="36" y="168" width="247" height="36"/>
-                    <animations/>
-                    <gestureRecognizers/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="textColor" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                    <connections>
-                        <outletCollection property="gestureRecognizers" destination="dqH-Gi-Yrc" appends="YES" id="TwQ-Lb-2Dn"/>
-                    </connections>
-                </label>
-                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="请选择您与宝宝的关系" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ybx-iW-gF3">
-                    <rect key="frame" x="36" y="219" width="247" height="33"/>
-                    <animations/>
-                    <gestureRecognizers/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="textColor" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                    <connections>
-                        <outletCollection property="gestureRecognizers" destination="6FS-7Q-en7" appends="YES" id="zHE-zt-kKq"/>
-                    </connections>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZRI-BR-B9E">
-                    <rect key="frame" x="36" y="282" width="259" height="30"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="IHv-kK-CJB" secondAttribute="trailing" id="0kX-39-hpb"/>
+                        <constraint firstItem="06C-nh-P8K" firstAttribute="centerY" secondItem="Qkx-sL-Dpj" secondAttribute="centerY" id="1j7-Tg-P9C"/>
+                        <constraint firstAttribute="trailing" secondItem="06C-nh-P8K" secondAttribute="trailing" constant="10" id="1qS-4I-47f"/>
+                        <constraint firstAttribute="trailing" secondItem="gcI-aX-Vnq" secondAttribute="trailing" constant="25" id="2JE-B9-Q9t"/>
+                        <constraint firstAttribute="trailing" secondItem="c5k-ya-qpu" secondAttribute="trailing" constant="10" id="6wV-4z-Jf7"/>
+                        <constraint firstAttribute="trailing" secondItem="ljV-vZ-N0D" secondAttribute="trailing" id="AuX-t4-n6F"/>
+                        <constraint firstItem="ljV-vZ-N0D" firstAttribute="centerY" secondItem="pZf-vf-WXx" secondAttribute="centerY" id="B1l-HC-4xx"/>
+                        <constraint firstAttribute="height" constant="90" id="EYY-eV-4Ej"/>
+                        <constraint firstItem="ljV-vZ-N0D" firstAttribute="leading" secondItem="pZf-vf-WXx" secondAttribute="leading" id="EjO-O2-wJf"/>
+                        <constraint firstItem="IHv-kK-CJB" firstAttribute="leading" secondItem="pZf-vf-WXx" secondAttribute="leading" id="HIs-ns-pcr"/>
+                        <constraint firstItem="Xpr-kE-ZKy" firstAttribute="leading" secondItem="pZf-vf-WXx" secondAttribute="leading" id="IAv-1w-zvz"/>
+                        <constraint firstItem="c5k-ya-qpu" firstAttribute="centerY" secondItem="gcI-aX-Vnq" secondAttribute="centerY" id="LWR-cJ-uuk"/>
+                        <constraint firstItem="gcI-aX-Vnq" firstAttribute="leading" secondItem="pZf-vf-WXx" secondAttribute="leading" constant="25" id="QZI-ZH-jsC"/>
+                        <constraint firstAttribute="bottom" secondItem="IHv-kK-CJB" secondAttribute="bottom" id="SpW-vv-BbW"/>
+                        <constraint firstItem="Xpr-kE-ZKy" firstAttribute="top" secondItem="pZf-vf-WXx" secondAttribute="top" id="VIw-V3-pYK"/>
+                        <constraint firstItem="Qkx-sL-Dpj" firstAttribute="top" secondItem="pZf-vf-WXx" secondAttribute="top" id="YMF-kk-pvA"/>
+                        <constraint firstAttribute="trailing" secondItem="Xpr-kE-ZKy" secondAttribute="trailing" id="e8F-aA-TDm"/>
+                        <constraint firstAttribute="bottom" secondItem="gcI-aX-Vnq" secondAttribute="bottom" id="nDz-Tr-fCV"/>
+                        <constraint firstItem="06C-nh-P8K" firstAttribute="leading" secondItem="Qkx-sL-Dpj" secondAttribute="trailing" constant="5" id="sAJ-pc-1gb"/>
+                        <constraint firstItem="Qkx-sL-Dpj" firstAttribute="leading" secondItem="pZf-vf-WXx" secondAttribute="leading" constant="25" id="xaD-WE-XOe"/>
+                        <constraint firstItem="c5k-ya-qpu" firstAttribute="leading" secondItem="gcI-aX-Vnq" secondAttribute="trailing" constant="5" id="zQ4-6i-usw"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="2JE-B9-Q9t"/>
+                        </mask>
+                    </variation>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZRI-BR-B9E">
+                    <rect key="frame" x="10" y="211" width="300" height="35"/>
                     <animations/>
                     <color key="backgroundColor" red="0.86274509799999999" green="0.31372549020000001" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="Cz2-ow-GQ0"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <state key="normal" title="确认"/>
                     <connections>
@@ -89,18 +181,27 @@
                 </button>
             </subviews>
             <animations/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="RSQ-eC-Y3X" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="4Um-h0-aFS"/>
+                <constraint firstItem="RSQ-eC-Y3X" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="Gmz-1w-aIy"/>
+                <constraint firstAttribute="trailing" secondItem="pZf-vf-WXx" secondAttribute="trailing" constant="10" id="Iu8-99-gy1"/>
+                <constraint firstAttribute="trailing" secondItem="RSQ-eC-Y3X" secondAttribute="trailing" constant="10" id="JBS-9Y-ZyN"/>
+                <constraint firstItem="pZf-vf-WXx" firstAttribute="top" secondItem="UbW-I3-3pV" secondAttribute="bottom" constant="15" id="K4u-Wy-7FD"/>
+                <constraint firstItem="ZRI-BR-B9E" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="Rcd-V6-CdZ"/>
+                <constraint firstItem="ZRI-BR-B9E" firstAttribute="top" secondItem="pZf-vf-WXx" secondAttribute="bottom" constant="8" id="S6q-0j-YUg"/>
+                <constraint firstItem="pZf-vf-WXx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="UK9-OT-TcZ"/>
+                <constraint firstItem="S5F-at-0L5" firstAttribute="top" secondItem="RSQ-eC-Y3X" secondAttribute="bottom" constant="15" id="dU1-Rl-5qo"/>
+                <constraint firstItem="UbW-I3-3pV" firstAttribute="leading" secondItem="S5F-at-0L5" secondAttribute="trailing" constant="45" id="h93-l6-ian"/>
+                <constraint firstItem="UbW-I3-3pV" firstAttribute="top" secondItem="RSQ-eC-Y3X" secondAttribute="bottom" constant="15" id="ink-I8-IkK"/>
+                <constraint firstAttribute="trailing" secondItem="ZRI-BR-B9E" secondAttribute="trailing" constant="10" id="rCX-Yo-VZO"/>
+                <constraint firstItem="UbW-I3-3pV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="37" id="yTf-MT-Hlu"/>
+            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="94" y="175"/>
         </view>
-        <tapGestureRecognizer id="dqH-Gi-Yrc">
-            <connections>
-                <action selector="chooseBirthdayTap:" destination="-1" id="y9O-qV-wDO"/>
-            </connections>
-        </tapGestureRecognizer>
-        <tapGestureRecognizer id="6FS-7Q-en7">
-            <connections>
-                <action selector="chooseRelationShipTap:" destination="-1" id="KDu-AG-R2Y"/>
-            </connections>
-        </tapGestureRecognizer>
     </objects>
+    <resources>
+        <image name="zahnjiao" width="10" height="8"/>
+    </resources>
 </document>

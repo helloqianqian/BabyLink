@@ -7,7 +7,7 @@
 //
 
 #import "UIBridgeViewController.h"
-
+#import "NSHttpHelp.h"
 @interface UIBridgeViewController ()
 
 @end

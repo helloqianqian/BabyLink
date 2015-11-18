@@ -7,7 +7,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UIBaseViewController" customModule="BabyLink" customModuleProvider="target">
             <connections>
-                <outlet property="tapGesture" destination="fiB-NT-voV" id="Z0A-cE-0FD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,15 +18,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <gestureRecognizers/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <connections>
-                <outletCollection property="gestureRecognizers" destination="fiB-NT-voV" appends="YES" id="lTK-mX-gbR"/>
-            </connections>
             <point key="canvasLocation" x="366" y="300"/>
         </view>
-        <tapGestureRecognizer id="fiB-NT-voV">
-            <connections>
-                <action selector="endEditing:" destination="-1" id="kJT-bU-DQl"/>
-            </connections>
-        </tapGestureRecognizer>
     </objects>
 </document>

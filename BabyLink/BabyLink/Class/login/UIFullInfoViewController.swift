@@ -10,24 +10,49 @@ import UIKit
 
 class UIFullInfoViewController: UIBaseViewController {
 
+    @IBOutlet weak var backView3: UIView!
+    @IBOutlet weak var backView2: UIView!
+    @IBOutlet weak var backView1: UIView!
     @IBOutlet weak var femaleBtn: UIButton!
     @IBOutlet weak var maleBtn: UIButton!
     
-    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var cityField: UITextField!
+    @IBOutlet weak var neighboorField: UITextField!
+    @IBOutlet weak var cityBtn: UIButton!
+    @IBOutlet weak var neighborBtn: UIButton!
     
-    @IBOutlet weak var addressLabel: UILabel!
-    
-    @IBOutlet weak var birthdayLabel: UILabel!
-    
-    @IBOutlet weak var relateLabel: UILabel!
-    
+    @IBOutlet weak var birthdayField: UITextField!
+    @IBOutlet weak var relationField: UITextField!
+    @IBOutlet weak var confirmBtn: UIButton!
+    @IBOutlet weak var nicknameField: UITextField!
+    @IBOutlet weak var relationBtn: UIButton!
+    @IBOutlet weak var birthdayBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.navigationItem.title = "完善资料"
+        self.navigationItem.hidesBackButton = true;
+        
+        self.setUI();
     }
 
+    func setUI() {
+        self.backView1.layer.borderColor = SGrayBorderColor.CGColor;
+        self.backView1.layer.cornerRadius = 5;
+        self.backView1.layer.borderWidth = 0.5;
+        
+        self.backView2.layer.borderColor = SGrayBorderColor.CGColor;
+        self.backView2.layer.cornerRadius = 5;
+        self.backView2.layer.borderWidth = 0.5;
+        
+        self.backView3.layer.borderColor = SGrayBorderColor.CGColor;
+        self.backView3.layer.cornerRadius = 5;
+        self.backView3.layer.borderWidth = 0.5;
+        
+        confirmBtn.makeBackGroundColor_Red();
+        nicknameField.delegate = self;
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

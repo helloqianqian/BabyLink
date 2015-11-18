@@ -7,10 +7,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UILoginViewController" customModule="BabyLink" customModuleProvider="target">
             <connections>
-                <outlet property="UIPWTextField" destination="pmo-uG-b9f" id="3d2-OL-lab"/>
-                <outlet property="UIPhoneNumTextField" destination="pvG-hE-am4" id="oOe-OR-DQK"/>
                 <outlet property="backView" destination="eIY-Pd-x6p" id="pbO-1i-Kfm"/>
                 <outlet property="loginBtn" destination="8Am-Bw-fXz" id="jnB-Ve-dDK"/>
+                <outlet property="phoneField" destination="pvG-hE-am4" id="b5j-ZD-evX"/>
+                <outlet property="pswField" destination="pmo-uG-b9f" id="H44-oZ-UVt"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -37,7 +37,7 @@
                                 <constraint firstAttribute="height" constant="35" id="KWN-HZ-WSC"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="done" secureTextEntry="YES"/>
+                            <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                         </textField>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fU9-xu-X7K">
                             <rect key="frame" x="50" y="10" width="0.5" height="25"/>

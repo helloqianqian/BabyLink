@@ -15,5 +15,10 @@
 
 
 
+#import "NSHttpHelp.h"
+
+#import "NSHelper.h"
+
+#import "NSUserInfo.h"
 //数据模型
 #import "ADModel.h"

@@ -100,6 +100,8 @@
 		4CEDCF581BFB5E1600226BB9 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDCF571BFB5E1600226BB9 /* Reachability.m */; };
 		4CEDCF5B1BFB655700226BB9 /* NSHttpHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDCF5A1BFB655700226BB9 /* NSHttpHelp.m */; };
 		4CEDCF5E1BFB665500226BB9 /* NSHttpModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDCF5D1BFB665500226BB9 /* NSHttpModel.m */; };
+		4CEDCF621BFCAF5F00226BB9 /* NSHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDCF611BFCAF5F00226BB9 /* NSHelper.m */; };
+		4CEDCF651BFCB53600226BB9 /* NSUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDCF641BFCB53600226BB9 /* NSUserInfo.m */; };
 		4CF6EF5E1BDCA47600CC5BA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6EF5D1BDCA47600CC5BA7 /* AppDelegate.swift */; };
 		4CF6EF601BDCA47600CC5BA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6EF5F1BDCA47600CC5BA7 /* ViewController.swift */; };
 		4CF6EF631BDCA47600CC5BA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CF6EF611BDCA47600CC5BA7 /* Main.storyboard */; };
@@ -302,6 +304,10 @@
 		4CEDCF5A1BFB655700226BB9 /* NSHttpHelp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSHttpHelp.m; sourceTree = "<group>"; };
 		4CEDCF5C1BFB665500226BB9 /* NSHttpModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSHttpModel.h; sourceTree = "<group>"; };
 		4CEDCF5D1BFB665500226BB9 /* NSHttpModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSHttpModel.m; sourceTree = "<group>"; };
+		4CEDCF601BFCAF5F00226BB9 /* NSHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSHelper.h; sourceTree = "<group>"; };
+		4CEDCF611BFCAF5F00226BB9 /* NSHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSHelper.m; sourceTree = "<group>"; };
+		4CEDCF631BFCB53600226BB9 /* NSUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSUserInfo.h; sourceTree = "<group>"; };
+		4CEDCF641BFCB53600226BB9 /* NSUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSUserInfo.m; sourceTree = "<group>"; };
 		4CF6EF5A1BDCA47600CC5BA7 /* BabyLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabyLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CF6EF5D1BDCA47600CC5BA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CF6EF5F1BDCA47600CC5BA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -654,6 +660,15 @@
 			path = httpRequest;
 			sourceTree = "<group>";
 		};
+		4CEDCF5F1BFCAF4A00226BB9 /* toolHelper */ = {
+			isa = PBXGroup;
+			children = (
+				4CEDCF601BFCAF5F00226BB9 /* NSHelper.h */,
+				4CEDCF611BFCAF5F00226BB9 /* NSHelper.m */,
+			);
+			path = toolHelper;
+			sourceTree = "<group>";
+		};
 		4CF6EF511BDCA47600CC5BA7 = {
 			isa = PBXGroup;
 			children = (
@@ -811,6 +826,8 @@
 			isa = PBXGroup;
 			children = (
 				4CF6EFD21BDF70C400CC5BA7 /* NSUserInfoObject.swift */,
+				4CEDCF631BFCB53600226BB9 /* NSUserInfo.h */,
+				4CEDCF641BFCB53600226BB9 /* NSUserInfo.m */,
 			);
 			path = globalParams;
 			sourceTree = "<group>";
@@ -818,6 +835,7 @@
 		4CF6EF921BDE58D300CC5BA7 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				4CEDCF5F1BFCAF4A00226BB9 /* toolHelper */,
 				4CEDCF521BFB580800226BB9 /* httpRequest */,
 				4CFCB8581BEBA66000D84B29 /* TAPageControl */,
 			);
@@ -1400,6 +1418,7 @@
 				4C0245541BF0E688004BE881 /* UIOrderInfoViewController.swift in Sources */,
 				4CA59ACE1BE85B5C00C614FC /* UIShowNavigationView.swift in Sources */,
 				4CFCB8621BEBA66000D84B29 /* TAAnimatedDotView.m in Sources */,
+				4CEDCF621BFCAF5F00226BB9 /* NSHelper.m in Sources */,
 				4CFCB89C1BEBA90B00D84B29 /* ADModel.m in Sources */,
 				4CF6EFD31BDF70C400CC5BA7 /* NSUserInfoObject.swift in Sources */,
 				4CD583CA1BF4248300345666 /* UINikenameViewController.swift in Sources */,
@@ -1411,6 +1430,7 @@
 				4CD583C61BF4245200345666 /* UIHelpViewController.swift in Sources */,
 				4C006B341BF23F6300FFBFF6 /* UIMyOrderTableViewCell.swift in Sources */,
 				4C006B281BF2342A00FFBFF6 /* UIFinalPayTableViewCell.swift in Sources */,
+				4CEDCF651BFCB53600226BB9 /* NSUserInfo.m in Sources */,
 				4CFCB8D11BEF1ABF00D84B29 /* UIActivityInfoViewController.swift in Sources */,
 				4CA2A84D1BEA40C20094A6FC /* UIButton+CustomStyle.m in Sources */,
 				4CF6EFCC1BDF6F9700CC5BA7 /* UIEnterViewController.swift in Sources */,

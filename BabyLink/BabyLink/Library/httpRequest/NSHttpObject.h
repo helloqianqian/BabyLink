@@ -23,13 +23,13 @@ typedef void (^resultBlock)(id resultValue);
                 withParameter:(NSDictionary *)parameter
               withReturnBlock:(ReturnValueBlock)returnBlock
                withErrorBlock:(ErrorCodeBlock)errorBlock
-             WithFailureBlock:(FailureBlock) failureBlock;
+             withFailureBlock:(FailureBlock)failureBlock;
 
 + (void)NetRequestGetWithUrl:(NSString *)urlString
                withParameter:(NSDictionary *)param
              withReturnValue:(ReturnValueBlock) returnBlock
                    withError:(ErrorCodeBlock)errorBlock
-            withFailureBlock:(FailureBlock) failureBlock;
+            withFailureBlock:(FailureBlock)failureBlock;
 
 +(void)upLoadImagewithUrl:(NSString *)urlString
             withParameter:(NSDictionary *)parameter

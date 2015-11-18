@@ -11,8 +11,8 @@ import UIKit
 class UILoginViewController: UIBaseViewController {
 
     @IBOutlet weak var backView: UIView!
-    @IBOutlet weak var UIPhoneNumTextField: UITextField!
-    @IBOutlet weak var UIPWTextField: UITextField!
+    @IBOutlet weak var phoneField: UITextField!
+    @IBOutlet weak var pswField: UITextField!
     @IBOutlet weak var loginBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +30,9 @@ class UILoginViewController: UIBaseViewController {
         backView.layer.borderColor = SGrayBorderColor.CGColor;
         backView.layer.borderWidth = 0.5;
         loginBtn.makeBackGroundColor_Red()
+        
+        phoneField.delegate = self;
+        pswField.delegate = self;
     }
     
     override func viewWillAppear(animated: Bool) {

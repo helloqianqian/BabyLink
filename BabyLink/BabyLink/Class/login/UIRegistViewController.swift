@@ -23,6 +23,10 @@ class UIRegistViewController: UIBaseViewController {
     @IBOutlet weak var confirmKey: UITextField!
     @IBOutlet weak var keyField: UITextField!
     
+    
+    var userinfo:NSUserInfo = NSUserInfo();
+    var seconds = 60;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "注册"
@@ -58,10 +62,49 @@ class UIRegistViewController: UIBaseViewController {
     }
     
     @IBAction func registConfirm(sender: UIButton) {
-//        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-//        appDelegate.exchangeRootViewController(true)
-        let infoVC = UIFullInfoViewController.init(nibName:"UIFullInfoViewController",bundle:NSBundle.mainBundle());
-        self.navigationController?.pushViewController(infoVC, animated: true);
+        
+//        let phoneNum = self.phoneNum.text;
+//        let code = self.verticalNum.text;
+//        let password = self.keyField.text;
+        
+        if !NSHelper.checkUserPhoneValidateWith(self.phoneNum.text) {
+            NSHelper.showAlertViewWithTip("请输入正确的手机号");
+            return;
+        }
+        if self.verticalNum.text == ""{
+            NSHelper.showAlertViewWithTip("请输入验证码");
+            return;
+        }
+        if self.keyField.text == "" {
+            NSHelper.showAlertViewWithTip("请输入密码");
+            return;
+        }
+        if self.confirmKey.text == "" {
+            NSHelper.showAlertViewWithTip("请输入确认密码");
+            return;
+        }
+        if self.keyField.text != self.confirmKey.text {
+            NSHelper.showAlertViewWithTip("两次密码输入不一致");
+            return;
+        }
+        let dicParam:NSDictionary = NSDictionary(objects: [self.phoneNum.text!,self.verticalNum.text!,self.keyField.text!] , forKeys: ["mobile","code","password"]);
+        NSHttpHelp.httpHelpWithUrlTpye(registerType, withParam: dicParam, withResult: { (returnObject:AnyObject!) -> Void in
+            let dic = returnObject as! NSDictionary;
+            let code = dic["code"] as! NSInteger;
+            if code == 0 {
+                //发送成功
+//                NSHelper.showAlertViewWithTip("验证码发送成功");
+//                let infoVC = UIFullInfoViewController.init(nibName:"UIFullInfoViewController",bundle:NSBundle.mainBundle());
+//                self.navigationController?.pushViewController(infoVC, animated: true);
+
+            } else {
+                let errorStr = dic["datas"] as! String;
+                NSHelper.showAlertViewWithTip(errorStr);
+                //发送失败
+            }
+        }) { (error:AnyObject!) -> Void in
+                
+        };
     }
 
     @IBAction func agreementEnter(sender: AnyObject) {
@@ -69,8 +112,45 @@ class UIRegistViewController: UIBaseViewController {
         self.navigationController?.pushViewController(agreementVC, animated: true);
     }
     @IBAction func getVerticalNum(sender: AnyObject) {
-    
+        if !NSHelper.checkUserPhoneValidateWith(self.phoneNum.text) {
+            NSHelper.showAlertViewWithTip("请输入正确的手机号");
+            return;
+        }
+        getVerticalBtn.enabled = false;
+        self.startTimer()
+        let dicParam:NSDictionary = NSDictionary(objects: [self.phoneNum.text!] , forKeys: ["mobile"]);
+        NSHttpHelp.httpHelpWithUrlTpye(verticalCodeType, withParam: dicParam, withResult: { (returnObject:AnyObject!) -> Void in
+            let dic = returnObject as! NSDictionary;
+            let code = dic["code"] as! NSInteger;
+            if code == 0 {
+                //发送成功
+                NSHelper.showAlertViewWithTip("验证码发送成功");
+            } else {
+                let errorStr = dic["datas"] as! String;
+                NSHelper.showAlertViewWithTip(errorStr);
+                //发送失败
+            }
+        }) { (error:AnyObject!) -> Void in
+            //发送失败
+        };
     }
+    
+    func startTimer() {
+        let timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "timerFunction:", userInfo: nil, repeats: true);
+        timer.fire();
+    }
+    
+    func timerFunction(timer:NSTimer){
+        if seconds>=0{
+            getVerticalBtn.setTitle("\(seconds)s", forState: UIControlState.Normal);
+            seconds--;
+        } else {
+            timer.invalidate();
+            getVerticalBtn.enabled = true;
+            getVerticalBtn.setTitle("发送验证码", forState: UIControlState.Normal);
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

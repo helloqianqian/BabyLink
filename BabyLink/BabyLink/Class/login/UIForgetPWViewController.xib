@@ -109,6 +109,28 @@
                         <action selector="getVerticalNum:" destination="-1" eventType="touchUpInside" id="OWr-fL-od4"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ygi-sy-sRT">
+                    <rect key="frame" x="10" y="124" width="300" height="45"/>
+                    <subviews>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入新密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="joZ-cO-sEz">
+                            <rect key="frame" x="25" y="5" width="250" height="35"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="35" id="5Uk-iI-q3c"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                        </textField>
+                    </subviews>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="II2-DD-EgI"/>
+                        <constraint firstAttribute="trailing" secondItem="joZ-cO-sEz" secondAttribute="trailing" constant="25" id="hh9-3K-XXo"/>
+                        <constraint firstItem="joZ-cO-sEz" firstAttribute="leading" secondItem="Ygi-sy-sRT" secondAttribute="leading" constant="25" id="jp6-rT-c7m"/>
+                        <constraint firstItem="joZ-cO-sEz" firstAttribute="centerY" secondItem="Ygi-sy-sRT" secondAttribute="centerY" id="zZ8-ft-Qcc"/>
+                    </constraints>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ws-1z-WGA">
                     <rect key="frame" x="10" y="176" width="300" height="45"/>
                     <subviews>
@@ -119,7 +141,7 @@
                                 <constraint firstAttribute="height" constant="35" id="Gbz-Mj-rJ7"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="done" secureTextEntry="YES"/>
+                            <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                         </textField>
                     </subviews>
                     <animations/>
@@ -146,28 +168,6 @@
                         <action selector="resetPWConfirm:" destination="-1" eventType="touchUpInside" id="4Lo-qg-dIf"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ygi-sy-sRT">
-                    <rect key="frame" x="10" y="124" width="300" height="45"/>
-                    <subviews>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入新密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="joZ-cO-sEz">
-                            <rect key="frame" x="25" y="5" width="250" height="35"/>
-                            <animations/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="35" id="5Uk-iI-q3c"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="next" secureTextEntry="YES"/>
-                        </textField>
-                    </subviews>
-                    <animations/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="45" id="II2-DD-EgI"/>
-                        <constraint firstAttribute="trailing" secondItem="joZ-cO-sEz" secondAttribute="trailing" constant="25" id="hh9-3K-XXo"/>
-                        <constraint firstItem="joZ-cO-sEz" firstAttribute="leading" secondItem="Ygi-sy-sRT" secondAttribute="leading" constant="25" id="jp6-rT-c7m"/>
-                        <constraint firstItem="joZ-cO-sEz" firstAttribute="centerY" secondItem="Ygi-sy-sRT" secondAttribute="centerY" id="zZ8-ft-Qcc"/>
-                    </constraints>
-                </view>
             </subviews>
             <animations/>
             <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>

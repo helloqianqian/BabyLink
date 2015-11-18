@@ -8,32 +8,75 @@
 
 import UIKit
 
-class UIBaseViewController: UIViewController {
+class UIBaseViewController: UIViewController ,UITextFieldDelegate{
 
-    @IBOutlet var tapGesture: UITapGestureRecognizer!
+    var tapGesture: UITapGestureRecognizer!
     
+    @IBOutlet var tapsGesture: UITapGestureRecognizer!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-//        let backButton = UIBarButtonItem(image: UIImage(named: "nav_left_btn"), style: UIBarButtonItemStyle.Plain, target: Common.rootViewController, action: Selector("showLeft"))
-//        self.navigationItem.leftBarButtonItem = backButton
-        
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action: "")
+        
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillChangeFrame:", name: UIKeyboardWillChangeFrameNotification, object: nil)
+        
+        tapGesture = UITapGestureRecognizer(target: self, action: "endEditing")
     }
     
     
     func addGesture(){
-        self.view.addGestureRecognizer(tapGesture);
+        self.view.addGestureRecognizer(self.tapGesture);
     }
     
     func removeGesture(){
-        self.view.removeGestureRecognizer(tapGesture);
+        self.view.removeGestureRecognizer(self.tapGesture);
     }
 
+    func keyboardWillShow(notification:NSNotification){
+        self.addGesture();
+    }
+    func keyboardWillHide(notification:NSNotification){
+        self.removeGesture();
+    }
+    func keyboardWillChangeFrame(notification: NSNotification){
+        
+    }
     
-    @IBAction func endEditing(sender: UITapGestureRecognizer) {
+    func textFieldDidBeginEditing(textField: UITextField) {
+        let view = textField.superview;
+        let offY = (view?.frame.size.height)! + (view?.frame.origin.y)!;
+        if offY > MainScreenHeight - 256 {
+            UIView.animateWithDuration(0.25, animations: { () -> Void in
+                var frame = self.view.frame;
+                frame.origin.y = frame.origin.y - (offY - MainScreenHeight + 256);
+                self.view.frame = frame;
+                }, completion: { (finished:Bool) -> Void in
+                    
+            })
+        }
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        let h=self.view.frame.origin.y;
+        if h<0{
+            UIView.animateWithDuration(0.25, animations: { () -> Void in
+                var frame = self.view.frame;
+                frame.origin.y = 0;
+                self.view.frame = frame;
+                }, completion: { (finished:Bool) -> Void in
+                    
+            })
+        }
+    }
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true;
+    }
+    func endEditing(){
         for subView in self.view.subviews {
             if subView.isKindOfClass(UITextField) {
                 subView.resignFirstResponder()
@@ -47,7 +90,6 @@ class UIBaseViewController: UIViewController {
         }
         self.view.endEditing(true);
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

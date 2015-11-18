@@ -10,7 +10,7 @@
 #import "NSHttpObject.h"
 @interface NSHttpHelp : NSObject
 
-typedef  enum :NSUInteger {
+typedef  enum : NSUInteger {
     registerType,
     loginType,
     verticalCodeType,
@@ -22,12 +22,10 @@ typedef  enum :NSUInteger {
     updateMobileType,
     updatePswType,
     forgetPswType,
-    
-    
     loginOutType,
-} HttpUrlType;
+}HttpUrlType;
 
-+ (void)httpHelpWithUrlTpye:(HttpUrlType)urlType withParam:(NSDictionary *)param withResult:(ReturnValueBlock)resultBlock withFailure:(FailureBlock)failureBlock;
++ (void)httpHelpWithUrlTpye:(HttpUrlType)urlType withParam:(id)param withResult:(ReturnValueBlock)resultBlock withFailure:(FailureBlock)failureBlock;
 
 +(void)uploadUserIconWithImageData:(NSDictionary*)imageDic withResult:(resultBlock)resultBlock withFailure:(FailureBlock)failureBlock withUploadProgress:(void (^)(float progress))progressBlock;
 

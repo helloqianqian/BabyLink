@@ -124,7 +124,7 @@
                withParameter:(NSDictionary *)param
              withReturnValue:(ReturnValueBlock) returnBlock
                    withError:(ErrorCodeBlock)errorBlock
-            WithFailureBlock: (FailureBlock) failureBlock{
+            withFailureBlock: (FailureBlock) failureBlock{
     
     AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] init];
     AFHTTPRequestOperation *op = [manager GET:urlString parameters:param success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {

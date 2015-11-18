@@ -52,11 +52,14 @@
             break;
     }
     [NSHttpObject NetRequestPostWithUrl:url withParameter:param withReturnBlock:^(id returnValue) {
+        NSLog(@"%@",returnValue);
         
+        resultBlock(returnValue);
     } withErrorBlock:^(id errorCode) {
         
-    } WithFailureBlock:^(id error) {
-        
+    } withFailureBlock:^(id error) {
+        NSLog(@"%@",error);
+        failureBlock(error);
     }];
     
     
