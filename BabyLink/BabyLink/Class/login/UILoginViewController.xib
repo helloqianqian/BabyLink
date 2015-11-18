@@ -37,7 +37,7 @@
                                 <constraint firstAttribute="height" constant="35" id="KWN-HZ-WSC"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="done" secureTextEntry="YES"/>
                         </textField>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fU9-xu-X7K">
                             <rect key="frame" x="50" y="10" width="0.5" height="25"/>
@@ -64,7 +64,7 @@
                                 <constraint firstAttribute="height" constant="35" id="yDN-3X-o1D"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="next"/>
                         </textField>
                     </subviews>
                     <animations/>
@@ -210,7 +210,7 @@
                 <constraint firstItem="nTZ-TD-xeO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="vr6-Mb-mcC"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="-46" y="150"/>
+            <point key="canvasLocation" x="-268" y="135"/>
         </view>
     </objects>
     <resources>

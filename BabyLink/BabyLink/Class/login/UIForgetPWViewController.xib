@@ -55,7 +55,7 @@
                                 <constraint firstAttribute="height" constant="35" id="6Ov-IQ-f49"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="next"/>
                         </textField>
                     </subviews>
                     <animations/>
@@ -81,7 +81,7 @@
                                 <constraint firstAttribute="height" constant="35" id="Bye-Hq-Klo"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
                         </textField>
                     </subviews>
                     <animations/>
@@ -119,7 +119,7 @@
                                 <constraint firstAttribute="height" constant="35" id="Gbz-Mj-rJ7"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="done" secureTextEntry="YES"/>
                         </textField>
                     </subviews>
                     <animations/>
@@ -156,7 +156,7 @@
                                 <constraint firstAttribute="height" constant="35" id="5Uk-iI-q3c"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="next" secureTextEntry="YES"/>
                         </textField>
                     </subviews>
                     <animations/>

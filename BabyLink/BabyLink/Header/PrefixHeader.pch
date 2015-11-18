@@ -16,4 +16,6 @@
 #import "PublicHeader.h"
 #import "UIImageView+WebCache.h"
 
+
+#import "AFNetworking.h"
 #endif /* PrefixHeader_pch */
