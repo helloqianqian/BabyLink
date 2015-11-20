@@ -8,11 +8,34 @@
 
 #import <Foundation/Foundation.h>
 
+
+
 @interface NSUserInfo : NSObject
-@property (nonatomic,strong)NSString *username;
-@property (nonatomic,strong)NSString *userid;
-@property (nonatomic,strong)NSString *userSex;
-@property (nonatomic,strong)NSString *userAddr;
+
+
+@property (nonatomic,assign)NSInteger member_id;
+@property (nonatomic,strong)NSString *mobile;
+@property (nonatomic,strong)NSString *member_name;
+@property (nonatomic,strong)NSString *member_avar;
+@property (nonatomic,strong)NSString *password;
+@property (nonatomic,strong)NSString *passwordLocal;
+@property (nonatomic,strong)NSString *openid;
+@property (nonatomic,assign)BOOL islogin;
+
+@property (nonatomic,strong)NSString *add_time;
+@property (nonatomic,strong)NSString *baby_date;
+@property (nonatomic,strong)NSString *baby_link;
+@property (nonatomic,strong)NSString *baby_nam;
+@property (nonatomic,assign)NSInteger baby_sex;
+
+@property (nonatomic,strong)NSString *city;
+@property (nonatomic,strong)NSString *home;
+@property (nonatomic,strong)NSString *position;
+
+@property (nonatomic,strong)NSString *login_time;
+
+
+
 
 + (instancetype)shareInstance;
 

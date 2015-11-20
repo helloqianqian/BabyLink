@@ -308,6 +308,7 @@
 		4CEDCF611BFCAF5F00226BB9 /* NSHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSHelper.m; sourceTree = "<group>"; };
 		4CEDCF631BFCB53600226BB9 /* NSUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSUserInfo.h; sourceTree = "<group>"; };
 		4CEDCF641BFCB53600226BB9 /* NSUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSUserInfo.m; sourceTree = "<group>"; };
+		4CEDCF661BFCC8E600226BB9 /* libSVProgressHUD.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSVProgressHUD.a; path = "Pods/../build/Debug-iphoneos/libSVProgressHUD.a"; sourceTree = "<group>"; };
 		4CF6EF5A1BDCA47600CC5BA7 /* BabyLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabyLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CF6EF5D1BDCA47600CC5BA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CF6EF5F1BDCA47600CC5BA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -436,6 +437,7 @@
 		45297AA952EF90ECDC2682B2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4CEDCF661BFCC8E600226BB9 /* libSVProgressHUD.a */,
 				4CFCB8981BEBA87200D84B29 /* libSDWebImage.a */,
 				5804E37A8D09AF5064E64A8C /* libPods-BabyLink.a */,
 			);

@@ -24,4 +24,30 @@
 //
 #define GreenBtnColor RGBCOLOR(0xA7D8D3)
 
+
+
+//全局参数
+#define ISLOGIN         @"islogin"
+#define LOGIN_TIME      @"login_time"
+
+#define MOBILE          @"mobile"
+#define MEMBER_ID       @"member_id"
+#define MEMBER_NAME     @"member_name"
+#define MEMBER_AVAR     @"member_avar"
+#define PASSWORD        @"password"
+#define PASSWORDLocal   @"passwordLocal"
+#define OPENID          @"openid"
+
+
+#define HOME            @"home"
+#define ADD_TIME        @"add_time"
+#define BABY_DATE       @"baby_date"
+#define BABT_LINK       @"baby_link"
+#define BABY_NAM        @"baby_nam"
+#define BABY_SEX        @"baby_sex"
+#define POSITION        @"position"
+#define CITY            @"city"
+
+
+
 #endif /* PublicHeader_h */

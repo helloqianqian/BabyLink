@@ -23,8 +23,6 @@ class UIRegistViewController: UIBaseViewController {
     @IBOutlet weak var confirmKey: UITextField!
     @IBOutlet weak var keyField: UITextField!
     
-    
-    var userinfo:NSUserInfo = NSUserInfo();
     var seconds = 60;
     
     override func viewDidLoad() {
@@ -62,11 +60,6 @@ class UIRegistViewController: UIBaseViewController {
     }
     
     @IBAction func registConfirm(sender: UIButton) {
-        
-//        let phoneNum = self.phoneNum.text;
-//        let code = self.verticalNum.text;
-//        let password = self.keyField.text;
-        
         if !NSHelper.checkUserPhoneValidateWith(self.phoneNum.text) {
             NSHelper.showAlertViewWithTip("请输入正确的手机号");
             return;
@@ -88,19 +81,32 @@ class UIRegistViewController: UIBaseViewController {
             return;
         }
         let dicParam:NSDictionary = NSDictionary(objects: [self.phoneNum.text!,self.verticalNum.text!,self.keyField.text!] , forKeys: ["mobile","code","password"]);
+        SVProgressHUD.showWithStatus("正在注册")
         NSHttpHelp.httpHelpWithUrlTpye(registerType, withParam: dicParam, withResult: { (returnObject:AnyObject!) -> Void in
             let dic = returnObject as! NSDictionary;
             let code = dic["code"] as! NSInteger;
             if code == 0 {
                 //发送成功
-//                NSHelper.showAlertViewWithTip("验证码发送成功");
-//                let infoVC = UIFullInfoViewController.init(nibName:"UIFullInfoViewController",bundle:NSBundle.mainBundle());
-//                self.navigationController?.pushViewController(infoVC, animated: true);
-
+                SVProgressHUD.showSuccessWithStatus("注册成功")
+                let datas = dic["datas"] as! NSInteger;
+                let userDefault = NSUserDefaults.standardUserDefaults()
+                userDefault.setObject(self.phoneNum.text, forKey: MOBILE);
+                userDefault.setObject(self.keyField.text, forKey: PASSWORDLocal);
+                userDefault.setInteger(datas, forKey: MEMBER_ID)
+                userDefault.setBool(false, forKey: ISLOGIN)
+                userDefault.synchronize();
+                
+                NSUserInfo.shareInstance().member_id = datas;
+                NSUserInfo.shareInstance().mobile = self.phoneNum.text;
+                NSUserInfo.shareInstance().password = self.keyField.text;
+                NSUserInfo.shareInstance().islogin = false;
+                
+                let infoVC = UIFullInfoViewController.init(nibName:"UIFullInfoViewController",bundle:NSBundle.mainBundle());
+                self.navigationController?.pushViewController(infoVC, animated: true);
             } else {
-                let errorStr = dic["datas"] as! String;
-                NSHelper.showAlertViewWithTip(errorStr);
                 //发送失败
+                let datas = dic["datas"] as! NSDictionary;
+                SVProgressHUD.showErrorWithStatus(datas["error"] as! String);
             }
         }) { (error:AnyObject!) -> Void in
                 
@@ -118,17 +124,18 @@ class UIRegistViewController: UIBaseViewController {
         }
         getVerticalBtn.enabled = false;
         self.startTimer()
+        SVProgressHUD.showWithStatus("正在发送验证码")
         let dicParam:NSDictionary = NSDictionary(objects: [self.phoneNum.text!] , forKeys: ["mobile"]);
         NSHttpHelp.httpHelpWithUrlTpye(verticalCodeType, withParam: dicParam, withResult: { (returnObject:AnyObject!) -> Void in
             let dic = returnObject as! NSDictionary;
             let code = dic["code"] as! NSInteger;
             if code == 0 {
                 //发送成功
-                NSHelper.showAlertViewWithTip("验证码发送成功");
+                SVProgressHUD.showSuccessWithStatus("验证码发送成功")
             } else {
-                let errorStr = dic["datas"] as! String;
-                NSHelper.showAlertViewWithTip(errorStr);
                 //发送失败
+                let datas = dic["datas"] as! NSDictionary;
+                SVProgressHUD.showErrorWithStatus(datas["error"] as! String);
             }
         }) { (error:AnyObject!) -> Void in
             //发送失败
@@ -146,6 +153,7 @@ class UIRegistViewController: UIBaseViewController {
             seconds--;
         } else {
             timer.invalidate();
+            seconds = 60;
             getVerticalBtn.enabled = true;
             getVerticalBtn.setTitle("发送验证码", forState: UIControlState.Normal);
         }

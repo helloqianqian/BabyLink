@@ -51,6 +51,7 @@
         default:
             break;
     }
+    NSLog(@"url:%@",url);
     [NSHttpObject NetRequestPostWithUrl:url withParameter:param withReturnBlock:^(id returnValue) {
         NSLog(@"%@",returnValue);
         
@@ -59,6 +60,7 @@
         
     } withFailureBlock:^(id error) {
         NSLog(@"%@",error);
+        [SVProgressHUD showErrorWithStatus:@"网络连接异常"];
         failureBlock(error);
     }];
     

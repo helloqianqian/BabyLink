@@ -18,4 +18,5 @@
 
 
 #import "AFNetworking.h"
+#import "SVProgressHUD.h"
 #endif /* PrefixHeader_pch */

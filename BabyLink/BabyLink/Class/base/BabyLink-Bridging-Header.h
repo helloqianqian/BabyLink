@@ -2,23 +2,27 @@
 //  Use this file to import your target's public headers that you would like to expose to Swift.
 //
 
+
+
+
+
+//public header
 #import "PublicHeader.h"
 
 
-#import "UIButton+CustomStyle.h"
+//Model
+#import "ADModel.h"
+#import "NSUserInfo.h"
 
 
-#import "TAPageControl.h"
-
-#import "UIImageView+WebCache.h"
-
-
-
-
+//http
 #import "NSHttpHelp.h"
 
-#import "NSHelper.h"
 
-#import "NSUserInfo.h"
-//数据模型
-#import "ADModel.h"
+//tool
+#import "NSHelper.h"
+#import "SVProgressHUD.h"
+#import "TAPageControl.h"
+
+#import "UIButton+CustomStyle.h"
+#import "UIImageView+WebCache.h"

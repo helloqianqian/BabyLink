@@ -136,29 +136,33 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pa3-9J-i5o">
-                    <rect key="frame" x="160" y="185" width="74" height="18"/>
+                    <rect key="frame" x="170" y="185" width="54" height="18"/>
                     <animations/>
-                    <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="74" id="BWW-1E-BGh"/>
+                        <constraint firstAttribute="width" constant="54" id="BWW-1E-BGh"/>
                         <constraint firstAttribute="height" constant="18" id="yb1-SU-BDc"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                    <state key="normal" title="女宝宝"/>
+                    <state key="normal" title="女宝宝" image="switch_btn">
+                        <color key="titleColor" red="0.67450980390000004" green="0.67450980390000004" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="selected" image="switch_selected_btn"/>
                     <connections>
                         <action selector="chooseTheSex:" destination="-1" eventType="touchUpInside" id="B7O-XX-bXF"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DQu-QS-h1Z">
-                    <rect key="frame" x="41" y="185" width="74" height="18"/>
+                    <rect key="frame" x="71" y="185" width="54" height="18"/>
                     <animations/>
-                    <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="74" id="1N1-oA-EX7"/>
+                        <constraint firstAttribute="width" constant="54" id="1N1-oA-EX7"/>
                         <constraint firstAttribute="height" constant="18" id="iWX-0k-LPN"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                    <state key="normal" title="男宝宝"/>
+                    <state key="normal" title="男宝宝" image="switch_btn">
+                        <color key="titleColor" red="0.67450980390000004" green="0.67450980390000004" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="selected" image="switch_selected_btn"/>
                     <connections>
                         <action selector="chooseTheSex:" destination="-1" eventType="touchUpInside" id="K74-Ky-55N"/>
                     </connections>
@@ -265,11 +269,13 @@
                 <constraint firstAttribute="trailing" secondItem="xxX-qk-sy2" secondAttribute="trailing" constant="10" id="zjg-Vq-ia1"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="-33" y="-54"/>
+            <point key="canvasLocation" x="-150" y="-53"/>
         </view>
     </objects>
     <resources>
         <image name="Pin" width="10" height="14"/>
+        <image name="switch_btn" width="15" height="15"/>
+        <image name="switch_selected_btn" width="15" height="15"/>
         <image name="zahnjiao" width="10" height="8"/>
     </resources>
 </document>

@@ -45,6 +45,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func exchangeRootViewController(login:Bool){
+        SVProgressHUD.setBackgroundColor(UIColor(red: 0, green: 0, blue: 0, alpha: 0.8))
+        SVProgressHUD.setForegroundColor(UIColor.whiteColor())
+        SVProgressHUD.setFont(UIFont.boldSystemFontOfSize(15.0))
+        
         if login {
             let tabBar = UIBaseTabBarController.init(nibName: "UIBaseTabBarController", bundle: NSBundle.mainBundle())
             let nav = UIBaseNavViewController.init(rootViewController: tabBar)
