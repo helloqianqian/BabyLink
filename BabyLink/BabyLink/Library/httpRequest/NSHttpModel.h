@@ -88,4 +88,19 @@
  */
 +(NSString *)getUpdatePswUrl;
 
+/**
+ *  自动定位
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getAutoPositionUrl;
+
+
+/**
+ *  小区联想
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getIndexSearchUrl;
+
 @end

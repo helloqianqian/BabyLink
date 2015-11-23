@@ -25,16 +25,15 @@ class UIEnterViewController: UIBaseViewController {
         // Do any additional setup after loading the view.
         enterBtn.layer.cornerRadius = 15.0;
         
-        
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBarHidden = true
+//        self.navigationController?.navigationBarHidden = true
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        self.navigationController?.navigationBarHidden = false
+//        self.navigationController?.navigationBarHidden = false
     }
     
     @IBAction func enter(sender: AnyObject) {

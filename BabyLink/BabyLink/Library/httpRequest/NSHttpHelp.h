@@ -23,8 +23,15 @@ typedef  enum : NSUInteger {
     updatePswType,
     forgetPswType,
     loginOutType,
+    autoPositionType,
+    indexSearchType,
 }HttpUrlType;
 
+/*NSHttpHelp.httpHelpWithUrlTpye(uploadHeadType, withParam: nil, withResult: { (result:AnyObject!) -> Void in
+ 
+ }) { (error:AnyObject!) -> Void in
+ 
+ };*/
 + (void)httpHelpWithUrlTpye:(HttpUrlType)urlType withParam:(id)param withResult:(ReturnValueBlock)resultBlock withFailure:(FailureBlock)failureBlock;
 
 +(void)uploadUserIconWithImageData:(NSDictionary*)imageDic withResult:(resultBlock)resultBlock withFailure:(FailureBlock)failureBlock withUploadProgress:(void (^)(float progress))progressBlock;

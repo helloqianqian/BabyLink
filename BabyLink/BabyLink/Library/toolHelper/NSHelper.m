@@ -31,5 +31,25 @@
     [alertView show];
 }
 
-
++ (NSInteger)currentYear {
+    NSDate *today = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy"];
+    NSString *yearStr = [formatter stringFromDate:today];
+    return yearStr.integerValue;
+}
++ (NSInteger)currentMonth{
+    NSDate *today = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MM"];
+    NSString *month = [formatter stringFromDate:today];
+    return month.integerValue;
+}
++ (NSInteger)currentDay{
+    NSDate *today = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"dd"];
+    NSString *day = [formatter stringFromDate:today];
+    return day.integerValue;
+}
 @end

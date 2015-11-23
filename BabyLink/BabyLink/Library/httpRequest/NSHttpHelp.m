@@ -48,6 +48,12 @@
         case updateNicknameType:
             url = [NSHttpModel getUpdateNicknameUrl];
             break;
+        case autoPositionType:
+            url = [NSHttpModel getAutoPositionUrl];
+            break;
+        case indexSearchType:
+            url = [NSHttpModel getIndexSearchUrl];
+            break;
         default:
             break;
     }
@@ -67,7 +73,7 @@
     
 }
 +(void)uploadUserIconWithImageData:(NSDictionary*)imageDic withResult:(resultBlock)resultBlock withFailure:(FailureBlock)failureBlock withUploadProgress:(void (^)(float progress))progressBlock{
-    [NSHttpObject upLoadImagewithUrl:@"" withParameter:imageDic withResult:^(id resultValue) {
+    [NSHttpObject upLoadImagewithUrl:[NSHttpModel getUpdateHeadUrl] withParameter:imageDic withResult:^(id resultValue) {
         
     } withFailureBlock:^(id error) {
         

@@ -21,21 +21,25 @@ class UIBaseTabBarController: UITabBarController, UIBaseTabBarDelegate {
         localView = UILocalViewController.init(nibName: "UILocalViewController", bundle: NSBundle.mainBundle())
         localView.title = "本小区"
         let localNav = UIBaseNavViewController(rootViewController: localView)
+        localNav.setNavigationBarStyleLight();
         self.addChildViewController(localNav)
         
         showView = UIShowViewController(nibName:"UIShowViewController", bundle: NSBundle.mainBundle())
         showView.title = "秀逗"
         let showNav = UIBaseNavViewController(rootViewController: showView)
+        showNav.setNavigationBarStyleLight();
         self.addChildViewController(showNav)
         
         findView = UIFindViewController(nibName:"UIFindViewController", bundle: NSBundle.mainBundle())
         findView.title = "发现"
         let findNav = UIBaseNavViewController(rootViewController: findView)
+        findNav.setNavigationBarStyleLight();
         self.addChildViewController(findNav)
         
         centerView = UICenterViewController(nibName:"UICenterViewController", bundle: NSBundle.mainBundle())
         centerView.title = "我"
         let centerNav = UIBaseNavViewController(rootViewController: centerView)
+        centerNav.setNavigationBarStyleLight();
         self.addChildViewController(centerNav)
                 
         let tabbarReplace = UIBaseTabBar.init(frame: CGRectZero)

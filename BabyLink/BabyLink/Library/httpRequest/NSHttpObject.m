@@ -160,7 +160,9 @@
        withUploadProgress:(void (^)(float progress))progressBlock
 {
     AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager  alloc]init];
-    AFHTTPRequestOperation *op = [manager POST:urlString  parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+    
+    NSDictionary *param = [NSDictionary dictionaryWithObject:[NSUserInfo shareInstance].member_id forKey:@"member_id"];
+    AFHTTPRequestOperation *op = [manager POST:urlString  parameters:param constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         NSData *imageData = [parameter objectForKey:@"imageData"];
         NSString *name = [parameter objectForKey:@"imageName"];
         NSString *fileName = [parameter objectForKey:@"fileName"];

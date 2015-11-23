@@ -8,7 +8,8 @@
 
 import UIKit
 
-class UIAccountSetViewController: UIBaseViewController {
+
+class UIAccountSetViewController: UIBaseViewController ,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
 
     @IBOutlet weak var headIconBtn: UIButton!
     @IBOutlet weak var bigHeadIconBtn: UIButton!
@@ -22,9 +23,12 @@ class UIAccountSetViewController: UIBaseViewController {
 
         // Do any additional setup after loading the view.
         self.title = "账号设置"
-        
+        self.setUI();
+        self.setContentData();
+    }
+    
+    func setUI() {
         bigHeadIconBtn.layer.cornerRadius = 30;
-        bigHeadIconBtn.backgroundColor = UIColor.redColor();
         bigHeadIconBtn.layer.masksToBounds = true;
         
         headIconBtn.makeBackGroundColor_White();
@@ -33,8 +37,105 @@ class UIAccountSetViewController: UIBaseViewController {
         passwordBtn.makeBackGroundColor_White();
         quiteBtn.makeBackGroundColor_Red();
     }
-    @IBAction func exchangeHeadIcon(sender: UIButton) {
+    
+    func setContentData() {
+        nikeName.text = "昵称:\(NSUserInfo.shareInstance().baby_nam)";
+        if NSUserInfo.shareInstance().member_avar != "" {
+            bigHeadIconBtn.sd_setBackgroundImageWithURL(NSURL(string: NSUserInfo.shareInstance().member_avar), forState: UIControlState.Normal, placeholderImage: nil);
+        }
     }
+    
+    @IBAction func exchangeHeadIcon(sender: UIButton) {
+        let actionSheet:UIActionSheet = UIActionSheet(title: nil, delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: nil, otherButtonTitles: "相册", "相机")
+        actionSheet.showInView(self.view);
+    }
+    
+    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+        if buttonIndex == 1 {
+            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
+                let imagePickerAlbum = UIImagePickerController()
+                imagePickerAlbum.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+                imagePickerAlbum.delegate = self
+                imagePickerAlbum.allowsEditing = true
+                self.presentViewController(imagePickerAlbum, animated: true, completion: { () -> Void in
+                })
+            } else {
+                
+            }
+        } else if buttonIndex == 2 {
+            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
+                let imagePickerCamera = UIImagePickerController()
+                imagePickerCamera.sourceType = UIImagePickerControllerSourceType.Camera
+                imagePickerCamera.delegate = self
+                imagePickerCamera.allowsEditing = true
+                self.presentViewController(imagePickerCamera, animated: true, completion: { () -> Void in
+                })
+            } else {
+                
+            }
+        }
+    }
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        picker.dismissViewControllerAnimated(true, completion: { () -> Void in
+            let  dic:NSDictionary = info as NSDictionary;
+            let  image:UIImage = dic.objectForKey(UIImagePickerControllerEditedImage) as! UIImage;
+            
+            let  imageData:NSData = UIImageJPEGRepresentation(image, 0.1)!;
+            NSLog("\(imageData.length)")
+            self.uploadImageworks(imageData);
+        })
+        
+    }
+    
+    
+    func  uploadImageworks(imageData:NSData)
+    {
+        SVProgressHUD.showWithMaskType(SVProgressHUDMaskType.Clear);
+        let dicParam:NSDictionary = NSDictionary(objects: [imageData,"file","file"] , forKeys: ["imageData","imageName","fileName"]);
+        NSHttpHelp.uploadUserIconWithImageData(dicParam as [NSObject : AnyObject], withResult: { (result:AnyObject!) -> Void in
+            
+            //{"code":0,"datas":"http:\/\/101.200.174.65\/babyLink\/public\/uploads\/app\/2015-11\/5652b3bb26710.png"}
+            let code = result["code"] as! NSInteger;
+            if code == 0 {
+                //发送成功
+                SVProgressHUD.showSuccessWithStatus("上传成功")
+                let datas = result["datas"] as! String;
+                NSUserInfo.shareInstance().member_avar = datas;
+                appDelegate.recordLastUserIcon()
+                self.bigHeadIconBtn.sd_setBackgroundImageWithURL(NSURL(string: NSUserInfo.shareInstance().member_avar), forState: UIControlState.Normal, placeholderImage: nil);
+            } else {
+                SVProgressHUD.dismiss();
+                let datas = result["datas"] as! String;
+                NSHelper.showAlertViewWithTip(datas);
+            }
+            
+            }, withFailure: { (error:AnyObject!) -> Void in
+                SVProgressHUD.showErrorWithStatus("上传失败");
+            }) { (progress:Float) -> Void in
+                NSLog("progress:\(progress)")
+        }
+        
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        picker.dismissViewControllerAnimated(true, completion: { () -> Void in
+            
+        })
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     @IBAction func changeNikeName(sender: UIButton) {
         let nicknameVC = UINikenameViewController(nibName:"UINikenameViewController" ,bundle: NSBundle.mainBundle());
         self.navigationController?.pushViewController(nicknameVC, animated: true);
@@ -48,7 +149,6 @@ class UIAccountSetViewController: UIBaseViewController {
         self.navigationController?.pushViewController(nicknameVC, animated: true);
     }
     @IBAction func quite(sender: UIButton) {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.exchangeRootViewController(false)
     }
     

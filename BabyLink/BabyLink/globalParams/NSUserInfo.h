@@ -13,7 +13,7 @@
 @interface NSUserInfo : NSObject
 
 
-@property (nonatomic,assign)NSInteger member_id;
+@property (nonatomic,strong)NSString *member_id;
 @property (nonatomic,strong)NSString *mobile;
 @property (nonatomic,strong)NSString *member_name;
 @property (nonatomic,strong)NSString *member_avar;
@@ -26,7 +26,7 @@
 @property (nonatomic,strong)NSString *baby_date;
 @property (nonatomic,strong)NSString *baby_link;
 @property (nonatomic,strong)NSString *baby_nam;
-@property (nonatomic,assign)NSInteger baby_sex;
+@property (nonatomic,strong)NSString *baby_sex;
 
 @property (nonatomic,strong)NSString *city;
 @property (nonatomic,strong)NSString *home;

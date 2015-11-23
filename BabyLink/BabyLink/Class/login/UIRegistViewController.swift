@@ -52,6 +52,9 @@ class UIRegistViewController: UIBaseViewController {
         getVerticalBtn.makeBackGroundColor_Green();
         registBtn.makeBackGroundColor_Red();
         
+        keyField.delegate = self;
+        confirmKey.delegate = self;
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -80,6 +83,7 @@ class UIRegistViewController: UIBaseViewController {
             NSHelper.showAlertViewWithTip("两次密码输入不一致");
             return;
         }
+        self.endEditing()
         let dicParam:NSDictionary = NSDictionary(objects: [self.phoneNum.text!,self.verticalNum.text!,self.keyField.text!] , forKeys: ["mobile","code","password"]);
         SVProgressHUD.showWithStatus("正在注册")
         NSHttpHelp.httpHelpWithUrlTpye(registerType, withParam: dicParam, withResult: { (returnObject:AnyObject!) -> Void in
@@ -88,13 +92,7 @@ class UIRegistViewController: UIBaseViewController {
             if code == 0 {
                 //发送成功
                 SVProgressHUD.showSuccessWithStatus("注册成功")
-                let datas = dic["datas"] as! NSInteger;
-                let userDefault = NSUserDefaults.standardUserDefaults()
-                userDefault.setObject(self.phoneNum.text, forKey: MOBILE);
-                userDefault.setObject(self.keyField.text, forKey: PASSWORDLocal);
-                userDefault.setInteger(datas, forKey: MEMBER_ID)
-                userDefault.setBool(false, forKey: ISLOGIN)
-                userDefault.synchronize();
+                let datas = dic["datas"] as! String;
                 
                 NSUserInfo.shareInstance().member_id = datas;
                 NSUserInfo.shareInstance().mobile = self.phoneNum.text;
@@ -105,8 +103,8 @@ class UIRegistViewController: UIBaseViewController {
                 self.navigationController?.pushViewController(infoVC, animated: true);
             } else {
                 //发送失败
-                let datas = dic["datas"] as! NSDictionary;
-                SVProgressHUD.showErrorWithStatus(datas["error"] as! String);
+                let datas = dic["datas"] as! String;
+                SVProgressHUD.showErrorWithStatus(datas);
             }
         }) { (error:AnyObject!) -> Void in
                 
@@ -134,8 +132,8 @@ class UIRegistViewController: UIBaseViewController {
                 SVProgressHUD.showSuccessWithStatus("验证码发送成功")
             } else {
                 //发送失败
-                let datas = dic["datas"] as! NSDictionary;
-                SVProgressHUD.showErrorWithStatus(datas["error"] as! String);
+                let datas = dic["datas"] as! String;
+                SVProgressHUD.showErrorWithStatus(datas);
             }
         }) { (error:AnyObject!) -> Void in
             //发送失败
@@ -158,7 +156,10 @@ class UIRegistViewController: UIBaseViewController {
             getVerticalBtn.setTitle("发送验证码", forState: UIControlState.Normal);
         }
     }
-    
+    override func nextFieldEditing(textField: UITextField) {
+        super.nextFieldEditing(textField)
+        self.confirmKey.becomeFirstResponder();
+    }
     /*
     // MARK: - Navigation
 

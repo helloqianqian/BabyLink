@@ -7,6 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UIChooseAddressViewController" customModule="BabyLink" customModuleProvider="target">
             <connections>
+                <outlet property="listTableView" destination="ngL-7N-KVL" id="P4V-SX-75B"/>
+                <outlet property="searchBar" destination="ze5-Zw-Usr" id="ZXI-hq-s8p"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,9 +16,34 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="ze5-Zw-Usr">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="ETl-px-Jao"/>
+                    </constraints>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ngL-7N-KVL">
+                    <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="ze5-Zw-Usr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0zS-53-HF1"/>
+                <constraint firstItem="ngL-7N-KVL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3O0-jG-izg"/>
+                <constraint firstAttribute="trailing" secondItem="ngL-7N-KVL" secondAttribute="trailing" id="6r1-eC-tO6"/>
+                <constraint firstItem="ze5-Zw-Usr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Cc0-Ih-SSI"/>
+                <constraint firstAttribute="trailing" secondItem="ze5-Zw-Usr" secondAttribute="trailing" id="Hmo-0k-sDb"/>
+                <constraint firstItem="ngL-7N-KVL" firstAttribute="top" secondItem="ze5-Zw-Usr" secondAttribute="bottom" id="ZfL-CL-Y2R"/>
+                <constraint firstAttribute="bottom" secondItem="ngL-7N-KVL" secondAttribute="bottom" id="dOx-ox-m0U"/>
+            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="242" y="-6"/>
         </view>
     </objects>
 </document>

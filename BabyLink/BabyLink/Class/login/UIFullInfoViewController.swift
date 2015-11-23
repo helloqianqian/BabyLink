@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UIFullInfoViewController: UIBaseViewController {
+class UIFullInfoViewController: UIBaseViewController ,UIOptionViewDelegate{
 
     @IBOutlet weak var backView3: UIView!
     @IBOutlet weak var backView2: UIView!
@@ -27,6 +27,8 @@ class UIFullInfoViewController: UIBaseViewController {
     @IBOutlet weak var nicknameField: UITextField!
     @IBOutlet weak var relationBtn: UIButton!
     @IBOutlet weak var birthdayBtn: UIButton!
+    
+    var location2D:CLLocationCoordinate2D!;
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,6 +37,7 @@ class UIFullInfoViewController: UIBaseViewController {
         self.navigationItem.hidesBackButton = true;
         
         self.setUI();
+        self.updateLocation();
     }
 
     func setUI() {
@@ -53,32 +56,146 @@ class UIFullInfoViewController: UIBaseViewController {
         confirmBtn.makeBackGroundColor_Red();
         nicknameField.delegate = self;
     }
+    
+    func updateLocation(){
+        SVProgressHUD.showWithStatus("正在定位")
+        CCLocationManager.shareLocation().getCity({ (city:String!) -> Void in
+            SVProgressHUD.dismiss();
+            self.cityField.text = city;
+            self.cityBtn.enabled = false;
+            SVProgressHUD.dismiss();
+            }) { (location:CLLocationCoordinate2D) -> Void in
+                self.location2D = location;
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func chooseTheSex(sender: AnyObject) {
+    @IBAction func chooseTheSex(sender: UIButton) {
+        sender.selected = true;
+        if sender == femaleBtn {
+            maleBtn.selected = false;
+        } else {
+            femaleBtn.selected = false;
+        }
     }
 
-    @IBAction func commitTheInfo(sender: AnyObject) {
+    @IBAction func commitTheInfo(sender: UIButton) {
+        
+        if self.cityField.text == "" {
+            NSHelper.showAlertViewWithTip("城市定位失败，点击重新定位");
+            return;
+        }
+        if self.neighboorField.text == "" {
+            NSHelper.showAlertViewWithTip("请选择您所在的小区");
+            return;
+        }
+        if self.nicknameField.text == "" {
+            NSHelper.showAlertViewWithTip("请输入您宝贝的昵称或者名字");
+            return;
+        }
+        
+        var sex = "0";
+        if !femaleBtn.selected && !maleBtn.selected {
+            NSHelper.showAlertViewWithTip("请选择您宝贝的性别");
+            return;
+        } else if (femaleBtn.selected){
+            sex = "1";
+        }
+        
+        if birthdayField.text == "" {
+            NSHelper.showAlertViewWithTip("请设置您宝贝的生日");
+            return;
+        }
+        if relationField.text == "" {
+            NSHelper.showAlertViewWithTip("请选择您和宝贝的关系");
+            return;
+        }
+        self.endEditing()
+        let dicParam:NSDictionary = NSDictionary(objects: [self.cityField.text!,self.neighboorField.text!,sex,self.nicknameField.text!,self.birthdayField.text!,self.relationField.text!,NSUserInfo.shareInstance().member_id] , forKeys: ["city","home","baby_sex","baby_nam","baby_date","baby_link","member_id"]);
+        SVProgressHUD.showWithStatus("正在提交信息")
+        NSHttpHelp.httpHelpWithUrlTpye(perfectType, withParam: dicParam, withResult: { (returnObject:AnyObject!) -> Void in
+            let dic = returnObject as! NSDictionary;
+            let code = dic["code"] as! NSInteger;
+            if code == 0 {
+                //发送成功
+                SVProgressHUD.showSuccessWithStatus("提交成功")
+                NSUserInfo.shareInstance().islogin = true;
+                NSUserInfo.shareInstance().home = self.neighboorField.text;
+                NSUserInfo.shareInstance().baby_sex = sex;
+                NSUserInfo.shareInstance().city = self.cityField.text;
+                NSUserInfo.shareInstance().baby_nam = self.nicknameField.text;
+                NSUserInfo.shareInstance().baby_link = self.relationField.text;
+                NSUserInfo.shareInstance().baby_date = self.birthdayField.text;
+
+                appDelegate.recordLastLoginUser();
+                appDelegate.exchangeRootViewController(true)
+            } else {
+                //发送失败
+                let datas = dic["datas"] as! String;
+                SVProgressHUD.showErrorWithStatus(datas);
+            }
+            }) { (error:AnyObject!) -> Void in
+                
+        };
+        
+        
     }
     
-    @IBAction func chooseCityTap(sender: UITapGestureRecognizer) {
-        NSLog("11111")
-    }
-    @IBAction func chooseAddressTap(sender: UITapGestureRecognizer) {
-        NSLog("2222")
+    @IBAction func setBabyBirthday(sender: UIButton) {
+        self.nicknameField.resignFirstResponder();
+        let optionView = NSBundle.mainBundle().loadNibNamed("UIOptionView", owner: nil, options: nil).first as! UIOptionView;
+        optionView.frame = CGRectMake(0, MainScreenHeight, MainScreenWidth, MainScreenHeight);
+        optionView.delegate = self;
+        optionView.dataType = DataType.birthday;
+        self.navigationController?.view.addSubview(optionView);
+        UIView.animateWithDuration(0.25, animations: { () -> Void in
+            optionView.frame = CGRectMake(0, 0, MainScreenWidth, MainScreenHeight);
+            }) { (finish:Bool) -> Void in
+        }
     }
     
-    @IBAction func chooseBabyBirthday(sender: UITapGestureRecognizer) {
-        NSLog("33333")
+    @IBAction func setRelationShip(sender: UIButton) {
+        self.nicknameField.resignFirstResponder();
+        let optionView = NSBundle.mainBundle().loadNibNamed("UIOptionView", owner: nil, options: nil).first as! UIOptionView;
+        optionView.frame = CGRectMake(0, MainScreenHeight, MainScreenWidth, MainScreenHeight);
+        optionView.delegate = self;
+        optionView.changeDataSource(DataType.range);
+        self.navigationController?.view.addSubview(optionView);
+        UIView.animateWithDuration(0.25, animations: { () -> Void in
+            optionView.frame = CGRectMake(0, 0, MainScreenWidth, MainScreenHeight);
+            }) { (finish:Bool) -> Void in
+        }
     }
-    @IBAction func chooseTheRelationShip(sender: UITapGestureRecognizer) {
-        NSLog("44444")
+    @IBAction func reloadCity(sender: UIButton) {
+        self.updateLocation();
     }
     
+    @IBAction func setNeighboor(sender: UIButton) {
+        if self.cityField.text == "" {
+            NSHelper.showAlertViewWithTip("城市定位失败，点击重新定位");
+            return;
+        }
+        let neighbourVC = UIChooseAddressViewController(nibName:"UIChooseAddressViewController" ,bundle: NSBundle.mainBundle());
+        neighbourVC.lastVC = self;
+        neighbourVC.location2D = self.location2D;
+        neighbourVC.city = self.cityField.text;
+        self.navigationController?.pushViewController(neighbourVC, animated: true);
+    }
     
+    func didSelectedRow(row: Int, forComponent component: Int) {
+        
+    }
+    func didRemoveFromSuperView(object: AnyObject, dataType type: DataType) {
+        if type == DataType.birthday {
+            let array = object as! NSArray;
+            birthdayField.text = "\(array[0])-\(array[1])-\(array[2])";
+        } else {
+            relationField.text = object as? String;
+        }
+    }
     /*
     // MARK: - Navigation
 

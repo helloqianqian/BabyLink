@@ -42,7 +42,7 @@
 #define HOME            @"home"
 #define ADD_TIME        @"add_time"
 #define BABY_DATE       @"baby_date"
-#define BABT_LINK       @"baby_link"
+#define BABY_LINK       @"baby_link"
 #define BABY_NAM        @"baby_nam"
 #define BABY_SEX        @"baby_sex"
 #define POSITION        @"position"

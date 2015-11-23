@@ -29,8 +29,8 @@
 #define updateMobileSuf    @"/Member/updateMobile"
 #define updatePSWSuf       @"/Member/updatePassword"
 
-
-
+#define autoPositionSuf   @"/Index/autoPosition"
+#define indexSearchSuf    @"/Index/search"
 
 
 
@@ -135,5 +135,23 @@
  */
 +(NSString *)getUpdatePswUrl {
     return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:updatePSWSuf];
+}
+
+/**
+ *  自动定位
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getAutoPositionUrl {
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:autoPositionSuf];
+}
+
+/**
+ *  小区联想
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getIndexSearchUrl {
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:indexSearchSuf];
 }
 @end

@@ -73,9 +73,18 @@ class UIBaseViewController: UIViewController ,UITextFieldDelegate{
         }
     }
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+        if textField.returnKeyType == UIReturnKeyType.Next {
+            self.nextFieldEditing(textField);
+        } else if textField.returnKeyType == UIReturnKeyType.Done {
+            textField.resignFirstResponder()
+        }
         return true;
     }
+    
+    func nextFieldEditing(textField: UITextField){
+        
+    }
+    
     func endEditing(){
         for subView in self.view.subviews {
             if subView.isKindOfClass(UITextField) {

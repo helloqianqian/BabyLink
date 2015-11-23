@@ -20,12 +20,17 @@ class UIForgetPWViewController: UIBaseViewController {
     @IBOutlet weak var newKey: UITextField!
     @IBOutlet weak var confirmNewKey: UITextField!
     @IBOutlet weak var confirmBtn: UIButton!
+    
+    var seconds = 60;
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.navigationItem.title = "重置密码";
         self.setUI();
+        
+        confirmNewKey.delegate = self;
+        newKey.delegate = self;
     }
 
     func setUI(){
@@ -50,16 +55,94 @@ class UIForgetPWViewController: UIBaseViewController {
     }
     
     @IBAction func getVerticalNum(sender: AnyObject) {
-        
+        if !NSHelper.checkUserPhoneValidateWith(self.phoneNum.text) {
+            NSHelper.showAlertViewWithTip("请输入正确的手机号");
+            return;
+        }
+        getVerticalBtn.enabled = false;
+        self.startTimer()
+        SVProgressHUD.showWithStatus("正在发送验证码")
+        let dicParam:NSDictionary = NSDictionary(objects: [self.phoneNum.text!] , forKeys: ["mobile"]);
+        NSHttpHelp.httpHelpWithUrlTpye(verticalCodeType, withParam: dicParam, withResult: { (returnObject:AnyObject!) -> Void in
+            let dic = returnObject as! NSDictionary;
+            let code = dic["code"] as! NSInteger;
+            if code == 0 {
+                //发送成功
+                SVProgressHUD.showSuccessWithStatus("验证码发送成功")
+            } else {
+                //发送失败
+                let datas = dic["datas"] as! String;
+                SVProgressHUD.showErrorWithStatus(datas);
+            }
+            }) { (error:AnyObject!) -> Void in
+                //发送失败
+        };
     }
+    func startTimer() {
+        let timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "timerFunction:", userInfo: nil, repeats: true);
+        timer.fire();
+    }
+    
+    func timerFunction(timer:NSTimer){
+        if seconds>=0{
+            getVerticalBtn.setTitle("\(seconds)s", forState: UIControlState.Normal);
+            seconds--;
+        } else {
+            timer.invalidate();
+            seconds = 60;
+            getVerticalBtn.enabled = true;
+            getVerticalBtn.setTitle("发送验证码", forState: UIControlState.Normal);
+        }
+    }
+    
     @IBAction func resetPWConfirm(sender: AnyObject) {
-        self.navigationController?.popViewControllerAnimated(true)
+        if !NSHelper.checkUserPhoneValidateWith(self.phoneNum.text) {
+            NSHelper.showAlertViewWithTip("请输入正确的手机号");
+            return;
+        }
+        if self.verticalNum.text == ""{
+            NSHelper.showAlertViewWithTip("请输入验证码");
+            return;
+        }
+        if self.newKey.text == "" {
+            NSHelper.showAlertViewWithTip("请输入密码");
+            return;
+        }
+        if self.confirmNewKey.text == "" {
+            NSHelper.showAlertViewWithTip("请输入确认密码");
+            return;
+        }
+        if self.newKey.text != self.confirmNewKey.text {
+            NSHelper.showAlertViewWithTip("两次密码输入不一致");
+            return;
+        }
+        self.endEditing()
+        let dicParam:NSDictionary = NSDictionary(objects: [self.phoneNum.text!,self.verticalNum.text!,self.newKey.text!] , forKeys: ["mobile","code","password"]);
+        SVProgressHUD.showWithMaskType(SVProgressHUDMaskType.Clear)
+        NSHttpHelp.httpHelpWithUrlTpye(forgetPswType, withParam: dicParam, withResult: { (returnObject:AnyObject!) -> Void in
+            let dic = returnObject as! NSDictionary;
+            let code = dic["code"] as! NSInteger;
+            if code == 0 {
+                //发送成功
+                SVProgressHUD.showSuccessWithStatus("修改成功")
+                self.navigationController?.popViewControllerAnimated(true)
+            } else {
+                //发送失败
+                let datas = dic["datas"] as! String;
+                SVProgressHUD.showErrorWithStatus(datas);
+            }
+            }) { (error:AnyObject!) -> Void in
+                
+        };
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    override func nextFieldEditing(textField: UITextField) {
+        super.nextFieldEditing(textField)
+        self.confirmNewKey.becomeFirstResponder();
+    }
 
     /*
     // MARK: - Navigation

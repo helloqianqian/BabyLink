@@ -13,4 +13,9 @@
 
 
 + (void)showAlertViewWithTip:(NSString *)tipStr;
+
+
++ (NSInteger)currentYear;
++ (NSInteger)currentMonth;
++ (NSInteger)currentDay;
 @end

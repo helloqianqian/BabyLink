@@ -20,9 +20,25 @@ class UIChangePSWViewController: UIBaseViewController {
         // Do any additional setup after loading the view.
         self.title = "修改密码"
         
-        confirmBtn.makeBackGroundColor_Red();
+        
     }
 
+    func setUI(){
+        oldPSWField.delegate = self;
+        newPSWField.delegate = self;
+        reNewPSWField.delegate = self;
+        confirmBtn.makeBackGroundColor_Red();
+    }
+    
+    override func nextFieldEditing(textField: UITextField) {
+        super.nextFieldEditing(textField);
+        if textField == oldPSWField {
+            newPSWField.becomeFirstResponder();
+        } else {
+            reNewPSWField.becomeFirstResponder();
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

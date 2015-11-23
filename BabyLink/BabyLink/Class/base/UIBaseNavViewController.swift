@@ -14,15 +14,6 @@ class UIBaseNavViewController: UINavigationController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-
-        
-        UINavigationBar.appearance().setBackgroundImage(self.imageWithColor(hexRGB(0xE64871), withSize: CGSizeMake(MainScreenWidth, 1)), forBarMetrics: UIBarMetrics.Default)
-        UINavigationBar.appearance().shadowImage = self.imageWithColor(UIColor.clearColor(), withSize: CGSizeMake(MainScreenWidth, 1))
-        
-        self.navigationBar.tintColor = UIColor.whiteColor()
-        //设置标题颜色
-        let titleAtt = [NSForegroundColorAttributeName:UIColor.whiteColor(),NSFontAttributeName:UIFont.systemFontOfSize(17)]
-        self.navigationBar.titleTextAttributes = titleAtt
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,7 +21,42 @@ class UIBaseNavViewController: UINavigationController {
         // Dispose of any resources that can be recreated.
     }
     
+    func setNavigationBarStyleDark(){
+        var image = "";
+        if iphone6Plus {
+            image = "nav_dark_6p";
+        } else if iphone6 {
+            image = "nav_dark_6";
+        } else {
+            image = "nav_dark_5";
+        }
+        UINavigationBar.appearance().setBackgroundImage(UIImage(named: image), forBarMetrics: UIBarMetrics.Default)
+        UINavigationBar.appearance().shadowImage = self.imageWithColor(UIColor.clearColor(), withSize: CGSizeMake(MainScreenWidth, 1))
+        
+        self.navigationBar.tintColor = UIColor.whiteColor()
+        //设置标题颜色
+        let titleAtt = [NSForegroundColorAttributeName:UIColor.whiteColor(),NSFontAttributeName:UIFont.systemFontOfSize(17)]
+        self.navigationBar.titleTextAttributes = titleAtt
+    }
     
+    func setNavigationBarStyleLight(){
+        var image = "";
+        if iphone6Plus {
+            image = "nav_light_6p";
+        } else if iphone6 {
+            image = "nav_light_6";
+        } else {
+            image = "nav_light_5";
+        }
+        
+        UINavigationBar.appearance().setBackgroundImage(UIImage(named: image), forBarMetrics: UIBarMetrics.Default)
+        UINavigationBar.appearance().shadowImage = self.imageWithColor(UIColor.clearColor(), withSize: CGSizeMake(MainScreenWidth, 1))
+        
+        self.navigationBar.tintColor = UIColor.whiteColor()
+        //设置标题颜色
+        let titleAtt = [NSForegroundColorAttributeName:UIColor.whiteColor(),NSFontAttributeName:UIFont.systemFontOfSize(17)]
+        self.navigationBar.titleTextAttributes = titleAtt
+    }
     
     
     func imageWithColor(color:UIColor,withSize size:CGSize) -> UIImage {

@@ -29,7 +29,6 @@ func Color_Custom(r : CGFloat, g : CGFloat, b : CGFloat, alpha : CGFloat) -> UIC
     return UIColor(red: r / 255.0, green: g / 255.0, blue: b / 255.0, alpha: alpha);
 }
 
-
 let SGrayBackColor = hexRGB(0xEDEEEF)
 let SGrayBorderColor = hexRGB(0xACACB4)
 let SPurpleBtnColor = hexRGB(0xBE3D6F)
@@ -44,6 +43,19 @@ let iphone6Plus:Bool = CGSizeEqualToSize(CGSizeMake(414, 736), UIScreen.mainScre
 
 let MainScreenHeight : CGFloat = UIScreen.mainScreen().bounds.size.height;
 let MainScreenWidth : CGFloat = UIScreen.mainScreen().bounds.size.width;
+
+//view controller
+
+let  appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+
+
+
+
+
+
+
+
+
 
 
 

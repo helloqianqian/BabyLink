@@ -19,4 +19,9 @@
 
 #import "AFNetworking.h"
 #import "SVProgressHUD.h"
+
+#import "NSHelper.h"
+
+
+#import "NSUserInfo.h"
 #endif /* PrefixHeader_pch */

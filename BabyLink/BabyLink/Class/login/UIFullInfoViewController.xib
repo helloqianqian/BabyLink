@@ -41,7 +41,7 @@
                                 <constraint firstAttribute="height" constant="0.5" id="YxB-Py-Swg"/>
                             </constraints>
                         </view>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="正在定位您所在的城市" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2GK-RA-uQS">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="点击重新定位" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2GK-RA-uQS">
                             <rect key="frame" x="25" y="0.0" width="250" height="44"/>
                             <animations/>
                             <constraints>
@@ -81,6 +81,9 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="p8X-uQ-RSh"/>
                             </constraints>
+                            <connections>
+                                <action selector="reloadCity:" destination="-1" eventType="touchUpInside" id="Ial-ET-z9q"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bjv-la-Ejv">
                             <rect key="frame" x="0.0" y="46" width="300" height="44"/>
@@ -88,6 +91,9 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="nuJ-F7-Km7"/>
                             </constraints>
+                            <connections>
+                                <action selector="setNeighboor:" destination="-1" eventType="touchUpInside" id="hyd-TV-JF9"/>
+                            </connections>
                         </button>
                     </subviews>
                     <animations/>
@@ -202,6 +208,9 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="7NV-cg-lye"/>
                             </constraints>
+                            <connections>
+                                <action selector="setBabyBirthday:" destination="-1" eventType="touchUpInside" id="B2s-LH-Y6s"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTR-Jy-dkL">
                             <rect key="frame" x="0.0" y="46" width="300" height="44"/>
@@ -209,6 +218,9 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="l06-rH-c7g"/>
                             </constraints>
+                            <connections>
+                                <action selector="setRelationShip:" destination="-1" eventType="touchUpInside" id="fRE-pP-iYf"/>
+                            </connections>
                         </button>
                     </subviews>
                     <animations/>
@@ -269,13 +281,13 @@
                 <constraint firstAttribute="trailing" secondItem="xxX-qk-sy2" secondAttribute="trailing" constant="10" id="zjg-Vq-ia1"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="-150" y="-53"/>
+            <point key="canvasLocation" x="-366" y="-61"/>
         </view>
     </objects>
     <resources>
         <image name="Pin" width="10" height="14"/>
-        <image name="switch_btn" width="15" height="15"/>
-        <image name="switch_selected_btn" width="15" height="15"/>
+        <image name="switch_btn" width="14" height="14"/>
+        <image name="switch_selected_btn" width="14" height="14"/>
         <image name="zahnjiao" width="10" height="8"/>
     </resources>
 </document>

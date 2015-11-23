@@ -13,6 +13,7 @@
 //Model
 #import "ADModel.h"
 #import "NSUserInfo.h"
+#import "NSResidence.h"
 
 
 //http
@@ -24,5 +25,15 @@
 #import "SVProgressHUD.h"
 #import "TAPageControl.h"
 
+#import "UIImageView+WebCache.h"
+#import "UIButton+WebCache.h"
+
 #import "UIButton+CustomStyle.h"
 #import "UIImageView+WebCache.h"
+
+//SDK
+#import "CCLocationManager.h"
+#import "UMSocial.h"
+#import "UMSocialQQHandler.h"
+#import "UMSocialSinaSSOHandler.h"
+#import "UMSocialWechatHandler.h"
