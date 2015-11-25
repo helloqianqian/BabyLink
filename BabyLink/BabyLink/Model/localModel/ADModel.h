@@ -15,13 +15,10 @@
 
 @interface ADModel : NSObject
 
-@property(nonatomic,strong) NSString *ads_name;
-@property(nonatomic,assign) NSInteger ads_type;
-@property(nonatomic,strong) NSString *ads_url;
-@property(nonatomic,strong) NSString *media_url;
-@property(nonatomic,strong) NSString *ads_content;
-@property(nonatomic,strong) NSString *start_time;
-@property(nonatomic,strong) NSString *end_time;
-
+@property (nonatomic,strong)NSString *ADID;
+@property (nonatomic,strong)NSString *url;
+@property (nonatomic,strong)NSString *title;
+@property (nonatomic,strong)NSString *cover;
+@property (nonatomic,strong)NSString *home;
 
 @end

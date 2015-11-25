@@ -7,11 +7,8 @@
 
 
 protocol  didClickImgDelegate:NSObjectProtocol
-    
 {
-    
-    func  didClickImgAction(adModel:ADModel);
-    
+     func  didClickImgAction(adModel:ADModel);
 }
 
 import UIKit
@@ -58,10 +55,6 @@ class FindListHeadView: UIView,TAPageControlDelegate,UIScrollViewDelegate {
         rightImageView = UIImageView();
         aScrollView.showsHorizontalScrollIndicator = false;
         
-        //        leftImageView = UIImageView(frame: CGRectMake(0, 0,scrollWidth ,scrollHeight ));
-        //        centerImageView = UIImageView(frame: CGRectMake(scrollWidth, 0, scrollWidth, scrollHeight));
-        //        rightImageView = UIImageView(frame: CGRectMake(scrollWidth*2, 0, scrollWidth, scrollHeight));
-        
         aScrollView.addSubview(leftImageView);
         aScrollView.addSubview(centerImageView);
         aScrollView.addSubview(rightImageView);
@@ -96,44 +89,34 @@ class FindListHeadView: UIView,TAPageControlDelegate,UIScrollViewDelegate {
         self.currentImageIndex = 0;
         self.setupPageView();
         
-        if(imgArr.count>=3)
-        {
-            //            leftImageView.image = UIImage(named:imgArr[imgArr.count-1] as! String);
-            //            centerImageView.image = UIImage(named:imgArr[0] as! String);
-            //            rightImageView.image = UIImage(named:imgArr[1] as! String);
-            
-            var  imgStr:String = (imgArr[imgArr.count-1] as! ADModel ).media_url;
+        if(imgArr.count>=3) {
+            var  imgStr:String = (imgArr[imgArr.count-1] as! ADModel ).cover;
             leftImageView.sd_setImageWithURL(NSURL(string: imgStr));
             
-            imgStr = (imgArr[0] as! ADModel ).media_url;
+            imgStr = (imgArr[0] as! ADModel ).cover;
             centerImageView.sd_setImageWithURL(NSURL(string: imgStr));
             
-            imgStr = (imgArr[1] as! ADModel ).media_url;
+            imgStr = (imgArr[1] as! ADModel ).cover;
             rightImageView.sd_setImageWithURL(NSURL(string: imgStr));
             
-        }
-        else
-            //        if(imgArr.count==2)
-            //        {
-            //            leftImageView.image = UIImage(named:imgArr[imgArr.count-1] as! String);
-            //            centerImageView.image = UIImage(named:imgArr[0] as! String);
-            //            rightImageView.image = UIImage(named:imgArr[1] as! String);
-            //
-            //        }
-            //        else
-            if(imgArr.count==1)
-            {
+        } else if(imgArr.count==2) {
                 
-                //            centerImageView.image = UIImage(named:imgArr[0] as! String);
-                let  imgStr:String = (imgArr[0] as! ADModel ).media_url;
-                centerImageView.sd_setImageWithURL(NSURL(string: imgStr));
+            var   imgStr:String = (imgArr[imgArr.count-1] as! ADModel ).cover;
+            leftImageView.sd_setImageWithURL(NSURL(string: imgStr));
+            
+            imgStr = (imgArr[0] as! ADModel ).cover;
+            centerImageView.sd_setImageWithURL(NSURL(string: imgStr));
+            
+            imgStr = (imgArr[1] as! ADModel ).cover;
+            rightImageView.sd_setImageWithURL(NSURL(string: imgStr));
                 
-                aScrollView.scrollEnabled = false;
-                aPageView.hidden = true;
+        } else if(imgArr.count==1) {
+            let  imgStr:String = (imgArr[0] as! ADModel ).cover;
+            centerImageView.sd_setImageWithURL(NSURL(string: imgStr));
+            
+            aScrollView.scrollEnabled = false;
+            aPageView.hidden = true;
         }
-        
-        //          self.startimer();
-        
     }
     func startimer()
     {
@@ -162,38 +145,7 @@ class FindListHeadView: UIView,TAPageControlDelegate,UIScrollViewDelegate {
     //    }
     func handleSetTimeScrollView()
     {
-        //        var page = aPageView.currentPage;
-        //        if (page==self.imgArr.count-1) {
-        //            page=0;
-        //
-        //        }else{
-        //            page++;
-        //        }
-        //        //滚动偏移
-        //        var offsetX : CGFloat = CGFloat(page) * CGFloat(MainScreenWidth);
-        
-        //        var transation:CATransition = CATransaction ;
-        //
-        //        transation.type=kCATransitionFromRight;//从右侧移除
-        //
-        //        aScrollView.layer .addAnimation(transation, forKey: "scroll");
-        
-        //设置scrollview移动
-        //        aScrollView.setContentOffset(CGPointMake(offsetX, 0), animated: true);
-        //        //设置pagecontrol移动
-        //        aPageView.currentPage = page
-        
-        
         self.reloadImage();
-        
-        //        var   offset : CGPoint   = aScrollView.contentOffset;
-        //        //算出是在第几页
-        //        var   pageNumber  = Int(offset.x/aScrollView.bounds.size.width);
-        //        aPageView.currentPage = pageNumber;
-        //        self.currentImageIndex = pageNumber;
-        //        NSLog("现在移动到 %d",pageNumber);
-        
-        
     }
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         self.reloadImage();
@@ -217,13 +169,13 @@ class FindListHeadView: UIView,TAPageControlDelegate,UIScrollViewDelegate {
         }
         
         let leftAdmodel = imgArr[currentImageIndex == 0 ? imgArr.count-1 : currentImageIndex-1] as! ADModel;
-        leftImageView.sd_setImageWithURL(NSURL(string: leftAdmodel.media_url));
+        leftImageView.sd_setImageWithURL(NSURL(string: leftAdmodel.cover));
         
         let  centerAdmodel = imgArr[currentImageIndex] as! ADModel
-        centerImageView.sd_setImageWithURL(NSURL(string: centerAdmodel.media_url));
+        centerImageView.sd_setImageWithURL(NSURL(string: centerAdmodel.cover));
         
         let rightAdmodel = imgArr[currentImageIndex==imgArr.count-1 ? 0 : currentImageIndex+1] as! ADModel
-        rightImageView.sd_setImageWithURL(NSURL(string: rightAdmodel.media_url));
+        rightImageView.sd_setImageWithURL(NSURL(string: rightAdmodel.cover));
         
         aPageView.currentPage = currentImageIndex;
         aScrollView.contentOffset = CGPointMake(scrollWidth, 0);

@@ -10,8 +10,10 @@ import UIKit
 
 class UIActivityInfoSecondTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var introduceLabel: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,8 +21,15 @@ class UIActivityInfoSecondTableViewCell: UITableViewCell {
         backView.layer.cornerRadius = 4;
     }
 
-    func resetContent(){
-        introduceLabel.sizeToFit()
+    func resetContent(infoModel:NSActInfoObject, AtIndexPath row:Int){
+        if row == 1 {
+            titleLabel.text = "活动介绍";
+            introduceLabel.text = infoModel.info;
+            
+        } else {
+            titleLabel.text = "babylink已提供支持"
+            introduceLabel.text = infoModel.help;
+        }
     }
     
     override func setSelected(selected: Bool, animated: Bool) {

@@ -66,20 +66,40 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="next"/>
                         </textField>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="登录账户标" translatesAutoresizingMaskIntoConstraints="NO" id="5nf-nA-qUi">
+                            <rect key="frame" x="15" y="13" width="20" height="20"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="20" id="EZZ-Vb-lxy"/>
+                                <constraint firstAttribute="height" constant="20" id="TuD-2l-rK8"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="登录密码标" translatesAutoresizingMaskIntoConstraints="NO" id="nG9-32-oqC">
+                            <rect key="frame" x="15" y="57" width="20" height="20"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="20" id="4Ao-gj-sgK"/>
+                                <constraint firstAttribute="height" constant="20" id="KiO-Se-vud"/>
+                            </constraints>
+                        </imageView>
                     </subviews>
                     <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstItem="5nf-nA-qUi" firstAttribute="leading" secondItem="eIY-Pd-x6p" secondAttribute="leading" constant="15" id="1Gn-7D-x3W"/>
                         <constraint firstItem="pvG-hE-am4" firstAttribute="top" secondItem="eIY-Pd-x6p" secondAttribute="top" constant="5" id="2fD-oC-39c"/>
                         <constraint firstAttribute="trailing" secondItem="pvG-hE-am4" secondAttribute="trailing" constant="8" id="6vN-ke-ITU"/>
+                        <constraint firstItem="nG9-32-oqC" firstAttribute="centerY" secondItem="urY-YT-qUr" secondAttribute="centerY" id="6zi-cZ-sCv"/>
                         <constraint firstAttribute="trailing" secondItem="kUu-Sv-JHB" secondAttribute="trailing" id="BkP-AO-2VB"/>
                         <constraint firstItem="urY-YT-qUr" firstAttribute="leading" secondItem="eIY-Pd-x6p" secondAttribute="leading" constant="50" id="Cpi-D7-tzG"/>
                         <constraint firstAttribute="bottom" secondItem="urY-YT-qUr" secondAttribute="bottom" constant="10" id="GGn-jw-hbH"/>
+                        <constraint firstItem="nG9-32-oqC" firstAttribute="leading" secondItem="eIY-Pd-x6p" secondAttribute="leading" constant="15" id="IUM-1c-fhJ"/>
                         <constraint firstItem="fU9-xu-X7K" firstAttribute="leading" secondItem="eIY-Pd-x6p" secondAttribute="leading" constant="50" id="Llf-Bf-YXY"/>
                         <constraint firstItem="fU9-xu-X7K" firstAttribute="top" secondItem="eIY-Pd-x6p" secondAttribute="top" constant="10" id="QTg-bj-ibS"/>
                         <constraint firstAttribute="trailing" secondItem="pmo-uG-b9f" secondAttribute="trailing" constant="8" id="TyP-QV-9bL"/>
                         <constraint firstItem="kUu-Sv-JHB" firstAttribute="centerY" secondItem="eIY-Pd-x6p" secondAttribute="centerY" id="USe-sE-Zcc"/>
                         <constraint firstItem="kUu-Sv-JHB" firstAttribute="leading" secondItem="eIY-Pd-x6p" secondAttribute="leading" id="YMj-kQ-Vhv"/>
+                        <constraint firstItem="5nf-nA-qUi" firstAttribute="centerY" secondItem="fU9-xu-X7K" secondAttribute="centerY" id="bJF-Ph-7cQ"/>
                         <constraint firstItem="pvG-hE-am4" firstAttribute="leading" secondItem="fU9-xu-X7K" secondAttribute="trailing" constant="14.5" id="d0M-pV-9Bi"/>
                         <constraint firstItem="pmo-uG-b9f" firstAttribute="leading" secondItem="urY-YT-qUr" secondAttribute="trailing" constant="14.5" id="uM3-5U-c0P"/>
                         <constraint firstAttribute="height" constant="90" id="uxz-AS-AxR"/>
@@ -217,5 +237,7 @@
         <image name="q" width="39" height="39"/>
         <image name="w" width="39" height="39"/>
         <image name="x" width="39" height="39"/>
+        <image name="登录密码标" width="20" height="20"/>
+        <image name="登录账户标" width="20" height="20"/>
     </resources>
 </document>

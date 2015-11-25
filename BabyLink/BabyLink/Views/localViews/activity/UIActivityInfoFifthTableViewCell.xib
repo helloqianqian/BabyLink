@@ -66,38 +66,29 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RcR-Wd-EG3">
                                 <rect key="frame" x="42" y="51" width="40" height="40"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.90196078430000004" green="0.28235294119999998" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="2p6-2Q-7ph"/>
                                     <constraint firstAttribute="height" constant="40" id="btj-Ze-ppT"/>
                                 </constraints>
+                                <state key="normal" backgroundImage="p"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZV-at-912">
                                 <rect key="frame" x="123" y="51" width="40" height="40"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.90196078430000004" green="0.28235294119999998" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="dtW-s2-YNS"/>
                                     <constraint firstAttribute="height" constant="40" id="p7z-Jf-MaP"/>
                                 </constraints>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nXZ-mE-EpH">
-                                <rect key="frame" x="205" y="51" width="40" height="40"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.90196078430000004" green="0.28235294119999998" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="7m7-tf-mEc"/>
-                                    <constraint firstAttribute="width" constant="40" id="prV-8B-YbR"/>
-                                </constraints>
+                                <state key="normal" backgroundImage="w"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K3W-e9-yzD">
                                 <rect key="frame" x="287" y="51" width="40" height="40"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.90196078430000004" green="0.28235294119999998" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="8ey-FS-EjX"/>
                                     <constraint firstAttribute="height" constant="40" id="v5r-sO-EOE"/>
                                 </constraints>
+                                <state key="normal" backgroundImage="q"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="朋友圈" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cjR-Eh-ji9">
                                 <rect key="frame" x="44" y="99" width="36" height="13"/>
@@ -143,6 +134,15 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nXZ-mE-EpH">
+                                <rect key="frame" x="205" y="51" width="40" height="40"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="7m7-tf-mEc"/>
+                                    <constraint firstAttribute="width" constant="40" id="prV-8B-YbR"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="x"/>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -208,7 +208,13 @@
                 <outlet property="qqFriendBtn" destination="K3W-e9-yzD" id="Gyf-Pc-PtB"/>
                 <outlet property="sinaBtn" destination="nXZ-mE-EpH" id="YpD-1a-xV9"/>
             </connections>
-            <point key="canvasLocation" x="167.5" y="226"/>
+            <point key="canvasLocation" x="-0.5" y="226"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="p" width="39" height="39"/>
+        <image name="q" width="39" height="39"/>
+        <image name="w" width="39" height="39"/>
+        <image name="x" width="39" height="39"/>
+    </resources>
 </document>

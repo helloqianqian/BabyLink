@@ -39,12 +39,14 @@ class UIAccountSetViewController: UIBaseViewController ,UIActionSheetDelegate,UI
     }
     
     func setContentData() {
-        nikeName.text = "昵称:\(NSUserInfo.shareInstance().baby_nam)";
+        nikeName.text = "昵称:\(NSUserInfo.shareInstance().member_name)";
         if NSUserInfo.shareInstance().member_avar != "" {
             bigHeadIconBtn.sd_setBackgroundImageWithURL(NSURL(string: NSUserInfo.shareInstance().member_avar), forState: UIControlState.Normal, placeholderImage: nil);
         }
     }
-    
+    func resetNickname(){
+        nikeName.text = "昵称:\(NSUserInfo.shareInstance().member_name)";
+    }
     @IBAction func exchangeHeadIcon(sender: UIButton) {
         let actionSheet:UIActionSheet = UIActionSheet(title: nil, delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: nil, otherButtonTitles: "相册", "相机")
         actionSheet.showInView(self.view);
@@ -79,8 +81,7 @@ class UIAccountSetViewController: UIBaseViewController ,UIActionSheetDelegate,UI
         picker.dismissViewControllerAnimated(true, completion: { () -> Void in
             let  dic:NSDictionary = info as NSDictionary;
             let  image:UIImage = dic.objectForKey(UIImagePickerControllerEditedImage) as! UIImage;
-            
-            let  imageData:NSData = UIImageJPEGRepresentation(image, 0.1)!;
+            let  imageData:NSData = NSHelper.fileOfPressedImage(image);
             NSLog("\(imageData.length)")
             self.uploadImageworks(imageData);
         })
@@ -91,10 +92,8 @@ class UIAccountSetViewController: UIBaseViewController ,UIActionSheetDelegate,UI
     func  uploadImageworks(imageData:NSData)
     {
         SVProgressHUD.showWithMaskType(SVProgressHUDMaskType.Clear);
-        let dicParam:NSDictionary = NSDictionary(objects: [imageData,"file","file"] , forKeys: ["imageData","imageName","fileName"]);
+        let dicParam:NSDictionary = NSDictionary(objects: [imageData,"file","head.jpg"] , forKeys: ["imageData","imageName","fileName"]);
         NSHttpHelp.uploadUserIconWithImageData(dicParam as [NSObject : AnyObject], withResult: { (result:AnyObject!) -> Void in
-            
-            //{"code":0,"datas":"http:\/\/101.200.174.65\/babyLink\/public\/uploads\/app\/2015-11\/5652b3bb26710.png"}
             let code = result["code"] as! NSInteger;
             if code == 0 {
                 //发送成功
@@ -104,9 +103,8 @@ class UIAccountSetViewController: UIBaseViewController ,UIActionSheetDelegate,UI
                 appDelegate.recordLastUserIcon()
                 self.bigHeadIconBtn.sd_setBackgroundImageWithURL(NSURL(string: NSUserInfo.shareInstance().member_avar), forState: UIControlState.Normal, placeholderImage: nil);
             } else {
-                SVProgressHUD.dismiss();
                 let datas = result["datas"] as! String;
-                NSHelper.showAlertViewWithTip(datas);
+                SVProgressHUD.showErrorWithStatus(datas);
             }
             
             }, withFailure: { (error:AnyObject!) -> Void in
@@ -114,7 +112,6 @@ class UIAccountSetViewController: UIBaseViewController ,UIActionSheetDelegate,UI
             }) { (progress:Float) -> Void in
                 NSLog("progress:\(progress)")
         }
-        
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
@@ -126,18 +123,9 @@ class UIAccountSetViewController: UIBaseViewController ,UIActionSheetDelegate,UI
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     @IBAction func changeNikeName(sender: UIButton) {
         let nicknameVC = UINikenameViewController(nibName:"UINikenameViewController" ,bundle: NSBundle.mainBundle());
+        nicknameVC.lastVC = self;
         self.navigationController?.pushViewController(nicknameVC, animated: true);
     }
     @IBAction func changePhoneNum(sender: UIButton) {
@@ -153,6 +141,7 @@ class UIAccountSetViewController: UIBaseViewController ,UIActionSheetDelegate,UI
     }
     
     @IBAction func checkBigHeadImage(sender: UIButton) {
+        
     }
     
     override func didReceiveMemoryWarning() {

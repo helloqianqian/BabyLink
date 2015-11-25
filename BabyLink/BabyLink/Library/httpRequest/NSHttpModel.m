@@ -14,7 +14,7 @@
 
 #define Mobile @"/Mobile"
 
-
+//用户管理
 #define loginSession       @"/Login"
 #define registSuf          @"/Login/register"
 #define loginSuf           @"/Login"
@@ -36,7 +36,7 @@
 
 
 
-
+#pragma mark - 用户管理
 //用户
 /**
  *  发送验证码
@@ -154,4 +154,126 @@
 + (NSString *)getIndexSearchUrl {
     return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:indexSearchSuf];
 }
+
+
+#pragma mark - 活动数据
+//活动
+#define activityListSuf  @"/Activity"
+#define addActivitySuf   @"/Activity/addActivity"
+#define signUpActSuf     @"/Activity/signUp"
+#define actCommentSuf    @"/Activity/commend"
+#define actInfoSuf       @"/Activity/activity_info"
+#define actLaunchSuf     @"/Activity/MyLaunch"
+#define actJoinedSuf     @"/Activity/MyJoin"
+/**
+ *  活动列表
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getActListUrl {
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:activityListSuf];
+}
+/**
+ *  创建活动
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getAddActUrl {
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:addActivitySuf];
+}
+/**
+ *  参加活动
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getSignUpActUrl {
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:signUpActSuf];
+}
+/**
+ *  添加活动评论
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getActCommentUrl {
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:actCommentSuf];
+}
+/**
+ *  获取活动详情
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getActInfoUrl {
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:actInfoSuf];
+}
+/**
+ *  我的活动列表
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getMyActLaunchUrl {
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:actLaunchSuf];
+}
+
+/**
+ *  我参加的活动列表
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getMyActJoinedUrl {
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:actJoinedSuf];
+}
+
+
+#pragma mark - 话题相关
+#define talkListSuf       @"/Talk"
+#define talkCommendSuf    @"/Talk/commend"
+#define addTalkSuf        @"/Talk/addTalk"
+#define editTalkSuf       @"/Talk/editTalk"
+#define deleteTalkSuf     @"/Talk/delTalk"
+/**
+ *  我的话题；话题列表
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getMyTalkUrl{
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:talkListSuf];
+}
+
+/**
+ *  评论话题
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getTalkCommendUrl{
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:talkCommendSuf];
+}
+
+/**
+ *  添加话题
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getAddTalkUrl {
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:addTalkSuf];
+}
+
+/**
+ *  编辑话题
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getEditTalkUrl {
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:editTalkSuf];
+}
+
+/**
+ *  删除话题
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getdeleteTalkUrl {
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:deleteTalkSuf];
+}
+
+
 @end

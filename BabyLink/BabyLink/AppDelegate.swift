@@ -143,12 +143,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     func recordLastUserNickname(){
         let userDefault = NSUserDefaults.standardUserDefaults()
-        userDefault.setObject(NSUserInfo.shareInstance().baby_nam, forKey: BABY_NAM);
+        userDefault.setObject(NSUserInfo.shareInstance().member_name, forKey: MEMBER_NAME);
         userDefault.synchronize();
     }
     func recordLastUserPSW(){
         let userDefault = NSUserDefaults.standardUserDefaults()
         userDefault.setObject(NSUserInfo.shareInstance().passwordLocal, forKey: PASSWORDLocal);
+        userDefault.synchronize();
+    }
+    func recordLastUserMobile(){
+        let userDefault = NSUserDefaults.standardUserDefaults()
+        userDefault.setObject(NSUserInfo.shareInstance().mobile, forKey: MOBILE);
         userDefault.synchronize();
     }
 }

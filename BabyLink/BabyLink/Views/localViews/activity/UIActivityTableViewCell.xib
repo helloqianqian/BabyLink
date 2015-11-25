@@ -27,7 +27,7 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggY-Ia-5hN">
-                                <rect key="frame" x="0.0" y="143.5" width="369" height="34"/>
+                                <rect key="frame" x="0.0" y="143" width="369" height="34"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="周末去烧烤" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8nF-V9-Eft">
                                         <rect key="frame" x="20" y="0.0" width="349" height="34"/>
@@ -46,18 +46,8 @@
                                     <constraint firstItem="8nF-V9-Eft" firstAttribute="leading" secondItem="ggY-Ia-5hN" secondAttribute="leading" constant="20" id="hX5-Qh-aml"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="门头沟  已有12人报名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Iy-xM-xM9">
-                                <rect key="frame" x="20" y="195.5" width="251" height="21"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="sLY-Wx-Zet"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DrK-9l-v0b">
-                                <rect key="frame" x="302" y="195.5" width="35" height="35"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="morentoux" translatesAutoresizingMaskIntoConstraints="NO" id="DrK-9l-v0b">
+                                <rect key="frame" x="302" y="195" width="35" height="35"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="4WL-97-W7d"/>
@@ -65,7 +55,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小阿狸" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGd-AG-c1e">
-                                <rect key="frame" x="277" y="232.5" width="84" height="21"/>
+                                <rect key="frame" x="277" y="232" width="84" height="21"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="aWe-Sl-FYo"/>
@@ -75,29 +65,18 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IB7-ft-SK7">
-                                <rect key="frame" x="14" y="265.5" width="341" height="1"/>
+                                <rect key="frame" x="14" y="265" width="341" height="1"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.92941176470588238" green="0.93333333333333335" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="7Dq-RU-j7O"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UKt-E2-8qy">
-                                <rect key="frame" x="14" y="266.5" width="341" height="65"/>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UKt-E2-8qy">
+                                <rect key="frame" x="14" y="266" width="283" height="65"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUO-0m-BGo">
-                                        <rect key="frame" x="284" y="20.5" width="58" height="24"/>
-                                        <animations/>
-                                        <color key="backgroundColor" red="0.74509803921568629" green="0.23921568627450979" blue="0.43529411764705883" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="24" id="8X3-jf-HID"/>
-                                            <constraint firstAttribute="width" constant="58" id="o72-Ll-UZu"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="我要报名"/>
-                                    </button>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="QPj-Qd-Kpo">
-                                        <rect key="frame" x="8" y="14.5" width="268" height="35"/>
+                                        <rect key="frame" x="8" y="15" width="268" height="35"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="6t3-tM-ygy"/>
@@ -117,9 +96,7 @@
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="dUO-0m-BGo" firstAttribute="leading" secondItem="QPj-Qd-Kpo" secondAttribute="trailing" constant="8" id="7Ju-I0-Cy9"/>
-                                    <constraint firstItem="dUO-0m-BGo" firstAttribute="centerY" secondItem="UKt-E2-8qy" secondAttribute="centerY" id="DIl-Ph-skg"/>
-                                    <constraint firstAttribute="trailing" secondItem="dUO-0m-BGo" secondAttribute="trailing" constant="-1" id="LPD-WJ-iZZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="QPj-Qd-Kpo" secondAttribute="trailing" constant="7" id="SYh-xY-dDf"/>
                                     <constraint firstItem="QPj-Qd-Kpo" firstAttribute="leading" secondItem="UKt-E2-8qy" secondAttribute="leading" constant="8" id="WW1-CO-lxt"/>
                                     <constraint firstItem="QPj-Qd-Kpo" firstAttribute="centerY" secondItem="UKt-E2-8qy" secondAttribute="centerY" id="ztj-tk-Owm"/>
                                 </constraints>
@@ -134,6 +111,27 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="门头沟  已有12人报名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Iy-xM-xM9">
+                                <rect key="frame" x="20" y="195" width="251" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="sLY-Wx-Zet"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUO-0m-BGo">
+                                <rect key="frame" x="297" y="287" width="58" height="24"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.74509803921568629" green="0.23921568627450979" blue="0.43529411764705883" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="8X3-jf-HID"/>
+                                    <constraint firstAttribute="width" constant="58" id="o72-Ll-UZu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="我要报名"/>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -155,10 +153,12 @@
                             <constraint firstAttribute="trailing" secondItem="DrK-9l-v0b" secondAttribute="trailing" constant="32" id="NkX-Yd-luV"/>
                             <constraint firstItem="ugl-yY-dGt" firstAttribute="top" secondItem="hQp-WY-Lv1" secondAttribute="top" constant="5" id="Qbe-Vo-iKt"/>
                             <constraint firstItem="DrK-9l-v0b" firstAttribute="top" secondItem="ggY-Ia-5hN" secondAttribute="bottom" constant="18" id="Tnk-Kk-lih"/>
-                            <constraint firstAttribute="trailing" secondItem="UKt-E2-8qy" secondAttribute="trailing" constant="14" id="bAu-xB-zJU"/>
+                            <constraint firstAttribute="bottom" secondItem="dUO-0m-BGo" secondAttribute="bottom" constant="20.5" id="aiW-xQ-pCS"/>
+                            <constraint firstAttribute="trailing" secondItem="UKt-E2-8qy" secondAttribute="trailing" constant="72" id="bAu-xB-zJU"/>
                             <constraint firstItem="UKt-E2-8qy" firstAttribute="top" secondItem="IB7-ft-SK7" secondAttribute="bottom" id="dDB-eE-bA4"/>
                             <constraint firstItem="ugl-yY-dGt" firstAttribute="leading" secondItem="hQp-WY-Lv1" secondAttribute="leading" constant="5" id="dIW-Ui-Ugc"/>
                             <constraint firstItem="GGd-AG-c1e" firstAttribute="top" secondItem="DrK-9l-v0b" secondAttribute="bottom" constant="2" id="djF-zg-zvm"/>
+                            <constraint firstAttribute="trailing" secondItem="dUO-0m-BGo" secondAttribute="trailing" constant="14" id="gvO-pq-50v"/>
                             <constraint firstItem="7Iy-xM-xM9" firstAttribute="leading" secondItem="hQp-WY-Lv1" secondAttribute="leading" constant="20" id="mQI-VU-6dA"/>
                             <constraint firstItem="YVX-ce-foc" firstAttribute="leading" secondItem="hQp-WY-Lv1" secondAttribute="leading" constant="20" id="vO6-Wf-7K6"/>
                             <constraint firstItem="IB7-ft-SK7" firstAttribute="top" secondItem="GGd-AG-c1e" secondAttribute="bottom" constant="12" id="wnV-3e-WK5"/>
@@ -190,4 +190,7 @@
             <point key="canvasLocation" x="268" y="313"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="morentoux" width="33" height="33"/>
+    </resources>
 </document>

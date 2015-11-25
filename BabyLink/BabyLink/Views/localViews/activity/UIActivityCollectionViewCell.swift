@@ -16,7 +16,6 @@ class UIActivityCollectionViewCell: UICollectionViewCell {
         // Initialization code
         headIcon.layer.masksToBounds = true;
         headIcon.layer.cornerRadius = 3;
-        headIcon.backgroundColor = UIColor.redColor();
     }
 
 }

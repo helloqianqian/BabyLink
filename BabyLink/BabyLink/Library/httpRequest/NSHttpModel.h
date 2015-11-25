@@ -103,4 +103,113 @@
  */
 + (NSString *)getIndexSearchUrl;
 
+
+
+
+
+
+
+
+
+
+
+/**
+ *  活动列表
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getActListUrl;
+/**
+ *  创建活动
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getAddActUrl;
+/**
+ *  参加活动
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getSignUpActUrl;
+/**
+ *  添加活动评论
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getActCommentUrl;
+/**
+ *  获取评论详情
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getActInfoUrl;
+/**
+ *  我的活动列表
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getMyActLaunchUrl;
+
+/**
+ *  我参加的活动列表
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getMyActJoinedUrl;
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ *  我的话题；话题列表
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getMyTalkUrl;
+
+/**
+ *  评论话题
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getTalkCommendUrl;
+
+/**
+ *  添加话题
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getAddTalkUrl;
+
+/**
+ *  编辑话题
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getEditTalkUrl;
+
+/**
+ *  删除话题
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getdeleteTalkUrl;
+
+
+
+
+
+
+
+
+
+
 @end

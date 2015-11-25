@@ -20,24 +20,28 @@ class UIBaseTabBarController: UITabBarController, UIBaseTabBarDelegate {
         // Do any additional setup after loading the view.
         localView = UILocalViewController.init(nibName: "UILocalViewController", bundle: NSBundle.mainBundle())
         localView.title = "本小区"
+        localView.tabBarItem = UITabBarItem(title: "本小区", image: UIImage(named: "wben"), selectedImage: UIImage(named: "dben"))
         let localNav = UIBaseNavViewController(rootViewController: localView)
         localNav.setNavigationBarStyleLight();
         self.addChildViewController(localNav)
         
         showView = UIShowViewController(nibName:"UIShowViewController", bundle: NSBundle.mainBundle())
         showView.title = "秀逗"
+        showView.tabBarItem = UITabBarItem(title: "秀逗", image: UIImage(named: "wxiu"), selectedImage: UIImage(named: "dxiiu"))
         let showNav = UIBaseNavViewController(rootViewController: showView)
         showNav.setNavigationBarStyleLight();
         self.addChildViewController(showNav)
         
         findView = UIFindViewController(nibName:"UIFindViewController", bundle: NSBundle.mainBundle())
         findView.title = "发现"
+        findView.tabBarItem = UITabBarItem(title: "发现", image: UIImage(named: "wfa"), selectedImage: UIImage(named: "dfa"))
         let findNav = UIBaseNavViewController(rootViewController: findView)
         findNav.setNavigationBarStyleLight();
         self.addChildViewController(findNav)
         
         centerView = UICenterViewController(nibName:"UICenterViewController", bundle: NSBundle.mainBundle())
         centerView.title = "我"
+        centerView.tabBarItem = UITabBarItem(title: "我", image: UIImage(named: "wwo"), selectedImage: UIImage(named: "dwo"))
         let centerNav = UIBaseNavViewController(rootViewController: centerView)
         centerNav.setNavigationBarStyleLight();
         self.addChildViewController(centerNav)
@@ -45,7 +49,7 @@ class UIBaseTabBarController: UITabBarController, UIBaseTabBarDelegate {
         let tabbarReplace = UIBaseTabBar.init(frame: CGRectZero)
         tabbarReplace.baseTabBarDelegate = self;
         tabbarReplace.translucent = false;
-        tabbarReplace.tintColor = UIColor.purpleColor();
+        tabbarReplace.tintColor = SPurpleBtnColor;
         tabbarReplace.barTintColor = UIColor.blackColor();
         self.setValue(tabbarReplace, forKey: "tabBar")
         

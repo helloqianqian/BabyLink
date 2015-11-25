@@ -15,6 +15,7 @@
 + (void)httpHelpWithUrlTpye:(HttpUrlType)urlType withParam:(NSDictionary *)param withResult:(ReturnValueBlock)resultBlock withFailure:(FailureBlock)failureBlock{
     NSString *url = @"";
     switch (urlType) {
+#pragma mark - 用户
         case registerType:
             url = [NSHttpModel getRegistUrl];
             break;
@@ -54,6 +55,41 @@
         case indexSearchType:
             url = [NSHttpModel getIndexSearchUrl];
             break;
+#pragma mark - 活动
+        case actListType:
+            url = [NSHttpModel getActListUrl];
+            break;
+        case actInfoType:
+            url = [NSHttpModel getActInfoUrl];
+            break;
+        case actLaunchType:
+            url = [NSHttpModel getMyActLaunchUrl];
+            break;
+        case actJoinedType:
+            url = [NSHttpModel getMyActJoinedUrl];
+            break;
+        case addActType:
+            url = [NSHttpModel getAddActUrl];
+            break;
+        case commentActType:
+            url = [NSHttpModel getActCommentUrl];
+            break;
+        case signInActType:
+            url = [NSHttpModel getSignUpActUrl];
+            break;
+#pragma mark - 话题
+        case talkListType:
+            url = [NSHttpModel getMyTalkUrl];
+            break;
+        case addTalkType:
+            url = [NSHttpModel getAddTalkUrl];
+            break;
+        case editTalkType:
+            url = [NSHttpModel getEditTalkUrl];
+            break;
+        case commentTalkType:
+            url = [NSHttpModel getTalkCommendUrl];
+            break;
         default:
             break;
     }
@@ -74,11 +110,11 @@
 }
 +(void)uploadUserIconWithImageData:(NSDictionary*)imageDic withResult:(resultBlock)resultBlock withFailure:(FailureBlock)failureBlock withUploadProgress:(void (^)(float progress))progressBlock{
     [NSHttpObject upLoadImagewithUrl:[NSHttpModel getUpdateHeadUrl] withParameter:imageDic withResult:^(id resultValue) {
-        
+        resultBlock(resultValue);
     } withFailureBlock:^(id error) {
-        
+        failureBlock(error);
     } withUploadProgress:^(float progress) {
-        
+        progressBlock(progress);
     }];
 }
 

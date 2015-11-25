@@ -31,6 +31,30 @@
     [alertView show];
 }
 
++ (NSData *)fileOfPressedImage:(UIImage *)image{
+    CGSize imageSize = image.size;
+    if (imageSize.width>640) {
+        imageSize.height = imageSize.height/(imageSize.width/640);
+        imageSize.width = 640;
+        UIGraphicsBeginImageContext(imageSize);
+        [image drawInRect:CGRectMake(0, 0, imageSize.width, imageSize.height)];
+        UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        NSData *pressSizeData = UIImageJPEGRepresentation(scaledImage, 0.3);
+        return pressSizeData;
+    }
+    NSData *pressSizeData=UIImageJPEGRepresentation(image, 0.3);
+    return pressSizeData;
+}
+
++ (NSString *)timeStrFromeStamp:(NSString *)timeStamp {
+    NSTimeInterval time=[timeStamp doubleValue];
+    NSDate *detaildate=[NSDate dateWithTimeIntervalSince1970:time];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy/MM/dd"];
+    NSString *timeStr = [dateFormatter stringFromDate: detaildate];
+    return timeStr;
+}
 + (NSInteger)currentYear {
     NSDate *today = [NSDate date];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];

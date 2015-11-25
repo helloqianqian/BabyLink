@@ -11,6 +11,7 @@
 @interface NSHttpHelp : NSObject
 
 typedef  enum : NSUInteger {
+    //用户管理
     registerType,
     loginType,
     verticalCodeType,
@@ -25,6 +26,23 @@ typedef  enum : NSUInteger {
     loginOutType,
     autoPositionType,
     indexSearchType,
+    
+    //活动相关
+    actListType,
+    actInfoType,
+    commentActType,
+    signInActType,
+    actLaunchType,//
+    actJoinedType,//
+    addActType,//
+    
+    //话题相关
+    talkListType,
+    addTalkType,//
+    editTalkType,//
+    commentTalkType,
+    deleteTalkType,
+    
 }HttpUrlType;
 
 /*NSHttpHelp.httpHelpWithUrlTpye(uploadHeadType, withParam: nil, withResult: { (result:AnyObject!) -> Void in

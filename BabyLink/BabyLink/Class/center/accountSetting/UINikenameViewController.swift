@@ -12,17 +12,36 @@ class UINikenameViewController: UIBaseViewController {
 
     @IBOutlet weak var nicknameField: UITextField!
     @IBOutlet weak var confirmBtn: UIButton!
+    var lastVC : UIAccountSetViewController!;
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.title = "修改昵称"
-        
         confirmBtn.makeBackGroundColor_Red();
+        nicknameField.delegate = self;
     }
 
     @IBAction func changeNickname(sender: UIButton) {
-        
+        SVProgressHUD.showWithMaskType(SVProgressHUDMaskType.Clear);
+        let dicParam:NSDictionary = NSDictionary(objects: [NSUserInfo.shareInstance().member_id,self.nicknameField.text!] , forKeys: [MEMBER_ID,MEMBER_NAME]);
+        NSHttpHelp.httpHelpWithUrlTpye(updateNicknameType, withParam: dicParam, withResult: { (returnObject:AnyObject!) -> Void in
+            let dic = returnObject as! NSDictionary;
+            let code = dic["code"] as! NSInteger;
+            if code == 0 {
+                //发送成功
+                SVProgressHUD.showSuccessWithStatus("修改成功")
+                NSUserInfo.shareInstance().member_name = self.nicknameField.text;
+                appDelegate.recordLastUserNickname()
+                self.lastVC.nikeName.text = "昵称:\(NSUserInfo.shareInstance().member_name)"
+                self.navigationController?.popViewControllerAnimated(true);
+            }else {
+                let datas = dic["datas"] as! String;
+                SVProgressHUD.showErrorWithStatus(datas);
+            }
+            }) { (error:AnyObject!) -> Void in
+                
+        };
         
     }
     override func didReceiveMemoryWarning() {

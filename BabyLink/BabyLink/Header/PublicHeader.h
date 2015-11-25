@@ -24,7 +24,9 @@
 //
 #define GreenBtnColor RGBCOLOR(0xA7D8D3)
 
-
+//frame
+#define MainScreenHeight [UIScreen mainScreen].bounds.size.height
+#define MainScreenWidth [UIScreen mainScreen].bounds.size.width
 
 //全局参数
 #define ISLOGIN         @"islogin"

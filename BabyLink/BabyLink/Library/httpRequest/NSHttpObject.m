@@ -166,7 +166,9 @@
         NSData *imageData = [parameter objectForKey:@"imageData"];
         NSString *name = [parameter objectForKey:@"imageName"];
         NSString *fileName = [parameter objectForKey:@"fileName"];
-        [formData appendPartWithFileData:imageData name:name fileName:fileName mimeType:@"image/jpeg/file"];
+        
+        [formData appendPartWithFileData:imageData name:name fileName:fileName mimeType:@"jpg/png/jpeg/gif"];
+        
     } success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
         resultBlock(dic);

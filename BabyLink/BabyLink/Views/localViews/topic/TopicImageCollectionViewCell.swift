@@ -14,8 +14,6 @@ class TopicImageCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
-        contentImage.backgroundColor = UIColor.redColor();
     }
 
 }

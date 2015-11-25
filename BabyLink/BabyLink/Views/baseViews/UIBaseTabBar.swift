@@ -22,9 +22,8 @@ class UIBaseTabBar: UITabBar {
     override init(frame: CGRect) {
         super.init(frame: frame)
         plusBtn = UIButton.init(type: UIButtonType.Custom);
-        plusBtn.setBackgroundImage(UIImage(named: "user_default_icon"), forState: UIControlState.Normal)
-        plusBtn.backgroundColor = UIColor.redColor();
-        plusBtn.frame = CGRectMake(0, -10, 50, 50);
+        plusBtn.setBackgroundImage(UIImage(named: "中间按钮"), forState: UIControlState.Normal)
+        plusBtn.frame = CGRectMake(0, 0, 49, 49);
         plusBtn.addTarget(self, action: "plusClick", forControlEvents: UIControlEvents.TouchUpInside);
         self.addSubview(plusBtn);
     }

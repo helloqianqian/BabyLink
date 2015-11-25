@@ -49,7 +49,8 @@ let MainScreenWidth : CGFloat = UIScreen.mainScreen().bounds.size.width;
 let  appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 
 
-
+var activityListLoad:Bool = false;
+var activityInfoLoad:Bool = false;
 
 
 

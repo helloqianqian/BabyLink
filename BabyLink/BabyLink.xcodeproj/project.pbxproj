@@ -65,6 +65,9 @@
 		4C07BB5F1BE60769003E799B /* UICenterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C07BB5D1BE60769003E799B /* UICenterTableViewCell.swift */; };
 		4C07BB601BE60769003E799B /* UICenterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C07BB5E1BE60769003E799B /* UICenterTableViewCell.xib */; };
 		4C3926261C01FECC00C978E9 /* NSResidence.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3926251C01FECC00C978E9 /* NSResidence.m */; };
+		4C3926291C030A0800C978E9 /* NSActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3926281C030A0800C978E9 /* NSActivity.m */; };
+		4C39262C1C0354D100C978E9 /* UIInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C39262A1C0354D100C978E9 /* UIInfoViewController.swift */; };
+		4C39262D1C0354D100C978E9 /* UIInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C39262B1C0354D100C978E9 /* UIInfoViewController.xib */; };
 		4C552EBF1BFF5F4C00A93344 /* CCLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C552EBC1BFF5F4C00A93344 /* CCLocationManager.m */; };
 		4C552EC01BFF5F4C00A93344 /* CLLocation+YCLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C552EBE1BFF5F4C00A93344 /* CLLocation+YCLocation.m */; };
 		4C552EC31BFF643600A93344 /* UIOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C552EC11BFF643600A93344 /* UIOptionView.swift */; };
@@ -102,6 +105,7 @@
 		4C552F281C01EC4A00A93344 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C552F271C01EC4A00A93344 /* MapKit.framework */; };
 		4C552F2A1C01EC6D00A93344 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C552F291C01EC6D00A93344 /* Foundation.framework */; };
 		4C552F2C1C01EC7600A93344 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C552F2B1C01EC7600A93344 /* UIKit.framework */; };
+		4C9484C91C05EC5A0042CB9D /* NSTalk.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9484C81C05EC5A0042CB9D /* NSTalk.m */; };
 		4CA2A84D1BEA40C20094A6FC /* UIButton+CustomStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA2A84C1BEA40C20094A6FC /* UIButton+CustomStyle.m */; };
 		4CA2A8541BEA456D0094A6FC /* UIImage+SingleColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA2A8531BEA456D0094A6FC /* UIImage+SingleColor.m */; };
 		4CA34CA01BF57CD8002DABA2 /* MyActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA34C9E1BF57CD8002DABA2 /* MyActivityViewController.swift */; };
@@ -218,8 +222,12 @@
 		4CFCB8E01BEF2F7400D84B29 /* TopicImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CFCB8DE1BEF2F7400D84B29 /* TopicImageCollectionViewCell.xib */; };
 		4CFCB8E31BEF39B600D84B29 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFCB8E11BEF39B600D84B29 /* CommentTableViewCell.swift */; };
 		4CFCB8E41BEF39B600D84B29 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CFCB8E21BEF39B600D84B29 /* CommentTableViewCell.xib */; };
-		4CFCB8E71BEF39C900D84B29 /* UILikeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFCB8E51BEF39C900D84B29 /* UILikeTableViewCell.swift */; };
-		4CFCB8E81BEF39C900D84B29 /* UILikeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CFCB8E61BEF39C900D84B29 /* UILikeTableViewCell.xib */; };
+		4CFF487C1C04C297007B7E82 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFF487B1C04C297007B7E82 /* NSString+Additions.m */; };
+		4CFF487F1C04C648007B7E82 /* UIPeopleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFF487D1C04C648007B7E82 /* UIPeopleCollectionViewCell.swift */; };
+		4CFF48801C04C648007B7E82 /* UIPeopleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CFF487E1C04C648007B7E82 /* UIPeopleCollectionViewCell.xib */; };
+		4CFF48831C04C663007B7E82 /* UICommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFF48811C04C663007B7E82 /* UICommentTableViewCell.swift */; };
+		4CFF48841C04C663007B7E82 /* UICommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CFF48821C04C663007B7E82 /* UICommentTableViewCell.xib */; };
+		4CFF48881C058974007B7E82 /* YFInputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFF48871C058974007B7E82 /* YFInputBar.m */; };
 		F4DB6320A6C08C3F498DD1FC /* libPods-BabyLink.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5804E37A8D09AF5064E64A8C /* libPods-BabyLink.a */; };
 /* End PBXBuildFile section */
 
@@ -300,6 +308,10 @@
 		4C07BB5E1BE60769003E799B /* UICenterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UICenterTableViewCell.xib; sourceTree = "<group>"; };
 		4C3926241C01FECC00C978E9 /* NSResidence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSResidence.h; sourceTree = "<group>"; };
 		4C3926251C01FECC00C978E9 /* NSResidence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSResidence.m; sourceTree = "<group>"; };
+		4C3926271C030A0800C978E9 /* NSActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSActivity.h; sourceTree = "<group>"; };
+		4C3926281C030A0800C978E9 /* NSActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSActivity.m; sourceTree = "<group>"; };
+		4C39262A1C0354D100C978E9 /* UIInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIInfoViewController.swift; sourceTree = "<group>"; };
+		4C39262B1C0354D100C978E9 /* UIInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIInfoViewController.xib; sourceTree = "<group>"; };
 		4C552EBB1BFF5F4C00A93344 /* CCLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLocationManager.h; sourceTree = "<group>"; };
 		4C552EBC1BFF5F4C00A93344 /* CCLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLocationManager.m; sourceTree = "<group>"; };
 		4C552EBD1BFF5F4C00A93344 /* CLLocation+YCLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+YCLocation.h"; sourceTree = "<group>"; };
@@ -367,6 +379,8 @@
 		4C552F271C01EC4A00A93344 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		4C552F291C01EC6D00A93344 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4C552F2B1C01EC7600A93344 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4C9484C71C05EC5A0042CB9D /* NSTalk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSTalk.h; sourceTree = "<group>"; };
+		4C9484C81C05EC5A0042CB9D /* NSTalk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSTalk.m; sourceTree = "<group>"; };
 		4CA2A84B1BEA40C20094A6FC /* UIButton+CustomStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CustomStyle.h"; sourceTree = "<group>"; };
 		4CA2A84C1BEA40C20094A6FC /* UIButton+CustomStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CustomStyle.m"; sourceTree = "<group>"; };
 		4CA2A8501BEA43ED0094A6FC /* PublicHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicHeader.h; sourceTree = "<group>"; };
@@ -508,8 +522,14 @@
 		4CFCB8DE1BEF2F7400D84B29 /* TopicImageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		4CFCB8E11BEF39B600D84B29 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		4CFCB8E21BEF39B600D84B29 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
-		4CFCB8E51BEF39C900D84B29 /* UILikeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILikeTableViewCell.swift; sourceTree = "<group>"; };
-		4CFCB8E61BEF39C900D84B29 /* UILikeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UILikeTableViewCell.xib; sourceTree = "<group>"; };
+		4CFF487A1C04C297007B7E82 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
+		4CFF487B1C04C297007B7E82 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
+		4CFF487D1C04C648007B7E82 /* UIPeopleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPeopleCollectionViewCell.swift; sourceTree = "<group>"; };
+		4CFF487E1C04C648007B7E82 /* UIPeopleCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIPeopleCollectionViewCell.xib; sourceTree = "<group>"; };
+		4CFF48811C04C663007B7E82 /* UICommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICommentTableViewCell.swift; sourceTree = "<group>"; };
+		4CFF48821C04C663007B7E82 /* UICommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UICommentTableViewCell.xib; sourceTree = "<group>"; };
+		4CFF48861C058974007B7E82 /* YFInputBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFInputBar.h; sourceTree = "<group>"; };
+		4CFF48871C058974007B7E82 /* YFInputBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFInputBar.m; sourceTree = "<group>"; };
 		4DC90B3192A6B7AAD9E78476 /* Pods-BabyLink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabyLink.release.xcconfig"; path = "Pods/Target Support Files/Pods-BabyLink/Pods-BabyLink.release.xcconfig"; sourceTree = "<group>"; };
 		5804E37A8D09AF5064E64A8C /* libPods-BabyLink.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BabyLink.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D177840B383B817FE1BF1911 /* Pods-BabyLink.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabyLink.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BabyLink/Pods-BabyLink.debug.xcconfig"; sourceTree = "<group>"; };
@@ -900,6 +920,8 @@
 		4CA59AC81BE7A95C00C614FC /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				4CFF487A1C04C297007B7E82 /* NSString+Additions.h */,
+				4CFF487B1C04C297007B7E82 /* NSString+Additions.m */,
 				4CA2A84B1BEA40C20094A6FC /* UIButton+CustomStyle.h */,
 				4CA2A84C1BEA40C20094A6FC /* UIButton+CustomStyle.m */,
 				4CA2A8521BEA456D0094A6FC /* UIImage+SingleColor.h */,
@@ -970,10 +992,10 @@
 				4CA2A84E1BEA43B50094A6FC /* Header */,
 				4CA59AC81BE7A95C00C614FC /* Category */,
 				4CF6EF8B1BDE58D300CC5BA7 /* Class */,
+				4CF6EF991BDE58D300CC5BA7 /* Views */,
+				4CF6EF931BDE58D300CC5BA7 /* Model */,
 				4CF6EF911BDE58D300CC5BA7 /* globalParams */,
 				4CF6EF921BDE58D300CC5BA7 /* Library */,
-				4CF6EF931BDE58D300CC5BA7 /* Model */,
-				4CF6EF991BDE58D300CC5BA7 /* Views */,
 				4CF6EF641BDCA47600CC5BA7 /* Assets.xcassets */,
 				4CF6EF661BDCA47600CC5BA7 /* LaunchScreen.storyboard */,
 				4CF6EF691BDCA47600CC5BA7 /* Info.plist */,
@@ -1052,6 +1074,8 @@
 				4CFCB8CE1BEF1ABF00D84B29 /* topicVC */,
 				4CF6EFB21BDF68AD00CC5BA7 /* UILocalViewController.swift */,
 				4CF6EFB31BDF68AD00CC5BA7 /* UILocalViewController.xib */,
+				4C39262A1C0354D100C978E9 /* UIInfoViewController.swift */,
+				4C39262B1C0354D100C978E9 /* UIInfoViewController.xib */,
 			);
 			path = local;
 			sourceTree = "<group>";
@@ -1107,6 +1131,7 @@
 		4CF6EF921BDE58D300CC5BA7 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				4CFF48851C058974007B7E82 /* Keyboard */,
 				4C552EC51BFF874300A93344 /* share */,
 				4C552EBA1BFF5F4C00A93344 /* CCLocation */,
 				4CEDCF5F1BFCAF4A00226BB9 /* toolHelper */,
@@ -1147,6 +1172,10 @@
 			children = (
 				4CFCB89A1BEBA90B00D84B29 /* ADModel.h */,
 				4CFCB89B1BEBA90B00D84B29 /* ADModel.m */,
+				4C3926271C030A0800C978E9 /* NSActivity.h */,
+				4C3926281C030A0800C978E9 /* NSActivity.m */,
+				4C9484C71C05EC5A0042CB9D /* NSTalk.h */,
+				4C9484C81C05EC5A0042CB9D /* NSTalk.m */,
 			);
 			path = localModel;
 			sourceTree = "<group>";
@@ -1297,6 +1326,10 @@
 				4CFCB8751BEBA79900D84B29 /* UIActivityInfoThirdTableViewCell.xib */,
 				4CFCB8761BEBA79900D84B29 /* UIActivityTableViewCell.swift */,
 				4CFCB8771BEBA79900D84B29 /* UIActivityTableViewCell.xib */,
+				4CFF487D1C04C648007B7E82 /* UIPeopleCollectionViewCell.swift */,
+				4CFF487E1C04C648007B7E82 /* UIPeopleCollectionViewCell.xib */,
+				4CFF48811C04C663007B7E82 /* UICommentTableViewCell.swift */,
+				4CFF48821C04C663007B7E82 /* UICommentTableViewCell.xib */,
 			);
 			path = activity;
 			sourceTree = "<group>";
@@ -1319,8 +1352,6 @@
 				4CFCB8DE1BEF2F7400D84B29 /* TopicImageCollectionViewCell.xib */,
 				4CFCB8E11BEF39B600D84B29 /* CommentTableViewCell.swift */,
 				4CFCB8E21BEF39B600D84B29 /* CommentTableViewCell.xib */,
-				4CFCB8E51BEF39C900D84B29 /* UILikeTableViewCell.swift */,
-				4CFCB8E61BEF39C900D84B29 /* UILikeTableViewCell.xib */,
 			);
 			path = topic;
 			sourceTree = "<group>";
@@ -1356,6 +1387,15 @@
 				4CFCB8D01BEF1ABF00D84B29 /* UITopicView.xib */,
 			);
 			path = topicVC;
+			sourceTree = "<group>";
+		};
+		4CFF48851C058974007B7E82 /* Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				4CFF48861C058974007B7E82 /* YFInputBar.h */,
+				4CFF48871C058974007B7E82 /* YFInputBar.m */,
+			);
+			path = Keyboard;
 			sourceTree = "<group>";
 		};
 		4EB90DE5F6EF5413B7F3491A /* Pods */ = {
@@ -1479,7 +1519,6 @@
 				4CFCB8D81BEF1ABF00D84B29 /* UIExchangeInfoViewController.xib in Resources */,
 				4C0244FE1BF02C8A004BE881 /* UIFindInfoThirdTableViewCell.xib in Resources */,
 				4C006B3A1BF3149D00FFBFF6 /* UIAccountSetViewController.xib in Resources */,
-				4CFCB8E81BEF39C900D84B29 /* UILikeTableViewCell.xib in Resources */,
 				4CA34CAD1BF57D0C002DABA2 /* MyShowViewController.xib in Resources */,
 				4CF6EF681BDCA47600CC5BA7 /* LaunchScreen.storyboard in Resources */,
 				4CFCB8811BEBA79900D84B29 /* FindListHeadView.xib in Resources */,
@@ -1489,10 +1528,12 @@
 				4C07BB5C1BE5F456003E799B /* UISecondInfoViewController.xib in Resources */,
 				4CA34CBD1BF5F4C4002DABA2 /* MyShowInfoViewController.xib in Resources */,
 				4CFCB8A81BEBAAC500D84B29 /* UIExchangeTableViewCell.xib in Resources */,
+				4C39262D1C0354D100C978E9 /* UIInfoViewController.xib in Resources */,
 				4C006B311BF23F2900FFBFF6 /* UIMyOrderListViewController.xib in Resources */,
 				4C0245551BF0E688004BE881 /* UIOrderInfoViewController.xib in Resources */,
 				4CF6EFAD1BDF50E900CC5BA7 /* UIBridgeViewController.xib in Resources */,
 				4C0245021BF02F02004BE881 /* UIFindInfoForthTableViewCell.xib in Resources */,
+				4CFF48841C04C663007B7E82 /* UICommentTableViewCell.xib in Resources */,
 				4C07BB581BE5F445003E799B /* UIFirstInfoViewController.xib in Resources */,
 				4C07BB501BE5CF41003E799B /* UIAgreementViewController.xib in Resources */,
 				4C0244E51BEF4DA2004BE881 /* UISquareView.xib in Resources */,
@@ -1509,6 +1550,7 @@
 				4CF6EFC51BDF6F6600CC5BA7 /* UILoginViewController.xib in Resources */,
 				4CF6EFC11BDF6EF900CC5BA7 /* UICenterViewController.xib in Resources */,
 				4CD583D31BF45ABD00345666 /* UIMineViewController.xib in Resources */,
+				4CFF48801C04C648007B7E82 /* UIPeopleCollectionViewCell.xib in Resources */,
 				4C552F041BFF874300A93344 /* UMShareEditViewController.xib in Resources */,
 				4CFCB8D41BEF1ABF00D84B29 /* UIActivityView.xib in Resources */,
 				4CFCB88D1BEBA79900D84B29 /* UIActivityInfoSecondTableViewCell.xib in Resources */,
@@ -1669,6 +1711,7 @@
 				4C0245011BF02F02004BE881 /* UIFindInfoForthTableViewCell.swift in Sources */,
 				4CF6EFD61BE260F400CC5BA7 /* UIBaseTabBar.swift in Sources */,
 				4C0244F01BEF73D9004BE881 /* UIFindInfoViewController.swift in Sources */,
+				4C3926291C030A0800C978E9 /* NSActivity.m in Sources */,
 				4CF6EFC81BDF6F7700CC5BA7 /* UIRegistViewController.swift in Sources */,
 				4CD583D21BF45ABD00345666 /* UIMineViewController.swift in Sources */,
 				4CF6EFB41BDF68AD00CC5BA7 /* UILocalViewController.swift in Sources */,
@@ -1694,6 +1737,7 @@
 				4C552EBF1BFF5F4C00A93344 /* CCLocationManager.m in Sources */,
 				4C006B301BF23F2900FFBFF6 /* UIMyOrderListViewController.swift in Sources */,
 				4C0244EC1BEF6933004BE881 /* UIFindTableViewCell.swift in Sources */,
+				4CFF48831C04C663007B7E82 /* UICommentTableViewCell.swift in Sources */,
 				4CF6EFC01BDF6EF900CC5BA7 /* UICenterViewController.swift in Sources */,
 				4C006B121BF1F85A00FFBFF6 /* UIConvertViewController.swift in Sources */,
 				4C006B391BF3149D00FFBFF6 /* UIAccountSetViewController.swift in Sources */,
@@ -1716,15 +1760,19 @@
 				4CFCB8621BEBA66000D84B29 /* TAAnimatedDotView.m in Sources */,
 				4CEDCF621BFCAF5F00226BB9 /* NSHelper.m in Sources */,
 				4CFCB89C1BEBA90B00D84B29 /* ADModel.m in Sources */,
+				4CFF487C1C04C297007B7E82 /* NSString+Additions.m in Sources */,
+				4C39262C1C0354D100C978E9 /* UIInfoViewController.swift in Sources */,
 				4CF6EFD31BDF70C400CC5BA7 /* NSUserInfoObject.swift in Sources */,
 				4CD583CA1BF4248300345666 /* UINikenameViewController.swift in Sources */,
 				4CA34CA81BF57CFE002DABA2 /* MyFriendsViewController.swift in Sources */,
 				4CF6EFAC1BDF50E900CC5BA7 /* UIBridgeViewController.m in Sources */,
-				4CFCB8E71BEF39C900D84B29 /* UILikeTableViewCell.swift in Sources */,
 				4C0244F51BEF787D004BE881 /* UIFindInfoFirstTableViewCell.swift in Sources */,
+				4CFF487F1C04C648007B7E82 /* UIPeopleCollectionViewCell.swift in Sources */,
 				4C07BB4F1BE5CF41003E799B /* UIAgreementViewController.swift in Sources */,
 				4CD583C61BF4245200345666 /* UIHelpViewController.swift in Sources */,
+				4C9484C91C05EC5A0042CB9D /* NSTalk.m in Sources */,
 				4C006B341BF23F6300FFBFF6 /* UIMyOrderTableViewCell.swift in Sources */,
+				4CFF48881C058974007B7E82 /* YFInputBar.m in Sources */,
 				4C006B281BF2342A00FFBFF6 /* UIFinalPayTableViewCell.swift in Sources */,
 				4CEDCF651BFCB53600226BB9 /* NSUserInfo.m in Sources */,
 				4CFCB8D11BEF1ABF00D84B29 /* UIActivityInfoViewController.swift in Sources */,

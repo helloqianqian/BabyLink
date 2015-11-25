@@ -24,6 +24,10 @@ class UIActivityInfoFifthTableViewCell: UITableViewCell {
         
     }
 
+    func setContentData(infoModel:NSActInfoObject){
+        
+    }
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

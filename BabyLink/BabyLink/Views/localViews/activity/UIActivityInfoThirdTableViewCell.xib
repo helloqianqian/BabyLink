@@ -8,17 +8,17 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="UIActivityInfoThirdTableViewCell" customModule="BabyLink" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="299.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="299.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R9T-XV-9qs">
-                        <rect key="frame" x="3" y="3" width="369" height="293.5"/>
+                        <rect key="frame" x="3" y="3" width="314" height="293.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="参与人数（12人）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hna-6h-u0c">
-                                <rect key="frame" x="12" y="8" width="345" height="14"/>
+                                <rect key="frame" x="12" y="8" width="290" height="14"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="14" id="Qkr-dc-hBj"/>
@@ -28,7 +28,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Izw-KV-I20">
-                                <rect key="frame" x="5" y="30" width="359" height="1"/>
+                                <rect key="frame" x="5" y="30" width="304" height="1"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.92941176469999998" green="0.93333333330000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -36,10 +36,11 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="2ST-Ia-y5k">
-                                <rect key="frame" x="20" y="39" width="329" height="230"/>
+                                <rect key="frame" x="20" y="39" width="274" height="230"/>
                                 <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="230" id="nyi-7j-dNx"/>
+                                    <constraint firstAttribute="width" constant="274" id="4Yr-fm-EhY"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="22" id="vfg-Rb-xwv">
                                     <size key="itemSize" width="35" height="50"/>
@@ -54,12 +55,12 @@
                         <constraints>
                             <constraint firstItem="2ST-Ia-y5k" firstAttribute="top" secondItem="Izw-KV-I20" secondAttribute="bottom" constant="8" id="51B-L2-484"/>
                             <constraint firstAttribute="trailing" secondItem="Izw-KV-I20" secondAttribute="trailing" constant="5" id="9Sf-wh-hUi"/>
-                            <constraint firstAttribute="trailing" secondItem="2ST-Ia-y5k" secondAttribute="trailing" constant="20" id="E0S-Sc-6GP"/>
                             <constraint firstItem="Izw-KV-I20" firstAttribute="leading" secondItem="R9T-XV-9qs" secondAttribute="leading" constant="5" id="Efv-Xf-XM8"/>
+                            <constraint firstItem="2ST-Ia-y5k" firstAttribute="centerX" secondItem="R9T-XV-9qs" secondAttribute="centerX" id="EzS-39-E22"/>
                             <constraint firstItem="Izw-KV-I20" firstAttribute="top" secondItem="hna-6h-u0c" secondAttribute="bottom" constant="8" id="GKN-df-r6N"/>
                             <constraint firstItem="hna-6h-u0c" firstAttribute="leading" secondItem="R9T-XV-9qs" secondAttribute="leading" constant="12" id="bl8-BU-GOI"/>
-                            <constraint firstItem="2ST-Ia-y5k" firstAttribute="leading" secondItem="R9T-XV-9qs" secondAttribute="leading" constant="20" id="c32-0v-kS8"/>
                             <constraint firstAttribute="trailing" secondItem="hna-6h-u0c" secondAttribute="trailing" constant="12" id="mWL-35-UpL"/>
+                            <constraint firstAttribute="bottom" secondItem="2ST-Ia-y5k" secondAttribute="bottom" constant="25" id="uBZ-1Z-26C"/>
                             <constraint firstItem="hna-6h-u0c" firstAttribute="top" secondItem="R9T-XV-9qs" secondAttribute="top" constant="8" id="v9k-P3-fOO"/>
                         </constraints>
                     </view>
@@ -78,8 +79,9 @@
                 <outlet property="backView" destination="R9T-XV-9qs" id="ZE0-LA-50y"/>
                 <outlet property="joinCollectionView" destination="2ST-Ia-y5k" id="6Qe-dq-REt"/>
                 <outlet property="joinNumLabel" destination="hna-6h-u0c" id="V9e-zd-sZZ"/>
+                <outlet property="widthofcell" destination="4Yr-fm-EhY" id="6zm-it-fiH"/>
             </connections>
-            <point key="canvasLocation" x="435.5" y="231"/>
+            <point key="canvasLocation" x="175" y="241"/>
         </tableViewCell>
     </objects>
 </document>

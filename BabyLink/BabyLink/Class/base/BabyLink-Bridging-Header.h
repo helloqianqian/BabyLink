@@ -14,7 +14,8 @@
 #import "ADModel.h"
 #import "NSUserInfo.h"
 #import "NSResidence.h"
-
+#import "NSActivity.h"
+#import "NSTalk.h"
 
 //http
 #import "NSHttpHelp.h"
@@ -24,12 +25,13 @@
 #import "NSHelper.h"
 #import "SVProgressHUD.h"
 #import "TAPageControl.h"
+#import "YFInputBar.h"
 
 #import "UIImageView+WebCache.h"
 #import "UIButton+WebCache.h"
 
 #import "UIButton+CustomStyle.h"
-#import "UIImageView+WebCache.h"
+#import "NSString+Additions.h"
 
 //SDK
 #import "CCLocationManager.h"
@@ -37,3 +39,5 @@
 #import "UMSocialQQHandler.h"
 #import "UMSocialSinaSSOHandler.h"
 #import "UMSocialWechatHandler.h"
+
+#import "MJRefresh.h"

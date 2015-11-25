@@ -222,7 +222,7 @@
                 <outlet property="titleLabel" destination="xGB-14-5mW" id="HDi-Wz-fra"/>
                 <outlet property="toolLabel" destination="0t5-pX-Ux2" id="lnf-Pt-kVG"/>
             </connections>
-            <point key="canvasLocation" x="-82.5" y="33"/>
+            <point key="canvasLocation" x="55.5" y="68"/>
         </tableViewCell>
     </objects>
 </document>

@@ -27,7 +27,7 @@
                                 <constraint firstAttribute="height" constant="45" id="hQs-vm-6qb"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                         </textField>
                     </subviews>
                     <animations/>
