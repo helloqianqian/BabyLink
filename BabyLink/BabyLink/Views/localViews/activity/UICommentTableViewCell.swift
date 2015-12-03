@@ -14,7 +14,6 @@ class UICommentTableViewCell: UITableViewCell {
 
     @IBOutlet weak var headIcon: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
     
     override func awakeFromNib() {
@@ -35,7 +34,7 @@ class UICommentTableViewCell: UITableViewCell {
             infoStr.setAttributes(attribute1, range: NSMakeRange((infoModel.from_userName as NSString).length, 2));
             nameLabel.attributedText = infoStr;
         }
-        timeLabel.text = infoModel.add_time;
+//        timeLabel.text = infoModel.add_time;
         contentLabel.text = infoModel.info;
         contentLabel.sizeToFit()
     }

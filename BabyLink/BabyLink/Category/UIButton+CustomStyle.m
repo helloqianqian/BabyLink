@@ -28,7 +28,7 @@
 - (void)makeBackGroundColor_DarkGray {
     self.clipsToBounds=YES;
     self.layer.cornerRadius=4;
-        
+            
     [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     UIImage *image=[UIImage imageWithColor:DarkGrayBtnColor size:self.frame.size];
     [self setBackgroundImage:image forState:UIControlStateNormal];
@@ -42,6 +42,14 @@
     
     [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     UIImage *image=[UIImage imageWithColor:RedBtnColor size:self.frame.size];
+    [self setBackgroundImage:image forState:UIControlStateNormal];
+}
+-(void)makeBackGroundColor_LightRed {
+    self.clipsToBounds=YES;
+    self.layer.cornerRadius=4;
+    
+    [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    UIImage *image=[UIImage imageWithColor:LightRedBtnColor size:self.frame.size];
     [self setBackgroundImage:image forState:UIControlStateNormal];
 }
 /**

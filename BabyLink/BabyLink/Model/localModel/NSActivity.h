@@ -14,7 +14,19 @@
 
 
 @interface NSActListObject : NSObject
-
+/*{
+ "activity_id": "12",
+ "images": "public/uploads/20151129/565afa3923a59.jpg,public/uploads/20151129/565afaa3c59d0.jpg",
+ "title": "新建活动测试",
+ "jihe_time": "2015-12-31 16:33:48",
+ "activity_address": "青龙湖",
+ "member_id": "1",
+ "count": "0",
+ "status": 1,
+ "status_desc": "进行中",
+ "image_url": "http://101.200.174.65/babyLink/public/uploads/20151129/565afa3923a59.jpg"
+ },
+ */
 @property (nonatomic,strong)NSString *member_id;
 @property (nonatomic,strong)NSString *activity_id;
 @property (nonatomic,strong)NSString *title;
@@ -26,8 +38,12 @@
 @property (nonatomic,strong)NSString *image_url;
 @property (nonatomic,strong)NSString *images;
 @property (nonatomic,strong)NSMutableArray *logs_list;
+@property (nonatomic,assign)BOOL isOut;
+@property (nonatomic,assign)BOOL isSign;
+@property (nonatomic,assign)BOOL isFull;
 
-
+@property (nonatomic,assign)NSInteger status;
+@property (nonatomic,strong)NSString *status_desc;
 @end
 
 
@@ -40,6 +56,7 @@
 @property (nonatomic,strong)NSString *num;
 @property (nonatomic,strong)NSString *member_avar;
 @property (nonatomic,strong)NSString *member_name;
+@property (nonatomic,strong)NSString *link_man;
 
 @end
 

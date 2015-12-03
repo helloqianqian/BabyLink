@@ -48,12 +48,44 @@ let MainScreenWidth : CGFloat = UIScreen.mainScreen().bounds.size.width;
 
 let  appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 
-
+//活动
 var activityListLoad:Bool = false;
 var activityInfoLoad:Bool = false;
 
+var signInActivity:Bool = false;
+
+//话题
+var talkListLoad:Bool = false;
+
+//置换
+var exchangeListLoad:Bool = false;
+
+//秀逗
+var showLinkLoad:Bool = false;
+var showSquareLoad:Bool = false;
+
+//我
+var centerHeadIconLoad:Bool = false;
+
+//发布状态
+var createSuccess:Bool = false;
+
+//我的话题
+var reloadMyTalkList:Bool = false;
+
+//我的置换
+var reloadMyListOfExchange:Bool = false;
+
+//我参与的活动
+var reloadMyJoinActList:Bool = false;
+
+//我的秀逗
+var reloadDataForAddNewDou:Bool = false;
 
 
+
+//全局mainTabbar
+var mainTabBar:UIBaseTabBarController!;
 
 
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UILoginViewController: UIBaseViewController {
+class UILoginViewController: UIBaseViewController ,UITextFieldDelegate{
 
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var phoneField: UITextField!
@@ -26,6 +26,9 @@ class UILoginViewController: UIBaseViewController {
     
         
         self.setUI();
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil);
     }
     
     func setUI(){
@@ -42,8 +45,41 @@ class UILoginViewController: UIBaseViewController {
         super.viewWillAppear(animated)
     }
     
+    func keyboardWillShow(notification:NSNotification){
+        self.addGesture();
+    }
+    func keyboardWillHide(notification:NSNotification){
+        self.removeGesture();
+    }
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self);
+    }
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        self.didBeginEditing(textField);
+    }
+    func textFieldDidEndEditing(textField: UITextField) {
+        self.didEndEditing(textField);
+    }
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField.returnKeyType == UIReturnKeyType.Next {
+            self.nextFieldEditing(textField);
+        } else if textField.returnKeyType == UIReturnKeyType.Done {
+            textField.resignFirstResponder()
+        }
+        return true;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     func registEnter(sender:AnyObject){
-        let registVC = UIRegistViewController.init(nibName:"UIRegistViewController", bundle:NSBundle.mainBundle());
+        let registVC = UIRegistViewController(nibName:"UIRegistViewController", bundle:NSBundle.mainBundle());
         self.navigationController?.pushViewController(registVC, animated: true);
     }
     @IBAction func loginConfirm(sender: UIButton) {
@@ -55,7 +91,6 @@ class UILoginViewController: UIBaseViewController {
             NSHelper.showAlertViewWithTip("请输入密码");
             return;
         }
-        self.endEditing()
         let dicParam:NSDictionary = NSDictionary(objects: [self.phoneField.text!,self.pswField.text!] , forKeys: ["mobile","password"]);
         SVProgressHUD.showWithStatus("正在登录")
         NSHttpHelp.httpHelpWithUrlTpye(loginType, withParam: dicParam, withResult: { (returnObject:AnyObject!) -> Void in
@@ -88,7 +123,7 @@ class UILoginViewController: UIBaseViewController {
                 if home == "" {
                     SVProgressHUD.dismiss();
                     NSUserInfo.shareInstance().islogin = false;
-                    let infoVC = UIFullInfoViewController.init(nibName:"UIFullInfoViewController",bundle:NSBundle.mainBundle());
+                    let infoVC = UIFullInfoViewController(nibName:"UIFullInfoViewController",bundle:NSBundle.mainBundle());
                     self.navigationController?.pushViewController(infoVC, animated: true);
                 } else {
                     SVProgressHUD.showSuccessWithStatus("登录成功")
@@ -109,7 +144,7 @@ class UILoginViewController: UIBaseViewController {
     
     @IBAction func forgetPWEnter(sender: AnyObject) {
         
-        let forgetPWVC = UIForgetPWViewController.init(nibName:"UIForgetPWViewController", bundle:NSBundle.mainBundle());
+        let forgetPWVC = UIForgetPWViewController(nibName:"UIForgetPWViewController", bundle:NSBundle.mainBundle());
         self.navigationController?.pushViewController(forgetPWVC, animated: true);
     }
     
@@ -172,6 +207,7 @@ class UILoginViewController: UIBaseViewController {
             let code = dic["code"] as! NSInteger;
             if code == 0 {
                 //发送成功
+                SVProgressHUD.dismiss();
                 SVProgressHUD.showSuccessWithStatus("登录成功")
                 
                 let datas = dic["datas"] as! NSDictionary;
@@ -203,6 +239,7 @@ class UILoginViewController: UIBaseViewController {
                 let firstVC = UIFirstInfoViewController(nibName:"UIFirstInfoViewController" ,bundle: NSBundle.mainBundle())
                 self.navigationController?.pushViewController(firstVC, animated: true);
             } else {
+                SVProgressHUD.dismiss();
                 let datas = dic["datas"] as! String;
                 SVProgressHUD.showErrorWithStatus(datas);
             }
@@ -215,7 +252,10 @@ class UILoginViewController: UIBaseViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+//    override func endCurrentViewEditing() {
+//        self.phoneField.resignFirstResponder();
+//        self.pswField.resignFirstResponder();
+//    }
 
     /*
     // MARK: - Navigation

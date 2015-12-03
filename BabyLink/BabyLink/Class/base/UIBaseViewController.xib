@@ -18,7 +18,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <gestureRecognizers/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="366" y="300"/>
+            <point key="canvasLocation" x="129" y="133"/>
         </view>
     </objects>
 </document>

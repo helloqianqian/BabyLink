@@ -20,7 +20,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QDE-55-hqc">
                                 <rect key="frame" x="8" y="8" width="65" height="65"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.74509803919999995" green="0.23921568630000001" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="65" id="JiT-ci-lEX"/>
                                     <constraint firstAttribute="height" constant="65" id="P9U-Ht-yOq"/>
@@ -59,13 +58,22 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5v-bM-k0b">
                                 <rect key="frame" x="235" y="57" width="60" height="23"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.74509803919999995" green="0.23921568630000001" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="23" id="11x-Iy-Sli"/>
                                     <constraint firstAttribute="width" constant="60" id="YIv-Uf-Pfw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="查看详情"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wc3-kZ-bNY">
+                                <rect key="frame" x="167" y="57" width="60" height="23"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="3M1-O3-UOL"/>
+                                    <constraint firstAttribute="width" constant="60" id="4vO-Ti-21U"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="取消置换"/>
                             </button>
                         </subviews>
                         <animations/>
@@ -79,8 +87,10 @@
                             <constraint firstAttribute="trailing" secondItem="W2t-Fb-RTH" secondAttribute="trailing" constant="15" id="SLz-qG-6Pj"/>
                             <constraint firstItem="QDE-55-hqc" firstAttribute="top" secondItem="HOb-CO-YP0" secondAttribute="top" constant="8" id="cUi-Q6-r7b"/>
                             <constraint firstAttribute="bottom" secondItem="L5v-bM-k0b" secondAttribute="bottom" constant="10" id="gNp-Bs-RRl"/>
+                            <constraint firstItem="L5v-bM-k0b" firstAttribute="leading" secondItem="wc3-kZ-bNY" secondAttribute="trailing" constant="8" id="moG-7t-Gs4"/>
                             <constraint firstAttribute="trailing" secondItem="L5v-bM-k0b" secondAttribute="trailing" constant="15" id="vf1-ht-GKZ"/>
                             <constraint firstItem="LRB-O0-SdP" firstAttribute="top" secondItem="W2t-Fb-RTH" secondAttribute="bottom" constant="2" id="voD-iF-wbh"/>
+                            <constraint firstItem="wc3-kZ-bNY" firstAttribute="centerY" secondItem="L5v-bM-k0b" secondAttribute="centerY" id="wQK-fx-4A8"/>
                             <constraint firstItem="QDE-55-hqc" firstAttribute="leading" secondItem="HOb-CO-YP0" secondAttribute="leading" constant="8" id="wfZ-gR-6hp"/>
                             <constraint firstItem="L5v-bM-k0b" firstAttribute="leading" secondItem="lQD-JR-5e2" secondAttribute="trailing" constant="10" id="yVq-6m-gYZ"/>
                             <constraint firstItem="lQD-JR-5e2" firstAttribute="top" secondItem="LRB-O0-SdP" secondAttribute="bottom" constant="14" id="ym0-ah-czX"/>
@@ -100,12 +110,13 @@
             <connections>
                 <outlet property="activityImg" destination="QDE-55-hqc" id="z1B-oJ-QoL"/>
                 <outlet property="backView" destination="HOb-CO-YP0" id="Wsc-Ee-Bog"/>
+                <outlet property="cancelBtn" destination="wc3-kZ-bNY" id="eAU-xo-o7T"/>
                 <outlet property="checkBtn" destination="L5v-bM-k0b" id="V9U-5T-Ig2"/>
                 <outlet property="subLabel" destination="lQD-JR-5e2" id="2zj-G0-ZO5"/>
                 <outlet property="timeLabel" destination="LRB-O0-SdP" id="kbZ-ni-8AC"/>
                 <outlet property="titleLabel" destination="W2t-Fb-RTH" id="aC8-5A-LiU"/>
             </connections>
-            <point key="canvasLocation" x="194" y="205.5"/>
+            <point key="canvasLocation" x="-177" y="176.5"/>
         </tableViewCell>
     </objects>
 </document>

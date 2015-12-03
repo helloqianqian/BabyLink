@@ -27,21 +27,50 @@ typedef  enum : NSUInteger {
     autoPositionType,
     indexSearchType,
     
+    getCityType,
+    
     //活动相关
     actListType,
     actInfoType,
     commentActType,
     signInActType,
-    actLaunchType,//
-    actJoinedType,//
-    addActType,//
+    actLaunchType,
+    actJoinedType,
+    addActType,
+    cancelActType,
     
     //话题相关
     talkListType,
-    addTalkType,//
-    editTalkType,//
     commentTalkType,
     deleteTalkType,
+    addTalkType,
+    editTalkType,//
+    
+    
+    //置换相关
+    exchangeListType,
+    exchangeInfoType,
+    exhangeMyListType,
+    addExchangeType,
+    finishExchangeType,
+    exchangeType,
+    cancelExchangeType,
+    myExchangeListType,
+    
+    
+    //link相关
+    addXiuType,
+    addCommentType,
+    xiuLinkType,
+    xiuType,
+    myXiuType,
+    addFriendType,
+    xiuFriendType,
+    xiuDeleteType,
+    xiuNeighborType,
+    xiuShareType,
+    xiuZanType,
+    xiuFansType,
     
 }HttpUrlType;
 
@@ -54,4 +83,6 @@ typedef  enum : NSUInteger {
 
 +(void)uploadUserIconWithImageData:(NSDictionary*)imageDic withResult:(resultBlock)resultBlock withFailure:(FailureBlock)failureBlock withUploadProgress:(void (^)(float progress))progressBlock;
 
+
++(void)uploadUserIconWithImageData:(NSArray*)imageArray withUrl:(NSString *)url withResult:(resultBlock)resultBlock withFailure:(FailureBlock)failureBlock withUploadProgress:(void (^)(float progress))progressBlock;
 @end

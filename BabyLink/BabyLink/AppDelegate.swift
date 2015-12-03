@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         self.checkLastLoginUser()
         self.addShareSDK()
+        self.window?.backgroundColor = hexRGB(0xF8CFE1);
         return true
     }
 
@@ -72,6 +73,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
     }
+    func exchangeRootViewController(login:Bool){
+        SVProgressHUD.setBackgroundColor(UIColor(red: 0, green: 0, blue: 0, alpha: 0.8))
+        SVProgressHUD.setForegroundColor(UIColor.whiteColor())
+        SVProgressHUD.setFont(UIFont.boldSystemFontOfSize(15.0))
+        
+        if login {
+            let tabBar = UIBaseTabBarController(nibName: "UIBaseTabBarController", bundle: NSBundle.mainBundle());
+            mainTabBar = tabBar;
+            let nav = UIBaseNavViewController(rootViewController: tabBar);
+            nav.setNavigationBarStyleLight();
+            self.window?.rootViewController = nav
+        } else {
+            let enterVC = UIEnterViewController(nibName: "UIEnterViewController", bundle: NSBundle.mainBundle());
+            let nav = UIBaseNavViewController(rootViewController: enterVC);
+            nav.setNavigationBarStyleDark();
+            self.window?.rootViewController = nav
+        }
+    }
     
     func checkLastLoginUser(){
         let  def:NSUserDefaults = NSUserDefaults.standardUserDefaults();
@@ -97,23 +116,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSUserInfo.shareInstance().islogin = lastLogin;
         self.exchangeRootViewController(lastLogin)
     }
-    func exchangeRootViewController(login:Bool){
-        SVProgressHUD.setBackgroundColor(UIColor(red: 0, green: 0, blue: 0, alpha: 0.8))
-        SVProgressHUD.setForegroundColor(UIColor.whiteColor())
-        SVProgressHUD.setFont(UIFont.boldSystemFontOfSize(15.0))
-        
-        if login {
-            let tabBar = UIBaseTabBarController.init(nibName: "UIBaseTabBarController", bundle: NSBundle.mainBundle());
-            let nav = UIBaseNavViewController.init(rootViewController: tabBar);
-            nav.setNavigationBarStyleLight();
-            self.window?.rootViewController = nav
-        } else {
-            let enterVC = UIEnterViewController.init(nibName: "UIEnterViewController", bundle: NSBundle.mainBundle());
-            let nav = UIBaseNavViewController.init(rootViewController: enterVC);
-            nav.setNavigationBarStyleDark();
-            self.window?.rootViewController = nav
-        }
-    }
+    
     func recordLastLoginUser(){
         let userDefault = NSUserDefaults.standardUserDefaults()
         userDefault.setBool(true, forKey: ISLOGIN)

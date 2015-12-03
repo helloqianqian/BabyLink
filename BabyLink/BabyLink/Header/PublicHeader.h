@@ -16,6 +16,8 @@
 //DC5055
 #define RedBtnColor [UIColor colorWithRed:0XDC/255. green:0X50/255. blue:0X55/255. alpha:1]
 
+#define LightRedBtnColor RGBCOLOR(0xE28084)
+
 #define DarkGrayBtnColor RGBCOLOR(0x8F9091)
 
 #define GrayBorderColor RGBCOLOR(0xACACB4)

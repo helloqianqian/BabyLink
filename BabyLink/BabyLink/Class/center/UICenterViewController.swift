@@ -36,11 +36,20 @@ class UICenterViewController: UIBaseViewController ,UITableViewDelegate,UITableV
         blurEffectView.effect = UIBlurEffect(style: UIBlurEffectStyle.Light)
         blurEffectionView2.effect = UIBlurEffect(style: UIBlurEffectStyle.Light)
         
+        headImageView.layer.cornerRadius = 30;
+        headImageView.layer.masksToBounds = true;
+        headImageView.sd_setImageWithURL(NSURL(string: NSUserInfo.shareInstance().member_avar), placeholderImage: UIImage(named: "morentoux"))
+        
+        userName.text = NSUserInfo.shareInstance().member_name;
+        
         listTableView.registerNib(UINib(nibName: "UICenterTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "centerCellIndentifier")
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
+        if centerHeadIconLoad {
+            centerHeadIconLoad = false;
+            headImageView.sd_setImageWithURL(NSURL(string: NSUserInfo.shareInstance().member_avar), placeholderImage: UIImage(named: "morentoux"))
+        }
     }
     
     override func viewDidAppear(animated: Bool) {

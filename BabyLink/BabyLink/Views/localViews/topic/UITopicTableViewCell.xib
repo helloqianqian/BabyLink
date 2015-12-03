@@ -90,6 +90,18 @@
                                     <constraint firstAttribute="height" constant="60" id="M7Y-7O-DjA"/>
                                 </constraints>
                             </tableView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sm-0b-NJ3">
+                                <rect key="frame" x="299" y="378" width="50" height="25"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="K1H-FS-lJ3"/>
+                                    <constraint firstAttribute="width" constant="50" id="KTQ-6g-7iT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="删除">
+                                    <color key="titleColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -103,9 +115,11 @@
                             <constraint firstItem="NTf-Eg-iFS" firstAttribute="top" secondItem="8E7-12-TMk" secondAttribute="top" constant="10" id="ac8-Rp-rxS"/>
                             <constraint firstItem="NTf-Eg-iFS" firstAttribute="leading" secondItem="fef-IV-cLH" secondAttribute="trailing" constant="13" id="b6I-Es-lys"/>
                             <constraint firstItem="CYF-kF-g72" firstAttribute="top" secondItem="NTf-Eg-iFS" secondAttribute="bottom" constant="3" id="cUA-Cu-bt0"/>
+                            <constraint firstAttribute="bottom" secondItem="7sm-0b-NJ3" secondAttribute="bottom" constant="14" id="g8M-4A-XqO"/>
                             <constraint firstItem="fef-IV-cLH" firstAttribute="top" secondItem="8E7-12-TMk" secondAttribute="top" constant="10" id="hgH-V2-oID"/>
                             <constraint firstItem="soV-OR-wBd" firstAttribute="leading" secondItem="8E7-12-TMk" secondAttribute="leading" constant="58" id="jGA-hz-U6D"/>
                             <constraint firstAttribute="trailing" secondItem="RQt-YK-6lK" secondAttribute="trailing" constant="20" id="mfK-UC-936"/>
+                            <constraint firstAttribute="trailing" secondItem="7sm-0b-NJ3" secondAttribute="trailing" constant="20" id="mkx-Bx-PoC"/>
                             <constraint firstItem="QL2-kG-Bbh" firstAttribute="top" secondItem="CYF-kF-g72" secondAttribute="bottom" constant="10" id="o0D-cA-cgu"/>
                             <constraint firstItem="QL2-kG-Bbh" firstAttribute="leading" secondItem="8E7-12-TMk" secondAttribute="leading" constant="58" id="pzJ-oC-c5b"/>
                             <constraint firstItem="ZE7-NO-dZ9" firstAttribute="leading" secondItem="8E7-12-TMk" secondAttribute="leading" constant="58" id="qO6-QI-JHt"/>
@@ -130,6 +144,7 @@
                 <outlet property="collectionView" destination="QL2-kG-Bbh" id="5Zg-Df-Gay"/>
                 <outlet property="commentBtn" destination="RQt-YK-6lK" id="VVS-MJ-fZJ"/>
                 <outlet property="contentLabel" destination="CYF-kF-g72" id="IAe-Y0-cVd"/>
+                <outlet property="deleteBtn" destination="7sm-0b-NJ3" id="Tb8-d3-dou"/>
                 <outlet property="headIcon" destination="fef-IV-cLH" id="EhD-AK-WLe"/>
                 <outlet property="heightOfCollection" destination="kvP-oa-LHt" id="HO0-DB-txS"/>
                 <outlet property="heightOfLabel" destination="1D0-8d-US4" id="O1k-cn-ytl"/>
@@ -138,7 +153,7 @@
                 <outlet property="nameLabel" destination="NTf-Eg-iFS" id="Z6L-KY-6Vv"/>
                 <outlet property="timeLabel" destination="ZE7-NO-dZ9" id="CAO-m5-DvX"/>
             </connections>
-            <point key="canvasLocation" x="-371.5" y="-68.25"/>
+            <point key="canvasLocation" x="-596.5" y="-152.25"/>
         </tableViewCell>
     </objects>
     <resources>

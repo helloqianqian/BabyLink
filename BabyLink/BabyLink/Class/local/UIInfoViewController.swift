@@ -14,6 +14,7 @@ class UIInfoViewController: UIBaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.title = "各种详情"
     }
 
     override func didReceiveMemoryWarning() {

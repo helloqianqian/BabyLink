@@ -45,7 +45,7 @@
                         <action selector="friendslist:" destination="-1" eventType="touchUpInside" id="LQ8-p2-zoD"/>
                     </connections>
                 </button>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="grouped" separatorStyle="default" rowHeight="50" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="GkL-kU-Rcc">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="grouped" separatorStyle="default" rowHeight="46" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="GkL-kU-Rcc">
                     <rect key="frame" x="0.0" y="43" width="320" height="437"/>
                     <animations/>
                     <color key="backgroundColor" red="0.92941176469999998" green="0.93333333330000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -66,7 +66,7 @@
                 <constraint firstItem="WsM-sy-UvA" firstAttribute="leading" secondItem="Rlc-aa-f80" secondAttribute="trailing" constant="3" id="yEi-Nl-Pd1"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-26" y="279"/>
+            <point key="canvasLocation" x="-140" y="216"/>
         </view>
     </objects>
 </document>

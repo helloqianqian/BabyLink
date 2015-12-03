@@ -16,45 +16,63 @@ class UIMyActTableViewCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var subLabel: UILabel!
     @IBOutlet weak var checkBtn: UIButton!
+    @IBOutlet weak var cancelBtn: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         backView.layer.cornerRadius = 4;
         backView.layer.masksToBounds = true;
-//        checkBtn.makeBackGroundColor_Purple();
     }
 
-    func setActivityData(indexPath:NSIndexPath){
-        checkBtn.enabled = false;
-        if indexPath.row > 4 {
-            checkBtn.makeBackGroundColor_DarkGray();
-            checkBtn.setTitle("已结束", forState: UIControlState.Normal)
-            subLabel.hidden = true;
-        } else {
+    func setActivityData(actModel:NSActListObject){
+        cancelBtn.hidden = true;
+        checkBtn.userInteractionEnabled = false;
+        if actModel.status == 1 {
             checkBtn.makeBackGroundColor_Purple();
-            checkBtn.setTitle("进行中", forState: UIControlState.Normal)
-            subLabel.hidden = false;
+        } else {
+            checkBtn.makeBackGroundColor_DarkGray();
         }
+        checkBtn.setTitle(actModel.status_desc, forState: UIControlState.Normal)
+        activityImg.sd_setImageWithURL(NSURL(string: actModel.image_url), placeholderImage: nil);
+        titleLabel.text = actModel.title;
+        timeLabel.text = actModel.jihe_time;
+        subLabel.hidden = true;
     }
     
-    func setShowData(indexPath:NSIndexPath){
-        titleLabel.text = "大家看看这种照片"
+    func setShowData(xiu:NSXiu){
+        activityImg.sd_setImageWithURL(NSURL(string: xiu.image_url), placeholderImage: nil);
+        titleLabel.text = xiu.info;
         timeLabel.hidden = true;
         subLabel.hidden = true;
+        cancelBtn.hidden = true;
         checkBtn.makeBackGroundColor_Purple();
+        checkBtn.userInteractionEnabled = false;
         checkBtn.setTitle("查看详情", forState: UIControlState.Normal)
     }
-    func setExchangeData(indexPath:NSIndexPath){
-        checkBtn.enabled = false;
-        titleLabel.text = "玩具一个";
+    func setExchangeData(exchange:NSExchange){
         subLabel.hidden = true;
-        if indexPath.row > 4 {
-            checkBtn.makeBackGroundColor_DarkGray();
-            checkBtn.setTitle("置换完成", forState: UIControlState.Normal)
-        } else {
+        activityImg.sd_setImageWithURL(NSURL(string: exchange.image_url), placeholderImage: nil)
+        titleLabel.text = exchange.from_gname;
+        timeLabel.text = exchange.add_time;
+        if exchange.status == "0" {
+            checkBtn.hidden = true;
+            cancelBtn.hidden = true;
+        } else if exchange.status == "1" {
+            checkBtn.hidden = false;
+            checkBtn.enabled = true;
+            cancelBtn.hidden = false;
             checkBtn.makeBackGroundColor_Purple();
-            checkBtn.setTitle("待确认", forState: UIControlState.Normal)
+            checkBtn.setTitle("置换完成", forState: UIControlState.Normal);
+            cancelBtn.makeBackGroundColor_Purple();
+            cancelBtn.setTitle("取消置换", forState: UIControlState.Normal)
+        } else {
+            cancelBtn.hidden = true;
+            
+            checkBtn.enabled = false;
+            checkBtn.hidden = false;
+            checkBtn.makeBackGroundColor_DarkGray()
+            checkBtn.setTitle("置换完成", forState: UIControlState.Normal);
         }
     }
     func setTopicData(indexPath:NSIndexPath){

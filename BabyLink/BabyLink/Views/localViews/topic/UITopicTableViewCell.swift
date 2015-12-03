@@ -12,8 +12,9 @@ import UIKit
     optional func didSelectComment(infoModel:NSTalkCommentObject);
 }
 
-class UITopicTableViewCell: UITableViewCell ,UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource{
+class UITopicTableViewCell: UITableViewCell ,UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource,ZLPhotoPickerBrowserViewControllerDataSource,ZLPhotoPickerBrowserViewControllerDelegate{
 
+    @IBOutlet weak var deleteBtn: UIButton!
     @IBOutlet weak var heightOfLabel: NSLayoutConstraint!
     @IBOutlet weak var heightOfCollection: NSLayoutConstraint!
     @IBOutlet weak var heightOfTable: NSLayoutConstraint!
@@ -32,6 +33,7 @@ class UITopicTableViewCell: UITableViewCell ,UITableViewDelegate,UITableViewData
     
     @IBOutlet weak var listTableView: UITableView!
     weak var delegate:UITalkCommentDelegate!;
+    var superVC:UIBaseViewController!;
     var talkModel:NSTalk! = NSTalk();
     var indexRow = -1;
     override func awakeFromNib() {
@@ -39,6 +41,9 @@ class UITopicTableViewCell: UITableViewCell ,UITableViewDelegate,UITableViewData
         // Initialization code
         backView.layer.masksToBounds = true;
         backView.layer.cornerRadius = 4;
+        
+        headIcon.layer.cornerRadius = 3;
+        headIcon.layer.masksToBounds = true;
         
         listTableView.delegate=self;
         listTableView.dataSource = self;
@@ -61,8 +66,8 @@ class UITopicTableViewCell: UITableViewCell ,UITableViewDelegate,UITableViewData
         headIcon.sd_setImageWithURL(NSURL(string: model.member_avar), placeholderImage: UIImage(named: "morentoux"))
         nameLabel.text = model.member_name;
         contentLabel.text = model.info;
-        let infoSize = (model.info as NSString).sizeWithConstrainedToWidth(Float(MainScreenWidth-71), fromFont: UIFont.systemFontOfSize(13), lineSpace: 2.5)
-        heightOfLabel.constant = infoSize.height;
+        let infoSize = (model.info as NSString).sizeWithConstrainedToWidth(Float(MainScreenWidth-80), fromFont: UIFont.systemFontOfSize(13), lineSpace: 3)
+        heightOfLabel.constant = infoSize.height+5;
         timeLabel.text = model.add_time;
         heightOfTable.constant = self.talkModel.tableViewHeight;
         self.talkModel.images_url.count
@@ -120,7 +125,28 @@ class UITopicTableViewCell: UITableViewCell ,UITableViewDelegate,UITableViewData
         return cell;
     }
     
-        
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let pickerBrowser = ZLPhotoPickerBrowserViewController()
+        pickerBrowser.delegate = self;
+        pickerBrowser.dataSource = self;
+        pickerBrowser.editing = false;
+        pickerBrowser.currentIndexPath = indexPath;
+        pickerBrowser.showPickerVc(self.superVC);
+    }
+    func numberOfSectionInPhotosInPickerBrowser(pickerBrowser: ZLPhotoPickerBrowserViewController!) -> Int {
+        return 1;
+    }
+    func photoBrowser(photoBrowser: ZLPhotoPickerBrowserViewController!, numberOfItemsInSection section: UInt) -> Int {
+        return self.talkModel.images_url.count;
+    }
+    func photoBrowser(pickerBrowser: ZLPhotoPickerBrowserViewController!, photoAtIndexPath indexPath: NSIndexPath!) -> ZLPhotoPickerBrowserPhoto! {
+        let imageUrl = self.talkModel.images_url[indexPath.row] as! String
+        let photo = ZLPhotoPickerBrowserPhoto(anyImageObjWith: imageUrl);
+        let cell = self.collectionView.cellForItemAtIndexPath(indexPath) as! TopicImageCollectionViewCell;
+        photo.toView = cell.contentImage;
+        photo.thumbImage = cell.contentImage.image;
+        return photo;
+    }
     
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

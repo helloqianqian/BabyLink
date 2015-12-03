@@ -16,9 +16,13 @@
 #import "NSResidence.h"
 #import "NSActivity.h"
 #import "NSTalk.h"
+#import "NSExchange.h"
+#import "NSXiu.h"
+#import "NSFriendObject.h"
 
 //http
 #import "NSHttpHelp.h"
+#import "NSHttpModel.h"
 
 
 //tool
@@ -26,6 +30,7 @@
 #import "SVProgressHUD.h"
 #import "TAPageControl.h"
 #import "YFInputBar.h"
+#import "ZLPhoto.h"
 
 #import "UIImageView+WebCache.h"
 #import "UIButton+WebCache.h"

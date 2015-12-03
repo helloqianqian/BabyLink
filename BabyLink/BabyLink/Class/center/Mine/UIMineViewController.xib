@@ -10,6 +10,7 @@
                 <outlet property="activityBtn" destination="ocm-Ge-UHB" id="cx8-YK-7mq"/>
                 <outlet property="backImage" destination="Bj7-dh-dPa" id="iWC-DX-7kN"/>
                 <outlet property="exchangeBtn" destination="F6o-Q9-dMH" id="G4A-F1-PDu"/>
+                <outlet property="fansBtn" destination="c6C-Ye-Sex" id="4kL-Is-XGu"/>
                 <outlet property="friendsBtn" destination="i7T-Ff-CYq" id="ATq-rf-fE9"/>
                 <outlet property="headIcon" destination="SMC-lo-wrQ" id="Nh2-Zi-p6b"/>
                 <outlet property="nameLabel" destination="B1d-Lj-AFs" id="MyG-Nx-3Ij"/>
@@ -23,10 +24,9 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bj7-dh-dPa">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="我的主页背景图" translatesAutoresizingMaskIntoConstraints="NO" id="Bj7-dh-dPa">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
                     <animations/>
-                    <color key="backgroundColor" red="0.65490196079999996" green="0.84705882349999995" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="160" id="bEZ-yF-CCu"/>
                     </constraints>
@@ -34,20 +34,19 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SMC-lo-wrQ">
                     <rect key="frame" x="128" y="35" width="64" height="64"/>
                     <animations/>
-                    <color key="backgroundColor" red="0.93725490199999995" green="0.058823529409999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="64" id="DLp-ER-F7g"/>
                         <constraint firstAttribute="width" constant="64" id="fIO-CG-KUk"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户名称" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1d-Lj-AFs">
-                    <rect key="frame" x="105" y="104" width="110" height="22"/>
+                    <rect key="frame" x="0.0" y="104" width="320" height="22"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="22" id="33h-rO-k5A"/>
-                        <constraint firstAttribute="width" constant="110" id="pcl-K7-swv"/>
+                        <constraint firstAttribute="width" constant="320" id="pcl-K7-swv"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -62,13 +61,12 @@
                         <action selector="enterActivityPage:" destination="-1" eventType="touchUpInside" id="Y72-Mq-ifB"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ra7-vJ-Co8">
-                    <rect key="frame" x="60" y="196" width="30" height="23"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="活动" translatesAutoresizingMaskIntoConstraints="NO" id="Ra7-vJ-Co8">
+                    <rect key="frame" x="62" y="196" width="25" height="17"/>
                     <animations/>
-                    <color key="backgroundColor" red="0.93725490199999995" green="0.058823529409999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="23" id="NcQ-bz-mKa"/>
-                        <constraint firstAttribute="width" constant="30" id="PTv-XJ-tnu"/>
+                        <constraint firstAttribute="height" constant="17" id="NcQ-bz-mKa"/>
+                        <constraint firstAttribute="width" constant="25" id="PTv-XJ-tnu"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的活动" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="546-P7-RiV">
@@ -93,13 +91,12 @@
                         <action selector="enterTopicPage:" destination="-1" eventType="touchUpInside" id="MeE-af-GLo"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8ek-an-Hda">
-                    <rect key="frame" x="144" y="196" width="32" height="23"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="话题" translatesAutoresizingMaskIntoConstraints="NO" id="8ek-an-Hda">
+                    <rect key="frame" x="149" y="196" width="21" height="20"/>
                     <animations/>
-                    <color key="backgroundColor" red="0.93725490199999995" green="0.058823529409999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="32" id="MZJ-Ov-Su5"/>
-                        <constraint firstAttribute="height" constant="23" id="iU0-pe-XqS"/>
+                        <constraint firstAttribute="width" constant="21" id="MZJ-Ov-Su5"/>
+                        <constraint firstAttribute="height" constant="20" id="iU0-pe-XqS"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的话题" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJq-Wj-uG1">
@@ -124,13 +121,12 @@
                         <action selector="enterExchangeBtn:" destination="-1" eventType="touchUpInside" id="C3a-xy-DM6"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8sn-kj-fGU">
-                    <rect key="frame" x="229" y="196" width="31" height="23"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="置换" translatesAutoresizingMaskIntoConstraints="NO" id="8sn-kj-fGU">
+                    <rect key="frame" x="235" y="196" width="20" height="20"/>
                     <animations/>
-                    <color key="backgroundColor" red="0.93725490199999995" green="0.058823529409999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="23" id="Vhh-d8-gOK"/>
-                        <constraint firstAttribute="width" constant="31" id="c8j-pq-hx5"/>
+                        <constraint firstAttribute="height" constant="20" id="Vhh-d8-gOK"/>
+                        <constraint firstAttribute="width" constant="20" id="c8j-pq-hx5"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的置换" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZTn-UU-zk7">
@@ -155,13 +151,12 @@
                         <action selector="enterShowPage:" destination="-1" eventType="touchUpInside" id="xlf-BE-pYr"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m2x-cP-AZ8">
-                    <rect key="frame" x="60" y="281" width="30" height="21"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="秀逗" translatesAutoresizingMaskIntoConstraints="NO" id="m2x-cP-AZ8">
+                    <rect key="frame" x="63" y="281" width="24" height="20"/>
                     <animations/>
-                    <color key="backgroundColor" red="0.93725490199999995" green="0.058823529409999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="30" id="edN-dQ-9ZT"/>
-                        <constraint firstAttribute="height" constant="21" id="roZ-i2-uG3"/>
+                        <constraint firstAttribute="width" constant="24" id="edN-dQ-9ZT"/>
+                        <constraint firstAttribute="height" constant="20" id="roZ-i2-uG3"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的秀逗" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JPs-UB-HTX">
@@ -186,13 +181,12 @@
                         <action selector="enterFriendsPage:" destination="-1" eventType="touchUpInside" id="IS1-I5-KkY"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BgH-TC-aQe">
-                    <rect key="frame" x="144" y="281" width="32" height="21"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="好友" translatesAutoresizingMaskIntoConstraints="NO" id="BgH-TC-aQe">
+                    <rect key="frame" x="152" y="281" width="16" height="20"/>
                     <animations/>
-                    <color key="backgroundColor" red="0.93725490199999995" green="0.058823529409999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="21" id="2v2-xy-KgH"/>
-                        <constraint firstAttribute="width" constant="32" id="shH-fV-MKU"/>
+                        <constraint firstAttribute="height" constant="20" id="2v2-xy-KgH"/>
+                        <constraint firstAttribute="width" constant="16" id="shH-fV-MKU"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的好友" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0F-1K-R7i">
@@ -206,16 +200,51 @@
                     <color key="textColor" red="0.38823529410000002" green="0.4039215686" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6C-Ye-Sex">
+                    <rect key="frame" x="220" y="271" width="50" height="55"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="lVD-gy-02k"/>
+                        <constraint firstAttribute="height" constant="55" id="yvs-eI-X2M"/>
+                    </constraints>
+                    <connections>
+                        <action selector="enterFansPage:" destination="-1" eventType="touchUpInside" id="gL9-t2-ESR"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="粉丝" translatesAutoresizingMaskIntoConstraints="NO" id="vFU-tO-m4o">
+                    <rect key="frame" x="235" y="281" width="21" height="20"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="21" id="2gC-Rr-hFw"/>
+                        <constraint firstAttribute="height" constant="20" id="IFC-pD-Div"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的粉丝" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z61-1u-Wzf">
+                    <rect key="frame" x="220" y="312" width="50" height="14"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="4gN-91-Oqn"/>
+                        <constraint firstAttribute="height" constant="14" id="5tm-q4-2zr"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.38823529410000002" green="0.4039215686" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <animations/>
             <color key="backgroundColor" red="0.92941176469999998" green="0.93333333330000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="Bj7-dh-dPa" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="0L5-Qx-eDg"/>
                 <constraint firstItem="ZTn-UU-zk7" firstAttribute="centerX" secondItem="F6o-Q9-dMH" secondAttribute="centerX" id="2uu-6N-5lZ"/>
+                <constraint firstItem="z61-1u-Wzf" firstAttribute="bottom" secondItem="c6C-Ye-Sex" secondAttribute="bottom" id="3Mq-gA-Hr6"/>
                 <constraint firstItem="B1d-Lj-AFs" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3tz-rZ-Sak"/>
+                <constraint firstItem="c6C-Ye-Sex" firstAttribute="centerY" secondItem="i7T-Ff-CYq" secondAttribute="centerY" id="4JV-cM-8jx"/>
                 <constraint firstItem="8ek-an-Hda" firstAttribute="top" secondItem="oTd-J2-dV1" secondAttribute="top" constant="10" id="4kz-w0-gbK"/>
+                <constraint firstItem="c6C-Ye-Sex" firstAttribute="centerX" secondItem="F6o-Q9-dMH" secondAttribute="centerX" id="5x0-Bq-Zxu"/>
                 <constraint firstItem="oTd-J2-dV1" firstAttribute="top" secondItem="Bj7-dh-dPa" secondAttribute="bottom" constant="26" id="6xe-3b-dz8"/>
                 <constraint firstItem="aJq-Wj-uG1" firstAttribute="centerX" secondItem="oTd-J2-dV1" secondAttribute="centerX" id="9Le-Sq-Lra"/>
+                <constraint firstItem="vFU-tO-m4o" firstAttribute="top" secondItem="c6C-Ye-Sex" secondAttribute="top" constant="10" id="B1I-ZK-xnE"/>
+                <constraint firstItem="z61-1u-Wzf" firstAttribute="centerX" secondItem="c6C-Ye-Sex" secondAttribute="centerX" id="BaJ-Li-bfb"/>
                 <constraint firstItem="546-P7-RiV" firstAttribute="centerX" secondItem="ocm-Ge-UHB" secondAttribute="centerX" id="CpL-V0-FYa"/>
                 <constraint firstItem="m2x-cP-AZ8" firstAttribute="centerX" secondItem="roc-Da-cmp" secondAttribute="centerX" id="DTC-jP-mCl"/>
                 <constraint firstItem="8sn-kj-fGU" firstAttribute="centerX" secondItem="F6o-Q9-dMH" secondAttribute="centerX" id="GUY-8W-VpC"/>
@@ -223,6 +252,7 @@
                 <constraint firstItem="546-P7-RiV" firstAttribute="bottom" secondItem="ocm-Ge-UHB" secondAttribute="bottom" id="LkX-Ng-mb7"/>
                 <constraint firstItem="oTd-J2-dV1" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="MOu-7Z-a4n"/>
                 <constraint firstAttribute="trailing" secondItem="Bj7-dh-dPa" secondAttribute="trailing" id="Meq-m7-avQ"/>
+                <constraint firstItem="vFU-tO-m4o" firstAttribute="centerX" secondItem="c6C-Ye-Sex" secondAttribute="centerX" id="Pfr-h4-kv1"/>
                 <constraint firstItem="B1d-Lj-AFs" firstAttribute="top" secondItem="SMC-lo-wrQ" secondAttribute="bottom" constant="5" id="Qer-qn-A64"/>
                 <constraint firstItem="BgH-TC-aQe" firstAttribute="top" secondItem="i7T-Ff-CYq" secondAttribute="top" constant="10" id="QmF-Vf-nd9"/>
                 <constraint firstItem="aJq-Wj-uG1" firstAttribute="bottom" secondItem="oTd-J2-dV1" secondAttribute="bottom" id="SZ0-Ad-4FH"/>
@@ -249,7 +279,16 @@
                 <constraint firstItem="SMC-lo-wrQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="35" id="zfw-UR-9rw"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="234" y="299"/>
+            <point key="canvasLocation" x="13" y="310"/>
         </view>
     </objects>
+    <resources>
+        <image name="好友" width="16" height="20"/>
+        <image name="我的主页背景图" width="375" height="233"/>
+        <image name="活动" width="25" height="17"/>
+        <image name="秀逗" width="24" height="20"/>
+        <image name="粉丝" width="21" height="20"/>
+        <image name="置换" width="20" height="20"/>
+        <image name="话题" width="21" height="20"/>
+    </resources>
 </document>

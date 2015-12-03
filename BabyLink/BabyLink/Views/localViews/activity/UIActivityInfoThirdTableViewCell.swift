@@ -14,8 +14,9 @@ class UIActivityInfoThirdTableViewCell: UITableViewCell ,UICollectionViewDataSou
     @IBOutlet weak var joinNumLabel: UILabel!
     
     @IBOutlet weak var joinCollectionView: UICollectionView!
+    @IBOutlet weak var arrowImg:UIButton!
     
-    @IBOutlet weak var widthofcell: NSLayoutConstraint!
+    
     var model:NSActInfoObject! = NSActInfoObject();
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,13 +26,14 @@ class UIActivityInfoThirdTableViewCell: UITableViewCell ,UICollectionViewDataSou
         
         joinCollectionView.dataSource = self;
         joinCollectionView.registerNib(UINib(nibName: "UIPeopleCollectionViewCell", bundle: NSBundle.mainBundle()), forCellWithReuseIdentifier: "peopleCellIdentifier")
-        if iphone6Plus || iphone6{
-            widthofcell.constant = 324;
-        }
-        
     }
 
-    func setContentData(infoModel:NSActInfoObject){
+    func setContentData(infoModel:NSActInfoObject,withType enterTag:Int){
+        if enterTag == 1 {
+            arrowImg.hidden = false;
+        } else {
+            arrowImg.hidden = true;
+        }
         self.model = infoModel;
         let text = "参与人数（\(infoModel.count)人）" as NSString
         joinNumLabel.attributedText = text.switchContentWithFonts([UIFont.systemFontOfSize(13)], withRanges: [NSStringFromRange(NSMakeRange(5, text.length-6))], withColors: [SPurpleBtnColor])

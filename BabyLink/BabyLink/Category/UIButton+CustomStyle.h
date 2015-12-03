@@ -19,7 +19,7 @@
  *  登录，注册，完善信息，我要报名
  */
 -(void)makeBackGroundColor_Red;
-
+-(void)makeBackGroundColor_LightRed;
 
 /**
  *  发现中分类

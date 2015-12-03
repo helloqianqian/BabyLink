@@ -15,6 +15,8 @@ class UIPeopleCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        headIcon.layer.cornerRadius = 3;
+        headIcon.layer.masksToBounds = true;
     }    
     func setContentData(log:NSLogListObject){
         nameLabel.text = log.member_name;

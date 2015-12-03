@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UIRegistViewController: UIBaseViewController {
+class UIRegistViewController: UIBaseViewController ,UITextFieldDelegate{
 
     @IBOutlet weak var backView1: UIView!
     @IBOutlet weak var backView2: UIView!
@@ -30,6 +30,9 @@ class UIRegistViewController: UIBaseViewController {
         self.navigationItem.title = "注册"
         // Do any additional setup after loading the view.
         self.setUI();
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil);
     }
     
     func setUI(){
@@ -83,7 +86,6 @@ class UIRegistViewController: UIBaseViewController {
             NSHelper.showAlertViewWithTip("两次密码输入不一致");
             return;
         }
-        self.endEditing()
         let dicParam:NSDictionary = NSDictionary(objects: [self.phoneNum.text!,self.verticalNum.text!,self.keyField.text!] , forKeys: ["mobile","code","password"]);
         SVProgressHUD.showWithStatus("正在注册")
         NSHttpHelp.httpHelpWithUrlTpye(registerType, withParam: dicParam, withResult: { (returnObject:AnyObject!) -> Void in
@@ -98,8 +100,8 @@ class UIRegistViewController: UIBaseViewController {
                 NSUserInfo.shareInstance().mobile = self.phoneNum.text;
                 NSUserInfo.shareInstance().password = self.keyField.text;
                 NSUserInfo.shareInstance().islogin = false;
-                
-                let infoVC = UIFullInfoViewController.init(nibName:"UIFullInfoViewController",bundle:NSBundle.mainBundle());
+        
+                let infoVC = UIFullInfoViewController(nibName:"UIFullInfoViewController",bundle:NSBundle.mainBundle());
                 self.navigationController?.pushViewController(infoVC, animated: true);
             } else {
                 //发送失败
@@ -112,7 +114,7 @@ class UIRegistViewController: UIBaseViewController {
     }
 
     @IBAction func agreementEnter(sender: AnyObject) {
-        let agreementVC = UIAgreementViewController.init(nibName:"UIAgreementViewController", bundle:NSBundle.mainBundle());
+        let agreementVC = UIAgreementViewController(nibName:"UIAgreementViewController", bundle:NSBundle.mainBundle());
         self.navigationController?.pushViewController(agreementVC, animated: true);
     }
     @IBAction func getVerticalNum(sender: AnyObject) {
@@ -159,6 +161,29 @@ class UIRegistViewController: UIBaseViewController {
     override func nextFieldEditing(textField: UITextField) {
         super.nextFieldEditing(textField)
         self.confirmKey.becomeFirstResponder();
+    }
+    func keyboardWillShow(notification:NSNotification){
+        self.addGesture();
+    }
+    func keyboardWillHide(notification:NSNotification){
+        self.removeGesture();
+    }
+    func textFieldDidBeginEditing(textField: UITextField) {
+        self.didBeginEditing(textField);
+    }
+    func textFieldDidEndEditing(textField: UITextField) {
+        self.didEndEditing(textField);
+    }
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField.returnKeyType == UIReturnKeyType.Next {
+            self.nextFieldEditing(textField);
+        } else if textField.returnKeyType == UIReturnKeyType.Done {
+            textField.resignFirstResponder()
+        }
+        return true;
+    }
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self);
     }
     /*
     // MARK: - Navigation

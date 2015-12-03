@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UIForgetPWViewController: UIBaseViewController {
+class UIForgetPWViewController: UIBaseViewController ,UITextFieldDelegate{
     @IBOutlet weak var backView1: UIView!
     @IBOutlet weak var backView2: UIView!
     @IBOutlet weak var backView3: UIView!
@@ -31,6 +31,9 @@ class UIForgetPWViewController: UIBaseViewController {
         
         confirmNewKey.delegate = self;
         newKey.delegate = self;
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil);
     }
 
     func setUI(){
@@ -116,7 +119,6 @@ class UIForgetPWViewController: UIBaseViewController {
             NSHelper.showAlertViewWithTip("两次密码输入不一致");
             return;
         }
-        self.endEditing()
         let dicParam:NSDictionary = NSDictionary(objects: [self.phoneNum.text!,self.verticalNum.text!,self.newKey.text!] , forKeys: ["mobile","code","password"]);
         SVProgressHUD.showWithMaskType(SVProgressHUDMaskType.Clear)
         NSHttpHelp.httpHelpWithUrlTpye(forgetPswType, withParam: dicParam, withResult: { (returnObject:AnyObject!) -> Void in
@@ -143,7 +145,30 @@ class UIForgetPWViewController: UIBaseViewController {
         super.nextFieldEditing(textField)
         self.confirmNewKey.becomeFirstResponder();
     }
-
+    
+    func keyboardWillShow(notification:NSNotification){
+        self.addGesture();
+    }
+    func keyboardWillHide(notification:NSNotification){
+        self.removeGesture();
+    }
+    func textFieldDidBeginEditing(textField: UITextField) {
+        self.didBeginEditing(textField);
+    }
+    func textFieldDidEndEditing(textField: UITextField) {
+        self.didEndEditing(textField);
+    }
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField.returnKeyType == UIReturnKeyType.Next {
+            self.nextFieldEditing(textField);
+        } else if textField.returnKeyType == UIReturnKeyType.Done {
+            textField.resignFirstResponder()
+        }
+        return true;
+    }
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self);
+    }
     /*
     // MARK: - Navigation
 

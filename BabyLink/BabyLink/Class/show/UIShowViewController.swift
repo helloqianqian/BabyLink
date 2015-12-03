@@ -19,7 +19,6 @@ class UIShowViewController: UIBaseViewController ,UIShowNavigationViewDelegate{
 
         // Do any additional setup after loading the view.
         titleView = NSBundle.mainBundle().loadNibNamed("UIShowNavigationView", owner: nil, options: nil).first as! UIShowNavigationView;
-        titleView.selectedIndex = 0;
         titleView.delegate = self;
         titleView.frame = CGRectMake(0, 0, MainScreenWidth, 44)
         self.navigationItem.titleView = titleView;
@@ -36,18 +35,31 @@ class UIShowViewController: UIBaseViewController ,UIShowNavigationViewDelegate{
         linkView.frame = viewFrame;
         //        linkView.delegate = self;
         self.view.addSubview(linkView);
+        titleView.selectedIndex = 0;
     }
 
     func didSelectedAtIndex(index: Int) {
         switch index {
         case 0:
             self.view.bringSubviewToFront(linkView)
+            linkView.loadContentData(showLinkLoad);
+            showLinkLoad = false;
             break;
         case 1:
             self.view.bringSubviewToFront(squareView)
+            squareView.loadContentData(showSquareLoad);
+            showSquareLoad = false;
             break;
         default:
             break;
+        }
+    }
+    
+    func reloadTableViewData(){
+        if titleView.selectedIndex == 0 {
+            linkView.reloadTabelView();
+        } else {
+            squareView.reloadTabelView();
         }
     }
     

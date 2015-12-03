@@ -25,21 +25,11 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2vS-5X-y3a">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="我的主页背景图" translatesAutoresizingMaskIntoConstraints="NO" id="2vS-5X-y3a">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="220"/>
                     <animations/>
-                    <color key="backgroundColor" red="0.96078431369999995" green="0.56470588239999997" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="220" id="8ln-wv-FcY"/>
-                    </constraints>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wUa-lF-Hm6">
-                    <rect key="frame" x="130" y="40" width="60" height="60"/>
-                    <animations/>
-                    <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="60" id="Fn3-tO-JcH"/>
-                        <constraint firstAttribute="height" constant="60" id="u8D-iC-A8e"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户名称" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xn1-Y8-mQa">
@@ -109,6 +99,14 @@
                         <outlet property="delegate" destination="-1" id="gJS-RV-oEK"/>
                     </connections>
                 </tableView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wUa-lF-Hm6">
+                    <rect key="frame" x="130" y="40" width="60" height="60"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="Fn3-tO-JcH"/>
+                        <constraint firstAttribute="height" constant="60" id="u8D-iC-A8e"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <animations/>
             <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
@@ -151,4 +149,7 @@
             <point key="canvasLocation" x="-97" y="3"/>
         </view>
     </objects>
+    <resources>
+        <image name="我的主页背景图" width="375" height="233"/>
+    </resources>
 </document>

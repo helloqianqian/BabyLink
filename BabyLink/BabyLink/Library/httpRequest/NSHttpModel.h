@@ -132,6 +132,13 @@
  */
 + (NSString *)getSignUpActUrl;
 /**
+ *  取消报名
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getCancelActUrl;
+
+/**
  *  添加活动评论
  *
  *  @return <#return value description#>
@@ -210,6 +217,80 @@
 
 
 
+#pragma mark - 置换相关
+/**
+ *  置换列表
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getExchangeListUrl;
+
+/**
+ *  置换详情
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getExchangeInfoUrl;
+
+/**
+ *  我参与的置换列表  和  我的置换列表
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getExchangeMyListUrl;
+
+/**
+ *  添加置换
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getAddExchangeUrl;
+
+/**
+ *  完成置换
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getFinishExchangeUrl;
+
+/**
+ *  置换
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getExchangeUrl;
+
+/**
+ *  取消置换
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getCancelExchangeUrl;
+
+/**
+ *  我的置换商品列表
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getMyExchangeListUrl;
 
 
+
+#pragma mark - 秀
++ (NSString *)getAddXiuUrl;
++ (NSString *)getAddCommentUrl;
++ (NSString *)getLinkUrl;
++ (NSString *)getXiuUrl;
++ (NSString *)getMyXiuUrl;
++ (NSString *)getAddFriendUrl ;
++ (NSString *)getXiuFriendUrl ;
++ (NSString *)getXiuDeleteUrl;
++ (NSString *)getXiuNeighborUrl;
++ (NSString *)getXiuShareUrl;
++ (NSString *)getXiuZanUrl;
++ (NSString *)getXiuFansUrl;
+
+
+#pragma mark - 上传图片
++ (NSString *)getUploadImageUrl;
 @end

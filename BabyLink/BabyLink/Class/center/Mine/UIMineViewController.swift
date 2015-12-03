@@ -19,6 +19,7 @@ class UIMineViewController: UIBaseViewController {
     @IBOutlet weak var exchangeBtn: UIButton!
     @IBOutlet weak var showBtn: UIButton!
     @IBOutlet weak var friendsBtn: UIButton!
+    @IBOutlet weak var fansBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,12 @@ class UIMineViewController: UIBaseViewController {
         // Do any additional setup after loading the view.
         self.title = "我的主页"
         headIcon.layer.cornerRadius = 32;
+        headIcon.layer.masksToBounds = true;
+        headIcon.layer.borderColor = UIColor.whiteColor().CGColor;
+        headIcon.layer.borderWidth = 1;
+        
+        headIcon.sd_setImageWithURL(NSURL(string: NSUserInfo.shareInstance().member_avar), placeholderImage: UIImage(named: "morentoux"));
+        nameLabel.text = NSUserInfo.shareInstance().member_name;
     }
 
     @IBAction func enterActivityPage(sender: UIButton) {
@@ -48,7 +55,10 @@ class UIMineViewController: UIBaseViewController {
         let myAcVC = MyFriendsViewController(nibName:"MyFriendsViewController" ,bundle: NSBundle.mainBundle());
         self.navigationController?.pushViewController(myAcVC, animated: true);
     }
-    
+    @IBAction func enterFansPage(sender: UIButton) {
+        let myAcVC = MyFansViewController(nibName:"MyFansViewController" ,bundle: NSBundle.mainBundle());
+        self.navigationController?.pushViewController(myAcVC, animated: true);
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

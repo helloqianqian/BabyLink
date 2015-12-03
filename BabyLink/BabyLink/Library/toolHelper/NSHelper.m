@@ -31,20 +31,52 @@
     [alertView show];
 }
 
-+ (NSData *)fileOfPressedImage:(UIImage *)image{
-    CGSize imageSize = image.size;
-    if (imageSize.width>640) {
-        imageSize.height = imageSize.height/(imageSize.width/640);
-        imageSize.width = 640;
++ (NSData *)fileOfPressedImage:(UIImage *)image withType:(ImageSizeType)type{
+    UIImage *newImage = [NSHelper cutImageInRect:image withType:type];
+    CGSize imageSize = newImage.size;
+    if (imageSize.width>840) {
+        imageSize.height = imageSize.height/(imageSize.width/840);
+        imageSize.width = 840;
         UIGraphicsBeginImageContext(imageSize);
-        [image drawInRect:CGRectMake(0, 0, imageSize.width, imageSize.height)];
+        [newImage drawInRect:CGRectMake(0, 0, imageSize.width, imageSize.height)];
         UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         NSData *pressSizeData = UIImageJPEGRepresentation(scaledImage, 0.3);
         return pressSizeData;
     }
-    NSData *pressSizeData=UIImageJPEGRepresentation(image, 0.3);
+    NSData *pressSizeData=UIImageJPEGRepresentation(newImage, 0.3);
     return pressSizeData;
+}
+
++ (UIImage *)cutImageInRect:(UIImage *)originImage withType:(ImageSizeType)type{
+    switch (type) {
+        case squareType:
+            if (originImage.size.width == originImage.size.height){
+                return  originImage;
+            } else {
+                CGImageRef imageRef = nil;
+                if (originImage.size.width>originImage.size.height) {
+                    imageRef = CGImageCreateWithImageInRect([originImage CGImage], CGRectMake((originImage.size.width - originImage.size.height)/2, 0, originImage.size.height, originImage.size.height));
+                } else {
+                    imageRef = CGImageCreateWithImageInRect([originImage CGImage], CGRectMake(0, (originImage.size.height - originImage.size.width)/2, originImage.size.width, originImage.size.width));
+                }
+                return [UIImage imageWithCGImage:imageRef];
+            }
+        case rectangleType:
+            if (originImage.size.width == 2*originImage.size.height){
+                return  originImage;
+            } else {
+                CGImageRef imageRef = nil;
+                if (originImage.size.width>2*originImage.size.height) {
+                    imageRef = CGImageCreateWithImageInRect([originImage CGImage], CGRectMake((originImage.size.width - 2*originImage.size.height)/2, 0, 2*originImage.size.height, originImage.size.height));
+                } else {
+                    imageRef = CGImageCreateWithImageInRect([originImage CGImage], CGRectMake(0, (originImage.size.height - originImage.size.width/2)/2, originImage.size.width, originImage.size.width/2));
+                }
+                return [UIImage imageWithCGImage:imageRef];
+            }
+        default:
+            break;
+    }
 }
 
 + (NSString *)timeStrFromeStamp:(NSString *)timeStamp {
@@ -75,5 +107,67 @@
     [formatter setDateFormat:@"dd"];
     NSString *day = [formatter stringFromDate:today];
     return day.integerValue;
+}
+
+
+/**
+ *  计算当月最多有几天
+ *
+ *  @param month 月份（注：从0开始的）
+ *  @param year  年份
+ *  @param day   几号（注：从0开始的）
+ *
+ *  @return <#return value description#>
+ */
++ (NSInteger)maxDayOfTheMonth:(NSInteger)month andYear:(NSInteger)year andSelectedDay:(NSInteger)day{
+    if (month == 1) {
+        if (year%100 == 0) {
+            if (year%400 == 0) {
+                if (day > 28) {
+                    return 28;
+                }
+            } else {
+                if (day > 27) {
+                    return 27;
+                }
+            }
+        } else if (year%4==0) {
+            if (day > 28) {
+                return 28;
+            }
+        } else {
+            if (day > 27) {
+                return 27;
+            }
+        }
+    } else if (month == 3 || month == 5 || month == 8 || month == 10){
+        if (day == 30) {
+            return 29;
+        }
+    }
+    return day;
+}
+
+
+/**
+ *  几天后的时间
+ *
+ *  @param from  几天后
+ *  @param year  年份
+ *  @param month 月份
+ *  @param day   日
+ */
++ (void)TheDayFromCurrentDay:(NSInteger)from isYear:(NSInteger *)year isMonth:(NSInteger *)month isDay:(NSInteger *)day{
+    NSDate *today = [NSDate dateWithTimeIntervalSinceNow:60*60*24*from];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"dd"];
+    NSString *dayStr = [formatter stringFromDate:today];
+    *day = dayStr.integerValue;
+    [formatter setDateFormat:@"MM"];
+    NSString *monthStr = [formatter stringFromDate:today];
+    *month = monthStr.integerValue;
+    [formatter setDateFormat:@"yyyy"];
+    NSString *yearStr = [formatter stringFromDate:today];
+    *year = yearStr.integerValue;
 }
 @end

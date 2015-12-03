@@ -165,6 +165,7 @@
 #define actInfoSuf       @"/Activity/activity_info"
 #define actLaunchSuf     @"/Activity/MyLaunch"
 #define actJoinedSuf     @"/Activity/MyJoin"
+#define cancelActSuf     @"/Activity/cancel_activity"
 /**
  *  活动列表
  *
@@ -189,6 +190,16 @@
 + (NSString *)getSignUpActUrl {
     return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:signUpActSuf];
 }
+
+/**
+ *  取消报名
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getCancelActUrl {
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:cancelActSuf];
+}
+
 /**
  *  添加活动评论
  *
@@ -273,6 +284,154 @@
  */
 + (NSString *)getdeleteTalkUrl {
     return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:deleteTalkSuf];
+}
+
+
+#pragma mark - 置换相关
+#define exchangeListSuf      @"/Exchange"
+#define exchangeInfoSuf      @"/Exchange/exchangeInfo"
+#define exchangeMyListSuf    @"/Exchange/meExchange"
+#define addExchangeSuf       @"/Exchange/addExchange"
+#define finishExchangeSuf    @"/Exchange/finishExchange"
+#define exchangeSuf          @"/Exchange/exchange"
+#define cancelExchangeSuf    @"/Exchange/cancelExchange"
+#define myExchangeListSuf    @"/Exchange/issueExchange"
+
+/**
+ *  置换列表
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getExchangeListUrl {
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:exchangeListSuf];
+}
+
+/**
+ *  置换详情
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getExchangeInfoUrl {
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:exchangeInfoSuf];
+}
+
+/**
+ *  我参与的置换列表  和  我的置换列表
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getExchangeMyListUrl {
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:exchangeMyListSuf];
+}
+
+/**
+ *  添加置换
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getAddExchangeUrl {
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:addExchangeSuf];
+}
+
+/**
+ *  完成置换
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getFinishExchangeUrl {
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:finishExchangeSuf];
+}
+
+/**
+ *  置换
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getExchangeUrl {
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:exchangeSuf];
+}
+
+/**
+ *  取消置换
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getCancelExchangeUrl {
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:cancelExchangeSuf];
+}
+
+/**
+ *  我的置换商品列表
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getMyExchangeListUrl {
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:myExchangeListSuf];
+}
+
+
+
+
+
+
+
+#pragma mark - 秀逗相关
+#define addXiuSuf       @"/Xiu/addXiu"
+#define addCommentSuf   @"/Xiu/addCommend"
+#define xiuLinkSuf      @"/Xiu/link"
+#define xiuSuf          @"/Xiu"
+#define myXiuSuf        @"/Xiu/myXiu"
+#define addFriendSuf    @"/Xiu/addFriend"
+#define xiuFriendSuf    @"/Xiu/friendList"
+#define xiuDeleteSuf    @"/Xiu/deleteFriend"
+#define xiuNeighborSuf  @"/Xiu/neighborList"
+#define xiuShareSuf     @"/Index/share"
+#define xiuzanSuf       @"/Xiu/zan"
+#define xiuFansSuf      @"/Xiu/fansList"
+
+
++ (NSString *)getAddXiuUrl {
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:addXiuSuf];
+}
++ (NSString *)getAddCommentUrl {
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:addCommentSuf];
+}
++ (NSString *)getLinkUrl {
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:xiuLinkSuf];
+}
++ (NSString *)getXiuUrl {
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:xiuSuf];
+}
++ (NSString *)getMyXiuUrl {
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:myXiuSuf];
+}
++ (NSString *)getAddFriendUrl {
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:addFriendSuf];
+}
++ (NSString *)getXiuFriendUrl {
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:xiuFriendSuf];
+}
++ (NSString *)getXiuDeleteUrl {
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:xiuDeleteSuf];
+}
++ (NSString *)getXiuNeighborUrl {
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:xiuNeighborSuf];
+}
++ (NSString *)getXiuShareUrl {
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:xiuShareSuf];
+}
++ (NSString *)getXiuZanUrl {
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:xiuzanSuf];
+}
++ (NSString *)getXiuFansUrl {
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:xiuFansSuf];
+}
+
+
+#pragma mark - 上传图片
+#define uploadImageSuf   @"/Index/uploadFile"
++ (NSString *)getUploadImageUrl{
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:uploadImageSuf];
 }
 
 

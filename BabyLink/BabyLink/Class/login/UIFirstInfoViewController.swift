@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UIFirstInfoViewController: UIBaseViewController {
+class UIFirstInfoViewController: UIBaseViewController ,UITextFieldDelegate{
 
     @IBOutlet weak var backView1: UIView!
     @IBOutlet weak var backView2: UIView!
@@ -36,6 +36,9 @@ class UIFirstInfoViewController: UIBaseViewController {
         
         self.setUI();
         self.updateLocation();
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil);
     }
     func setUI() {
         self.backView1.layer.borderColor = SGrayBorderColor.CGColor;
@@ -66,17 +69,31 @@ class UIFirstInfoViewController: UIBaseViewController {
         // Dispose of any resources that can be recreated.
     }
     func updateLocation(){
-        SVProgressHUD.showWithStatus("正在定位")
         CCLocationManager.shareLocation().getCity({ (city:String!) -> Void in
-            SVProgressHUD.dismiss();
-            self.locationField.text = city;
-            self.LocationBtn.enabled = false;
-            SVProgressHUD.dismiss();
+//            self.locationField.text = city;
             }) { (location:CLLocationCoordinate2D) -> Void in
                 self.location2D = location;
+                self.getCityData();
         }
     }
-    
+    func getCityData(){
+        let dicParam:NSDictionary = NSDictionary(objects: [self.location2D.latitude,self.location2D.longitude] , forKeys: ["la","lo"]);
+        NSHttpHelp.httpHelpWithUrlTpye(getCityType, withParam: dicParam, withResult: { (returnObject:AnyObject!) -> Void in
+            let dic = returnObject as! NSDictionary;
+            let code = dic["code"] as! NSInteger;
+            if code == 0 {
+                //发送成功
+                self.locationField.text = dic["datas"] as? String;
+            } else {
+                //发送失败
+                let datas = dic["datas"] as! String;
+                SVProgressHUD.showErrorWithStatus(datas);
+            }
+            }) { (error:AnyObject!) -> Void in
+                
+        };
+        
+    }
     @IBAction func getVerticalNum(sender: AnyObject) {
         if !NSHelper.checkUserPhoneValidateWith(self.phoneNum.text) {
             NSHelper.showAlertViewWithTip("请输入正确的手机号");
@@ -134,7 +151,6 @@ class UIFirstInfoViewController: UIBaseViewController {
             NSHelper.showAlertViewWithTip("请选择您所在的小区");
             return;
         }
-        self.endEditing()
         let dicParam:NSDictionary = NSDictionary(objects: [self.phoneNum.text!,self.verticalField.text!,NSUserInfo.shareInstance().member_avar,NSUserInfo.shareInstance().member_name,NSUserInfo.shareInstance().openid] , forKeys: ["mobile","code","member_avar","member_name","openid"]);
         SVProgressHUD.showWithStatus("正在提交信息")
         NSHttpHelp.httpHelpWithUrlTpye(registerType, withParam: dicParam, withResult: { (returnObject:AnyObject!) -> Void in
@@ -175,6 +191,30 @@ class UIFirstInfoViewController: UIBaseViewController {
     
     @IBAction func locationFailed(sender: UIButton) {
         self.updateLocation()
+    }
+    
+    func keyboardWillShow(notification:NSNotification){
+        self.addGesture();
+    }
+    func keyboardWillHide(notification:NSNotification){
+        self.removeGesture();
+    }
+    func textFieldDidBeginEditing(textField: UITextField) {
+        self.didBeginEditing(textField);
+    }
+    func textFieldDidEndEditing(textField: UITextField) {
+        self.didEndEditing(textField);
+    }
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField.returnKeyType == UIReturnKeyType.Next {
+            self.nextFieldEditing(textField);
+        } else if textField.returnKeyType == UIReturnKeyType.Done {
+            textField.resignFirstResponder()
+        }
+        return true;
+    }
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self);
     }
     /*
     // MARK: - Navigation

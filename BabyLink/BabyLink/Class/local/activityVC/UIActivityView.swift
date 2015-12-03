@@ -56,13 +56,17 @@ class UIActivityView: UIView ,UITableViewDataSource, UITableViewDelegate,didClic
         self.page++ ;
         self.reloadTableData()
     }
-    func loadContentData(force:Bool) {
+    func loadContentData(force:Bool, withAnimate animate:Bool) {
         if dataArray.count == 0 || force {
-            self.listTableView.header.beginRefreshing()
+            if animate {
+                self.refreshListData()
+            } else {
+                self.listTableView.header.beginRefreshing()
+            }
         }
     }
     func reloadTableData(){
-        let dicParam:NSDictionary = NSDictionary(objects: ["1","\(self.page)"] , forKeys: [MEMBER_ID,"page"]);
+        let dicParam:NSDictionary = NSDictionary(objects: [NSUserInfo.shareInstance().member_id,"\(self.page)"] , forKeys: [MEMBER_ID,"page"]);
         NSHttpHelp.httpHelpWithUrlTpye(actListType, withParam: dicParam, withResult: { (returnObject:AnyObject!) -> Void in
             let dic = returnObject as! NSDictionary;
             let code = dic["code"] as! NSInteger;
@@ -114,9 +118,7 @@ class UIActivityView: UIView ,UITableViewDataSource, UITableViewDelegate,didClic
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("UIActivityTableViewCellIndentifier", forIndexPath: indexPath) as! UIActivityTableViewCell;
         let model = self.dataArray.objectAtIndex(indexPath.row) as! NSActListObject;
-        cell.resetCellContent(model);
-        cell.signInBtn.tag = indexPath.row;
-        cell.signInBtn.addTarget(self, action: "joinTheActivity:", forControlEvents: UIControlEvents.TouchUpInside);
+        cell.resetCellContent(model, withIndex: indexPath, withHoldView: self);
         return cell;
     }
     //MARK: - UITableViewDelegate
@@ -142,10 +144,10 @@ class UIActivityView: UIView ,UITableViewDataSource, UITableViewDelegate,didClic
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.5;
     }
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let listModel = dataArray.objectAtIndex(indexPath.row) as! NSActListObject;
-        delegate.checkTheInfoOfActivity(listModel);
-    }
+//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        let listModel = dataArray.objectAtIndex(indexPath.row) as! NSActListObject;
+//        delegate.checkTheInfoOfActivity(listModel);
+//    }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return headView;
@@ -154,8 +156,10 @@ class UIActivityView: UIView ,UITableViewDataSource, UITableViewDelegate,didClic
     
     //MARK - cell Function
     func joinTheActivity(sender:UIButton){
+//        let listModel = dataArray.objectAtIndex(sender.tag) as! NSActListObject;
+//        delegate.joinInTheActivity(listModel);
         let listModel = dataArray.objectAtIndex(sender.tag) as! NSActListObject;
-        delegate.joinInTheActivity(listModel);
+        delegate.checkTheInfoOfActivity(listModel);
     }
     
     /*

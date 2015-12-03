@@ -105,6 +105,39 @@
 		4C552F281C01EC4A00A93344 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C552F271C01EC4A00A93344 /* MapKit.framework */; };
 		4C552F2A1C01EC6D00A93344 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C552F291C01EC6D00A93344 /* Foundation.framework */; };
 		4C552F2C1C01EC7600A93344 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C552F2B1C01EC7600A93344 /* UIKit.framework */; };
+		4C696ADB1C0DA4AE004166FB /* MyFansViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C696AD91C0DA4AE004166FB /* MyFansViewController.swift */; };
+		4C696ADC1C0DA4AE004166FB /* MyFansViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C696ADA1C0DA4AE004166FB /* MyFansViewController.xib */; };
+		4C696ADF1C0DF230004166FB /* NSFriendObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C696ADE1C0DF230004166FB /* NSFriendObject.m */; };
+		4C696AE21C0DF4D6004166FB /* UIPersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C696AE01C0DF4D6004166FB /* UIPersonTableViewCell.swift */; };
+		4C696AE31C0DF4D6004166FB /* UIPersonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C696AE11C0DF4D6004166FB /* UIPersonTableViewCell.xib */; };
+		4C6BB6E11C0BF3030004E4C8 /* UIImage+ZLPhotoLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6BB69F1C0BF3030004E4C8 /* UIImage+ZLPhotoLib.m */; };
+		4C6BB6E21C0BF3040004E4C8 /* UIView+ZLExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6BB6A11C0BF3030004E4C8 /* UIView+ZLExtension.m */; };
+		4C6BB6E31C0BF3040004E4C8 /* ZLCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6BB6A41C0BF3030004E4C8 /* ZLCamera.m */; };
+		4C6BB6E41C0BF3040004E4C8 /* ZLCameraImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6BB6A61C0BF3030004E4C8 /* ZLCameraImageView.m */; };
+		4C6BB6E51C0BF3040004E4C8 /* ZLCameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6BB6A81C0BF3030004E4C8 /* ZLCameraView.m */; };
+		4C6BB6E61C0BF3040004E4C8 /* ZLCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6BB6AA1C0BF3030004E4C8 /* ZLCameraViewController.m */; };
+		4C6BB6E71C0BF3040004E4C8 /* ZLPhotoPickerBrowserPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6BB6AF1C0BF3030004E4C8 /* ZLPhotoPickerBrowserPhoto.m */; };
+		4C6BB6E81C0BF3040004E4C8 /* ZLPhotoRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6BB6B11C0BF3030004E4C8 /* ZLPhotoRect.m */; };
+		4C6BB6E91C0BF3040004E4C8 /* ZLPhotoPickerBrowserViewController+SignlePhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6BB6B41C0BF3030004E4C8 /* ZLPhotoPickerBrowserViewController+SignlePhotoBrowser.m */; };
+		4C6BB6EA1C0BF3040004E4C8 /* ZLPhotoPickerBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6BB6B61C0BF3030004E4C8 /* ZLPhotoPickerBrowserViewController.m */; };
+		4C6BB6EB1C0BF3040004E4C8 /* ZLPhotoPickerBrowserPhotoImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6BB6B91C0BF3030004E4C8 /* ZLPhotoPickerBrowserPhotoImageView.m */; };
+		4C6BB6EC1C0BF3040004E4C8 /* ZLPhotoPickerBrowserPhotoScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6BB6BB1C0BF3030004E4C8 /* ZLPhotoPickerBrowserPhotoScrollView.m */; };
+		4C6BB6ED1C0BF3040004E4C8 /* ZLPhotoPickerBrowserPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6BB6BD1C0BF3030004E4C8 /* ZLPhotoPickerBrowserPhotoView.m */; };
+		4C6BB6EE1C0BF3040004E4C8 /* ZLPhotoPickerCustomToolBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6BB6BF1C0BF3030004E4C8 /* ZLPhotoPickerCustomToolBarView.m */; };
+		4C6BB6EF1C0BF3040004E4C8 /* ZLPhotoAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6BB6C31C0BF3030004E4C8 /* ZLPhotoAssets.m */; };
+		4C6BB6F01C0BF3040004E4C8 /* ZLPhotoPickerDatas.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6BB6C51C0BF3030004E4C8 /* ZLPhotoPickerDatas.m */; };
+		4C6BB6F11C0BF3040004E4C8 /* ZLPhotoPickerGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6BB6C71C0BF3030004E4C8 /* ZLPhotoPickerGroup.m */; };
+		4C6BB6F21C0BF3040004E4C8 /* ZLPhotoPickerAssetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6BB6CA1C0BF3030004E4C8 /* ZLPhotoPickerAssetsViewController.m */; };
+		4C6BB6F31C0BF3040004E4C8 /* ZLPhotoPickerGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6BB6CC1C0BF3030004E4C8 /* ZLPhotoPickerGroupViewController.m */; };
+		4C6BB6F41C0BF3040004E4C8 /* ZLPhotoPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6BB6CE1C0BF3030004E4C8 /* ZLPhotoPickerViewController.m */; };
+		4C6BB6F51C0BF3040004E4C8 /* ZLPhotoPickerCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6BB6D11C0BF3030004E4C8 /* ZLPhotoPickerCollectionView.m */; };
+		4C6BB6F61C0BF3040004E4C8 /* ZLPhotoPickerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6BB6D31C0BF3030004E4C8 /* ZLPhotoPickerCollectionViewCell.m */; };
+		4C6BB6F71C0BF3040004E4C8 /* ZLPhotoPickerFooterCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6BB6D51C0BF3030004E4C8 /* ZLPhotoPickerFooterCollectionReusableView.m */; };
+		4C6BB6F81C0BF3040004E4C8 /* ZLPhotoPickerGroupTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6BB6D71C0BF3030004E4C8 /* ZLPhotoPickerGroupTableViewCell.m */; };
+		4C6BB6F91C0BF3040004E4C8 /* ZLPhotoPickerImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6BB6D91C0BF3030004E4C8 /* ZLPhotoPickerImageView.m */; };
+		4C6BB6FA1C0BF3040004E4C8 /* DACircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6BB6DD1C0BF3030004E4C8 /* DACircularProgressView.m */; };
+		4C6BB6FB1C0BF3040004E4C8 /* DALabeledCircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6BB6DF1C0BF3030004E4C8 /* DALabeledCircularProgressView.m */; };
+		4C6BB6FC1C0BF3040004E4C8 /* ZLPhotoLib.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4C6BB6E01C0BF3030004E4C8 /* ZLPhotoLib.bundle */; };
 		4C9484C91C05EC5A0042CB9D /* NSTalk.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9484C81C05EC5A0042CB9D /* NSTalk.m */; };
 		4CA2A84D1BEA40C20094A6FC /* UIButton+CustomStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA2A84C1BEA40C20094A6FC /* UIButton+CustomStyle.m */; };
 		4CA2A8541BEA456D0094A6FC /* UIImage+SingleColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA2A8531BEA456D0094A6FC /* UIImage+SingleColor.m */; };
@@ -128,6 +161,28 @@
 		4CA59AC71BE79B3300C614FC /* UIChooseAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA59AC51BE79B3300C614FC /* UIChooseAddressViewController.xib */; };
 		4CA59ACE1BE85B5C00C614FC /* UIShowNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA59ACD1BE85B5C00C614FC /* UIShowNavigationView.swift */; };
 		4CA59AD01BE85B6800C614FC /* UIShowNavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA59ACF1BE85B6800C614FC /* UIShowNavigationView.xib */; };
+		4CCBDE901C085997008962A9 /* UICreateActTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCBDE8E1C085997008962A9 /* UICreateActTableViewCell.swift */; };
+		4CCBDE911C085997008962A9 /* UICreateActTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CCBDE8F1C085997008962A9 /* UICreateActTableViewCell.xib */; };
+		4CCBDE941C08BBE4008962A9 /* UICreateANViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCBDE921C08BBE4008962A9 /* UICreateANViewController.swift */; };
+		4CCBDE951C08BBE4008962A9 /* UICreateANViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CCBDE931C08BBE4008962A9 /* UICreateANViewController.xib */; };
+		4CCBDE981C0998EF008962A9 /* NSXiu.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCBDE971C0998EF008962A9 /* NSXiu.m */; };
+		4CCE575E1C06C6D400EA6527 /* NSExchange.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCE575D1C06C6D400EA6527 /* NSExchange.m */; };
+		4CCE57611C07069300EA6527 /* UIExchangeInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCE575F1C07069300EA6527 /* UIExchangeInfoTableViewCell.swift */; };
+		4CCE57621C07069300EA6527 /* UIExchangeInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CCE57601C07069300EA6527 /* UIExchangeInfoTableViewCell.xib */; };
+		4CCE57641C07562B00EA6527 /* UIExchangeTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCE57631C07562B00EA6527 /* UIExchangeTipView.swift */; };
+		4CCE57661C07563C00EA6527 /* UIExchangeTipView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CCE57651C07563C00EA6527 /* UIExchangeTipView.xib */; };
+		4CCE57681C075CE500EA6527 /* UIExchangeChooseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CCE57671C075CE500EA6527 /* UIExchangeChooseView.xib */; };
+		4CCE576A1C075CF200EA6527 /* UIExchangeChooseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCE57691C075CF200EA6527 /* UIExchangeChooseView.swift */; };
+		4CCE576D1C08001900EA6527 /* UICreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCE576C1C08001900EA6527 /* UICreateView.swift */; };
+		4CCE576F1C08028900EA6527 /* UICreateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CCE576E1C08028900EA6527 /* UICreateView.xib */; };
+		4CCE57721C0809FC00EA6527 /* UICreateActViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCE57701C0809FC00EA6527 /* UICreateActViewController.swift */; };
+		4CCE57731C0809FC00EA6527 /* UICreateActViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CCE57711C0809FC00EA6527 /* UICreateActViewController.xib */; };
+		4CCE57761C080A0C00EA6527 /* UICreateTalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCE57741C080A0C00EA6527 /* UICreateTalkViewController.swift */; };
+		4CCE57771C080A0C00EA6527 /* UICreateTalkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CCE57751C080A0C00EA6527 /* UICreateTalkViewController.xib */; };
+		4CCE577A1C080A1F00EA6527 /* UICreateExcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCE57781C080A1F00EA6527 /* UICreateExcViewController.swift */; };
+		4CCE577B1C080A1F00EA6527 /* UICreateExcViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CCE57791C080A1F00EA6527 /* UICreateExcViewController.xib */; };
+		4CCE577E1C080A3B00EA6527 /* UICreateShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCE577C1C080A3B00EA6527 /* UICreateShowViewController.swift */; };
+		4CCE577F1C080A3B00EA6527 /* UICreateShowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CCE577D1C080A3B00EA6527 /* UICreateShowViewController.xib */; };
 		4CD583BD1BF423F700345666 /* UIChangePhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD583BB1BF423F700345666 /* UIChangePhoneViewController.swift */; };
 		4CD583BE1BF423F700345666 /* UIChangePhoneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CD583BC1BF423F700345666 /* UIChangePhoneViewController.xib */; };
 		4CD583C11BF4240900345666 /* UIChangePSWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD583BF1BF4240900345666 /* UIChangePSWViewController.swift */; };
@@ -144,6 +199,16 @@
 		4CEDCF5E1BFB665500226BB9 /* NSHttpModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDCF5D1BFB665500226BB9 /* NSHttpModel.m */; };
 		4CEDCF621BFCAF5F00226BB9 /* NSHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDCF611BFCAF5F00226BB9 /* NSHelper.m */; };
 		4CEDCF651BFCB53600226BB9 /* NSUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEDCF641BFCB53600226BB9 /* NSUserInfo.m */; };
+		4CF124CE1C0EFFF000BD02DE /* UIDouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF124CC1C0EFFF000BD02DE /* UIDouViewController.swift */; };
+		4CF124CF1C0EFFF000BD02DE /* UIDouViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CF124CD1C0EFFF000BD02DE /* UIDouViewController.xib */; };
+		4CF124D21C0F142200BD02DE /* UIParticipateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF124D01C0F142200BD02DE /* UIParticipateViewController.swift */; };
+		4CF124D31C0F142200BD02DE /* UIParticipateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CF124D11C0F142200BD02DE /* UIParticipateViewController.xib */; };
+		4CF124D61C0F1A2F00BD02DE /* UIParticipateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF124D41C0F1A2F00BD02DE /* UIParticipateTableViewCell.swift */; };
+		4CF124D71C0F1A2F00BD02DE /* UIParticipateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CF124D51C0F1A2F00BD02DE /* UIParticipateTableViewCell.xib */; };
+		4CF124DA1C0F25D000BD02DE /* UIMyTalkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF124D81C0F25D000BD02DE /* UIMyTalkTableViewCell.swift */; };
+		4CF124DB1C0F25D000BD02DE /* UIMyTalkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CF124D91C0F25D000BD02DE /* UIMyTalkTableViewCell.xib */; };
+		4CF124DD1C1004C700BD02DE /* UIShowItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF124DC1C1004C700BD02DE /* UIShowItemView.swift */; };
+		4CF124DF1C1004DD00BD02DE /* UIShowItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CF124DE1C1004DD00BD02DE /* UIShowItemView.xib */; };
 		4CF6EF5E1BDCA47600CC5BA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6EF5D1BDCA47600CC5BA7 /* AppDelegate.swift */; };
 		4CF6EF601BDCA47600CC5BA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6EF5F1BDCA47600CC5BA7 /* ViewController.swift */; };
 		4CF6EF631BDCA47600CC5BA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CF6EF611BDCA47600CC5BA7 /* Main.storyboard */; };
@@ -379,6 +444,69 @@
 		4C552F271C01EC4A00A93344 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		4C552F291C01EC6D00A93344 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4C552F2B1C01EC7600A93344 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4C696AD91C0DA4AE004166FB /* MyFansViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFansViewController.swift; sourceTree = "<group>"; };
+		4C696ADA1C0DA4AE004166FB /* MyFansViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyFansViewController.xib; sourceTree = "<group>"; };
+		4C696ADD1C0DF230004166FB /* NSFriendObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSFriendObject.h; sourceTree = "<group>"; };
+		4C696ADE1C0DF230004166FB /* NSFriendObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSFriendObject.m; sourceTree = "<group>"; };
+		4C696AE01C0DF4D6004166FB /* UIPersonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPersonTableViewCell.swift; sourceTree = "<group>"; };
+		4C696AE11C0DF4D6004166FB /* UIPersonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIPersonTableViewCell.xib; sourceTree = "<group>"; };
+		4C6BB69E1C0BF3030004E4C8 /* UIImage+ZLPhotoLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ZLPhotoLib.h"; sourceTree = "<group>"; };
+		4C6BB69F1C0BF3030004E4C8 /* UIImage+ZLPhotoLib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ZLPhotoLib.m"; sourceTree = "<group>"; };
+		4C6BB6A01C0BF3030004E4C8 /* UIView+ZLExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZLExtension.h"; sourceTree = "<group>"; };
+		4C6BB6A11C0BF3030004E4C8 /* UIView+ZLExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZLExtension.m"; sourceTree = "<group>"; };
+		4C6BB6A31C0BF3030004E4C8 /* ZLCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLCamera.h; sourceTree = "<group>"; };
+		4C6BB6A41C0BF3030004E4C8 /* ZLCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLCamera.m; sourceTree = "<group>"; };
+		4C6BB6A51C0BF3030004E4C8 /* ZLCameraImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLCameraImageView.h; sourceTree = "<group>"; };
+		4C6BB6A61C0BF3030004E4C8 /* ZLCameraImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLCameraImageView.m; sourceTree = "<group>"; };
+		4C6BB6A71C0BF3030004E4C8 /* ZLCameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLCameraView.h; sourceTree = "<group>"; };
+		4C6BB6A81C0BF3030004E4C8 /* ZLCameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLCameraView.m; sourceTree = "<group>"; };
+		4C6BB6A91C0BF3030004E4C8 /* ZLCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLCameraViewController.h; sourceTree = "<group>"; };
+		4C6BB6AA1C0BF3030004E4C8 /* ZLCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLCameraViewController.m; sourceTree = "<group>"; };
+		4C6BB6AB1C0BF3030004E4C8 /* ZLPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhoto.h; sourceTree = "<group>"; };
+		4C6BB6AE1C0BF3030004E4C8 /* ZLPhotoPickerBrowserPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoPickerBrowserPhoto.h; sourceTree = "<group>"; };
+		4C6BB6AF1C0BF3030004E4C8 /* ZLPhotoPickerBrowserPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoPickerBrowserPhoto.m; sourceTree = "<group>"; };
+		4C6BB6B01C0BF3030004E4C8 /* ZLPhotoRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoRect.h; sourceTree = "<group>"; };
+		4C6BB6B11C0BF3030004E4C8 /* ZLPhotoRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoRect.m; sourceTree = "<group>"; };
+		4C6BB6B31C0BF3030004E4C8 /* ZLPhotoPickerBrowserViewController+SignlePhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ZLPhotoPickerBrowserViewController+SignlePhotoBrowser.h"; sourceTree = "<group>"; };
+		4C6BB6B41C0BF3030004E4C8 /* ZLPhotoPickerBrowserViewController+SignlePhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ZLPhotoPickerBrowserViewController+SignlePhotoBrowser.m"; sourceTree = "<group>"; };
+		4C6BB6B51C0BF3030004E4C8 /* ZLPhotoPickerBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoPickerBrowserViewController.h; sourceTree = "<group>"; };
+		4C6BB6B61C0BF3030004E4C8 /* ZLPhotoPickerBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoPickerBrowserViewController.m; sourceTree = "<group>"; };
+		4C6BB6B81C0BF3030004E4C8 /* ZLPhotoPickerBrowserPhotoImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoPickerBrowserPhotoImageView.h; sourceTree = "<group>"; };
+		4C6BB6B91C0BF3030004E4C8 /* ZLPhotoPickerBrowserPhotoImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoPickerBrowserPhotoImageView.m; sourceTree = "<group>"; };
+		4C6BB6BA1C0BF3030004E4C8 /* ZLPhotoPickerBrowserPhotoScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoPickerBrowserPhotoScrollView.h; sourceTree = "<group>"; };
+		4C6BB6BB1C0BF3030004E4C8 /* ZLPhotoPickerBrowserPhotoScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoPickerBrowserPhotoScrollView.m; sourceTree = "<group>"; };
+		4C6BB6BC1C0BF3030004E4C8 /* ZLPhotoPickerBrowserPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoPickerBrowserPhotoView.h; sourceTree = "<group>"; };
+		4C6BB6BD1C0BF3030004E4C8 /* ZLPhotoPickerBrowserPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoPickerBrowserPhotoView.m; sourceTree = "<group>"; };
+		4C6BB6BE1C0BF3030004E4C8 /* ZLPhotoPickerCustomToolBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoPickerCustomToolBarView.h; sourceTree = "<group>"; };
+		4C6BB6BF1C0BF3030004E4C8 /* ZLPhotoPickerCustomToolBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoPickerCustomToolBarView.m; sourceTree = "<group>"; };
+		4C6BB6C21C0BF3030004E4C8 /* ZLPhotoAssets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoAssets.h; sourceTree = "<group>"; };
+		4C6BB6C31C0BF3030004E4C8 /* ZLPhotoAssets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoAssets.m; sourceTree = "<group>"; };
+		4C6BB6C41C0BF3030004E4C8 /* ZLPhotoPickerDatas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoPickerDatas.h; sourceTree = "<group>"; };
+		4C6BB6C51C0BF3030004E4C8 /* ZLPhotoPickerDatas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoPickerDatas.m; sourceTree = "<group>"; };
+		4C6BB6C61C0BF3030004E4C8 /* ZLPhotoPickerGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoPickerGroup.h; sourceTree = "<group>"; };
+		4C6BB6C71C0BF3030004E4C8 /* ZLPhotoPickerGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoPickerGroup.m; sourceTree = "<group>"; };
+		4C6BB6C91C0BF3030004E4C8 /* ZLPhotoPickerAssetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoPickerAssetsViewController.h; sourceTree = "<group>"; };
+		4C6BB6CA1C0BF3030004E4C8 /* ZLPhotoPickerAssetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoPickerAssetsViewController.m; sourceTree = "<group>"; };
+		4C6BB6CB1C0BF3030004E4C8 /* ZLPhotoPickerGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoPickerGroupViewController.h; sourceTree = "<group>"; };
+		4C6BB6CC1C0BF3030004E4C8 /* ZLPhotoPickerGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoPickerGroupViewController.m; sourceTree = "<group>"; };
+		4C6BB6CD1C0BF3030004E4C8 /* ZLPhotoPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoPickerViewController.h; sourceTree = "<group>"; };
+		4C6BB6CE1C0BF3030004E4C8 /* ZLPhotoPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoPickerViewController.m; sourceTree = "<group>"; };
+		4C6BB6D01C0BF3030004E4C8 /* ZLPhotoPickerCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoPickerCollectionView.h; sourceTree = "<group>"; };
+		4C6BB6D11C0BF3030004E4C8 /* ZLPhotoPickerCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoPickerCollectionView.m; sourceTree = "<group>"; };
+		4C6BB6D21C0BF3030004E4C8 /* ZLPhotoPickerCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoPickerCollectionViewCell.h; sourceTree = "<group>"; };
+		4C6BB6D31C0BF3030004E4C8 /* ZLPhotoPickerCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoPickerCollectionViewCell.m; sourceTree = "<group>"; };
+		4C6BB6D41C0BF3030004E4C8 /* ZLPhotoPickerFooterCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoPickerFooterCollectionReusableView.h; sourceTree = "<group>"; };
+		4C6BB6D51C0BF3030004E4C8 /* ZLPhotoPickerFooterCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoPickerFooterCollectionReusableView.m; sourceTree = "<group>"; };
+		4C6BB6D61C0BF3030004E4C8 /* ZLPhotoPickerGroupTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoPickerGroupTableViewCell.h; sourceTree = "<group>"; };
+		4C6BB6D71C0BF3030004E4C8 /* ZLPhotoPickerGroupTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoPickerGroupTableViewCell.m; sourceTree = "<group>"; };
+		4C6BB6D81C0BF3030004E4C8 /* ZLPhotoPickerImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoPickerImageView.h; sourceTree = "<group>"; };
+		4C6BB6D91C0BF3030004E4C8 /* ZLPhotoPickerImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoPickerImageView.m; sourceTree = "<group>"; };
+		4C6BB6DA1C0BF3030004E4C8 /* ZLPhotoPickerCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPhotoPickerCommon.h; sourceTree = "<group>"; };
+		4C6BB6DC1C0BF3030004E4C8 /* DACircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DACircularProgressView.h; sourceTree = "<group>"; };
+		4C6BB6DD1C0BF3030004E4C8 /* DACircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DACircularProgressView.m; sourceTree = "<group>"; };
+		4C6BB6DE1C0BF3030004E4C8 /* DALabeledCircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DALabeledCircularProgressView.h; sourceTree = "<group>"; };
+		4C6BB6DF1C0BF3030004E4C8 /* DALabeledCircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DALabeledCircularProgressView.m; sourceTree = "<group>"; };
+		4C6BB6E01C0BF3030004E4C8 /* ZLPhotoLib.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZLPhotoLib.bundle; sourceTree = "<group>"; };
 		4C9484C71C05EC5A0042CB9D /* NSTalk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSTalk.h; sourceTree = "<group>"; };
 		4C9484C81C05EC5A0042CB9D /* NSTalk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSTalk.m; sourceTree = "<group>"; };
 		4CA2A84B1BEA40C20094A6FC /* UIButton+CustomStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CustomStyle.h"; sourceTree = "<group>"; };
@@ -407,6 +535,30 @@
 		4CA59AC51BE79B3300C614FC /* UIChooseAddressViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIChooseAddressViewController.xib; sourceTree = "<group>"; };
 		4CA59ACD1BE85B5C00C614FC /* UIShowNavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIShowNavigationView.swift; sourceTree = "<group>"; };
 		4CA59ACF1BE85B6800C614FC /* UIShowNavigationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIShowNavigationView.xib; sourceTree = "<group>"; };
+		4CCBDE8E1C085997008962A9 /* UICreateActTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICreateActTableViewCell.swift; sourceTree = "<group>"; };
+		4CCBDE8F1C085997008962A9 /* UICreateActTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UICreateActTableViewCell.xib; sourceTree = "<group>"; };
+		4CCBDE921C08BBE4008962A9 /* UICreateANViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICreateANViewController.swift; sourceTree = "<group>"; };
+		4CCBDE931C08BBE4008962A9 /* UICreateANViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UICreateANViewController.xib; sourceTree = "<group>"; };
+		4CCBDE961C0998EF008962A9 /* NSXiu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSXiu.h; sourceTree = "<group>"; };
+		4CCBDE971C0998EF008962A9 /* NSXiu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSXiu.m; sourceTree = "<group>"; };
+		4CCE575C1C06C6D400EA6527 /* NSExchange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSExchange.h; sourceTree = "<group>"; };
+		4CCE575D1C06C6D400EA6527 /* NSExchange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSExchange.m; sourceTree = "<group>"; };
+		4CCE575F1C07069300EA6527 /* UIExchangeInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExchangeInfoTableViewCell.swift; sourceTree = "<group>"; };
+		4CCE57601C07069300EA6527 /* UIExchangeInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIExchangeInfoTableViewCell.xib; sourceTree = "<group>"; };
+		4CCE57631C07562B00EA6527 /* UIExchangeTipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExchangeTipView.swift; sourceTree = "<group>"; };
+		4CCE57651C07563C00EA6527 /* UIExchangeTipView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIExchangeTipView.xib; sourceTree = "<group>"; };
+		4CCE57671C075CE500EA6527 /* UIExchangeChooseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIExchangeChooseView.xib; sourceTree = "<group>"; };
+		4CCE57691C075CF200EA6527 /* UIExchangeChooseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExchangeChooseView.swift; sourceTree = "<group>"; };
+		4CCE576C1C08001900EA6527 /* UICreateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICreateView.swift; sourceTree = "<group>"; };
+		4CCE576E1C08028900EA6527 /* UICreateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UICreateView.xib; sourceTree = "<group>"; };
+		4CCE57701C0809FC00EA6527 /* UICreateActViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICreateActViewController.swift; sourceTree = "<group>"; };
+		4CCE57711C0809FC00EA6527 /* UICreateActViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UICreateActViewController.xib; sourceTree = "<group>"; };
+		4CCE57741C080A0C00EA6527 /* UICreateTalkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICreateTalkViewController.swift; sourceTree = "<group>"; };
+		4CCE57751C080A0C00EA6527 /* UICreateTalkViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UICreateTalkViewController.xib; sourceTree = "<group>"; };
+		4CCE57781C080A1F00EA6527 /* UICreateExcViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICreateExcViewController.swift; sourceTree = "<group>"; };
+		4CCE57791C080A1F00EA6527 /* UICreateExcViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UICreateExcViewController.xib; sourceTree = "<group>"; };
+		4CCE577C1C080A3B00EA6527 /* UICreateShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICreateShowViewController.swift; sourceTree = "<group>"; };
+		4CCE577D1C080A3B00EA6527 /* UICreateShowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UICreateShowViewController.xib; sourceTree = "<group>"; };
 		4CD583BB1BF423F700345666 /* UIChangePhoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIChangePhoneViewController.swift; sourceTree = "<group>"; };
 		4CD583BC1BF423F700345666 /* UIChangePhoneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIChangePhoneViewController.xib; sourceTree = "<group>"; };
 		4CD583BF1BF4240900345666 /* UIChangePSWViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIChangePSWViewController.swift; sourceTree = "<group>"; };
@@ -430,6 +582,16 @@
 		4CEDCF631BFCB53600226BB9 /* NSUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSUserInfo.h; sourceTree = "<group>"; };
 		4CEDCF641BFCB53600226BB9 /* NSUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSUserInfo.m; sourceTree = "<group>"; };
 		4CEDCF661BFCC8E600226BB9 /* libSVProgressHUD.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSVProgressHUD.a; path = "Pods/../build/Debug-iphoneos/libSVProgressHUD.a"; sourceTree = "<group>"; };
+		4CF124CC1C0EFFF000BD02DE /* UIDouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDouViewController.swift; sourceTree = "<group>"; };
+		4CF124CD1C0EFFF000BD02DE /* UIDouViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIDouViewController.xib; sourceTree = "<group>"; };
+		4CF124D01C0F142200BD02DE /* UIParticipateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIParticipateViewController.swift; sourceTree = "<group>"; };
+		4CF124D11C0F142200BD02DE /* UIParticipateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIParticipateViewController.xib; sourceTree = "<group>"; };
+		4CF124D41C0F1A2F00BD02DE /* UIParticipateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIParticipateTableViewCell.swift; sourceTree = "<group>"; };
+		4CF124D51C0F1A2F00BD02DE /* UIParticipateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIParticipateTableViewCell.xib; sourceTree = "<group>"; };
+		4CF124D81C0F25D000BD02DE /* UIMyTalkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIMyTalkTableViewCell.swift; sourceTree = "<group>"; };
+		4CF124D91C0F25D000BD02DE /* UIMyTalkTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIMyTalkTableViewCell.xib; sourceTree = "<group>"; };
+		4CF124DC1C1004C700BD02DE /* UIShowItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIShowItemView.swift; sourceTree = "<group>"; };
+		4CF124DE1C1004DD00BD02DE /* UIShowItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIShowItemView.xib; sourceTree = "<group>"; };
 		4CF6EF5A1BDCA47600CC5BA7 /* BabyLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabyLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CF6EF5D1BDCA47600CC5BA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CF6EF5F1BDCA47600CC5BA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -628,6 +790,7 @@
 		4C006B0E1BF1F76500FFBFF6 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				4C696AD81C0DA441004166FB /* myFans */,
 				4CA34C991BF57CB3002DABA2 /* myActivity */,
 				4CA34C9A1BF57CB3002DABA2 /* myExchange */,
 				4CA34C9B1BF57CB3002DABA2 /* myFriends */,
@@ -671,6 +834,12 @@
 			children = (
 				4CA34CB21BF5E827002DABA2 /* UIMyActTableViewCell.swift */,
 				4CA34CB31BF5E827002DABA2 /* UIMyActTableViewCell.xib */,
+				4C696AE01C0DF4D6004166FB /* UIPersonTableViewCell.swift */,
+				4C696AE11C0DF4D6004166FB /* UIPersonTableViewCell.xib */,
+				4CF124D41C0F1A2F00BD02DE /* UIParticipateTableViewCell.swift */,
+				4CF124D51C0F1A2F00BD02DE /* UIParticipateTableViewCell.xib */,
+				4CF124D81C0F25D000BD02DE /* UIMyTalkTableViewCell.swift */,
+				4CF124D91C0F25D000BD02DE /* UIMyTalkTableViewCell.xib */,
 			);
 			path = MineViews;
 			sourceTree = "<group>";
@@ -847,6 +1016,183 @@
 			path = Wechat;
 			sourceTree = "<group>";
 		};
+		4C696AD81C0DA441004166FB /* myFans */ = {
+			isa = PBXGroup;
+			children = (
+				4C696AD91C0DA4AE004166FB /* MyFansViewController.swift */,
+				4C696ADA1C0DA4AE004166FB /* MyFansViewController.xib */,
+			);
+			path = myFans;
+			sourceTree = "<group>";
+		};
+		4C6BB69A1C0BF3030004E4C8 /* ZLPhotoLib */ = {
+			isa = PBXGroup;
+			children = (
+				4C6BB69B1C0BF3030004E4C8 /* Classes */,
+				4C6BB6DB1C0BF3030004E4C8 /* DACircularProgress */,
+				4C6BB6E01C0BF3030004E4C8 /* ZLPhotoLib.bundle */,
+			);
+			path = ZLPhotoLib;
+			sourceTree = "<group>";
+		};
+		4C6BB69B1C0BF3030004E4C8 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4C6BB69C1C0BF3030004E4C8 /* Utils */,
+				4C6BB6A21C0BF3030004E4C8 /* ZLCamera */,
+				4C6BB6AB1C0BF3030004E4C8 /* ZLPhoto.h */,
+				4C6BB6AC1C0BF3030004E4C8 /* ZLPhotoBrowser */,
+				4C6BB6C01C0BF3030004E4C8 /* ZLPhotoPicker */,
+				4C6BB6DA1C0BF3030004E4C8 /* ZLPhotoPickerCommon.h */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		4C6BB69C1C0BF3030004E4C8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4C6BB69D1C0BF3030004E4C8 /* Category */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		4C6BB69D1C0BF3030004E4C8 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				4C6BB69E1C0BF3030004E4C8 /* UIImage+ZLPhotoLib.h */,
+				4C6BB69F1C0BF3030004E4C8 /* UIImage+ZLPhotoLib.m */,
+				4C6BB6A01C0BF3030004E4C8 /* UIView+ZLExtension.h */,
+				4C6BB6A11C0BF3030004E4C8 /* UIView+ZLExtension.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		4C6BB6A21C0BF3030004E4C8 /* ZLCamera */ = {
+			isa = PBXGroup;
+			children = (
+				4C6BB6A31C0BF3030004E4C8 /* ZLCamera.h */,
+				4C6BB6A41C0BF3030004E4C8 /* ZLCamera.m */,
+				4C6BB6A51C0BF3030004E4C8 /* ZLCameraImageView.h */,
+				4C6BB6A61C0BF3030004E4C8 /* ZLCameraImageView.m */,
+				4C6BB6A71C0BF3030004E4C8 /* ZLCameraView.h */,
+				4C6BB6A81C0BF3030004E4C8 /* ZLCameraView.m */,
+				4C6BB6A91C0BF3030004E4C8 /* ZLCameraViewController.h */,
+				4C6BB6AA1C0BF3030004E4C8 /* ZLCameraViewController.m */,
+			);
+			path = ZLCamera;
+			sourceTree = "<group>";
+		};
+		4C6BB6AC1C0BF3030004E4C8 /* ZLPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				4C6BB6AD1C0BF3030004E4C8 /* Models */,
+				4C6BB6B21C0BF3030004E4C8 /* ViewControllers */,
+				4C6BB6B71C0BF3030004E4C8 /* Views */,
+			);
+			path = ZLPhotoBrowser;
+			sourceTree = "<group>";
+		};
+		4C6BB6AD1C0BF3030004E4C8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4C6BB6AE1C0BF3030004E4C8 /* ZLPhotoPickerBrowserPhoto.h */,
+				4C6BB6AF1C0BF3030004E4C8 /* ZLPhotoPickerBrowserPhoto.m */,
+				4C6BB6B01C0BF3030004E4C8 /* ZLPhotoRect.h */,
+				4C6BB6B11C0BF3030004E4C8 /* ZLPhotoRect.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4C6BB6B21C0BF3030004E4C8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4C6BB6B31C0BF3030004E4C8 /* ZLPhotoPickerBrowserViewController+SignlePhotoBrowser.h */,
+				4C6BB6B41C0BF3030004E4C8 /* ZLPhotoPickerBrowserViewController+SignlePhotoBrowser.m */,
+				4C6BB6B51C0BF3030004E4C8 /* ZLPhotoPickerBrowserViewController.h */,
+				4C6BB6B61C0BF3030004E4C8 /* ZLPhotoPickerBrowserViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4C6BB6B71C0BF3030004E4C8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4C6BB6B81C0BF3030004E4C8 /* ZLPhotoPickerBrowserPhotoImageView.h */,
+				4C6BB6B91C0BF3030004E4C8 /* ZLPhotoPickerBrowserPhotoImageView.m */,
+				4C6BB6BA1C0BF3030004E4C8 /* ZLPhotoPickerBrowserPhotoScrollView.h */,
+				4C6BB6BB1C0BF3030004E4C8 /* ZLPhotoPickerBrowserPhotoScrollView.m */,
+				4C6BB6BC1C0BF3030004E4C8 /* ZLPhotoPickerBrowserPhotoView.h */,
+				4C6BB6BD1C0BF3030004E4C8 /* ZLPhotoPickerBrowserPhotoView.m */,
+				4C6BB6BE1C0BF3030004E4C8 /* ZLPhotoPickerCustomToolBarView.h */,
+				4C6BB6BF1C0BF3030004E4C8 /* ZLPhotoPickerCustomToolBarView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4C6BB6C01C0BF3030004E4C8 /* ZLPhotoPicker */ = {
+			isa = PBXGroup;
+			children = (
+				4C6BB6C11C0BF3030004E4C8 /* Models */,
+				4C6BB6C81C0BF3030004E4C8 /* ViewControllers */,
+				4C6BB6CF1C0BF3030004E4C8 /* Views */,
+			);
+			path = ZLPhotoPicker;
+			sourceTree = "<group>";
+		};
+		4C6BB6C11C0BF3030004E4C8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4C6BB6C21C0BF3030004E4C8 /* ZLPhotoAssets.h */,
+				4C6BB6C31C0BF3030004E4C8 /* ZLPhotoAssets.m */,
+				4C6BB6C41C0BF3030004E4C8 /* ZLPhotoPickerDatas.h */,
+				4C6BB6C51C0BF3030004E4C8 /* ZLPhotoPickerDatas.m */,
+				4C6BB6C61C0BF3030004E4C8 /* ZLPhotoPickerGroup.h */,
+				4C6BB6C71C0BF3030004E4C8 /* ZLPhotoPickerGroup.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4C6BB6C81C0BF3030004E4C8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4C6BB6C91C0BF3030004E4C8 /* ZLPhotoPickerAssetsViewController.h */,
+				4C6BB6CA1C0BF3030004E4C8 /* ZLPhotoPickerAssetsViewController.m */,
+				4C6BB6CB1C0BF3030004E4C8 /* ZLPhotoPickerGroupViewController.h */,
+				4C6BB6CC1C0BF3030004E4C8 /* ZLPhotoPickerGroupViewController.m */,
+				4C6BB6CD1C0BF3030004E4C8 /* ZLPhotoPickerViewController.h */,
+				4C6BB6CE1C0BF3030004E4C8 /* ZLPhotoPickerViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4C6BB6CF1C0BF3030004E4C8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4C6BB6D01C0BF3030004E4C8 /* ZLPhotoPickerCollectionView.h */,
+				4C6BB6D11C0BF3030004E4C8 /* ZLPhotoPickerCollectionView.m */,
+				4C6BB6D21C0BF3030004E4C8 /* ZLPhotoPickerCollectionViewCell.h */,
+				4C6BB6D31C0BF3030004E4C8 /* ZLPhotoPickerCollectionViewCell.m */,
+				4C6BB6D41C0BF3030004E4C8 /* ZLPhotoPickerFooterCollectionReusableView.h */,
+				4C6BB6D51C0BF3030004E4C8 /* ZLPhotoPickerFooterCollectionReusableView.m */,
+				4C6BB6D61C0BF3030004E4C8 /* ZLPhotoPickerGroupTableViewCell.h */,
+				4C6BB6D71C0BF3030004E4C8 /* ZLPhotoPickerGroupTableViewCell.m */,
+				4C6BB6D81C0BF3030004E4C8 /* ZLPhotoPickerImageView.h */,
+				4C6BB6D91C0BF3030004E4C8 /* ZLPhotoPickerImageView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4C6BB6DB1C0BF3030004E4C8 /* DACircularProgress */ = {
+			isa = PBXGroup;
+			children = (
+				4C6BB6DC1C0BF3030004E4C8 /* DACircularProgressView.h */,
+				4C6BB6DD1C0BF3030004E4C8 /* DACircularProgressView.m */,
+				4C6BB6DE1C0BF3030004E4C8 /* DALabeledCircularProgressView.h */,
+				4C6BB6DF1C0BF3030004E4C8 /* DALabeledCircularProgressView.m */,
+			);
+			path = DACircularProgress;
+			sourceTree = "<group>";
+		};
 		4CA2A84E1BEA43B50094A6FC /* Header */ = {
 			isa = PBXGroup;
 			children = (
@@ -873,6 +1219,8 @@
 			children = (
 				4CA34C9E1BF57CD8002DABA2 /* MyActivityViewController.swift */,
 				4CA34C9F1BF57CD8002DABA2 /* MyActivityViewController.xib */,
+				4CF124D01C0F142200BD02DE /* UIParticipateViewController.swift */,
+				4CF124D11C0F142200BD02DE /* UIParticipateViewController.xib */,
 			);
 			path = myActivity;
 			sourceTree = "<group>";
@@ -928,6 +1276,34 @@
 				4CA2A8531BEA456D0094A6FC /* UIImage+SingleColor.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		4CCBDE8D1C08596C008962A9 /* plusViews */ = {
+			isa = PBXGroup;
+			children = (
+				4CCBDE8E1C085997008962A9 /* UICreateActTableViewCell.swift */,
+				4CCBDE8F1C085997008962A9 /* UICreateActTableViewCell.xib */,
+			);
+			path = plusViews;
+			sourceTree = "<group>";
+		};
+		4CCE576B1C07FE6700EA6527 /* plus */ = {
+			isa = PBXGroup;
+			children = (
+				4CCE576C1C08001900EA6527 /* UICreateView.swift */,
+				4CCE576E1C08028900EA6527 /* UICreateView.xib */,
+				4CCE57701C0809FC00EA6527 /* UICreateActViewController.swift */,
+				4CCE57711C0809FC00EA6527 /* UICreateActViewController.xib */,
+				4CCBDE921C08BBE4008962A9 /* UICreateANViewController.swift */,
+				4CCBDE931C08BBE4008962A9 /* UICreateANViewController.xib */,
+				4CCE57741C080A0C00EA6527 /* UICreateTalkViewController.swift */,
+				4CCE57751C080A0C00EA6527 /* UICreateTalkViewController.xib */,
+				4CCE57781C080A1F00EA6527 /* UICreateExcViewController.swift */,
+				4CCE57791C080A1F00EA6527 /* UICreateExcViewController.xib */,
+				4CCE577C1C080A3B00EA6527 /* UICreateShowViewController.swift */,
+				4CCE577D1C080A3B00EA6527 /* UICreateShowViewController.xib */,
+			);
+			path = plus;
 			sourceTree = "<group>";
 		};
 		4CD583C31BF4243F00345666 /* help */ = {
@@ -1027,6 +1403,7 @@
 				4CF6EF9F1BDE58F300CC5BA7 /* base */,
 				4CF6EF8E1BDE58D300CC5BA7 /* local */,
 				4CF6EF901BDE58D300CC5BA7 /* show */,
+				4CCE576B1C07FE6700EA6527 /* plus */,
 				4CF6EF8D1BDE58D300CC5BA7 /* find */,
 				4CF6EF8C1BDE58D300CC5BA7 /* center */,
 				4CF6EF8F1BDE58D300CC5BA7 /* login */,
@@ -1114,6 +1491,10 @@
 				4C0244E11BEF4DA2004BE881 /* UISquareView.xib */,
 				4CF6EFB61BDF6ED000CC5BA7 /* UIShowViewController.swift */,
 				4CF6EFB71BDF6ED000CC5BA7 /* UIShowViewController.xib */,
+				4CF124CC1C0EFFF000BD02DE /* UIDouViewController.swift */,
+				4CF124CD1C0EFFF000BD02DE /* UIDouViewController.xib */,
+				4CF124DC1C1004C700BD02DE /* UIShowItemView.swift */,
+				4CF124DE1C1004DD00BD02DE /* UIShowItemView.xib */,
 			);
 			path = show;
 			sourceTree = "<group>";
@@ -1131,6 +1512,7 @@
 		4CF6EF921BDE58D300CC5BA7 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				4C6BB69A1C0BF3030004E4C8 /* ZLPhotoLib */,
 				4CFF48851C058974007B7E82 /* Keyboard */,
 				4C552EC51BFF874300A93344 /* share */,
 				4C552EBA1BFF5F4C00A93344 /* CCLocation */,
@@ -1156,6 +1538,8 @@
 		4CF6EF941BDE58D300CC5BA7 /* centerModel */ = {
 			isa = PBXGroup;
 			children = (
+				4C696ADD1C0DF230004166FB /* NSFriendObject.h */,
+				4C696ADE1C0DF230004166FB /* NSFriendObject.m */,
 			);
 			path = centerModel;
 			sourceTree = "<group>";
@@ -1176,6 +1560,8 @@
 				4C3926281C030A0800C978E9 /* NSActivity.m */,
 				4C9484C71C05EC5A0042CB9D /* NSTalk.h */,
 				4C9484C81C05EC5A0042CB9D /* NSTalk.m */,
+				4CCE575C1C06C6D400EA6527 /* NSExchange.h */,
+				4CCE575D1C06C6D400EA6527 /* NSExchange.m */,
 			);
 			path = localModel;
 			sourceTree = "<group>";
@@ -1192,6 +1578,8 @@
 		4CF6EF981BDE58D300CC5BA7 /* showModel */ = {
 			isa = PBXGroup;
 			children = (
+				4CCBDE961C0998EF008962A9 /* NSXiu.h */,
+				4CCBDE971C0998EF008962A9 /* NSXiu.m */,
 			);
 			path = showModel;
 			sourceTree = "<group>";
@@ -1199,6 +1587,7 @@
 		4CF6EF991BDE58D300CC5BA7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4CCBDE8D1C08596C008962A9 /* plusViews */,
 				4CF6EFD41BE06AC200CC5BA7 /* baseViews */,
 				4CF6EF9A1BDE58D300CC5BA7 /* centerViews */,
 				4CF6EF9B1BDE58D300CC5BA7 /* findViews */,
@@ -1339,6 +1728,8 @@
 			children = (
 				4CFCB8A51BEBAAC500D84B29 /* UIExchangeTableViewCell.swift */,
 				4CFCB8A61BEBAAC500D84B29 /* UIExchangeTableViewCell.xib */,
+				4CCE575F1C07069300EA6527 /* UIExchangeInfoTableViewCell.swift */,
+				4CCE57601C07069300EA6527 /* UIExchangeInfoTableViewCell.xib */,
 			);
 			path = exchange;
 			sourceTree = "<group>";
@@ -1376,6 +1767,10 @@
 				4CFCB8CB1BEF1ABF00D84B29 /* UIExchangeInfoViewController.xib */,
 				4CFCB8CC1BEF1ABF00D84B29 /* UIExchangeView.swift */,
 				4CFCB8CD1BEF1ABF00D84B29 /* UIExchangeView.xib */,
+				4CCE57631C07562B00EA6527 /* UIExchangeTipView.swift */,
+				4CCE57651C07563C00EA6527 /* UIExchangeTipView.xib */,
+				4CCE57691C075CF200EA6527 /* UIExchangeChooseView.swift */,
+				4CCE57671C075CE500EA6527 /* UIExchangeChooseView.xib */,
 			);
 			path = exchangeVC;
 			sourceTree = "<group>";
@@ -1478,6 +1873,7 @@
 				TargetAttributes = {
 					4CF6EF591BDCA47600CC5BA7 = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 9766SXQZL2;
 					};
 					4CF6EF6D1BDCA47600CC5BA7 = {
 						CreatedOnToolsVersion = 7.1;
@@ -1519,8 +1915,10 @@
 				4CFCB8D81BEF1ABF00D84B29 /* UIExchangeInfoViewController.xib in Resources */,
 				4C0244FE1BF02C8A004BE881 /* UIFindInfoThirdTableViewCell.xib in Resources */,
 				4C006B3A1BF3149D00FFBFF6 /* UIAccountSetViewController.xib in Resources */,
+				4CCE57771C080A0C00EA6527 /* UICreateTalkViewController.xib in Resources */,
 				4CA34CAD1BF57D0C002DABA2 /* MyShowViewController.xib in Resources */,
 				4CF6EF681BDCA47600CC5BA7 /* LaunchScreen.storyboard in Resources */,
+				4CCE57731C0809FC00EA6527 /* UICreateActViewController.xib in Resources */,
 				4CFCB8811BEBA79900D84B29 /* FindListHeadView.xib in Resources */,
 				4CF6EFB91BDF6ED000CC5BA7 /* UIShowViewController.xib in Resources */,
 				4CFCB8851BEBA79900D84B29 /* UIActivityInfoFifthTableViewCell.xib in Resources */,
@@ -1530,15 +1928,18 @@
 				4CFCB8A81BEBAAC500D84B29 /* UIExchangeTableViewCell.xib in Resources */,
 				4C39262D1C0354D100C978E9 /* UIInfoViewController.xib in Resources */,
 				4C006B311BF23F2900FFBFF6 /* UIMyOrderListViewController.xib in Resources */,
+				4CCE57661C07563C00EA6527 /* UIExchangeTipView.xib in Resources */,
 				4C0245551BF0E688004BE881 /* UIOrderInfoViewController.xib in Resources */,
 				4CF6EFAD1BDF50E900CC5BA7 /* UIBridgeViewController.xib in Resources */,
 				4C0245021BF02F02004BE881 /* UIFindInfoForthTableViewCell.xib in Resources */,
 				4CFF48841C04C663007B7E82 /* UICommentTableViewCell.xib in Resources */,
 				4C07BB581BE5F445003E799B /* UIFirstInfoViewController.xib in Resources */,
 				4C07BB501BE5CF41003E799B /* UIAgreementViewController.xib in Resources */,
+				4CF124D71C0F1A2F00BD02DE /* UIParticipateTableViewCell.xib in Resources */,
 				4C0244E51BEF4DA2004BE881 /* UISquareView.xib in Resources */,
 				4CFCB8AC1BEBAAD200D84B29 /* UITopicTableViewCell.xib in Resources */,
 				4C006B351BF23F6300FFBFF6 /* UIMyOrderTableViewCell.xib in Resources */,
+				4CF124DF1C1004DD00BD02DE /* UIShowItemView.xib in Resources */,
 				4C552EFF1BFF874300A93344 /* UMSocialLocalizable.strings in Resources */,
 				4C552F031BFF874300A93344 /* UMSCommentInputControlleriPad.xib in Resources */,
 				4CA34CB51BF5E827002DABA2 /* UIMyActTableViewCell.xib in Resources */,
@@ -1547,29 +1948,38 @@
 				4CD583C21BF4240900345666 /* UIChangePSWViewController.xib in Resources */,
 				4C552F011BFF874300A93344 /* UMSCommentDetailController.xib in Resources */,
 				4CF6EFB51BDF68AD00CC5BA7 /* UILocalViewController.xib in Resources */,
+				4CCE57681C075CE500EA6527 /* UIExchangeChooseView.xib in Resources */,
 				4CF6EFC51BDF6F6600CC5BA7 /* UILoginViewController.xib in Resources */,
 				4CF6EFC11BDF6EF900CC5BA7 /* UICenterViewController.xib in Resources */,
+				4CCE576F1C08028900EA6527 /* UICreateView.xib in Resources */,
 				4CD583D31BF45ABD00345666 /* UIMineViewController.xib in Resources */,
 				4CFF48801C04C648007B7E82 /* UIPeopleCollectionViewCell.xib in Resources */,
 				4C552F041BFF874300A93344 /* UMShareEditViewController.xib in Resources */,
+				4C6BB6FC1C0BF3040004E4C8 /* ZLPhotoLib.bundle in Resources */,
 				4CFCB8D41BEF1ABF00D84B29 /* UIActivityView.xib in Resources */,
 				4CFCB88D1BEBA79900D84B29 /* UIActivityInfoSecondTableViewCell.xib in Resources */,
+				4CF124D31C0F142200BD02DE /* UIParticipateViewController.xib in Resources */,
+				4CF124DB1C0F25D000BD02DE /* UIMyTalkTableViewCell.xib in Resources */,
 				4CFCB8891BEBA79900D84B29 /* UIActivityInfoFooterView.xib in Resources */,
+				4CCBDE911C085997008962A9 /* UICreateActTableViewCell.xib in Resources */,
 				4CF6EFA31BDE5A2600CC5BA7 /* UIBaseNavViewController.xib in Resources */,
 				4C552EC41BFF643600A93344 /* UIOptionView.xib in Resources */,
 				4CFCB88F1BEBA79900D84B29 /* UIActivityInfoThirdTableViewCell.xib in Resources */,
 				4C0245491BF0D883004BE881 /* UIFriendsTableViewCell.xib in Resources */,
 				4CF6EFCD1BDF6F9700CC5BA7 /* UIEnterViewController.xib in Resources */,
 				4C006B291BF2342A00FFBFF6 /* UIFinalPayTableViewCell.xib in Resources */,
+				4CCE57621C07069300EA6527 /* UIExchangeInfoTableViewCell.xib in Resources */,
 				4CFCB88B1BEBA79900D84B29 /* UIActivityInfoForthTableViewCell.xib in Resources */,
 				4CFCB8911BEBA79900D84B29 /* UIActivityTableViewCell.xib in Resources */,
 				4CF6EF651BDCA47600CC5BA7 /* Assets.xcassets in Resources */,
 				4C552F081BFF874400A93344 /* UMSShareListController.xib in Resources */,
+				4C696ADC1C0DA4AE004166FB /* MyFansViewController.xib in Resources */,
 				4CFCB8DC1BEF1ABF00D84B29 /* UITopicView.xib in Resources */,
 				4CFCB8E41BEF39B600D84B29 /* CommentTableViewCell.xib in Resources */,
 				4C006B251BF232E800FFBFF6 /* UIFinalPayViewController.xib in Resources */,
 				4CA59AD01BE85B6800C614FC /* UIShowNavigationView.xib in Resources */,
 				4CFCB8871BEBA79900D84B29 /* UIActivityInfoFirstTableViewCell.xib in Resources */,
+				4C696AE31C0DF4D6004166FB /* UIPersonTableViewCell.xib in Resources */,
 				4C006B1F1BF1FB9200FFBFF6 /* UIConverCodeTableViewCell.xib in Resources */,
 				4CA34CB11BF57D1D002DABA2 /* MyTopicViewController.xib in Resources */,
 				4C0244F61BEF787D004BE881 /* UIFindInfoFirstTableViewCell.xib in Resources */,
@@ -1585,6 +1995,8 @@
 				4CFCB8DA1BEF1ABF00D84B29 /* UIExchangeView.xib in Resources */,
 				4CF6EF631BDCA47600CC5BA7 /* Main.storyboard in Resources */,
 				4C552F071BFF874300A93344 /* UMSnsAccountViewController.xib in Resources */,
+				4CCBDE951C08BBE4008962A9 /* UICreateANViewController.xib in Resources */,
+				4CCE577B1C080A1F00EA6527 /* UICreateExcViewController.xib in Resources */,
 				4CF6EFC91BDF6F7700CC5BA7 /* UIRegistViewController.xib in Resources */,
 				4C0245061BF03104004BE881 /* UIFindInfoFifithTableViewCell.xib in Resources */,
 				4C0244E91BEF515A004BE881 /* UIShowTableViewCell.xib in Resources */,
@@ -1592,7 +2004,9 @@
 				4C07BB541BE5F433003E799B /* UIFullInfoViewController.xib in Resources */,
 				4CF6EFBD1BDF6EE300CC5BA7 /* UIFindViewController.xib in Resources */,
 				4C0244E31BEF4DA2004BE881 /* UILinkView.xib in Resources */,
+				4CF124CF1C0EFFF000BD02DE /* UIDouViewController.xib in Resources */,
 				4C552F0D1BFF874400A93344 /* WeiboSDK.bundle in Resources */,
+				4CCE577F1C080A3B00EA6527 /* UICreateShowViewController.xib in Resources */,
 				4C0244FA1BEF7F5B004BE881 /* UIFindInfoSecondTableViewCell.xib in Resources */,
 				4CD583CB1BF4248300345666 /* UINikenameViewController.xib in Resources */,
 				4CFCB8E01BEF2F7400D84B29 /* TopicImageCollectionViewCell.xib in Resources */,
@@ -1683,37 +2097,59 @@
 			files = (
 				4CD583C11BF4240900345666 /* UIChangePSWViewController.swift in Sources */,
 				4C02454C1BF0DAED004BE881 /* UIFriendsListViewController.swift in Sources */,
+				4C6BB6E81C0BF3040004E4C8 /* ZLPhotoRect.m in Sources */,
 				4CEDCF5E1BFB665500226BB9 /* NSHttpModel.m in Sources */,
+				4CCE57761C080A0C00EA6527 /* UICreateTalkViewController.swift in Sources */,
+				4CF124DA1C0F25D000BD02DE /* UIMyTalkTableViewCell.swift in Sources */,
 				4CA34CB41BF5E827002DABA2 /* UIMyActTableViewCell.swift in Sources */,
+				4C6BB6EC1C0BF3040004E4C8 /* ZLPhotoPickerBrowserPhotoScrollView.m in Sources */,
+				4C6BB6F61C0BF3040004E4C8 /* ZLPhotoPickerCollectionViewCell.m in Sources */,
+				4CCBDE981C0998EF008962A9 /* NSXiu.m in Sources */,
 				4CFCB8A31BEBAABA00D84B29 /* UILocalNavigationView.swift in Sources */,
 				4C552EC31BFF643600A93344 /* UIOptionView.swift in Sources */,
 				4CF6EFA61BDE5A4700CC5BA7 /* UIBaseTabBarController.swift in Sources */,
+				4CCE57721C0809FC00EA6527 /* UICreateActViewController.swift in Sources */,
 				4C0244E81BEF515A004BE881 /* UIShowTableViewCell.swift in Sources */,
 				4C07BB531BE5F433003E799B /* UIFullInfoViewController.swift in Sources */,
+				4C6BB6E11C0BF3030004E4C8 /* UIImage+ZLPhotoLib.m in Sources */,
 				4CFCB8A71BEBAAC500D84B29 /* UIExchangeTableViewCell.swift in Sources */,
 				4CFCB88A1BEBA79900D84B29 /* UIActivityInfoForthTableViewCell.swift in Sources */,
+				4C6BB6E61C0BF3040004E4C8 /* ZLCameraViewController.m in Sources */,
 				4C0244E41BEF4DA2004BE881 /* UISquareView.swift in Sources */,
 				4CA2A8541BEA456D0094A6FC /* UIImage+SingleColor.m in Sources */,
 				4C0244E21BEF4DA2004BE881 /* UILinkView.swift in Sources */,
 				4CFCB8821BEBA79900D84B29 /* UIActivityCollectionViewCell.swift in Sources */,
 				4CFCB8D51BEF1ABF00D84B29 /* UIJoinViewController.swift in Sources */,
 				4CF6EFB01BDF512B00CC5BA7 /* UIBaseViewController.swift in Sources */,
+				4C6BB6F11C0BF3040004E4C8 /* ZLPhotoPickerGroup.m in Sources */,
 				4C006B1E1BF1FB9200FFBFF6 /* UIConverCodeTableViewCell.swift in Sources */,
+				4CF124CE1C0EFFF000BD02DE /* UIDouViewController.swift in Sources */,
 				4CFCB8641BEBA66000D84B29 /* TAPageControl.m in Sources */,
+				4CF124D21C0F142200BD02DE /* UIParticipateViewController.swift in Sources */,
 				4CFCB8AB1BEBAAD200D84B29 /* UITopicTableViewCell.swift in Sources */,
 				4C07BB571BE5F445003E799B /* UIFirstInfoViewController.swift in Sources */,
 				4CFCB8881BEBA79900D84B29 /* UIActivityInfoFooterView.swift in Sources */,
 				4CFCB8D71BEF1ABF00D84B29 /* UIExchangeInfoViewController.swift in Sources */,
 				4C006B161BF1F87000FFBFF6 /* UIConverInfoViewController.swift in Sources */,
+				4CCE575E1C06C6D400EA6527 /* NSExchange.m in Sources */,
+				4C696ADB1C0DA4AE004166FB /* MyFansViewController.swift in Sources */,
+				4CCE577A1C080A1F00EA6527 /* UICreateExcViewController.swift in Sources */,
 				4CEDCF551BFB5C2000226BB9 /* NSHttpObject.m in Sources */,
 				4CFCB8901BEBA79900D84B29 /* UIActivityTableViewCell.swift in Sources */,
+				4C696AE21C0DF4D6004166FB /* UIPersonTableViewCell.swift in Sources */,
 				4C006B241BF232E800FFBFF6 /* UIFinalPayViewController.swift in Sources */,
+				4C6BB6FB1C0BF3040004E4C8 /* DALabeledCircularProgressView.m in Sources */,
+				4CCE57611C07069300EA6527 /* UIExchangeInfoTableViewCell.swift in Sources */,
 				4C0245011BF02F02004BE881 /* UIFindInfoForthTableViewCell.swift in Sources */,
 				4CF6EFD61BE260F400CC5BA7 /* UIBaseTabBar.swift in Sources */,
 				4C0244F01BEF73D9004BE881 /* UIFindInfoViewController.swift in Sources */,
+				4C6BB6F71C0BF3040004E4C8 /* ZLPhotoPickerFooterCollectionReusableView.m in Sources */,
 				4C3926291C030A0800C978E9 /* NSActivity.m in Sources */,
+				4C6BB6EB1C0BF3040004E4C8 /* ZLPhotoPickerBrowserPhotoImageView.m in Sources */,
 				4CF6EFC81BDF6F7700CC5BA7 /* UIRegistViewController.swift in Sources */,
 				4CD583D21BF45ABD00345666 /* UIMineViewController.swift in Sources */,
+				4C6BB6F31C0BF3040004E4C8 /* ZLPhotoPickerGroupViewController.m in Sources */,
+				4CCBDE901C085997008962A9 /* UICreateActTableViewCell.swift in Sources */,
 				4CF6EFB41BDF68AD00CC5BA7 /* UILocalViewController.swift in Sources */,
 				4CFCB8841BEBA79900D84B29 /* UIActivityInfoFifthTableViewCell.swift in Sources */,
 				4CFCB8801BEBA79900D84B29 /* FindListHeadView.swift in Sources */,
@@ -1721,14 +2157,23 @@
 				4CEDCF581BFB5E1600226BB9 /* Reachability.m in Sources */,
 				4CA34CB81BF5F38B002DABA2 /* MyTopicInfoViewController.swift in Sources */,
 				4C0245081BF0395D004BE881 /* UIFindInfoFooterView.swift in Sources */,
+				4C6BB6E71C0BF3040004E4C8 /* ZLPhotoPickerBrowserPhoto.m in Sources */,
 				4CEDCF5B1BFB655700226BB9 /* NSHttpHelp.m in Sources */,
 				4CA34CBC1BF5F4C4002DABA2 /* MyShowInfoViewController.swift in Sources */,
 				4CA34CA41BF57CEC002DABA2 /* MyExchangeViewController.swift in Sources */,
+				4C6BB6EE1C0BF3040004E4C8 /* ZLPhotoPickerCustomToolBarView.m in Sources */,
 				4C0245481BF0D883004BE881 /* UIFriendsTableViewCell.swift in Sources */,
 				4CF6EFB81BDF6ED000CC5BA7 /* UIShowViewController.swift in Sources */,
+				4CF124D61C0F1A2F00BD02DE /* UIParticipateTableViewCell.swift in Sources */,
+				4CCE577E1C080A3B00EA6527 /* UICreateShowViewController.swift in Sources */,
+				4C6BB6E51C0BF3040004E4C8 /* ZLCameraView.m in Sources */,
 				4CFCB8631BEBA66000D84B29 /* TADotView.m in Sources */,
 				4CF6EFA21BDE5A2600CC5BA7 /* UIBaseNavViewController.swift in Sources */,
+				4CCE57641C07562B00EA6527 /* UIExchangeTipView.swift in Sources */,
+				4CCE576D1C08001900EA6527 /* UICreateView.swift in Sources */,
+				4C6BB6E21C0BF3040004E4C8 /* UIView+ZLExtension.m in Sources */,
 				4CFCB88C1BEBA79900D84B29 /* UIActivityInfoSecondTableViewCell.swift in Sources */,
+				4C6BB6FA1C0BF3040004E4C8 /* DACircularProgressView.m in Sources */,
 				4C07BB5F1BE60769003E799B /* UICenterTableViewCell.swift in Sources */,
 				4CF6EFC41BDF6F6600CC5BA7 /* UILoginViewController.swift in Sources */,
 				4CA34CA01BF57CD8002DABA2 /* MyActivityViewController.swift in Sources */,
@@ -1738,10 +2183,12 @@
 				4C006B301BF23F2900FFBFF6 /* UIMyOrderListViewController.swift in Sources */,
 				4C0244EC1BEF6933004BE881 /* UIFindTableViewCell.swift in Sources */,
 				4CFF48831C04C663007B7E82 /* UICommentTableViewCell.swift in Sources */,
+				4C6BB6E31C0BF3040004E4C8 /* ZLCamera.m in Sources */,
 				4CF6EFC01BDF6EF900CC5BA7 /* UICenterViewController.swift in Sources */,
 				4C006B121BF1F85A00FFBFF6 /* UIConvertViewController.swift in Sources */,
 				4C006B391BF3149D00FFBFF6 /* UIAccountSetViewController.swift in Sources */,
 				4CFCB8D31BEF1ABF00D84B29 /* UIActivityView.swift in Sources */,
+				4C6BB6EF1C0BF3040004E4C8 /* ZLPhotoAssets.m in Sources */,
 				4CA34CB01BF57D1D002DABA2 /* MyTopicViewController.swift in Sources */,
 				4C552EC01BFF5F4C00A93344 /* CLLocation+YCLocation.m in Sources */,
 				4C0244FD1BF02C8A004BE881 /* UIFindInfoThirdTableViewCell.swift in Sources */,
@@ -1751,26 +2198,36 @@
 				4C07BB5B1BE5F456003E799B /* UISecondInfoViewController.swift in Sources */,
 				4C0245051BF03104004BE881 /* UIFindInfoFifithTableViewCell.swift in Sources */,
 				4CD583BD1BF423F700345666 /* UIChangePhoneViewController.swift in Sources */,
+				4C6BB6E91C0BF3040004E4C8 /* ZLPhotoPickerBrowserViewController+SignlePhotoBrowser.m in Sources */,
 				4C006B211BF22A5200FFBFF6 /* Common.swift in Sources */,
 				4CA59AC61BE79B3300C614FC /* UIChooseAddressViewController.swift in Sources */,
 				4C0244F91BEF7F5B004BE881 /* UIFindInfoSecondTableViewCell.swift in Sources */,
 				4CA34CAC1BF57D0C002DABA2 /* MyShowViewController.swift in Sources */,
+				4C6BB6ED1C0BF3040004E4C8 /* ZLPhotoPickerBrowserPhotoView.m in Sources */,
 				4C0245541BF0E688004BE881 /* UIOrderInfoViewController.swift in Sources */,
 				4CA59ACE1BE85B5C00C614FC /* UIShowNavigationView.swift in Sources */,
+				4C6BB6F41C0BF3040004E4C8 /* ZLPhotoPickerViewController.m in Sources */,
 				4CFCB8621BEBA66000D84B29 /* TAAnimatedDotView.m in Sources */,
 				4CEDCF621BFCAF5F00226BB9 /* NSHelper.m in Sources */,
+				4C6BB6E41C0BF3040004E4C8 /* ZLCameraImageView.m in Sources */,
 				4CFCB89C1BEBA90B00D84B29 /* ADModel.m in Sources */,
+				4CCE576A1C075CF200EA6527 /* UIExchangeChooseView.swift in Sources */,
 				4CFF487C1C04C297007B7E82 /* NSString+Additions.m in Sources */,
 				4C39262C1C0354D100C978E9 /* UIInfoViewController.swift in Sources */,
 				4CF6EFD31BDF70C400CC5BA7 /* NSUserInfoObject.swift in Sources */,
 				4CD583CA1BF4248300345666 /* UINikenameViewController.swift in Sources */,
+				4CF124DD1C1004C700BD02DE /* UIShowItemView.swift in Sources */,
+				4C6BB6F51C0BF3040004E4C8 /* ZLPhotoPickerCollectionView.m in Sources */,
 				4CA34CA81BF57CFE002DABA2 /* MyFriendsViewController.swift in Sources */,
+				4CCBDE941C08BBE4008962A9 /* UICreateANViewController.swift in Sources */,
 				4CF6EFAC1BDF50E900CC5BA7 /* UIBridgeViewController.m in Sources */,
 				4C0244F51BEF787D004BE881 /* UIFindInfoFirstTableViewCell.swift in Sources */,
 				4CFF487F1C04C648007B7E82 /* UIPeopleCollectionViewCell.swift in Sources */,
+				4C6BB6EA1C0BF3040004E4C8 /* ZLPhotoPickerBrowserViewController.m in Sources */,
 				4C07BB4F1BE5CF41003E799B /* UIAgreementViewController.swift in Sources */,
 				4CD583C61BF4245200345666 /* UIHelpViewController.swift in Sources */,
 				4C9484C91C05EC5A0042CB9D /* NSTalk.m in Sources */,
+				4C6BB6F21C0BF3040004E4C8 /* ZLPhotoPickerAssetsViewController.m in Sources */,
 				4C006B341BF23F6300FFBFF6 /* UIMyOrderTableViewCell.swift in Sources */,
 				4CFF48881C058974007B7E82 /* YFInputBar.m in Sources */,
 				4C006B281BF2342A00FFBFF6 /* UIFinalPayTableViewCell.swift in Sources */,
@@ -1780,10 +2237,14 @@
 				4CF6EFCC1BDF6F9700CC5BA7 /* UIEnterViewController.swift in Sources */,
 				4CFCB88E1BEBA79900D84B29 /* UIActivityInfoThirdTableViewCell.swift in Sources */,
 				4CF6EFBC1BDF6EE300CC5BA7 /* UIFindViewController.swift in Sources */,
+				4C6BB6F01C0BF3040004E4C8 /* ZLPhotoPickerDatas.m in Sources */,
+				4C696ADF1C0DF230004166FB /* NSFriendObject.m in Sources */,
 				4CF6EF601BDCA47600CC5BA7 /* ViewController.swift in Sources */,
+				4C6BB6F91C0BF3040004E4C8 /* ZLPhotoPickerImageView.m in Sources */,
 				4CFCB8611BEBA66000D84B29 /* TAAbstractDotView.m in Sources */,
 				4CF6EF5E1BDCA47600CC5BA7 /* AppDelegate.swift in Sources */,
 				4C0245501BF0DDE6004BE881 /* UIPaymentViewController.swift in Sources */,
+				4C6BB6F81C0BF3040004E4C8 /* ZLPhotoPickerGroupTableViewCell.m in Sources */,
 				4CFCB8861BEBA79900D84B29 /* UIActivityInfoFirstTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1884,7 +2345,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1922,7 +2383,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

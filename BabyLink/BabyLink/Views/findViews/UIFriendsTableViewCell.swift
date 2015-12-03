@@ -22,6 +22,10 @@ class UIFriendsTableViewCell: UITableViewCell {
         inviteBtn.makeBackGroundColor_Purple();
     }
 
+    
+    
+    
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

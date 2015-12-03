@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UINikenameViewController: UIBaseViewController {
+class UINikenameViewController: UIBaseViewController,UITextFieldDelegate {
 
     @IBOutlet weak var nicknameField: UITextField!
     @IBOutlet weak var confirmBtn: UIButton!
@@ -20,6 +20,9 @@ class UINikenameViewController: UIBaseViewController {
         self.title = "修改昵称"
         confirmBtn.makeBackGroundColor_Red();
         nicknameField.delegate = self;
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil);
     }
 
     @IBAction func changeNickname(sender: UIButton) {
@@ -48,8 +51,29 @@ class UINikenameViewController: UIBaseViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
+    func keyboardWillShow(notification:NSNotification){
+        self.addGesture();
+    }
+    func keyboardWillHide(notification:NSNotification){
+        self.removeGesture();
+    }
+    func textFieldDidBeginEditing(textField: UITextField) {
+        self.didBeginEditing(textField);
+    }
+    func textFieldDidEndEditing(textField: UITextField) {
+        self.didEndEditing(textField);
+    }
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField.returnKeyType == UIReturnKeyType.Next {
+            self.nextFieldEditing(textField);
+        } else if textField.returnKeyType == UIReturnKeyType.Done {
+            textField.resignFirstResponder()
+        }
+        return true;
+    }
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self);
+    }
     /*
     // MARK: - Navigation
 

@@ -11,10 +11,9 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z5G-rU-gEY">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="link鼠标点击" translatesAutoresizingMaskIntoConstraints="NO" id="Z5G-rU-gEY">
                     <rect key="frame" x="2" y="0.0" width="155.5" height="44"/>
                     <animations/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnR-Ei-Wg1">
                     <rect key="frame" x="2" y="0.0" width="155.5" height="44"/>
@@ -60,4 +59,7 @@
             <point key="canvasLocation" x="248" y="110"/>
         </view>
     </objects>
+    <resources>
+        <image name="link鼠标点击" width="57" height="23"/>
+    </resources>
 </document>

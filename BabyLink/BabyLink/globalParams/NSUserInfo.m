@@ -26,7 +26,24 @@ static NSUserInfo * sharedInstance = nil;
 - (instancetype)init {
     self = [super init];
     if (self) {
+        _member_id = @"";
+        _mobile = @"";;
+        _member_name = @"";
+        _member_avar = @"";
+        _password = @"";
+        _passwordLocal = @"";
+        _openid = @"";
+        _islogin = @"";
+        _add_time = @"";
+        _baby_date = @"";
+        _baby_link = @"";
+        _baby_nam = @"";
+        _baby_sex = @"";
         
+        _city = @"";
+        _home = @"";
+        _position = @"";
+        _login_time = @"";
     }
     return self;
 }

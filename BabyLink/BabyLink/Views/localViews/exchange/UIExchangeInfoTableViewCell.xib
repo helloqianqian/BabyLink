@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="UIExchangeInfoTableViewCell" customModule="BabyLink" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="86"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="85.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ekc-Cm-npo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="85.5"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUU-iJ-Bis">
+                                <rect key="frame" x="0.0" y="28" width="30" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="UZu-QT-807"/>
+                                    <constraint firstAttribute="width" constant="30" id="uq4-MB-N1E"/>
+                                </constraints>
+                                <state key="normal" image="switch_btn"/>
+                                <state key="selected" image="switch_selected_btn"/>
+                                <connections>
+                                    <action selector="chooseGoods:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="TCa-Fq-iGg"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MnA-vn-pFn">
+                                <rect key="frame" x="35" y="10" width="66" height="66"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="66" id="pUr-nS-5pC"/>
+                                    <constraint firstAttribute="height" constant="66" id="zl6-yR-ZEv"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="玩具一个" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trt-qS-cBq">
+                                <rect key="frame" x="109" y="10" width="184" height="20"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="mVu-IB-dk3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.38823529410000002" green="0.4039215686" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="箭头" translatesAutoresizingMaskIntoConstraints="NO" id="OiH-GD-MVJ">
+                                <rect key="frame" x="302" y="35" width="10" height="16"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="3cg-B5-DES"/>
+                                    <constraint firstAttribute="width" constant="10" id="EwI-RM-e3p"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015/12/28  24:59" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WdZ-fQ-VmN">
+                                <rect key="frame" x="109" y="30" width="165" height="15"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="aXI-sz-498"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.38823529410000002" green="0.4039215686" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OiH-GD-MVJ" firstAttribute="leading" secondItem="trt-qS-cBq" secondAttribute="trailing" constant="9" id="H4p-vR-ocj"/>
+                            <constraint firstItem="WdZ-fQ-VmN" firstAttribute="top" secondItem="trt-qS-cBq" secondAttribute="bottom" id="IzD-S8-96H"/>
+                            <constraint firstItem="trt-qS-cBq" firstAttribute="leading" secondItem="MnA-vn-pFn" secondAttribute="trailing" constant="8" id="JDX-qx-AJU"/>
+                            <constraint firstItem="MnA-vn-pFn" firstAttribute="leading" secondItem="eUU-iJ-Bis" secondAttribute="trailing" constant="5" id="Lb6-IH-HRy"/>
+                            <constraint firstItem="OiH-GD-MVJ" firstAttribute="leading" secondItem="WdZ-fQ-VmN" secondAttribute="trailing" constant="28" id="Mj0-aW-7OR"/>
+                            <constraint firstItem="trt-qS-cBq" firstAttribute="top" secondItem="ekc-Cm-npo" secondAttribute="top" constant="10" id="N9j-ZU-7Yu"/>
+                            <constraint firstItem="eUU-iJ-Bis" firstAttribute="centerY" secondItem="ekc-Cm-npo" secondAttribute="centerY" id="P5Q-tv-2bz"/>
+                            <constraint firstItem="eUU-iJ-Bis" firstAttribute="leading" secondItem="ekc-Cm-npo" secondAttribute="leading" id="akh-PZ-IXe"/>
+                            <constraint firstAttribute="trailing" secondItem="OiH-GD-MVJ" secondAttribute="trailing" constant="8" id="dEv-F7-BFA"/>
+                            <constraint firstItem="WdZ-fQ-VmN" firstAttribute="leading" secondItem="MnA-vn-pFn" secondAttribute="trailing" constant="8" id="fM3-qU-PKd"/>
+                            <constraint firstItem="OiH-GD-MVJ" firstAttribute="centerY" secondItem="ekc-Cm-npo" secondAttribute="centerY" id="gF2-pv-VUJ"/>
+                            <constraint firstItem="MnA-vn-pFn" firstAttribute="centerY" secondItem="ekc-Cm-npo" secondAttribute="centerY" id="gMf-EL-iVw"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <animations/>
+                <color key="backgroundColor" red="0.92941176470588238" green="0.93333333333333335" blue="0.93725490196078431" alpha="0.0" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstItem="ekc-Cm-npo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="CjN-L8-U7w"/>
+                    <constraint firstAttribute="bottom" secondItem="ekc-Cm-npo" secondAttribute="bottom" id="WEX-fm-cB1"/>
+                    <constraint firstAttribute="trailing" secondItem="ekc-Cm-npo" secondAttribute="trailing" id="cjV-Ea-Ocy"/>
+                    <constraint firstItem="ekc-Cm-npo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="hPX-pt-oaL"/>
+                </constraints>
+            </tableViewCellContentView>
+            <animations/>
+            <color key="backgroundColor" red="0.92941176469999998" green="0.93333333330000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+            <connections>
+                <outlet property="backView" destination="ekc-Cm-npo" id="hPm-v2-t5O"/>
+                <outlet property="chooseBtn" destination="eUU-iJ-Bis" id="Jjb-M6-u5R"/>
+                <outlet property="contentImage" destination="MnA-vn-pFn" id="1Da-Fj-dKh"/>
+                <outlet property="timeLabel" destination="WdZ-fQ-VmN" id="gJo-Zg-n0s"/>
+                <outlet property="titleLabel" destination="trt-qS-cBq" id="IV6-qS-cJ3"/>
+            </connections>
+            <point key="canvasLocation" x="214" y="271"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="switch_btn" width="14" height="14"/>
+        <image name="switch_selected_btn" width="14" height="14"/>
+        <image name="箭头" width="10" height="16"/>
+    </resources>
+</document>

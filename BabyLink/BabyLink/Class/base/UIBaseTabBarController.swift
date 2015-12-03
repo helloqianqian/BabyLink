@@ -8,17 +8,21 @@
 
 import UIKit
 
-class UIBaseTabBarController: UITabBarController, UIBaseTabBarDelegate {
+class UIBaseTabBarController: UITabBarController, UIBaseTabBarDelegate ,UICreateDelegate{
 
     var localView:UILocalViewController!;
     var showView:UIShowViewController!;
     var findView:UIFindViewController!;
     var centerView:UICenterViewController!;
     
+    var reloadListType = -1;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        localView = UILocalViewController.init(nibName: "UILocalViewController", bundle: NSBundle.mainBundle())
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action: "")
+        
+        localView = UILocalViewController(nibName: "UILocalViewController", bundle: NSBundle.mainBundle())
         localView.title = "本小区"
         localView.tabBarItem = UITabBarItem(title: "本小区", image: UIImage(named: "wben"), selectedImage: UIImage(named: "dben"))
         let localNav = UIBaseNavViewController(rootViewController: localView)
@@ -56,10 +60,22 @@ class UIBaseTabBarController: UITabBarController, UIBaseTabBarDelegate {
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBarHidden = true
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        
+        if createSuccess {
+            if reloadListType<3{
+                localView.titleView.selectedItem = self.reloadListType;
+            } else {
+                showView.titleView.selectedIndex = 0
+            }
+            createSuccess = false;
+        }
+        reloadListType = -1;
     }
-    
-    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated);
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -67,10 +83,44 @@ class UIBaseTabBarController: UITabBarController, UIBaseTabBarDelegate {
     }
     
     
-    func tabBardidClickPlusButton(tabBar: UITabBar) {
-        
+    func tabBardidClickPlusButton(tabBar: UITabBar) {        
+        let createView = NSBundle.mainBundle().loadNibNamed("UICreateView", owner: nil, options: nil).first as! UICreateView;
+        createView.frame = CGRectMake(0, MainScreenHeight, MainScreenWidth, MainScreenHeight);
+        createView.delegate = self;
+        self.view.addSubview(createView);
+        createView.showView();
     }
 
+    func didSelectedCreateIndex(index: Int) {
+        switch index {
+        case 110:
+            self.selectedIndex = 0;
+            self.reloadListType = 0;
+            let createActVC = UICreateActViewController(nibName:"UICreateActViewController" ,bundle: NSBundle.mainBundle());
+            self.navigationController?.pushViewController(createActVC, animated: true);
+            break;
+        case 111:
+            self.selectedIndex = 0;
+            self.reloadListType = 1;
+            let createActVC = UICreateShowViewController(nibName:"UICreateShowViewController" ,bundle: NSBundle.mainBundle());
+            self.navigationController?.pushViewController(createActVC, animated: true);
+            break;
+        case 112:
+            self.selectedIndex = 0;
+            self.reloadListType = 2;
+            let createActVC = UICreateExcViewController(nibName:"UICreateExcViewController" ,bundle: NSBundle.mainBundle());
+            self.navigationController?.pushViewController(createActVC, animated: true);
+            break;
+        case 113:
+            self.selectedIndex = 1;
+            self.reloadListType = 3;
+            let createActVC = UICreateTalkViewController(nibName:"UICreateTalkViewController" ,bundle: NSBundle.mainBundle());
+            self.navigationController?.pushViewController(createActVC, animated: true);
+            break;
+        default:
+            break;
+        }
+    }
     
     
     /*

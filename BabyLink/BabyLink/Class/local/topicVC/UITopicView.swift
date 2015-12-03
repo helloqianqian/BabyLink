@@ -14,6 +14,7 @@ class UITopicView: UIView ,UITableViewDelegate,UITableViewDataSource,UITalkComme
     var page = 1;
     var inputBar:YFInputBar!;
     var commentObject:NSTalkCommentObject!=NSTalkCommentObject();
+    var superVC:UILocalViewController!;
     override func awakeFromNib() {
         listTableView.delegate = self;
         listTableView.dataSource = self;
@@ -22,6 +23,7 @@ class UITopicView: UIView ,UITableViewDelegate,UITableViewDataSource,UITalkComme
         self.listTableView.footer = MJRefreshBackNormalFooter(refreshingTarget: self, refreshingAction: "getMoreListData");
         
         self.setInputBar()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil);
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil);
     }
     func setInputBar(){
@@ -47,7 +49,7 @@ class UITopicView: UIView ,UITableViewDelegate,UITableViewDataSource,UITalkComme
         }
     }
     func getListData(){
-        let dicParam:NSDictionary = NSDictionary(objects: ["1","\(self.page)"] , forKeys: [MEMBER_ID,"page"]);
+        let dicParam:NSDictionary = NSDictionary(objects: [NSUserInfo.shareInstance().member_id,"\(self.page)"] , forKeys: [MEMBER_ID,"page"]);
         NSHttpHelp.httpHelpWithUrlTpye(talkListType, withParam: dicParam, withResult: { (returnObject:AnyObject!) -> Void in
             let dic = returnObject as! NSDictionary;
             let code = dic["code"] as! NSInteger;
@@ -71,10 +73,10 @@ class UITopicView: UIView ,UITableViewDelegate,UITableViewDataSource,UITalkComme
                         let  font:UIFont = UIFont.systemFontOfSize(12);
                         if aCommend.to_id == talk.member_id {
                             let content = "\(aCommend.from_name)：\(aCommend.info)" as NSString;
-                            size = content.sizeWithConstrainedToWidth(Float(MainScreenWidth-78), fromFont:font, lineSpace: 2.5);
+                            size = content.sizeWithConstrainedToWidth(Float(MainScreenWidth-78), fromFont:font, lineSpace: 3.0);
                         } else {
                             let content = "\(aCommend.from_name)回复\(aCommend.to_name)：\(aCommend.info)" as NSString;
-                            size = content.sizeWithConstrainedToWidth(Float(MainScreenWidth-78), fromFont:font, lineSpace: 2.5);
+                            size = content.sizeWithConstrainedToWidth(Float(MainScreenWidth-78), fromFont:font, lineSpace: 3.0);
                         }
                         aCommend.cellHeight = size.height+5;
                         talk.tableViewHeight+=(size.height+5);
@@ -109,8 +111,8 @@ class UITopicView: UIView ,UITableViewDelegate,UITableViewDataSource,UITalkComme
         if model.commends.count>0{
             height+=(14+model.tableViewHeight);
         }
-        let infoSize = (model.info as NSString).sizeWithConstrainedToWidth(Float(MainScreenWidth-71), fromFont: UIFont.systemFontOfSize(13), lineSpace: 2.5)
-        return height + infoSize.height;
+        let infoSize = (model.info as NSString).sizeWithConstrainedToWidth(Float(MainScreenWidth-80), fromFont: UIFont.systemFontOfSize(13), lineSpace: 3)
+        return height + infoSize.height+5;
     }
     //MARK: - UITableViewDataSource
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
@@ -122,22 +124,36 @@ class UITopicView: UIView ,UITableViewDelegate,UITableViewDataSource,UITalkComme
         let model = self.dataArray[indexPath.row] as! NSTalk;
         cell.setContentData(model,withIndexRow: indexPath.row);
         cell.delegate = self;
+        cell.superVC = self.superVC;
         return cell;
     }
     func didSelectAtIndexPath(infoModel:NSTalkCommentObject){
         self.commentObject = infoModel;
+        self.inputBar.textField.placeholder = "回复\(infoModel.from_name):"
         self.inputBar.textField.becomeFirstResponder();
         self.listTableView.userInteractionEnabled = false;
     }
     func didSelectComment(infoModel:NSTalkCommentObject){
         self.commentObject = infoModel;
+        self.inputBar.textField.placeholder = "输入评论:"
         self.inputBar.textField.becomeFirstResponder();
         self.listTableView.userInteractionEnabled = false;
     }
     func keyboardWillHide(notification:NSNotification){
         self.listTableView.userInteractionEnabled = true;
     }
+    func keyboardWillShow(notification:NSNotification){
+        self.listTableView.userInteractionEnabled = false;
+    }
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self);
+    }
+    
+    
     func inputBar(inputBar: YFInputBar!, sendBtnPress sendBtn: UIButton!, withInputString str: String!) {
+        if str == "" {
+            return;
+        }
         let to_id = self.commentObject.from_id;
         let from_id = NSUserInfo.shareInstance().member_id;
         let dicParam:NSDictionary = NSDictionary(objects: [NSUserInfo.shareInstance().member_id,self.commentObject.talk_id,from_id,to_id,str] , forKeys: [MEMBER_ID,"talk_id","from_id","to_id","info"]);

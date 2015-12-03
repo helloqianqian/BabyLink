@@ -20,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eIY-Pd-x6p">
-                    <rect key="frame" x="10" y="80" width="300" height="90"/>
+                    <rect key="frame" x="10" y="144" width="300" height="90"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kUu-Sv-JHB">
                             <rect key="frame" x="0.0" y="45" width="300" height="0.5"/>
@@ -57,15 +57,6 @@
                                 <constraint firstAttribute="height" constant="25" id="NHV-Io-a8m"/>
                             </constraints>
                         </view>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pvG-hE-am4">
-                            <rect key="frame" x="65" y="5" width="227" height="35"/>
-                            <animations/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="35" id="yDN-3X-o1D"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="next"/>
-                        </textField>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="登录账户标" translatesAutoresizingMaskIntoConstraints="NO" id="5nf-nA-qUi">
                             <rect key="frame" x="15" y="13" width="20" height="20"/>
                             <animations/>
@@ -82,6 +73,15 @@
                                 <constraint firstAttribute="height" constant="20" id="KiO-Se-vud"/>
                             </constraints>
                         </imageView>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pvG-hE-am4">
+                            <rect key="frame" x="65" y="5" width="227" height="35"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="35" id="yDN-3X-o1D"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                        </textField>
                     </subviews>
                     <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -107,7 +107,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yhk-cS-dZc">
-                    <rect key="frame" x="243" y="227" width="67" height="27"/>
+                    <rect key="frame" x="243" y="291" width="67" height="27"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="67" id="cSi-e3-rRK"/>
@@ -122,7 +122,7 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="elT-tN-vdE">
-                    <rect key="frame" x="224" y="275" width="66" height="1"/>
+                    <rect key="frame" x="224" y="339" width="66" height="1"/>
                     <animations/>
                     <color key="backgroundColor" red="0.50196078431372548" green="0.50588235294117645" blue="0.50588235294117645" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -131,7 +131,7 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="你还可以选择第三方登录" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cG-eL-LWK">
-                    <rect key="frame" x="101" y="265" width="118" height="21"/>
+                    <rect key="frame" x="101" y="329" width="118" height="21"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="Shi-gn-Xcf"/>
@@ -142,7 +142,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3LT-Bu-Nsd">
-                    <rect key="frame" x="30" y="275" width="66" height="1"/>
+                    <rect key="frame" x="30" y="339" width="66" height="1"/>
                     <animations/>
                     <color key="backgroundColor" red="0.50196078431372548" green="0.50588235294117645" blue="0.50588235294117645" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -151,7 +151,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZ1-3B-924">
-                    <rect key="frame" x="60" y="302" width="40" height="40"/>
+                    <rect key="frame" x="60" y="366" width="40" height="40"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="40" id="QOQ-Vw-qfv"/>
@@ -164,7 +164,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nTZ-TD-xeO">
-                    <rect key="frame" x="140" y="302" width="40" height="40"/>
+                    <rect key="frame" x="140" y="366" width="40" height="40"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="Gt3-Gk-SlB"/>
@@ -177,7 +177,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AVs-yK-jD3">
-                    <rect key="frame" x="220" y="302" width="40" height="40"/>
+                    <rect key="frame" x="220" y="366" width="40" height="40"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="F7u-tb-sPx"/>
@@ -190,7 +190,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Am-Bw-fXz">
-                    <rect key="frame" x="10" y="184" width="300" height="35"/>
+                    <rect key="frame" x="10" y="248" width="300" height="35"/>
                     <animations/>
                     <color key="backgroundColor" red="0.86274509803921573" green="0.31372549019607843" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -225,12 +225,12 @@
                 <constraint firstItem="eIY-Pd-x6p" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="ZyS-Wj-Imp"/>
                 <constraint firstAttribute="trailing" secondItem="8Am-Bw-fXz" secondAttribute="trailing" constant="10" id="kJp-Ne-I0t"/>
                 <constraint firstItem="nTZ-TD-xeO" firstAttribute="leading" secondItem="cZ1-3B-924" secondAttribute="trailing" constant="40" id="net-yF-Gk9"/>
-                <constraint firstItem="eIY-Pd-x6p" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="p3P-1E-kiN"/>
+                <constraint firstItem="eIY-Pd-x6p" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="144" id="p3P-1E-kiN"/>
                 <constraint firstItem="8Am-Bw-fXz" firstAttribute="top" secondItem="eIY-Pd-x6p" secondAttribute="bottom" constant="14" id="ucS-b5-1fH"/>
                 <constraint firstItem="nTZ-TD-xeO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="vr6-Mb-mcC"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="-268" y="135"/>
+            <point key="canvasLocation" x="-505" y="7"/>
         </view>
     </objects>
     <resources>

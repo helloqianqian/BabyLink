@@ -9,7 +9,7 @@
 import UIKit
 
 protocol UILocalNavigationViewDelegate:NSObjectProtocol{
-    func didSelectedItem(index:Int);
+    func didSelectedItem(index:Int, withForce force:Bool);
 }
 
 class UILocalNavigationView: UIView {
@@ -56,7 +56,7 @@ class UILocalNavigationView: UIView {
                 break;
             }
             if self.delegate != nil {
-                self.delegate.didSelectedItem(selectedItem);
+                self.delegate.didSelectedItem(selectedItem, withForce: false);
             }
         }
     }

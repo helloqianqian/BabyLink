@@ -40,9 +40,7 @@ class UIAccountSetViewController: UIBaseViewController ,UIActionSheetDelegate,UI
     
     func setContentData() {
         nikeName.text = "昵称:\(NSUserInfo.shareInstance().member_name)";
-        if NSUserInfo.shareInstance().member_avar != "" {
-            bigHeadIconBtn.sd_setBackgroundImageWithURL(NSURL(string: NSUserInfo.shareInstance().member_avar), forState: UIControlState.Normal, placeholderImage: nil);
-        }
+        bigHeadIconBtn.sd_setBackgroundImageWithURL(NSURL(string: NSUserInfo.shareInstance().member_avar), forState: UIControlState.Normal, placeholderImage: UIImage(named: "morentoux"));
     }
     func resetNickname(){
         nikeName.text = "昵称:\(NSUserInfo.shareInstance().member_name)";
@@ -81,7 +79,7 @@ class UIAccountSetViewController: UIBaseViewController ,UIActionSheetDelegate,UI
         picker.dismissViewControllerAnimated(true, completion: { () -> Void in
             let  dic:NSDictionary = info as NSDictionary;
             let  image:UIImage = dic.objectForKey(UIImagePickerControllerEditedImage) as! UIImage;
-            let  imageData:NSData = NSHelper.fileOfPressedImage(image);
+            let  imageData:NSData = NSHelper.fileOfPressedImage(image, withType: squareType);
             NSLog("\(imageData.length)")
             self.uploadImageworks(imageData);
         })
@@ -95,6 +93,7 @@ class UIAccountSetViewController: UIBaseViewController ,UIActionSheetDelegate,UI
         let dicParam:NSDictionary = NSDictionary(objects: [imageData,"file","head.jpg"] , forKeys: ["imageData","imageName","fileName"]);
         NSHttpHelp.uploadUserIconWithImageData(dicParam as [NSObject : AnyObject], withResult: { (result:AnyObject!) -> Void in
             let code = result["code"] as! NSInteger;
+            
             if code == 0 {
                 //发送成功
                 SVProgressHUD.showSuccessWithStatus("上传成功")
@@ -102,6 +101,7 @@ class UIAccountSetViewController: UIBaseViewController ,UIActionSheetDelegate,UI
                 NSUserInfo.shareInstance().member_avar = datas;
                 appDelegate.recordLastUserIcon()
                 self.bigHeadIconBtn.sd_setBackgroundImageWithURL(NSURL(string: NSUserInfo.shareInstance().member_avar), forState: UIControlState.Normal, placeholderImage: nil);
+                centerHeadIconLoad = true;
             } else {
                 let datas = result["datas"] as! String;
                 SVProgressHUD.showErrorWithStatus(datas);

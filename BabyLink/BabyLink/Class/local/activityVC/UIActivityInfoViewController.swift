@@ -11,7 +11,11 @@ import UIKit
 class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UITableViewDataSource,UICommentDelegate,YFInputBarDelegate{
 
     @IBOutlet weak var listTableView: UITableView!
+    
+    var sourceFrom = 0;
+    
     var activityID:String!;
+    var listModel:NSActListObject!;
     var infoModel:NSActInfoObject! = NSActInfoObject();
     var spread=false;
     
@@ -25,6 +29,9 @@ class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
         self.setUI();
         self.setInputBar();
         self.getInfoData();
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil);
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -33,6 +40,12 @@ class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
         if activityInfoLoad {
             activityInfoLoad = false
             self.getInfoData();
+        }
+        if signInActivity {
+            signInActivity = false;
+            self.listModel.isSign = true;
+            let footerView = self.listTableView.tableFooterView as! UIActivityInfoFooterView;
+            footerView.enrollBtn.setTitle("取消报名", forState: UIControlState.Normal);
         }
     }
     override func viewWillDisappear(animated: Bool) {
@@ -47,10 +60,31 @@ class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
         listTableView.registerNib(UINib(nibName: "UIActivityInfoForthTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "UIActivityInfoForthTableViewCellIndentifier");
         listTableView.registerNib(UINib(nibName: "UIActivityInfoFifthTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "UIActivityInfoFifthTableViewCellIndentifier");
         
-        let footerView = NSBundle.mainBundle().loadNibNamed("UIActivityInfoFooterView", owner: nil, options: nil).first as! UIActivityInfoFooterView;
-        footerView.frame = CGRectMake(0, 0, MainScreenWidth, 57);
-        footerView.enrollBtn.addTarget(self, action: "enrollInTheActivity:", forControlEvents: UIControlEvents.TouchUpInside);
-        listTableView.tableFooterView = footerView;
+        if self.sourceFrom == 0 || self.sourceFrom == 2{
+            let footerView = NSBundle.mainBundle().loadNibNamed("UIActivityInfoFooterView", owner: nil, options: nil).first as! UIActivityInfoFooterView;
+            footerView.frame = CGRectMake(0, 0, MainScreenWidth, 57);
+            
+            if listModel.isOut {
+                footerView.enrollBtn.makeBackGroundColor_DarkGray()
+                footerView.enrollBtn.setTitle("活动已结束", forState: UIControlState.Normal);
+            } else {
+                if listModel.isSign {
+                    footerView.enrollBtn.makeBackGroundColor_Purple()
+                    footerView.enrollBtn.setTitle("取消报名", forState: UIControlState.Normal);
+                    footerView.enrollBtn.addTarget(self, action: "enrollInTheActivity:", forControlEvents: UIControlEvents.TouchUpInside);
+                } else {
+                    if listModel.isFull {
+                        footerView.enrollBtn.makeBackGroundColor_Purple()
+                        footerView.enrollBtn.setTitle("报名已满", forState: UIControlState.Normal);
+                    } else {
+                        footerView.enrollBtn.makeBackGroundColor_Purple()
+                        footerView.enrollBtn.setTitle("我要报名", forState: UIControlState.Normal);
+                        footerView.enrollBtn.addTarget(self, action: "enrollInTheActivity:", forControlEvents: UIControlEvents.TouchUpInside);
+                    }
+                }
+            }
+            listTableView.tableFooterView = footerView;
+        }
     }
     func setInputBar(){
         inputBar = YFInputBar(frame: CGRectMake(0 ,MainScreenHeight,MainScreenWidth,45))
@@ -123,7 +157,10 @@ class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
         }
         else if indexRow == 3 {
             let cell = tableView.dequeueReusableCellWithIdentifier("UIActivityInfoThirdTableViewCellIndentifier", forIndexPath: indexPath) as! UIActivityInfoThirdTableViewCell;
-            cell.setContentData(self.infoModel)
+            cell.setContentData(self.infoModel,withType: self.sourceFrom)
+            if self.sourceFrom == 1 {
+                cell.arrowImg.addTarget(self, action: "checkParticipatorList", forControlEvents: UIControlEvents.TouchUpInside);
+            }
             return cell;
         }
         else if indexRow == 4 {
@@ -147,7 +184,7 @@ class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
         }
         
         if indexRow == 0 {
-            return 416;
+            return 436;
         }
         else if indexRow == 1 {
             let  font:UIFont = UIFont.systemFontOfSize(12);
@@ -161,8 +198,14 @@ class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
         }
         else if indexRow == 3 {
             let count = self.infoModel.logs.count;
-            var hang = count/5;
-            let left = count%5;
+            var per = 5
+            if iphone6Plus {
+                per = 7;
+            } else if iphone6 {
+                per = 6
+            }
+            var hang = count/per;
+            let left = count%per;
             if left>0{
                 hang+=1;
             }
@@ -203,22 +246,53 @@ class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
     
     //MARK: - tableview function
     func enrollInTheActivity(sender:UIButton){
-        let joinVC:UIJoinViewController = UIJoinViewController.init(nibName:"UIJoinViewController",bundle:NSBundle.mainBundle())
-        joinVC.activityID = self.infoModel.activity_id;
-        self.navigationController?.pushViewController(joinVC, animated: true);
+        if self.listModel.isSign {
+            SVProgressHUD.showWithMaskType(SVProgressHUDMaskType.Clear);
+            let dicParam:NSDictionary = NSDictionary(objects: [NSUserInfo.shareInstance().member_id,self.activityID] , forKeys: [MEMBER_ID,"activity_id"]);
+            NSHttpHelp.httpHelpWithUrlTpye(cancelActType, withParam: dicParam, withResult: { (result:AnyObject!) -> Void in
+                let code = result["code"] as! NSInteger;
+                if code == 0 {
+                    SVProgressHUD.showSuccessWithStatus("取消报名成功");
+                    self.listModel.isSign = false;
+                    let footerView = self.listTableView.tableFooterView as! UIActivityInfoFooterView;
+                    footerView.enrollBtn.setTitle("我要报名", forState: UIControlState.Normal);
+                    activityListLoad = true;
+                    self.getInfoData();
+                } else {
+                    let datas = result["datas"] as! String;
+                    SVProgressHUD.showErrorWithStatus(datas);
+                }
+                }) { (error:AnyObject!) -> Void in
+                    
+            }
+        } else {
+            let joinVC:UIJoinViewController = UIJoinViewController(nibName:"UIJoinViewController",bundle:NSBundle.mainBundle())
+            joinVC.activityID = self.infoModel.activity_id;
+            joinVC.actModel = self.infoModel;
+            joinVC.from = self.sourceFrom;
+            self.navigationController?.pushViewController(joinVC, animated: true);
+        }
     }
     func didSelectedComment() {
         self.commentObject = nil;
+        self.inputBar.textField.placeholder = "输入评论";
         self.inputBar.textField.becomeFirstResponder();
     }
     func didSelectedAtIndexPath(infoModel: NSCommentObject) {
         self.commentObject = infoModel;
+        self.inputBar.textField.placeholder = "回复\(infoModel.from_userName):";
         self.inputBar.textField.becomeFirstResponder();
     }
     func didSpreadComments(spread: Bool) {
         self.spread = spread;
         self.listTableView.reloadData();
     }
+    func checkParticipatorList(){
+        let participatorList = UIParticipateViewController(nibName:"UIParticipateViewController" ,bundle: NSBundle.mainBundle())
+        participatorList.logs = self.infoModel.logs;
+        self.navigationController?.pushViewController(participatorList, animated: true);
+    }
+    
     func inputBar(inputBar: YFInputBar!, sendBtnPress sendBtn: UIButton!, withInputString str: String!) {
         var to_userId = NSUserInfo.shareInstance().member_id;
         var to_userName = NSUserInfo.shareInstance().member_name;
@@ -238,6 +312,15 @@ class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
             }
             }) { (error:AnyObject!) -> Void in
         }
+    }
+    func keyboardWillShow(notification:NSNotification){
+        self.addGesture();
+    }
+    func keyboardWillHide(notification:NSNotification){
+        self.removeGesture();
+    }
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self);
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

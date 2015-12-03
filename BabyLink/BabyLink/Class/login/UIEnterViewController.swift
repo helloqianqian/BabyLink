@@ -11,14 +11,6 @@ import UIKit
 class UIEnterViewController: UIBaseViewController {
 
     @IBOutlet weak var enterBtn: UIButton!
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,13 +29,14 @@ class UIEnterViewController: UIBaseViewController {
     }
     
     @IBAction func enter(sender: AnyObject) {
-        let loginVC = UILoginViewController.init(nibName:"UILoginViewController", bundle:NSBundle.mainBundle())
-        
+//        let infoVC = UIFullInfoViewController(nibName:"UIFullInfoViewController",bundle:NSBundle.mainBundle());
+//        self.navigationController?.pushViewController(infoVC, animated: true);
+        let loginVC = UILoginViewController(nibName:"UILoginViewController", bundle:NSBundle.mainBundle())
         self.navigationController?.pushViewController(loginVC, animated: true)
     }
     
     @IBAction func agreement(sender: AnyObject) {
-        let agreementVC = UIAgreementViewController.init(nibName:"UIAgreementViewController", bundle:NSBundle.mainBundle());
+        let agreementVC = UIAgreementViewController(nibName:"UIAgreementViewController", bundle:NSBundle.mainBundle());
         self.navigationController?.pushViewController(agreementVC, animated: true);
     }
     

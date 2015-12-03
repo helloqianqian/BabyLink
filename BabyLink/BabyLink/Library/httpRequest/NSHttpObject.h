@@ -37,4 +37,10 @@ typedef void (^resultBlock)(id resultValue);
          withFailureBlock:(FailureBlock)failureBlock
        withUploadProgress:(void (^)(float progress))progressBlock;
 
++(void)upLoadImagewithUrl:(NSString *)urlString
+            withDataArray:(NSArray *)imageDataArray
+               withResult:(resultBlock)resultBlock
+         withFailureBlock: (FailureBlock) failureBlock
+       withUploadProgress:(void (^)(float progress))progressBlock;
+
 @end

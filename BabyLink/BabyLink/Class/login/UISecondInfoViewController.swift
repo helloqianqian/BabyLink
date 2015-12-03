@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UISecondInfoViewController: UIBaseViewController ,UIOptionViewDelegate{
+class UISecondInfoViewController: UIBaseViewController ,UIOptionViewDelegate,UITextFieldDelegate{
 
     @IBOutlet weak var backView2: UIView!
     @IBOutlet weak var backView1: UIView!
@@ -29,6 +29,9 @@ class UISecondInfoViewController: UIBaseViewController ,UIOptionViewDelegate{
 //        self.navigationItem.hidesBackButton = true;
         
         self.setUI();
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil);
     }
 
     func setUI() {
@@ -77,7 +80,6 @@ class UISecondInfoViewController: UIBaseViewController ,UIOptionViewDelegate{
             NSHelper.showAlertViewWithTip("请选择您和宝贝的关系");
             return;
         }
-        self.endEditing()
         let dicParam:NSDictionary = NSDictionary(objects: [NSUserInfo.shareInstance().city,NSUserInfo.shareInstance().home,sex,self.nicknameField.text!,self.birthdayField.text!,self.relationField.text!,NSUserInfo.shareInstance().member_id] , forKeys: ["city","home","baby_sex","baby_nam","baby_date","baby_link","member_id"]);
         SVProgressHUD.showWithStatus("正在提交信息")
         NSHttpHelp.httpHelpWithUrlTpye(perfectType, withParam: dicParam, withResult: { (returnObject:AnyObject!) -> Void in
@@ -109,7 +111,7 @@ class UISecondInfoViewController: UIBaseViewController ,UIOptionViewDelegate{
         let optionView = NSBundle.mainBundle().loadNibNamed("UIOptionView", owner: nil, options: nil).first as! UIOptionView;
         optionView.frame = CGRectMake(0, MainScreenHeight, MainScreenWidth, MainScreenHeight);
         optionView.delegate = self;
-        optionView.dataType = DataType.birthday;
+        optionView.changeDataSource(DataType.birthday);
         self.navigationController?.view.addSubview(optionView);
         UIView.animateWithDuration(0.25, animations: { () -> Void in
             optionView.frame = CGRectMake(0, 0, MainScreenWidth, MainScreenHeight);
@@ -140,6 +142,30 @@ class UISecondInfoViewController: UIBaseViewController ,UIOptionViewDelegate{
         } else {
             relationField.text = object as? String;
         }
+    }
+    
+    func keyboardWillShow(notification:NSNotification){
+        self.addGesture();
+    }
+    func keyboardWillHide(notification:NSNotification){
+        self.removeGesture();
+    }
+    func textFieldDidBeginEditing(textField: UITextField) {
+        self.didBeginEditing(textField);
+    }
+    func textFieldDidEndEditing(textField: UITextField) {
+        self.didEndEditing(textField);
+    }
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField.returnKeyType == UIReturnKeyType.Next {
+            self.nextFieldEditing(textField);
+        } else if textField.returnKeyType == UIReturnKeyType.Done {
+            textField.resignFirstResponder()
+        }
+        return true;
+    }
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self);
     }
     /*
     // MARK: - Navigation

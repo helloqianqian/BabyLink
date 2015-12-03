@@ -31,37 +31,13 @@
 @implementation NSLogListObject
 
 
-
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key{
+    
+}
 @end
 
 
 @implementation NSActInfoObject
-/*@property (nonatomic,strong)NSString *activity_address;
- @property (nonatomic,strong)NSString *activity_id;
- @property (nonatomic,strong)NSString *add_time;
- @property (nonatomic,strong)NSString *begin_time;
- @property (nonatomic,strong)NSString *end_time;
- @property (nonatomic,strong)NSString *home;
- @property (nonatomic,strong)NSArray *images;
- @property (nonatomic,strong)NSString *info;
- @property (nonatomic,strong)NSString *is_help;
- @property (nonatomic,strong)NSString *help;
- @property (nonatomic,strong)NSString *jihe_address;
- @property (nonatomic,strong)NSString *jihe_time;
- @property (nonatomic,strong)NSString *link_mobile;
- @property (nonatomic,strong)NSString *link_name;
- 
- @property (nonatomic,strong)NSString *count;
- @property (nonatomic,strong)NSMutableArray *commends;
- @property (nonatomic,strong)NSMutableArray *logs;
- @property (nonatomic,strong)NSString *max_man;
- @property (nonatomic,strong)NSString *member_avar;
- @property (nonatomic,strong)NSString *member_id;
- @property (nonatomic,strong)NSString *member_name;
- @property (nonatomic,strong)NSString *pay_way;
- @property (nonatomic,strong)NSString *price;
- @property (nonatomic,strong)NSString *title;
- @property (nonatomic,strong)NSString *utils;*/
 - (instancetype)init {
     self = [super init];
     if (self) {

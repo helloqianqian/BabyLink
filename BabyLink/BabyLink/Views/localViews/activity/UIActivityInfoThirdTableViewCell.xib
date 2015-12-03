@@ -18,13 +18,13 @@
                         <rect key="frame" x="3" y="3" width="314" height="293.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="参与人数（12人）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hna-6h-u0c">
-                                <rect key="frame" x="12" y="8" width="290" height="14"/>
+                                <rect key="frame" x="12" y="8" width="252" height="14"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="14" id="Qkr-dc-hBj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Izw-KV-I20">
@@ -39,16 +39,22 @@
                                 <rect key="frame" x="20" y="39" width="274" height="230"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="274" id="4Yr-fm-EhY"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="22" id="vfg-Rb-xwv">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="20" id="vfg-Rb-xwv">
                                     <size key="itemSize" width="35" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMV-nf-6Fd">
+                                <rect key="frame" x="274" y="0.5" width="40" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="eXG-CS-JbN"/>
+                                    <constraint firstAttribute="height" constant="30" id="pSA-m8-Hex"/>
+                                </constraints>
+                                <state key="normal" image="箭头"/>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -58,8 +64,11 @@
                             <constraint firstItem="Izw-KV-I20" firstAttribute="leading" secondItem="R9T-XV-9qs" secondAttribute="leading" constant="5" id="Efv-Xf-XM8"/>
                             <constraint firstItem="2ST-Ia-y5k" firstAttribute="centerX" secondItem="R9T-XV-9qs" secondAttribute="centerX" id="EzS-39-E22"/>
                             <constraint firstItem="Izw-KV-I20" firstAttribute="top" secondItem="hna-6h-u0c" secondAttribute="bottom" constant="8" id="GKN-df-r6N"/>
+                            <constraint firstItem="bMV-nf-6Fd" firstAttribute="centerY" secondItem="hna-6h-u0c" secondAttribute="centerY" id="RFd-JU-VTS"/>
                             <constraint firstItem="hna-6h-u0c" firstAttribute="leading" secondItem="R9T-XV-9qs" secondAttribute="leading" constant="12" id="bl8-BU-GOI"/>
-                            <constraint firstAttribute="trailing" secondItem="hna-6h-u0c" secondAttribute="trailing" constant="12" id="mWL-35-UpL"/>
+                            <constraint firstAttribute="trailing" secondItem="bMV-nf-6Fd" secondAttribute="trailing" id="jNF-f2-Cb8"/>
+                            <constraint firstAttribute="trailing" secondItem="hna-6h-u0c" secondAttribute="trailing" constant="50" id="mWL-35-UpL"/>
+                            <constraint firstItem="2ST-Ia-y5k" firstAttribute="leading" secondItem="R9T-XV-9qs" secondAttribute="leading" constant="20" id="nba-hf-InP"/>
                             <constraint firstAttribute="bottom" secondItem="2ST-Ia-y5k" secondAttribute="bottom" constant="25" id="uBZ-1Z-26C"/>
                             <constraint firstItem="hna-6h-u0c" firstAttribute="top" secondItem="R9T-XV-9qs" secondAttribute="top" constant="8" id="v9k-P3-fOO"/>
                         </constraints>
@@ -76,12 +85,15 @@
             </tableViewCellContentView>
             <animations/>
             <connections>
+                <outlet property="arrowImg" destination="bMV-nf-6Fd" id="mi0-eT-Zto"/>
                 <outlet property="backView" destination="R9T-XV-9qs" id="ZE0-LA-50y"/>
                 <outlet property="joinCollectionView" destination="2ST-Ia-y5k" id="6Qe-dq-REt"/>
                 <outlet property="joinNumLabel" destination="hna-6h-u0c" id="V9e-zd-sZZ"/>
-                <outlet property="widthofcell" destination="4Yr-fm-EhY" id="6zm-it-fiH"/>
             </connections>
-            <point key="canvasLocation" x="175" y="241"/>
+            <point key="canvasLocation" x="-115" y="213"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="箭头" width="10" height="16"/>
+    </resources>
 </document>

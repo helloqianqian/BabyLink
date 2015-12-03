@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UIChangePSWViewController: UIBaseViewController {
+class UIChangePSWViewController: UIBaseViewController ,UITextFieldDelegate{
 
     @IBOutlet weak var oldPSWField: UITextField!
     @IBOutlet weak var newPSWField: UITextField!
@@ -21,6 +21,9 @@ class UIChangePSWViewController: UIBaseViewController {
         // Do any additional setup after loading the view.
         self.title = "修改密码"
         self.setUI()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil);
     }
 
     func setUI(){
@@ -29,7 +32,26 @@ class UIChangePSWViewController: UIBaseViewController {
         reNewPSWField.delegate = self;
         confirmBtn.makeBackGroundColor_Red();
     }
-    
+    func keyboardWillShow(notification:NSNotification){
+        self.addGesture();
+    }
+    func keyboardWillHide(notification:NSNotification){
+        self.removeGesture();
+    }
+    func textFieldDidBeginEditing(textField: UITextField) {
+        self.didBeginEditing(textField);
+    }
+    func textFieldDidEndEditing(textField: UITextField) {
+        self.didEndEditing(textField);
+    }
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField.returnKeyType == UIReturnKeyType.Next {
+            self.nextFieldEditing(textField);
+        } else if textField.returnKeyType == UIReturnKeyType.Done {
+            textField.resignFirstResponder()
+        }
+        return true;
+    }
     override func nextFieldEditing(textField: UITextField) {
         super.nextFieldEditing(textField);
         if textField == oldPSWField {
@@ -38,7 +60,9 @@ class UIChangePSWViewController: UIBaseViewController {
             reNewPSWField.becomeFirstResponder();
         }
     }
-    
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self);
+    }
     
     
     override func didReceiveMemoryWarning() {

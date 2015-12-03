@@ -32,6 +32,7 @@ class UIActivityInfoFirstTableViewCell: UITableViewCell {
     @IBOutlet weak var headIcon: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     
+//    @IBOutlet weak var heightImage: NSLayoutConstraint!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -45,18 +46,22 @@ class UIActivityInfoFirstTableViewCell: UITableViewCell {
     func setContentData(infoModel:NSActInfoObject) {
         if infoModel.images.count>0{
             self.contentImage.sd_setImageWithURL(NSURL(string: infoModel.images[0] as! String), placeholderImage: nil);
+//            contentImage.sd_setImageWithURL(NSURL(string: infoModel.images[0] as! String), placeholderImage: nil) { (image, error, type, url) -> Void in
+//                if image != nil {
+//                    self.contentImage.image = image;
+//                    self.heightImage.constant = self.contentImage.frame.size.width / image.size.width * image.size.height;
+//                }
+//            }
         }
         self.titleLabel.text = infoModel.title;
         self.activityAddressLabel.text = "活动地点:  \(infoModel.activity_address)";
-        self.activityTime.text = "活动时间:  \(infoModel.jihe_time)";
-        self.limitedNum.text = "上限人数:  \(infoModel.max_man)人";
-        
-        let text = "报名人数:  \(infoModel.count)人" as NSString;
-        self.haveNum.attributedText = text.switchContentWithFonts([UIFont.systemFontOfSize(13)], withRanges: [NSStringFromRange(NSMakeRange(7, text.length-7))], withColors: [SPurpleBtnColor]);
+        self.activityTime.text = "报名截止:  \(infoModel.end_time)";
+        self.limitedNum.text = "集合时间:  \(infoModel.jihe_time)";
+        self.haveNum.text = "集合地点:  \(infoModel.jihe_address)"
+        self.costLabel.text = "上限人数:  \(infoModel.max_man)"
         let cost = "报名费用:  ￥\(infoModel.price)" as NSString;
-        self.costLabel.attributedText = cost.switchContentWithFonts([UIFont.systemFontOfSize(13)], withRanges: [NSStringFromRange(NSMakeRange(7, cost.length-7))], withColors: [SPurpleBtnColor]);
-        self.payStyleLabel.text = "支付方式:  \(infoModel.pay_way)";
-        self.gatherAddressLabel.text = "集合地方:  \(infoModel.jihe_address)"
+        self.payStyleLabel.attributedText = cost.switchContentWithFonts([UIFont.systemFontOfSize(13)], withRanges: [NSStringFromRange(NSMakeRange(7, cost.length-7))], withColors: [SPurpleBtnColor]);
+        self.gatherAddressLabel.text = "支付方式:  \(infoModel.pay_way)";
         self.toolLabel.text = "交通工具:  \(infoModel.utils)"
         self.leaderLabel.text = "联系人:  \(infoModel.link_name)"
         self.phoneNumLabel.text = "联系电话:  \(infoModel.link_mobile)"

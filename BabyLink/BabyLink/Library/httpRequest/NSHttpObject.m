@@ -184,4 +184,42 @@
         progressBlock(progress);
     }];
 }
+
+
++(void)upLoadImagewithUrl:(NSString *)urlString
+            withDataArray:(NSArray *)imageDataArray
+               withResult:(resultBlock)resultBlock
+         withFailureBlock: (FailureBlock) failureBlock
+       withUploadProgress:(void (^)(float progress))progressBlock
+{
+    AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager  alloc]init];
+    
+    NSDictionary *param = [NSDictionary dictionaryWithObject:[NSUserInfo shareInstance].member_id forKey:@"member_id"];
+    AFHTTPRequestOperation *op = [manager POST:urlString  parameters:param constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+//        NSString *name = @"file";
+//        NSString *fileName = @"file.jpg";
+        
+        for (int i=0; i<imageDataArray.count; i++) {
+            NSString *fileName = [NSString stringWithFormat:@"file%d.jpg",i];
+            NSString *name = [NSString stringWithFormat:@"file%d.jpg",i];
+            [formData appendPartWithFileData:[imageDataArray objectAtIndex:i] name:name fileName:fileName mimeType:@"jpg/png/jpeg/gif"];
+        }
+    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
+        resultBlock(dic);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        failureBlock(error);
+    }];
+    
+    op.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [op start];
+    
+    [op setUploadProgressBlock:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
+        CGFloat progress = ((float)totalBytesWritten) / totalBytesExpectedToWrite;
+        progressBlock(progress);
+    }];
+}
+
+
+
 @end

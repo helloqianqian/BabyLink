@@ -24,6 +24,18 @@ class UIChangePhoneViewController: UIBaseViewController {
         
         confirmBtn.makeBackGroundColor_Red();
         sendVertifyBtn.makeBackGroundColor_Green();
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil);
+    }
+    func keyboardWillShow(notification:NSNotification){
+        self.addGesture();
+    }
+    func keyboardWillHide(notification:NSNotification){
+        self.removeGesture();
+    }
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self);
     }
 
     @IBAction func sendVertify(sender: UIButton) {
