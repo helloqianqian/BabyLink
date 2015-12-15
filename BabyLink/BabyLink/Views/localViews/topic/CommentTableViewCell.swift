@@ -18,7 +18,7 @@ class CommentTableViewCell: UITableViewCell {
     }
 
     func setContentData(comment:NSTalkCommentObject, withHolder member_id:String){
-        if comment.to_id == member_id {
+        if comment.to_id == "" || comment.to_id == "0" || comment.to_id == comment.from_id{
             let content = "\(comment.from_name)：\(comment.info)" as NSString;
             contentLabel.attributedText = content.switchContentWithFonts([UIFont.systemFontOfSize(12)], withRanges: [NSStringFromRange(NSMakeRange(0, (comment.from_name as NSString).length))], withColors: [SRedBtnColor]);
         } else {

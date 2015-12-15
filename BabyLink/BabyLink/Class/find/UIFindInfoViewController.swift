@@ -8,14 +8,29 @@
 
 import UIKit
 
-class UIFindInfoViewController: UIBaseViewController ,UITableViewDelegate,UITableViewDataSource{
+class UIFindInfoViewController: UIBaseViewController ,UITableViewDelegate,UITableViewDataSource,didClickImgDelegate,UIAlertViewDelegate,UMSocialUIDelegate{
 
     @IBOutlet weak var listTableView: UITableView!
+    var listModel:NSFind!;
+    var infoModel:NSInfoFind! = NSInfoFind();
+//    var spread = false;
+    var headView:FindListHeadView!;
     
+    var left:Double!=0;
+    var timer:NSTimer?;
+    
+    var remove = false;
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.title = "详情"
+        
+        headView = NSBundle.mainBundle().loadNibNamed("FindListHeadView", owner: nil, options: nil).first as! FindListHeadView;
+        headView.scrollWidth = MainScreenWidth;
+        headView.scrollHeight = MainScreenWidth*0.6;
+        headView.delegate = self;
+        
         self.listTableView.delegate = self;
         self.listTableView.dataSource = self;
         self.listTableView.registerNib(UINib(nibName: "UIFindInfoFirstTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "UIFindInfoFirstTableViewCellIdentifier")
@@ -23,8 +38,49 @@ class UIFindInfoViewController: UIBaseViewController ,UITableViewDelegate,UITabl
         self.listTableView.registerNib(UINib(nibName: "UIFindInfoThirdTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "UIFindInfoThirdTableViewCellIdentifier")
         self.listTableView.registerNib(UINib(nibName: "UIFindInfoForthTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "UIFindInfoForthTableViewCellIdentifier")
         self.listTableView.registerNib(UINib(nibName: "UIFindInfoFifithTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "UIFindInfoFifthTableViewCellIdentifier")
+        
+        
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated);
+        
+        self.getInfoData()
+    }
+    
+    func getInfoData(){
+        let dicParam:NSDictionary = NSDictionary(objects: [listModel.goods_id] , forKeys: ["goods_id"]);
+        NSHttpHelp.httpHelpWithUrl(NSHttpModel.getGoodsInfoUrl(), withParam: dicParam, withResult: { (result:AnyObject!) -> Void in
+            let dic = result as! NSDictionary;
+            let code = dic["code"] as! NSInteger;
+            if code == 0 {
+                let datas = dic["datas"] as! NSDictionary
+                self.infoModel.setValuesForKeysWithDictionary(datas as! [String : AnyObject])
+                let images = datas["images"] as! NSArray;
+                if images.count > 0 {
+                    for url in images {
+                        let ad = ADModel()
+                        ad.cover = url as! String
+                        self.infoModel.imagesAD.addObject(ad);
+                    }
+                    self.headView.setupSubviews(self.infoModel.imagesAD);
+                }
+                let  font:UIFont = UIFont.systemFontOfSize(14);
+                let content = self.infoModel.mark as NSString;
+                let size = content.sizeWithConstrainedToWidth(Float(MainScreenWidth-50), fromFont: font, lineSpace: 3.0)
+                self.infoModel.heightLabel = size.height;
+                self.listTableView.reloadData()
+                self.left = (self.infoModel.end_time as NSString).doubleValue - (self.infoModel.begin_time as NSString).doubleValue;
+                self.startTimer();
+            } else {
+                let datas = dic["datas"] as! String;
+                SVProgressHUD.showErrorWithStatus(datas);
+            }
+            }) { (error:AnyObject!) -> Void in
+        }
+    }
+    
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5;
     }
@@ -32,19 +88,34 @@ class UIFindInfoViewController: UIBaseViewController ,UITableViewDelegate,UITabl
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCellWithIdentifier("UIFindInfoFirstTableViewCellIdentifier", forIndexPath: indexPath) as! UIFindInfoFirstTableViewCell;
+            cell.setContentData(infoModel, withListModel: listModel)
             return cell;
         case 1:
             let cell = tableView.dequeueReusableCellWithIdentifier("UIFindInfoSecondTableViewCellIdentifier", forIndexPath: indexPath) as! UIFindInfoSecondTableViewCell;
+            cell.spreadBtn.addTarget(self, action: "spreadInviteCell:", forControlEvents: UIControlEvents.TouchUpInside)
             cell.inviteBtn.addTarget(self, action: "inviteNeighbor:", forControlEvents: UIControlEvents.TouchUpInside);
+    
+            cell.qqFriends.tag = 1;
+            cell.weixinFriends.tag = 2;
+            cell.sinaWeibo.tag = 3;
+            cell.weixinCircle.tag = 4;
+            
+            cell.qqFriends.addTarget(self, action: "shareActivityData:", forControlEvents: UIControlEvents.TouchUpInside)
+            cell.weixinFriends.addTarget(self, action: "shareActivityData:", forControlEvents: UIControlEvents.TouchUpInside)
+            cell.sinaWeibo.addTarget(self, action: "shareActivityData:", forControlEvents: UIControlEvents.TouchUpInside)
+            cell.weixinCircle.addTarget(self, action: "shareActivityData:", forControlEvents: UIControlEvents.TouchUpInside)
+            
             return cell;
         case 2:
             let cell = tableView.dequeueReusableCellWithIdentifier("UIFindInfoThirdTableViewCellIdentifier", forIndexPath: indexPath) as! UIFindInfoThirdTableViewCell;
+            
             return cell;
         case 3:
             let cell = tableView.dequeueReusableCellWithIdentifier("UIFindInfoForthTableViewCellIdentifier", forIndexPath: indexPath) as! UIFindInfoForthTableViewCell;
             return cell;
         case 4:
             let cell = tableView.dequeueReusableCellWithIdentifier("UIFindInfoFifthTableViewCellIdentifier", forIndexPath: indexPath) as! UIFindInfoFifithTableViewCell;
+            cell.setContentData(infoModel)
             return cell;
         default:
             var cell = tableView.dequeueReusableCellWithIdentifier("UITableViewCellIdentifer")
@@ -58,13 +129,17 @@ class UIFindInfoViewController: UIBaseViewController ,UITableViewDelegate,UITabl
     {
         switch indexPath.row {
         case 0:
-            return 366;
+            return 188;
         case 1:
-            return 130;
+//            if self.spread {
+                return 130;
+//            } else {
+//                return 50;
+//            }
         case 2:
             return 44;
         case 3:
-            return 170;
+            return 100+self.infoModel.heightLabel;
         case 4:
             return 138;
         default:
@@ -74,42 +149,162 @@ class UIFindInfoViewController: UIBaseViewController ,UITableViewDelegate,UITabl
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 44;
     }
-    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return MainScreenWidth*0.6;
+    }
     func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footerView = NSBundle.mainBundle().loadNibNamed("UIFindInfoFooterView", owner: nil, options: nil).first as! UIFindInfoFooterView;
-        footerView.originPriceLabel.text = "现价\n￥2239.00";
         footerView.originPriceBtn.addTarget(self, action: "originalPricePayFunction:", forControlEvents: UIControlEvents.TouchUpInside);
-        
-        footerView.prePayLabel.text = "我要预订\n￥22.00";
         footerView.prePayBtn.addTarget(self, action: "prePricePayFunction:", forControlEvents: UIControlEvents.TouchUpInside);
+        footerView.setContent(infoModel);
         return footerView;
+    }
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return headView;
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.row == 2 {
             //商品详情
+            let info:UIInfoViewController = UIInfoViewController(nibName:"UIInfoViewController" ,bundle: NSBundle.mainBundle());
+            self.navigationController?.pushViewController(info, animated: true);
         }
     }
     
     func inviteNeighbor(sender:UIButton) {
         let listVC:UIFriendsListViewController = UIFriendsListViewController(nibName:"UIFriendsListViewController", bundle: NSBundle.mainBundle());
+        listVC.listModel = self.listModel;
         self.navigationController?.pushViewController(listVC, animated: true);
     }
     
+    func spreadInviteCell(sender:UIButton) {
+//        self.spread = !self.spread;
+//        self.listTableView.reloadData();
+    }
     
     func originalPricePayFunction(sender:UIButton){
         
     }
     func prePricePayFunction(sender:UIButton){
+        if  infoModel.goods_dingjin == "0" {
+           let dicParam = NSDictionary(objects: ["0",self.infoModel.goods_id,NSUserInfo.shareInstance().member_id] , forKeys: ["pay_type","goods_id",MEMBER_ID])
+            SVProgressHUD.showWithMaskType(SVProgressHUDMaskType.Clear);
+            NSHttpHelp.httpHelpWithUrl(NSHttpModel.getOrderPayUrl(), withParam: dicParam, withResult: { (result:AnyObject!) -> Void in
+                let dic = result as! NSDictionary;
+                let code = dic["code"] as! NSInteger;
+                if code == 0 {
+                    SVProgressHUD.dismiss();
+                    let alert = UIAlertView(title:nil, message: "支付结果：成功！\n请到我的订单中查看", delegate: self, cancelButtonTitle: "确定");
+                    alert.show();
+                } else {
+                    let datas = dic["datas"] as! String;
+                    SVProgressHUD.showErrorWithStatus(datas);
+                }
+                }) { (error:AnyObject!) -> Void in
+            }
+            return;
+        }
         let payVC = UIPaymentViewController(nibName:"UIPaymentViewController", bundle: NSBundle.mainBundle());
+        payVC.goodsPrice = self.infoModel.goods_dingjin;
+        payVC.goods_id = self.infoModel.goods_id;
         self.navigationController?.pushViewController(payVC, animated: true);
+    }
+    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+        self.navigationController?.popViewControllerAnimated(true);
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    func didClickImgAction(adModel: ADModel) {
+        
+    }
     
-
+    func shareActivityData(sender:UIButton){
+        UMSocialData.defaultData().urlResource.setResourceType(UMSocialUrlResourceTypeImage, url: "http://baidu.com");
+        if sender.tag == 1 {
+            UMSocialDataService.defaultDataService().postSNSWithTypes([UMShareToQQ], content: "分享活动。 http://www.baidu.com", image: UIImage(named: "AppIcon"), location: nil, urlResource: nil, presentedController: self, completion: { (response) -> Void in
+                if (response.responseCode == UMSResponseCodeSuccess) {
+                    SVProgressHUD.showSuccessWithStatus("分享成功");
+                } else {
+                    SVProgressHUD.showErrorWithStatus("分享失败")
+                }
+            })
+        } else if sender.tag == 2 {
+            UMSocialDataService.defaultDataService().postSNSWithTypes([UMShareToWechatSession], content: "分享活动。 http://www.baidu.com", image: UIImage(named: "AppIcon"), location: nil, urlResource: nil, presentedController: self, completion: { (response) -> Void in
+                if (response.responseCode == UMSResponseCodeSuccess) {
+                    SVProgressHUD.showSuccessWithStatus("分享成功");
+                } else {
+                    SVProgressHUD.showErrorWithStatus("分享失败")
+                }
+            })
+        } else if sender.tag == 3 {
+            UMSocialDataService.defaultDataService().postSNSWithTypes([UMShareToSina], content: "分享活动。 http://www.baidu.com", image: UIImage(named: "AppIcon"), location: nil, urlResource: nil, presentedController: self, completion: { (response) -> Void in
+                if (response.responseCode == UMSResponseCodeSuccess) {
+                    SVProgressHUD.showSuccessWithStatus("分享成功");
+                } else {
+                    SVProgressHUD.showErrorWithStatus("分享失败")
+                }
+            })
+        } else {
+            UMSocialDataService.defaultDataService().postSNSWithTypes([UMShareToWechatTimeline], content: "分享活动。 http://www.baidu.com", image: UIImage(named: "AppIcon"), location: nil, urlResource: nil, presentedController: self, completion: { (response) -> Void in
+                if (response.responseCode == UMSResponseCodeSuccess) {
+                    SVProgressHUD.showSuccessWithStatus("分享成功");
+                } else {
+                    SVProgressHUD.showErrorWithStatus("分享失败")
+                }
+            })
+        }
+    }
+    func didFinishGetUMSocialDataInViewController(response: UMSocialResponseEntity!) {
+        if response.responseCode == UMSResponseCodeSuccess {
+            SVProgressHUD.showSuccessWithStatus("分享成功");
+        } else {
+            SVProgressHUD.showErrorWithStatus("分享失败")
+        }
+    }
+    
+    
+    func startTimer() {
+        if timer != nil {
+            timer?.invalidate()
+            timer = nil;
+        }
+        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "timerFunction:", userInfo: nil, repeats: true);
+        timer!.fire();
+    }
+    
+    func timerFunction(timer:NSTimer){
+        
+        let cell = self.listTableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0))
+        if cell != nil {
+            let firstCell = cell as! UIFindInfoFirstTableViewCell;
+            let array = NSHelper.leftTimeFromStamp(self.left) as NSArray;
+            
+            let font  = UIFont.systemFontOfSize(13);
+            let dayStr = "\(array.objectAtIndex(0).description)天" as NSString;
+            firstCell.dayLabel.attributedText = dayStr.switchContentWithFonts([font], withRanges: [NSStringFromRange(NSMakeRange(dayStr.length-1, 1))], withColors: [UIColor.blackColor()]);
+            
+            let hourStr = "\(array.objectAtIndex(1).description)时" as NSString;
+            firstCell.hourLabel.attributedText = hourStr.switchContentWithFonts([font], withRanges: [NSStringFromRange(NSMakeRange(hourStr.length-1, 1))], withColors: [UIColor.blackColor()]);
+            
+            let minuteStr = "\(array.objectAtIndex(2).description)分" as NSString;
+            firstCell.minuteLabel.attributedText = minuteStr.switchContentWithFonts([font], withRanges: [NSStringFromRange(NSMakeRange(minuteStr.length-1, 1))], withColors: [UIColor.blackColor()]);
+            
+            let second = "\(array.objectAtIndex(3).description)秒" as NSString;
+            firstCell.secondLabel.attributedText =  second.switchContentWithFonts([font], withRanges: [NSStringFromRange(NSMakeRange(second.length-1, 1))], withColors: [UIColor.blackColor()]);
+        }
+        self.left = self.left-1;
+    }
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        if timer != nil {
+            timer?.invalidate()
+            timer = nil;
+        }
+    }
+    deinit {
+    }
     /*
     // MARK: - Navigation
 

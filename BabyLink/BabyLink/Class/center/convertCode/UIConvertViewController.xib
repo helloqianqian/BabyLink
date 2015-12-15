@@ -26,7 +26,7 @@
                         <constraint firstAttribute="height" constant="32" id="EAT-u4-WPj"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <state key="normal" title="未消费2"/>
+                    <state key="normal" title="未消费"/>
                     <connections>
                         <action selector="getUncostListFunction:" destination="-1" eventType="touchUpInside" id="ckJ-8d-hh9"/>
                     </connections>

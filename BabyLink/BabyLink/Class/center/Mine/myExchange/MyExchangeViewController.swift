@@ -12,7 +12,7 @@ class MyExchangeViewController: UIBaseViewController ,UITableViewDelegate,UITabl
     @IBOutlet weak var myListBtn: UIButton!
     @IBOutlet weak var otherListBtn: UIButton!
     @IBOutlet weak var listTableView: UITableView!
-
+    
     var role = "1";
     var dataArray:NSMutableArray! = NSMutableArray();
     var otherArray:NSMutableArray! = NSMutableArray();

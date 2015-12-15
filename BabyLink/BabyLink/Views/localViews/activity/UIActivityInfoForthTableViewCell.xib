@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -19,7 +19,6 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="评论（12）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K4U-Jc-7of">
                                 <rect key="frame" x="8" y="8" width="246" height="14"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="14" id="rT1-nN-lme"/>
                                 </constraints>
@@ -29,7 +28,6 @@
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zahnjiao" translatesAutoresizingMaskIntoConstraints="NO" id="2Ma-5A-BjE">
                                 <rect key="frame" x="343" y="11" width="10" height="8"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="10" id="oBZ-hT-RKq"/>
                                     <constraint firstAttribute="height" constant="8" id="sBy-DO-SOx"/>
@@ -37,7 +35,6 @@
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FCm-LS-km4">
                                 <rect key="frame" x="5" y="30" width="359" height="1"/>
-                                <animations/>
                                 <color key="backgroundColor" red="0.92941176469999998" green="0.93333333330000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="KJY-0a-F2f"/>
@@ -45,7 +42,6 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cIE-NG-YuW">
                                 <rect key="frame" x="5" y="114" width="359" height="1"/>
-                                <animations/>
                                 <color key="backgroundColor" red="0.92941176469999998" green="0.93333333330000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="O1C-Al-dwc"/>
@@ -53,7 +49,6 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Y0-bn-vvw">
                                 <rect key="frame" x="304" y="125" width="60" height="24"/>
-                                <animations/>
                                 <color key="backgroundColor" red="0.74509803919999995" green="0.23921568630000001" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="8Vh-5B-dCU"/>
@@ -67,7 +62,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AkD-QY-Ltg">
                                 <rect key="frame" x="304" y="0.0" width="36" height="30"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="7SC-8C-ZGr"/>
                                     <constraint firstAttribute="width" constant="36" id="oqX-ZY-YRh"/>
@@ -82,11 +76,9 @@
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qkd-BI-BvH">
                                 <rect key="frame" x="0.0" y="31" width="369" height="83"/>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="2Ma-5A-BjE" firstAttribute="centerY" secondItem="K4U-Jc-7of" secondAttribute="centerY" id="6Nz-ml-klL"/>
@@ -111,7 +103,6 @@
                         </constraints>
                     </view>
                 </subviews>
-                <animations/>
                 <color key="backgroundColor" red="0.92941176469999998" green="0.93333333330000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="GKA-ZX-xx4" secondAttribute="bottom" constant="3" id="7mZ-O1-Gsv"/>
@@ -120,7 +111,6 @@
                     <constraint firstItem="GKA-ZX-xx4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="3" id="uGU-kV-NUV"/>
                 </constraints>
             </tableViewCellContentView>
-            <animations/>
             <connections>
                 <outlet property="backView" destination="GKA-ZX-xx4" id="WkN-ga-Hfo"/>
                 <outlet property="commentBtn" destination="0Y0-bn-vvw" id="8xe-Gc-ioS"/>

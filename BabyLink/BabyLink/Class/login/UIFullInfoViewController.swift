@@ -10,6 +10,12 @@ import UIKit
 
 class UIFullInfoViewController: UIBaseViewController ,UIOptionViewDelegate ,UITextFieldDelegate{
 
+    @IBOutlet weak var ohterView: UIView!
+    @IBOutlet weak var mimaField: UITextField!
+    @IBOutlet weak var querenmimaField: UITextField!
+    
+    
+    
     @IBOutlet weak var backView3: UIView!
     @IBOutlet weak var backView2: UIView!
     @IBOutlet weak var backView1: UIView!
@@ -29,6 +35,11 @@ class UIFullInfoViewController: UIBaseViewController ,UIOptionViewDelegate ,UITe
     @IBOutlet weak var birthdayBtn: UIButton!
     
     var location2D:CLLocationCoordinate2D!;
+    
+    var type = 0;
+    
+    @IBOutlet weak var heightOfView: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -41,10 +52,21 @@ class UIFullInfoViewController: UIBaseViewController ,UIOptionViewDelegate ,UITe
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil);
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil);
         
-        self.updateLocation();
+//        self.updateLocation();
     }
 
     func setUI() {
+        
+        if type == 0 {
+            ohterView.hidden = true;
+            heightOfView.constant = 74;
+        } else {
+            
+        }
+        self.ohterView.layer.borderColor = SGrayBorderColor.CGColor;
+        self.ohterView.layer.cornerRadius = 5;
+        self.ohterView.layer.borderWidth = 0.5;
+        
         self.backView1.layer.borderColor = SGrayBorderColor.CGColor;
         self.backView1.layer.cornerRadius = 5;
         self.backView1.layer.borderWidth = 0.5;
@@ -58,7 +80,10 @@ class UIFullInfoViewController: UIBaseViewController ,UIOptionViewDelegate ,UITe
         self.backView3.layer.borderWidth = 0.5;
         
         confirmBtn.makeBackGroundColor_Red();
+        
         nicknameField.delegate = self;
+        mimaField.delegate = self;
+        querenmimaField.delegate = self;
     }
     
     func updateLocation(){
@@ -80,6 +105,7 @@ class UIFullInfoViewController: UIBaseViewController ,UIOptionViewDelegate ,UITe
             let code = dic["code"] as! NSInteger;
             if code == 0 {
                 //发送成功
+                SVProgressHUD.dismiss();
                 self.cityField.text = dic["datas"] as? String;
             } else {
                 //发送失败
@@ -87,9 +113,7 @@ class UIFullInfoViewController: UIBaseViewController ,UIOptionViewDelegate ,UITe
                 SVProgressHUD.showErrorWithStatus(datas);
             }
             }) { (error:AnyObject!) -> Void in
-                
         };
-
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -106,9 +130,24 @@ class UIFullInfoViewController: UIBaseViewController ,UIOptionViewDelegate ,UITe
     }
 
     @IBAction func commitTheInfo(sender: UIButton) {
+        if type == 1 {
+            if self.mimaField.text == "" {
+                NSHelper.showAlertViewWithTip("请输入密码");
+                return;
+            }
+            if self.querenmimaField.text == "" {
+                NSHelper.showAlertViewWithTip("请输入确认密码");
+                return;
+            }
+            if self.querenmimaField.text != self.mimaField.text {
+                NSHelper.showAlertViewWithTip("密码和确认密码不一致");
+                return;
+            }
+            NSUserInfo.shareInstance().passwordLocal = self.mimaField.text;
+        }
         
         if self.cityField.text == "" {
-            NSHelper.showAlertViewWithTip("城市定位失败，点击重新定位");
+            NSHelper.showAlertViewWithTip("请选择城市");
             return;
         }
         if self.neighboorField.text == "" {
@@ -136,7 +175,7 @@ class UIFullInfoViewController: UIBaseViewController ,UIOptionViewDelegate ,UITe
             NSHelper.showAlertViewWithTip("请选择您和宝贝的关系");
             return;
         }
-        let dicParam:NSDictionary = NSDictionary(objects: [self.cityField.text!,self.neighboorField.text!,sex,self.nicknameField.text!,self.birthdayField.text!,self.relationField.text!,NSUserInfo.shareInstance().member_id] , forKeys: ["city","home","baby_sex","baby_nam","baby_date","baby_link","member_id"]);
+        let dicParam:NSDictionary = NSDictionary(objects: [self.cityField.text!,self.neighboorField.text!,sex,self.nicknameField.text!,self.birthdayField.text!,self.relationField.text!,NSUserInfo.shareInstance().member_id,self.mimaField.text!] , forKeys: ["city","home","baby_sex","baby_nam","baby_date","baby_link","member_id","password"]);
         SVProgressHUD.showWithStatus("正在提交信息")
         NSHttpHelp.httpHelpWithUrlTpye(perfectType, withParam: dicParam, withResult: { (returnObject:AnyObject!) -> Void in
             let dic = returnObject as! NSDictionary;
@@ -160,10 +199,7 @@ class UIFullInfoViewController: UIBaseViewController ,UIOptionViewDelegate ,UITe
                 SVProgressHUD.showErrorWithStatus(datas);
             }
             }) { (error:AnyObject!) -> Void in
-                
         };
-        
-        
     }
     
     @IBAction func setBabyBirthday(sender: UIButton) {
@@ -192,17 +228,20 @@ class UIFullInfoViewController: UIBaseViewController ,UIOptionViewDelegate ,UITe
         }
     }
     @IBAction func reloadCity(sender: UIButton) {
-        self.updateLocation();
+        let homeVC = UIChangeHomeViewController(nibName:"UIChangeHomeViewController" ,bundle: NSBundle.mainBundle());
+        homeVC.type = 2;
+        homeVC.lastVC = self;
+        self.navigationController?.pushViewController(homeVC, animated: true);
     }
     
     @IBAction func setNeighboor(sender: UIButton) {
         if self.cityField.text == "" {
-            NSHelper.showAlertViewWithTip("城市定位失败，点击重新定位");
+            NSHelper.showAlertViewWithTip("请选择城市");
             return;
         }
         let neighbourVC = UIChooseAddressViewController(nibName:"UIChooseAddressViewController" ,bundle: NSBundle.mainBundle());
         neighbourVC.lastVC = self;
-        neighbourVC.location2D = self.location2D;
+//        neighbourVC.location2D = self.location2D;
         neighbourVC.city = self.cityField.text;
         self.navigationController?.pushViewController(neighbourVC, animated: true);
     }

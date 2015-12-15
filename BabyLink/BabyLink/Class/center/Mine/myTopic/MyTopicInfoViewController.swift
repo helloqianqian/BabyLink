@@ -108,20 +108,18 @@ class MyTopicInfoViewController: UIBaseViewController ,UITableViewDelegate,UITab
     }
     func didSelectComment(infoModel:NSTalkCommentObject){
         self.commentObject = infoModel;
+        self.commentObject.to_id = "";
         self.inputBar.textField.placeholder = "输入评论:"
         self.inputBar.textField.becomeFirstResponder();
         self.listTableView.userInteractionEnabled = false;
     }
     func keyboardWillHide(notification:NSNotification){
-        
         self.listTableView.userInteractionEnabled = true;
         self.removeGesture();
     }
     func keyboardWillShow(notification:NSNotification){
-        
         self.listTableView.userInteractionEnabled = false;
         self.addGesture();
-        
     }
     deinit{
         NSNotificationCenter.defaultCenter().removeObserver(self);
@@ -150,7 +148,7 @@ class MyTopicInfoViewController: UIBaseViewController ,UITableViewDelegate,UITab
                 
                 var size:CGSize!;
                 let  font:UIFont = UIFont.systemFontOfSize(12);
-                if aComment.to_id == self.talk.member_id {
+                if aComment.to_id == ""  || aComment.to_id == "0" || aComment.to_id == aComment.from_id{
                     let content = "\(aComment.from_name)：\(aComment.info)" as NSString;
                     size = content.sizeWithConstrainedToWidth(Float(MainScreenWidth-78), fromFont:font, lineSpace: 2.5);
                 } else {

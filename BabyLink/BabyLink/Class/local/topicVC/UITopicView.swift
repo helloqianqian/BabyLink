@@ -71,7 +71,7 @@ class UITopicView: UIView ,UITableViewDelegate,UITableViewDataSource,UITalkComme
                         
                         var size:CGSize!;
                         let  font:UIFont = UIFont.systemFontOfSize(12);
-                        if aCommend.to_id == talk.member_id {
+                        if aCommend.to_id == "" || aCommend.to_id == "0" || aCommend.to_id == aCommend.from_id{
                             let content = "\(aCommend.from_name)：\(aCommend.info)" as NSString;
                             size = content.sizeWithConstrainedToWidth(Float(MainScreenWidth-78), fromFont:font, lineSpace: 3.0);
                         } else {
@@ -135,6 +135,7 @@ class UITopicView: UIView ,UITableViewDelegate,UITableViewDataSource,UITalkComme
     }
     func didSelectComment(infoModel:NSTalkCommentObject){
         self.commentObject = infoModel;
+        self.commentObject.from_id = "";
         self.inputBar.textField.placeholder = "输入评论:"
         self.inputBar.textField.becomeFirstResponder();
         self.listTableView.userInteractionEnabled = false;
@@ -156,6 +157,7 @@ class UITopicView: UIView ,UITableViewDelegate,UITableViewDataSource,UITalkComme
         }
         let to_id = self.commentObject.from_id;
         let from_id = NSUserInfo.shareInstance().member_id;
+        
         let dicParam:NSDictionary = NSDictionary(objects: [NSUserInfo.shareInstance().member_id,self.commentObject.talk_id,from_id,to_id,str] , forKeys: [MEMBER_ID,"talk_id","from_id","to_id","info"]);
         NSHttpHelp.httpHelpWithUrlTpye(commentTalkType, withParam: dicParam, withResult: { (result:AnyObject!) -> Void in
             let code = result["code"] as! NSInteger;
@@ -171,7 +173,7 @@ class UITopicView: UIView ,UITableViewDelegate,UITableViewDataSource,UITalkComme
                 let talkObject = self.dataArray[self.commentObject.indexRow] as! NSTalk;
                 var size:CGSize!;
                 let  font:UIFont = UIFont.systemFontOfSize(12);
-                if aComment.to_id == talkObject.member_id {
+                if aComment.to_id == "" || aComment.to_id == "0" || aComment.to_id == aComment.from_id {
                     let content = "\(aComment.from_name)：\(aComment.info)" as NSString;
                     size = content.sizeWithConstrainedToWidth(Float(MainScreenWidth-78), fromFont:font, lineSpace: 2.5);
                 } else {

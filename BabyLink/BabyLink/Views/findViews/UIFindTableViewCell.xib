@@ -19,23 +19,21 @@
                         <rect key="frame" x="5" y="3" width="365" height="288.5"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DeO-a1-BNx">
-                                <rect key="frame" x="2" y="2" width="360" height="220"/>
+                                <rect key="frame" x="2" y="2" width="360" height="216"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.058823529409999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="DeO-a1-BNx" secondAttribute="height" multiplier="18:11" id="YZi-hK-ffw"/>
+                                    <constraint firstAttribute="width" secondItem="DeO-a1-BNx" secondAttribute="height" multiplier="5:3" id="YZi-hK-ffw"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Xs-W9-EcG">
-                                <rect key="frame" x="12.5" y="2" width="64" height="65"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="图层-61" translatesAutoresizingMaskIntoConstraints="NO" id="3Xs-W9-EcG">
+                                <rect key="frame" x="12.5" y="2" width="62" height="64"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.74509803919999995" green="0.23921568630000001" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="3sL-3w-rYE"/>
-                                    <constraint firstAttribute="width" constant="64" id="wmB-GV-7mt"/>
+                                    <constraint firstAttribute="height" constant="64" id="3sL-3w-rYE"/>
+                                    <constraint firstAttribute="width" constant="62" id="wmB-GV-7mt"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="定金\n$29.00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="caQ-RL-KZ5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="caQ-RL-KZ5">
                                 <rect key="frame" x="12" y="2" width="64" height="42"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -43,7 +41,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="红蓝黄亲子园" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Tc-Ui-gEa">
-                                <rect key="frame" x="10" y="230" width="110" height="18"/>
+                                <rect key="frame" x="10" y="226" width="110" height="18"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="pG6-3w-KMT"/>
@@ -54,34 +52,33 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="价格：￥2500:00-2900:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w82-OQ-Pzl">
-                                <rect key="frame" x="125" y="230" width="230" height="18"/>
+                                <rect key="frame" x="125" y="226" width="230" height="18"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="K2w-Xi-u8A"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.74509803919999995" green="0.23921568630000001" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XfU-CO-3YX">
-                                <rect key="frame" x="10" y="258" width="345" height="0.5"/>
+                                <rect key="frame" x="10" y="254" width="345" height="0.5"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.82745098039999998" green="0.83137254900000002" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="0.5" id="OR3-3a-4g7"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iCN-Fq-xef">
-                                <rect key="frame" x="10" y="263" width="15" height="20"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pin-拷贝-2" translatesAutoresizingMaskIntoConstraints="NO" id="iCN-Fq-xef">
+                                <rect key="frame" x="10" y="259" width="14" height="18"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.058823529409999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="15" id="8fM-hP-cMS"/>
-                                    <constraint firstAttribute="height" constant="20" id="N0I-nP-Ht7"/>
+                                    <constraint firstAttribute="width" constant="14" id="8fM-hP-cMS"/>
+                                    <constraint firstAttribute="height" constant="18" id="N0I-nP-Ht7"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大兴区枣园路" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wI-JV-XUc">
-                                <rect key="frame" x="33" y="265" width="222" height="16"/>
+                                <rect key="frame" x="32" y="261" width="223" height="16"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="K3H-jF-B2F"/>
@@ -91,7 +88,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="800米" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uBP-Uq-Cfa">
-                                <rect key="frame" x="265" y="265" width="90" height="16"/>
+                                <rect key="frame" x="265" y="261" width="90" height="16"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="Ndx-N0-0Bk"/>
@@ -147,7 +144,11 @@
                 <outlet property="institutionLabel" destination="6Tc-Ui-gEa" id="PXu-sz-TAs"/>
                 <outlet property="priceLabel" destination="w82-OQ-Pzl" id="tVb-dH-Ha9"/>
             </connections>
-            <point key="canvasLocation" x="154.5" y="241.5"/>
+            <point key="canvasLocation" x="9.5" y="235.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="Pin-拷贝-2" width="13" height="18"/>
+        <image name="图层-61" width="61" height="63"/>
+    </resources>
 </document>

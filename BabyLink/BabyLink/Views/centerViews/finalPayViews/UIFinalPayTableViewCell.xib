@@ -20,7 +20,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I19-jG-ClF">
                                 <rect key="frame" x="10" y="20" width="100" height="60"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.058823529409999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="Cwg-bI-RIJ"/>
                                     <constraint firstAttribute="height" constant="60" id="fjb-DS-UGo"/>
@@ -64,21 +63,9 @@
                                     <constraint firstAttribute="height" constant="0.5" id="XgN-4q-ubP"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未付：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3W4-lF-yUb">
-                                <rect key="frame" x="10" y="111" width="43" height="18"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="18" id="3uv-EP-jRX"/>
-                                    <constraint firstAttribute="width" constant="43" id="t9L-YZ-2Y1"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.39607843139999999" green="0.39607843139999999" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6PN-VA-dN8">
                                 <rect key="frame" x="232" y="108" width="58" height="24"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.74509803919999995" green="0.23921568630000001" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="58" id="7Z9-S8-3W8"/>
                                     <constraint firstAttribute="height" constant="24" id="Rsd-UZ-Hoa"/>
@@ -87,13 +74,24 @@
                                 <state key="normal" title="支付尾款"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥2320.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3F-jO-Ekg">
-                                <rect key="frame" x="53" y="111" width="169" height="18"/>
+                                <rect key="frame" x="74" y="111" width="148" height="18"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="DCk-9d-mXF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.74509803919999995" green="0.23921568630000001" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未付：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3W4-lF-yUb">
+                                <rect key="frame" x="10" y="111" width="64" height="18"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="3uv-EP-jRX"/>
+                                    <constraint firstAttribute="width" constant="64" id="t9L-YZ-2Y1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.39607843139999999" green="0.39607843139999999" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -142,8 +140,9 @@
                 <outlet property="leftPriceLabel" destination="v3F-jO-Ekg" id="Pew-3m-2JC"/>
                 <outlet property="payBtn" destination="6PN-VA-dN8" id="r0z-Bh-u6u"/>
                 <outlet property="payPriceLabel" destination="kpc-VQ-tcG" id="Vhu-Xm-8b1"/>
+                <outlet property="weifukuanLabel" destination="3W4-lF-yUb" id="mAX-4s-HLc"/>
             </connections>
-            <point key="canvasLocation" x="29" y="227"/>
+            <point key="canvasLocation" x="-149" y="232"/>
         </tableViewCell>
     </objects>
 </document>

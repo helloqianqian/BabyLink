@@ -28,13 +28,12 @@
                                 <color key="textColor" red="0.39607843139999999" green="0.39607843139999999" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1H5-k3-Y7J">
-                                <rect key="frame" x="378" y="31" width="12" height="18"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="箭头" translatesAutoresizingMaskIntoConstraints="NO" id="1H5-k3-Y7J">
+                                <rect key="frame" x="380" y="31" width="10" height="16"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.058823529409999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="18" id="yoz-6e-ZiM"/>
-                                    <constraint firstAttribute="width" constant="12" id="zAs-Un-K6Q"/>
+                                    <constraint firstAttribute="height" constant="16" id="yoz-6e-ZiM"/>
+                                    <constraint firstAttribute="width" constant="10" id="zAs-Un-K6Q"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -61,7 +60,10 @@
             <connections>
                 <outlet property="backView" destination="xvo-Sv-HS6" id="0s6-IE-hy9"/>
             </connections>
-            <point key="canvasLocation" x="27.5" y="245"/>
+            <point key="canvasLocation" x="-145.5" y="277"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="箭头" width="10" height="16"/>
+    </resources>
 </document>

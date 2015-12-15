@@ -16,6 +16,7 @@ class UIFindInfoSecondTableViewCell: UITableViewCell {
     @IBOutlet weak var sinaWeibo: UIButton!
     @IBOutlet weak var qqFriends: UIButton!
     
+    @IBOutlet weak var spreadBtn: UIButton!
     @IBOutlet weak var inviteBtn: UIButton!
     
     override func awakeFromNib() {

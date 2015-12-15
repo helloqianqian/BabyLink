@@ -26,8 +26,16 @@ class UIFindTableViewCell: UITableViewCell {
         // Initialization code
         backView.layer.cornerRadius = 4;
         backView.layer.masksToBounds = true;
+    }
         
-        self.earnestLabel.text = "定金\n￥29.00";        
+    func setContentData(findModel:NSFind){
+        contentImage.sd_setImageWithURL(NSURL(string: findModel.image_url), placeholderImage: nil);
+        earnestLabel.text = "定金\n\(findModel.goods_dingjin)"
+        institutionLabel.text = findModel.store_name;
+        let price = "价格:￥\(findModel.goods_oprice)-￥\(findModel.goods_baseprice)" as NSString;
+        priceLabel.attributedText = price.switchContentWithFonts([UIFont.systemFontOfSize(14)], withRanges: [NSStringFromRange(NSMakeRange(0, 3))], withColors: [UIColor.blackColor()])
+        addressLabel.text = findModel.address;
+        distanceLabel.text = findModel.meters;
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

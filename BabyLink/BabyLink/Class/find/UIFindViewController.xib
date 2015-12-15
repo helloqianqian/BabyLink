@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="categoryBtn" destination="q1U-V3-aiA" id="wdc-bP-xfg"/>
                 <outlet property="listTableView" destination="pCh-dp-Epp" id="Nfx-xK-WeZ"/>
+                <outlet property="numLabel" destination="exF-4o-4J6" id="bSr-cp-0uQ"/>
                 <outlet property="rangeBtn" destination="gaj-nT-OIM" id="B3r-X0-mtt"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -29,6 +30,9 @@
                     <state key="normal" title="分类">
                         <color key="titleColor" red="0.74509803919999995" green="0.23921568630000001" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="changeCategory:" destination="-1" eventType="touchUpInside" id="gaz-Qg-cts"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gaj-nT-OIM">
                     <rect key="frame" x="162" y="3" width="153" height="30"/>
@@ -41,21 +45,58 @@
                     <state key="normal" title="排序方式">
                         <color key="titleColor" red="0.74509803919999995" green="0.23921568630000001" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="changeRange:" destination="-1" eventType="touchUpInside" id="XMA-mu-mla"/>
+                    </connections>
                 </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pCh-dp-Epp">
                     <rect key="frame" x="0.0" y="36" width="320" height="444"/>
                     <animations/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.92941176469999998" green="0.93333333330000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                 </tableView>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exF-4o-4J6">
+                    <rect key="frame" x="45" y="9" width="18" height="18"/>
+                    <animations/>
+                    <color key="backgroundColor" red="0.74509803919999995" green="0.23921568630000001" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="18" id="dAL-BP-kfe"/>
+                        <constraint firstAttribute="height" constant="18" id="mk4-T2-Ru2"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="矢量智能对象" translatesAutoresizingMaskIntoConstraints="NO" id="KXd-Kd-iog">
+                    <rect key="frame" x="99" y="15" width="8" height="6"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="8" id="Pe8-RP-Vuf"/>
+                        <constraint firstAttribute="height" constant="6" id="sOZ-YC-20W"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="矢量智能对象" translatesAutoresizingMaskIntoConstraints="NO" id="9va-lc-LhS">
+                    <rect key="frame" x="269" y="15" width="8" height="6"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="8" id="1es-gl-ocB"/>
+                        <constraint firstAttribute="height" constant="6" id="9ZA-MG-QKJ"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <animations/>
             <color key="backgroundColor" red="0.92941176469999998" green="0.93333333330000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstItem="exF-4o-4J6" firstAttribute="centerY" secondItem="q1U-V3-aiA" secondAttribute="centerY" id="0fi-Sa-CMe"/>
                 <constraint firstItem="gaj-nT-OIM" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="3" id="2cQ-Q6-GMY"/>
                 <constraint firstItem="pCh-dp-Epp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="76I-Y5-qVg"/>
+                <constraint firstItem="exF-4o-4J6" firstAttribute="centerX" secondItem="q1U-V3-aiA" secondAttribute="centerX" constant="-27" id="Box-af-ISh"/>
                 <constraint firstAttribute="trailing" secondItem="pCh-dp-Epp" secondAttribute="trailing" id="HqT-wm-qZR"/>
+                <constraint firstItem="9va-lc-LhS" firstAttribute="centerY" secondItem="gaj-nT-OIM" secondAttribute="centerY" id="IBM-7U-Hfi"/>
                 <constraint firstItem="q1U-V3-aiA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="5" id="IFX-3A-aRL"/>
+                <constraint firstItem="KXd-Kd-iog" firstAttribute="centerX" secondItem="q1U-V3-aiA" secondAttribute="centerX" constant="22" id="K6c-3Y-feU"/>
                 <constraint firstAttribute="bottom" secondItem="pCh-dp-Epp" secondAttribute="bottom" id="TcI-iL-XIg"/>
+                <constraint firstItem="KXd-Kd-iog" firstAttribute="centerY" secondItem="q1U-V3-aiA" secondAttribute="centerY" id="cdl-e9-hab"/>
+                <constraint firstItem="9va-lc-LhS" firstAttribute="centerX" secondItem="gaj-nT-OIM" secondAttribute="centerX" constant="35" id="dZr-6E-emf"/>
                 <constraint firstItem="q1U-V3-aiA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="3" id="gzw-a5-lbL"/>
                 <constraint firstItem="pCh-dp-Epp" firstAttribute="top" secondItem="gaj-nT-OIM" secondAttribute="bottom" constant="3" id="jbj-Xj-Vfz"/>
                 <constraint firstAttribute="trailing" secondItem="gaj-nT-OIM" secondAttribute="trailing" constant="5" id="oNR-aE-NiR"/>
@@ -63,7 +104,10 @@
                 <constraint firstItem="gaj-nT-OIM" firstAttribute="width" secondItem="q1U-V3-aiA" secondAttribute="width" id="psq-sd-Rhn"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="243" y="298"/>
+            <point key="canvasLocation" x="196" y="298"/>
         </view>
     </objects>
+    <resources>
+        <image name="矢量智能对象" width="8" height="6"/>
+    </resources>
 </document>

@@ -33,8 +33,7 @@
 #define indexSearchSuf    @"/Index/search"
 
 
-
-
+#define getCityListSuf    @"/Index/getCityList"
 
 #pragma mark - 用户管理
 //用户
@@ -80,7 +79,7 @@
  *  @return <#return value description#>
  */
 +(NSString *)getOtherLoginUrl{
-    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:perfectSuf];
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:otherLoginSuf];
 }
 
 /**
@@ -153,6 +152,19 @@
  */
 + (NSString *)getIndexSearchUrl {
     return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:indexSearchSuf];
+}
+
+/**
+ *  修改小区
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getChangeHomeUrl {
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:updateMemberSuf];
+}
+
++ (NSString *)getCityList{
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:@"/Index/getCityList"];
 }
 
 
@@ -426,6 +438,88 @@
 + (NSString *)getXiuFansUrl {
     return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:xiuFansSuf];
 }
+
+
+#pragma mark - 发现
+#define goodsSuf       @"/Goods"
+#define goodsInfoSuf   @"/Goods/goods_info"
+#define goodsIssueSuf  @"/Goods/issue_friend"
+#define goodsFListSuf  @"/Goods/friend_list"
+
+
++ (NSString *)getGoodsUrl {
+    return [httpHost stringByAppendingString:goodsSuf];
+}
++ (NSString *)getGoodsInfoUrl {
+    return [httpHost stringByAppendingString:goodsInfoSuf];
+}
++ (NSString *)getGoodsIssueUrl{
+    return [httpHost stringByAppendingString:goodsIssueSuf];
+}
++ (NSString *)getGoodsFListUrl {
+    return [httpHost stringByAppendingString:goodsFListSuf];
+}
+
+
+#pragma mark - 订单
+#define orderPaySuf     @"/Order/pay"
+#define notifySuf       @"/Pay/notify/pay_way/1/pay_type/1"
+#define orderSuf        @"/Order"
+
+#define orderCancelSuf  @"/Order/cancel"
+#define orderRefundSuf  @"/Order/refund"
+
+#define getPrePaySuf    @"Order/getPrepay"
+#define notifyWXDJSuf   @"/Pay/notifyWx_dingjin"
+#define notifyWXWKSuf   @"/Pay/notifyWx_weikuan"
+
+#define notifyAliDJSuf  @"/Pay/notifyAli_dingjin"
+#define notifyAliWKSuf  @"/Pay/notifyAli_weikuan"
+
+#define orderNumSuf     @"/Member/getOrderNum"
++ (NSString *)getOrderNumUrl{
+    return [httpHost stringByAppendingString:orderNumSuf];
+}
+
++ (NSString *)getOrderPayUrl {
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:orderPaySuf];
+}
++ (NSString *)getNotifyUrl{
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:notifySuf];
+}
++ (NSString *)getOrderUrl{
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:orderSuf];
+}
++ (NSString *)getOrderCancelUrl {
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:orderCancelSuf];
+}
++ (NSString *)getOrderRefundUrl {
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:orderRefundSuf];
+}
++ (NSString *)getPrePayUrl {
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:getPrePaySuf];
+}
++ (NSString *)getWXDJUrl {
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:notifyWXDJSuf];
+}
++ (NSString *)getWXWKUrl {
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:notifyWXWKSuf];
+}
+
++ (NSString *)getAliDJUrl {
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:notifyAliDJSuf];
+}
++ (NSString *)getAliWKUrl {
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:notifyAliWKSuf];
+}
+
+
+
+
+
+
+
+
 
 
 #pragma mark - 上传图片

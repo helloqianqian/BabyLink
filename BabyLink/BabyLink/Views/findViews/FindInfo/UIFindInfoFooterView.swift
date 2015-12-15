@@ -22,5 +22,9 @@ class UIFindInfoFooterView: UIView {
         // Drawing code
     }
     */
+    func setContent(infoModel:NSInfoFind){
+        originPriceLabel.text = "现价\n￥\(infoModel.goods_price)"
+        prePayLabel.text = "我要预定\n￥\(infoModel.goods_dingjin)"
+    }
 
 }

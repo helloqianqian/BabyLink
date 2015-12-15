@@ -27,6 +27,7 @@ class UIFirstInfoViewController: UIBaseViewController ,UITextFieldDelegate{
     
     var location2D:CLLocationCoordinate2D!;
     var seconds = 60;
+    var type:String!;
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,7 +36,7 @@ class UIFirstInfoViewController: UIBaseViewController ,UITextFieldDelegate{
         self.navigationItem.hidesBackButton = true;
         
         self.setUI();
-        self.updateLocation();
+//        self.updateLocation();
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil);
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil);
@@ -102,7 +103,7 @@ class UIFirstInfoViewController: UIBaseViewController ,UITextFieldDelegate{
         verticalBtn.enabled = false;
         self.startTimer()
         SVProgressHUD.showWithStatus("正在发送验证码")
-        let dicParam:NSDictionary = NSDictionary(objects: [self.phoneNum.text!] , forKeys: ["mobile"]);
+        let dicParam:NSDictionary = NSDictionary(objects: [self.phoneNum.text!,"2"] , forKeys: ["mobile","type"]);
         NSHttpHelp.httpHelpWithUrlTpye(verticalCodeType, withParam: dicParam, withResult: { (returnObject:AnyObject!) -> Void in
             let dic = returnObject as! NSDictionary;
             let code = dic["code"] as! NSInteger;
@@ -143,35 +144,74 @@ class UIFirstInfoViewController: UIBaseViewController ,UITextFieldDelegate{
             NSHelper.showAlertViewWithTip("请输入验证码");
             return;
         }
-        if self.locationField.text == "" {
-            NSHelper.showAlertViewWithTip("城市定位失败，点击重新定位");
-            return;
-        }
-        if self.neighboorField.text == "" {
-            NSHelper.showAlertViewWithTip("请选择您所在的小区");
-            return;
-        }
-        let dicParam:NSDictionary = NSDictionary(objects: [self.phoneNum.text!,self.verticalField.text!,NSUserInfo.shareInstance().member_avar,NSUserInfo.shareInstance().member_name,NSUserInfo.shareInstance().openid] , forKeys: ["mobile","code","member_avar","member_name","openid"]);
+//        if self.locationField.text == "" {
+//            NSHelper.showAlertViewWithTip("城市定位失败，点击重新定位");
+//            return;
+//        }
+//        if self.neighboorField.text == "" {
+//            NSHelper.showAlertViewWithTip("请选择您所在的小区");
+//            return;
+//        }
+        let dicParam:NSDictionary = NSDictionary(objects: [self.phoneNum.text!,self.verticalField.text!,NSUserInfo.shareInstance().member_avar,NSUserInfo.shareInstance().member_name,NSUserInfo.shareInstance().openid,self.type] , forKeys: ["mobile","code","member_avar","member_name","openid","type"]);
         SVProgressHUD.showWithStatus("正在提交信息")
         NSHttpHelp.httpHelpWithUrlTpye(registerType, withParam: dicParam, withResult: { (returnObject:AnyObject!) -> Void in
             let dic = returnObject as! NSDictionary;
             let code = dic["code"] as! NSInteger;
             if code == 0 {
                 //发送成功
-                SVProgressHUD.showSuccessWithStatus("提交成功")
+                SVProgressHUD.dismiss();
+                
                 let datas = dic["datas"] as! String;
                 NSUserInfo.shareInstance().member_id = datas;
                 NSUserInfo.shareInstance().mobile = self.phoneNum.text;
-                NSUserInfo.shareInstance().city = self.locationField.text;
-                NSUserInfo.shareInstance().home = self.neighboorField.text;
         
-                let secondVC = UISecondInfoViewController(nibName:"UISecondInfoViewController" ,bundle: NSBundle.mainBundle());
-                self.navigationController?.pushViewController(secondVC, animated: true);
-            } else {
+                let infoVC = UIFullInfoViewController(nibName:"UIFullInfoViewController",bundle:NSBundle.mainBundle());
+                infoVC.type = 1;
+                self.navigationController?.pushViewController(infoVC, animated: true);
+            } else if code == 1 {
                 //发送失败
                 let datas = dic["datas"] as! String;
                 SVProgressHUD.showErrorWithStatus(datas);
+            } else if code == 2 {
+                //首页
+                SVProgressHUD.dismiss();
+                
+                let datas = dic["datas"] as! NSDictionary;
+                
+                NSUserInfo.shareInstance().member_id = datas["member_id"] as! String;
+                NSUserInfo.shareInstance().member_name = datas["member_name"] as! String;
+                NSUserInfo.shareInstance().member_avar = datas["member_avar"] as! String;
+                NSUserInfo.shareInstance().password = datas["password"] as! String;
+                NSUserInfo.shareInstance().mobile = self.phoneNum.text;
+                NSUserInfo.shareInstance().home = datas["home"] as! String;
+                NSUserInfo.shareInstance().home2 = datas["home2"] as! String;
+                NSUserInfo.shareInstance().add_time = datas["add_time"] as! String;
+                NSUserInfo.shareInstance().login_time = datas["login_time"] as! String;
+                NSUserInfo.shareInstance().baby_sex = datas["baby_sex"] as! String;
+                NSUserInfo.shareInstance().city = datas["city"] as! String;
+                NSUserInfo.shareInstance().baby_nam = datas["baby_nam"] as! String;
+                NSUserInfo.shareInstance().baby_link = datas["baby_link"] as! String;
+                NSUserInfo.shareInstance().baby_date = datas["baby_date"] as! String;
+                NSUserInfo.shareInstance().position = datas["position"] as! String;
+                NSUserInfo.shareInstance().islogin = true;
+                
+                appDelegate.recordLastLoginUser();
+                appDelegate.exchangeRootViewController(true)
+            } else {
+                //不需要输入密码
+                
+                SVProgressHUD.dismiss();
+                
+                let datas = dic["datas"] as! String;
+                NSUserInfo.shareInstance().member_id = datas;
+                NSUserInfo.shareInstance().mobile = self.phoneNum.text;
+                NSUserInfo.shareInstance().islogin = false;
+                
+                let infoVC = UIFullInfoViewController(nibName:"UIFullInfoViewController",bundle:NSBundle.mainBundle());
+                self.navigationController?.pushViewController(infoVC, animated: true);
             }
+            
+            
             }) { (error:AnyObject!) -> Void in
                 
         };

@@ -110,6 +110,7 @@ class UILoginViewController: UIBaseViewController ,UITextFieldDelegate{
                 NSUserInfo.shareInstance().passwordLocal = self.pswField.text;
                 NSUserInfo.shareInstance().mobile = self.phoneField.text;
                 NSUserInfo.shareInstance().home = home;
+                NSUserInfo.shareInstance().home2 = datas["home2"] as! String
                 NSUserInfo.shareInstance().add_time = datas["add_time"] as! String;
                 NSUserInfo.shareInstance().login_time = datas["login_time"] as! String;
                 NSUserInfo.shareInstance().baby_sex = datas["baby_sex"] as! String;
@@ -118,7 +119,7 @@ class UILoginViewController: UIBaseViewController ,UITextFieldDelegate{
                 NSUserInfo.shareInstance().baby_link = datas["baby_link"] as! String;
                 NSUserInfo.shareInstance().baby_date = datas["baby_date"] as! String;
                 NSUserInfo.shareInstance().position = datas["position"] as! String;
-                NSUserInfo.shareInstance().openid = datas["openid"] as! String;
+//                NSUserInfo.shareInstance().openid = datas["openid"] as! String;
                 
                 if home == "" {
                     SVProgressHUD.dismiss();
@@ -157,7 +158,7 @@ class UILoginViewController: UIBaseViewController ,UITextFieldDelegate{
                 let snsAccount:UMSocialAccountEntity = UMSocialAccountManager.socialAccountDictionary()[UMShareToSina] as! UMSocialAccountEntity
                 
                 print("username is \(snsAccount.userName), uid is \(snsAccount.usid), token is \(snsAccount.accessToken) url is \(snsAccount.iconURL)")
-                self.otherLogin()
+                self.otherLogin("3")
             } else {
                 
             }
@@ -170,7 +171,7 @@ class UILoginViewController: UIBaseViewController ,UITextFieldDelegate{
                 let snsAccount:UMSocialAccountEntity = UMSocialAccountManager.socialAccountDictionary()[UMShareToQQ] as! UMSocialAccountEntity
                 self.snsAccount = snsAccount;
                 print("username is \(snsAccount.userName), uid is \(snsAccount.usid), token is \(snsAccount.accessToken) ,url is \(snsAccount.iconURL)")
-                self.otherLogin()
+                self.otherLogin("1")
             } else {
                 
             }
@@ -187,7 +188,7 @@ class UILoginViewController: UIBaseViewController ,UITextFieldDelegate{
                 let snsAccount:UMSocialAccountEntity = UMSocialAccountManager.socialAccountDictionary()[UMShareToWechatSession] as! UMSocialAccountEntity;
                 self.snsAccount = snsAccount;
                 NSLog("username is %@, uid is %@, token is %@ url is %@  openid:%@",snsAccount.userName,snsAccount.usid,snsAccount.accessToken,snsAccount.iconURL,snsAccount.openId);
-                self.otherLogin();
+                self.otherLogin("2");
             } else {
                 
             }
@@ -196,18 +197,17 @@ class UILoginViewController: UIBaseViewController ,UITextFieldDelegate{
     }
     
     
-    func otherLogin(){
+    func otherLogin(type:String){
         SVProgressHUD.showWithMaskType(SVProgressHUDMaskType.Clear);
         NSUserInfo.shareInstance().openid = self.snsAccount.openId;
         NSUserInfo.shareInstance().member_name = self.snsAccount.userName;
         NSUserInfo.shareInstance().member_avar = self.snsAccount.iconURL;
-        let dicParam:NSDictionary = NSDictionary(objects: [self.snsAccount.openId] , forKeys: ["openid"]);
+        let dicParam:NSDictionary = NSDictionary(objects: [self.snsAccount.openId,type] , forKeys: ["openid","type"]);
         NSHttpHelp.httpHelpWithUrlTpye(otherLoginType, withParam: dicParam, withResult: { (returnObject:AnyObject!) -> Void in
             let dic = returnObject as! NSDictionary;
             let code = dic["code"] as! NSInteger;
             if code == 0 {
                 //发送成功
-                SVProgressHUD.dismiss();
                 SVProgressHUD.showSuccessWithStatus("登录成功")
                 
                 let datas = dic["datas"] as! NSDictionary;
@@ -219,6 +219,7 @@ class UILoginViewController: UIBaseViewController ,UITextFieldDelegate{
                 NSUserInfo.shareInstance().passwordLocal = self.pswField.text;
                 NSUserInfo.shareInstance().mobile = self.phoneField.text;
                 NSUserInfo.shareInstance().home = datas["home"] as! String;
+                NSUserInfo.shareInstance().home2 = datas["home2"] as! String;
                 NSUserInfo.shareInstance().add_time = datas["add_time"] as! String;
                 NSUserInfo.shareInstance().login_time = datas["login_time"] as! String;
                 NSUserInfo.shareInstance().baby_sex = datas["baby_sex"] as! String;
@@ -227,7 +228,6 @@ class UILoginViewController: UIBaseViewController ,UITextFieldDelegate{
                 NSUserInfo.shareInstance().baby_link = datas["baby_link"] as! String;
                 NSUserInfo.shareInstance().baby_date = datas["baby_date"] as! String;
                 NSUserInfo.shareInstance().position = datas["position"] as! String;
-                NSUserInfo.shareInstance().openid = datas["openid"] as! String;
                 NSUserInfo.shareInstance().islogin = true;
                 
                 appDelegate.recordLastLoginUser();
@@ -237,6 +237,7 @@ class UILoginViewController: UIBaseViewController ,UITextFieldDelegate{
                 //需要完善资料
                 SVProgressHUD.dismiss();
                 let firstVC = UIFirstInfoViewController(nibName:"UIFirstInfoViewController" ,bundle: NSBundle.mainBundle())
+                firstVC.type = type;
                 self.navigationController?.pushViewController(firstVC, animated: true);
             } else {
                 SVProgressHUD.dismiss();

@@ -36,7 +36,7 @@
                             <color key="textColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥22.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1S-8U-s0G">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1S-8U-s0G">
                             <rect key="frame" x="92" y="17" width="191" height="21"/>
                             <animations/>
                             <constraints>
@@ -105,11 +105,12 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqI-sJ-ImA">
                             <rect key="frame" x="17" y="50" width="18" height="18"/>
                             <animations/>
-                            <color key="backgroundColor" red="0.93725490199999995" green="0.058823529409999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="18" id="CE9-LE-AEr"/>
                                 <constraint firstAttribute="height" constant="18" id="a0w-eB-Z0n"/>
                             </constraints>
+                            <state key="normal" image="switch_btn"/>
+                            <state key="selected" image="switch_selected_btn"/>
                             <connections>
                                 <action selector="weixinPaySelect:" destination="-1" eventType="touchUpInside" id="SIN-aI-xE8"/>
                             </connections>
@@ -117,11 +118,12 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XbK-Xa-3H1">
                             <rect key="frame" x="17" y="83" width="18" height="18"/>
                             <animations/>
-                            <color key="backgroundColor" red="0.93725490199999995" green="0.058823529409999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="18" id="BT6-7z-jDg"/>
                                 <constraint firstAttribute="height" constant="18" id="dtl-Pa-gXj"/>
                             </constraints>
+                            <state key="normal" image="switch_btn"/>
+                            <state key="selected" image="switch_selected_btn"/>
                             <connections>
                                 <action selector="aliPaySelect:" destination="-1" eventType="touchUpInside" id="Xt2-N4-gf9"/>
                             </connections>
@@ -177,4 +179,8 @@
             <point key="canvasLocation" x="-283" y="98"/>
         </view>
     </objects>
+    <resources>
+        <image name="switch_btn" width="14" height="14"/>
+        <image name="switch_selected_btn" width="14" height="14"/>
+    </resources>
 </document>

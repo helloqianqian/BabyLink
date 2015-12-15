@@ -65,7 +65,7 @@ class UIForgetPWViewController: UIBaseViewController ,UITextFieldDelegate{
         getVerticalBtn.enabled = false;
         self.startTimer()
         SVProgressHUD.showWithStatus("正在发送验证码")
-        let dicParam:NSDictionary = NSDictionary(objects: [self.phoneNum.text!] , forKeys: ["mobile"]);
+        let dicParam:NSDictionary = NSDictionary(objects: [self.phoneNum.text!,"1"] , forKeys: ["mobile","type"]);
         NSHttpHelp.httpHelpWithUrlTpye(verticalCodeType, withParam: dicParam, withResult: { (returnObject:AnyObject!) -> Void in
             let dic = returnObject as! NSDictionary;
             let code = dic["code"] as! NSInteger;

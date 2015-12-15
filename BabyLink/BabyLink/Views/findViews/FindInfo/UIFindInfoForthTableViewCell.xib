@@ -36,9 +36,12 @@
                                     <constraint firstAttribute="height" constant="0.5" id="2L0-3B-O5e"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="阿斯顿拉亏空的快点快点看打快点看看的的卡里的减肥开始看见的历史老师了算了算了算了算了算了老师算了算了算了算了算了算了算了算了算了商量商量事" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfA-LO-pfo">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfA-LO-pfo">
                                 <rect key="frame" x="15" y="50.5" width="356" height="63"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="v5T-cb-zBR"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.0" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -47,7 +50,6 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="gfA-LO-pfo" secondAttribute="bottom" constant="40" id="2ga-zw-j6t"/>
                             <constraint firstItem="7fq-Sf-LfY" firstAttribute="top" secondItem="1kt-M4-dSt" secondAttribute="top" constant="10" id="3Sx-m6-GmL"/>
                             <constraint firstItem="7fq-Sf-LfY" firstAttribute="leading" secondItem="1kt-M4-dSt" secondAttribute="leading" constant="15" id="73D-s3-xMR"/>
                             <constraint firstAttribute="trailing" secondItem="gfA-LO-pfo" secondAttribute="trailing" constant="15" id="74F-wS-Dpp"/>
@@ -72,8 +74,9 @@
             <connections>
                 <outlet property="backView" destination="1kt-M4-dSt" id="aF0-gK-wut"/>
                 <outlet property="contentLabel" destination="gfA-LO-pfo" id="1ke-fU-iZr"/>
+                <outlet property="heightOfLabel" destination="v5T-cb-zBR" id="wrw-nZ-BGJ"/>
             </connections>
-            <point key="canvasLocation" x="410" y="230"/>
+            <point key="canvasLocation" x="366" y="230"/>
         </tableViewCell>
     </objects>
 </document>

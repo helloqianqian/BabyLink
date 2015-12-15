@@ -30,8 +30,8 @@ class UICenterViewController: UIBaseViewController ,UITableViewDelegate,UITableV
 
         // Do any additional setup after loading the view.
         self.navigationItem.title = "我"
-        self.userCoupon.text = "兑换码\n2"
-        self.leftPayment.text = "支付尾款\n2";
+        self.userCoupon.text = "兑换码"
+        self.leftPayment.text = "支付尾款";
 
         blurEffectView.effect = UIBlurEffect(style: UIBlurEffectStyle.Light)
         blurEffectionView2.effect = UIBlurEffect(style: UIBlurEffectStyle.Light)
@@ -43,6 +43,9 @@ class UICenterViewController: UIBaseViewController ,UITableViewDelegate,UITableV
         userName.text = NSUserInfo.shareInstance().member_name;
         
         listTableView.registerNib(UINib(nibName: "UICenterTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "centerCellIndentifier")
+//        if NSUserInfo.shareInstance().member_name == "" || NSUserInfo.shareInstance().member_avar == "" {
+            self.getPersonInfo()
+//        }
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -50,13 +53,52 @@ class UICenterViewController: UIBaseViewController ,UITableViewDelegate,UITableV
             centerHeadIconLoad = false;
             headImageView.sd_setImageWithURL(NSURL(string: NSUserInfo.shareInstance().member_avar), placeholderImage: UIImage(named: "morentoux"))
         }
+        
+        self.getOrderNum();
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
     }
+    func getPersonInfo(){
+        let dicParam:NSDictionary = NSDictionary(objects: [NSUserInfo.shareInstance().member_id] , forKeys: [MEMBER_ID]);
+        NSHttpHelp.httpHelpWithUrl(NSHttpModel.getMemberInfoUrl(), withParam: dicParam, withResult: { (result:AnyObject!) -> Void in
+            let dic = result as! NSDictionary;
+            let code = dic["code"] as! NSInteger;
+            if code == 0 {
+                let datas = dic["datas"] as! NSDictionary;
+                NSUserInfo.shareInstance().member_avar = datas["member_avar"] as! String;
+                NSUserInfo.shareInstance().member_name = datas["member_name"] as! String;
+                self.headImageView.sd_setImageWithURL(NSURL(string: NSUserInfo.shareInstance().member_avar), placeholderImage: UIImage(named: "morentoux"))
+                self.userName.text = NSUserInfo.shareInstance().member_name;
+            } else {
+                let datas = dic["datas"] as! String;
+                SVProgressHUD.showErrorWithStatus(datas);
+            }
+            }) { (error:AnyObject!) -> Void in
+        }
+    }
 
+    func getOrderNum(){
+        let dicParam:NSDictionary = NSDictionary(objects: [NSUserInfo.shareInstance().member_id] , forKeys: [MEMBER_ID]);
+        NSHttpHelp.httpHelpWithUrl(NSHttpModel.getOrderNumUrl(), withParam: dicParam, withResult: { (result:AnyObject!) -> Void in
+            let dic = result as! NSDictionary;
+            let code = dic["code"] as! NSInteger;
+            if code == 0 {
+                let datas = dic["datas"] as! NSDictionary;
+                let code_num = datas["code_num"] as! String;
+                let wei_num = datas["wei_num"] as! String;
+                self.userCoupon.text = "兑换码\n\(code_num)"
+                self.leftPayment.text = "支付尾款\n\(wei_num)";
+            } else {
+                let datas = dic["datas"] as! String;
+                SVProgressHUD.showErrorWithStatus(datas);
+            }
+            }) { (error:AnyObject!) -> Void in
+        }
+    }
+    
     // MARK: - UITableViewDelegate
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat{
         if section == 0 {

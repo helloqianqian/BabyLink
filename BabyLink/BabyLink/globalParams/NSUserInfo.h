@@ -30,6 +30,7 @@
 
 @property (nonatomic,strong)NSString *city;
 @property (nonatomic,strong)NSString *home;
+@property (nonatomic,strong)NSString *home2;
 @property (nonatomic,strong)NSString *position;
 
 @property (nonatomic,strong)NSString *login_time;

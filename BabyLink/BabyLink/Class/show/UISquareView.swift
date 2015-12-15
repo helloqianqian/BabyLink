@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UISquareView: UIView ,UITableViewDelegate,UITableViewDataSource{
+class UISquareView: UIView ,UITableViewDelegate,UITableViewDataSource,UMSocialUIDelegate{
 
     @IBOutlet weak var listTableView: UITableView!
     var page = 1;
@@ -206,14 +206,23 @@ class UISquareView: UIView ,UITableViewDelegate,UITableViewDataSource{
     }
     func douYidou(sender:UIButton){
         let douVC = UIDouViewController(nibName:"UIDouViewController" ,bundle: NSBundle.mainBundle())
+        let showModel = self.dataArray[sender.tag] as! NSXiu;
+        douVC.showModel = showModel;
         mainTabBar.showView.presentViewController(douVC, animated: true) { () -> Void in
             
         }
     }
     func shareDou(sender:UIButton){
-        
+        UMSocialData.defaultData().urlResource.setResourceType(UMSocialUrlResourceTypeImage, url: "http://baidu.com");
+        UMSocialSnsService.presentSnsIconSheetView(mainTabBar.showView, appKey: "562d96b0e0f55ae8010013b6", shareText: "babylink分享活动 http://www.baidu.com", shareImage:UIImage(named: "AppIcon"), shareToSnsNames: [UMShareToQQ,UMShareToWechatSession,UMShareToSina,UMShareToWechatTimeline], delegate: self)
     }
-    
+    func didFinishGetUMSocialDataInViewController(response: UMSocialResponseEntity!) {
+        if response.responseCode == UMSResponseCodeSuccess {
+            SVProgressHUD.showSuccessWithStatus("分享成功");
+        } else {
+            SVProgressHUD.showErrorWithStatus("分享失败")
+        }
+    }
     
     /*
     // Only override drawRect: if you perform custom drawing.

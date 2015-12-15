@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -19,7 +19,6 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="参与人数（12人）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hna-6h-u0c">
                                 <rect key="frame" x="12" y="8" width="252" height="14"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="14" id="Qkr-dc-hBj"/>
                                 </constraints>
@@ -29,7 +28,6 @@
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Izw-KV-I20">
                                 <rect key="frame" x="5" y="30" width="304" height="1"/>
-                                <animations/>
                                 <color key="backgroundColor" red="0.92941176469999998" green="0.93333333330000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="Q3s-Uh-6zc"/>
@@ -37,7 +35,6 @@
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="2ST-Ia-y5k">
                                 <rect key="frame" x="20" y="39" width="274" height="230"/>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="20" id="vfg-Rb-xwv">
                                     <size key="itemSize" width="35" height="50"/>
@@ -48,7 +45,6 @@
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMV-nf-6Fd">
                                 <rect key="frame" x="274" y="0.5" width="40" height="30"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="eXG-CS-JbN"/>
                                     <constraint firstAttribute="height" constant="30" id="pSA-m8-Hex"/>
@@ -56,7 +52,6 @@
                                 <state key="normal" image="箭头"/>
                             </button>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="2ST-Ia-y5k" firstAttribute="top" secondItem="Izw-KV-I20" secondAttribute="bottom" constant="8" id="51B-L2-484"/>
@@ -74,7 +69,6 @@
                         </constraints>
                     </view>
                 </subviews>
-                <animations/>
                 <color key="backgroundColor" red="0.92941176469999998" green="0.93333333330000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstItem="R9T-XV-9qs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="3" id="2gs-B8-5vb"/>
@@ -83,7 +77,6 @@
                     <constraint firstItem="R9T-XV-9qs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="3" id="mZJ-9J-ryK"/>
                 </constraints>
             </tableViewCellContentView>
-            <animations/>
             <connections>
                 <outlet property="arrowImg" destination="bMV-nf-6Fd" id="mi0-eT-Zto"/>
                 <outlet property="backView" destination="R9T-XV-9qs" id="ZE0-LA-50y"/>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UIFirstInfoViewController" customModule="BabyLink" customModuleProvider="target">
@@ -32,7 +32,6 @@
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+86" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4b9-ft-Br9">
                             <rect key="frame" x="15" y="15" width="32" height="15"/>
-                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="32" id="CaM-Pl-e6a"/>
                                 <constraint firstAttribute="height" constant="15" id="vBL-Ih-O5b"/>
@@ -43,7 +42,6 @@
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cdL-e5-gVs">
                             <rect key="frame" x="55" y="15" width="0.5" height="15"/>
-                            <animations/>
                             <color key="backgroundColor" red="0.50196078430000002" green="0.50588235290000005" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="0.5" id="G3R-3U-FR4"/>
@@ -52,7 +50,6 @@
                         </view>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FNf-3a-ESx">
                             <rect key="frame" x="68" y="5" width="217" height="35"/>
-                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="35" id="ftm-cK-33S"/>
                             </constraints>
@@ -60,7 +57,6 @@
                             <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                         </textField>
                     </subviews>
-                    <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="4b9-ft-Br9" firstAttribute="leading" secondItem="sUX-Xh-HRo" secondAttribute="leading" constant="15" id="3MN-RR-7q8"/>
@@ -78,7 +74,6 @@
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入验证码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bBg-zw-6ho">
                             <rect key="frame" x="25" y="5" width="160" height="35"/>
-                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="35" id="fZ3-sX-r6r"/>
                             </constraints>
@@ -86,7 +81,6 @@
                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                         </textField>
                     </subviews>
-                    <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="GYH-mo-1Lc"/>
@@ -97,7 +91,6 @@
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZGB-on-6mz">
                     <rect key="frame" x="210" y="136" width="100" height="45"/>
-                    <animations/>
                     <color key="backgroundColor" red="0.65490196079999996" green="0.85098039219999999" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="VHo-i7-vJG"/>
@@ -111,12 +104,11 @@
                         <action selector="getVerticalNum:" destination="-1" eventType="touchUpInside" id="EVE-Sx-xRg"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mHC-gi-6ei">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mHC-gi-6ei">
                     <rect key="frame" x="10" y="188" width="300" height="45"/>
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="点击重新定位" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6aL-WU-BFz">
                             <rect key="frame" x="25" y="0.0" width="250" height="45"/>
-                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="UHS-CA-RMk"/>
                             </constraints>
@@ -125,7 +117,6 @@
                         </textField>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zahnjiao" translatesAutoresizingMaskIntoConstraints="NO" id="bCu-7B-mwy">
                             <rect key="frame" x="280" y="18" width="10" height="8"/>
-                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="8" id="CK0-Ih-07c"/>
                                 <constraint firstAttribute="width" constant="10" id="hsj-xb-N8F"/>
@@ -133,13 +124,11 @@
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ew-yH-h4i">
                             <rect key="frame" x="0.0" y="0.0" width="300" height="45"/>
-                            <animations/>
                             <connections>
                                 <action selector="locationFailed:" destination="-1" eventType="touchUpInside" id="PDe-Nb-wPQ"/>
                             </connections>
                         </button>
                     </subviews>
-                    <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="bCu-7B-mwy" secondAttribute="trailing" constant="10" id="5IB-OL-M1Z"/>
@@ -150,12 +139,11 @@
                         <constraint firstItem="bCu-7B-mwy" firstAttribute="leading" secondItem="6aL-WU-BFz" secondAttribute="trailing" constant="5" id="sdJ-Ds-vue"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y5c-If-eIJ">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y5c-If-eIJ">
                     <rect key="frame" x="10" y="240" width="300" height="45"/>
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请选择您所在的小区" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q1z-4C-yOo">
                             <rect key="frame" x="25" y="0.0" width="250" height="45"/>
-                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="Iql-uO-0g3"/>
                             </constraints>
@@ -164,7 +152,6 @@
                         </textField>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pin" translatesAutoresizingMaskIntoConstraints="NO" id="as0-ZC-1ae">
                             <rect key="frame" x="280" y="15" width="10" height="14"/>
-                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="10" id="iUg-yv-Nih"/>
                                 <constraint firstAttribute="height" constant="14" id="kTh-Hi-5LB"/>
@@ -172,13 +159,11 @@
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7OZ-Qq-ldw">
                             <rect key="frame" x="0.0" y="0.0" width="300" height="45"/>
-                            <animations/>
                             <connections>
                                 <action selector="chooseNeighbor:" destination="-1" eventType="touchUpInside" id="Q2j-Ou-beA"/>
                             </connections>
                         </button>
                     </subviews>
-                    <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="q1z-4C-yOo" firstAttribute="centerY" secondItem="y5c-If-eIJ" secondAttribute="centerY" id="7XB-Ze-hfC"/>
@@ -190,20 +175,18 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P5w-UU-RuL">
-                    <rect key="frame" x="10" y="295" width="300" height="35"/>
-                    <animations/>
+                    <rect key="frame" x="10" y="196" width="300" height="35"/>
                     <color key="backgroundColor" red="0.86274509799999999" green="0.31372549020000001" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="35" id="Inc-TP-DxX"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <state key="normal" title="下一步"/>
+                    <state key="normal" title="确认"/>
                     <connections>
                         <action selector="nextStep:" destination="-1" eventType="touchUpInside" id="Ndb-55-0i7"/>
                     </connections>
                 </button>
             </subviews>
-            <animations/>
             <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="y5c-If-eIJ" firstAttribute="top" secondItem="mHC-gi-6ei" secondAttribute="bottom" constant="7" id="1xi-fS-qxc"/>
@@ -222,7 +205,7 @@
                 <constraint firstItem="sUX-Xh-HRo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="84" id="VhS-4l-o6K"/>
                 <constraint firstItem="P5w-UU-RuL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="WCs-id-9ik"/>
                 <constraint firstAttribute="trailing" secondItem="ZGB-on-6mz" secondAttribute="trailing" constant="10" id="bdO-cG-WXn"/>
-                <constraint firstItem="P5w-UU-RuL" firstAttribute="top" secondItem="y5c-If-eIJ" secondAttribute="bottom" constant="10" id="rzW-Ea-f1z"/>
+                <constraint firstItem="P5w-UU-RuL" firstAttribute="top" secondItem="ZGB-on-6mz" secondAttribute="bottom" constant="15" id="zGW-f3-Bd2"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <point key="canvasLocation" x="-267" y="176"/>

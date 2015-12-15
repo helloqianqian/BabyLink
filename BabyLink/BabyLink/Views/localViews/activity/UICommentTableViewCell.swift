@@ -26,7 +26,7 @@ class UICommentTableViewCell: UITableViewCell {
     
     func setContentData(infoModel:NSCommentObject){
         headIcon.sd_setImageWithURL(NSURL(string: infoModel.from_userAvar), placeholderImage: UIImage(named: "morentoux"))
-        if infoModel.to_userId == NSUserInfo.shareInstance().member_id {
+        if infoModel.to_userId == "" || infoModel.to_userId == "0"  || infoModel.to_userId == infoModel.from_userId{
             nameLabel.text = infoModel.from_userName;
         } else {
             let attribute1 = [NSForegroundColorAttributeName : UIColor.blackColor() ,NSFontAttributeName:UIFont.systemFontOfSize(13.0)];

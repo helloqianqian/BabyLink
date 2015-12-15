@@ -13,7 +13,7 @@
  *  我要报名
  */
 -(void)makeBackGroundColor_Purple;
-
+-(void)makeBackGroundColor_PurpleDisabel;
 
 /**
  *  登录，注册，完善信息，我要报名

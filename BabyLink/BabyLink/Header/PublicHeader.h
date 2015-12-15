@@ -13,6 +13,9 @@
 
 //BE3D6F
 #define PurpleBtnColor [UIColor colorWithRed:0XBE/255. green:0X3D/255. blue:0X6F/255. alpha:1]
+#define PurpleBtnDisColor RGBCOLOR(0xD27699)
+
+
 //DC5055
 #define RedBtnColor [UIColor colorWithRed:0XDC/255. green:0X50/255. blue:0X55/255. alpha:1]
 
@@ -44,6 +47,7 @@
 
 
 #define HOME            @"home"
+#define HOME2           @"home2"
 #define ADD_TIME        @"add_time"
 #define BABY_DATE       @"baby_date"
 #define BABY_LINK       @"baby_link"

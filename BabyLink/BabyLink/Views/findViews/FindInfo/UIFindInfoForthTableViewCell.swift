@@ -10,6 +10,7 @@ import UIKit
 
 class UIFindInfoForthTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var heightOfLabel: NSLayoutConstraint!
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var contentLabel: UILabel!
     override func awakeFromNib() {
@@ -19,6 +20,12 @@ class UIFindInfoForthTableViewCell: UITableViewCell {
         self.backView.layer.borderWidth = 0.5;
         self.backView.layer.borderColor = hexRGB(0xACACB4).CGColor;
         
+    }
+    
+    func setContentData(infoModel:NSInfoFind){
+        contentLabel.text = infoModel.mark;
+        let size = contentLabel.sizeThatFits(CGSizeMake(MainScreenWidth-50, 1000))
+        heightOfLabel.constant = size.height;
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

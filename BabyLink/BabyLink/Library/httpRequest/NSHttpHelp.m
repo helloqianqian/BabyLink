@@ -165,6 +165,7 @@
             break;
     }
     NSLog(@"url:%@",url);
+    NSLog(@"param:%@",param);
     [NSHttpObject NetRequestPostWithUrl:url withParameter:param withReturnBlock:^(id returnValue) {
         NSLog(@"%@",returnValue);
         
@@ -176,7 +177,21 @@
         [SVProgressHUD showErrorWithStatus:@"网络连接异常"];
         failureBlock(error);
     }];
-    
+}
+
++ (void)httpHelpWithUrl:(NSString *)url withParam:(id)param withResult:(ReturnValueBlock)resultBlock withFailure:(FailureBlock)failureBlock {
+    NSLog(@"url:%@",url);
+    NSLog(@"param:%@",param);
+    [NSHttpObject NetRequestPostWithUrl:url withParameter:param withReturnBlock:^(id returnValue) {
+        NSLog(@"%@",returnValue);
+        resultBlock(returnValue);
+    } withErrorBlock:^(id errorCode) {
+        
+    } withFailureBlock:^(id error) {
+        NSLog(@"%@",error);
+        [SVProgressHUD showErrorWithStatus:@"网络连接异常"];
+        failureBlock(error);
+    }];
 }
 +(void)uploadUserIconWithImageData:(NSDictionary*)imageDic withResult:(resultBlock)resultBlock withFailure:(FailureBlock)failureBlock withUploadProgress:(void (^)(float progress))progressBlock{
     [NSHttpObject upLoadImagewithUrl:[NSHttpModel getUpdateHeadUrl] withParameter:imageDic withResult:^(id resultValue) {

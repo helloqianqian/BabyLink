@@ -38,9 +38,9 @@ class UIExchangeView: UIView ,UITableViewDelegate,UITableViewDataSource{
     func loadContentData(force:Bool, withAnimate animate:Bool) {
         if dataArray.count == 0 || force {
             if animate {
-                self.refreshListData();
-            } else {
                 self.listTableView.header.beginRefreshing()
+            } else {
+                self.refreshListData();
             }
         }
     }

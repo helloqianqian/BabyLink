@@ -9,13 +9,14 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertViewDelegate{
 
     var window: UIWindow?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        self.updateLocation();
         self.checkLastLoginUser()
         self.addShareSDK()
         self.window?.backgroundColor = hexRGB(0xF8CFE1);
@@ -45,10 +46,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+    func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool {
+        WXApi.handleOpenURL(url, delegate: self)
         let result = UMSocialSnsService.handleOpenURL(url);
         if (!result) {
             //调用其他SDK，例如支付宝SDK等
+        }
+        return result;
+    }
+    
+    func onResp(resp: BaseResp!) {
+        if resp.isKindOfClass(PayResp){
+            switch resp.errCode {
+            case 0:
+                let alert = UIAlertView(title:nil, message: "支付结果：成功！", delegate: self, cancelButtonTitle: "确定");
+                alert.show();
+                break;
+            default:
+                NSHelper.showAlertViewWithTip("支付结果：失败！\n\(resp.errStr)")
+                break;
+            }
+        }
+    }
+    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+        NSNotificationCenter.defaultCenter().postNotificationName("UIPaymentSuccessNotification", object: nil);
+    }
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        WXApi.handleOpenURL(url, delegate: self)
+        AlipaySDK.defaultService().processOrderWithPaymentResult(url) { (result) -> Void in
+            NSLog("reslut back = %@",result);
+            let resultStatus = result["resultStatus"] as! NSInteger
+            let success = result["success"] as! Bool
+            if resultStatus == 9000 && success {
+                let alert = UIAlertView(title:nil, message: "支付结果：成功！", delegate: self, cancelButtonTitle: "确定");
+                alert.show();
+            } else {
+                NSHelper.showAlertViewWithTip("支付结果：失败!")
+            }
+        }
+        
+        let result = UMSocialSnsService.handleOpenURL(url);
+        if (!result) {
+            //调用其他SDK，例如支付宝SDK等
+            
         }
         return result;
     }
@@ -70,8 +110,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //打开新浪微博的SSO开关，设置新浪微博回调地址，这里必须要和你在新浪微博后台设置的回调地址一致。若在新浪后台设置我们的回调地址，“http://sns.whalecloud.com/sina2/callback”，这里可以传nil ,需要 #import "UMSocialSinaHandler.h"
         [UMSocialSinaSSOHandler openNewSinaSSOWithAppKey:@"3921700954" RedirectURL:@"http://sns.whalecloud.com/sina2/callback"];
         */
-        
-        
     }
     func exchangeRootViewController(login:Bool){
         SVProgressHUD.setBackgroundColor(UIColor(red: 0, green: 0, blue: 0, alpha: 0.8))
@@ -111,10 +149,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             NSUserInfo.shareInstance().baby_link = def.objectForKey(BABY_LINK) as! String;
             NSUserInfo.shareInstance().baby_date = def.objectForKey(BABY_DATE) as! String;
             NSUserInfo.shareInstance().position = def.objectForKey(POSITION) as! String;
-            NSUserInfo.shareInstance().openid = def.objectForKey(OPENID) as! String;
+            NSUserInfo.shareInstance().home2 = def.objectForKey(HOME2) as! String;
         }
         NSUserInfo.shareInstance().islogin = lastLogin;
         self.exchangeRootViewController(lastLogin)
+    }
+    
+    func logoutLastLoginUser(){
+        let userDefault = NSUserDefaults.standardUserDefaults()
+        userDefault.setBool(false, forKey: ISLOGIN)
+        userDefault.setObject("", forKey: MOBILE);
+        userDefault.setObject("", forKey: PASSWORDLocal);
+        userDefault.setObject("", forKey: MEMBER_ID)
+        userDefault.setObject("", forKey: PASSWORD);
+        userDefault.setObject("", forKey: MEMBER_NAME);
+        userDefault.setObject("", forKey: MEMBER_AVAR);
+        userDefault.setObject("", forKey: HOME);
+        userDefault.setObject("", forKey: HOME2)
+        userDefault.setObject("", forKey: ADD_TIME);
+        userDefault.setObject("", forKey: LOGIN_TIME);
+        userDefault.setObject("", forKey: BABY_SEX);
+        userDefault.setObject("", forKey: BABY_NAM);
+        userDefault.setObject("", forKey: BABY_LINK);
+        userDefault.setObject("", forKey: BABY_DATE);
+        userDefault.setObject("", forKey: POSITION);
+        userDefault.setObject("", forKey: CITY);
+        userDefault.synchronize();
     }
     
     func recordLastLoginUser(){
@@ -134,7 +194,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         userDefault.setObject(NSUserInfo.shareInstance().baby_link, forKey: BABY_LINK);
         userDefault.setObject(NSUserInfo.shareInstance().baby_date, forKey: BABY_DATE);
         userDefault.setObject(NSUserInfo.shareInstance().position, forKey: POSITION);
-        userDefault.setObject(NSUserInfo.shareInstance().openid, forKey: OPENID);
         userDefault.setObject(NSUserInfo.shareInstance().city, forKey: CITY);
         userDefault.synchronize();
     }
@@ -149,6 +208,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         userDefault.setObject(NSUserInfo.shareInstance().member_name, forKey: MEMBER_NAME);
         userDefault.synchronize();
     }
+    
+    func recordLastUserHome(){
+        let userDefault = NSUserDefaults.standardUserDefaults()
+        userDefault.setObject(NSUserInfo.shareInstance().home, forKey: HOME);
+        userDefault.synchronize();
+    }
+    
+    func recordLastUserHome2(){
+        let userDefault = NSUserDefaults.standardUserDefaults()
+        userDefault.setObject(NSUserInfo.shareInstance().home2, forKey: HOME2);
+        userDefault.synchronize();
+    }
+    
     func recordLastUserPSW(){
         let userDefault = NSUserDefaults.standardUserDefaults()
         userDefault.setObject(NSUserInfo.shareInstance().passwordLocal, forKey: PASSWORDLocal);
@@ -158,6 +230,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let userDefault = NSUserDefaults.standardUserDefaults()
         userDefault.setObject(NSUserInfo.shareInstance().mobile, forKey: MOBILE);
         userDefault.synchronize();
+    }
+    func updateLocation(){
+        CCLocationManager.shareLocation().getLocationCoordinate { (lo:CLLocationCoordinate2D) -> Void in
+            locationParam = lo;
+        }
     }
 }
 

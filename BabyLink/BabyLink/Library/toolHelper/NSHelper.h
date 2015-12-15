@@ -58,4 +58,15 @@ typedef  enum : NSUInteger {
 
 
 + (NSString *)timeStrFromeStamp:(NSString *)timeStamp;
+
+
+
++ (NSArray *)leftTimeFromStamp:(double)timeStamp;
+
+
++ (NSString *)jumpToBizPay;
+
++ (NSString *)getAliPay:(NSString *)orderSpec;
+
+//+ (void)shareImage:(int)type sender:(UIViewController *)sender;
 @end

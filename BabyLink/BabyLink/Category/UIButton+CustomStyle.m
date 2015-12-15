@@ -22,6 +22,14 @@
     UIImage *image=[UIImage imageWithColor:PurpleBtnColor size:self.frame.size];
     [self setBackgroundImage:image forState:UIControlStateNormal];
 }
+-(void)makeBackGroundColor_PurpleDisabel{
+    self.clipsToBounds=YES;
+    self.layer.cornerRadius=4;
+    
+    [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    UIImage *image=[UIImage imageWithColor:PurpleBtnDisColor size:self.frame.size];
+    [self setBackgroundImage:image forState:UIControlStateNormal];
+}
 /**
  *  <#Description#>
  */
@@ -75,6 +83,8 @@
     
     self.layer.borderWidth = 0.5;
     self.layer.borderColor = GrayBorderColor.CGColor;
+    
+    [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     
     UIImage *image = [UIImage imageWithColor:GrayBackColor size:self.frame.size];
     [self setBackgroundImage:image forState:UIControlStateNormal];

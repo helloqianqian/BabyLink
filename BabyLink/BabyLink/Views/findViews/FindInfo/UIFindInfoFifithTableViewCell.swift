@@ -20,6 +20,12 @@ class UIFindInfoFifithTableViewCell: UITableViewCell {
         self.backView.layer.borderColor = hexRGB(0xACACB4).CGColor;
     }
 
+    func setContentData(infoModel:NSInfoFind){
+        contactInfo.text = "联系方式:\(infoModel.mobile)"
+        customStyle.text = infoModel.buy_way;
+    }
+    
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

@@ -18,12 +18,26 @@ class UIFriendsTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        headIcon.backgroundColor = UIColor.redColor();
+        headIcon.layer.cornerRadius = 3;
+        headIcon.layer.masksToBounds = true;
         inviteBtn.makeBackGroundColor_Purple();
     }
 
     
-    
+    func setContentData(friend:NSFriendObject){
+        headIcon.sd_setImageWithURL(NSURL(string: friend.friend_avar), placeholderImage: UIImage(named: "morentoux"));
+        nameLabel.text = friend.friend_name;
+        addressLabel.text = friend.text;
+        if friend.status == 1{
+            inviteBtn.userInteractionEnabled = true;
+            inviteBtn.makeBackGroundColor_Purple();
+            inviteBtn.setTitle("邀请", forState: UIControlState.Normal)
+        } else {
+            inviteBtn.userInteractionEnabled = false;
+            inviteBtn.makeBackGroundColor_DarkGray();
+            inviteBtn.setTitle("已邀请", forState: UIControlState.Normal)
+        }
+    }
     
     
     override func setSelected(selected: Bool, animated: Bool) {

@@ -33,7 +33,7 @@ static NSUserInfo * sharedInstance = nil;
         _password = @"";
         _passwordLocal = @"";
         _openid = @"";
-        _islogin = @"";
+        _islogin = NO;
         _add_time = @"";
         _baby_date = @"";
         _baby_link = @"";
@@ -44,6 +44,8 @@ static NSUserInfo * sharedInstance = nil;
         _home = @"";
         _position = @"";
         _login_time = @"";
+        
+        _home2 = @"";
     }
     return self;
 }

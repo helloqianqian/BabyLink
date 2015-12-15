@@ -15,6 +15,10 @@ class UICreateActViewController: UIBaseViewController ,UITableViewDelegate,UITab
     var paramArray:NSMutableArray! = NSMutableArray(array: ["","","","","","","","","","",NSUserInfo.shareInstance().mobile]);
     let titleArray = ["活动主题:","活动地点:","报名截止:","集合时间:","集合地点:","上限人数:","活动费用:","支付方式:","交通工具:","联系人:","联系电话:"];
     var draging = false;
+    var jiheTime = "";
+    var jiezhiTime = "";
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -119,7 +123,10 @@ class UICreateActViewController: UIBaseViewController ,UITableViewDelegate,UITab
                 return;
             }
         }
-        
+        if (jiheTime as NSString).intValue < (jiezhiTime as NSString).intValue {
+            SVProgressHUD.showImage(nil, status: "集合时间不能小于活动截止日期");
+            return;
+        }
         let content = paramArray[10] as? String;
         if !NSHelper.checkUserPhoneValidateWith(content) {
             NSHelper.showAlertViewWithTip("请输入正确的手机号");
@@ -207,11 +214,13 @@ class UICreateActViewController: UIBaseViewController ,UITableViewDelegate,UITab
             let indexPath = NSIndexPath(forRow: 2, inSection: 0);
             let cell = self.listTableView.cellForRowAtIndexPath(indexPath) as! UICreateActTableViewCell;
             cell.contentField.text = "\(array[0])-\(array[1])-\(array[2])";
+            jiezhiTime = "\(array[0])\(array[1])\(array[2])"
             paramArray[2] = "\(array[0])-\(array[1])-\(array[2])";
         } else {
             let indexPath = NSIndexPath(forRow: 3, inSection: 0);
             let cell = self.listTableView.cellForRowAtIndexPath(indexPath) as! UICreateActTableViewCell;
             cell.contentField.text = "\(array[0])-\(array[1])-\(array[2]) \(array[3]):\(array[4])";
+            jiheTime = "\(array[0])\(array[1])\(array[2])"
             paramArray[3] = "\(array[0])-\(array[1])-\(array[2]) \(array[3]):\(array[4])";
         }
     }

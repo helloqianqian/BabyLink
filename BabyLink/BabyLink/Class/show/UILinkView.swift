@@ -16,7 +16,7 @@ protocol UILinkViewDelegate:NSObjectProtocol {
 
 
 
-class UILinkView: UIView ,UITableViewDelegate,UITableViewDataSource{
+class UILinkView: UIView ,UITableViewDelegate,UITableViewDataSource,UMSocialUIDelegate{
 
     @IBOutlet weak var listTableView: UITableView!
     weak var delegate: UILinkViewDelegate!;
@@ -47,8 +47,8 @@ class UILinkView: UIView ,UITableViewDelegate,UITableViewDataSource{
     func reloadTabelView(){
         self.listTableView.reloadData();
     }
-    func getListData(){//[NSUserInfo.shareInstance().member_id
-        let dicParam:NSDictionary = NSDictionary(objects: ["9","\(self.page)"] , forKeys: [MEMBER_ID,"page"]);
+    func getListData(){
+        let dicParam:NSDictionary = NSDictionary(objects: [NSUserInfo.shareInstance().member_id,"\(self.page)"] , forKeys: [MEMBER_ID,"page"]);
         NSHttpHelp.httpHelpWithUrlTpye(xiuLinkType, withParam: dicParam, withResult: { (returnObject:AnyObject!) -> Void in
             let dic = returnObject as! NSDictionary;
             let code = dic["code"] as! NSInteger;
@@ -204,7 +204,15 @@ class UILinkView: UIView ,UITableViewDelegate,UITableViewDataSource{
         }
     }
     func shareDou(sender:UIButton){
-        
+        UMSocialData.defaultData().urlResource.setResourceType(UMSocialUrlResourceTypeImage, url: "http://baidu.com");
+        UMSocialSnsService.presentSnsIconSheetView(mainTabBar.showView, appKey: "562d96b0e0f55ae8010013b6", shareText: "babylink分享活动 http://www.baidu.com", shareImage:UIImage(named: "AppIcon"), shareToSnsNames: [UMShareToQQ,UMShareToWechatSession,UMShareToSina,UMShareToWechatTimeline], delegate: self)
+    }
+    func didFinishGetUMSocialDataInViewController(response: UMSocialResponseEntity!) {
+        if response.responseCode == UMSResponseCodeSuccess {
+            SVProgressHUD.showSuccessWithStatus("分享成功");
+        } else {
+            SVProgressHUD.showErrorWithStatus("分享失败")
+        }
     }
     
     

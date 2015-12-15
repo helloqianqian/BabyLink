@@ -49,12 +49,45 @@ class UICreateShowViewController: UIBaseViewController ,UITextViewDelegate,UIAct
     @IBAction func imageBtnFunction(sender: UIButton) {
         self.imageIndex = sender.tag-1000;
         contentTextView.resignFirstResponder();
-        let actionSheet:UIActionSheet = UIActionSheet(title: nil, delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: nil, otherButtonTitles: "相册", "相机")
-        actionSheet.showInView(self.view);
+        if sender.selected {
+            let actionSheet:UIActionSheet = UIActionSheet(title: nil, delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: nil, otherButtonTitles: "删除")
+            actionSheet.showInView(self.view);
+        } else {
+            let actionSheet:UIActionSheet = UIActionSheet(title: nil, delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: nil, otherButtonTitles: "相册", "相机")
+            actionSheet.showInView(self.view);
+        }
     }
     func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
         if buttonIndex == 1 {
-            self.openLocalPhoto()
+            let btn = self.view.viewWithTag(self.imageIndex+1000) as! UIButton;
+            if btn.selected {
+                self.imageArray.removeObjectAtIndex(self.imageIndex);
+                for var i = 0 ; i<4 ; i++ {
+                    let btn = self.view.viewWithTag(i+1000) as! UIButton;
+                    if i<self.imageArray.count {
+                        btn.hidden = false;
+                        btn.selected = true;
+                        let asset = self.imageArray[i];
+                        if asset.isKindOfClass(ZLPhotoAssets) {
+                            btn.setBackgroundImage((asset as! ZLPhotoAssets).thumbImage(), forState: UIControlState.Normal);
+                        } else if asset.isKindOfClass(NSString) {
+                            btn.sd_setBackgroundImageWithURL(NSURL(string: (asset as! String)), forState: UIControlState.Normal);
+                        } else if asset.isKindOfClass(UIImage) {
+                            btn.setBackgroundImage(asset as? UIImage, forState: UIControlState.Normal);
+                        }
+                    } else  if i == self.imageArray.count{
+                        btn.hidden = false;
+                        btn.selected = false;
+                        btn.setBackgroundImage(UIImage(named: "加"), forState: UIControlState.Normal)
+                    } else {
+                        btn.selected = false;
+                        btn.hidden = true
+                    }
+                    
+                }
+            } else {
+                self.openLocalPhoto()
+            }
         } else if buttonIndex == 2 {
             self.openCamera()
         }
@@ -74,6 +107,7 @@ class UICreateShowViewController: UIBaseViewController ,UITextViewDelegate,UIAct
             let btn = self.view.viewWithTag(i+1000) as! UIButton;
             if i<self.imageArray.count {
                 btn.hidden = false;
+                btn.selected = true;
                 let asset = self.imageArray[i];
                 if asset.isKindOfClass(ZLPhotoAssets) {
                     btn.setBackgroundImage((asset as! ZLPhotoAssets).thumbImage(), forState: UIControlState.Normal);
@@ -82,14 +116,14 @@ class UICreateShowViewController: UIBaseViewController ,UITextViewDelegate,UIAct
                 } else if asset.isKindOfClass(UIImage) {
                     btn.setBackgroundImage(asset as? UIImage, forState: UIControlState.Normal);
                 }
-                
             } else  if i == self.imageArray.count{
                 btn.hidden = false;
+                btn.selected = false;
                 btn.setBackgroundImage(UIImage(named: "加"), forState: UIControlState.Normal)
             } else {
+                btn.selected = false;
                 btn.hidden = true
             }
-            
         }
     }
     
@@ -113,11 +147,13 @@ class UICreateShowViewController: UIBaseViewController ,UITextViewDelegate,UIAct
             let  image:UIImage = dic.objectForKey(UIImagePickerControllerEditedImage) as! UIImage;
             let btn = self.view.viewWithTag(self.imageIndex+1000) as! UIButton;
             btn.setBackgroundImage(image, forState: UIControlState.Normal);
+            btn.selected = true;
             if self.imageArray.count<self.imageIndex+1{
                 self.imageArray.addObject(image);
                 if self.imageIndex<3{
                     let btn = self.view.viewWithTag(self.imageIndex+1001) as! UIButton;
                     btn.hidden = false;
+                    btn.selected = false;
                 }
             } else {
                 self.imageArray.replaceObjectAtIndex(self.imageIndex, withObject: image);

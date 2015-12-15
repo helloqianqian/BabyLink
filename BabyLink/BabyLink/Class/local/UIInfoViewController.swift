@@ -10,11 +10,20 @@ import UIKit
 
 class UIInfoViewController: UIBaseViewController {
 
+    @IBOutlet weak var content: UITextView!
+    
+    var type = 0;
+    var contentStr = "";
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.title = "各种详情"
+        if type == 0 {
+            self.title = "置换详情"
+            self.content.text = contentStr;
+        } else {
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {

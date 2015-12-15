@@ -20,9 +20,13 @@ class UIConverCodeTableViewCell: UITableViewCell {
         // Initialization code
         backView.layer.borderWidth = 0.5;
         backView.layer.borderColor = SGrayBorderColor.CGColor;
-        
     }
 
+    func setcontentData(order:NSOrder){
+        centerNameLabel.text = order.good.goods_name;
+        deadLineLabel.text = "有效期至\(order.good.use_time)"
+    }
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

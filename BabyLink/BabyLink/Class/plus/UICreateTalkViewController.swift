@@ -51,21 +51,33 @@ class UICreateTalkViewController: UIBaseViewController ,UITextViewDelegate,UIAct
     
     @IBAction func addImageFunction(sender: UIButton) {
         contentTextView.resignFirstResponder();
-        let actionSheet:UIActionSheet = UIActionSheet(title: nil, delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: nil, otherButtonTitles: "相册", "相机")
-        actionSheet.showInView(self.view);
+        if sender.selected {
+            let actionSheet:UIActionSheet = UIActionSheet(title: nil, delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: nil, otherButtonTitles: "删除")
+            actionSheet.showInView(self.view);
+        } else {
+            let actionSheet:UIActionSheet = UIActionSheet(title: nil, delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: nil, otherButtonTitles: "相册", "相机")
+            actionSheet.showInView(self.view);
+        }
+        
     }
     
     func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
         if buttonIndex == 1 {
-            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
-                let imagePickerAlbum = UIImagePickerController()
-                imagePickerAlbum.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-                imagePickerAlbum.delegate = self
-                imagePickerAlbum.allowsEditing = true
-                self.presentViewController(imagePickerAlbum, animated: true, completion: { () -> Void in
-                })
+            
+            if addImageBtn.selected {
+                addImageBtn.selected = false;
+                addImageBtn.setBackgroundImage(UIImage(named: "加"), forState: UIControlState.Normal)
             } else {
-                
+                if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
+                    let imagePickerAlbum = UIImagePickerController()
+                    imagePickerAlbum.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+                    imagePickerAlbum.delegate = self
+                    imagePickerAlbum.allowsEditing = true
+                    self.presentViewController(imagePickerAlbum, animated: true, completion: { () -> Void in
+                    })
+                } else {
+                    
+                }
             }
         } else if buttonIndex == 2 {
             if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
@@ -85,6 +97,7 @@ class UICreateTalkViewController: UIBaseViewController ,UITextViewDelegate,UIAct
             let  dic:NSDictionary = info as NSDictionary;
             let  image:UIImage = dic.objectForKey(UIImagePickerControllerEditedImage) as! UIImage;
             self.addImageBtn.setBackgroundImage(image, forState: UIControlState.Normal);
+            self.addImageBtn.selected = true;
         })
     }
     
@@ -143,7 +156,7 @@ class UICreateTalkViewController: UIBaseViewController ,UITextViewDelegate,UIAct
         }
     }
     @IBAction func sendFunction(sender: UIButton) {
-        if self.addImageBtn.currentBackgroundImage == nil {
+        if !self.addImageBtn.selected {
             NSHelper.showAlertViewWithTip("请先选择图片");
             return;
         }

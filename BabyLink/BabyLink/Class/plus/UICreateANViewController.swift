@@ -121,21 +121,34 @@ class UICreateANViewController: UIBaseViewController ,UITextViewDelegate,UIActio
     @IBAction func addActivityImage(sender: UIButton) {
         self.introLabel.resignFirstResponder();
         self.needTextView.resignFirstResponder();
-        let actionSheet:UIActionSheet = UIActionSheet(title: nil, delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: nil, otherButtonTitles: "相册", "相机")
-        actionSheet.showInView(self.view);
+        if sender.selected {
+            let actionSheet:UIActionSheet = UIActionSheet(title: nil, delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: nil, otherButtonTitles: "删除")
+            actionSheet.showInView(self.view);
+        } else {
+            let actionSheet:UIActionSheet = UIActionSheet(title: nil, delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: nil, otherButtonTitles: "相册", "相机")
+            actionSheet.showInView(self.view);
+        }
+        
+        
     }
     
     func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
         if buttonIndex == 1 {
-            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
-                let imagePickerAlbum = UIImagePickerController()
-                imagePickerAlbum.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-                imagePickerAlbum.delegate = self
-                imagePickerAlbum.allowsEditing = true
-                self.presentViewController(imagePickerAlbum, animated: true, completion: { () -> Void in
-                })
+            if self.addImage.selected {
+                self.loadPic = false;
+                self.addImage.selected = false;
+                self.addImage.setBackgroundImage(UIImage(named: "加"), forState: UIControlState.Normal)
             } else {
-                
+                if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
+                    let imagePickerAlbum = UIImagePickerController()
+                    imagePickerAlbum.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+                    imagePickerAlbum.delegate = self
+                    imagePickerAlbum.allowsEditing = true
+                    self.presentViewController(imagePickerAlbum, animated: true, completion: { () -> Void in
+                    })
+                } else {
+                    
+                }
             }
         } else if buttonIndex == 2 {
             if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
@@ -156,6 +169,7 @@ class UICreateANViewController: UIBaseViewController ,UITextViewDelegate,UIActio
             let  dic:NSDictionary = info as NSDictionary;
             let  image:UIImage = dic.objectForKey(UIImagePickerControllerEditedImage) as! UIImage;
             self.addImage.setBackgroundImage(image, forState: UIControlState.Normal);
+            self.addImage.selected = true;
         })
     }
     

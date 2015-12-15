@@ -86,6 +86,7 @@ var reloadDataForAddNewDou:Bool = false;
 
 //全局mainTabbar
 var mainTabBar:UIBaseTabBarController!;
+var locationParam:CLLocationCoordinate2D! = CLLocationCoordinate2D(latitude: 0, longitude: 0);
 
 
 

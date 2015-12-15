@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UISecondInfoViewController" customModule="BabyLink" customModuleProvider="target">
@@ -30,7 +30,6 @@
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入宝宝名字和昵称" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YHm-fo-aiu">
                             <rect key="frame" x="25" y="0.0" width="250" height="45"/>
-                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="ZsI-KN-aax"/>
                             </constraints>
@@ -38,7 +37,6 @@
                             <textInputTraits key="textInputTraits" returnKeyType="done"/>
                         </textField>
                     </subviews>
-                    <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="YHm-fo-aiu" firstAttribute="leading" secondItem="RSQ-eC-Y3X" secondAttribute="leading" constant="25" id="B77-cX-WGH"/>
@@ -49,7 +47,6 @@
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S5F-at-0L5">
                     <rect key="frame" x="71" y="144" width="54" height="18"/>
-                    <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="54" id="16n-pL-jS9"/>
                         <constraint firstAttribute="height" constant="18" id="t85-34-EV6"/>
@@ -65,7 +62,6 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UbW-I3-3pV">
                     <rect key="frame" x="170" y="144" width="54" height="18"/>
-                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="18" id="3dZ-ls-ZsU"/>
                         <constraint firstAttribute="width" constant="54" id="e7k-W9-zBk"/>
@@ -84,7 +80,6 @@
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请选择宝宝的生日" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qkx-sL-Dpj">
                             <rect key="frame" x="25" y="0.0" width="250" height="44"/>
-                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="NoV-Mt-v9E"/>
                             </constraints>
@@ -93,7 +88,6 @@
                         </textField>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zahnjiao" translatesAutoresizingMaskIntoConstraints="NO" id="06C-nh-P8K">
                             <rect key="frame" x="280" y="18" width="10" height="8"/>
-                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="8" id="agr-k1-NIw"/>
                                 <constraint firstAttribute="width" constant="10" id="i83-mB-dQj"/>
@@ -101,7 +95,6 @@
                         </imageView>
                         <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请选择您与宝宝的关系" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gcI-aX-Vnq">
                             <rect key="frame" x="25" y="46" width="250" height="44"/>
-                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="qwQ-pj-Csu"/>
                             </constraints>
@@ -110,7 +103,6 @@
                         </textField>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zahnjiao" translatesAutoresizingMaskIntoConstraints="NO" id="c5k-ya-qpu">
                             <rect key="frame" x="280" y="64" width="10" height="8"/>
-                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="8" id="Edb-NU-ras"/>
                                 <constraint firstAttribute="width" constant="10" id="qxa-7L-BtZ"/>
@@ -118,7 +110,6 @@
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xpr-kE-ZKy">
                             <rect key="frame" x="0.0" y="0.0" width="300" height="44"/>
-                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="XwM-p8-tFu"/>
                             </constraints>
@@ -128,7 +119,6 @@
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IHv-kK-CJB">
                             <rect key="frame" x="0.0" y="46" width="300" height="44"/>
-                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="ezz-o4-Zsv"/>
                             </constraints>
@@ -138,14 +128,12 @@
                         </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ljV-vZ-N0D">
                             <rect key="frame" x="0.0" y="45" width="300" height="0.5"/>
-                            <animations/>
                             <color key="backgroundColor" red="0.67450980392156867" green="0.67450980392156867" blue="0.70588235294117641" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="0.5" id="9Ft-pd-cFj"/>
                             </constraints>
                         </view>
                     </subviews>
-                    <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="IHv-kK-CJB" secondAttribute="trailing" id="0kX-39-hpb"/>
@@ -178,7 +166,6 @@
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZRI-BR-B9E">
                     <rect key="frame" x="10" y="275" width="300" height="35"/>
-                    <animations/>
                     <color key="backgroundColor" red="0.86274509799999999" green="0.31372549020000001" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="35" id="Cz2-ow-GQ0"/>
@@ -190,7 +177,6 @@
                     </connections>
                 </button>
             </subviews>
-            <animations/>
             <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="RSQ-eC-Y3X" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="4Um-h0-aFS"/>

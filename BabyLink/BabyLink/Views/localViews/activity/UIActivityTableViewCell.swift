@@ -62,13 +62,15 @@ class UIActivityTableViewCell: UITableViewCell ,UICollectionViewDelegate,UIColle
             signInBtn.makeBackGroundColor_DarkGray()
             signInBtn.setTitle("活动已结束", forState: UIControlState.Normal);
         } else {
-            signInBtn.makeBackGroundColor_Purple()
             if dataModel.isSign {
+                signInBtn.makeBackGroundColor_DarkGray()
                 signInBtn.setTitle("取消报名", forState: UIControlState.Normal);
             } else {
                 if dataModel.isFull {
+                    signInBtn.makeBackGroundColor_DarkGray()
                     signInBtn.setTitle("报名已满", forState: UIControlState.Normal);
                 } else {
+                    signInBtn.makeBackGroundColor_Purple()
                     signInBtn.setTitle("我要报名", forState: UIControlState.Normal);
                 }
             }

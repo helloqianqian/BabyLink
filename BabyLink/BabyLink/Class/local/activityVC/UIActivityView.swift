@@ -59,9 +59,9 @@ class UIActivityView: UIView ,UITableViewDataSource, UITableViewDelegate,didClic
     func loadContentData(force:Bool, withAnimate animate:Bool) {
         if dataArray.count == 0 || force {
             if animate {
-                self.refreshListData()
-            } else {
                 self.listTableView.header.beginRefreshing()
+            } else {
+                self.refreshListData()
             }
         }
     }

@@ -10,19 +10,26 @@ import UIKit
 
 class UIMyOrderListViewController: UIBaseViewController ,UITableViewDelegate,UITableViewDataSource{
 
-    @IBOutlet weak var itemBtn1: UIButton!
     @IBOutlet weak var itemBtn2: UIButton!
     @IBOutlet weak var itemBtn3: UIButton!
     @IBOutlet weak var itemBtn4: UIButton!
     @IBOutlet weak var listTableView: UITableView!
     
-    var tabType = 0;
+    var tabType = 1;
+    var page = 1;
+    var otherPage = 1;
+    var anotherPage = 1;
+    
+    var dataArray:NSMutableArray = NSMutableArray();
+    var otherArray:NSMutableArray = NSMutableArray();
+    var anotherArray:NSMutableArray = NSMutableArray();
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.title = "我的订单"
-        itemBtn1.makeBackGroundColor_PurpleSelected();
         itemBtn2.makeBackGroundColor_PurpleSelected();
         itemBtn3.makeBackGroundColor_PurpleSelected();
         itemBtn4.makeBackGroundColor_PurpleSelected();
@@ -30,26 +37,158 @@ class UIMyOrderListViewController: UIBaseViewController ,UITableViewDelegate,UIT
         self.listTableView.delegate = self;
         self.listTableView.dataSource = self;
         self.listTableView.registerNib(UINib(nibName: "UIMyOrderTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "UIMyOrderTableViewCellIdentifier")
-        self.listTableView.registerNib(UINib(nibName: "UIFinalPayTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "UIFinalPayTableViewCellIdentifier")
+        self.listTableView.registerNib(UINib(nibName: "UIMyOrderTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "UIMyOrderCellIdentifier")
+        self.listTableView.registerNib(UINib(nibName: "UIFinalPayTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "UIFinalPayCellIdentifier")
+        self.listTableView.header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: "refreshListData")
+        self.listTableView.footer = MJRefreshBackNormalFooter(refreshingTarget: self, refreshingAction: "getMoreListData");
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated);
+        self.refreshListData();
+    }
+    
+    func refreshListData(){
+        if tabType == 1 {
+            self.page = 1;
+        } else if tabType == 2{
+            self.otherPage = 1;
+        } else {
+            self.anotherPage = 1;
+        }
+        self.reloadTableData()
+    }
+    func getMoreListData(){
+        if tabType == 1 {
+            self.page++;
+        } else if tabType == 2{
+            self.otherPage++;
+        } else {
+            self.anotherPage++;
+        }
+        self.reloadTableData()
+    }
+    
+    func loadContentData(force:Bool) {
+        if tabType == 1 {
+            if dataArray.count == 0 || force {
+                self.listTableView.header.beginRefreshing()
+            } else {
+                self.listTableView.reloadData();
+            }
+        } else if tabType == 2 {
+            if otherArray.count == 0 || force {
+                self.listTableView.header.beginRefreshing()
+            } else {
+                self.listTableView.reloadData();
+            }
+        } else {
+            if anotherArray.count == 0 || force {
+                self.listTableView.header.beginRefreshing()
+            } else {
+                self.listTableView.reloadData();
+            }
+        }
+    }
+    
+    func reloadTableData(){
+        var dicParam:NSDictionary!;
+        if tabType == 1 {
+            dicParam = NSDictionary(objects: ["1","\(self.page)",NSUserInfo.shareInstance().member_id] , forKeys: ["order_status","page","member_id"]);
+        } else if tabType == 2{
+            dicParam = NSDictionary(objects: ["2,4,7,8","\(self.otherPage)",NSUserInfo.shareInstance().member_id] , forKeys: ["order_status","page","member_id"]);
+        } else {
+            dicParam = NSDictionary(objects: ["3,6","\(self.anotherPage)",NSUserInfo.shareInstance().member_id] , forKeys: ["order_status","page","member_id"]);
+        }
+        NSHttpHelp.httpHelpWithUrl(NSHttpModel.getOrderUrl(), withParam: dicParam, withResult: { (result:AnyObject!) -> Void in
+            let dic = result as! NSDictionary;
+            let code = dic["code"] as! NSInteger;
+            if code == 0 {
+                let datas = dic["datas"] as! NSArray
+                if self.tabType == 1 {
+                    if self.page == 1 {
+                        self.dataArray.removeAllObjects();
+                    }
+                    for data in datas {
+                        let order = NSOrder();
+                        order.setValuesForKeysWithDictionary(data as! [String : AnyObject]);
+                        
+                        let goods = data["goods"];
+                        order.good.setValuesForKeysWithDictionary(goods as! [String : AnyObject]);
+                        
+                        self.dataArray.addObject(order);
+                    }
+                } else if self.tabType == 2{
+                    if self.otherPage == 1 {
+                        self.otherArray.removeAllObjects();
+                    }
+                    for data in datas {
+                        let order = NSOrder();
+                        order.setValuesForKeysWithDictionary(data as! [String : AnyObject]);
+                        
+                        let goods = data["goods"];
+                        order.good.setValuesForKeysWithDictionary(goods as! [String : AnyObject]);
+                        
+                        self.otherArray.addObject(order);
+                    }
+                } else {
+                    if self.anotherPage == 1 {
+                        self.anotherArray.removeAllObjects();
+                    }
+                    for data in datas {
+                        let order = NSOrder();
+                        order.setValuesForKeysWithDictionary(data as! [String : AnyObject]);
+                        
+                        let goods = data["goods"];
+                        order.good.setValuesForKeysWithDictionary(goods as! [String : AnyObject]);
+                        
+                        self.anotherArray.addObject(order);
+                    }
+                }
+                self.listTableView.reloadData()
+            } else {
+                let datas = dic["datas"] as! String;
+                SVProgressHUD.showErrorWithStatus(datas);
+            }
+            self.listTableView.header.endRefreshing();
+            self.listTableView.footer.endRefreshing();
+            }) { (error:AnyObject!) -> Void in
+                self.listTableView.header.endRefreshing();
+                self.listTableView.footer.endRefreshing();
+        }
+    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10;
+        if tabType == 1 {
+            return self.dataArray.count;
+        } else if tabType == 2 {
+            return self.otherArray.count;
+        } else {
+            return self.anotherArray.count;
+        }
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         switch tabType {
-        case 0:
-            let cell = tableView.dequeueReusableCellWithIdentifier("UIMyOrderTableViewCellIdentifier", forIndexPath: indexPath)
-            return cell;
         case 1:
-            let cell = tableView.dequeueReusableCellWithIdentifier("UIMyOrderTableViewCellIdentifier", forIndexPath: indexPath)
+            let cell = tableView.dequeueReusableCellWithIdentifier("UIMyOrderTableViewCellIdentifier", forIndexPath: indexPath) as! UIMyOrderTableViewCell
+            let order = self.dataArray[indexPath.row] as! NSOrder;
+            cell.setContentData(order)
+            cell.cancelBtn.tag = indexPath.row;
+            cell.cancelBtn.addTarget(self, action: "tuiKuan:", forControlEvents: UIControlEvents.TouchUpInside)
+            cell.payBtn.tag = indexPath.row;
+            cell.payBtn.addTarget(self, action: "payLeftMoney:", forControlEvents: UIControlEvents.TouchUpInside)
             return cell;
         case 2:
-            let cell = tableView.dequeueReusableCellWithIdentifier("UIMyOrderTableViewCellIdentifier", forIndexPath: indexPath)
+            let cell = tableView.dequeueReusableCellWithIdentifier("UIMyOrderCellIdentifier", forIndexPath: indexPath) as! UIMyOrderTableViewCell
+            let order = self.otherArray[indexPath.row] as! NSOrder;
+            cell.setPayedContentData(order)
+            cell.payBtn.tag = indexPath.row;
+            cell.payBtn.addTarget(self, action: "tuiKuan:", forControlEvents: UIControlEvents.TouchUpInside)
             return cell;
         case 3:
-            let cell = tableView.dequeueReusableCellWithIdentifier("UIFinalPayTableViewCellIdentifier", forIndexPath: indexPath)
+            let cell = tableView.dequeueReusableCellWithIdentifier("UIFinalPayCellIdentifier", forIndexPath: indexPath) as! UIFinalPayTableViewCell;
+            let order = self.anotherArray[indexPath.row] as! NSOrder;
+            cell.setListContentData(order);
             return cell;
         default:
             let cell = tableView.dequeueReusableCellWithIdentifier("UIMyOrderTableViewCellIdentifier", forIndexPath: indexPath)
@@ -58,58 +197,89 @@ class UIMyOrderListViewController: UIBaseViewController ,UITableViewDelegate,UIT
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 150;
+        if tabType == 2{
+            return 170;
+        } else {
+            return 150;
+        }
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let orderVC = UIOrderInfoViewController(nibName:"UIOrderInfoViewController" ,bundle: NSBundle.mainBundle())
+        if tabType == 1 {
+            let order = self.dataArray[indexPath.row] as! NSOrder;
+            orderVC.order = order;
+        } else if tabType == 2 {
+            let order = self.otherArray[indexPath.row] as! NSOrder;
+            orderVC.order = order;
+        } else {
+            let order = self.anotherArray[indexPath.row] as! NSOrder;
+            orderVC.order = order;
+        }
         self.navigationController?.pushViewController(orderVC, animated: true);
     }
     
-    
-    
-    
-    
+    func payLeftMoney(sender:UIButton) {
+        let order = self.dataArray[sender.tag] as! NSOrder;
+        if order.good.end_status == 1 {
+            let payVC = UIPaymentViewController(nibName:"UIPaymentViewController", bundle: NSBundle.mainBundle());
+            payVC.goodsPrice = order.good.goods_weikuan;
+            payVC.goods_id = order.goods_id;
+            payVC.payType = 1;
+            payVC.order_id = order.order_id;
+            self.navigationController?.pushViewController(payVC, animated: true);
+        }
+    }
+    func tuiKuan(sender:UIButton) {
+        var refundType = "1";
+        var order = self.dataArray[sender.tag] as! NSOrder;
+        if tabType == 2 {
+            refundType = "2";
+            order = self.otherArray[sender.tag] as! NSOrder;
+        }
+        SVProgressHUD.showWithMaskType(SVProgressHUDMaskType.Clear)
+        let dicParam = NSDictionary(objects: [refundType,order.order_id,NSUserInfo.shareInstance().member_id] , forKeys: ["type","order_id","member_id"]);
+        NSHttpHelp.httpHelpWithUrl(NSHttpModel.getOrderRefundUrl(), withParam: dicParam, withResult: { (result:AnyObject!) -> Void in
+            let dic = result as! NSDictionary;
+            let code = dic["code"] as! NSInteger;
+            if code == 0 {
+                SVProgressHUD.showSuccessWithStatus("退款申请成功");
+                self.loadContentData(true);
+            } else {
+                let datas = dic["datas"] as! String;
+                SVProgressHUD.showErrorWithStatus(datas);
+            }
+            }) { (error:AnyObject!) -> Void in
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func itemTabFunction1(sender: UIButton) {
-        sender.selected = true;
-        itemBtn2.selected = false;
-        itemBtn3.selected = false;
-        itemBtn4.selected = false;
-        
-        tabType = 0;
-        self.listTableView.reloadData();
-    }
     @IBAction func itemTabFunction2(sender: UIButton) {
         sender.selected = true;
-        itemBtn1.selected = false;
         itemBtn3.selected = false;
         itemBtn4.selected = false;
         
         tabType = 1;
-        self.listTableView.reloadData();
+        self.loadContentData(false)
     }
     @IBAction func itemTabFunction3(sender: UIButton) {
         sender.selected = true;
-        itemBtn1.selected = false;
         itemBtn2.selected = false;
         itemBtn4.selected = false;
         
         tabType = 3;
-        self.listTableView.reloadData();
+        self.loadContentData(false)
     }
     @IBAction func itemTabFunction4(sender: UIButton) {
         sender.selected = true;
-        itemBtn1.selected = false;
         itemBtn2.selected = false;
         itemBtn3.selected = false;
         
         tabType = 2;
-        self.listTableView.reloadData();
+        self.loadContentData(false)
     }
     /*
     // MARK: - Navigation

@@ -70,7 +70,7 @@ class MyTopicViewController: UIBaseViewController ,UITableViewDelegate,UITableVi
                         
                         var size:CGSize!;
                         let  font:UIFont = UIFont.systemFontOfSize(12);
-                        if aCommend.to_id == talk.member_id {
+                        if aCommend.to_id == "" || aCommend.to_id == "0" || aCommend.to_id == aCommend.from_id{
                             let content = "\(aCommend.from_name)：\(aCommend.info)" as NSString;
                             size = content.sizeWithConstrainedToWidth(Float(MainScreenWidth-78), fromFont:font, lineSpace: 2.5);
                         } else {

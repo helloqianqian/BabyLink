@@ -34,7 +34,7 @@ class UIExchangeInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
     
     @IBOutlet weak var exchangeBtn: UIButton!
     @IBOutlet weak var topOfBtn: NSLayoutConstraint!
-    
+    @IBOutlet weak var callBtn: UIButton!
     
     var exchangeList:NSExchange! = NSExchange();
     var to_exchange:NSExchange! = NSExchange();
@@ -106,12 +106,12 @@ class UIExchangeInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
                 self.setListTable()
             } else {
                 //完成置换
-                topOfBtn.constant = 96;
-                self.backView2.hidden = true;
+                topOfBtn.constant = 186;
+                self.backView2.hidden = false;
                 infoTitle.text = "参与置换的物品"
                 arrowImage.hidden = true;
                 checkInfoBtn.enabled = false;
-                exchangeBtn.setTitle("完成置换", forState: UIControlState.Normal);
+                exchangeBtn.setTitle("已置换", forState: UIControlState.Normal);
                 exchangeBtn.enabled = false;
                 exchangeBtn.makeBackGroundColor_DarkGray()
                 self.setListTable();
@@ -175,10 +175,10 @@ class UIExchangeInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
     
     @IBAction func checkGoodsInfo(sender: UIButton) {
         let info:UIInfoViewController = UIInfoViewController(nibName:"UIInfoViewController" ,bundle: NSBundle.mainBundle());
+        info.contentStr = self.from_exchange.info;
         self.navigationController?.pushViewController(info, animated: true);
     }
     @IBAction func exchangeGoods(sender: UIButton) {
-        
         if self.exchangeList.status == "0" {
             let paramDic = ["member_id":NSUserInfo.shareInstance().member_id]
             SVProgressHUD.showWithMaskType(SVProgressHUDMaskType.Clear);
@@ -203,22 +203,9 @@ class UIExchangeInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
                     
             }
         } else if self.exchangeList.status == "1" {
-            SVProgressHUD.showWithMaskType(SVProgressHUDMaskType.Clear);
-            let paramDic = ["member_id":NSUserInfo.shareInstance().member_id,"me_exchange_id":self.from_exchange.exchange_id,"to_exchange_id":self.from_exchange.link_exchange_id]
-            NSHttpHelp.httpHelpWithUrlTpye(finishExchangeType, withParam: paramDic, withResult: { (result:AnyObject!) -> Void in
-                let dic = result as! NSDictionary;
-                let code = dic["code"] as! NSInteger;
-                if code == 0 {
-                    SVProgressHUD.showImage(nil, status: "置换成功")
-                    self.exchangeList.status = "2";
-                    self.setUI();
-                    reloadMyListOfExchange = true;
-                }else {
-                    let datas = dic["datas"] as! String;
-                    SVProgressHUD.showErrorWithStatus(datas);
-                }
-                }) { (error:AnyObject!) -> Void in
-            }
+            let alertView = UIAlertView(title: "提示", message: "是否确定已完成置换？", delegate: self, cancelButtonTitle: "确定", otherButtonTitles: "呼叫对方");
+            alertView.tag = 1001;
+            alertView.show();
         }
     }
     func exchangeCheckFunction() {
@@ -247,7 +234,9 @@ class UIExchangeInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
             let dic = result as! NSDictionary;
             let code = dic["code"] as! NSInteger;
             if code == 0 {
+                SVProgressHUD.dismiss();
                 let alertView = UIAlertView(title: "提示", message: "请求已成功\n请到我-我的主页-我的置换中查看", delegate: self, cancelButtonTitle: "确定")
+                alertView.tag = 1000;
                 alertView.show();
             }else {
                 let datas = dic["datas"] as! String;
@@ -256,10 +245,35 @@ class UIExchangeInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
             }) { (error:AnyObject!) -> Void in
         }
     }
-    
-    func alertViewCancel(alertView: UIAlertView) {
-        exchangeListLoad = true;
-        self.navigationController?.popViewControllerAnimated(true);
+    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+        if alertView.tag == 1000 {
+            exchangeListLoad = true;
+            self.navigationController?.popViewControllerAnimated(true);
+        } else {
+            if buttonIndex == 0 {
+                SVProgressHUD.showWithMaskType(SVProgressHUDMaskType.Clear);
+                let paramDic = ["member_id":NSUserInfo.shareInstance().member_id,"me_exchange_id":self.from_exchange.exchange_id,"to_exchange_id":self.from_exchange.link_exchange_id]
+                NSHttpHelp.httpHelpWithUrlTpye(finishExchangeType, withParam: paramDic, withResult: { (result:AnyObject!) -> Void in
+                    let dic = result as! NSDictionary;
+                    let code = dic["code"] as! NSInteger;
+                    if code == 0 {
+                        SVProgressHUD.showImage(nil, status: "置换成功")
+                        self.exchangeList.status = "2";
+                        self.setUI();
+                        reloadMyListOfExchange = true;
+                    }else {
+                        let datas = dic["datas"] as! String;
+                        SVProgressHUD.showErrorWithStatus(datas);
+                    }
+                    }) { (error:AnyObject!) -> Void in
+                }
+            } else {
+                UIApplication.sharedApplication().openURL(NSURL(string: "tel:\(to_exchange.link_mobile)")!);
+            }
+        }
+    }
+    @IBAction func callToInfo(sender: UIButton) {
+        UIApplication.sharedApplication().openURL(NSURL(string: "tel:\(to_exchange.link_mobile)")!);
     }
     
     func createNewExchange() {

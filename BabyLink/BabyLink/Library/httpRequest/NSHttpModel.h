@@ -103,14 +103,12 @@
  */
 + (NSString *)getIndexSearchUrl;
 
-
-
-
-
-
-
-
-
+/**
+ *  获取城市列表
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)getCityList;
 
 
 /**
@@ -289,6 +287,31 @@
 + (NSString *)getXiuShareUrl;
 + (NSString *)getXiuZanUrl;
 + (NSString *)getXiuFansUrl;
+
+
+#pragma mark - 发现
++ (NSString *)getGoodsUrl;
++ (NSString *)getGoodsInfoUrl;
++ (NSString *)getGoodsIssueUrl;
++ (NSString *)getGoodsFListUrl;
+
+#pragma mark - 订单
++ (NSString *)getOrderNumUrl;
++ (NSString *)getOrderPayUrl;
++ (NSString *)getNotifyUrl;
++ (NSString *)getOrderUrl;
++ (NSString *)getOrderCancelUrl;
++ (NSString *)getOrderRefundUrl;
++ (NSString *)getPrePayUrl;
++ (NSString *)getWXDJUrl;
++ (NSString *)getWXWKUrl;
++ (NSString *)getAliDJUrl;
++ (NSString *)getAliWKUrl;
+
+
+
+
+
 
 
 #pragma mark - 上传图片

@@ -21,4 +21,13 @@
         self.ADID = key;
     }
 }
+
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.cover = @"";
+    }
+    return self;
+}
 @end

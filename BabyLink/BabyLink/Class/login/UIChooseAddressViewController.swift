@@ -36,7 +36,8 @@ class UIChooseAddressViewController: UIBaseViewController , UITableViewDelegate 
         self.listTableView.dataSource = self;
         self.listTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cellIdentifier");
         
-        self.getAutoPositionData();
+//        self.getAutoPositionData();
+        self.getIndexSearchData()
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         if self.dataType == 0{

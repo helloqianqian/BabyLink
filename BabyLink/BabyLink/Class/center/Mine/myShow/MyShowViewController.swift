@@ -36,8 +36,8 @@ class MyShowViewController: UIBaseViewController ,UITableViewDelegate,UITableVie
         self.reloadTableData()
     }
 
-    func reloadTableData() {//NSUserInfo.shareInstance().member_id
-        let dicParam:NSDictionary = NSDictionary(objects: ["9","\(self.page)"] , forKeys: [MEMBER_ID,"page"]);
+    func reloadTableData() {
+        let dicParam:NSDictionary = NSDictionary(objects: [NSUserInfo.shareInstance().member_id,"\(self.page)"] , forKeys: [MEMBER_ID,"page"]);
         NSHttpHelp.httpHelpWithUrlTpye(myXiuType, withParam: dicParam, withResult: { (returnObject:AnyObject!) -> Void in
             let dic = returnObject as! NSDictionary;
             let code = dic["code"] as! NSInteger;

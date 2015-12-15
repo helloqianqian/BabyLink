@@ -17,6 +17,14 @@ class UIAccountSetViewController: UIBaseViewController ,UIActionSheetDelegate,UI
     @IBOutlet weak var nikeName: UILabel!
     @IBOutlet weak var phoneNumBtn: UIButton!
     @IBOutlet weak var passwordBtn: UIButton!
+    
+    @IBOutlet weak var backView: UIView!
+    @IBOutlet weak var homeBtn: UIButton!
+    @IBOutlet weak var homeLabel: UILabel!
+    @IBOutlet weak var otherHomeBtn: UIButton!
+    @IBOutlet weak var otherHomeLabel: UILabel!
+    
+    
     @IBOutlet weak var quiteBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,12 +43,26 @@ class UIAccountSetViewController: UIBaseViewController ,UIActionSheetDelegate,UI
         nickNameBtn.makeBackGroundColor_White();
         phoneNumBtn.makeBackGroundColor_White();
         passwordBtn.makeBackGroundColor_White();
+//        homeBtn.makeBackGroundColor_White();
+//        otherHomeBtn.makeBackGroundColor_White();
+        backView.layer.cornerRadius = 5;
+        backView.layer.masksToBounds = true;
+        backView.layer.borderColor = SGrayBorderColor.CGColor;
+        backView.layer.borderWidth = 0.5;
+        
         quiteBtn.makeBackGroundColor_Red();
     }
     
     func setContentData() {
         nikeName.text = "昵称:\(NSUserInfo.shareInstance().member_name)";
         bigHeadIconBtn.sd_setBackgroundImageWithURL(NSURL(string: NSUserInfo.shareInstance().member_avar), forState: UIControlState.Normal, placeholderImage: UIImage(named: "morentoux"));
+        
+        if NSUserInfo.shareInstance().home != "" {
+            homeLabel.text = "小区:\(NSUserInfo.shareInstance().home)";
+        }
+        if NSUserInfo.shareInstance().home2 != "" {
+            otherHomeLabel.text = "附属小区:\(NSUserInfo.shareInstance().home2)";
+        }
     }
     func resetNickname(){
         nikeName.text = "昵称:\(NSUserInfo.shareInstance().member_name)";
@@ -137,7 +159,22 @@ class UIAccountSetViewController: UIBaseViewController ,UIActionSheetDelegate,UI
         self.navigationController?.pushViewController(nicknameVC, animated: true);
     }
     @IBAction func quite(sender: UIButton) {
+        appDelegate.logoutLastLoginUser()
         appDelegate.exchangeRootViewController(false)
+    }
+    
+    @IBAction func changeHome(sender: UIButton) {
+        let homeVC = UIChangeHomeViewController(nibName:"UIChangeHomeViewController" ,bundle: NSBundle.mainBundle());
+        homeVC.type = 0;
+        homeVC.lastVC = self;
+        self.navigationController?.pushViewController(homeVC, animated: true);
+    }
+    
+    @IBAction func changeOtherHome(sender: UIButton) {
+        let homeVC = UIChangeHomeViewController(nibName:"UIChangeHomeViewController" ,bundle: NSBundle.mainBundle());
+        homeVC.type = 1;
+        homeVC.lastVC = self;
+        self.navigationController?.pushViewController(homeVC, animated: true);
     }
     
     @IBAction func checkBigHeadImage(sender: UIButton) {

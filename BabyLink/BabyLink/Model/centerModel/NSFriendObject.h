@@ -17,6 +17,9 @@
 @property (nonatomic,strong)NSString *member_friend_id;
 @property (nonatomic,strong)NSString *member_id;
 @property (nonatomic,strong)NSString *flag;
+@property (nonatomic,assign)NSInteger status;
+@property (nonatomic,strong)NSString *status_desc;
+@property (nonatomic,strong)NSString *text;
 
 @end
 

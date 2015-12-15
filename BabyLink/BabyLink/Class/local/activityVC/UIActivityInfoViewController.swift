@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UITableViewDataSource,UICommentDelegate,YFInputBarDelegate{
+class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UITableViewDataSource,UICommentDelegate,YFInputBarDelegate,UMSocialUIDelegate{
 
     @IBOutlet weak var listTableView: UITableView!
     
@@ -21,6 +21,8 @@ class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
     
     var inputBar:YFInputBar!;
     var commentObject:NSCommentObject?;
+    var footerView = NSBundle.mainBundle().loadNibNamed("UIActivityInfoFooterView", owner: nil, options: nil).first as! UIActivityInfoFooterView;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -44,8 +46,7 @@ class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
         if signInActivity {
             signInActivity = false;
             self.listModel.isSign = true;
-            let footerView = self.listTableView.tableFooterView as! UIActivityInfoFooterView;
-            footerView.enrollBtn.setTitle("取消报名", forState: UIControlState.Normal);
+            self.listTableView.reloadData();
         }
     }
     override func viewWillDisappear(animated: Bool) {
@@ -60,31 +61,33 @@ class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
         listTableView.registerNib(UINib(nibName: "UIActivityInfoForthTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "UIActivityInfoForthTableViewCellIndentifier");
         listTableView.registerNib(UINib(nibName: "UIActivityInfoFifthTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "UIActivityInfoFifthTableViewCellIndentifier");
         
-        if self.sourceFrom == 0 || self.sourceFrom == 2{
-            let footerView = NSBundle.mainBundle().loadNibNamed("UIActivityInfoFooterView", owner: nil, options: nil).first as! UIActivityInfoFooterView;
-            footerView.frame = CGRectMake(0, 0, MainScreenWidth, 57);
-            
-            if listModel.isOut {
-                footerView.enrollBtn.makeBackGroundColor_DarkGray()
-                footerView.enrollBtn.setTitle("活动已结束", forState: UIControlState.Normal);
-            } else {
-                if listModel.isSign {
-                    footerView.enrollBtn.makeBackGroundColor_Purple()
-                    footerView.enrollBtn.setTitle("取消报名", forState: UIControlState.Normal);
-                    footerView.enrollBtn.addTarget(self, action: "enrollInTheActivity:", forControlEvents: UIControlEvents.TouchUpInside);
-                } else {
-                    if listModel.isFull {
-                        footerView.enrollBtn.makeBackGroundColor_Purple()
-                        footerView.enrollBtn.setTitle("报名已满", forState: UIControlState.Normal);
-                    } else {
-                        footerView.enrollBtn.makeBackGroundColor_Purple()
-                        footerView.enrollBtn.setTitle("我要报名", forState: UIControlState.Normal);
-                        footerView.enrollBtn.addTarget(self, action: "enrollInTheActivity:", forControlEvents: UIControlEvents.TouchUpInside);
-                    }
-                }
-            }
-            listTableView.tableFooterView = footerView;
-        }
+        footerView.enrollBtn.addTarget(self, action: "enrollInTheActivity:", forControlEvents: UIControlEvents.TouchUpInside);
+        
+//        if self.sourceFrom == 0 || self.sourceFrom == 2{
+//            let footerView = NSBundle.mainBundle().loadNibNamed("UIActivityInfoFooterView", owner: nil, options: nil).first as! UIActivityInfoFooterView;
+//            footerView.frame = CGRectMake(0, 0, MainScreenWidth, 57);
+//            
+//            if listModel.isOut {
+//                footerView.enrollBtn.makeBackGroundColor_DarkGray()
+//                footerView.enrollBtn.setTitle("活动已结束", forState: UIControlState.Normal);
+//            } else {
+//                if listModel.isSign {
+//                    footerView.enrollBtn.makeBackGroundColor_DarkGray()
+//                    footerView.enrollBtn.setTitle("取消报名", forState: UIControlState.Normal);
+//                    footerView.enrollBtn.addTarget(self, action: "enrollInTheActivity:", forControlEvents: UIControlEvents.TouchUpInside);
+//                } else {
+//                    if listModel.isFull {
+//                        footerView.enrollBtn.makeBackGroundColor_DarkGray()
+//                        footerView.enrollBtn.setTitle("报名已满", forState: UIControlState.Normal);
+//                    } else {
+//                        footerView.enrollBtn.makeBackGroundColor_Purple()
+//                        footerView.enrollBtn.setTitle("我要报名", forState: UIControlState.Normal);
+//                        footerView.enrollBtn.addTarget(self, action: "enrollInTheActivity:", forControlEvents: UIControlEvents.TouchUpInside);
+//                    }
+//                }
+//            }
+//            listTableView.tableFooterView = footerView;
+//        }
     }
     func setInputBar(){
         inputBar = YFInputBar(frame: CGRectMake(0 ,MainScreenHeight,MainScreenWidth,45))
@@ -135,6 +138,43 @@ class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
             return 6;
         }
     }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.5;
+    }
+    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if self.sourceFrom == 0 || self.sourceFrom == 2{
+            return 57;
+        }
+        return 0.5;
+    }
+    
+    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        if self.sourceFrom == 0 || self.sourceFrom == 2{
+            if listModel.isOut {
+                footerView.enrollBtn.makeBackGroundColor_DarkGray()
+                footerView.enrollBtn.setTitle("活动已结束", forState: UIControlState.Normal);
+            } else {
+                if listModel.isSign {
+                    footerView.enrollBtn.makeBackGroundColor_DarkGray()
+                    footerView.enrollBtn.setTitle("取消报名", forState: UIControlState.Normal);
+//                    footerView.enrollBtn.addTarget(self, action: "enrollInTheActivity:", forControlEvents: UIControlEvents.TouchUpInside);
+                } else {
+                    if listModel.isFull {
+                        footerView.enrollBtn.makeBackGroundColor_DarkGray()
+                        footerView.enrollBtn.setTitle("报名已满", forState: UIControlState.Normal);
+                    } else {
+                        footerView.enrollBtn.makeBackGroundColor_Purple()
+                        footerView.enrollBtn.setTitle("我要报名", forState: UIControlState.Normal);
+//                        footerView.enrollBtn.addTarget(self, action: "enrollInTheActivity:", forControlEvents: UIControlEvents.TouchUpInside);
+                    }
+                }
+            }
+            return footerView
+        }
+        return nil;
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var indexRow = indexPath.row;
         if self.infoModel.is_help == "0" && indexPath.row > 1{
@@ -168,9 +208,19 @@ class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
             cell.delegate = self;
             cell.setContentData(self.infoModel)
             return cell;
-        }
-        else {
+        } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("UIActivityInfoFifthTableViewCellIndentifier", forIndexPath: indexPath) as! UIActivityInfoFifthTableViewCell;
+            
+            cell.qqFriendBtn.tag = 1;
+            cell.friendBtn.tag = 2;
+            cell.sinaBtn.tag = 3;
+            cell.friendCircle.tag = 4;
+            
+            cell.qqFriendBtn.addTarget(self, action: "shareActivityData:", forControlEvents: UIControlEvents.TouchUpInside)
+            cell.friendBtn.addTarget(self, action: "shareActivityData:", forControlEvents: UIControlEvents.TouchUpInside)
+            cell.sinaBtn.addTarget(self, action: "shareActivityData:", forControlEvents: UIControlEvents.TouchUpInside)
+            cell.friendCircle.addTarget(self, action: "shareActivityData:", forControlEvents: UIControlEvents.TouchUpInside)
+            
             return cell;
         }
     }
@@ -189,12 +239,12 @@ class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
         else if indexRow == 1 {
             let  font:UIFont = UIFont.systemFontOfSize(12);
             let size:CGSize = (self.infoModel.info as NSString).sizeWithConstrainedToWidth(Float(MainScreenWidth-30), fromFont:font, lineSpace: 2.5);
-            return size.height+60;
+            return size.height+80;
         }
         else if indexRow == 2 {
             let  font:UIFont = UIFont.systemFontOfSize(12);
             let size:CGSize = (self.infoModel.help as NSString).sizeWithConstrainedToWidth(Float(MainScreenWidth-30), fromFont:font, lineSpace: 2.5);
-            return size.height+60;
+            return size.height+80;
         }
         else if indexRow == 3 {
             let count = self.infoModel.logs.count;
@@ -246,6 +296,20 @@ class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
     
     //MARK: - tableview function
     func enrollInTheActivity(sender:UIButton){
+        
+        if listModel.isOut {
+            return;
+        } else {
+            if listModel.isSign {
+            } else {
+                if listModel.isFull {
+                    return;
+                } else {
+                }
+            }
+        }
+        
+        
         if self.listModel.isSign {
             SVProgressHUD.showWithMaskType(SVProgressHUDMaskType.Clear);
             let dicParam:NSDictionary = NSDictionary(objects: [NSUserInfo.shareInstance().member_id,self.activityID] , forKeys: [MEMBER_ID,"activity_id"]);
@@ -254,8 +318,7 @@ class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
                 if code == 0 {
                     SVProgressHUD.showSuccessWithStatus("取消报名成功");
                     self.listModel.isSign = false;
-                    let footerView = self.listTableView.tableFooterView as! UIActivityInfoFooterView;
-                    footerView.enrollBtn.setTitle("我要报名", forState: UIControlState.Normal);
+                    self.listTableView.reloadData()
                     activityListLoad = true;
                     self.getInfoData();
                 } else {
@@ -294,11 +357,11 @@ class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
     }
     
     func inputBar(inputBar: YFInputBar!, sendBtnPress sendBtn: UIButton!, withInputString str: String!) {
-        var to_userId = NSUserInfo.shareInstance().member_id;
+        var to_userId = ""//NSUserInfo.shareInstance().member_id;
         var to_userName = NSUserInfo.shareInstance().member_name;
         if commentObject != nil {
-            to_userId = commentObject?.from_userId;
-            to_userName = commentObject?.from_userName;
+            to_userId = (commentObject?.from_userId)!;
+            to_userName = (commentObject?.from_userName)!;
         }
         SVProgressHUD.showWithMaskType(SVProgressHUDMaskType.Clear);
         let dicParam:NSDictionary = NSDictionary(objects: [NSUserInfo.shareInstance().member_id,self.activityID,to_userId,to_userName,str] , forKeys: [MEMBER_ID,"activity_id","to_userId","to_userName","info"]);
@@ -326,6 +389,54 @@ class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    func shareActivityData(sender:UIButton){
+        UMSocialData.defaultData().urlResource.setResourceType(UMSocialUrlResourceTypeImage, url: "http://baidu.com");
+        if sender.tag == 1 {
+            UMSocialDataService.defaultDataService().postSNSWithTypes([UMShareToQQ], content: "分享活动。 http://www.baidu.com", image: UIImage(named: "AppIcon"), location: nil, urlResource: nil, presentedController: self, completion: { (response) -> Void in
+                if (response.responseCode == UMSResponseCodeSuccess) {
+                    SVProgressHUD.showSuccessWithStatus("分享成功");
+                } else {
+                    SVProgressHUD.showErrorWithStatus("分享失败")
+                }
+            })
+        } else if sender.tag == 2 {
+            UMSocialDataService.defaultDataService().postSNSWithTypes([UMShareToWechatSession], content: "分享活动。 http://www.baidu.com", image: UIImage(named: "AppIcon"), location: nil, urlResource: nil, presentedController: self, completion: { (response) -> Void in
+                if (response.responseCode == UMSResponseCodeSuccess) {
+                    SVProgressHUD.showSuccessWithStatus("分享成功");
+                } else {
+                    SVProgressHUD.showErrorWithStatus("分享失败")
+                }
+            })
+        } else if sender.tag == 3 {
+            UMSocialDataService.defaultDataService().postSNSWithTypes([UMShareToSina], content: "分享活动。 http://www.baidu.com", image: UIImage(named: "AppIcon"), location: nil, urlResource: nil, presentedController: self, completion: { (response) -> Void in
+                if (response.responseCode == UMSResponseCodeSuccess) {
+                    SVProgressHUD.showSuccessWithStatus("分享成功");
+                } else {
+                    SVProgressHUD.showErrorWithStatus("分享失败")
+                }
+            })
+        } else {
+            UMSocialDataService.defaultDataService().postSNSWithTypes([UMShareToWechatTimeline], content: "分享活动。 http://www.baidu.com", image: UIImage(named: "AppIcon"), location: nil, urlResource: nil, presentedController: self, completion: { (response) -> Void in
+                if (response.responseCode == UMSResponseCodeSuccess) {
+                    SVProgressHUD.showSuccessWithStatus("分享成功");
+                } else {
+                    SVProgressHUD.showErrorWithStatus("分享失败")
+                }
+            })
+        }
+    }
+    
+    
+    func didFinishGetUMSocialDataInViewController(response: UMSocialResponseEntity!) {
+        if response.responseCode == UMSResponseCodeSuccess {
+            SVProgressHUD.showSuccessWithStatus("分享成功");
+        } else {
+            SVProgressHUD.showErrorWithStatus("分享失败")
+        }
+    }
+    
 
     /*
     // MARK: - Navigation

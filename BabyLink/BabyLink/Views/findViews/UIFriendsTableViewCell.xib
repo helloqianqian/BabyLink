@@ -25,7 +25,6 @@
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SI6-VE-3aj">
                         <rect key="frame" x="250" y="13" width="58" height="24"/>
                         <animations/>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.058823529409999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="58" id="MIr-10-srL"/>
                             <constraint firstAttribute="height" constant="24" id="Q4w-ph-gHh"/>

@@ -19,7 +19,7 @@
 #import "NSExchange.h"
 #import "NSXiu.h"
 #import "NSFriendObject.h"
-
+#import "NSFind.h"
 //http
 #import "NSHttpHelp.h"
 #import "NSHttpModel.h"
@@ -44,5 +44,8 @@
 #import "UMSocialQQHandler.h"
 #import "UMSocialSinaSSOHandler.h"
 #import "UMSocialWechatHandler.h"
+#import "WXApi.h"
+#import <AlipaySDK/AlipaySDK.h>
+#import "DataSigner.h"
 
 #import "MJRefresh.h"
