@@ -33,6 +33,7 @@ class MyTopicViewController: UIBaseViewController ,UITableViewDelegate,UITableVi
         if reloadMyTalkList {
             self.refreshListData();
         }
+        self.listTableView.reloadData();
     }
     
     
@@ -116,11 +117,15 @@ class MyTopicViewController: UIBaseViewController ,UITableViewDelegate,UITableVi
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let infoVC:MyTopicInfoViewController = MyTopicInfoViewController(nibName:"MyTopicInfoViewController", bundle:NSBundle.mainBundle());
         let talk = self.dataArray[indexPath.row] as! NSTalk;
+        talk.talk_num = "0"
         infoVC.talk = talk;
         self.navigationController?.pushViewController(infoVC, animated: true);
     }
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let model = self.dataArray[indexPath.row] as! NSTalk;
+        let  font:UIFont = UIFont.systemFontOfSize(13);
+        let size:CGSize! = model.info.sizeWithConstrainedToWidth(Float(MainScreenWidth-80), fromFont:font, lineSpace: 3);
+        model.tableViewHeight = size.height+5;
         return model.tableViewHeight+96;
     }
 

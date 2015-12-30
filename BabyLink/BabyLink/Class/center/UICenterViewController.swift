@@ -24,14 +24,14 @@ class UICenterViewController: UIBaseViewController ,UITableViewDelegate,UITableV
     
     @IBOutlet weak var blurEffectionView2: UIVisualEffectView!
     @IBOutlet weak var blurEffectView: UIVisualEffectView!
-    let listTitles = ["我的主页","我的订单","账号设置","帮助中心","版本升级"];
+    let listTitles = ["我的主页","我的订单","账号设置","帮助中心","版本升级","关于我们"];
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.navigationItem.title = "我"
-        self.userCoupon.text = "兑换码"
-        self.leftPayment.text = "支付尾款";
+        self.userCoupon.text = "兑换码\n0"
+        self.leftPayment.text = "支付尾款\n0";
 
         blurEffectView.effect = UIBlurEffect(style: UIBlurEffectStyle.Light)
         blurEffectionView2.effect = UIBlurEffect(style: UIBlurEffectStyle.Light)
@@ -46,6 +46,7 @@ class UICenterViewController: UIBaseViewController ,UITableViewDelegate,UITableV
 //        if NSUserInfo.shareInstance().member_name == "" || NSUserInfo.shareInstance().member_avar == "" {
             self.getPersonInfo()
 //        }
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "setNums", name: "UpdateNumNotification", object: nil);
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -53,10 +54,9 @@ class UICenterViewController: UIBaseViewController ,UITableViewDelegate,UITableV
             centerHeadIconLoad = false;
             headImageView.sd_setImageWithURL(NSURL(string: NSUserInfo.shareInstance().member_avar), placeholderImage: UIImage(named: "morentoux"))
         }
-        
         self.getOrderNum();
     }
-    
+
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -87,10 +87,22 @@ class UICenterViewController: UIBaseViewController ,UITableViewDelegate,UITableV
             let code = dic["code"] as! NSInteger;
             if code == 0 {
                 let datas = dic["datas"] as! NSDictionary;
-                let code_num = datas["code_num"] as! String;
-                let wei_num = datas["wei_num"] as! String;
-                self.userCoupon.text = "兑换码\n\(code_num)"
-                self.leftPayment.text = "支付尾款\n\(wei_num)";
+//                let code_num = datas["code_num"] as! String;
+//                let wei_num = datas["wei_num"] as! String;
+//                self.userCoupon.text = "兑换码\n\(code_num)"
+//                self.leftPayment.text = "支付尾款\n\(wei_num)";
+                
+                NSUserInfo.shareInstance().code_num = datas["code_num"] as! String;
+                NSUserInfo.shareInstance().wei_num = datas["wei_num"] as! String;
+                NSUserInfo.shareInstance().activity_num = datas["activity_num"] as! String;
+                NSUserInfo.shareInstance().exchange_num = datas["exchange_num"] as! String;
+                NSUserInfo.shareInstance().xiu_num = datas["xiu_num"] as! String;
+                NSUserInfo.shareInstance().talk_num = datas["talk_num"] as! String;
+                NSUserInfo.shareInstance().sum_num = datas["sum_num"] as! String;
+                
+//                self.listTableView.reloadData();
+                mainTabBar.setTabbarItemBadge(NSUserInfo.shareInstance().sum_num);
+                self.setNums();
             } else {
                 let datas = dic["datas"] as! String;
                 SVProgressHUD.showErrorWithStatus(datas);
@@ -144,7 +156,10 @@ class UICenterViewController: UIBaseViewController ,UITableViewDelegate,UITableV
             helpVC.hidesBottomBarWhenPushed = true;
             self.navigationController?.pushViewController(helpVC, animated: true);
             break;
-        case 3:
+        case 4:
+            let helpVC = UIAboutViewController(nibName:"UIAboutViewController", bundle: NSBundle.mainBundle());
+            helpVC.hidesBottomBarWhenPushed = true;
+            self.navigationController?.pushViewController(helpVC, animated: true);
             break;
         default:break;
         }
@@ -157,15 +172,27 @@ class UICenterViewController: UIBaseViewController ,UITableViewDelegate,UITableV
         if section == 0{
             return 1;
         } else {
-            return 4;
+            return 5;
         }
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("centerCellIndentifier", forIndexPath: indexPath) as? UICenterTableViewCell
-        cell?.textLabel?.textColor = hexRGB(0xA6A7A8)
-        cell?.textLabel?.font = UIFont.systemFontOfSize(14.0)
-        cell?.textLabel?.text = listTitles[indexPath.row + indexPath.section];
-        return cell!;
+        let cell = tableView.dequeueReusableCellWithIdentifier("centerCellIndentifier", forIndexPath: indexPath) as! UICenterTableViewCell
+
+        cell.contentLabel.text = listTitles[indexPath.row + indexPath.section];
+        if indexPath.row == 0 && indexPath.section == 0 {
+            if NSUserInfo.shareInstance().sum_num == "0" || NSUserInfo.shareInstance().sum_num == "" {
+                cell.numLabel.hidden = true;
+            } else {
+                cell.numLabel.hidden = false;
+                cell.numLabel.text = NSUserInfo.shareInstance().sum_num;
+                let size = cell.numLabel.sizeThatFits(CGSizeMake(MainScreenWidth, 16));
+                cell.width.constant = size.width > 16 ? size.width : 16;
+            }
+        } else {
+            cell.numLabel.hidden = true;
+        }
+        
+        return cell;
     }
 
     
@@ -186,7 +213,16 @@ class UICenterViewController: UIBaseViewController ,UITableViewDelegate,UITableV
         // Dispose of any resources that can be recreated.
     }
     
+    func setNums(){
+        self.userCoupon.text = "兑换码\n\(NSUserInfo.shareInstance().code_num)"
+        self.leftPayment.text = "支付尾款\n\(NSUserInfo.shareInstance().wei_num)";
+        self.listTableView.reloadData();
+    }
 
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self);
+    }
+    
     /*
     // MARK: - Navigation
 

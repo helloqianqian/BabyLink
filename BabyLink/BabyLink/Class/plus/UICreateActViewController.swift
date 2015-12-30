@@ -214,13 +214,36 @@ class UICreateActViewController: UIBaseViewController ,UITableViewDelegate,UITab
             let indexPath = NSIndexPath(forRow: 2, inSection: 0);
             let cell = self.listTableView.cellForRowAtIndexPath(indexPath) as! UICreateActTableViewCell;
             cell.contentField.text = "\(array[0])-\(array[1])-\(array[2])";
-            jiezhiTime = "\(array[0])\(array[1])\(array[2])"
+            let month = array[1] as! NSNumber;
+            let day = array[2] as! NSNumber;
+            var monthStr = "\(array[1])";
+            var dayStr = "\(array[2])";
+            if month.intValue < 10 {
+                monthStr = "0\(array[1])"
+            }
+            
+            if day.intValue < 10 {
+                dayStr = "0\(array[2])";
+            }
+            jiezhiTime = "\(array[0])\(monthStr)\(dayStr)"
             paramArray[2] = "\(array[0])-\(array[1])-\(array[2])";
         } else {
             let indexPath = NSIndexPath(forRow: 3, inSection: 0);
             let cell = self.listTableView.cellForRowAtIndexPath(indexPath) as! UICreateActTableViewCell;
             cell.contentField.text = "\(array[0])-\(array[1])-\(array[2]) \(array[3]):\(array[4])";
-            jiheTime = "\(array[0])\(array[1])\(array[2])"
+            
+            let month = array[1] as! NSNumber;
+            let day = array[2] as! NSNumber;
+            var monthStr = "\(array[1])";
+            var dayStr = "\(array[2])";
+            if month.intValue < 10 {
+                monthStr = "0\(array[1])"
+            }
+            
+            if day.intValue < 10 {
+                dayStr = "0\(array[2])";
+            }
+            jiheTime = "\(array[0])\(monthStr)\(dayStr)"
             paramArray[3] = "\(array[0])-\(array[1])-\(array[2]) \(array[3]):\(array[4])";
         }
     }

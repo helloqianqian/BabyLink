@@ -146,6 +146,7 @@ class UIExchangeInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
             self.listTableView.reloadData();
         } else if self.exchangeList.status == "2" {
             //完成置换
+            contactLabel.text = "\(to_exchange.link_mobile)  \(to_exchange.link_name)";
             self.listTableView.reloadData();
         }
     }
@@ -163,6 +164,8 @@ class UIExchangeInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
                     self.to_exchange.setValuesForKeysWithDictionary(to_ex as! [String : AnyObject]);
                 }
                 self.setInfoContent();
+                
+                mainTabBar.getNums()
             }else {
                 let datas = dic["datas"] as! String;
                 SVProgressHUD.showErrorWithStatus(datas);
@@ -283,13 +286,16 @@ class UIExchangeInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
     }
     
     @IBAction func checkBigImage(sender: UIButton) {
-        let indexPath = NSIndexPath(forRow: sender.tag-1000, inSection: 0)
-        let pickerBrowser = ZLPhotoPickerBrowserViewController()
-        pickerBrowser.delegate = self;
-        pickerBrowser.dataSource = self;
-        pickerBrowser.editing = false;
-        pickerBrowser.currentIndexPath = indexPath;
-        pickerBrowser.showPickerVc(self);
+        let imageArray:NSArray = self.from_exchange.images as! NSArray
+        if  sender.tag-1000 < imageArray.count {
+            let indexPath = NSIndexPath(forRow: sender.tag-1000, inSection: 0)
+            let pickerBrowser = ZLPhotoPickerBrowserViewController()
+            pickerBrowser.delegate = self;
+            pickerBrowser.dataSource = self;
+            pickerBrowser.editing = false;
+            pickerBrowser.currentIndexPath = indexPath;
+            pickerBrowser.showPickerVc(self);
+        }
     }
     
     func numberOfSectionInPhotosInPickerBrowser(pickerBrowser: ZLPhotoPickerBrowserViewController!) -> Int {

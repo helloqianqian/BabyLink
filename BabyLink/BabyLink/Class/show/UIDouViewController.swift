@@ -72,7 +72,19 @@ class UIDouViewController: UIBaseViewController ,YFInputBarDelegate{
             titleView.addSubview(tipView);
             tipView.contentLabel.text = aComment.info;
             let size = tipView.contentLabel.sizeThatFits(CGSizeMake(100, 100));
-            tipView.frame = CGRectMake(13 + (MainScreenWidth-13)*aComment.position_x, 55+(MainScreenWidth-13)*aComment.position_y, size.width+48, size.height+16);
+            
+            let x = (MainScreenWidth-26)*aComment.position_x;
+            let y = (MainScreenWidth-26)*aComment.position_y;
+            
+            var frame = CGRectMake(13+x, 58+y, size.width+48, size.height+16);
+            if x + size.width + 48 > MainScreenWidth-26 {
+                frame.origin.x = 13 + MainScreenWidth - size.width - 74;
+            }
+            if y + size.height + 16 > MainScreenWidth-26 {
+                frame.origin.y = 58 + MainScreenWidth - size.height - 42
+            }
+
+            tipView.frame = frame;
             tipView.headIcon.sd_setImageWithURL(NSURL(string: aComment.member_avar), placeholderImage: UIImage(named: "morentoux"))
             tipView.start();
         }
@@ -80,12 +92,10 @@ class UIDouViewController: UIBaseViewController ,YFInputBarDelegate{
     }
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated);
-        for var i=0 ;i<showModel.commends.count; i++ {
-            var subview = titleView.viewWithTag(1000+i);
-            if subview != nil {
-                (subview as! UIShowItemView).stopAnimation();
-                subview?.removeFromSuperview();
-                subview = nil;
+        for itemView in titleView.subviews {
+            if itemView.isKindOfClass(UIShowItemView){
+                (itemView as! UIShowItemView).stopAnimation();
+                itemView.removeFromSuperview();
             }
         }
     }

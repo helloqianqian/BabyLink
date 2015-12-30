@@ -20,6 +20,8 @@
 @property (nonatomic,strong)NSArray *images_url;
 @property (nonatomic,strong)NSMutableArray *commends;
 @property (nonatomic,assign)CGFloat tableViewHeight;
+@property (nonatomic,assign)CGFloat infoTableViewHeight;
+@property (nonatomic,strong)NSString *talk_num;
 @end
 
 

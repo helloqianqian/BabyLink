@@ -23,8 +23,8 @@ class UIParticipateTableViewCell: UITableViewCell {
     }
 
     func setContentData(log:NSLogListObject){
-        headIcon.sd_setImageWithURL(NSURL(string: log.member_avar), placeholderImage: nil)
-        contentLabel.text = "姓名：\(log.link_man)\n联系方式：\(log.member_mobile)\n参与人数：\(log.num)\n"
+        headIcon.sd_setImageWithURL(NSURL(string: log.member_avar), placeholderImage: UIImage(named: "morentoux"))
+        contentLabel.text = "姓名：\(log.link_man)\n联系方式：\(log.member_mobile)\n参与人数：\(log.num)人"
         nickName.text = log.member_name;
     }
     override func setSelected(selected: Bool, animated: Bool) {

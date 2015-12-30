@@ -25,7 +25,7 @@
                         <constraint firstAttribute="height" constant="33" id="y57-vJ-yns"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <state key="normal" title="我发布的"/>
+                    <state key="normal" title="参与置换"/>
                     <connections>
                         <action selector="mylist:" destination="-1" eventType="touchUpInside" id="sZ3-d5-eL4"/>
                     </connections>
@@ -36,7 +36,7 @@
                         <constraint firstAttribute="height" constant="33" id="590-aj-Fp7"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <state key="normal" title="我参与的">
+                    <state key="normal" title="我发布的">
                         <color key="titleColor" red="0.74509803919999995" green="0.23921568630000001" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>

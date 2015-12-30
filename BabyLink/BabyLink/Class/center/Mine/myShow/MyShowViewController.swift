@@ -27,6 +27,10 @@ class MyShowViewController: UIBaseViewController ,UITableViewDelegate,UITableVie
         self.listTableView.header.beginRefreshing();
     }
     
+    override func viewWillAppear(animated: Bool) {
+        self.listTableView.reloadData()
+    }
+    
     func refreshListData(){
         self.page = 1;
         self.reloadTableData()
@@ -66,6 +70,22 @@ class MyShowViewController: UIBaseViewController ,UITableViewDelegate,UITableVie
                         aZan.setValuesForKeysWithDictionary(zan as! [String : AnyObject]);
                         talk.zans.addObject(aZan);
                     }
+                    let count = talk.zans.count;
+                    var per = 0
+                    if iphone6Plus {
+                        per = 13;
+                    } else if iphone6 {
+                        per = 12;
+                    } else {
+                        per=10;
+                    }
+                    var hang = count/per;
+                    let left = count%per;
+                    if left>0 || hang == 0{
+                        hang+=1;
+                    }
+                    talk.zanHeight = CGFloat(hang*26);
+                    
                     self.dataArray.addObject(talk);
                 }
                 self.listTableView.reloadData()

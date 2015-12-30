@@ -187,7 +187,7 @@ class UILoginViewController: UIBaseViewController ,UITextFieldDelegate{
             if response.responseCode == UMSResponseCodeSuccess {
                 let snsAccount:UMSocialAccountEntity = UMSocialAccountManager.socialAccountDictionary()[UMShareToWechatSession] as! UMSocialAccountEntity;
                 self.snsAccount = snsAccount;
-                NSLog("username is %@, uid is %@, token is %@ url is %@  openid:%@",snsAccount.userName,snsAccount.usid,snsAccount.accessToken,snsAccount.iconURL,snsAccount.openId);
+//                NSLog("username is %@, uid is %@, token is %@ url is %@  openid:%@",snsAccount.userName,snsAccount.usid,snsAccount.accessToken,snsAccount.iconURL,snsAccount.openId);
                 self.otherLogin("2");
             } else {
                 

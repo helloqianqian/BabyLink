@@ -57,7 +57,43 @@ class UIBaseTabBarController: UITabBarController, UIBaseTabBarDelegate ,UICreate
         tabbarReplace.barTintColor = UIColor.blackColor();
         self.setValue(tabbarReplace, forKey: "tabBar")
         
+//        self.getNums()
+        
     }
+    
+    func setTabbarItemBadge(num:String) {
+        if num == "0"{
+            centerView.tabBarItem.badgeValue = nil;
+        } else {
+            centerView.tabBarItem.badgeValue = num;
+        }
+    }
+    
+    func getNums(){
+        let dicParam:NSDictionary = NSDictionary(objects: [NSUserInfo.shareInstance().member_id] , forKeys: [MEMBER_ID]);
+        NSHttpHelp.httpHelpWithUrl(NSHttpModel.getOrderNumUrl(), withParam: dicParam, withResult: { (result:AnyObject!) -> Void in
+            let dic = result as! NSDictionary;
+            let code = dic["code"] as! NSInteger;
+            if code == 0 {
+                let datas = dic["datas"] as! NSDictionary;
+                NSUserInfo.shareInstance().code_num = datas["code_num"] as! String;
+                NSUserInfo.shareInstance().wei_num = datas["wei_num"] as! String;
+                NSUserInfo.shareInstance().activity_num = datas["activity_num"] as! String;
+                NSUserInfo.shareInstance().exchange_num = datas["exchange_num"] as! String;
+                NSUserInfo.shareInstance().xiu_num = datas["xiu_num"] as! String;
+                NSUserInfo.shareInstance().talk_num = datas["talk_num"] as! String;
+                NSUserInfo.shareInstance().sum_num = datas["sum_num"] as! String;
+                
+                self.setTabbarItemBadge(NSUserInfo.shareInstance().sum_num);
+                NSNotificationCenter.defaultCenter().postNotificationName("UpdateNumNotification", object: nil);
+            } else {
+                let datas = dic["datas"] as! String;
+                SVProgressHUD.showErrorWithStatus(datas);
+            }
+            }) { (error:AnyObject!) -> Void in
+        }
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: true)

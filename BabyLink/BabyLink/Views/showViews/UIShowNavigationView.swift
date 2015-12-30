@@ -39,7 +39,7 @@ class UIShowNavigationView: UIView {
     
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         if context == &mycontext {
-            NSLog("\(change![NSKeyValueChangeNewKey])")
+//            NSLog("\(change![NSKeyValueChangeNewKey])")
             switch selectedIndex {
             case 0:
                 linkBtn.selected = true;

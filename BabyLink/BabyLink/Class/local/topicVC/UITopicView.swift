@@ -36,6 +36,7 @@ class UITopicView: UIView ,UITableViewDelegate,UITableViewDataSource,UITalkComme
     
     
     func refreshListData(){
+        mainTabBar.getNums();
         self.page = 1;
         self.getListData();
     }
@@ -86,7 +87,7 @@ class UITopicView: UIView ,UITableViewDelegate,UITableViewDataSource,UITalkComme
                     }
                     self.dataArray.addObject(talk);
                 }
-                self.listTableView.reloadData()
+                self.listTableView.reloadData();
             }else {
                 let datas = dic["datas"] as! String;
                 SVProgressHUD.showErrorWithStatus(datas);

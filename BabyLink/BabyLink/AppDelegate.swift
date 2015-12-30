@@ -36,6 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
 
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+        
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
@@ -74,7 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
         WXApi.handleOpenURL(url, delegate: self)
         AlipaySDK.defaultService().processOrderWithPaymentResult(url) { (result) -> Void in
-            NSLog("reslut back = %@",result);
+            NSLog("result back = %@",result);
             let resultStatus = result["resultStatus"] as! NSInteger
             let success = result["success"] as! Bool
             if resultStatus == 9000 && success {
@@ -123,7 +124,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
             nav.setNavigationBarStyleLight();
             self.window?.rootViewController = nav
         } else {
-            let enterVC = UIEnterViewController(nibName: "UIEnterViewController", bundle: NSBundle.mainBundle());
+            let enterVC = UILoginViewController(nibName: "UILoginViewController", bundle: NSBundle.mainBundle());
             let nav = UIBaseNavViewController(rootViewController: enterVC);
             nav.setNavigationBarStyleDark();
             self.window?.rootViewController = nav
@@ -187,6 +188,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
         userDefault.setObject(NSUserInfo.shareInstance().member_name, forKey: MEMBER_NAME);
         userDefault.setObject(NSUserInfo.shareInstance().member_avar, forKey: MEMBER_AVAR);
         userDefault.setObject(NSUserInfo.shareInstance().home, forKey: HOME);
+        userDefault.setObject(NSUserInfo.shareInstance().home2, forKey: HOME2);
         userDefault.setObject(NSUserInfo.shareInstance().add_time, forKey: ADD_TIME);
         userDefault.setObject(NSUserInfo.shareInstance().login_time, forKey: LOGIN_TIME);
         userDefault.setObject(NSUserInfo.shareInstance().baby_sex, forKey: BABY_SEX);

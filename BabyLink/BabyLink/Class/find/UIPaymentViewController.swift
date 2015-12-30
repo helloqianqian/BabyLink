@@ -109,13 +109,13 @@ class UIPaymentViewController: UIBaseViewController,UIAlertViewDelegate{
                     let privateKey = "MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAOQ6XhqQY6Kh2Di6VN6EOaKMV/uLfWMRUJcFMeEOfkQRKqvD47tM0NnEFR+BMRWkcItPqGXqECWHXBW3TiSB9TtwuePT2fAXvXjlQrrmXDd35ItcuPdqyejChxvQiZtcyfJEwQgHyxFoP29P1tmaqDhcqaJhbhdBjaj7tr5QGcbtAgMBAAECgYEArfUzPyopV4/nAC4+fDDqwVQZx9jlpLpQ5BuIjlN+uKEhFjVEgsIlOqcztoTBhg6F3hnEcJH85q4K6V6DyF3qLYime/hRQhcnB/gmCaEpkZdKyZYCod9bFyR0ZijARfi09Fm1eGsYzeoF88dAlDqJ2qd2b5T8xnDs0jqLUtnV+f0CQQD6K6VeN6a4dWArYryicj5oWtm/cgggc1t+DCNfQfJz6jGbXPrrdYmCYsu2XIEmdEFtXaZ0t8f3OpDz2zV59rNrAkEA6YvTtzhdYztz+kdM6OLMplVr2exNjRwKCzPe6O6Tlyyw8MKMDKvo2u5rBo7NI+l8EM1qjppxo22uPgoXacddBwJBAJ/MHVdvaNlOcF2GNkP1gZOa5Jf7OOGxjfGXw0hnkX0lTQaWf9jDPVDB1qnnsL9lZx16woavldV/3XNGxIPhZ30CQBh7VehA+lkqpE+6Ja/MBpPxJGslwENoiwz9lQJp8ALK5ol2e2PgqXo5v/JiCdMX6K+COQdV3U+6caeDO00VXwUCQGU1CAFX2YTaj3jKbyyEf2TRjW2uYHTQc6ky4+/s8Z3I+jh/iOKTt6BfmlWaci7M3waWfU2cUSDCuO7JYdSGOrg=";
                     
                     let orderSpec = "partner=\""+partner+"\"&seller_id=\""+seller_id+"\"&out_trade_no=\""+out_trade_no+"\"&subject=\""+subject+"\"&body=\""+body+"\"&total_fee=\""+total_fee+"\"&notify_url=\""+notify_url+"\"&service=\"mobile.securitypay.pay\""+"&payment_type=\"1\""+"&_input_charset=\"utf-8\""+"&it_b_pay=\"30m\""+"&show_url=\"m.alipay.com\""
-                    NSLog("orderSpec:%@",orderSpec);
+//                    NSLog("orderSpec:%@",orderSpec);
                     
                     let signer:DataSigner = CreateRSADataSigner(privateKey);
                     let signedStr = signer.signString(orderSpec);
                     let orderStr = "\(orderSpec)&sign=\"\(signedStr)\"&sign_type=\"RSA\""
                     AlipaySDK.defaultService().payOrder(orderStr, fromScheme: "openBabyLink", callback: { (result) -> Void in
-                        NSLog("reslut = %@",result);
+//                        NSLog("reslut = %@",result);
                         let resultStatus = result["resultStatus"] as! String
                         if resultStatus == "9000" {
                             let alert = UIAlertView(title:nil, message: "支付结果：成功！\n请到我的订单中查看", delegate: self, cancelButtonTitle: "确定");

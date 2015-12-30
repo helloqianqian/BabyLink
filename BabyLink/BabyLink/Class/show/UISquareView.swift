@@ -54,8 +54,8 @@ class UISquareView: UIView ,UITableViewDelegate,UITableViewDataSource,UMSocialUI
                     talk.setValuesForKeysWithDictionary(data as! [String : AnyObject]);
                     let info = data["info"] as! NSString;
                     let font:UIFont = UIFont.systemFontOfSize(14);
-                    let size = info.sizeWithConstrainedToWidth(Float(MainScreenWidth-42), fromFont:font, lineSpace: 2.5);
-                    talk.infoHeight = size.height+3;
+                    let size = info.sizeWithConstrainedToWidth(Float(MainScreenWidth-36), fromFont:font, lineSpace: 3);
+                    talk.infoHeight = size.height+15;
                     
                     let commends = data["commend_list"] as! NSArray;
                     for comment in commends {
@@ -69,9 +69,27 @@ class UISquareView: UIView ,UITableViewDelegate,UITableViewDataSource,UMSocialUI
                         aZan.setValuesForKeysWithDictionary(zan as! [String : AnyObject]);
                         talk.zans.addObject(aZan);
                     }
+                    
+                    let count = talk.zans.count;
+                    var per = 0
+                    if iphone6Plus {
+                        per = 13;
+                    } else if iphone6 {
+                        per = 12;
+                    } else {
+                        per=10;
+                    }
+                    var hang = count/per;
+                    let left = count%per;
+                    if left>0 || hang == 0{
+                        hang+=1;
+                    }
+                    talk.zanHeight = CGFloat(hang*26);
+                    
                     self.dataArray.addObject(talk);
                 }
                 self.listTableView.reloadData()
+                mainTabBar.getNums();
             }else {
                 let datas = dic["datas"] as! String;
                 SVProgressHUD.showErrorWithStatus(datas);
@@ -91,6 +109,15 @@ class UISquareView: UIView ,UITableViewDelegate,UITableViewDataSource,UMSocialUI
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("UIShowTableViewCellIdentifier", forIndexPath: indexPath) as! UIShowTableViewCell;
+        
+        for itemView in cell.subviews {
+            if itemView.isKindOfClass(UIShowItemView){
+                (itemView as! UIShowItemView).stopAnimation();
+                itemView.removeFromSuperview();
+            }
+        }
+        
+        
         let xiu = self.dataArray[indexPath.row] as! NSXiu;
         cell.setContentDataFromSqu(xiu);
         cell.zanBtn.tag = indexPath.row;
@@ -107,40 +134,31 @@ class UISquareView: UIView ,UITableViewDelegate,UITableViewDataSource,UMSocialUI
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let xiu = self.dataArray[indexPath.row] as! NSXiu;
-        
-        var height:CGFloat = 120;
-        let count = xiu.zans.count;
-        var per = 0
-        if iphone6Plus {
-            height+=388;
-            per = 13;
-        } else if iphone6 {
-            height+=349
-            per = 12;
-        } else {
-            height+=294;
-            per=10;
-        }
-        var hang = count/per;
-        let left = count%per;
-        if left>0 || hang == 0{
-            hang+=1;
-        }
-        return height + CGFloat(hang*26) + xiu.infoHeight;
+        return xiu.cellHeight + xiu.zanHeight + xiu.infoHeight + 20;
     }
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath){
-        NSLog("willDisplayCell:\(indexPath.row)")
+//        NSLog("willDisplayCell:\(indexPath.row)")
         let xiu = self.dataArray[indexPath.row] as! NSXiu;
         for var i=0 ;i<xiu.commends.count; i++ {
             //13........13
             let aComment = xiu.commends[i] as! NSXiuComment;
             let tipView = NSBundle.mainBundle().loadNibNamed("UIShowItemView", owner: nil, options: nil).first as! UIShowItemView;
-            tipView.tag = 1000+i;
             cell.addSubview(tipView);
             tipView.contentLabel.text = aComment.info;
             let size = tipView.contentLabel.sizeThatFits(CGSizeMake(100, 100));
-            tipView.frame = CGRectMake(13 + (MainScreenWidth-13)*aComment.position_x, 55+(MainScreenWidth-13)*aComment.position_y, size.width+48, size.height+16);
+            
+            let x = (MainScreenWidth-26)*aComment.position_x;
+            let y = (MainScreenWidth-26)*aComment.position_y;
+            
+            var frame = CGRectMake(13+x, 58+y, size.width+48, size.height+16);
+            if x + size.width + 48 > MainScreenWidth-26 {
+                frame.origin.x = 13 + MainScreenWidth - size.width - 74;
+            }
+            if y + size.height + 16 > MainScreenWidth-26 {
+                frame.origin.y = 58 + MainScreenWidth - size.height - 42
+            }
+            tipView.frame = frame;
             tipView.headIcon.sd_setImageWithURL(NSURL(string: aComment.member_avar), placeholderImage: UIImage(named: "morentoux"))
             tipView.start();
         }
@@ -148,14 +166,11 @@ class UISquareView: UIView ,UITableViewDelegate,UITableViewDataSource,UMSocialUI
     
     
     func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        NSLog("didEndDisplayingCell:\(indexPath.row)")
-        let xiu = self.dataArray[indexPath.row] as! NSXiu;
-        for var i=0 ;i<xiu.commends.count; i++ {
-            var subview = cell.viewWithTag(1000+i);
-            if subview != nil {
-                (subview as! UIShowItemView).stopAnimation();
-                subview?.removeFromSuperview();
-                subview = nil;
+//        NSLog("didEndDisplayingCell:\(indexPath.row)")
+        for itemView in cell.subviews {
+            if itemView.isKindOfClass(UIShowItemView){
+                (itemView as! UIShowItemView).stopAnimation();
+                itemView.removeFromSuperview();
             }
         }
     }

@@ -46,8 +46,7 @@ class UIFinalPayTableViewCell: UITableViewCell {
     func setListContentData(order:NSOrder){
         centerIcon.sd_setImageWithURL(NSURL(string: order.good.image_url), placeholderImage: nil)
         centerName.text = order.good.goods_name;
-        finalPriceLabel.text = "定价：￥\(order.good.goods_price)";
-        payPriceLabel.text = "已付：￥\(order.good.goods_dingjin)"
+        finalPriceLabel.text = "定价:￥\(order.good.goods_price)";
         
         payBtn.makeBackGroundColor_Gray();
         payBtn.enabled = false;
@@ -58,9 +57,11 @@ class UIFinalPayTableViewCell: UITableViewCell {
         }
         if order.refund_status == 0 {
             //定金
+            payPriceLabel.text = "订金:￥\(order.good.goods_dingjin)"
             weifukuanLabel.text = "已退订金"
             leftPriceLabel.text = "￥\(order.good.goods_dingjin)";
         } else {
+            payPriceLabel.text = "订金:￥\(order.good.goods_dingjin) 尾款:￥\(order.good.goods_weikuan)"
             weifukuanLabel.text = "已退尾款"
             leftPriceLabel.text = "￥\(order.good.goods_weikuan)";
         }

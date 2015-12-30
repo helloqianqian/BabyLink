@@ -46,6 +46,14 @@ static NSUserInfo * sharedInstance = nil;
         _login_time = @"";
         
         _home2 = @"";
+        
+        _activity_num = @"0";
+        _code_num = @"";
+        _exchange_num = @"0";
+        _sum_num = @"0";
+        _talk_num = @"0";
+        _wei_num = @"";
+        _xiu_num = @"0";
     }
     return self;
 }

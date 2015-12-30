@@ -40,21 +40,19 @@ class MyActivityViewController: UIBaseViewController ,UITableViewDelegate,UITabl
             reloadMyJoinActList = false;
             self.loadContentData(true);
         }
+        self.listTableView.reloadData()
     }
     
     
     func loadContentData(force:Bool) {
+        self.listTableView.reloadData();
         if self.contentType == 0 {
             if dataArray.count == 0 || force {
                 self.listTableView.header.beginRefreshing()
-            } else {
-                self.listTableView.reloadData();
             }
         } else {
             if otherArray.count == 0 || force {
                 self.listTableView.header.beginRefreshing()
-            } else {
-                self.listTableView.reloadData();
             }
         }
     }
@@ -127,10 +125,10 @@ class MyActivityViewController: UIBaseViewController ,UITableViewDelegate,UITabl
         let cell = tableView.dequeueReusableCellWithIdentifier("UIMyActTableViewCellIdentifier", forIndexPath: indexPath) as! UIMyActTableViewCell;
         if contentType == 0 {
             let model = self.dataArray[indexPath.row] as! NSActListObject;
-            cell.setActivityData(model);
+            cell.setActivityData(model ,tag:false);
         } else {
             let model = self.otherArray[indexPath.row] as! NSActListObject;
-            cell.setActivityData(model);
+            cell.setActivityData(model,tag:true);
         }
         return cell;
     }
@@ -140,6 +138,8 @@ class MyActivityViewController: UIBaseViewController ,UITableViewDelegate,UITabl
         
         if contentType == 0 {
             let model = self.dataArray[indexPath.row] as! NSActListObject;
+            model.commend_num = "0";
+            model.log_num = "0";
             infoVC.activityID = model.activity_id;
             infoVC.sourceFrom = 1;
         } else {
@@ -152,9 +152,6 @@ class MyActivityViewController: UIBaseViewController ,UITableViewDelegate,UITabl
         }
         self.navigationController?.pushViewController(infoVC, animated: true);
     }
-    
-    
-    
 
     @IBAction func otherlist(sender: UIButton) {
         if !sender.selected {

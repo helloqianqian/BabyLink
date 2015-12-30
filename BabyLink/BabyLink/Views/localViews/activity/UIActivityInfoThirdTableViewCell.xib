@@ -18,7 +18,7 @@
                         <rect key="frame" x="3" y="3" width="314" height="293.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="参与人数（12人）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hna-6h-u0c">
-                                <rect key="frame" x="12" y="8" width="252" height="14"/>
+                                <rect key="frame" x="12" y="8" width="195" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="14" id="Qkr-dc-hBj"/>
                                 </constraints>
@@ -33,6 +33,24 @@
                                     <constraint firstAttribute="height" constant="1" id="Q3s-Uh-6zc"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMV-nf-6Fd">
+                                <rect key="frame" x="207" y="0.0" width="107" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="107" id="eXG-CS-JbN"/>
+                                    <constraint firstAttribute="height" constant="30" id="pSA-m8-Hex"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="查看详情">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="箭头" translatesAutoresizingMaskIntoConstraints="NO" id="AST-7e-5ll">
+                                <rect key="frame" x="289" y="7" width="10" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="nxw-DW-24B"/>
+                                    <constraint firstAttribute="width" constant="10" id="xs2-T2-GT7"/>
+                                </constraints>
+                            </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="2ST-Ia-y5k">
                                 <rect key="frame" x="20" y="39" width="274" height="230"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -43,26 +61,20 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMV-nf-6Fd">
-                                <rect key="frame" x="274" y="0.5" width="40" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="eXG-CS-JbN"/>
-                                    <constraint firstAttribute="height" constant="30" id="pSA-m8-Hex"/>
-                                </constraints>
-                                <state key="normal" image="箭头"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="2ST-Ia-y5k" firstAttribute="top" secondItem="Izw-KV-I20" secondAttribute="bottom" constant="8" id="51B-L2-484"/>
                             <constraint firstAttribute="trailing" secondItem="Izw-KV-I20" secondAttribute="trailing" constant="5" id="9Sf-wh-hUi"/>
+                            <constraint firstItem="bMV-nf-6Fd" firstAttribute="leading" secondItem="hna-6h-u0c" secondAttribute="trailing" id="CXL-td-GSN"/>
                             <constraint firstItem="Izw-KV-I20" firstAttribute="leading" secondItem="R9T-XV-9qs" secondAttribute="leading" constant="5" id="Efv-Xf-XM8"/>
                             <constraint firstItem="2ST-Ia-y5k" firstAttribute="centerX" secondItem="R9T-XV-9qs" secondAttribute="centerX" id="EzS-39-E22"/>
                             <constraint firstItem="Izw-KV-I20" firstAttribute="top" secondItem="hna-6h-u0c" secondAttribute="bottom" constant="8" id="GKN-df-r6N"/>
+                            <constraint firstAttribute="trailing" secondItem="AST-7e-5ll" secondAttribute="trailing" constant="15" id="NSL-tC-pDG"/>
+                            <constraint firstItem="AST-7e-5ll" firstAttribute="centerY" secondItem="hna-6h-u0c" secondAttribute="centerY" id="Prd-sd-1vw"/>
                             <constraint firstItem="bMV-nf-6Fd" firstAttribute="centerY" secondItem="hna-6h-u0c" secondAttribute="centerY" id="RFd-JU-VTS"/>
                             <constraint firstItem="hna-6h-u0c" firstAttribute="leading" secondItem="R9T-XV-9qs" secondAttribute="leading" constant="12" id="bl8-BU-GOI"/>
                             <constraint firstAttribute="trailing" secondItem="bMV-nf-6Fd" secondAttribute="trailing" id="jNF-f2-Cb8"/>
-                            <constraint firstAttribute="trailing" secondItem="hna-6h-u0c" secondAttribute="trailing" constant="50" id="mWL-35-UpL"/>
                             <constraint firstItem="2ST-Ia-y5k" firstAttribute="leading" secondItem="R9T-XV-9qs" secondAttribute="leading" constant="20" id="nba-hf-InP"/>
                             <constraint firstAttribute="bottom" secondItem="2ST-Ia-y5k" secondAttribute="bottom" constant="25" id="uBZ-1Z-26C"/>
                             <constraint firstItem="hna-6h-u0c" firstAttribute="top" secondItem="R9T-XV-9qs" secondAttribute="top" constant="8" id="v9k-P3-fOO"/>
@@ -83,7 +95,7 @@
                 <outlet property="joinCollectionView" destination="2ST-Ia-y5k" id="6Qe-dq-REt"/>
                 <outlet property="joinNumLabel" destination="hna-6h-u0c" id="V9e-zd-sZZ"/>
             </connections>
-            <point key="canvasLocation" x="-115" y="213"/>
+            <point key="canvasLocation" x="-264" y="212"/>
         </tableViewCell>
     </objects>
     <resources>

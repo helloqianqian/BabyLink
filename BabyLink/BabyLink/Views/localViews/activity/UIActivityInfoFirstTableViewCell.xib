@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -20,14 +20,12 @@
                         <rect key="frame" x="3" y="3" width="369" height="409.5"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CHe-SC-chf">
-                                <rect key="frame" x="5" y="5" width="359" height="179.5"/>
+                                <rect key="frame" x="5" y="5" width="359" height="179"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ybF-bc-QYD">
-                                        <rect key="frame" x="0.0" y="0.0" width="359" height="179.5"/>
-                                        <animations/>
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="179"/>
                                     </imageView>
                                 </subviews>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="CHe-SC-chf" secondAttribute="height" multiplier="2:1" constant="1" id="7TV-98-w7Z"/>
@@ -38,17 +36,15 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vcg-Lo-UQH">
-                                <rect key="frame" x="0.0" y="147" width="369" height="37"/>
+                                <rect key="frame" x="0.0" y="146.5" width="369" height="37"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="周末去烧烤" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xGB-14-5mW">
                                         <rect key="frame" x="20" y="0.0" width="349" height="37"/>
-                                        <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.40000000000000002" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="xGB-14-5mW" secondAttribute="bottom" id="ETb-MD-U12"/>
@@ -58,8 +54,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="活动地点：门头沟" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kd5-4v-e2o">
-                                <rect key="frame" x="28" y="199.5" width="228" height="14"/>
-                                <animations/>
+                                <rect key="frame" x="28" y="199" width="228" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="14" id="PJI-Ft-dPS"/>
                                 </constraints>
@@ -68,79 +63,68 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="活动时间：2015/12/31 09:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5QN-XE-mlX">
-                                <rect key="frame" x="28" y="218.5" width="228" height="14"/>
-                                <animations/>
+                                <rect key="frame" x="28" y="218" width="267" height="14"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上限人数：15人" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mom-Ql-Mhs">
-                                <rect key="frame" x="28" y="238.5" width="228" height="14"/>
-                                <animations/>
+                                <rect key="frame" x="28" y="238" width="255" height="14"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="报名人数：12人" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2C-SR-YSu">
-                                <rect key="frame" x="28" y="258.5" width="228" height="14"/>
-                                <animations/>
+                                <rect key="frame" x="28" y="258" width="228" height="14"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="报名费用：￥100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haQ-iJ-Moi">
-                                <rect key="frame" x="28" y="278.5" width="228" height="14"/>
-                                <animations/>
+                                <rect key="frame" x="28" y="278" width="228" height="14"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="支付方式：线下收取" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbW-X7-BJR">
-                                <rect key="frame" x="28" y="298.5" width="228" height="14"/>
-                                <animations/>
+                                <rect key="frame" x="28" y="298" width="228" height="14"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="集合地方：XXXX小区门口" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qhJ-hd-9p1">
-                                <rect key="frame" x="28" y="318.5" width="312" height="14"/>
-                                <animations/>
+                                <rect key="frame" x="28" y="318" width="312" height="14"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="交通工具：自驾游" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0t5-pX-Ux2">
-                                <rect key="frame" x="28" y="338.5" width="312" height="14"/>
-                                <animations/>
+                                <rect key="frame" x="28" y="338" width="312" height="14"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="联系人：李某某" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZn-sd-Y2G">
-                                <rect key="frame" x="28" y="358.5" width="312" height="14"/>
-                                <animations/>
+                                <rect key="frame" x="28" y="358" width="312" height="14"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="联系电话：13292827625" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkk-t9-GRW">
-                                <rect key="frame" x="28" y="378.5" width="312" height="14"/>
-                                <animations/>
+                                <rect key="frame" x="28" y="378" width="312" height="14"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jnm-o6-Urv">
-                                <rect key="frame" x="305" y="199.5" width="35" height="35"/>
-                                <animations/>
+                                <rect key="frame" x="305" y="199" width="35" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="mNb-mX-CMr"/>
                                     <constraint firstAttribute="width" constant="35" id="v5b-Q6-uOc"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小阿狸" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VcE-Sf-bec">
-                                <rect key="frame" x="285" y="242.5" width="76" height="14"/>
-                                <animations/>
+                                <rect key="frame" x="285" y="242" width="76" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="14" id="nq8-jQ-8ez"/>
                                 </constraints>
@@ -149,7 +133,6 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="qhJ-hd-9p1" firstAttribute="height" secondItem="Kd5-4v-e2o" secondAttribute="height" id="0vS-ir-XJD"/>
@@ -159,6 +142,7 @@
                             <constraint firstItem="bkk-t9-GRW" firstAttribute="trailing" secondItem="qhJ-hd-9p1" secondAttribute="trailing" id="5Wm-Mc-WrU"/>
                             <constraint firstItem="o2C-SR-YSu" firstAttribute="trailing" secondItem="Kd5-4v-e2o" secondAttribute="trailing" id="6SA-KW-76q"/>
                             <constraint firstItem="bkk-t9-GRW" firstAttribute="top" secondItem="bZn-sd-Y2G" secondAttribute="bottom" constant="6" id="96x-mQ-PH3"/>
+                            <constraint firstItem="VcE-Sf-bec" firstAttribute="leading" secondItem="mom-Ql-Mhs" secondAttribute="trailing" constant="2" id="BHO-NM-5xM"/>
                             <constraint firstItem="5QN-XE-mlX" firstAttribute="top" secondItem="Kd5-4v-e2o" secondAttribute="bottom" constant="5" id="Dfp-EM-Qk9"/>
                             <constraint firstAttribute="trailing" secondItem="CHe-SC-chf" secondAttribute="trailing" constant="5" id="DrT-Ix-IA1"/>
                             <constraint firstItem="Kd5-4v-e2o" firstAttribute="leading" secondItem="vLW-0V-p62" secondAttribute="leading" constant="28" id="EYV-Ae-h6T"/>
@@ -186,6 +170,7 @@
                             <constraint firstItem="bkk-t9-GRW" firstAttribute="leading" secondItem="qhJ-hd-9p1" secondAttribute="leading" id="fkW-3F-NXe"/>
                             <constraint firstItem="qhJ-hd-9p1" firstAttribute="leading" secondItem="Kd5-4v-e2o" secondAttribute="leading" id="glP-ZG-Iwu"/>
                             <constraint firstItem="5QN-XE-mlX" firstAttribute="height" secondItem="Kd5-4v-e2o" secondAttribute="height" id="hFH-DW-M4Z"/>
+                            <constraint firstItem="Jnm-o6-Urv" firstAttribute="leading" secondItem="5QN-XE-mlX" secondAttribute="trailing" constant="10" id="m6r-Ke-6je"/>
                             <constraint firstItem="Kd5-4v-e2o" firstAttribute="top" secondItem="vcg-Lo-UQH" secondAttribute="bottom" constant="15" id="mFE-8n-X5Y"/>
                             <constraint firstItem="mom-Ql-Mhs" firstAttribute="height" secondItem="Kd5-4v-e2o" secondAttribute="height" id="mLe-Wz-rU2"/>
                             <constraint firstItem="bkk-t9-GRW" firstAttribute="height" secondItem="qhJ-hd-9p1" secondAttribute="height" id="olu-vw-s7N"/>
@@ -204,9 +189,14 @@
                             <constraint firstItem="CHe-SC-chf" firstAttribute="leading" secondItem="vLW-0V-p62" secondAttribute="leading" constant="5" id="y99-cM-rKR"/>
                             <constraint firstAttribute="trailing" secondItem="VcE-Sf-bec" secondAttribute="trailing" constant="8" id="yHo-aM-Xzk"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="RYG-NO-Ae8"/>
+                                <exclude reference="170-73-rvG"/>
+                            </mask>
+                        </variation>
                     </view>
                 </subviews>
-                <animations/>
                 <color key="backgroundColor" red="0.92941176469999998" green="0.93333333330000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="vLW-0V-p62" secondAttribute="bottom" constant="3" id="0qt-KH-PKs"/>
@@ -215,7 +205,6 @@
                     <constraint firstItem="vLW-0V-p62" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="3" id="zkE-kO-biz"/>
                 </constraints>
             </tableViewCellContentView>
-            <animations/>
             <connections>
                 <outlet property="activityAddressLabel" destination="Kd5-4v-e2o" id="qxI-gZ-HcO"/>
                 <outlet property="activityTime" destination="5QN-XE-mlX" id="nlX-vS-7K0"/>
@@ -233,7 +222,7 @@
                 <outlet property="titleLabel" destination="xGB-14-5mW" id="HDi-Wz-fra"/>
                 <outlet property="toolLabel" destination="0t5-pX-Ux2" id="lnf-Pt-kVG"/>
             </connections>
-            <point key="canvasLocation" x="55.5" y="68"/>
+            <point key="canvasLocation" x="-168.5" y="52"/>
         </tableViewCell>
     </objects>
 </document>

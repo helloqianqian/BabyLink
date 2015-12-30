@@ -36,8 +36,24 @@ class UIShowViewController: UIBaseViewController ,UIShowNavigationViewDelegate{
         //        linkView.delegate = self;
         self.view.addSubview(linkView);
         titleView.selectedIndex = 0;
+        
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "fromBackground", name: UIApplicationDidBecomeActiveNotification, object: nil)
     }
 
+    func fromBackground(){
+        self.reloadTableViewData()
+    }
+    
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self);
+    }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated);
+        self.reloadTableViewData();
+        mainTabBar.getNums();
+    }
+    
     func didSelectedAtIndex(index: Int) {
         switch index {
         case 0:

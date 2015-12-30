@@ -26,6 +26,14 @@
         self.commends = [NSMutableArray array];
         self.zans = [NSMutableArray array];
         self.isZan = false;
+        
+        if (MainScreenWidth == 320) {
+            self.cellHeight = 414;
+        } else if (MainScreenWidth == 375) {
+            self.cellHeight = 469;
+        } else {
+            self.cellHeight = 508;
+        }
     }
     return self;
 }

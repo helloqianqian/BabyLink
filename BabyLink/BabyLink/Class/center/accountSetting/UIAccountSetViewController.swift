@@ -102,10 +102,9 @@ class UIAccountSetViewController: UIBaseViewController ,UIActionSheetDelegate,UI
             let  dic:NSDictionary = info as NSDictionary;
             let  image:UIImage = dic.objectForKey(UIImagePickerControllerEditedImage) as! UIImage;
             let  imageData:NSData = NSHelper.fileOfPressedImage(image, withType: squareType);
-            NSLog("\(imageData.length)")
+//            NSLog("\(imageData.length)")
             self.uploadImageworks(imageData);
         })
-        
     }
     
     
@@ -132,7 +131,7 @@ class UIAccountSetViewController: UIBaseViewController ,UIActionSheetDelegate,UI
             }, withFailure: { (error:AnyObject!) -> Void in
                 SVProgressHUD.showErrorWithStatus("上传失败");
             }) { (progress:Float) -> Void in
-                NSLog("progress:\(progress)")
+//                NSLog("progress:\(progress)")
         }
     }
     
@@ -159,6 +158,8 @@ class UIAccountSetViewController: UIBaseViewController ,UIActionSheetDelegate,UI
         self.navigationController?.pushViewController(nicknameVC, animated: true);
     }
     @IBAction func quite(sender: UIButton) {
+        
+        mainTabBar.localView.activityView.headView.removeTimer();
         appDelegate.logoutLastLoginUser()
         appDelegate.exchangeRootViewController(false)
     }

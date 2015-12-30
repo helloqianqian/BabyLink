@@ -80,7 +80,6 @@ class UICreateANViewController: UIBaseViewController ,UITextViewDelegate,UIActio
         let array:NSMutableArray = NSMutableArray(array: self.paramArray);
         array.addObjectsFromArray([is_help,self.needTextView.text,introLabel.text,image,NSUserInfo.shareInstance().member_id]);
         let dicParam:NSDictionary = NSDictionary(objects: array as [AnyObject] , forKeys: ["title","activity_address","end_time","jihe_time","jihe_address","max_man","price","pay_way","utils","link_name","link_mobile","is_help","help","info","images",MEMBER_ID]);
-        NSLog("______\(dicParam)")
         NSHttpHelp.httpHelpWithUrlTpye(addActType, withParam: dicParam, withResult: { (returnObject:AnyObject!) -> Void in
             let dic = returnObject as! NSDictionary;
             let code = dic["code"] as! NSInteger;
@@ -103,17 +102,15 @@ class UICreateANViewController: UIBaseViewController ,UITextViewDelegate,UIActio
             if code == 0 {
                 //发送成功
                 let datas = result["datas"] as! String;
-                NSLog("图片上传成功：：：：\(datas)")
                 self.createActivity(datas);
             } else {
                 let datas = result["datas"] as! String;
-                NSLog("图片上传失败：：：：\(datas)")
                 SVProgressHUD.showErrorWithStatus(datas);
             }
             }, withFailure: { (error:AnyObject!) -> Void in
                 SVProgressHUD.showErrorWithStatus("上传失败");
             }) { (progress:Float) -> Void in
-                NSLog("progress:\(progress)")
+//                NSLog("progress:\(progress)")
         }
     }
     

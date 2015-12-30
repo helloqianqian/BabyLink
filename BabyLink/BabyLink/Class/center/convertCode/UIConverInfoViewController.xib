@@ -105,6 +105,7 @@
                         <constraint firstItem="PYE-BW-lQV" firstAttribute="top" secondItem="srL-EB-Q7K" secondAttribute="top" constant="15" id="c9E-3k-Coh"/>
                         <constraint firstItem="w8D-PV-ewn" firstAttribute="top" secondItem="mHT-Vz-ZuK" secondAttribute="bottom" constant="23" id="gDH-JI-vFe"/>
                         <constraint firstItem="0Oq-AK-PcR" firstAttribute="leading" secondItem="srL-EB-Q7K" secondAttribute="leading" constant="10" id="gYZ-98-EI1"/>
+                        <constraint firstItem="w8D-PV-ewn" firstAttribute="leading" secondItem="V84-2I-RhZ" secondAttribute="trailing" constant="-51" id="h3h-lB-azo"/>
                         <constraint firstItem="XXe-Nz-3ub" firstAttribute="top" secondItem="PYE-BW-lQV" secondAttribute="bottom" constant="7" id="iNf-CG-3jT"/>
                         <constraint firstAttribute="trailing" secondItem="mHT-Vz-ZuK" secondAttribute="trailing" constant="10" id="jSf-uz-Jrf"/>
                         <constraint firstItem="KFN-xp-PxP" firstAttribute="top" secondItem="srL-EB-Q7K" secondAttribute="top" constant="30" id="khi-sG-0bV"/>
@@ -113,9 +114,16 @@
                         <constraint firstItem="mHT-Vz-ZuK" firstAttribute="centerY" secondItem="Xjo-VE-udw" secondAttribute="centerY" id="p6j-1y-bfc"/>
                         <constraint firstItem="Xjo-VE-udw" firstAttribute="top" secondItem="0Oq-AK-PcR" secondAttribute="bottom" constant="19.5" id="qrV-B2-xcv"/>
                         <constraint firstItem="PYE-BW-lQV" firstAttribute="leading" secondItem="srL-EB-Q7K" secondAttribute="leading" constant="15" id="saV-tO-jHN"/>
+                        <constraint firstItem="V84-2I-RhZ" firstAttribute="top" secondItem="w8D-PV-ewn" secondAttribute="bottom" constant="-58" id="sgE-Jx-e8n"/>
                         <constraint firstItem="KFN-xp-PxP" firstAttribute="leading" secondItem="PYE-BW-lQV" secondAttribute="trailing" constant="15" id="vQU-RA-KFK"/>
                         <constraint firstItem="Xjo-VE-udw" firstAttribute="leading" secondItem="srL-EB-Q7K" secondAttribute="leading" constant="16" id="wrx-EX-RKt"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="RXw-AO-Ddj"/>
+                            <exclude reference="gDH-JI-vFe"/>
+                        </mask>
+                    </variation>
                 </view>
             </subviews>
             <color key="backgroundColor" red="0.92941176469999998" green="0.93333333330000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -125,7 +133,7 @@
                 <constraint firstAttribute="trailing" secondItem="srL-EB-Q7K" secondAttribute="trailing" constant="5" id="WmK-dk-del"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="181" y="122"/>
+            <point key="canvasLocation" x="22" y="99"/>
         </view>
     </objects>
     <resources>

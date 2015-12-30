@@ -35,7 +35,7 @@ class UILocalNavigationView: UIView {
     }
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         if context == &mycontext {
-            NSLog("\(change![NSKeyValueChangeNewKey])")
+//            NSLog("\(change![NSKeyValueChangeNewKey])")
             switch selectedItem {
             case 0:
                 activityTab.selected = true;

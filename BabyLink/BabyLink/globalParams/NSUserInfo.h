@@ -35,8 +35,13 @@
 
 @property (nonatomic,strong)NSString *login_time;
 
-
-
+@property (nonatomic,strong)NSString *activity_num;
+@property (nonatomic,strong)NSString *code_num;
+@property (nonatomic,strong)NSString *exchange_num;
+@property (nonatomic,strong)NSString *sum_num;
+@property (nonatomic,strong)NSString *talk_num;
+@property (nonatomic,strong)NSString *wei_num;
+@property (nonatomic,strong)NSString *xiu_num;
 
 + (instancetype)shareInstance;
 

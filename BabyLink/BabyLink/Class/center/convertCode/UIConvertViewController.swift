@@ -42,41 +42,34 @@ class UIConvertViewController: UIBaseViewController ,UITableViewDelegate,UITable
     func refreshListData(){
         if type == 0 {
             self.page = 1;
+            self.reloadTableData()
         } else {
             self.otherPage = 1;
+            self.reloadTableDataType()
         }
-        self.reloadTableData()
     }
     func getMoreListData(){
         if type == 0 {
             self.page++;
+            self.reloadTableData()
         } else {
             self.otherPage++;
+            self.reloadTableDataType()
         }
-        self.reloadTableData()
     }
     func reloadTableData(){
         var dicParam:NSDictionary!;
-        if type == 0 {
             dicParam = NSDictionary(objects: ["2,4","\(self.page)",NSUserInfo.shareInstance().member_id] , forKeys: ["order_status","page","member_id"]);
-        } else {
-            dicParam = NSDictionary(objects: ["7,8","\(self.otherPage)",NSUserInfo.shareInstance().member_id] , forKeys: ["order_status","page","member_id"]);
-        }
+        
         NSHttpHelp.httpHelpWithUrl(NSHttpModel.getOrderUrl(), withParam: dicParam, withResult: { (result:AnyObject!) -> Void in
             let dic = result as! NSDictionary;
             let code = dic["code"] as! NSInteger;
             if code == 0 {
-                if self.type == 0 {
                     if self.page == 1 {
                         self.dataArray.removeAllObjects();
                     }
-                } else {
-                    if self.otherPage == 1 {
-                        self.otherArray.removeAllObjects();
-                    }
-                }
+               
                 let datas = dic["datas"] as! NSArray
-                if self.type == 0 {
                     for data in datas {
                         let order = NSOrder();
                         order.setValuesForKeysWithDictionary(data as! [String : AnyObject]);
@@ -86,17 +79,7 @@ class UIConvertViewController: UIBaseViewController ,UITableViewDelegate,UITable
                         
                         self.dataArray.addObject(order);
                     }
-                } else {
-                    for data in datas {
-                        let order = NSOrder();
-                        order.setValuesForKeysWithDictionary(data as! [String : AnyObject]);
-                        
-                        let goods = data["goods"];
-                        order.good.setValuesForKeysWithDictionary(goods as! [String : AnyObject]);
-                        
-                        self.otherArray.addObject(order);
-                    }
-                }
+                
                 self.listTableView.reloadData()
             } else {
                 let datas = dic["datas"] as! String;
@@ -109,7 +92,42 @@ class UIConvertViewController: UIBaseViewController ,UITableViewDelegate,UITable
                 self.listTableView.footer.endRefreshing();
         }
     }
-    
+    func reloadTableDataType(){
+        var dicParam:NSDictionary!;
+        
+        dicParam = NSDictionary(objects: ["7,8","\(self.otherPage)",NSUserInfo.shareInstance().member_id] , forKeys: ["order_status","page","member_id"]);
+        
+        NSHttpHelp.httpHelpWithUrl(NSHttpModel.getOrderUrl(), withParam: dicParam, withResult: { (result:AnyObject!) -> Void in
+            let dic = result as! NSDictionary;
+            let code = dic["code"] as! NSInteger;
+            if code == 0 {
+                
+                if self.otherPage == 1 {
+                    self.otherArray.removeAllObjects();
+                }
+                let datas = dic["datas"] as! NSArray
+                for data in datas {
+                    let order = NSOrder();
+                    order.setValuesForKeysWithDictionary(data as! [String : AnyObject]);
+                    
+                    let goods = data["goods"];
+                    order.good.setValuesForKeysWithDictionary(goods as! [String : AnyObject]);
+                    
+                    self.otherArray.addObject(order);
+                }
+                
+                self.listTableView.reloadData()
+            } else {
+                let datas = dic["datas"] as! String;
+                SVProgressHUD.showErrorWithStatus(datas);
+            }
+            self.listTableView.header.endRefreshing();
+            self.listTableView.footer.endRefreshing();
+            }) { (error:AnyObject!) -> Void in
+                self.listTableView.header.endRefreshing();
+                self.listTableView.footer.endRefreshing();
+        }
+    }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         if self.type == 0 {
@@ -143,6 +161,7 @@ class UIConvertViewController: UIBaseViewController ,UITableViewDelegate,UITable
         } else {
             let order = self.otherArray[indexPath.row] as! NSOrder;
             infoVC.order = order;
+            infoVC.type = 1;
         }
         self.navigationController?.pushViewController(infoVC, animated: true);
     }
@@ -163,17 +182,18 @@ class UIConvertViewController: UIBaseViewController ,UITableViewDelegate,UITable
     }
     
     func loadContentData(force:Bool) {
+        self.listTableView.reloadData();
         if self.type == 0 {
             if dataArray.count == 0 || force {
                 self.listTableView.header.beginRefreshing()
-            } else {
-                self.listTableView.reloadData();
+//            } else {
+//                self.listTableView.reloadData();
             }
         } else {
             if otherArray.count == 0 || force {
                 self.listTableView.header.beginRefreshing()
-            } else {
-                self.listTableView.reloadData();
+//            } else {
+//                self.listTableView.reloadData();
             }
         }
     }

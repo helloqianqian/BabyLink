@@ -72,6 +72,8 @@ class UILocalViewController: UIBaseViewController ,UILocalNavigationViewDelegate
                 exchangeView.loadContentData(true, withAnimate: false);
             }
         }
+        
+        mainTabBar.getNums();
     }
     
     //MARK: - UIActivityViewDelegate
@@ -93,6 +95,8 @@ class UILocalViewController: UIBaseViewController ,UILocalNavigationViewDelegate
     }
     func didClickAdImage(adModle:ADModel) {
         let info:UIInfoViewController = UIInfoViewController(nibName:"UIInfoViewController" ,bundle: NSBundle.mainBundle());
+        info.type = 2;
+        info.contentStr = adModle.url;
         info.hidesBottomBarWhenPushed = true;
         self.navigationController?.pushViewController(info, animated: true);
     }
@@ -129,7 +133,6 @@ class UILocalViewController: UIBaseViewController ,UILocalNavigationViewDelegate
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
 
     /*

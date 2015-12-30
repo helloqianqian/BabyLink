@@ -51,87 +51,61 @@ class UIMyOrderListViewController: UIBaseViewController ,UITableViewDelegate,UIT
     func refreshListData(){
         if tabType == 1 {
             self.page = 1;
+            self.reloadTableDataType1()
         } else if tabType == 2{
             self.otherPage = 1;
+            self.reloadTableDataType2()
         } else {
             self.anotherPage = 1;
+            self.reloadTableDataType3()
         }
-        self.reloadTableData()
     }
+    
     func getMoreListData(){
         if tabType == 1 {
             self.page++;
+            self.reloadTableDataType1()
         } else if tabType == 2{
             self.otherPage++;
+            self.reloadTableDataType2()
         } else {
             self.anotherPage++;
+            self.reloadTableDataType3()
         }
-        self.reloadTableData()
     }
     
     func loadContentData(force:Bool) {
+        self.listTableView.reloadData();
         if tabType == 1 {
             if dataArray.count == 0 || force {
                 self.listTableView.header.beginRefreshing()
-            } else {
-                self.listTableView.reloadData();
+//            } else {
+//                self.listTableView.reloadData();
             }
         } else if tabType == 2 {
             if otherArray.count == 0 || force {
                 self.listTableView.header.beginRefreshing()
-            } else {
-                self.listTableView.reloadData();
+//            } else {
+//                self.listTableView.reloadData();
             }
         } else {
             if anotherArray.count == 0 || force {
                 self.listTableView.header.beginRefreshing()
-            } else {
-                self.listTableView.reloadData();
+//            } else {
+//                self.listTableView.reloadData();
             }
         }
     }
     
-    func reloadTableData(){
+    func reloadTableDataType3(){
         var dicParam:NSDictionary!;
-        if tabType == 1 {
-            dicParam = NSDictionary(objects: ["1","\(self.page)",NSUserInfo.shareInstance().member_id] , forKeys: ["order_status","page","member_id"]);
-        } else if tabType == 2{
-            dicParam = NSDictionary(objects: ["2,4,7,8","\(self.otherPage)",NSUserInfo.shareInstance().member_id] , forKeys: ["order_status","page","member_id"]);
-        } else {
-            dicParam = NSDictionary(objects: ["3,6","\(self.anotherPage)",NSUserInfo.shareInstance().member_id] , forKeys: ["order_status","page","member_id"]);
-        }
+        
+        dicParam = NSDictionary(objects: ["3,6","\(self.anotherPage)",NSUserInfo.shareInstance().member_id] , forKeys: ["order_status","page","member_id"]);
         NSHttpHelp.httpHelpWithUrl(NSHttpModel.getOrderUrl(), withParam: dicParam, withResult: { (result:AnyObject!) -> Void in
             let dic = result as! NSDictionary;
             let code = dic["code"] as! NSInteger;
             if code == 0 {
                 let datas = dic["datas"] as! NSArray
-                if self.tabType == 1 {
-                    if self.page == 1 {
-                        self.dataArray.removeAllObjects();
-                    }
-                    for data in datas {
-                        let order = NSOrder();
-                        order.setValuesForKeysWithDictionary(data as! [String : AnyObject]);
-                        
-                        let goods = data["goods"];
-                        order.good.setValuesForKeysWithDictionary(goods as! [String : AnyObject]);
-                        
-                        self.dataArray.addObject(order);
-                    }
-                } else if self.tabType == 2{
-                    if self.otherPage == 1 {
-                        self.otherArray.removeAllObjects();
-                    }
-                    for data in datas {
-                        let order = NSOrder();
-                        order.setValuesForKeysWithDictionary(data as! [String : AnyObject]);
-                        
-                        let goods = data["goods"];
-                        order.good.setValuesForKeysWithDictionary(goods as! [String : AnyObject]);
-                        
-                        self.otherArray.addObject(order);
-                    }
-                } else {
                     if self.anotherPage == 1 {
                         self.anotherArray.removeAllObjects();
                     }
@@ -144,6 +118,38 @@ class UIMyOrderListViewController: UIBaseViewController ,UITableViewDelegate,UIT
                         
                         self.anotherArray.addObject(order);
                     }
+                self.listTableView.reloadData()
+            } else {
+                let datas = dic["datas"] as! String;
+                SVProgressHUD.showErrorWithStatus(datas);
+            }
+            self.listTableView.header.endRefreshing();
+            self.listTableView.footer.endRefreshing();
+            }) { (error:AnyObject!) -> Void in
+                self.listTableView.header.endRefreshing();
+                self.listTableView.footer.endRefreshing();
+        }
+    }
+    
+    func reloadTableDataType1(){
+        var dicParam:NSDictionary!;
+        dicParam = NSDictionary(objects: ["1","\(self.page)",NSUserInfo.shareInstance().member_id] , forKeys: ["order_status","page","member_id"]);
+        NSHttpHelp.httpHelpWithUrl(NSHttpModel.getOrderUrl(), withParam: dicParam, withResult: { (result:AnyObject!) -> Void in
+            let dic = result as! NSDictionary;
+            let code = dic["code"] as! NSInteger;
+            if code == 0 {
+                let datas = dic["datas"] as! NSArray
+                if self.page == 1 {
+                    self.dataArray.removeAllObjects();
+                }
+                for data in datas {
+                    let order = NSOrder();
+                    order.setValuesForKeysWithDictionary(data as! [String : AnyObject]);
+                    
+                    let goods = data["goods"];
+                    order.good.setValuesForKeysWithDictionary(goods as! [String : AnyObject]);
+                    
+                    self.dataArray.addObject(order);
                 }
                 self.listTableView.reloadData()
             } else {
@@ -157,6 +163,44 @@ class UIMyOrderListViewController: UIBaseViewController ,UITableViewDelegate,UIT
                 self.listTableView.footer.endRefreshing();
         }
     }
+    
+    
+    
+    func reloadTableDataType2(){
+        var dicParam:NSDictionary!;
+        dicParam = NSDictionary(objects: ["2,4,7,8","\(self.otherPage)",NSUserInfo.shareInstance().member_id] , forKeys: ["order_status","page","member_id"]);
+        
+        NSHttpHelp.httpHelpWithUrl(NSHttpModel.getOrderUrl(), withParam: dicParam, withResult: { (result:AnyObject!) -> Void in
+            let dic = result as! NSDictionary;
+            let code = dic["code"] as! NSInteger;
+            if code == 0 {
+                let datas = dic["datas"] as! NSArray
+                if self.otherPage == 1 {
+                    self.otherArray.removeAllObjects();
+                }
+                for data in datas {
+                    let order = NSOrder();
+                    order.setValuesForKeysWithDictionary(data as! [String : AnyObject]);
+                    
+                    let goods = data["goods"];
+                    order.good.setValuesForKeysWithDictionary(goods as! [String : AnyObject]);
+                    
+                    self.otherArray.addObject(order);
+                }
+                self.listTableView.reloadData()
+            } else {
+                let datas = dic["datas"] as! String;
+                SVProgressHUD.showErrorWithStatus(datas);
+            }
+            self.listTableView.header.endRefreshing();
+            self.listTableView.footer.endRefreshing();
+            }) { (error:AnyObject!) -> Void in
+                self.listTableView.header.endRefreshing();
+                self.listTableView.footer.endRefreshing();
+        }
+    }
+    
+    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tabType == 1 {
@@ -230,26 +274,65 @@ class UIMyOrderListViewController: UIBaseViewController ,UITableViewDelegate,UIT
         }
     }
     func tuiKuan(sender:UIButton) {
-        var refundType = "1";
-        var order = self.dataArray[sender.tag] as! NSOrder;
-        if tabType == 2 {
-            refundType = "2";
-            order = self.otherArray[sender.tag] as! NSOrder;
-        }
-        SVProgressHUD.showWithMaskType(SVProgressHUDMaskType.Clear)
-        let dicParam = NSDictionary(objects: [refundType,order.order_id,NSUserInfo.shareInstance().member_id] , forKeys: ["type","order_id","member_id"]);
-        NSHttpHelp.httpHelpWithUrl(NSHttpModel.getOrderRefundUrl(), withParam: dicParam, withResult: { (result:AnyObject!) -> Void in
-            let dic = result as! NSDictionary;
-            let code = dic["code"] as! NSInteger;
-            if code == 0 {
-                SVProgressHUD.showSuccessWithStatus("退款申请成功");
-                self.loadContentData(true);
-            } else {
-                let datas = dic["datas"] as! String;
-                SVProgressHUD.showErrorWithStatus(datas);
+        
+        if tabType == 1 {
+            let refundType = "1";
+            let order = self.dataArray[sender.tag] as! NSOrder;
+            SVProgressHUD.showWithMaskType(SVProgressHUDMaskType.Clear)
+            let dicParam = NSDictionary(objects: [refundType,order.order_id,NSUserInfo.shareInstance().member_id] , forKeys: ["type","order_id","member_id"]);
+            NSHttpHelp.httpHelpWithUrl(NSHttpModel.getOrderRefundUrl(), withParam: dicParam, withResult: { (result:AnyObject!) -> Void in
+                let dic = result as! NSDictionary;
+                let code = dic["code"] as! NSInteger;
+                if code == 0 {
+                    SVProgressHUD.showSuccessWithStatus("退款申请成功");
+                    self.loadContentData(true);
+                } else {
+                    let datas = dic["datas"] as! String;
+                    SVProgressHUD.showErrorWithStatus(datas);
+                }
+                }) { (error:AnyObject!) -> Void in
             }
-            }) { (error:AnyObject!) -> Void in
         }
+        
+        
+        if tabType == 2 {
+            let refundType = "2";
+            let order = self.otherArray[sender.tag] as! NSOrder;
+            
+            let weikuan = order.good.goods_weikuan as NSString;
+            if weikuan.floatValue == 0 {
+                SVProgressHUD.showWithMaskType(SVProgressHUDMaskType.Clear)
+                let dicParam = NSDictionary(objects: [order.order_id,NSUserInfo.shareInstance().member_id] , forKeys: ["order_id","member_id"]);
+                NSHttpHelp.httpHelpWithUrl(NSHttpModel.getOrderCancelUrl(), withParam: dicParam, withResult: { (result:AnyObject!) -> Void in
+                    let dic = result as! NSDictionary;
+                    let code = dic["code"] as! NSInteger;
+                    if code == 0 {
+                        SVProgressHUD.showSuccessWithStatus("订单取消成功");
+                        self.loadContentData(true);
+                    } else {
+                        let datas = dic["datas"] as! String;
+                        SVProgressHUD.showErrorWithStatus(datas);
+                    }
+                    }) { (error:AnyObject!) -> Void in
+                }
+                return;
+            }
+            SVProgressHUD.showWithMaskType(SVProgressHUDMaskType.Clear)
+            let dicParam = NSDictionary(objects: [refundType,order.order_id,NSUserInfo.shareInstance().member_id] , forKeys: ["type","order_id","member_id"]);
+            NSHttpHelp.httpHelpWithUrl(NSHttpModel.getOrderRefundUrl(), withParam: dicParam, withResult: { (result:AnyObject!) -> Void in
+                let dic = result as! NSDictionary;
+                let code = dic["code"] as! NSInteger;
+                if code == 0 {
+                    SVProgressHUD.showSuccessWithStatus("退款申请成功");
+                    self.loadContentData(true);
+                } else {
+                    let datas = dic["datas"] as! String;
+                    SVProgressHUD.showErrorWithStatus(datas);
+                }
+                }) { (error:AnyObject!) -> Void in
+            }
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {

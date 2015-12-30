@@ -99,7 +99,6 @@ class UICreateExcViewController: UIBaseViewController ,UITextFieldDelegate,UITex
     
     func createExchange(images:String){
         let dicParam:NSDictionary = NSDictionary(objects: [self.wupinField.text!,self.ewupinField.text!,self.contentText.text,images,NSUserInfo.shareInstance().member_id] , forKeys: ["from_gname","to_gname","info","images",MEMBER_ID]);
-        NSLog("发话题:\(dicParam)")
         NSHttpHelp.httpHelpWithUrlTpye(addExchangeType, withParam: dicParam, withResult: { (returnObject:AnyObject!) -> Void in
             let dic = returnObject as! NSDictionary;
             let code = dic["code"] as! NSInteger;
@@ -122,17 +121,17 @@ class UICreateExcViewController: UIBaseViewController ,UITextFieldDelegate,UITex
             if code == 0 {
                 //发送成功
                 let datas = result["datas"] as! String;
-                NSLog("图片上传成功：：：：\(datas)")
+//                NSLog("图片上传成功：：：：\(datas)")
                 self.createExchange(datas);
             } else {
                 let datas = result["datas"] as! String;
-                NSLog("图片上传失败：：：：\(datas)")
+//                NSLog("图片上传失败：：：：\(datas)")
                 SVProgressHUD.showErrorWithStatus(datas);
             }
             }, withFailure: { (error:AnyObject!) -> Void in
                 SVProgressHUD.showErrorWithStatus("上传失败");
             }) { (progress:Float) -> Void in
-                NSLog("progress:\(progress)")
+//                NSLog("progress:\(progress)")
         }
     }
 
@@ -237,21 +236,16 @@ class UICreateExcViewController: UIBaseViewController ,UITextFieldDelegate,UITex
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         picker.dismissViewControllerAnimated(true, completion: { () -> Void in
-            
             let  dic:NSDictionary = info as NSDictionary;
             let  image:UIImage = dic.objectForKey(UIImagePickerControllerEditedImage) as! UIImage;
             let btn = self.view.viewWithTag(self.imageIndex+1000) as! UIButton;
             btn.setBackgroundImage(image, forState: UIControlState.Normal);
             btn.selected = true;
-            if self.imageArray.count<self.imageIndex+1{
-                self.imageArray.addObject(image);
-                if self.imageIndex<3{
-                    let btn = self.view.viewWithTag(self.imageIndex+1001) as! UIButton;
-                    btn.hidden = false;
-                    btn.selected = false;
-                }
-            } else {
-                self.imageArray.replaceObjectAtIndex(self.imageIndex, withObject: image);
+            self.imageArray.addObject(image);
+            if self.imageIndex<2{
+                let btn = self.view.viewWithTag(self.imageIndex+1001) as! UIButton;
+                btn.hidden = false;
+                btn.selected = false;
             }
         })
     }

@@ -128,17 +128,17 @@ class UICreateTalkViewController: UIBaseViewController ,UITextViewDelegate,UIAct
             if code == 0 {
                 //发送成功
                 let datas = result["datas"] as! String;
-                NSLog("图片上传成功：：：：\(datas)")
+//                NSLog("图片上传成功：：：：\(datas)")
                 self.createAShow(datas);
             } else {
                 let datas = result["datas"] as! String;
-                NSLog("图片上传失败：：：：\(datas)")
+//                NSLog("图片上传失败：：：：\(datas)")
                 SVProgressHUD.showErrorWithStatus(datas);
             }
             }, withFailure: { (error:AnyObject!) -> Void in
                 SVProgressHUD.showErrorWithStatus("上传失败");
             }) { (progress:Float) -> Void in
-                NSLog("progress:\(progress)")
+//                NSLog("progress:\(progress)")
         }
     }
     @IBAction func faceFunction(sender: UIButton) {

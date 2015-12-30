@@ -23,13 +23,13 @@ class UIShowTableViewCell: UITableViewCell ,UICollectionViewDataSource{
     @IBOutlet weak var douBtn: UIButton!
     @IBOutlet weak var shareBtn: UIButton!
     
-    @IBOutlet weak var tipLabel1: UILabel!
-    @IBOutlet weak var tipLabel2: UILabel!
-    @IBOutlet weak var tipLabel3: UILabel!
     @IBOutlet weak var heightOfInfo: NSLayoutConstraint!
+    @IBOutlet weak var heightOfCollection: NSLayoutConstraint!
     
     @IBOutlet weak var zanBtn: UIButton!
     @IBOutlet weak var zanListCollection: UICollectionView!
+    
+//    @IBOutlet weak var showContentView:UIView!
     var xiu:NSXiu!;
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -59,8 +59,12 @@ class UIShowTableViewCell: UITableViewCell ,UICollectionViewDataSource{
         contentImage.sd_setImageWithURL(NSURL(string: link.image_url), placeholderImage: nil);
         numOfDouLabel.text = "\(link.commends.count)逗"
         contentLabel.text = link.info;
-        heightOfInfo.constant = link.infoHeight;
+        let size = contentLabel.sizeThatFits(CGSizeMake(MainScreenWidth-36, 10000))
+        heightOfInfo.constant = size.height+20;
+        link.infoHeight = size.height;
         zanBtn.selected = link.isZan;
+
+        heightOfCollection.constant = link.zanHeight;
         
         zanListCollection.reloadData()
     }
@@ -73,7 +77,9 @@ class UIShowTableViewCell: UITableViewCell ,UICollectionViewDataSource{
         contentImage.sd_setImageWithURL(NSURL(string: square.image_url), placeholderImage: nil);
         numOfDouLabel.text = "\(square.commends.count)逗"
         contentLabel.text = square.info;
-        heightOfInfo.constant = square.infoHeight;
+        let size = contentLabel.sizeThatFits(CGSizeMake(MainScreenWidth-36, 10000))
+        heightOfInfo.constant = size.height+20;
+        square.infoHeight = size.height;
         zanBtn.selected = square.isZan;
         
         zanListCollection.reloadData()

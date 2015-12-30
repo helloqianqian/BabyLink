@@ -63,7 +63,7 @@ class UIFindInfoViewController: UIBaseViewController ,UITableViewDelegate,UITabl
                         ad.cover = url as! String
                         self.infoModel.imagesAD.addObject(ad);
                     }
-                    self.headView.setupSubviews(self.infoModel.imagesAD);
+                    self.headView.setupSubviews(self.infoModel.imagesAD,tag: false);
                 }
                 let  font:UIFont = UIFont.systemFontOfSize(14);
                 let content = self.infoModel.mark as NSString;
@@ -92,7 +92,7 @@ class UIFindInfoViewController: UIBaseViewController ,UITableViewDelegate,UITabl
             return cell;
         case 1:
             let cell = tableView.dequeueReusableCellWithIdentifier("UIFindInfoSecondTableViewCellIdentifier", forIndexPath: indexPath) as! UIFindInfoSecondTableViewCell;
-            cell.spreadBtn.addTarget(self, action: "spreadInviteCell:", forControlEvents: UIControlEvents.TouchUpInside)
+//            cell.spreadBtn.addTarget(self, action: "spreadInviteCell:", forControlEvents: UIControlEvents.TouchUpInside)
             cell.inviteBtn.addTarget(self, action: "inviteNeighbor:", forControlEvents: UIControlEvents.TouchUpInside);
     
             cell.qqFriends.tag = 1;
@@ -108,10 +108,10 @@ class UIFindInfoViewController: UIBaseViewController ,UITableViewDelegate,UITabl
             return cell;
         case 2:
             let cell = tableView.dequeueReusableCellWithIdentifier("UIFindInfoThirdTableViewCellIdentifier", forIndexPath: indexPath) as! UIFindInfoThirdTableViewCell;
-            
             return cell;
         case 3:
             let cell = tableView.dequeueReusableCellWithIdentifier("UIFindInfoForthTableViewCellIdentifier", forIndexPath: indexPath) as! UIFindInfoForthTableViewCell;
+            cell.setContentData(infoModel);
             return cell;
         case 4:
             let cell = tableView.dequeueReusableCellWithIdentifier("UIFindInfoFifthTableViewCellIdentifier", forIndexPath: indexPath) as! UIFindInfoFifithTableViewCell;
@@ -166,6 +166,8 @@ class UIFindInfoViewController: UIBaseViewController ,UITableViewDelegate,UITabl
         if indexPath.row == 2 {
             //商品详情
             let info:UIInfoViewController = UIInfoViewController(nibName:"UIInfoViewController" ,bundle: NSBundle.mainBundle());
+            info.type = 1;
+            info.contentStr = self.infoModel.info;
             self.navigationController?.pushViewController(info, animated: true);
         }
     }

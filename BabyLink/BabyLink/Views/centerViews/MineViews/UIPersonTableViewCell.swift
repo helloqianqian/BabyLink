@@ -38,6 +38,7 @@ class UIPersonTableViewCell: UITableViewCell {
         headIcon.sd_setImageWithURL(NSURL(string: neighbor.member_avar), placeholderImage: UIImage(named: "morentoux"));
     }
     func setContentOfFans(fan:NSFanObject) {
+        addressLabel.hidden = true;
         addBtn.setTitle("加关注", forState: UIControlState.Normal);
         headIcon.sd_setImageWithURL(NSURL(string: fan.fans_avar), placeholderImage: UIImage(named: "morentoux"));
         nameLabel.text = fan.fans_name;

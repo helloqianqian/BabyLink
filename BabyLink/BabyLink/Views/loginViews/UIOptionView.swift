@@ -251,7 +251,7 @@ class UIOptionView: UIView ,UIPickerViewDelegate,UIPickerViewDataSource{
                 if month <= self.currentMonth-1 {
                     self.pickerView.selectRow(self.currentMonth-1, inComponent: 1, animated: true);
                     month =  self.pickerView.selectedRowInComponent(1);
-                    if day <= self.currentDay {
+                    if day <= self.currentDay-1 {
                         self.pickerView.selectRow(self.currentDay-1, inComponent: 2, animated: true);
                         day = self.pickerView.selectedRowInComponent(2);
                     }
@@ -271,7 +271,7 @@ class UIOptionView: UIView ,UIPickerViewDelegate,UIPickerViewDataSource{
                 if month <= self.currentMonth-1 {
                     self.pickerView.selectRow(self.currentMonth-1, inComponent: 1, animated: true);
                     month =  self.pickerView.selectedRowInComponent(1);
-                    if day <= self.currentDay {
+                    if day <= self.currentDay-1 {
                         self.pickerView.selectRow(self.currentDay-1, inComponent: 2, animated: true);
                         day = self.pickerView.selectedRowInComponent(2);
                     }
@@ -303,13 +303,13 @@ class UIOptionView: UIView ,UIPickerViewDelegate,UIPickerViewDataSource{
             break;
         case DataType.jiheTime:
             NSHelper.TheDayFromCurrentDay(1, isYear: &self.currentYear, isMonth: &self.currentMonth, isDay: &self.currentDay)
-            NSLog("\(self.currentYear),,,,\(self.currentMonth),,,,,\(self.currentDay)")
+//            NSLog("\(self.currentYear),,,,\(self.currentMonth),,,,,\(self.currentDay)")
             self.dataType = DataType.jiheTime;
             self.pickerView.reloadAllComponents();
             break;
         case DataType.activityTime:
             NSHelper.TheDayFromCurrentDay(1, isYear: &self.currentYear, isMonth: &self.currentMonth, isDay: &self.currentDay)
-            NSLog("\(self.currentYear),,,,\(self.currentMonth),,,,,\(self.currentDay)")
+//            NSLog("\(self.currentYear),,,,\(self.currentMonth),,,,,\(self.currentDay)")
             self.dataType = DataType.activityTime;
             self.pickerView.reloadAllComponents();
             break;

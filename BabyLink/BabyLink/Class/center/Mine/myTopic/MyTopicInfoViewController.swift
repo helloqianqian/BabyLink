@@ -28,8 +28,23 @@ class MyTopicInfoViewController: UIBaseViewController ,UITableViewDelegate,UITab
         listTableView.delegate = self;
         listTableView.dataSource = self;
         listTableView.registerNib(UINib(nibName: "UITopicTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "UIMyTopicTableViewCellIdentifier")
+        self.updateNum()
     }
-
+    
+    
+    func updateNum(){
+        //mainTabBar.getNums()
+        let dicParam:NSDictionary = NSDictionary(objects: [NSUserInfo.shareInstance().member_id,self.talk.talk_id,"0"] , forKeys: [MEMBER_ID,"item_id","type"]);
+        NSHttpHelp.httpHelpWithUrl(NSHttpModel.getUpdateCan(), withParam: dicParam, withResult: { (result) -> Void in
+            let dic = result as! NSDictionary;
+            let code = dic["code"] as! NSInteger;
+            if code == 0 {
+                mainTabBar.getNums()
+            }
+            }) { (error) -> Void in
+                
+        }
+    }
     
     func setInputBar(){
         inputBar = YFInputBar(frame: CGRectMake(0 ,MainScreenHeight,MainScreenWidth,45))

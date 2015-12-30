@@ -514,18 +514,22 @@
 }
 
 
-
-
-
-
-
-
-
-
 #pragma mark - 上传图片
 #define uploadImageSuf   @"/Index/uploadFile"
 + (NSString *)getUploadImageUrl{
     return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:uploadImageSuf];
+}
+
+
+#define updateCan  @"/Member/update_can"
++ (NSString *)getUpdateCan{
+    return [[httpHost stringByAppendingString:Mobile] stringByAppendingString:updateCan];
+}
+
+#define findClass   @"/Goods/get_class"
+
++ (NSString *)getFindClass{
+    return [httpHost stringByAppendingString:findClass];
 }
 
 

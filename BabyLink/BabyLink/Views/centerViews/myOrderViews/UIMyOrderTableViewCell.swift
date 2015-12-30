@@ -56,7 +56,12 @@ class UIMyOrderTableViewCell: UITableViewCell {
             statusLabel.hidden = false;
             statusLabel.text = order.order_status_desc;
             payBtn.makeBackGroundColor_Gray();
-            payBtn.setTitle("退尾款", forState: UIControlState.Normal);
+            let weikuan = order.good.goods_weikuan as NSString;
+            if weikuan.floatValue == 0 {
+                payBtn.setTitle("取消订单", forState: UIControlState.Normal);
+            } else {
+                payBtn.setTitle("退尾款", forState: UIControlState.Normal);
+            }
             payBtn.hidden = false;
         } else {
             statusLabel.hidden = true;

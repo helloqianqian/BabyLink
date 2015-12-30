@@ -11,18 +11,28 @@ import UIKit
 class UIInfoViewController: UIBaseViewController {
 
     @IBOutlet weak var content: UITextView!
-    
+    @IBOutlet weak var webview: UIWebView!
     var type = 0;
     var contentStr = "";
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         if type == 0 {
             self.title = "置换详情"
+            self.webview.hidden = true;
             self.content.text = contentStr;
-        } else {
-            
+        } else if type == 1 {
+            self.content.hidden = true;
+            self.title = "商品详情"
+            self.webview.loadHTMLString(self.contentStr, baseURL: nil);
+        } else if type == 2 {
+            self.title = "详情"
+            self.content.hidden = true;
+            let url = NSURL(string: self.contentStr);
+            let request = NSURLRequest(URL: url!);
+            self.webview.loadRequest(request);
         }
     }
 

@@ -41,26 +41,30 @@ class MyExchangeViewController: UIBaseViewController ,UITableViewDelegate,UITabl
             reloadMyListOfExchange = false;
             self.listTableView.header.beginRefreshing()
         }
+        self.listTableView.reloadData();
     }
     
     
     
     func refreshListData(){
-        self.reloadTableData()
+        if self.role == "1" {
+            self.reloadTableData()
+        } else {
+            self.reloadTableDataType()
+        }
     }
     
     func loadContentData(force:Bool) {
+        self.listTableView.reloadData();
         if self.role == "1" {
             if dataArray.count == 0 || force {
                 self.listTableView.header.beginRefreshing()
             } else {
-                self.listTableView.reloadData();
             }
         } else {
             if otherArray.count == 0 || force {
                 self.listTableView.header.beginRefreshing()
             } else {
-                self.listTableView.reloadData();
             }
         }
     }
@@ -71,22 +75,12 @@ class MyExchangeViewController: UIBaseViewController ,UITableViewDelegate,UITabl
             let code = dic["code"] as! NSInteger;
             if code == 0 {
                 //发送成功
-                if self.role == "1" {
-                    self.dataArray.removeAllObjects();
-                    let datas = dic["datas"] as! NSArray;
-                    for data in datas {
-                        let change = NSExchange();
-                        change.setValuesForKeysWithDictionary(data as! [String : AnyObject]);
-                        self.dataArray.addObject(change);
-                    }
-                } else {
-                    self.otherArray.removeAllObjects();
-                    let datas = dic["datas"] as! NSArray;
-                    for data in datas {
-                        let change = NSExchange();
-                        change.setValuesForKeysWithDictionary(data as! [String : AnyObject]);
-                        self.otherArray.addObject(change);
-                    }
+                self.dataArray.removeAllObjects();
+                let datas = dic["datas"] as! NSArray;
+                for data in datas {
+                    let change = NSExchange();
+                    change.setValuesForKeysWithDictionary(data as! [String : AnyObject]);
+                    self.dataArray.addObject(change);
                 }
                 self.listTableView.reloadData()
             }else {
@@ -98,6 +92,35 @@ class MyExchangeViewController: UIBaseViewController ,UITableViewDelegate,UITabl
                 self.listTableView.header.endRefreshing();
         };
     }
+    
+    func reloadTableDataType() {
+        let dicParam:NSDictionary = NSDictionary(objects: [NSUserInfo.shareInstance().member_id,self.role] , forKeys: [MEMBER_ID,"role"]);
+        NSHttpHelp.httpHelpWithUrlTpye(exhangeMyListType, withParam: dicParam, withResult: { (returnObject:AnyObject!) -> Void in
+            let dic = returnObject as! NSDictionary;
+            let code = dic["code"] as! NSInteger;
+            if code == 0 {
+                //发送成功
+                self.otherArray.removeAllObjects();
+                let datas = dic["datas"] as! NSArray;
+                for data in datas {
+                    let change = NSExchange();
+                    change.setValuesForKeysWithDictionary(data as! [String : AnyObject]);
+                    self.otherArray.addObject(change);
+                }
+                self.listTableView.reloadData()
+            }else {
+                let datas = dic["datas"] as! String;
+                SVProgressHUD.showErrorWithStatus(datas);
+            }
+            self.listTableView.header.endRefreshing();
+            }) { (error:AnyObject!) -> Void in
+                self.listTableView.header.endRefreshing();
+        };
+    }
+    
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -116,10 +139,11 @@ class MyExchangeViewController: UIBaseViewController ,UITableViewDelegate,UITabl
         var exchange:NSExchange!
         if self.role == "1" {
             exchange = self.dataArray[indexPath.row] as! NSExchange;
+            cell.setExchangeData(exchange,tag: true);
         } else {
             exchange = self.otherArray[indexPath.row] as! NSExchange;
+            cell.setExchangeData(exchange,tag: false);
         }
-        cell.setExchangeData(exchange);
         cell.cancelBtn.tag = indexPath.row;
         cell.cancelBtn.addTarget(self, action: "cancelExchangeTrade:", forControlEvents: UIControlEvents.TouchUpInside);
         cell.checkBtn.tag = indexPath.row;
@@ -135,6 +159,7 @@ class MyExchangeViewController: UIBaseViewController ,UITableViewDelegate,UITabl
             exchange = self.dataArray[indexPath.row] as! NSExchange;
         } else {
             exchange = self.otherArray[indexPath.row] as! NSExchange;
+            exchange.num = "0"
         }
         infoVC.exchangeList = exchange;
         self.navigationController?.pushViewController(infoVC, animated: true);

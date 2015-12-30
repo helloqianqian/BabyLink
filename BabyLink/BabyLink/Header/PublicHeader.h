@@ -33,6 +33,9 @@
 #define MainScreenHeight [UIScreen mainScreen].bounds.size.height
 #define MainScreenWidth [UIScreen mainScreen].bounds.size.width
 
+
+
+
 //全局参数
 #define ISLOGIN         @"islogin"
 #define LOGIN_TIME      @"login_time"

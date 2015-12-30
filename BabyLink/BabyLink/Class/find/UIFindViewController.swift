@@ -23,6 +23,7 @@ class UIFindViewController: UIBaseViewController ,UITableViewDataSource,UITableV
     var store_class = "";
     var inviteNum = 0
     
+    var classArray:NSMutableArray! = NSMutableArray();
     
     var tipView:UIFindTypeView! = NSBundle.mainBundle().loadNibNamed("UIFindTypeView", owner: nil, options: nil).first as! UIFindTypeView;
     override func viewDidLoad() {
@@ -45,15 +46,42 @@ class UIFindViewController: UIBaseViewController ,UITableViewDataSource,UITableV
         
         tipView.delegate = self;
     }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated);
+        if self.classArray.count == 0 {
+            self.getClass()
+        }
+        mainTabBar.getNums();
+    }
+    
+    
+    func getClass(){
+        NSHttpHelp.httpHelpWithUrl(NSHttpModel.getFindClass(), withParam: nil, withResult: { (result:AnyObject!) -> Void in
+            let dic = result as! NSDictionary;
+            let code = dic["code"] as! NSInteger;
+            if code == 0 {
+                let datas = dic["datas"] as! NSArray;
+                self.classArray.removeAllObjects();
+                for data in datas {
+                    let class_name = data["class_name"] as! String;
+                    self.classArray.addObject(class_name);
+                }
+                let class_name = "被邀请" as NSString;
+                self.classArray.addObject(class_name);
+                
+                self.tipView.addClassType(self.classArray);
+            }
+            }) { (error:AnyObject!) -> Void in
+        }
+    }
     
     func getLocation(){
+        self.listTableView.header.beginRefreshing()
         if locationParam.longitude == 0 || locationParam.latitude == 0 {
             CCLocationManager.shareLocation().getLocationCoordinate { (lo:CLLocationCoordinate2D) -> Void in
                 locationParam = lo;
-                self.listTableView.header.beginRefreshing()
+                self.refreshListData();
             }
-        } else {
-            self.listTableView.header.beginRefreshing()
         }
     }
     
@@ -74,8 +102,8 @@ class UIFindViewController: UIBaseViewController ,UITableViewDataSource,UITableV
     func reloadTabelView(){
         self.listTableView.reloadData();
     }
-    func getListData(){//[NSUserInfo.shareInstance().member_id
-        let dicParam:NSDictionary = NSDictionary(objects: ["1","\(self.page)",self.store_class,self.orderType.description,locationParam.latitude.description,locationParam.longitude.description] , forKeys: [MEMBER_ID,"page","store_class","order_type","latitude","longitude"]);
+    func getListData(){//[
+        let dicParam:NSDictionary = NSDictionary(objects: [NSUserInfo.shareInstance().member_id,"\(self.page)",self.store_class,self.orderType.description,locationParam.latitude.description,locationParam.longitude.description] , forKeys: [MEMBER_ID,"page","store_class","order_type","latitude","longitude"]);
         NSHttpHelp.httpHelpWithUrl(NSHttpModel.getGoodsUrl(), withParam: dicParam, withResult: { (result:AnyObject!) -> Void in
             let dic = result as! NSDictionary;
             let code = dic["code"] as! NSInteger;
@@ -154,7 +182,8 @@ class UIFindViewController: UIBaseViewController ,UITableViewDataSource,UITableV
         if sender.selected {
             self.categoryBtn.selected = false;
             tipView.num = self.inviteNum;
-            tipView.frame = CGRectMake(MainScreenWidth/2+2, 33, MainScreenWidth/2-7, 90);
+//            tipView.frame = CGRectMake(MainScreenWidth/2+2, 33, MainScreenWidth/2-7, 90);
+            tipView.frame = CGRectMake(0, 33, MainScreenWidth, MainScreenHeight);
             tipView.reloadData(1)
             if tipView.superview != self.view {
                 self.view.addSubview(tipView);
@@ -169,7 +198,7 @@ class UIFindViewController: UIBaseViewController ,UITableViewDataSource,UITableV
         if sender.selected {
             self.rangeBtn.selected = false;
             tipView.num = self.inviteNum;
-            tipView.frame = CGRectMake(5, 33, MainScreenWidth/2-7, 120);
+            tipView.frame = CGRectMake(0, 33, MainScreenWidth, MainScreenHeight);
             tipView.reloadData(0)
             if tipView.superview != self.view {
                 self.view.addSubview(tipView);
@@ -182,17 +211,36 @@ class UIFindViewController: UIBaseViewController ,UITableViewDataSource,UITableV
     func didSelectedRow(row: Int, withContent title: String, withType type: Int) {
         if type == 0 {
             categoryBtn.selected = false;
-            self.store_class = title;
-            if row == 3{
+            if self.classArray.count == row+1{
                 self.numLabel.hidden = true;
                 self.inviteNum = 0;
+                let infoVC:UIInviteViewController = UIInviteViewController(nibName:"UIInviteViewController", bundle: NSBundle.mainBundle())
+                infoVC.hidesBottomBarWhenPushed = true;
+                self.navigationController?.pushViewController(infoVC, animated: true);
+                return;
             }
+            self.store_class = title;
         } else {
             rangeBtn.selected = false;
             self.orderType = row+1;
         }
-        self.refreshListData();
+        self.listTableView.header.beginRefreshing()
     }
+    
+    func didRemove() {
+        categoryBtn.selected = false;
+        rangeBtn.selected = false;
+    }
+    
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated);
+        if tipView.superview == self.view {
+            self.didRemove();
+            tipView.removeFromSuperview()
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -11,6 +11,7 @@
 @interface NSFind : NSObject
 @property (nonatomic,strong)NSString *goods_oprice;
 @property (nonatomic,strong)NSString *goods_baseprice;
+@property (nonatomic,strong)NSString *goods_name;
 @property (nonatomic,strong)NSString *goods_id;
 @property (nonatomic,strong)NSString *images;
 @property (nonatomic,strong)NSString *goods_price;
@@ -25,7 +26,8 @@
 @property (nonatomic,strong)NSString *image_url;
 @property (nonatomic,strong)NSString *meters;
 
-
+@property (nonatomic,strong)NSString *member_avar;
+@property (nonatomic,strong)NSString *member_name;
 
 @end
 

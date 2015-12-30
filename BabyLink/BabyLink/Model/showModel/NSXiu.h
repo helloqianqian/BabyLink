@@ -24,6 +24,10 @@
 @property (nonatomic,strong)NSMutableArray *zans;
 @property (nonatomic,assign)BOOL isZan;
 @property (nonatomic,assign)CGFloat infoHeight;
+@property (nonatomic,assign)CGFloat zanHeight;
+@property (nonatomic,assign)CGFloat cellHeight;
+@property (nonatomic,strong)NSString *xiu_num;
+
 @end
 
 @interface NSXiuComment : NSObject

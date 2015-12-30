@@ -64,6 +64,10 @@
 		4C07BB5C1BE5F456003E799B /* UISecondInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C07BB5A1BE5F456003E799B /* UISecondInfoViewController.xib */; };
 		4C07BB5F1BE60769003E799B /* UICenterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C07BB5D1BE60769003E799B /* UICenterTableViewCell.swift */; };
 		4C07BB601BE60769003E799B /* UICenterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C07BB5E1BE60769003E799B /* UICenterTableViewCell.xib */; };
+		4C2F59FB1C329380007D1C93 /* UIInviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2F59F91C329380007D1C93 /* UIInviteViewController.swift */; };
+		4C2F59FC1C329380007D1C93 /* UIInviteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C2F59FA1C329380007D1C93 /* UIInviteViewController.xib */; };
+		4C2F59FF1C329444007D1C93 /* UIFindInviteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2F59FD1C329444007D1C93 /* UIFindInviteTableViewCell.swift */; };
+		4C2F5A001C329444007D1C93 /* UIFindInviteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C2F59FE1C329444007D1C93 /* UIFindInviteTableViewCell.xib */; };
 		4C3926261C01FECC00C978E9 /* NSResidence.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3926251C01FECC00C978E9 /* NSResidence.m */; };
 		4C3926291C030A0800C978E9 /* NSActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3926281C030A0800C978E9 /* NSActivity.m */; };
 		4C39262C1C0354D100C978E9 /* UIInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C39262A1C0354D100C978E9 /* UIInfoViewController.swift */; };
@@ -233,6 +237,8 @@
 		4CF124DB1C0F25D000BD02DE /* UIMyTalkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CF124D91C0F25D000BD02DE /* UIMyTalkTableViewCell.xib */; };
 		4CF124DD1C1004C700BD02DE /* UIShowItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF124DC1C1004C700BD02DE /* UIShowItemView.swift */; };
 		4CF124DF1C1004DD00BD02DE /* UIShowItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CF124DE1C1004DD00BD02DE /* UIShowItemView.xib */; };
+		4CF2747E1C23E97400B346A3 /* UIAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF2747C1C23E97400B346A3 /* UIAboutViewController.swift */; };
+		4CF2747F1C23E97400B346A3 /* UIAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CF2747D1C23E97400B346A3 /* UIAboutViewController.xib */; };
 		4CF6EF5E1BDCA47600CC5BA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6EF5D1BDCA47600CC5BA7 /* AppDelegate.swift */; };
 		4CF6EF601BDCA47600CC5BA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6EF5F1BDCA47600CC5BA7 /* ViewController.swift */; };
 		4CF6EF631BDCA47600CC5BA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CF6EF611BDCA47600CC5BA7 /* Main.storyboard */; };
@@ -395,6 +401,10 @@
 		4C07BB5A1BE5F456003E799B /* UISecondInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UISecondInfoViewController.xib; sourceTree = "<group>"; };
 		4C07BB5D1BE60769003E799B /* UICenterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICenterTableViewCell.swift; sourceTree = "<group>"; };
 		4C07BB5E1BE60769003E799B /* UICenterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UICenterTableViewCell.xib; sourceTree = "<group>"; };
+		4C2F59F91C329380007D1C93 /* UIInviteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIInviteViewController.swift; sourceTree = "<group>"; };
+		4C2F59FA1C329380007D1C93 /* UIInviteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIInviteViewController.xib; sourceTree = "<group>"; };
+		4C2F59FD1C329444007D1C93 /* UIFindInviteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFindInviteTableViewCell.swift; sourceTree = "<group>"; };
+		4C2F59FE1C329444007D1C93 /* UIFindInviteTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIFindInviteTableViewCell.xib; sourceTree = "<group>"; };
 		4C3926241C01FECC00C978E9 /* NSResidence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSResidence.h; sourceTree = "<group>"; };
 		4C3926251C01FECC00C978E9 /* NSResidence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSResidence.m; sourceTree = "<group>"; };
 		4C3926271C030A0800C978E9 /* NSActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSActivity.h; sourceTree = "<group>"; };
@@ -725,6 +735,8 @@
 		4CF124D91C0F25D000BD02DE /* UIMyTalkTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIMyTalkTableViewCell.xib; sourceTree = "<group>"; };
 		4CF124DC1C1004C700BD02DE /* UIShowItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIShowItemView.swift; sourceTree = "<group>"; };
 		4CF124DE1C1004DD00BD02DE /* UIShowItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIShowItemView.xib; sourceTree = "<group>"; };
+		4CF2747C1C23E97400B346A3 /* UIAboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAboutViewController.swift; sourceTree = "<group>"; };
+		4CF2747D1C23E97400B346A3 /* UIAboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIAboutViewController.xib; sourceTree = "<group>"; };
 		4CF6EF5A1BDCA47600CC5BA7 /* BabyLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabyLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CF6EF5D1BDCA47600CC5BA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CF6EF5F1BDCA47600CC5BA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -1578,6 +1590,8 @@
 			children = (
 				4CD583C41BF4245200345666 /* UIHelpViewController.swift */,
 				4CD583C51BF4245200345666 /* UIHelpViewController.xib */,
+				4CF2747C1C23E97400B346A3 /* UIAboutViewController.swift */,
+				4CF2747D1C23E97400B346A3 /* UIAboutViewController.xib */,
 			);
 			path = help;
 			sourceTree = "<group>";
@@ -1708,6 +1722,8 @@
 				4C0245531BF0E688004BE881 /* UIOrderInfoViewController.xib */,
 				4C9F7A041C116B7C00B45E2B /* UIFindTypeView.swift */,
 				4C9F7A061C116B8B00B45E2B /* UIFindTypeView.xib */,
+				4C2F59F91C329380007D1C93 /* UIInviteViewController.swift */,
+				4C2F59FA1C329380007D1C93 /* UIInviteViewController.xib */,
 			);
 			path = find;
 			sourceTree = "<group>";
@@ -1893,6 +1909,8 @@
 				4C0245471BF0D883004BE881 /* UIFriendsTableViewCell.xib */,
 				4C9F7A081C11848500B45E2B /* UIFindTypeTableViewCell.swift */,
 				4C9F7A091C11848500B45E2B /* UIFindTypeTableViewCell.xib */,
+				4C2F59FD1C329444007D1C93 /* UIFindInviteTableViewCell.swift */,
+				4C2F59FE1C329444007D1C93 /* UIFindInviteTableViewCell.xib */,
 			);
 			path = findViews;
 			sourceTree = "<group>";
@@ -2211,6 +2229,7 @@
 				4CFF48841C04C663007B7E82 /* UICommentTableViewCell.xib in Resources */,
 				4C07BB581BE5F445003E799B /* UIFirstInfoViewController.xib in Resources */,
 				4C07BB501BE5CF41003E799B /* UIAgreementViewController.xib in Resources */,
+				4CF2747F1C23E97400B346A3 /* UIAboutViewController.xib in Resources */,
 				4CF124D71C0F1A2F00BD02DE /* UIParticipateTableViewCell.xib in Resources */,
 				4C0244E51BEF4DA2004BE881 /* UISquareView.xib in Resources */,
 				4CFCB8AC1BEBAAD200D84B29 /* UITopicTableViewCell.xib in Resources */,
@@ -2220,6 +2239,7 @@
 				4C552F031BFF874300A93344 /* UMSCommentInputControlleriPad.xib in Resources */,
 				4CA34CB51BF5E827002DABA2 /* UIMyActTableViewCell.xib in Resources */,
 				4CD583BE1BF423F700345666 /* UIChangePhoneViewController.xib in Resources */,
+				4C2F5A001C329444007D1C93 /* UIFindInviteTableViewCell.xib in Resources */,
 				4CFCB8D61BEF1ABF00D84B29 /* UIJoinViewController.xib in Resources */,
 				4CD583C21BF4240900345666 /* UIChangePSWViewController.xib in Resources */,
 				4C552F011BFF874300A93344 /* UMSCommentDetailController.xib in Resources */,
@@ -2231,6 +2251,7 @@
 				4CD583D31BF45ABD00345666 /* UIMineViewController.xib in Resources */,
 				4CFF48801C04C648007B7E82 /* UIPeopleCollectionViewCell.xib in Resources */,
 				4C552F041BFF874300A93344 /* UMShareEditViewController.xib in Resources */,
+				4C2F59FC1C329380007D1C93 /* UIInviteViewController.xib in Resources */,
 				4C6BB6FC1C0BF3040004E4C8 /* ZLPhotoLib.bundle in Resources */,
 				4CFCB8D41BEF1ABF00D84B29 /* UIActivityView.xib in Resources */,
 				4CFCB88D1BEBA79900D84B29 /* UIActivityInfoSecondTableViewCell.xib in Resources */,
@@ -2375,6 +2396,7 @@
 			files = (
 				4CD583C11BF4240900345666 /* UIChangePSWViewController.swift in Sources */,
 				4C02454C1BF0DAED004BE881 /* UIFriendsListViewController.swift in Sources */,
+				4CF2747E1C23E97400B346A3 /* UIAboutViewController.swift in Sources */,
 				4C6BB6E81C0BF3040004E4C8 /* ZLPhotoRect.m in Sources */,
 				4CEDCF5E1BFB665500226BB9 /* NSHttpModel.m in Sources */,
 				4CCE57761C080A0C00EA6527 /* UICreateTalkViewController.swift in Sources */,
@@ -2459,6 +2481,7 @@
 				4CFCB88C1BEBA79900D84B29 /* UIActivityInfoSecondTableViewCell.swift in Sources */,
 				4C6BB6FA1C0BF3040004E4C8 /* DACircularProgressView.m in Sources */,
 				4C07BB5F1BE60769003E799B /* UICenterTableViewCell.swift in Sources */,
+				4C2F59FF1C329444007D1C93 /* UIFindInviteTableViewCell.swift in Sources */,
 				4CF6EFC41BDF6F6600CC5BA7 /* UILoginViewController.swift in Sources */,
 				4CA34CA01BF57CD8002DABA2 /* MyActivityViewController.swift in Sources */,
 				4CFCB8E31BEF39B600D84B29 /* CommentTableViewCell.swift in Sources */,
@@ -2478,6 +2501,7 @@
 				4C6BB6EF1C0BF3040004E4C8 /* ZLPhotoAssets.m in Sources */,
 				4CA34CB01BF57D1D002DABA2 /* MyTopicViewController.swift in Sources */,
 				4C9F7A051C116B7C00B45E2B /* UIFindTypeView.swift in Sources */,
+				4C2F59FB1C329380007D1C93 /* UIInviteViewController.swift in Sources */,
 				4C552EC01BFF5F4C00A93344 /* CLLocation+YCLocation.m in Sources */,
 				4C0244FD1BF02C8A004BE881 /* UIFindInfoThirdTableViewCell.swift in Sources */,
 				4CFCB8DF1BEF2F7400D84B29 /* TopicImageCollectionViewCell.swift in Sources */,
@@ -2685,7 +2709,7 @@
 			baseConfigurationReference = D177840B383B817FE1BF1911 /* Pods-BabyLink.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
@@ -2722,6 +2746,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "BabyLink/Class/base/BabyLink-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -2730,7 +2755,7 @@
 			baseConfigurationReference = 4DC90B3192A6B7AAD9E78476 /* Pods-BabyLink.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
@@ -2766,6 +2791,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.shiliuke.BabyLink;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "BabyLink/Class/base/BabyLink-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

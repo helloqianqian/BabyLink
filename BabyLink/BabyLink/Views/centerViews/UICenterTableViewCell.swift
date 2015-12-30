@@ -10,9 +10,15 @@ import UIKit
 
 class UICenterTableViewCell: UITableViewCell {
 
+    
+    @IBOutlet weak var width: NSLayoutConstraint!
+    @IBOutlet weak var numLabel:UILabel!;
+    @IBOutlet weak var contentLabel:UILabel!;
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        numLabel.layer.cornerRadius = 8;
+        numLabel.layer.masksToBounds = true;
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

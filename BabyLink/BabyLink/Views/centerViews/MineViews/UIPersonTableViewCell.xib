@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -17,26 +17,23 @@
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C1t-iF-dJy">
                         <rect key="frame" x="20" y="5" width="36" height="36"/>
-                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="36" id="fZD-b6-R4K"/>
                             <constraint firstAttribute="width" constant="36" id="sy1-pP-JqI"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8I-6t-mSe">
-                        <rect key="frame" x="64" y="12" width="110" height="21"/>
-                        <animations/>
+                        <rect key="frame" x="64" y="12" width="130" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="Mme-r6-2Vz"/>
-                            <constraint firstAttribute="width" constant="110" id="hR5-90-a1V"/>
+                            <constraint firstAttribute="width" constant="130" id="hR5-90-a1V"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqd-08-jD7">
-                        <rect key="frame" x="184" y="12" width="118" height="21"/>
-                        <animations/>
+                        <rect key="frame" x="199" y="12" width="103" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="Rth-An-blM"/>
                         </constraints>
@@ -46,7 +43,6 @@
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cbg-fE-kOI">
                         <rect key="frame" x="252" y="11.5" width="58" height="23"/>
-                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="23" id="NBK-9G-0Dd"/>
                             <constraint firstAttribute="width" constant="58" id="egI-bo-SCE"/>
@@ -55,7 +51,6 @@
                         <state key="normal" title="Button"/>
                     </button>
                 </subviews>
-                <animations/>
                 <constraints>
                     <constraint firstItem="Cbg-fE-kOI" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="2cr-pY-0ll"/>
                     <constraint firstAttribute="trailingMargin" secondItem="fqd-08-jD7" secondAttribute="trailing" constant="10" id="HcO-g3-rav"/>
@@ -63,19 +58,18 @@
                     <constraint firstItem="C1t-iF-dJy" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="O0U-5Z-UeW"/>
                     <constraint firstItem="fqd-08-jD7" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Uyj-gl-16n"/>
                     <constraint firstAttribute="trailing" secondItem="Cbg-fE-kOI" secondAttribute="trailing" constant="10" id="ZbL-3B-96t"/>
-                    <constraint firstItem="fqd-08-jD7" firstAttribute="leading" secondItem="h8I-6t-mSe" secondAttribute="trailing" constant="10" id="gTu-ds-EkW"/>
+                    <constraint firstItem="fqd-08-jD7" firstAttribute="leading" secondItem="h8I-6t-mSe" secondAttribute="trailing" constant="5" id="gTu-ds-EkW"/>
                     <constraint firstItem="C1t-iF-dJy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="nc3-Wk-dhV"/>
                     <constraint firstItem="h8I-6t-mSe" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="tzP-ib-egt"/>
                 </constraints>
             </tableViewCellContentView>
-            <animations/>
             <connections>
                 <outlet property="addBtn" destination="Cbg-fE-kOI" id="Q0P-oV-Ahy"/>
                 <outlet property="addressLabel" destination="fqd-08-jD7" id="F9Z-I9-oYc"/>
                 <outlet property="headIcon" destination="C1t-iF-dJy" id="UBB-99-UZB"/>
                 <outlet property="nameLabel" destination="h8I-6t-mSe" id="lkv-FW-LtM"/>
             </connections>
-            <point key="canvasLocation" x="368" y="305"/>
+            <point key="canvasLocation" x="270" y="291"/>
         </tableViewCell>
     </objects>
 </document>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UICreateExcViewController" customModule="BabyLink" customModuleProvider="target">
@@ -27,7 +27,6 @@
             <subviews>
                 <button opaque="NO" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPw-gm-nHt">
                     <rect key="frame" x="5" y="8" width="80" height="80"/>
-                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="80" id="J27-WP-eDe"/>
                         <constraint firstAttribute="width" constant="80" id="VDt-jU-oIN"/>
@@ -39,7 +38,6 @@
                 </button>
                 <button hidden="YES" opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="reY-Ll-pVK">
                     <rect key="frame" x="90" y="8" width="80" height="80"/>
-                    <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="80" id="7yH-lJ-J39"/>
                         <constraint firstAttribute="height" constant="80" id="LfO-sf-AB0"/>
@@ -51,7 +49,6 @@
                 </button>
                 <button hidden="YES" opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nN6-u0-sdb">
                     <rect key="frame" x="175" y="8" width="80" height="80"/>
-                    <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="80" id="pO1-EE-xqz"/>
                         <constraint firstAttribute="height" constant="80" id="qgn-mx-Oi3"/>
@@ -66,12 +63,10 @@
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入物品名称" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2l0-th-1dZ">
                             <rect key="frame" x="8" y="0.0" width="294" height="40"/>
-                            <animations/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" returnKeyType="done"/>
                         </textField>
                     </subviews>
-                    <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="2l0-th-1dZ" firstAttribute="top" secondItem="D8R-Rn-pz5" secondAttribute="top" id="4nF-4o-Yxc"/>
@@ -86,12 +81,10 @@
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入想换的物品名称" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l9L-j8-IGV">
                             <rect key="frame" x="8" y="0.0" width="294" height="40"/>
-                            <animations/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" returnKeyType="done"/>
                         </textField>
                     </subviews>
-                    <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="l9L-j8-IGV" secondAttribute="trailing" constant="8" id="07J-K4-tzq"/>
@@ -103,7 +96,6 @@
                 </view>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="azg-Dw-LKk">
                     <rect key="frame" x="5" y="186" width="310" height="150"/>
-                    <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="150" id="rLw-bC-Nvi"/>
@@ -113,7 +105,6 @@
                 </textView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5kL-j9-bdb">
                     <rect key="frame" x="10" y="425" width="300" height="35"/>
-                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="35" id="MSG-Rl-xmM"/>
                     </constraints>
@@ -125,7 +116,6 @@
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入置换物品描述" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U80-dY-L2E">
                     <rect key="frame" x="8" y="189" width="155" height="29"/>
-                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="29" id="OAi-dk-2td"/>
                         <constraint firstAttribute="width" constant="155" id="we3-CQ-GF1"/>
@@ -135,7 +125,6 @@
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <animations/>
             <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="azg-Dw-LKk" firstAttribute="top" secondItem="Cqc-Qa-YwI" secondAttribute="bottom" constant="5" id="0Xe-FY-QjF"/>

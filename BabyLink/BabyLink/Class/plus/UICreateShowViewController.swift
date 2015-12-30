@@ -190,7 +190,6 @@ class UICreateShowViewController: UIBaseViewController ,UITextViewDelegate,UIAct
     
     func createTalk(images:String){
         let dicParam:NSDictionary = NSDictionary(objects: [self.contentTextView.text!,images,NSUserInfo.shareInstance().member_id] , forKeys: ["info","images",MEMBER_ID]);
-        NSLog("发话题:\(dicParam)")
         NSHttpHelp.httpHelpWithUrlTpye(addTalkType, withParam: dicParam, withResult: { (returnObject:AnyObject!) -> Void in
             let dic = returnObject as! NSDictionary;
             let code = dic["code"] as! NSInteger;
@@ -213,17 +212,17 @@ class UICreateShowViewController: UIBaseViewController ,UITextViewDelegate,UIAct
             if code == 0 {
                 //发送成功
                 let datas = result["datas"] as! String;
-                NSLog("图片上传成功：：：：\(datas)")
+//                NSLog("图片上传成功：：：：\(datas)")
                 self.createTalk(datas);
             } else {
                 let datas = result["datas"] as! String;
-                NSLog("图片上传失败：：：：\(datas)")
+//                NSLog("图片上传失败：：：：\(datas)")
                 SVProgressHUD.showErrorWithStatus(datas);
             }
             }, withFailure: { (error:AnyObject!) -> Void in
                 SVProgressHUD.showErrorWithStatus("上传失败");
             }) { (progress:Float) -> Void in
-                NSLog("progress:\(progress)")
+//                NSLog("progress:\(progress)")
         }
     }
     

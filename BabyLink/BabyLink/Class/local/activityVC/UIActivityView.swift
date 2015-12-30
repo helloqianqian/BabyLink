@@ -49,6 +49,7 @@ class UIActivityView: UIView ,UITableViewDataSource, UITableViewDelegate,didClic
     }
     
     func refreshListData(){
+        mainTabBar.getNums();
         self.page = 1;
         self.reloadTableData()
     }
@@ -85,7 +86,7 @@ class UIActivityView: UIView ,UITableViewDataSource, UITableViewDelegate,didClic
                         self.adArray.addObject(ads);
                     }
                     if self.adArray.count>0 {
-                        self.headView.setupSubviews(self.adArray);
+                        self.headView.setupSubviews(self.adArray,tag: true);
                     }
                 }
                 for activity in activity_list {

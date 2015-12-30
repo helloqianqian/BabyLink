@@ -316,4 +316,11 @@
 
 #pragma mark - 上传图片
 + (NSString *)getUploadImageUrl;
+
+
++ (NSString *)getUpdateCan;
++ (NSString *)getFindClass;
+
+
+
 @end

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UITableViewDataSource,UICommentDelegate,YFInputBarDelegate,UMSocialUIDelegate{
+class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UITableViewDataSource,UICommentDelegate,YFInputBarDelegate,UMSocialUIDelegate,UIAlertViewDelegate{
 
     @IBOutlet weak var listTableView: UITableView!
     
@@ -120,6 +120,8 @@ class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
                     self.infoModel.logs.addObject(logObject);
                 }
                 self.listTableView.reloadData();
+                
+                mainTabBar.getNums()
             } else {
                 let datas = result["datas"] as! String;
                 SVProgressHUD.showErrorWithStatus(datas);
@@ -158,15 +160,16 @@ class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
                 if listModel.isSign {
                     footerView.enrollBtn.makeBackGroundColor_DarkGray()
                     footerView.enrollBtn.setTitle("取消报名", forState: UIControlState.Normal);
-//                    footerView.enrollBtn.addTarget(self, action: "enrollInTheActivity:", forControlEvents: UIControlEvents.TouchUpInside);
                 } else {
                     if listModel.isFull {
                         footerView.enrollBtn.makeBackGroundColor_DarkGray()
                         footerView.enrollBtn.setTitle("报名已满", forState: UIControlState.Normal);
+                    } else if infoModel.is_end {
+                        footerView.enrollBtn.makeBackGroundColor_DarkGray()
+                        footerView.enrollBtn.setTitle("报名已截止", forState: UIControlState.Normal);
                     } else {
                         footerView.enrollBtn.makeBackGroundColor_Purple()
                         footerView.enrollBtn.setTitle("我要报名", forState: UIControlState.Normal);
-//                        footerView.enrollBtn.addTarget(self, action: "enrollInTheActivity:", forControlEvents: UIControlEvents.TouchUpInside);
                     }
                 }
             }
@@ -304,6 +307,8 @@ class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
             } else {
                 if listModel.isFull {
                     return;
+                } else if infoModel.is_end {
+                    return;
                 } else {
                 }
             }
@@ -311,23 +316,8 @@ class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
         
         
         if self.listModel.isSign {
-            SVProgressHUD.showWithMaskType(SVProgressHUDMaskType.Clear);
-            let dicParam:NSDictionary = NSDictionary(objects: [NSUserInfo.shareInstance().member_id,self.activityID] , forKeys: [MEMBER_ID,"activity_id"]);
-            NSHttpHelp.httpHelpWithUrlTpye(cancelActType, withParam: dicParam, withResult: { (result:AnyObject!) -> Void in
-                let code = result["code"] as! NSInteger;
-                if code == 0 {
-                    SVProgressHUD.showSuccessWithStatus("取消报名成功");
-                    self.listModel.isSign = false;
-                    self.listTableView.reloadData()
-                    activityListLoad = true;
-                    self.getInfoData();
-                } else {
-                    let datas = result["datas"] as! String;
-                    SVProgressHUD.showErrorWithStatus(datas);
-                }
-                }) { (error:AnyObject!) -> Void in
-                    
-            }
+            let alertView = UIAlertView(title: "提示", message: "确定取消报名吗？", delegate: self, cancelButtonTitle: "取消", otherButtonTitles: "确定")
+            alertView.show();
         } else {
             let joinVC:UIJoinViewController = UIJoinViewController(nibName:"UIJoinViewController",bundle:NSBundle.mainBundle())
             joinVC.activityID = self.infoModel.activity_id;
@@ -336,6 +326,29 @@ class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
             self.navigationController?.pushViewController(joinVC, animated: true);
         }
     }
+    
+    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+        if buttonIndex == 1 {
+            SVProgressHUD.showWithMaskType(SVProgressHUDMaskType.Clear);
+            let dicParam:NSDictionary = NSDictionary(objects: [NSUserInfo.shareInstance().member_id,self.activityID] , forKeys: [MEMBER_ID,"activity_id"]);
+            NSHttpHelp.httpHelpWithUrlTpye(cancelActType, withParam: dicParam, withResult: { (result:AnyObject!) -> Void in
+            let code = result["code"] as! NSInteger;
+            if code == 0 {
+            SVProgressHUD.showSuccessWithStatus("取消报名成功");
+            self.listModel.isSign = false;
+            self.listTableView.reloadData()
+            activityListLoad = true;
+            self.getInfoData();
+            } else {
+            let datas = result["datas"] as! String;
+            SVProgressHUD.showErrorWithStatus(datas);
+            }
+            }) { (error:AnyObject!) -> Void in
+            
+            }
+        }
+    }
+    
     func didSelectedComment() {
         self.commentObject = nil;
         self.inputBar.textField.placeholder = "输入评论";

@@ -229,7 +229,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eO0-ZO-2LH">
                     <rect key="frame" x="12" y="354" width="296" height="80"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13903938372    李某某" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4t-EG-pnJ">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4t-EG-pnJ">
                             <rect key="frame" x="18" y="50" width="268" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="uQs-OT-blQ"/>
@@ -301,7 +301,7 @@
                 <constraint firstItem="g3L-1l-Odw" firstAttribute="top" secondItem="rUN-bw-FoU" secondAttribute="bottom" constant="5" id="tOQ-Ui-DTY"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-714" y="332"/>
+            <point key="canvasLocation" x="-857" y="321"/>
         </view>
     </objects>
     <resources>

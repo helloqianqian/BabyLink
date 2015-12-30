@@ -21,7 +21,7 @@ class MyFansViewController: UIBaseViewController ,UITableViewDelegate,UITableVie
         self.title = "我的粉丝"
         listTableView.dataSource = self;
         listTableView.delegate = self;
-        self.listTableView.registerNib(UINib(nibName: "UIPersonTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "UIFriendsTableViewCellIdentifier");
+        self.listTableView.registerNib(UINib(nibName: "UIPersonTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "UIFriendsCellID");
         self.listTableView.header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: "refreshListData")
         self.listTableView.footer = MJRefreshBackNormalFooter(refreshingTarget: self, refreshingAction: "getMoreListData");
         self.listTableView.header.beginRefreshing();
@@ -69,7 +69,7 @@ class MyFansViewController: UIBaseViewController ,UITableViewDelegate,UITableVie
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("UIFriendsTableViewCellIdentifier", forIndexPath: indexPath) as! UIPersonTableViewCell;
+        let cell = tableView.dequeueReusableCellWithIdentifier("UIFriendsCellID", forIndexPath: indexPath) as! UIPersonTableViewCell;
         let friend = self.dataArray[indexPath.row] as! NSFanObject;
         cell.setContentOfFans(friend);
         cell.addBtn.tag = indexPath.row;

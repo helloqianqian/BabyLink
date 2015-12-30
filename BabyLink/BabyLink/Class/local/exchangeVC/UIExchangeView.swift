@@ -28,6 +28,7 @@ class UIExchangeView: UIView ,UITableViewDelegate,UITableViewDataSource{
     }
     
     func refreshListData(){
+        mainTabBar.getNums();
         self.page = 1;
         self.getListData();
     }

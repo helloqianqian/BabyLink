@@ -64,7 +64,7 @@ class UIActivityTableViewCell: UITableViewCell ,UICollectionViewDelegate,UIColle
         } else {
             if dataModel.isSign {
                 signInBtn.makeBackGroundColor_DarkGray()
-                signInBtn.setTitle("取消报名", forState: UIControlState.Normal);
+                signInBtn.setTitle("已报名", forState: UIControlState.Normal);
             } else {
                 if dataModel.isFull {
                     signInBtn.makeBackGroundColor_DarkGray()

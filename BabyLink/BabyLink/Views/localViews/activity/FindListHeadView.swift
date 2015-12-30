@@ -40,8 +40,8 @@ class FindListHeadView: UIView,TAPageControlDelegate,UIScrollViewDelegate {
     
     
     var  tapGesture:UITapGestureRecognizer!;
-    var  moveTime:NSTimer!;
-    var  isTimeUp:Bool!;
+    var  moveTime:NSTimer?;
+    var  isTimeUp:Bool = true;
     
     override func awakeFromNib() {
         
@@ -71,9 +71,8 @@ class FindListHeadView: UIView,TAPageControlDelegate,UIScrollViewDelegate {
         self.aPageView.currentDotImage =  UIImage(named:"椭圆-1椭圆-1select");
         self.aPageView.currentPage = 0;
     }
-    func setupSubviews(arr:NSArray)
+    func setupSubviews(arr:NSArray,tag :Bool)
     {
-        
         self.imgArr = arr;
         scrollHeight = self.frame.size.height;
         scrollWidth = self.frame.size.width;
@@ -98,7 +97,9 @@ class FindListHeadView: UIView,TAPageControlDelegate,UIScrollViewDelegate {
             
             imgStr = (imgArr[1] as! ADModel ).cover;
             rightImageView.sd_setImageWithURL(NSURL(string: imgStr));
-            
+            if tag {
+                self.startimer()
+            }
         } else if(imgArr.count==2) {
                 
             var   imgStr:String = (imgArr[imgArr.count-1] as! ADModel ).cover;
@@ -109,7 +110,10 @@ class FindListHeadView: UIView,TAPageControlDelegate,UIScrollViewDelegate {
             
             imgStr = (imgArr[1] as! ADModel ).cover;
             rightImageView.sd_setImageWithURL(NSURL(string: imgStr));
-                
+            
+            if tag {
+                self.startimer()
+            }
         } else if(imgArr.count==1) {
             let  imgStr:String = (imgArr[0] as! ADModel ).cover;
             centerImageView.sd_setImageWithURL(NSURL(string: imgStr));
@@ -117,36 +121,43 @@ class FindListHeadView: UIView,TAPageControlDelegate,UIScrollViewDelegate {
             aScrollView.scrollEnabled = false;
             aPageView.hidden = true;
         }
+        
     }
     func startimer()
     {
-        //
-        //        timer = NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: "handleSetTimeScrollView", userInfo: nil, repeats: true);
-        //
-        //        NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes);
-        
-        
-        moveTime =  NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: "animalMoveImage", userInfo: nil, repeats: true);
-        
-        //        isTimeUp = false;
-        //        self.animalMoveImage();
+        if moveTime == nil {
+            moveTime =  NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: "animalMoveImage", userInfo: nil, repeats: true);
+        }
     }
     func animalMoveImage()
     {
-        aScrollView.setContentOffset(CGPointMake(scrollWidth*2, 0), animated: true);
-        
-        isTimeUp=true;
-        //        NSTimer.scheduledTimerWithTimeInterval(4, target: self, selector: "scrollViewDidEndDecelerating:", userInfo: nil, repeats: false);
-        
+        if isTimeUp {
+            aScrollView.setContentOffset(CGPointMake(scrollWidth*2, 0), animated: true);
+        } else {
+            isTimeUp = true
+        }
     }
-    //    func removeTimer()
-    //    {
-    //        timer.invalidate();
-    //    }
+    func removeTimer()
+    {
+        if moveTime != nil {
+            moveTime!.invalidate();
+            moveTime = nil;
+        }
+    }
+    
+    
     func handleSetTimeScrollView()
     {
         self.reloadImage();
     }
+    
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        isTimeUp = false;
+    }
+    func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
+        self.reloadImage();
+    }
+    
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         self.reloadImage();
     }

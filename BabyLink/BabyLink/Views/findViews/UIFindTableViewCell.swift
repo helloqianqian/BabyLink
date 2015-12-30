@@ -30,7 +30,13 @@ class UIFindTableViewCell: UITableViewCell {
         
     func setContentData(findModel:NSFind){
         contentImage.sd_setImageWithURL(NSURL(string: findModel.image_url), placeholderImage: nil);
-        earnestLabel.text = "定金\n\(findModel.goods_dingjin)"
+        let str = findModel.goods_dingjin as NSString
+        if str.floatValue == 0 {
+            earnestLabel.text = "免费"
+        } else {
+            earnestLabel.text = "定金\n￥\(findModel.goods_dingjin)"
+        }
+        
         institutionLabel.text = findModel.store_name;
         let price = "价格:￥\(findModel.goods_oprice)-￥\(findModel.goods_baseprice)" as NSString;
         priceLabel.attributedText = price.switchContentWithFonts([UIFont.systemFontOfSize(14)], withRanges: [NSStringFromRange(NSMakeRange(0, 3))], withColors: [UIColor.blackColor()])

@@ -18,6 +18,7 @@
         self.images_url = [NSArray array];
         self.commends = [NSMutableArray array];
         self.tableViewHeight = 0;
+        self.infoTableViewHeight = 0;
         self.images = @"";
         self.member_id = @"";
         self.member_avar = @"";
