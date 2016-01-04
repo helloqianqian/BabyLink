@@ -146,7 +146,7 @@ class MyActivityViewController: UIBaseViewController ,UITableViewDelegate,UITabl
             let model = self.otherArray[indexPath.row] as! NSActListObject;
             infoVC.activityID = model.activity_id;
             model.isSign = true;
-            model.isOut = false;
+            model.isOut = "0";
             infoVC.listModel = model;
             infoVC.sourceFrom = 2;
         }

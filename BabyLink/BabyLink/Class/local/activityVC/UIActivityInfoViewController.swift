@@ -153,7 +153,7 @@ class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
     
     func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         if self.sourceFrom == 0 || self.sourceFrom == 2{
-            if listModel.isOut {
+            if listModel.isOut == "1" {
                 footerView.enrollBtn.makeBackGroundColor_DarkGray()
                 footerView.enrollBtn.setTitle("活动已结束", forState: UIControlState.Normal);
             } else {
@@ -300,7 +300,7 @@ class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
     //MARK: - tableview function
     func enrollInTheActivity(sender:UIButton){
         
-        if listModel.isOut {
+        if listModel.isOut  == "1"{
             return;
         } else {
             if listModel.isSign {

@@ -71,13 +71,6 @@ class UILoginViewController: UIBaseViewController ,UITextFieldDelegate{
     }
     
     
-    
-    
-    
-    
-    
-    
-    
     func registEnter(sender:AnyObject){
         let registVC = UIRegistViewController(nibName:"UIRegistViewController", bundle:NSBundle.mainBundle());
         self.navigationController?.pushViewController(registVC, animated: true);

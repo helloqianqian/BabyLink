@@ -96,20 +96,6 @@
                     <color key="textColor" red="0.39607843139999999" green="0.39607843139999999" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMa-av-cI5">
-                    <rect key="frame" x="10" y="384" width="300" height="33"/>
-                    <color key="backgroundColor" red="0.93725490199999995" green="0.058823529409999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="33" id="PxY-uM-Hbt"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <state key="normal" title="退出登录">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="quite:" destination="-1" eventType="touchUpInside" id="MAZ-tS-bxu"/>
-                    </connections>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="头像" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8OR-cq-Ney">
                     <rect key="frame" x="25" y="52" width="34" height="20"/>
                     <constraints>
@@ -199,6 +185,20 @@
                         <constraint firstItem="jha-3r-v7E" firstAttribute="leading" secondItem="3oL-jU-cBT" secondAttribute="leading" id="zq0-MU-14V"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMa-av-cI5">
+                    <rect key="frame" x="10" y="379" width="300" height="33"/>
+                    <color key="backgroundColor" red="0.93725490199999995" green="0.058823529409999999" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="33" id="PxY-uM-Hbt"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="退出登录">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="quite:" destination="-1" eventType="touchUpInside" id="MAZ-tS-bxu"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.92941176469999998" green="0.93333333330000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
@@ -207,7 +207,7 @@
                 <constraint firstItem="c1z-EY-3I4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="5CQ-MH-0UQ"/>
                 <constraint firstItem="Sqt-jl-oEa" firstAttribute="leading" secondItem="QCZ-et-EZb" secondAttribute="leading" constant="15" id="6Ro-OL-D9U"/>
                 <constraint firstItem="3oL-jU-cBT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="8UG-jA-Xjs"/>
-                <constraint firstItem="xMa-av-cI5" firstAttribute="top" secondItem="3oL-jU-cBT" secondAttribute="bottom" constant="15" id="CGu-8K-GLg"/>
+                <constraint firstItem="xMa-av-cI5" firstAttribute="top" secondItem="3oL-jU-cBT" secondAttribute="bottom" constant="10" id="CGu-8K-GLg"/>
                 <constraint firstItem="8OR-cq-Ney" firstAttribute="centerY" secondItem="c1z-EY-3I4" secondAttribute="centerY" id="CYm-Xr-mf9"/>
                 <constraint firstAttribute="trailing" secondItem="QCZ-et-EZb" secondAttribute="trailing" constant="10" id="Cse-9e-gz0"/>
                 <constraint firstItem="xMa-av-cI5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="Di5-tO-Yr1"/>

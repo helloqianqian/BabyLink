@@ -28,9 +28,15 @@
         _position_la = @"";
         _image_url = @"";
         _meters = @"";
+        _flag = @"";
     }
     return self;
 }
+
+
+//- (void)setValue:(id)value forKey:(NSString *)key {
+//    NSLog(@"key:%@  value:%@",key,[value class]);
+//}
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key{
     
 }
@@ -74,7 +80,9 @@
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key{
     
 }
-
+//- (void)setValue:(id)value forKey:(NSString *)key {
+//    NSLog(@"key:%@  value:%@",key,[value class]);
+//}
 @end
 
 

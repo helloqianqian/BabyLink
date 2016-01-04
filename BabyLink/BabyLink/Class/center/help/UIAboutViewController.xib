@@ -1,19 +1,112 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UIAboutViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UIAboutViewController" customModule="BabyLink" customModuleProvider="target">
             <connections>
+                <outlet property="contentText" destination="TMC-aD-6gU" id="G5W-n4-qkE"/>
+                <outlet property="height" destination="pUX-gq-Ik4" id="bUy-L8-uZt"/>
+                <outlet property="left" destination="Uem-6I-T9I" id="O9G-8J-vQi"/>
+                <outlet property="right" destination="qcv-wt-gOm" id="SKT-Tv-xh6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="width" destination="XWd-uj-QD9" id="blK-IY-EYG"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="120" translatesAutoresizingMaskIntoConstraints="NO" id="nlj-jn-Wft">
+                    <rect key="frame" x="110" y="18" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="XWd-uj-QD9"/>
+                        <constraint firstAttribute="height" constant="100" id="pUX-gq-Ik4"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="babylink亲子社交平台" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4sx-Zf-B0G">
+                    <rect key="frame" x="0.0" y="128" width="320" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="AxO-gg-Y0o"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="北京石榴客科技有限公司旗下移动应用" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R2X-8P-9rN">
+                    <rect key="frame" x="0.0" y="157" width="320" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="16" id="sol-CK-bhJ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" red="0.36078431372549019" green="0.36862745098039218" blue="0.36470588235294116" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="北京石榴客科技有限公司" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ah-BZ-isl">
+                    <rect key="frame" x="0.0" y="454" width="320" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="16" id="bCi-7g-T7K"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" red="0.72156862745098038" green="0.72549019607843135" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright©2015" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgX-St-6tg">
+                    <rect key="frame" x="0.0" y="438" width="320" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="16" id="L1D-ps-016"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" red="0.72156862749999995" green="0.72549019609999998" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TMC-aD-6gU">
+                    <rect key="frame" x="20" y="181" width="280" height="267"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="267" id="tPz-tK-E6X"/>
+                    </constraints>
+                    <mutableString key="text">        Babylink 亲子社交平台是北京石榴客科技有限公司旗下产品，我们致力于为1到6岁家庭提供亲子相关服务，让孩子找到身边适合自己的玩伴，以孩子为纽带，活化邻里关系，通过关系的建立，一起参与相关的亲子项目，从根本上解决亲子消费过高的问题。
+        Babylink亲子社交平台的建立，是看到了中国严重的亲子冲突问题，这是没有与孩子良好的沟通以及没有建立一个良好的平等关系造成的，我们希望通过我们的努力，让孩子与父母之间，孩子与孩子之间，以及父母与父母之间收获属于他们的那份特殊的友谊，让孩子有一个没有缺失，丰富多彩的童年。</mutableString>
+                    <color key="textColor" red="0.36078431370000003" green="0.36862745099999999" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="TMC-aD-6gU" firstAttribute="top" secondItem="R2X-8P-9rN" secondAttribute="bottom" constant="8" id="CoS-g8-AH8"/>
+                <constraint firstItem="nlj-jn-Wft" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="18" id="M7R-H9-7lq"/>
+                <constraint firstItem="R2X-8P-9rN" firstAttribute="top" secondItem="4sx-Zf-B0G" secondAttribute="bottom" constant="5" id="Q2h-sX-Tp8"/>
+                <constraint firstItem="4sx-Zf-B0G" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="RJB-UZ-bOB"/>
+                <constraint firstItem="2ah-BZ-isl" firstAttribute="top" secondItem="zgX-St-6tg" secondAttribute="bottom" id="RK5-IX-KF1"/>
+                <constraint firstItem="TMC-aD-6gU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Uem-6I-T9I"/>
+                <constraint firstAttribute="trailing" secondItem="R2X-8P-9rN" secondAttribute="trailing" id="Wdh-QY-Pp3"/>
+                <constraint firstItem="zgX-St-6tg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="X3U-5W-FbT"/>
+                <constraint firstAttribute="bottom" secondItem="2ah-BZ-isl" secondAttribute="bottom" constant="10" id="ddb-kj-roa"/>
+                <constraint firstItem="4sx-Zf-B0G" firstAttribute="top" secondItem="nlj-jn-Wft" secondAttribute="bottom" constant="10" id="eau-1f-GRi"/>
+                <constraint firstAttribute="trailing" secondItem="2ah-BZ-isl" secondAttribute="trailing" id="f8Q-V1-LN0"/>
+                <constraint firstAttribute="trailing" secondItem="4sx-Zf-B0G" secondAttribute="trailing" id="ffH-8G-Nxe"/>
+                <constraint firstItem="nlj-jn-Wft" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="g6f-vs-LoR"/>
+                <constraint firstItem="2ah-BZ-isl" firstAttribute="top" secondItem="zgX-St-6tg" secondAttribute="bottom" constant="8" id="iWt-5o-znj"/>
+                <constraint firstAttribute="trailing" secondItem="TMC-aD-6gU" secondAttribute="trailing" constant="20" id="qcv-wt-gOm"/>
+                <constraint firstItem="2ah-BZ-isl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="rI4-WG-UTA"/>
+                <constraint firstItem="R2X-8P-9rN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="tou-6P-NiB"/>
+                <constraint firstAttribute="trailing" secondItem="zgX-St-6tg" secondAttribute="trailing" id="vxU-qd-HBu"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="iWt-5o-znj"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="239" y="297"/>
         </view>
     </objects>
+    <resources>
+        <image name="120" width="120" height="120"/>
+    </resources>
 </document>

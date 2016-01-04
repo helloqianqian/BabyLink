@@ -29,6 +29,8 @@
 @property (nonatomic,strong)NSString *member_avar;
 @property (nonatomic,strong)NSString *member_name;
 
+@property (nonatomic,strong)NSString *flag;
+
 @end
 
 
@@ -63,6 +65,7 @@
 @property (nonatomic,strong)NSString *image_url;
 @property (nonatomic,assign)NSInteger end_status;
 @property (nonatomic,strong)NSString *end_status_desc;
+
 @end
 
 

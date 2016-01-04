@@ -10,20 +10,25 @@ import UIKit
 
 class UIAgreementViewController: UIBaseViewController {
 
+    @IBOutlet weak var textview: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.navigationItem.title = "服务协议"
         
+        
     }
-
+//[UIDevice currentDevice].systemVersion.floatValue
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBarHidden = false
+        if (UIDevice.currentDevice().systemVersion as NSString).floatValue >= 9.0 {
+            self.textview.setContentOffset(CGPointMake(0, 64), animated: false);
+        }
+//        NSLog("textview:\(self.textview.contentOffset.y)   \(self.textview.contentInset.top)")
     }
     
-    
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

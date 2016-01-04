@@ -58,7 +58,7 @@ class UIActivityTableViewCell: UITableViewCell ,UICollectionViewDelegate,UIColle
         
         signInBtn.tag = indexPath.row;
         signInBtn.addTarget(fromView, action: "joinTheActivity:", forControlEvents: UIControlEvents.TouchUpInside);
-        if dataModel.isOut {
+        if dataModel.isOut == "1"{
             signInBtn.makeBackGroundColor_DarkGray()
             signInBtn.setTitle("活动已结束", forState: UIControlState.Normal);
         } else {

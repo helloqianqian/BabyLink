@@ -68,5 +68,9 @@ typedef  enum : NSUInteger {
 
 + (NSString *)getAliPay:(NSString *)orderSpec;
 
+
+//版本号
++ (NSString*)appVesionVersionNum;
+
 //+ (void)shareImage:(int)type sender:(UIViewController *)sender;
 @end

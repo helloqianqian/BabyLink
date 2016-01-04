@@ -164,10 +164,10 @@
         default:
             break;
     }
-//    NSLog(@"url:%@",url);
-//    NSLog(@"param:%@",param);
+    NSLog(@"url:%@",url);
+    NSLog(@"param:%@",param);
     [NSHttpObject NetRequestPostWithUrl:url withParameter:param withReturnBlock:^(id returnValue) {
-//        NSLog(@"%@",returnValue);
+        NSLog(@"%@",returnValue);
         
         resultBlock(returnValue);
     } withErrorBlock:^(id errorCode) {
@@ -180,10 +180,10 @@
 }
 
 + (void)httpHelpWithUrl:(NSString *)url withParam:(id)param withResult:(ReturnValueBlock)resultBlock withFailure:(FailureBlock)failureBlock {
-//    NSLog(@"url:%@",url);
-//    NSLog(@"param:%@",param);
+    NSLog(@"url:%@",url);
+    NSLog(@"param:%@",param);
     [NSHttpObject NetRequestPostWithUrl:url withParameter:param withReturnBlock:^(id returnValue) {
-//        NSLog(@"%@",returnValue);
+        NSLog(@"%@",returnValue);
         resultBlock(returnValue);
     } withErrorBlock:^(id errorCode) {
         

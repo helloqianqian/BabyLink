@@ -24,7 +24,7 @@ class UICenterViewController: UIBaseViewController ,UITableViewDelegate,UITableV
     
     @IBOutlet weak var blurEffectionView2: UIVisualEffectView!
     @IBOutlet weak var blurEffectView: UIVisualEffectView!
-    let listTitles = ["我的主页","我的订单","账号设置","帮助中心","版本升级","关于我们"];
+    let listTitles = ["我的主页","我的订单","账号设置","帮助中心","当前版本：\(NSHelper.appVesionVersionNum())","关于我们"];
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -177,8 +177,8 @@ class UICenterViewController: UIBaseViewController ,UITableViewDelegate,UITableV
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("centerCellIndentifier", forIndexPath: indexPath) as! UICenterTableViewCell
-
         cell.contentLabel.text = listTitles[indexPath.row + indexPath.section];
+        
         if indexPath.row == 0 && indexPath.section == 0 {
             if NSUserInfo.shareInstance().sum_num == "0" || NSUserInfo.shareInstance().sum_num == "" {
                 cell.numLabel.hidden = true;
@@ -191,6 +191,13 @@ class UICenterViewController: UIBaseViewController ,UITableViewDelegate,UITableV
         } else {
             cell.numLabel.hidden = true;
         }
+        
+        if indexPath.section == 1 && indexPath.row == 3 {
+            cell.selectionStyle = UITableViewCellSelectionStyle.None;
+        } else {
+            cell.selectionStyle = UITableViewCellSelectionStyle.Default;
+        }
+        
         
         return cell;
     }

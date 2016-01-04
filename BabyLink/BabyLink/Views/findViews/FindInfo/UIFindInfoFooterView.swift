@@ -24,7 +24,14 @@ class UIFindInfoFooterView: UIView {
     */
     func setContent(infoModel:NSInfoFind){
         originPriceLabel.text = "现价\n￥\(infoModel.goods_price)"
-        prePayLabel.text = "我要预定\n￥\(infoModel.goods_dingjin)"
+        if infoModel.flag == "1" {
+            prePayLabel.text = "我要预定\n￥\(infoModel.goods_dingjin)"
+            prePayBtn.enabled = true;
+        } else {
+            prePayLabel.text = "团购结束\n￥\(infoModel.goods_dingjin)"
+            prePayBtn.enabled = false;
+            prePayBtn.backgroundColor = hexRGB(0x8F9091);
+        }
     }
 
 }

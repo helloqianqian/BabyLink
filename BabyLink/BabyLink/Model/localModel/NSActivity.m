@@ -23,6 +23,11 @@
     }
     return self;
 }
+
+//- (void)setValue:(id)value forKey:(NSString *)key{
+//    NSLog(@"key:%@  value:%@",key,[value class]);
+//}
+
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key {
     
 }

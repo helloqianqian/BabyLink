@@ -30,7 +30,7 @@ class UIShowTableViewCell: UITableViewCell ,UICollectionViewDataSource{
     @IBOutlet weak var zanListCollection: UICollectionView!
     
 //    @IBOutlet weak var showContentView:UIView!
-    var xiu:NSXiu!;
+    var xiu:NSXiu! = NSXiu();
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

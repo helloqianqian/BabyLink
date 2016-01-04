@@ -18,19 +18,7 @@ class UIEnterViewController: UIBaseViewController {
         enterBtn.layer.cornerRadius = 15.0;
         
     }
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-//        self.navigationController?.navigationBarHidden = true
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-//        self.navigationController?.navigationBarHidden = false
-    }
-    
     @IBAction func enter(sender: AnyObject) {
-//        let infoVC = UIFullInfoViewController(nibName:"UIFullInfoViewController",bundle:NSBundle.mainBundle());
-//        self.navigationController?.pushViewController(infoVC, animated: true);
         let loginVC = UILoginViewController(nibName:"UILoginViewController", bundle:NSBundle.mainBundle())
         self.navigationController?.pushViewController(loginVC, animated: true)
     }

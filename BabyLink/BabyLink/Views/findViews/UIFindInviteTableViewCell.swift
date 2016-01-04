@@ -24,7 +24,7 @@ class UIFindInviteTableViewCell: UITableViewCell {
         headIcon.layer.cornerRadius = 3;
         headIcon.layer.masksToBounds = true;
         
-        checkBtn.makeBackGroundColor_Purple();
+        
     }
 
     
@@ -32,6 +32,14 @@ class UIFindInviteTableViewCell: UITableViewCell {
         headIcon.sd_setImageWithURL(NSURL(string: findModel.member_avar), placeholderImage: UIImage(named: "morentoux"));
         nameLabel.text = findModel.member_name;
         titleLabel.text = findModel.store_name;
+        
+        if findModel.flag == "1" {
+            checkBtn.setTitle("查看", forState: UIControlState.Normal);
+            checkBtn.makeBackGroundColor_Purple();
+        } else {
+            checkBtn.setTitle("已结束", forState: UIControlState.Normal);
+            checkBtn.makeBackGroundColor_DarkGray();
+        }
     }
     
     override func setSelected(selected: Bool, animated: Bool) {

@@ -26,7 +26,7 @@
 @property (nonatomic,strong)NSString *image_url;
 @property (nonatomic,strong)NSString *images;
 @property (nonatomic,strong)NSMutableArray *logs_list;
-@property (nonatomic,assign)BOOL isOut;
+@property (nonatomic,strong)NSString *isOut;
 @property (nonatomic,assign)BOOL isSign;
 @property (nonatomic,assign)BOOL isFull;
 

@@ -268,4 +268,16 @@
         return @"服务器返回错误";
     }
 }
+
+
+
+
++(NSString*)appVesionVersionNum
+{
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+    // 当前应用版本号码  int类型
+    NSString *appCurVersionNum = [infoDictionary objectForKey:@"CFBundleVersion"];
+    //    NSLog(@"当前应用版本号码：%@",appCurVersionNum);
+    return appCurVersionNum;
+}
 @end

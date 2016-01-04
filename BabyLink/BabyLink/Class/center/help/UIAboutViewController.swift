@@ -9,12 +9,25 @@
 import UIKit
 
 class UIAboutViewController: UIBaseViewController {
+    @IBOutlet weak var width: NSLayoutConstraint!
+    @IBOutlet weak var height: NSLayoutConstraint!
 
+    @IBOutlet weak var right: NSLayoutConstraint!
+    @IBOutlet weak var left: NSLayoutConstraint!
+    @IBOutlet weak var contentText: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.title = "关于我们"
+        if iphone4 {
+            width.constant = 80;
+            height.constant = 80;
+            
+            right.constant = 5;
+            left.constant = 5;
+            contentText.font = UIFont.systemFontOfSize(13);
+        }
     }
 
     override func didReceiveMemoryWarning() {

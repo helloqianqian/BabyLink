@@ -67,7 +67,7 @@ class MyShowInfoViewController: UIBaseViewController ,UITableViewDelegate,UITabl
     }
     //MARK: - UITableViewDelegate
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return xiu.cellHeight + xiu.zanHeight + xiu.infoHeight;
+        return xiu.cellHeight + xiu.zanHeight + xiu.infoHeight + 20;
     }
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath){
