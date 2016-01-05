@@ -20,5 +20,6 @@
 @property (nonatomic,strong)NSString *title;
 @property (nonatomic,strong)NSString *cover;
 @property (nonatomic,strong)NSString *home;
+@property (nonatomic,strong)NSString *type;
 
 @end

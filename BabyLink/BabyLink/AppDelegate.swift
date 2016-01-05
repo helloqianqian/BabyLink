@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
         self.updateLocation();
         self.checkLastLoginUser()
         self.addShareSDK()
-        self.window?.backgroundColor = hexRGB(0xF8CFE1);
+//        self.window?.backgroundColor = hexRGB(0xF8CFE1);
         return true
     }
 

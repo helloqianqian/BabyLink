@@ -173,7 +173,7 @@
     } withErrorBlock:^(id errorCode) {
         
     } withFailureBlock:^(id error) {
-//        NSLog(@"%@",error);
+        NSLog(@"%@",error);
         [SVProgressHUD showErrorWithStatus:@"网络连接异常"];
         failureBlock(error);
     }];
@@ -188,7 +188,7 @@
     } withErrorBlock:^(id errorCode) {
         
     } withFailureBlock:^(id error) {
-//        NSLog(@"%@",error);
+        NSLog(@"%@",error);
         [SVProgressHUD showErrorWithStatus:@"网络连接异常"];
         failureBlock(error);
     }];

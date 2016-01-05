@@ -27,6 +27,8 @@
 @property (nonatomic,assign)CGFloat zanHeight;
 @property (nonatomic,assign)CGFloat cellHeight;
 @property (nonatomic,strong)NSString *xiu_num;
+@property (nonatomic,strong)NSString *fenxiang_url;
+
 
 @end
 

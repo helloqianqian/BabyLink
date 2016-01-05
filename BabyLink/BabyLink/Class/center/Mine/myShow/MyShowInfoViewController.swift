@@ -150,8 +150,25 @@ class MyShowInfoViewController: UIBaseViewController ,UITableViewDelegate,UITabl
         }
     }
     func shareDou(){
-        UMSocialData.defaultData().urlResource.setResourceType(UMSocialUrlResourceTypeImage, url: "http://baidu.com");
-        UMSocialSnsService.presentSnsIconSheetView(mainTabBar.showView, appKey: "562d96b0e0f55ae8010013b6", shareText: "babylink分享活动 http://www.baidu.com", shareImage:UIImage(named: "AppIcon"), shareToSnsNames: [UMShareToQQ,UMShareToWechatSession,UMShareToSina,UMShareToWechatTimeline], delegate: self)
+        var fenxiang = "http://www.baidu.com";
+        if self.xiu.fenxiang_url != "" {
+            fenxiang = self.xiu.fenxiang_url;
+        }
+        UMSocialData.defaultData().urlResource.setResourceType(UMSocialUrlResourceTypeImage, url: fenxiang);
+        
+        UMSocialData.defaultData().extConfig.qqData.url = fenxiang;
+        UMSocialData.defaultData().extConfig.qqData.qqMessageType = UMSocialQQMessageTypeDefault;
+        UMSocialData.defaultData().extConfig.qqData.title = "秀逗分享"
+        
+        UMSocialData.defaultData().extConfig.wechatSessionData.url = fenxiang;
+        UMSocialData.defaultData().extConfig.wechatSessionData.title = "秀逗分享"
+        UMSocialData.defaultData().extConfig.wechatSessionData.wxMessageType = UMSocialWXMessageTypeWeb;
+        
+        UMSocialData.defaultData().extConfig.wechatTimelineData.url = fenxiang;
+        UMSocialData.defaultData().extConfig.wechatTimelineData.title = "秀逗分享"
+        UMSocialData.defaultData().extConfig.wechatTimelineData.wxMessageType = UMSocialWXMessageTypeWeb;
+        
+        UMSocialSnsService.presentSnsIconSheetView(mainTabBar.showView, appKey: "562d96b0e0f55ae8010013b6", shareText: "babylink分享秀逗\n\(self.xiu.info)", shareImage:UIImage(named: "AppIcon"), shareToSnsNames: [UMShareToQQ,UMShareToWechatSession,UMShareToSina,UMShareToWechatTimeline], delegate: self)
     }
     
     func didFinishGetUMSocialDataInViewController(response: UMSocialResponseEntity!) {

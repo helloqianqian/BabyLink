@@ -34,12 +34,12 @@ class UIFindInfoFirstTableViewCell: UITableViewCell {
         backView.layer.borderWidth = 0.5;
     }
 
-    func setContentData(infoModel:NSInfoFind ,withListModel listModel:NSFind){
-        self.institutionLabel.text = listModel.store_name;
-        let price = "价格:￥\(listModel.goods_oprice)-￥\(listModel.goods_baseprice)" as NSString;
+    func setContentData(infoModel:NSInfoFind){
+        self.institutionLabel.text = infoModel.store_name;
+        let price = "价格:￥\(infoModel.goods_oprice)-￥\(infoModel.goods_baseprice)" as NSString;
         priceLabel.attributedText = price.switchContentWithFonts([UIFont.systemFontOfSize(14)], withRanges: [NSStringFromRange(NSMakeRange(0, 3))], withColors: [UIColor.blackColor()])
-        addressLabel.text = listModel.address;
-        distanceLabel.text = listModel.meters;
+        addressLabel.text = infoModel.address;
+        distanceLabel.text = infoModel.meters;
         let time = NSHelper.timeStrFromeStamp(infoModel.end_time)
         timeLabel.text = "截止时间:\(time)"
         let order_num = "\(infoModel.order_num)人预定" as NSString;

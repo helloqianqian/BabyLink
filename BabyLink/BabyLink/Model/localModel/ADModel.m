@@ -21,7 +21,9 @@
         self.ADID = key;
     }
 }
-
+//- (void)setValue:(id)value forKey:(NSString *)key{
+//    NSLog(@"key:%@  value:%@",key,[value class]);
+//}
 
 - (instancetype)init {
     self = [super init];

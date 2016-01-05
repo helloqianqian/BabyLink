@@ -94,11 +94,33 @@ class UILocalViewController: UIBaseViewController ,UILocalNavigationViewDelegate
         self.navigationController?.pushViewController(infoVC, animated: true);
     }
     func didClickAdImage(adModle:ADModel) {
-        let info:UIInfoViewController = UIInfoViewController(nibName:"UIInfoViewController" ,bundle: NSBundle.mainBundle());
-        info.type = 2;
-        info.contentStr = adModle.url;
-        info.hidesBottomBarWhenPushed = true;
-        self.navigationController?.pushViewController(info, animated: true);
+        if adModle.type == "1" {
+            //活动详情
+            let infoVC:UIActivityInfoViewController = UIActivityInfoViewController(nibName:"UIActivityInfoViewController",bundle:NSBundle.mainBundle())
+            infoVC.activityID = adModle.url;
+//            if actObject.member_id == NSUserInfo.shareInstance().member_id {
+//                infoVC.sourceFrom = 1;
+//            }
+            infoVC.hidesBottomBarWhenPushed = true;
+            self.navigationController?.pushViewController(infoVC, animated: true);
+        } else if adModle.type == "2" {
+            //发现详情
+            let infoVC:UIFindInfoViewController = UIFindInfoViewController(nibName:"UIFindInfoViewController", bundle: NSBundle.mainBundle())
+            infoVC.hidesBottomBarWhenPushed = true;
+            let findModel = NSFind();
+            findModel.goods_id = adModle.url;
+            infoVC.listModel = findModel;
+            self.navigationController?.pushViewController(infoVC, animated: true);
+        } else {
+            //网页
+            let info:UIInfoViewController = UIInfoViewController(nibName:"UIInfoViewController" ,bundle: NSBundle.mainBundle());
+            info.type = 2;
+            info.contentStr = adModle.url;
+            info.hidesBottomBarWhenPushed = true;
+            self.navigationController?.pushViewController(info, animated: true);
+        }
+        
+        
     }
     //MARK: - UIExchangeViewDelegate
     func checkTheInfoOfExchange(exchange:NSExchange) {

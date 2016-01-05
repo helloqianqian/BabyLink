@@ -82,10 +82,12 @@
 @property (nonatomic,strong)NSString *title;
 @property (nonatomic,strong)NSString *utils;
 
-@property (nonatomic,assign)BOOL isOut;
+@property (nonatomic,strong)NSString *isOut;
 @property (nonatomic,assign)BOOL isSign;
 @property (nonatomic,assign)BOOL isFull;
 @property (nonatomic,assign)BOOL is_end;
+
+@property (nonatomic,strong)NSString *fenxiang_url;
 
 @end
 

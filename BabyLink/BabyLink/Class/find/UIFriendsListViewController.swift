@@ -13,7 +13,7 @@ class UIFriendsListViewController: UIBaseViewController ,UITableViewDelegate,UIT
     @IBOutlet weak var listTableView: UITableView!
     
     var dataArray:NSMutableArray!=NSMutableArray();
-    var listModel:NSFind! = NSFind();
+    var listModel:NSInfoFind! = NSInfoFind();
     override func viewDidLoad() {
         super.viewDidLoad()
 

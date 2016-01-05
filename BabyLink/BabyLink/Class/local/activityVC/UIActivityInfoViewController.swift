@@ -15,7 +15,7 @@ class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
     var sourceFrom = 0;
     
     var activityID:String!;
-    var listModel:NSActListObject!;
+    var listModel:NSActListObject! = NSActListObject();
     var infoModel:NSActInfoObject! = NSActInfoObject();
     var spread=false;
     
@@ -45,7 +45,7 @@ class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
         }
         if signInActivity {
             signInActivity = false;
-            self.listModel.isSign = true;
+            self.infoModel.isSign = true;
             self.listTableView.reloadData();
         }
     }
@@ -62,32 +62,6 @@ class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
         listTableView.registerNib(UINib(nibName: "UIActivityInfoFifthTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "UIActivityInfoFifthTableViewCellIndentifier");
         
         footerView.enrollBtn.addTarget(self, action: "enrollInTheActivity:", forControlEvents: UIControlEvents.TouchUpInside);
-        
-//        if self.sourceFrom == 0 || self.sourceFrom == 2{
-//            let footerView = NSBundle.mainBundle().loadNibNamed("UIActivityInfoFooterView", owner: nil, options: nil).first as! UIActivityInfoFooterView;
-//            footerView.frame = CGRectMake(0, 0, MainScreenWidth, 57);
-//            
-//            if listModel.isOut {
-//                footerView.enrollBtn.makeBackGroundColor_DarkGray()
-//                footerView.enrollBtn.setTitle("活动已结束", forState: UIControlState.Normal);
-//            } else {
-//                if listModel.isSign {
-//                    footerView.enrollBtn.makeBackGroundColor_DarkGray()
-//                    footerView.enrollBtn.setTitle("取消报名", forState: UIControlState.Normal);
-//                    footerView.enrollBtn.addTarget(self, action: "enrollInTheActivity:", forControlEvents: UIControlEvents.TouchUpInside);
-//                } else {
-//                    if listModel.isFull {
-//                        footerView.enrollBtn.makeBackGroundColor_DarkGray()
-//                        footerView.enrollBtn.setTitle("报名已满", forState: UIControlState.Normal);
-//                    } else {
-//                        footerView.enrollBtn.makeBackGroundColor_Purple()
-//                        footerView.enrollBtn.setTitle("我要报名", forState: UIControlState.Normal);
-//                        footerView.enrollBtn.addTarget(self, action: "enrollInTheActivity:", forControlEvents: UIControlEvents.TouchUpInside);
-//                    }
-//                }
-//            }
-//            listTableView.tableFooterView = footerView;
-//        }
     }
     func setInputBar(){
         inputBar = YFInputBar(frame: CGRectMake(0 ,MainScreenHeight,MainScreenWidth,45))
@@ -119,6 +93,11 @@ class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
                     logObject.setValuesForKeysWithDictionary(log as! [String : AnyObject]);
                     self.infoModel.logs.addObject(logObject);
                 }
+                
+                if self.infoModel.member_id == NSUserInfo.shareInstance().member_id {
+                    self.sourceFrom = 1;
+                }
+                
                 self.listTableView.reloadData();
                 
                 mainTabBar.getNums()
@@ -153,15 +132,15 @@ class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
     
     func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         if self.sourceFrom == 0 || self.sourceFrom == 2{
-            if listModel.isOut == "1" {
+            if infoModel.isOut == "1" {
                 footerView.enrollBtn.makeBackGroundColor_DarkGray()
                 footerView.enrollBtn.setTitle("活动已结束", forState: UIControlState.Normal);
             } else {
-                if listModel.isSign {
+                if infoModel.isSign {
                     footerView.enrollBtn.makeBackGroundColor_DarkGray()
                     footerView.enrollBtn.setTitle("取消报名", forState: UIControlState.Normal);
                 } else {
-                    if listModel.isFull {
+                    if infoModel.isFull {
                         footerView.enrollBtn.makeBackGroundColor_DarkGray()
                         footerView.enrollBtn.setTitle("报名已满", forState: UIControlState.Normal);
                     } else if infoModel.is_end {
@@ -300,22 +279,23 @@ class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
     //MARK: - tableview function
     func enrollInTheActivity(sender:UIButton){
         
-        if listModel.isOut  == "1"{
+        if infoModel.isOut  == "1"{
             return;
         } else {
-            if listModel.isSign {
+            if infoModel.isSign {
             } else {
-                if listModel.isFull {
+                if infoModel.isFull {
                     return;
                 } else if infoModel.is_end {
                     return;
                 } else {
+                
                 }
             }
         }
         
         
-        if self.listModel.isSign {
+        if self.infoModel.isSign {
             let alertView = UIAlertView(title: "提示", message: "确定取消报名吗？", delegate: self, cancelButtonTitle: "取消", otherButtonTitles: "确定")
             alertView.show();
         } else {
@@ -335,7 +315,7 @@ class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
             let code = result["code"] as! NSInteger;
             if code == 0 {
             SVProgressHUD.showSuccessWithStatus("取消报名成功");
-            self.listModel.isSign = false;
+            self.infoModel.isSign = false;
             self.listTableView.reloadData()
             activityListLoad = true;
             self.getInfoData();
@@ -405,9 +385,16 @@ class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
     
     
     func shareActivityData(sender:UIButton){
-        UMSocialData.defaultData().urlResource.setResourceType(UMSocialUrlResourceTypeImage, url: "http://baidu.com");
+        var fenxiang = "http://www.baidu.com";
+        if self.infoModel.fenxiang_url != "" {
+            fenxiang = self.infoModel.fenxiang_url;
+        }
+        
         if sender.tag == 1 {
-            UMSocialDataService.defaultDataService().postSNSWithTypes([UMShareToQQ], content: "分享活动。 http://www.baidu.com", image: UIImage(named: "AppIcon"), location: nil, urlResource: nil, presentedController: self, completion: { (response) -> Void in
+            UMSocialData.defaultData().extConfig.qqData.url = fenxiang;
+            UMSocialData.defaultData().extConfig.qqData.qqMessageType = UMSocialQQMessageTypeDefault;
+            UMSocialData.defaultData().extConfig.qqData.title = "活动分享"
+            UMSocialDataService.defaultDataService().postSNSWithTypes([UMShareToQQ], content: "分享活动。", image: UIImage(named: "120"), location: nil, urlResource: nil, presentedController: self, completion: { (response) -> Void in
                 if (response.responseCode == UMSResponseCodeSuccess) {
                     SVProgressHUD.showSuccessWithStatus("分享成功");
                 } else {
@@ -415,7 +402,10 @@ class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
                 }
             })
         } else if sender.tag == 2 {
-            UMSocialDataService.defaultDataService().postSNSWithTypes([UMShareToWechatSession], content: "分享活动。 http://www.baidu.com", image: UIImage(named: "AppIcon"), location: nil, urlResource: nil, presentedController: self, completion: { (response) -> Void in
+            UMSocialData.defaultData().extConfig.wechatSessionData.url = fenxiang;
+            UMSocialData.defaultData().extConfig.wechatSessionData.title = "活动分享"
+            UMSocialData.defaultData().extConfig.wechatSessionData.wxMessageType = UMSocialWXMessageTypeWeb;
+            UMSocialDataService.defaultDataService().postSNSWithTypes([UMShareToWechatSession], content: "分享活动。", image: UIImage(named: "120"), location: nil, urlResource: nil, presentedController: self, completion: { (response) -> Void in
                 if (response.responseCode == UMSResponseCodeSuccess) {
                     SVProgressHUD.showSuccessWithStatus("分享成功");
                 } else {
@@ -423,7 +413,8 @@ class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
                 }
             })
         } else if sender.tag == 3 {
-            UMSocialDataService.defaultDataService().postSNSWithTypes([UMShareToSina], content: "分享活动。 http://www.baidu.com", image: UIImage(named: "AppIcon"), location: nil, urlResource: nil, presentedController: self, completion: { (response) -> Void in
+            UMSocialData.defaultData().urlResource.setResourceType(UMSocialUrlResourceTypeImage, url: fenxiang);
+            UMSocialDataService.defaultDataService().postSNSWithTypes([UMShareToSina], content: "分享活动。", image: UIImage(named: "120"), location: nil, urlResource: nil, presentedController: self, completion: { (response) -> Void in
                 if (response.responseCode == UMSResponseCodeSuccess) {
                     SVProgressHUD.showSuccessWithStatus("分享成功");
                 } else {
@@ -431,7 +422,10 @@ class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
                 }
             })
         } else {
-            UMSocialDataService.defaultDataService().postSNSWithTypes([UMShareToWechatTimeline], content: "分享活动。 http://www.baidu.com", image: UIImage(named: "AppIcon"), location: nil, urlResource: nil, presentedController: self, completion: { (response) -> Void in
+            UMSocialData.defaultData().extConfig.wechatTimelineData.url = fenxiang;
+            UMSocialData.defaultData().extConfig.wechatTimelineData.title = "活动分享"
+            UMSocialData.defaultData().extConfig.wechatTimelineData.wxMessageType = UMSocialWXMessageTypeWeb;
+            UMSocialDataService.defaultDataService().postSNSWithTypes([UMShareToWechatTimeline], content: "分享活动。", image: UIImage(named: "120"), location: nil, urlResource: nil, presentedController: self, completion: { (response) -> Void in
                 if (response.responseCode == UMSResponseCodeSuccess) {
                     SVProgressHUD.showSuccessWithStatus("分享成功");
                 } else {

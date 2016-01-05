@@ -66,6 +66,11 @@
 @property (nonatomic,assign)NSInteger end_status;
 @property (nonatomic,strong)NSString *end_status_desc;
 
+@property (nonatomic,strong)NSString *address;
+@property (nonatomic,strong)NSString *meters;
+
+@property (nonatomic,strong)NSString *fenxiang_url;
+
 @end
 
 

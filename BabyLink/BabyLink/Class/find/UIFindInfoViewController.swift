@@ -38,8 +38,6 @@ class UIFindInfoViewController: UIBaseViewController ,UITableViewDelegate,UITabl
         self.listTableView.registerNib(UINib(nibName: "UIFindInfoThirdTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "UIFindInfoThirdTableViewCellIdentifier")
         self.listTableView.registerNib(UINib(nibName: "UIFindInfoForthTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "UIFindInfoForthTableViewCellIdentifier")
         self.listTableView.registerNib(UINib(nibName: "UIFindInfoFifithTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "UIFindInfoFifthTableViewCellIdentifier")
-        
-        
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -49,7 +47,7 @@ class UIFindInfoViewController: UIBaseViewController ,UITableViewDelegate,UITabl
     }
     
     func getInfoData(){
-        let dicParam:NSDictionary = NSDictionary(objects: [listModel.goods_id] , forKeys: ["goods_id"]);
+        let dicParam:NSDictionary = NSDictionary(objects: [listModel.goods_id,locationParam.latitude.description,locationParam.longitude.description] , forKeys: ["goods_id","latitude","longitude"]);
         NSHttpHelp.httpHelpWithUrl(NSHttpModel.getGoodsInfoUrl(), withParam: dicParam, withResult: { (result:AnyObject!) -> Void in
             let dic = result as! NSDictionary;
             let code = dic["code"] as! NSInteger;
@@ -88,7 +86,7 @@ class UIFindInfoViewController: UIBaseViewController ,UITableViewDelegate,UITabl
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCellWithIdentifier("UIFindInfoFirstTableViewCellIdentifier", forIndexPath: indexPath) as! UIFindInfoFirstTableViewCell;
-            cell.setContentData(infoModel, withListModel: listModel)
+            cell.setContentData(infoModel)
             return cell;
         case 1:
             let cell = tableView.dequeueReusableCellWithIdentifier("UIFindInfoSecondTableViewCellIdentifier", forIndexPath: indexPath) as! UIFindInfoSecondTableViewCell;
@@ -174,7 +172,7 @@ class UIFindInfoViewController: UIBaseViewController ,UITableViewDelegate,UITabl
     
     func inviteNeighbor(sender:UIButton) {
         let listVC:UIFriendsListViewController = UIFriendsListViewController(nibName:"UIFriendsListViewController", bundle: NSBundle.mainBundle());
-        listVC.listModel = self.listModel;
+        listVC.listModel = self.infoModel;
         self.navigationController?.pushViewController(listVC, animated: true);
     }
     
@@ -223,9 +221,17 @@ class UIFindInfoViewController: UIBaseViewController ,UITableViewDelegate,UITabl
     }
     
     func shareActivityData(sender:UIButton){
-        UMSocialData.defaultData().urlResource.setResourceType(UMSocialUrlResourceTypeImage, url: "http://baidu.com");
+        var fenxiang = "http://www.baidu.com";
+        if self.infoModel.fenxiang_url != "" {
+            fenxiang = self.infoModel.fenxiang_url;
+        }
+        UMSocialData.defaultData().urlResource.setResourceType(UMSocialUrlResourceTypeImage, url: fenxiang);
         if sender.tag == 1 {
-            UMSocialDataService.defaultDataService().postSNSWithTypes([UMShareToQQ], content: "分享活动。 http://www.baidu.com", image: UIImage(named: "AppIcon"), location: nil, urlResource: nil, presentedController: self, completion: { (response) -> Void in
+            UMSocialData.defaultData().extConfig.qqData.url = fenxiang;
+            UMSocialData.defaultData().extConfig.qqData.qqMessageType = UMSocialQQMessageTypeDefault;
+            UMSocialData.defaultData().extConfig.qqData.title = "发现分享"
+            
+            UMSocialDataService.defaultDataService().postSNSWithTypes([UMShareToQQ], content: "发现分享", image: UIImage(named: "120"), location: nil, urlResource: nil, presentedController: self, completion: { (response) -> Void in
                 if (response.responseCode == UMSResponseCodeSuccess) {
                     SVProgressHUD.showSuccessWithStatus("分享成功");
                 } else {
@@ -233,7 +239,11 @@ class UIFindInfoViewController: UIBaseViewController ,UITableViewDelegate,UITabl
                 }
             })
         } else if sender.tag == 2 {
-            UMSocialDataService.defaultDataService().postSNSWithTypes([UMShareToWechatSession], content: "分享活动。 http://www.baidu.com", image: UIImage(named: "AppIcon"), location: nil, urlResource: nil, presentedController: self, completion: { (response) -> Void in
+            UMSocialData.defaultData().extConfig.wechatSessionData.url = fenxiang;
+            UMSocialData.defaultData().extConfig.wechatSessionData.title = "发现分享"
+            UMSocialData.defaultData().extConfig.wechatSessionData.wxMessageType = UMSocialWXMessageTypeWeb;
+            
+            UMSocialDataService.defaultDataService().postSNSWithTypes([UMShareToWechatSession], content: "发现分享", image: UIImage(named: "120"), location: nil, urlResource: nil, presentedController: self, completion: { (response) -> Void in
                 if (response.responseCode == UMSResponseCodeSuccess) {
                     SVProgressHUD.showSuccessWithStatus("分享成功");
                 } else {
@@ -241,7 +251,7 @@ class UIFindInfoViewController: UIBaseViewController ,UITableViewDelegate,UITabl
                 }
             })
         } else if sender.tag == 3 {
-            UMSocialDataService.defaultDataService().postSNSWithTypes([UMShareToSina], content: "分享活动。 http://www.baidu.com", image: UIImage(named: "AppIcon"), location: nil, urlResource: nil, presentedController: self, completion: { (response) -> Void in
+            UMSocialDataService.defaultDataService().postSNSWithTypes([UMShareToSina], content: "发现分享", image: UIImage(named: "120"), location: nil, urlResource: nil, presentedController: self, completion: { (response) -> Void in
                 if (response.responseCode == UMSResponseCodeSuccess) {
                     SVProgressHUD.showSuccessWithStatus("分享成功");
                 } else {
@@ -249,7 +259,11 @@ class UIFindInfoViewController: UIBaseViewController ,UITableViewDelegate,UITabl
                 }
             })
         } else {
-            UMSocialDataService.defaultDataService().postSNSWithTypes([UMShareToWechatTimeline], content: "分享活动。 http://www.baidu.com", image: UIImage(named: "AppIcon"), location: nil, urlResource: nil, presentedController: self, completion: { (response) -> Void in
+            UMSocialData.defaultData().extConfig.wechatTimelineData.url = fenxiang;
+            UMSocialData.defaultData().extConfig.wechatTimelineData.title = "发现分享"
+            UMSocialData.defaultData().extConfig.wechatTimelineData.wxMessageType = UMSocialWXMessageTypeWeb;
+            
+            UMSocialDataService.defaultDataService().postSNSWithTypes([UMShareToWechatTimeline], content: "发现分享", image: UIImage(named: "120"), location: nil, urlResource: nil, presentedController: self, completion: { (response) -> Void in
                 if (response.responseCode == UMSResponseCodeSuccess) {
                     SVProgressHUD.showSuccessWithStatus("分享成功");
                 } else {
