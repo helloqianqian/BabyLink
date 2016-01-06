@@ -38,6 +38,7 @@ class UINikenameViewController: UIBaseViewController,UITextFieldDelegate {
                 appDelegate.recordLastUserNickname()
                 self.lastVC.nikeName.text = "昵称:\(NSUserInfo.shareInstance().member_name)"
                 self.navigationController?.popViewControllerAnimated(true);
+                centerHeadIconLoad = true;
             }else {
                 let datas = dic["datas"] as! String;
                 SVProgressHUD.showErrorWithStatus(datas);

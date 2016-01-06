@@ -52,6 +52,7 @@ class UICenterViewController: UIBaseViewController ,UITableViewDelegate,UITableV
         super.viewWillAppear(animated)
         if centerHeadIconLoad {
             centerHeadIconLoad = false;
+            userName.text = NSUserInfo.shareInstance().member_name;
             headImageView.sd_setImageWithURL(NSURL(string: NSUserInfo.shareInstance().member_avar), placeholderImage: UIImage(named: "morentoux"))
         }
         self.getOrderNum();
