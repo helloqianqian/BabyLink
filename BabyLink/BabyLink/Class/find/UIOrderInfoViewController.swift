@@ -30,6 +30,13 @@ class UIOrderInfoViewController: UIBaseViewController ,UIAlertViewDelegate{
     @IBOutlet weak var thirdView: UIView!
     @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var heightOfMiddle: NSLayoutConstraint!
+    
+    
+    @IBOutlet weak var info: UIButton!
+    @IBOutlet weak var arrowImage: UIImageView!
+    
+    var type = 0;
+    
     var order:NSOrder! = NSOrder();
     var superVC:UIBaseViewController!;
     override func viewDidLoad() {
@@ -48,8 +55,10 @@ class UIOrderInfoViewController: UIBaseViewController ,UIAlertViewDelegate{
         continuePayBtn.makeBackGroundColor_Purple()
         payBackBtn.makeBackGroundColor_Gray();
         
-        self.setUI();
+        info.layer.borderWidth = 0.5;
+        info.layer.borderColor = hexRGB(0xACACB4).CGColor;
         
+        self.setUI();
     }
 
     func setUI(){
@@ -132,8 +141,19 @@ class UIOrderInfoViewController: UIBaseViewController ,UIAlertViewDelegate{
             break;
         default:break;
         }
+        if type == 1 {
+            info.hidden = false;
+            arrowImage.hidden = false;
+        }
     }
     
+    @IBAction func checkInfo(sender: UIButton) {
+        let infoVC:UIFindInfoViewController = UIFindInfoViewController(nibName:"UIFindInfoViewController", bundle: NSBundle.mainBundle())
+        let findModel = NSFind();
+        findModel.goods_id = self.order.goods_id;
+        infoVC.listModel = findModel;
+        self.navigationController?.pushViewController(infoVC, animated: true);
+    }
     
     func tuikuan(){
         if self.order.order_status == 1 {

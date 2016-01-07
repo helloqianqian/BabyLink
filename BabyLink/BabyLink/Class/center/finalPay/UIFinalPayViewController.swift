@@ -93,6 +93,7 @@ class UIFinalPayViewController: UIBaseViewController ,UITableViewDelegate,UITabl
         let orderVC = UIOrderInfoViewController(nibName:"UIOrderInfoViewController" ,bundle: NSBundle.mainBundle())
         let order = self.dataArray[indexPath.row] as! NSOrder;
         orderVC.order = order;
+        orderVC.type = 1 ;
         self.navigationController?.pushViewController(orderVC, animated: true);
     }
     

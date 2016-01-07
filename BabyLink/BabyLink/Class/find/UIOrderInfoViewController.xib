@@ -7,12 +7,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UIOrderInfoViewController" customModule="BabyLink" customModuleProvider="target">
             <connections>
+                <outlet property="arrowImage" destination="bLt-cl-nql" id="SGM-Pr-KKi"/>
                 <outlet property="bottomView" destination="Zds-ra-EKK" id="xWR-g0-gQ7"/>
                 <outlet property="centerNameLabel" destination="pDo-1X-XyZ" id="xPv-JE-dks"/>
                 <outlet property="contentImage" destination="DZU-D3-Ed4" id="1WK-Cp-ynp"/>
                 <outlet property="continuePayBtn" destination="JVa-NX-b7k" id="mXN-TN-llB"/>
                 <outlet property="dingjiaLabel" destination="xkd-qt-aGi" id="sha-0f-toe"/>
                 <outlet property="heightOfMiddle" destination="d8Y-7R-bhu" id="lbp-fI-7xn"/>
+                <outlet property="info" destination="nCO-7z-AYM" id="fNi-vi-Wbd"/>
                 <outlet property="nextView" destination="lel-iV-K13" id="DLc-tg-Tlc"/>
                 <outlet property="orderNumber" destination="IcD-3M-Wjl" id="9T0-8R-M8u"/>
                 <outlet property="payBackBtn" destination="Jqe-7v-u3d" id="3Ua-fl-0Cd"/>
@@ -176,7 +178,7 @@
                                 <constraint firstAttribute="height" constant="31" id="hAq-BD-T8e"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
@@ -188,16 +190,41 @@
                         <constraint firstAttribute="height" constant="65" id="d8Y-7R-bhu"/>
                     </constraints>
                 </view>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nCO-7z-AYM">
+                    <rect key="frame" x="10" y="284" width="300" height="40"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="RWC-vB-S4W"/>
+                    </constraints>
+                    <state key="normal" title="商品详情">
+                        <color key="titleColor" red="0.36078431370000003" green="0.36862745099999999" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="checkInfo:" destination="-1" eventType="touchUpInside" id="OTk-j6-sCZ"/>
+                    </connections>
+                </button>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="箭头" translatesAutoresizingMaskIntoConstraints="NO" id="bLt-cl-nql">
+                    <rect key="frame" x="285" y="296" width="10" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="10" id="gFb-WX-BEB"/>
+                        <constraint firstAttribute="height" constant="16" id="gOK-so-r7Q"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="0.92941176469999998" green="0.93333333330000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="VPz-mO-YWp" secondAttribute="trailing" constant="10" id="3HA-qR-eJI"/>
+                <constraint firstItem="nCO-7z-AYM" firstAttribute="top" secondItem="lel-iV-K13" secondAttribute="bottom" constant="37" id="93y-6d-aqH"/>
+                <constraint firstItem="nCO-7z-AYM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="E1V-nv-1Ss"/>
                 <constraint firstItem="V9I-fA-IKX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="Eoc-Qz-rSV"/>
                 <constraint firstItem="VPz-mO-YWp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="I2N-bk-ezI"/>
+                <constraint firstAttribute="trailing" secondItem="nCO-7z-AYM" secondAttribute="trailing" constant="10" id="IgH-nw-kVF"/>
                 <constraint firstAttribute="trailing" secondItem="lel-iV-K13" secondAttribute="trailing" constant="10" id="NLe-Sh-siu"/>
                 <constraint firstItem="Zds-ra-EKK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Oil-H0-HDL"/>
+                <constraint firstItem="bLt-cl-nql" firstAttribute="centerY" secondItem="nCO-7z-AYM" secondAttribute="centerY" id="Xqg-Ut-oZy"/>
                 <constraint firstItem="V9I-fA-IKX" firstAttribute="top" secondItem="VPz-mO-YWp" secondAttribute="bottom" constant="5" id="ZNu-8B-NTH"/>
                 <constraint firstAttribute="bottom" secondItem="Zds-ra-EKK" secondAttribute="bottom" id="Zzf-Lu-zUW"/>
+                <constraint firstAttribute="trailing" secondItem="bLt-cl-nql" secondAttribute="trailing" constant="25" id="a19-qi-TK3"/>
                 <constraint firstItem="lel-iV-K13" firstAttribute="top" secondItem="V9I-fA-IKX" secondAttribute="bottom" constant="5" id="eqe-Db-bRi"/>
                 <constraint firstAttribute="trailing" secondItem="Zds-ra-EKK" secondAttribute="trailing" id="fP7-hn-Hpi"/>
                 <constraint firstItem="lel-iV-K13" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="hiT-hX-JaC"/>
@@ -205,7 +232,10 @@
                 <constraint firstAttribute="trailing" secondItem="V9I-fA-IKX" secondAttribute="trailing" constant="10" id="vKV-2c-JE8"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-22" y="148"/>
+            <point key="canvasLocation" x="-215" y="160"/>
         </view>
     </objects>
+    <resources>
+        <image name="箭头" width="10" height="16"/>
+    </resources>
 </document>

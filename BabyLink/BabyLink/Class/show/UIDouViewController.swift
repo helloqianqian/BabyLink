@@ -48,7 +48,7 @@ class UIDouViewController: UIBaseViewController ,YFInputBarDelegate{
         if left>0 || hang == 0{
             hang+=1;
         }
-        titleView.frame = CGRectMake(0, 20, MainScreenWidth, height + CGFloat(hang*26) + showModel.infoHeight)
+        titleView.frame = CGRectMake(0, 20, MainScreenWidth, height + CGFloat(hang*26) + showModel.infoHeight + 20)
         self.view.addSubview(titleView);
         self.setInputBar();
     }

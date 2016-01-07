@@ -64,7 +64,7 @@ class UIMyActTableViewCell: UITableViewCell {
             width1.constant = size.width > 16 ? size.width : 16;
         }
         
-        if tag || actModel.commend_num == "0"{
+        if actModel.commend_num == "0" {
             numLabel2.hidden = true;
             numImage2.hidden = true;
         } else {

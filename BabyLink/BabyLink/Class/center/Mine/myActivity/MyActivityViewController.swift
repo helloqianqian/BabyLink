@@ -145,6 +145,7 @@ class MyActivityViewController: UIBaseViewController ,UITableViewDelegate,UITabl
         } else {
             let model = self.otherArray[indexPath.row] as! NSActListObject;
             infoVC.activityID = model.activity_id;
+            model.commend_num = "0";
             model.isSign = true;
             model.isOut = "0";
             infoVC.listModel = model;

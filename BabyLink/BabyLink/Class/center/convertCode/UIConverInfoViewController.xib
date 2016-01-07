@@ -12,6 +12,7 @@
                 <outlet property="codeImage" destination="V84-2I-RhZ" id="8aY-te-p7G"/>
                 <outlet property="deadLineLabel" destination="XXe-Nz-3ub" id="0aW-xe-nOc"/>
                 <outlet property="height" destination="B8M-Ly-yLx" id="FRC-31-mQy"/>
+                <outlet property="infoBtn" destination="ZxD-lp-8gR" id="76O-fi-C6p"/>
                 <outlet property="keyLabel" destination="mHT-Vz-ZuK" id="nsN-aN-d1I"/>
                 <outlet property="tipImage" destination="w8D-PV-ewn" id="MEZ-Vr-nBh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -125,18 +126,44 @@
                         </mask>
                     </variation>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZxD-lp-8gR">
+                    <rect key="frame" x="8" y="386" width="304" height="40"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="nys-yt-Wve"/>
+                    </constraints>
+                    <state key="normal" title="商品详情">
+                        <color key="titleColor" red="0.36078431370000003" green="0.36862745099999999" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="checkInfo:" destination="-1" eventType="touchUpInside" id="NV8-71-5wv"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="箭头" translatesAutoresizingMaskIntoConstraints="NO" id="SPK-a6-N7c">
+                    <rect key="frame" x="290" y="398" width="10" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="16" id="dqi-u3-Wlf"/>
+                        <constraint firstAttribute="width" constant="10" id="uOF-DT-j7d"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="0.92941176469999998" green="0.93333333330000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="srL-EB-Q7K" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="F4w-ra-Y94"/>
+                <constraint firstItem="ZxD-lp-8gR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="JVI-6Q-bKP"/>
                 <constraint firstItem="srL-EB-Q7K" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="5" id="OZu-IJ-yRA"/>
+                <constraint firstAttribute="trailing" secondItem="ZxD-lp-8gR" secondAttribute="trailing" constant="8" id="OuF-5Q-smJ"/>
+                <constraint firstAttribute="trailing" secondItem="SPK-a6-N7c" secondAttribute="trailing" constant="20" id="PeA-o1-wTk"/>
                 <constraint firstAttribute="trailing" secondItem="srL-EB-Q7K" secondAttribute="trailing" constant="5" id="WmK-dk-del"/>
+                <constraint firstItem="SPK-a6-N7c" firstAttribute="centerY" secondItem="ZxD-lp-8gR" secondAttribute="centerY" id="nM2-5N-gIe"/>
+                <constraint firstItem="ZxD-lp-8gR" firstAttribute="top" secondItem="srL-EB-Q7K" secondAttribute="bottom" constant="21" id="q5S-Lf-DGZ"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="22" y="99"/>
         </view>
     </objects>
     <resources>
+        <image name="箭头" width="10" height="16"/>
         <image name="虚线椭圆（带字）" width="136" height="109"/>
     </resources>
 </document>

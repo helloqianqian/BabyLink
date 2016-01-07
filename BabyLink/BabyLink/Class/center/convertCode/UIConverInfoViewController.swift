@@ -21,6 +21,9 @@ class UIConverInfoViewController: UIBaseViewController {
     
     @IBOutlet weak var width: NSLayoutConstraint!
     @IBOutlet weak var height: NSLayoutConstraint!
+    
+    @IBOutlet weak var infoBtn: UIButton!
+    
     var type = 0
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +32,9 @@ class UIConverInfoViewController: UIBaseViewController {
         self.title = "兑换码"
         backView.layer.borderColor = SGrayBorderColor.CGColor;
         backView.layer.borderWidth = 0.5;
+        
+        infoBtn.layer.borderColor = SGrayBorderColor.CGColor;
+        infoBtn.layer.borderWidth = 0.5;
         
         self.setUI()
     }
@@ -42,6 +48,15 @@ class UIConverInfoViewController: UIBaseViewController {
             tipImage.hidden = false;
         }
     }
+    
+    @IBAction func checkInfo(sender: UIButton) {
+        let infoVC:UIFindInfoViewController = UIFindInfoViewController(nibName:"UIFindInfoViewController", bundle: NSBundle.mainBundle())
+        let findModel = NSFind();
+        findModel.goods_id = self.order.goods_id;
+        infoVC.listModel = findModel;
+        self.navigationController?.pushViewController(infoVC, animated: true);
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
