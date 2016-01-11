@@ -225,13 +225,17 @@ class UIFindInfoViewController: UIBaseViewController ,UITableViewDelegate,UITabl
         if self.infoModel.fenxiang_url != "" {
             fenxiang = self.infoModel.fenxiang_url;
         }
-        UMSocialData.defaultData().urlResource.setResourceType(UMSocialUrlResourceTypeImage, url: fenxiang);
+        
+        let ad = self.infoModel.imagesAD[0] as! ADModel
+        let imageData = NSHelper.getImageData(ad.cover)
+        
+//        UMSocialData.defaultData().urlResource.setResourceType(UMSocialUrlResourceTypeImage, url: fenxiang);
         if sender.tag == 1 {
             UMSocialData.defaultData().extConfig.qqData.url = fenxiang;
             UMSocialData.defaultData().extConfig.qqData.qqMessageType = UMSocialQQMessageTypeDefault;
             UMSocialData.defaultData().extConfig.qqData.title = "发现分享"
             
-            UMSocialDataService.defaultDataService().postSNSWithTypes([UMShareToQQ], content: "发现分享", image: UIImage(named: "120"), location: nil, urlResource: nil, presentedController: self, completion: { (response) -> Void in
+            UMSocialDataService.defaultDataService().postSNSWithTypes([UMShareToQQ], content: self.infoModel.goods_name, image: imageData, location: nil, urlResource: nil, presentedController: self, completion: { (response) -> Void in
                 if (response.responseCode == UMSResponseCodeSuccess) {
                     SVProgressHUD.showSuccessWithStatus("分享成功");
                 } else {
@@ -243,7 +247,7 @@ class UIFindInfoViewController: UIBaseViewController ,UITableViewDelegate,UITabl
             UMSocialData.defaultData().extConfig.wechatSessionData.title = "发现分享"
             UMSocialData.defaultData().extConfig.wechatSessionData.wxMessageType = UMSocialWXMessageTypeWeb;
             
-            UMSocialDataService.defaultDataService().postSNSWithTypes([UMShareToWechatSession], content: "发现分享", image: UIImage(named: "120"), location: nil, urlResource: nil, presentedController: self, completion: { (response) -> Void in
+            UMSocialDataService.defaultDataService().postSNSWithTypes([UMShareToWechatSession], content: self.infoModel.goods_name, image: imageData, location: nil, urlResource: nil, presentedController: self, completion: { (response) -> Void in
                 if (response.responseCode == UMSResponseCodeSuccess) {
                     SVProgressHUD.showSuccessWithStatus("分享成功");
                 } else {
@@ -251,19 +255,33 @@ class UIFindInfoViewController: UIBaseViewController ,UITableViewDelegate,UITabl
                 }
             })
         } else if sender.tag == 3 {
-            UMSocialDataService.defaultDataService().postSNSWithTypes([UMShareToSina], content: "发现分享", image: UIImage(named: "120"), location: nil, urlResource: nil, presentedController: self, completion: { (response) -> Void in
-                if (response.responseCode == UMSResponseCodeSuccess) {
-                    SVProgressHUD.showSuccessWithStatus("分享成功");
-                } else {
-                    SVProgressHUD.showErrorWithStatus("分享失败")
-                }
-            })
+//            let message = WBMessageObject.message() as! WBMessageObject;
+//            message.text = "发现分享:\n\(self.infoModel.goods_name)\(fenxiang)"
+//            let image = WBImageObject.object() as! WBImageObject;
+//            image.imageData = imageData;
+//            message.imageObject = image;
+//            
+//            let authRequest = WBAuthorizeRequest.request() as! WBAuthorizeRequest;
+//            authRequest.redirectURI = "https://api.weibo.com/oauth2/default.html";
+//            authRequest.scope = "all";
+//            
+//            let request = WBSendMessageToWeiboRequest.requestWithMessage(message, authInfo: authRequest, access_token: "") as! WBSendMessageToWeiboRequest;
+//            WeiboSDK.sendRequest(request);
+            
+            UMSocialData.defaultData().urlResource.url = fenxiang;
+            UMSocialData.defaultData().extConfig.sinaData.shareImage = imageData;
+            UMSocialData.defaultData().extConfig.sinaData.shareText = "发现分享:\n\(self.infoModel.goods_name)\(fenxiang)";
+            UMSocialControllerService.defaultControllerService().setShareText("发现分享:\n\(self.infoModel.goods_name)\(fenxiang)", shareImage: imageData, socialUIDelegate: self);
+            let vc = UMSocialControllerService.defaultControllerService().getSocialShareEditController(UMShareToSina)
+            self.presentViewController(vc, animated: true, completion: { () -> Void in
+                
+            });
         } else {
             UMSocialData.defaultData().extConfig.wechatTimelineData.url = fenxiang;
-            UMSocialData.defaultData().extConfig.wechatTimelineData.title = "发现分享"
+            UMSocialData.defaultData().extConfig.wechatTimelineData.title = "发现分享:\(self.infoModel.goods_name)"
             UMSocialData.defaultData().extConfig.wechatTimelineData.wxMessageType = UMSocialWXMessageTypeWeb;
             
-            UMSocialDataService.defaultDataService().postSNSWithTypes([UMShareToWechatTimeline], content: "发现分享", image: UIImage(named: "120"), location: nil, urlResource: nil, presentedController: self, completion: { (response) -> Void in
+            UMSocialDataService.defaultDataService().postSNSWithTypes([UMShareToWechatTimeline], content: self.infoModel.goods_name, image: imageData, location: nil, urlResource: nil, presentedController: self, completion: { (response) -> Void in
                 if (response.responseCode == UMSResponseCodeSuccess) {
                     SVProgressHUD.showSuccessWithStatus("分享成功");
                 } else {

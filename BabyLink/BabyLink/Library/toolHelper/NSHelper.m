@@ -9,7 +9,12 @@
 #import "NSHelper.h"
 #import "WXApi.h"
 #import <AlipaySDK/AlipaySDK.h>
+
+
+
 @implementation NSHelper
+
+
 
 
 
@@ -280,4 +285,74 @@
     //    NSLog(@"当前应用版本号码：%@",appCurVersionNum);
     return appCurVersionNum;
 }
+
+
++(NSData *)getImageData:(NSString *)imageURL {
+     NSData *imageData = nil;
+     BOOL isExit = [[SDWebImageManager sharedManager] diskImageExistsForURL:[NSURL URLWithString:imageURL]];
+     if (isExit) {
+         NSString *cacheImageKey = [[SDWebImageManager sharedManager] cacheKeyForURL:[NSURL URLWithString:imageURL]];
+         if (cacheImageKey.length) {
+             NSString *cacheImagePath = [[SDImageCache sharedImageCache] defaultCachePathForKey:cacheImageKey];
+             if (cacheImagePath.length) {
+                 imageData = [NSData dataWithContentsOfFile:cacheImagePath];
+             }
+         }
+     }
+     if (!imageData) {
+         imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageURL]];
+     }
+     return imageData;
+}
+
+
+// 分享到Sina weibo
+//+ (void)shareToSinaWeiboWithContent:(id<ISSContent>)sharedContent
+//                        authOptions:(id<ISSAuthOptions>)authOptions
+//                            content:(NSString *)content
+//                           pngImage:(UIImage *)pngImage
+//                         completion:(HYBShareCompletion)completion {
+//    [sharedContent addSinaWeiboUnitWithContent:content
+//                                         image:[ShareSDK pngImageWithImage:pngImage]];
+//    // if haven authorized, then call
+//    if (![ShareSDK hasAuthorizedWithType:ShareTypeSinaWeibo]) {
+//        [ShareSDK authWithType:ShareTypeSinaWeibo options:authOptions result:^(SSAuthState state, id<ICMErrorInfo> error) {
+//            if (state == SSAuthStateSuccess) {
+//                id<ISSShareOptions> shareOptions = [ShareSDK simpleShareOptionsWithTitle:@"美容总监"
+//                                                                       shareViewDelegate:nil];
+//                [ShareSDK clientShareContent:sharedContent
+//                                        type:ShareTypeSinaWeibo
+//                                 authOptions:authOptions
+//                                shareOptions:shareOptions
+//                               statusBarTips:YES
+//                                      result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
+//                                          if (completion && end) {
+//                                              DDLogVerbose(@"%@", error.errorDescription);
+//                                              completion(state == SSPublishContentStateSuccess);
+//                                          }
+//                                      }];
+//            }
+//        }];
+//    } else {// use client share to Sina App Client
+//        id<ISSShareOptions> shareOptions = [ShareSDK simpleShareOptionsWithTitle:@"美容总监"
+//                                                               shareViewDelegate:nil];
+//        [ShareSDK clientShareContent:sharedContent
+//                                type:ShareTypeSinaWeibo
+//                         authOptions:authOptions
+//                        shareOptions:shareOptions
+//                       statusBarTips:YES
+//                              result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
+//                                  if (completion && end) {  
+//                                      DDLogVerbose(@"%@", error.errorDescription);  
+//                                      completion(state == SSPublishContentStateSuccess);  
+//                                  }  
+//                              }];  
+//    }  
+//}
+//
+
+
+
+
+
 @end

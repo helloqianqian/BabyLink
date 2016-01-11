@@ -10,7 +10,7 @@
 
 @implementation NSHttpModel
 
-#define httpHost @"http://101.200.174.65/babyLink/mobile.php"
+#define httpHost @"http://app.chinababylink.com/mobile.php"
 
 #define Mobile @"/Mobile"
 

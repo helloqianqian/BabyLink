@@ -73,4 +73,7 @@ typedef  enum : NSUInteger {
 + (NSString*)appVesionVersionNum;
 
 //+ (void)shareImage:(int)type sender:(UIViewController *)sender;
+
+
++(NSData *)getImageData:(NSString *)imageURL;
 @end

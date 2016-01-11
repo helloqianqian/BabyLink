@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
         self.updateLocation();
         self.checkLastLoginUser()
         self.addShareSDK()
+        
+    
 //        self.window?.backgroundColor = hexRGB(0xF8CFE1);
         return true
     }
@@ -50,6 +52,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
     func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool {
         WXApi.handleOpenURL(url, delegate: self)
         let result = UMSocialSnsService.handleOpenURL(url);
+        
+//        WeiboSDK.handleOpenURL(url, delegate: self)
+        
         if (!result) {
             //调用其他SDK，例如支付宝SDK等
         }
@@ -73,7 +78,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
         NSNotificationCenter.defaultCenter().postNotificationName("UIPaymentSuccessNotification", object: nil);
     }
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        
+//        WeiboSDK.handleOpenURL(url, delegate: self)
         WXApi.handleOpenURL(url, delegate: self)
+        
         AlipaySDK.defaultService().processOrderWithPaymentResult(url) { (result) -> Void in
             NSLog("result back = %@",result);
             let resultStatus = result["resultStatus"] as! NSInteger
@@ -94,15 +102,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
         return result;
     }
     
+//    func didReceiveWeiboRequest(request: WBBaseRequest!) {
+//        
+//    }
+//    
+//    func didReceiveWeiboResponse(response: WBBaseResponse!) {
+//        
+//    }
+
+    
     func addShareSDK() {
 //        wx0fbabc189e400940   微信appid
 //        d4624c36b6795d1d99dcf0547af5443d  微信秘钥
         UMSocialData.setAppKey("562d96b0e0f55ae8010013b6");
         UMSocialQQHandler.setQQWithAppId("1104869195", appKey: "ZKscrjTqoGkHSEOE", url: "http://www.umeng.com/social");
         UMSocialWechatHandler.setWXAppId("wx0fbabc189e400940", appSecret: "d4624c36b6795d1d99dcf0547af5443d", url: "http://www.umeng.com/social")
-        UMSocialSinaSSOHandler.openNewSinaSSOWithAppKey("1187574472", redirectURL: "http://sns.whalecloud.com/sina2/callback")
-        
+        UMSocialSinaSSOHandler.openNewSinaSSOWithAppKey("1187574472", redirectURL: "https://api.weibo.com/oauth2/default.html")
+        //https://api.weibo.com/oauth2/default.html
+        //http://sns.whalecloud.com/sina2/callback
         //92abe680559bf68b1d8c087f27239992 weibo app secret
+        
+//        WeiboSDK.enableDebugMode(true);
+//        WeiboSDK.registerApp("1187574472");
         
         
         /*[UMSocialWechatHandler setWXAppId:@"wxd930ea5d5a258f4f" appSecret:@"db426a9829e4b49a0dcac7b4162da6b6" url:@"http://www.umeng.com/social"];

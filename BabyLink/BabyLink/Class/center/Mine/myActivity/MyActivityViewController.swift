@@ -95,7 +95,7 @@ class MyActivityViewController: UIBaseViewController ,UITableViewDelegate,UITabl
                         self.otherArray.addObject(change);
                     }
                     self.listTableView.reloadData()
-                }else {
+                } else {
                     let datas = dic["datas"] as! String;
                     SVProgressHUD.showErrorWithStatus(datas);
                 }

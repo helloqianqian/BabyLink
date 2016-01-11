@@ -40,6 +40,8 @@
 
 //SDK
 #import "CCLocationManager.h"
+
+#import "WeiboSDK.h"
 #import "UMSocial.h"
 #import "UMSocialQQHandler.h"
 #import "UMSocialSinaSSOHandler.h"

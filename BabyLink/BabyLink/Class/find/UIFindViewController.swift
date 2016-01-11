@@ -19,7 +19,7 @@ class UIFindViewController: UIBaseViewController ,UITableViewDataSource,UITableV
     @IBOutlet weak var numLabel: UILabel!
     var dataArray:NSMutableArray!=NSMutableArray();
     var page = 1;
-    var orderType = 0;
+    var orderType = 1;
     var store_class = "";
     var inviteNum = 0
     

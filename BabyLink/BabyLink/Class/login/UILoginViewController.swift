@@ -149,8 +149,10 @@ class UILoginViewController: UIBaseViewController ,UITextFieldDelegate{
             if response.responseCode == UMSResponseCodeSuccess {
                 
                 let snsAccount:UMSocialAccountEntity = UMSocialAccountManager.socialAccountDictionary()[UMShareToSina] as! UMSocialAccountEntity
+                snsAccount.openId = snsAccount.accessToken;
+                self.snsAccount = snsAccount;
+                print("username is \(snsAccount.openId), uid is \(snsAccount.usid), token is \(snsAccount.accessToken) url is \(snsAccount.iconURL)")
                 
-                print("username is \(snsAccount.userName), uid is \(snsAccount.usid), token is \(snsAccount.accessToken) url is \(snsAccount.iconURL)")
                 self.otherLogin("3")
             } else {
                 

@@ -233,21 +233,27 @@ class UISquareView: UIView ,UITableViewDelegate,UITableViewDataSource,UMSocialUI
         if showModel.fenxiang_url != "" {
             fenxiang = showModel.fenxiang_url;
         }
+        let imageData = NSHelper.getImageData(showModel.image_url);
         
         UMSocialData.defaultData().extConfig.qqData.url = fenxiang;
         UMSocialData.defaultData().extConfig.qqData.qqMessageType = UMSocialQQMessageTypeDefault;
         UMSocialData.defaultData().extConfig.qqData.title = "秀逗分享"
+        UMSocialData.defaultData().extConfig.qqData.shareImage = imageData;
         
         UMSocialData.defaultData().extConfig.wechatSessionData.url = fenxiang;
         UMSocialData.defaultData().extConfig.wechatSessionData.title = "秀逗分享"
         UMSocialData.defaultData().extConfig.wechatSessionData.wxMessageType = UMSocialWXMessageTypeWeb;
         
         UMSocialData.defaultData().extConfig.wechatTimelineData.url = fenxiang;
-        UMSocialData.defaultData().extConfig.wechatTimelineData.title = "秀逗分享"
+        UMSocialData.defaultData().extConfig.wechatTimelineData.title = "秀逗分享:\(showModel.info)"
         UMSocialData.defaultData().extConfig.wechatTimelineData.wxMessageType = UMSocialWXMessageTypeWeb;
         
         UMSocialData.defaultData().urlResource.url = fenxiang;
-        UMSocialSnsService.presentSnsIconSheetView(mainTabBar.showView, appKey: "562d96b0e0f55ae8010013b6", shareText: "babylink分享秀逗\n\(showModel.info)", shareImage:UIImage(named: "120"), shareToSnsNames: [UMShareToQQ,UMShareToWechatSession,UMShareToSina,UMShareToWechatTimeline], delegate: self)
+        
+        UMSocialData.defaultData().extConfig.sinaData.shareImage = imageData;
+        UMSocialData.defaultData().extConfig.sinaData.shareText = "秀逗分享:\n\(showModel.info)\(fenxiang)";
+        
+        UMSocialSnsService.presentSnsIconSheetView(mainTabBar.showView, appKey: "562d96b0e0f55ae8010013b6", shareText: showModel.info, shareImage:imageData, shareToSnsNames: [UMShareToQQ,UMShareToWechatSession,UMShareToSina,UMShareToWechatTimeline], delegate: self)
     }
     func didFinishGetUMSocialDataInViewController(response: UMSocialResponseEntity!) {
         if response.responseCode == UMSResponseCodeSuccess {

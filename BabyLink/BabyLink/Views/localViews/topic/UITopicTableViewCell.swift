@@ -62,6 +62,8 @@ class UITopicTableViewCell: UITableViewCell ,UITableViewDelegate,UITableViewData
             heightOfCollection.constant = 0;
         } else if self.talkModel.images_url.count < 3 {
             heightOfCollection.constant = 108;
+        } else {
+            heightOfCollection.constant = 222;
         }
         headIcon.sd_setImageWithURL(NSURL(string: model.member_avar), placeholderImage: UIImage(named: "morentoux"))
         nameLabel.text = model.member_name;
