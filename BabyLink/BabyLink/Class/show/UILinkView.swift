@@ -69,6 +69,12 @@ class UILinkView: UIView ,UITableViewDelegate,UITableViewDataSource,UMSocialUIDe
                     for comment in commends {
                         let aCommend = NSXiuComment()
                         aCommend.setValuesForKeysWithDictionary(comment as! [String : AnyObject]);
+                        if aCommend.position_x < 0 {
+                            aCommend.position_x = 0;
+                        }
+                        if aCommend.position_y < 0 {
+                            aCommend.position_y = 0;
+                        }
                         talk.commends.addObject(aCommend);
                     }
                     let zans = data["zan_list"] as! NSArray;
@@ -155,10 +161,12 @@ class UILinkView: UIView ,UITableViewDelegate,UITableViewDataSource,UMSocialUIDe
             tipView.contentLabel.text = aComment.info;
             let size = tipView.contentLabel.sizeThatFits(CGSizeMake(100, 100));
             
+            
             let x = (MainScreenWidth-26)*aComment.position_x;
             let y = (MainScreenWidth-26)*aComment.position_y;
             
             var frame = CGRectMake(13+x, 58+y, size.width+48, size.height+16);
+            
             if x + size.width + 48 > MainScreenWidth-26 {
                 frame.origin.x = 13 + MainScreenWidth - size.width - 74;
             }
@@ -237,13 +245,15 @@ class UILinkView: UIView ,UITableViewDelegate,UITableViewDataSource,UMSocialUIDe
         UMSocialData.defaultData().extConfig.wechatSessionData.url = fenxiang;
         UMSocialData.defaultData().extConfig.wechatSessionData.title = "秀逗分享"
         UMSocialData.defaultData().extConfig.wechatSessionData.wxMessageType = UMSocialWXMessageTypeWeb;
+        UMSocialData.defaultData().extConfig.wechatSessionData.shareImage = imageData;
         
         UMSocialData.defaultData().extConfig.wechatTimelineData.url = fenxiang;
         UMSocialData.defaultData().extConfig.wechatTimelineData.title = "秀逗分享:\(showModel.info)"
         UMSocialData.defaultData().extConfig.wechatTimelineData.wxMessageType = UMSocialWXMessageTypeWeb;
+        UMSocialData.defaultData().extConfig.wechatTimelineData.shareImage = imageData;
+        
         
         UMSocialData.defaultData().urlResource.url = fenxiang;
-        
         UMSocialData.defaultData().extConfig.sinaData.shareImage = imageData;
         UMSocialData.defaultData().extConfig.sinaData.shareText = "秀逗分享:\n\(showModel.info)\(fenxiang)";
         

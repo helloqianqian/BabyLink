@@ -243,10 +243,13 @@ class UISquareView: UIView ,UITableViewDelegate,UITableViewDataSource,UMSocialUI
         UMSocialData.defaultData().extConfig.wechatSessionData.url = fenxiang;
         UMSocialData.defaultData().extConfig.wechatSessionData.title = "秀逗分享"
         UMSocialData.defaultData().extConfig.wechatSessionData.wxMessageType = UMSocialWXMessageTypeWeb;
+        UMSocialData.defaultData().extConfig.wechatSessionData.shareImage = imageData;
         
         UMSocialData.defaultData().extConfig.wechatTimelineData.url = fenxiang;
         UMSocialData.defaultData().extConfig.wechatTimelineData.title = "秀逗分享:\(showModel.info)"
         UMSocialData.defaultData().extConfig.wechatTimelineData.wxMessageType = UMSocialWXMessageTypeWeb;
+        UMSocialData.defaultData().extConfig.wechatTimelineData.shareImage = imageData;
+        
         
         UMSocialData.defaultData().urlResource.url = fenxiang;
         

@@ -117,7 +117,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,WXApiDelegate,UIAlertView
         UMSocialData.setAppKey("562d96b0e0f55ae8010013b6");
         UMSocialQQHandler.setQQWithAppId("1104869195", appKey: "ZKscrjTqoGkHSEOE", url: "http://www.umeng.com/social");
         UMSocialWechatHandler.setWXAppId("wx0fbabc189e400940", appSecret: "d4624c36b6795d1d99dcf0547af5443d", url: "http://www.umeng.com/social")
-        UMSocialSinaSSOHandler.openNewSinaSSOWithAppKey("1187574472", redirectURL: "https://api.weibo.com/oauth2/default.html")
+        UMSocialSinaSSOHandler.openNewSinaSSOWithAppKey("1187574472", redirectURL: "http://sns.whalecloud.com/sina2/callback")
         //https://api.weibo.com/oauth2/default.html
         //http://sns.whalecloud.com/sina2/callback
         //92abe680559bf68b1d8c087f27239992 weibo app secret

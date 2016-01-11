@@ -395,6 +395,7 @@ class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
             UMSocialData.defaultData().extConfig.qqData.url = fenxiang;
             UMSocialData.defaultData().extConfig.qqData.qqMessageType = UMSocialQQMessageTypeDefault;
             UMSocialData.defaultData().extConfig.qqData.title = "活动分享"
+            UMSocialData.defaultData().extConfig.qqData.shareImage = imageData;
             UMSocialDataService.defaultDataService().postSNSWithTypes([UMShareToQQ], content: self.infoModel.title, image: imageData, location: nil, urlResource: nil, presentedController: self, completion: { (response) -> Void in
                 if (response.responseCode == UMSResponseCodeSuccess) {
                     SVProgressHUD.showSuccessWithStatus("分享成功");
@@ -405,6 +406,7 @@ class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
         } else if sender.tag == 2 {
             UMSocialData.defaultData().extConfig.wechatSessionData.url = fenxiang;
             UMSocialData.defaultData().extConfig.wechatSessionData.title = "活动分享"
+            UMSocialData.defaultData().extConfig.wechatSessionData.shareImage = imageData;
             UMSocialData.defaultData().extConfig.wechatSessionData.wxMessageType = UMSocialWXMessageTypeWeb;
             UMSocialDataService.defaultDataService().postSNSWithTypes([UMShareToWechatSession], content: self.infoModel.title, image:imageData, location: nil, urlResource: nil, presentedController: self, completion: { (response) -> Void in
                 if (response.responseCode == UMSResponseCodeSuccess) {
@@ -440,6 +442,7 @@ class UIActivityInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
             UMSocialData.defaultData().extConfig.wechatTimelineData.url = fenxiang;
             UMSocialData.defaultData().extConfig.wechatTimelineData.title = "活动分享:\(self.infoModel.title)"
             UMSocialData.defaultData().extConfig.wechatTimelineData.wxMessageType = UMSocialWXMessageTypeWeb;
+            UMSocialData.defaultData().extConfig.wechatTimelineData.shareImage = imageData;
             UMSocialDataService.defaultDataService().postSNSWithTypes([UMShareToWechatTimeline], content: self.infoModel.title, image: imageData, location: nil, urlResource: nil, presentedController: self, completion: { (response) -> Void in
                 if (response.responseCode == UMSResponseCodeSuccess) {
                     SVProgressHUD.showSuccessWithStatus("分享成功");
