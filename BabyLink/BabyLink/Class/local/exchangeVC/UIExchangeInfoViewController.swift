@@ -117,7 +117,7 @@ class UIExchangeInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
                 self.setListTable();
             }
         }
-        headIcon.sd_setImageWithURL(NSURL(string: self.exchangeList.member_avar), placeholderImage: UIImage(named: "morentoux"))
+//        headIcon.sd_setImageWithURL(NSURL(string: self.exchangeList.member_avar), placeholderImage: UIImage(named: "morentoux"))
         nameLabel.text = self.exchangeList.member_name;
         addressLabel.text = self.exchangeList.home;
         fname.text = self.exchangeList.from_gname;
@@ -140,6 +140,10 @@ class UIExchangeInfoViewController: UIBaseViewController ,UITableViewDelegate,UI
         if imageArray.count>2 {
             self.contentImage3.sd_setImageWithURL(NSURL(string: imageArray[2] as! String), forState: UIControlState.Normal)
         }
+        
+//        if self.fromType == 1 {
+            headIcon.sd_setImageWithURL(NSURL(string: self.from_exchange.link_avar), placeholderImage: UIImage(named: "morentoux"))
+//        }
         
         if self.exchangeList.status == "1" {
             contactLabel.text = "\(to_exchange.link_mobile)  \(to_exchange.link_name)";

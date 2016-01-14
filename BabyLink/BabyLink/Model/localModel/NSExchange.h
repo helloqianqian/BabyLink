@@ -28,6 +28,8 @@
 
 @property (nonatomic,strong)NSString *link_name;
 @property (nonatomic,strong)NSString *link_mobile;
+@property (nonatomic,strong)NSString *link_avar;
+
 @property (nonatomic,strong)NSString *num;
 
 @end

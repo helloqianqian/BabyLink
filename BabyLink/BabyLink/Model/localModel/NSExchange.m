@@ -30,6 +30,7 @@
         _image_url=@"";
         _link_name = @"";
         _link_mobile=@"";
+        _link_avar = @"";
     }
     return self;
 }

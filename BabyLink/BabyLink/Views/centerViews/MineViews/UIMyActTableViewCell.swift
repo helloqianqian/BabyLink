@@ -130,7 +130,7 @@ class UIMyActTableViewCell: UITableViewCell {
         numLabel1.hidden = true;
         numImage1.hidden = true;
         
-        if tag || exchange.num == "0"{
+        if  exchange.num == "0"{
             numLabel2.hidden = true;
             numImage2.hidden = true;
         } else {

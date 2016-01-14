@@ -164,31 +164,31 @@
         default:
             break;
     }
-//    NSLog(@"url:%@",url);
-//    NSLog(@"param:%@",param);
+    NSLog(@"url:%@",url);
+    NSLog(@"param:%@",param);
     [NSHttpObject NetRequestPostWithUrl:url withParameter:param withReturnBlock:^(id returnValue) {
-//        NSLog(@"%@",returnValue);
+        NSLog(@"%@",returnValue);
         
         resultBlock(returnValue);
     } withErrorBlock:^(id errorCode) {
         
     } withFailureBlock:^(id error) {
-//        NSLog(@"%@",error);
+        NSLog(@"%@",error);
         [SVProgressHUD showErrorWithStatus:@"网络连接异常"];
         failureBlock(error);
     }];
 }
 
 + (void)httpHelpWithUrl:(NSString *)url withParam:(id)param withResult:(ReturnValueBlock)resultBlock withFailure:(FailureBlock)failureBlock {
-//    NSLog(@"url:%@",url);
-//    NSLog(@"param:%@",param);
+    NSLog(@"url:%@",url);
+    NSLog(@"param:%@",param);
     [NSHttpObject NetRequestPostWithUrl:url withParameter:param withReturnBlock:^(id returnValue) {
-//        NSLog(@"%@",returnValue);
+        NSLog(@"%@",returnValue);
         resultBlock(returnValue);
     } withErrorBlock:^(id errorCode) {
         
     } withFailureBlock:^(id error) {
-//        NSLog(@"%@",error);
+        NSLog(@"%@",error);
         [SVProgressHUD showErrorWithStatus:@"网络连接异常"];
         failureBlock(error);
     }];

@@ -11,7 +11,8 @@ import UIKit
 class UIDouViewController: UIBaseViewController ,YFInputBarDelegate{
 
 
-    @IBOutlet var unloadGestrue: UITapGestureRecognizer!
+//    @IBOutlet var unloadGestrue: UITapGestureRecognizer!
+    
     var showModel:NSXiu! = NSXiu()
     var inputBar:YFInputBar!;
     var titleView:UIShowTableViewCell!;
@@ -24,7 +25,11 @@ class UIDouViewController: UIBaseViewController ,YFInputBarDelegate{
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.view.addGestureRecognizer(unloadGestrue);
+//        self.view.addGestureRecognizer(unloadGestrue);
+        
+        let ctr = UIControl(frame: CGRectMake(0,0,MainScreenWidth,MainScreenHeight))
+        ctr.addTarget(self, action: "unloadViewController:", forControlEvents: UIControlEvents.TouchDown);
+        self.view.addSubview(ctr);
         
 
         titleView = NSBundle.mainBundle().loadNibNamed("UIShowTableViewCell", owner: nil, options: nil).first as! UIShowTableViewCell;
@@ -208,12 +213,17 @@ class UIDouViewController: UIBaseViewController ,YFInputBarDelegate{
         itemView.setNeedsLayout()
     }
     
-    @IBAction func unloadViewController(sender: UITapGestureRecognizer) {
+    func unloadViewController(sender: UIControl) {
         self.inputBar.textField.resignFirstResponder();
         self.dismissViewControllerAnimated(true) { () -> Void in
             
         }
     }
+    
+//    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
+//        let touchView = touch.view
+//        return true;
+//    }
     
     deinit{
         NSNotificationCenter.defaultCenter().removeObserver(self);
