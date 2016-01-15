@@ -42,6 +42,7 @@
 @property (nonatomic,strong)NSString *talk_num;
 @property (nonatomic,strong)NSString *wei_num;
 @property (nonatomic,strong)NSString *xiu_num;
+@property (nonatomic,strong)NSString *fans_num;
 
 + (instancetype)shareInstance;
 

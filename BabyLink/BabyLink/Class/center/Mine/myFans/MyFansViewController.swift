@@ -51,6 +51,8 @@ class MyFansViewController: UIBaseViewController ,UITableViewDelegate,UITableVie
                     self.dataArray.addObject(change);
                 }
                 self.listTableView.reloadData()
+                
+                mainTabBar.getNums();
             }else {
                 let datas = dic["datas"] as! String;
                 SVProgressHUD.showErrorWithStatus(datas);

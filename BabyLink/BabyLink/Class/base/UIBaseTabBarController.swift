@@ -83,6 +83,7 @@ class UIBaseTabBarController: UITabBarController, UIBaseTabBarDelegate ,UICreate
                 NSUserInfo.shareInstance().xiu_num = datas["xiu_num"] as! String;
                 NSUserInfo.shareInstance().talk_num = datas["talk_num"] as! String;
                 NSUserInfo.shareInstance().sum_num = datas["sum_num"] as! String;
+                NSUserInfo.shareInstance().fans_num = datas["fans_num"] as! String;
                 
                 self.setTabbarItemBadge(NSUserInfo.shareInstance().sum_num);
                 NSNotificationCenter.defaultCenter().postNotificationName("UpdateNumNotification", object: nil);

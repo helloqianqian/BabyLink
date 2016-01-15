@@ -25,12 +25,13 @@ class UIMineViewController: UIBaseViewController {
     @IBOutlet weak var numLabel2: UILabel!
     @IBOutlet weak var numLabel3: UILabel!
     @IBOutlet weak var numLabel4: UILabel!
+    @IBOutlet weak var numLabel5: UILabel!
     
     @IBOutlet weak var width1: NSLayoutConstraint!
     @IBOutlet weak var width2: NSLayoutConstraint!
     @IBOutlet weak var width3: NSLayoutConstraint!
     @IBOutlet weak var width4: NSLayoutConstraint!
-    
+    @IBOutlet weak var width5: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,9 +54,16 @@ class UIMineViewController: UIBaseViewController {
         numLabel3.layer.masksToBounds = true;
         numLabel4.layer.cornerRadius = 8;
         numLabel4.layer.masksToBounds = true;
+        numLabel5.layer.cornerRadius = 8;
+        numLabel5.layer.masksToBounds = true;
         
         self.setNums();
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "setNums", name: "UpdateNumNotification", object: nil);
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated);
         mainTabBar.getNums();
     }
 
@@ -94,6 +102,15 @@ class UIMineViewController: UIBaseViewController {
             numLabel4.text = NSUserInfo.shareInstance().xiu_num;
             let size = numLabel4.sizeThatFits(CGSizeMake(MainScreenWidth, 16));
             width4.constant = size.width > 16 ? size.width : 16;
+        }
+        
+        if NSUserInfo.shareInstance().fans_num == "0" {
+            numLabel5.hidden = true;
+        } else {
+            numLabel5.hidden = false;
+            numLabel5.text = NSUserInfo.shareInstance().fans_num;
+            let size = numLabel5.sizeThatFits(CGSizeMake(MainScreenWidth, 16));
+            width5.constant = size.width > 16 ? size.width : 16;
         }
     }
     
